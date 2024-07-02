@@ -1,0 +1,96 @@
+openapi: 3.0.0
+info:
+  title: IVGF Project Search API
+  version: 0.1.0
+paths:
+  /search:
+    get:
+      summary: Search for objects in the ENCODE Project
+      description: |
+        Search endpoint that accepts various query parameters to filter and format results.
+        Supports complex filtering on multiple types and their fields within JSON objects.
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+          description: |
+            Specifies the type(s) of object to search for. Multiple types can be specified by repeating the parameter.
+            Example: type=Experiment&type=File
+        - name: frame
+          in: query
+          schema:
+            type: string
+            enum: [object, embedded]
+          description: |
+            Specifies the format of the returned objects.
+            - If not specified, returns a subset of object properties.
+            - 'embedded' returns all object properties with selected embedded objects expanded.
+            - 'object' returns all properties with embedded objects referred by identifier.
+        - name: limit
+          in: query
+          schema:
+            type: string
+          description: |
+            Limits the number of results. Use 'all' to retrieve all results.
+        - name: query
+          in: query
+          schema:
+            type: string
+          description: General search term that can return multiple object types.
+        - name: field
+          in: query
+          schema:
+            type: object
+            additionalProperties: true
+          description: |
+            Any field from any object type can be used as a filter.
+            Supports complex queries including nested properties, range queries, and wildcard searches.
+            Examples:
+            - quality_metrics.frip=lt:0.65 (less than)
+            - file_size=gte:1000000 (greater than or equal)
+            - treatments=* (wildcard, existence check)
+            - treatments!=* (negation, non-existence check)
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  "@graph":
+                    type: array
+                    items:
+                      oneOf:
+                        - $ref: '#/components/schemas/Experiment'
+                        - $ref: '#/components/schemas/File'
+                  "@id":
+                    type: string
+                  "@type":
+                    type: array
+                    items:
+                      type: string
+                  total:
+                    type: integer
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    Experiment:
+      type: object
+      properties:
+        "@id":
+          type: string
+        name:
+          type: string
+    File:
+      type: object
+      properties:
+        "@id":
+          type: string
+        name:
+          type: string
