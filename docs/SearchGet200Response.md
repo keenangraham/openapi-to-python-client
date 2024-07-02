@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **total** | **int** |  | [optional] 
+**facets** | [**List[SearchGet200ResponseFacetsInner]**](SearchGet200ResponseFacetsInner.md) |  | [optional] 
 
 ## Example
 

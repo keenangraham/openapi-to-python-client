@@ -62,9 +62,7 @@ paths:
                   "@graph":
                     type: array
                     items:
-                      oneOf:
-                        - $ref: '#/components/schemas/Experiment'
-                        - $ref: '#/components/schemas/File'
+                      type: object
                   "@id":
                     type: string
                   "@type":
@@ -77,20 +75,3 @@ paths:
           description: Bad request
         '500':
           description: Internal server error
-
-components:
-  schemas:
-    Experiment:
-      type: object
-      properties:
-        "@id":
-          type: string
-        name:
-          type: string
-    File:
-      type: object
-      properties:
-        "@id":
-          type: string
-        name:
-          type: string
