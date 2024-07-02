@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
-**description** | **str** | A plain text description of the object. | [optional] 
+**description** | **str** | A plain text description of the object. | 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
 **user** | **str** | The user that is assigned to this access key. | [optional] 
 **access_key_id** | **str** | An access key. | [optional] 
@@ -21,85 +21,85 @@ Name | Type | Description | Notes
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
-**lab** | **str** | Lab associated with the submission. | [optional] 
-**award** | **str** | Grant associated with the submission. | [optional] 
-**analysis_step_types** | **List[str]** | The classification of the software. | [optional] 
-**step_label** | **str** | Unique lowercased label of the analysis step that includes the relevant assays, the software used, and the purpose of the step, e.g. rampage-grit-peak-calling-step | [optional] 
-**title** | **str** | The full name of the user. | [optional] 
-**workflow** | **str** | The computational workflow in which this analysis step belongs. | [optional] 
+**lab** | **str** | Lab associated with the submission. | 
+**award** | **str** | Grant associated with the submission. | 
+**analysis_step_types** | **List[str]** | The classification of the software. | 
+**step_label** | **str** | Unique lowercased label of the analysis step that includes the relevant assays, the software used, and the purpose of the step, e.g. rampage-grit-peak-calling-step | 
+**title** | **str** | The full name of the user. | 
+**workflow** | **str** | The computational workflow in which this analysis step belongs. | 
 **parents** | **List[str]** | The precursor steps. | [optional] 
-**input_content_types** | [**List[InputContentType]**](InputContentType.md) | The content types used as input for the analysis step. | [optional] 
-**output_content_types** | [**List[OutputContentType]**](OutputContentType.md) | The content types produced as output by the analysis step. | [optional] 
-**name** | **str** | The preferred viewable name of the workflow. | [optional] 
+**input_content_types** | [**List[InputContentType]**](InputContentType.md) | The content types used as input for the analysis step. | 
+**output_content_types** | [**List[OutputContentType]**](OutputContentType.md) | The content types produced as output by the analysis step. | 
+**name** | **str** | The preferred viewable name of the workflow. | 
 **url** | **str** | An external resource with additional information. | [optional] 
 **start_date** | **date** | The date when the award begins. | [optional] 
 **end_date** | **date** | The date when the award concludes. | [optional] 
 **pis** | **List[str]** | Principal Investigator(s) of the grant. | [optional] 
 **contact_pi** | **str** | The contact Principal Investigator of the grant. | [optional] 
-**project** | **str** | The collection of biological data related to a single initiative, originating from a consortium. | [optional] 
+**project** | **str** | The collection of biological data related to a single initiative, originating from a consortium. | 
 **viewing_group** | **str** | The group that determines which set of data the user has permission to view. | [optional] 
 **component** | **str** | The project component the award is associated with. | [optional] 
 **classification** | **str** | Sample specific biomarker. | [optional] 
-**quantification** | **str** | The biomarker association to the biosample, disease or other condition.  This can be the absence of the biomarker or the presence of the biomarker in some low, intermediate or high quantity. | [optional] 
+**quantification** | **str** | The biomarker association to the biosample, disease or other condition.  This can be the absence of the biomarker or the presence of the biomarker in some low, intermediate or high quantity. | 
 **synonyms** | **List[str]** | Synonyms for the term that have been recorded in an ontology. | [optional] 
-**gene** | **List[str]** | ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix. | [optional] 
+**gene** | **List[str]** | ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix. | 
 **name_quantification** | **str** | A concatenation of the name and quantification of the biomarker. | [optional] 
-**attachment** | [**Attachment**](Attachment.md) |  | [optional] 
-**document_type** | **str** | The category that best describes the document. | [optional] 
+**attachment** | [**Attachment**](Attachment.md) |  | 
+**document_type** | **str** | The category that best describes the document. | 
 **characterization_method** | **str** | The method used for the characterization. | [optional] 
-**urls** | **List[str]** | Link to the institutional certification form. | [optional] 
-**taxa** | **str** | The species of the organism. | [optional] 
-**publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
+**urls** | **List[str]** | Link to the institutional certification form. | 
+**taxa** | **str** | The species of the organism. | 
+**publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
 **revoke_detail** | **str** | Explanation of why an object was transitioned to the revoked status. | [optional] 
-**dbxrefs** | **List[str]** | Biosample identifiers from external resources, such as Biosample database or Cellosaurus. | [optional] 
-**sex** | **str** |  | [optional] 
+**dbxrefs** | **List[str]** | Biosample identifiers from external resources, such as Biosample database or Cellosaurus. | 
+**sex** | **str** |  | 
 **phenotypic_features** | **List[str]** | A list of associated phenotypic features of the donor. | [optional] 
 **virtual** | **bool** | Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for. | [optional] [default to False]
 **related_donors** | [**List[RelatedDonor]**](RelatedDonor.md) | Familial relations of this donor. | [optional] 
 **ethnicities** | **List[str]** | Ethnicity of the donor. | [optional] 
 **human_donor_identifiers** | **List[str]** | Identifiers of this human donor. | [optional] 
-**sources** | **List[str]** | The originating lab(s) or vendor(s). | [optional] 
+**sources** | **List[str]** | The originating lab(s) or vendor(s). | 
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 
 **product_id** | **str** | The product identifier provided by the originating lab or vendor. | [optional] 
 **strain_background** | **str** | The specific parent strain designation of a non-human donor. | [optional] 
-**strain** | **str** | The specific strain designation of a non-human donor. | [optional] 
+**strain** | **str** | The specific strain designation of a non-human donor. | 
 **genotype** | **str** | The genotype of the strain according to accepted nomenclature conventions. | [optional] 
 **individual_rodent** | **bool** | This rodent donor represents an individual rodent. | [optional] [default to False]
 **rodent_identifier** | **str** | The identifier for this individual rodent donor. | [optional] 
-**controlled_access** | **bool** | Indicator of whether the samples are under controlled access. | [optional] 
+**controlled_access** | **bool** | Indicator of whether the samples are under controlled access. | 
 **anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
-**transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
+**transcriptome_annotation** | **str** | The annotation and version of the reference resource. | 
 **assembly** | **str** | Genome assembly applicable for the tabular data. | [optional] 
-**reference_files** | **List[str]** | Link to the reference files used to generate this file. | [optional] 
+**reference_files** | **List[str]** | Link to the reference files used to generate this file. | 
 **content_md5sum** | **str** | The MD5sum of the uncompressed file. | [optional] 
-**content_type** | **str** | The type of content in the file. | [optional] 
-**derived_from** | **List[str]** | The files participating as inputs into software to produce this output file. | [optional] 
-**file_format** | **str** | The file format or extension of the file. | [optional] 
+**content_type** | **str** | The type of content in the file. | 
+**derived_from** | **List[str]** | The files participating as inputs into software to produce this output file. | 
+**file_format** | **str** | The file format or extension of the file. | 
 **file_format_specifications** | **List[str]** | Document that further explains the file format. | [optional] 
-**file_set** | **str** | The file set that this file belongs to. | [optional] 
+**file_set** | **str** | The file set that this file belongs to. | 
 **file_size** | **int** | File size specified in bytes. | [optional] 
-**md5sum** | **str** | The md5sum of the file being transferred. | [optional] 
+**md5sum** | **str** | The md5sum of the file being transferred. | 
 **submitted_file_name** | **str** | Original name of the file. | [optional] 
 **upload_status** | **str** | The upload/validation status of the file. | [optional] [default to 'pending']
 **validation_error_detail** | **str** | Explanation of why the file failed the automated content checks. | [optional] 
-**redacted** | **bool** | Indicates whether the alignments data have been sanitized (redacted) to prevent leakage of private and potentially identifying genomic information. | [optional] 
-**filtered** | **bool** | Indicates if the signal file is filtered. | [optional] 
-**integrated_in** | **List[object]** | Construct library set(s) that this file was used for in insert design. | [optional] 
-**gene_list_for** | **List[object]** | File Set(s) that this file is a gene list for. | [optional] 
-**loci_list_for** | **List[object]** | File Set(s) that this file is a loci list for. | [optional] 
+**redacted** | **bool** | Indicates whether the alignments data have been sanitized (redacted) to prevent leakage of private and potentially identifying genomic information. | 
+**filtered** | **bool** | Indicates if the signal file is filtered. | 
+**integrated_in** | [**List[IntegratedIn]**](IntegratedIn.md) | Construct library set(s) that this file was used for in insert design. | [optional] 
+**gene_list_for** | [**List[GeneListFor]**](GeneListFor.md) | File Set(s) that this file is a gene list for. | [optional] 
+**loci_list_for** | [**List[LociListFor]**](LociListFor.md) | File Set(s) that this file is a loci list for. | [optional] 
 **href** | **str** | The download path to obtain file. | [optional] 
 **s3_uri** | **str** | The S3 URI of public file object. | [optional] 
 **upload_credentials** | **object** | The upload credentials for S3 to submit the file content. | [optional] 
 **content_summary** | **str** | A summary of the data in the signal file. | [optional] 
 **seqspec_of** | **List[str]** | Sequence files this file is a seqspec of. | [optional] 
 **file_format_type** | **str** | The subtype of bed files. | [optional] 
-**dimension1** | **str** | First dimension of the matrix. | [optional] 
-**dimension2** | **str** | Second dimension of the matrix. | [optional] 
-**source_url** | **str** | An external resource to the code base of the workflow in github. | [optional] 
+**dimension1** | **str** | First dimension of the matrix. | 
+**dimension2** | **str** | Second dimension of the matrix. | 
+**source_url** | **str** | An external resource to the code base of the workflow in github. | 
 **external** | **bool** | Indicates whether the file was obtained from an external, non-IGVF source. | [optional] [default to False]
 **external_id** | **str** | A unique identifier for the file at its original source. | [optional] 
 **flowcell_id** | **str** | The alphanumeric identifier for the flowcell of a sequencing machine. | [optional] 
@@ -108,32 +108,32 @@ Name | Type | Description | Notes
 **minimum_read_length** | **int** | For high-throughput sequencing, the minimum number of contiguous nucleotides determined by sequencing. | [optional] 
 **maximum_read_length** | **int** | For high-throughput sequencing, the maximum number of contiguous nucleotides determined by sequencing. | [optional] 
 **mean_read_length** | **float** | For high-throughput sequencing, the mean number of contiguous nucleotides determined by sequencing. | [optional] 
-**sequencing_platform** | **str** | The measurement device used to produce sequencing data. | [optional] 
+**sequencing_platform** | **str** | The measurement device used to produce sequencing data. | 
 **sequencing_kit** | **str** | A reagent kit used with a library to prepare it for sequencing. | [optional] 
-**sequencing_run** | **int** | An ordinal number indicating which sequencing run of the associated library that the file belongs to. | [optional] 
+**sequencing_run** | **int** | An ordinal number indicating which sequencing run of the associated library that the file belongs to. | 
 **illumina_read_type** | **str** | The read type of the file. Relevant only for files produced using an Illumina sequencing platform. | [optional] 
 **index** | **str** | An Illumina index associated with the file. | [optional] 
-**seqspecs** | **List[object]** | Link(s) to the associated seqspec YAML configuration file(s). | [optional] 
-**strand_specificity** | **str** | The strandedness of the signal file: plus, minus, or unstranded. | [optional] 
+**seqspecs** | [**List[Seqspecs]**](Seqspecs.md) | Link(s) to the associated seqspec YAML configuration file(s). | [optional] 
+**strand_specificity** | **str** | The strandedness of the signal file: plus, minus, or unstranded. | 
 **normalized** | **bool** | Indicates if the signal file is normalized. | [optional] 
 **start_view_position** | **str** | The 0-based coordinate for the default starting position when viewing the signal in a genome browser. | [optional] 
-**samples** | **List[str]** | Samples covered by this institutional certificate. | [optional] 
-**donors** | **List[str]** | Donor(s) the sample was derived from. | [optional] 
-**file_set_type** | **str** | The category that best describes this prediction set. | [optional] 
+**samples** | **List[str]** | Samples covered by this institutional certificate. | 
+**donors** | **List[str]** | Donor(s) the sample was derived from. | 
+**file_set_type** | **str** | The category that best describes this prediction set. | 
 **input_file_sets** | **List[str]** | The file set(s) that served as inputs for the derivation of this model set. | [optional] 
-**files** | **List[object]** | The files associated with this file set. | [optional] 
-**control_for** | **List[object]** | The file sets for which this file set is a control. | [optional] 
+**files** | **List[str]** | The files associated with this file set. | [optional] 
+**control_for** | **List[str]** | The file sets for which this file set is a control. | [optional] 
 **submitted_files_timestamp** | **datetime** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
-**input_file_set_for** | **List[object]** | The Analysis Sets that use this File Set as an input. | [optional] 
+**input_file_set_for** | **List[str]** | The Analysis Sets that use this File Set as an input. | [optional] 
 **assay_titles** | **List[str]** | Title(s) of assays that produced data analyzed in the analysis set. | [optional] 
 **library_construction_platform** | **str** | The platform used to construct the library sequenced in this measurement set. | [optional] 
-**measurement_sets** | **List[object]** | The measurement sets that link to this auxiliary set. | [optional] 
-**small_scale_loci_list** | [**List[Locus]**](Locus.md) | A small scale (&lt;&#x3D;100) list of specific chromosomal region(s). | [optional] 
+**measurement_sets** | [**List[MeasurementSet]**](MeasurementSet.md) | The measurement sets that link to this auxiliary set. | [optional] 
+**small_scale_loci_list** | **List[object]** | A small scale (&lt;&#x3D;100) list of specific chromosomal region(s). | [optional] 
 **large_scale_loci_list** | **str** | A large scale list (&gt;100) of specific chromosomal regions. | [optional] 
 **small_scale_gene_list** | **List[str]** | The specific, small scale list of (&lt;&#x3D;100) gene(s) this prediction set targets. | [optional] 
 **large_scale_gene_list** | **str** | The large scale list of (&gt;100 genes) this this prediction set targets. | [optional] 
-**scope** | **str** | The scope or scale that this prediction set is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. | [optional] 
-**selection_criteria** | **List[str]** | The criteria used to select the sequence material cloned into the library. | [optional] 
+**scope** | **str** | The scope or scale that this prediction set is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. | 
+**selection_criteria** | **List[str]** | The criteria used to select the sequence material cloned into the library. | 
 **integrated_content_files** | **List[str]** | The files containing sequence material of interest either used for insert design or directly cloned into vectors in this library. | [optional] 
 **associated_phenotypes** | **List[str]** | Ontological terms for diseases or phenotypes associated with the sequence material cloned in this construct library. | [optional] 
 **orf_list** | **List[str]** | List of Open Reading Frame this construct library was designed to target. | [optional] 
@@ -147,10 +147,10 @@ Name | Type | Description | Notes
 **average_insert_size** | **float** | The average size of the inserts cloned into vectors in the library. | [optional] 
 **lower_bound_insert_size** | **int** | Lower bound of the size of the inserts cloned in vectors in the library. | [optional] 
 **upper_bound_insert_size** | **int** | Upper bound of the size of the inserts cloned in vectors in the library. | [optional] 
-**applied_to_samples** | **List[object]** | The samples that link to this construct library set. | [optional] 
+**applied_to_samples** | **List[str]** | The samples that link to this construct library set. | [optional] 
 **assemblies** | **List[str]** | The genome assemblies to which the referencing files in the file set are utilizing (e.g., GRCh38). | [optional] 
 **transcriptome_annotations** | **List[str]** | The annotation versions of the reference resource. | [optional] 
-**assay_term** | **str** | The assay used to produce data in this measurement set. | [optional] 
+**assay_term** | **str** | The assay used to produce data in this measurement set. | 
 **protocols** | **List[str]** | Links to the protocol(s) for preparing the samples on Protocols.io. | [optional] 
 **preferred_assay_title** | **str** | The custom lab preferred label for the experiment performed in this measurement set. | [optional] 
 **multiome_size** | **int** | The number of datasets included in the multiome experiment this measurement set is a part of. | [optional] 
@@ -159,35 +159,35 @@ Name | Type | Description | Notes
 **auxiliary_sets** | **List[str]** | The auxiliary sets of files produced alongside raw data from this measurement set. | [optional] 
 **external_image_url** | **str** | Links to the external site where images produced by this measurement are stored. | [optional] 
 **related_multiome_datasets** | **List[str]** | Related datasets included in the multiome experiment this measurement set is a part of. | [optional] 
-**model_name** | **str** | The custom lab name given to this predictive model set. | [optional] 
-**model_version** | **str** | The semantic version number for this predictive model set. | [optional] 
-**prediction_objects** | **List[str]** | The objects this predictive model set is targeting. | [optional] 
+**model_name** | **str** | The custom lab name given to this predictive model set. | 
+**model_version** | **str** | The semantic version number for this predictive model set. | 
+**prediction_objects** | **List[str]** | The objects this predictive model set is targeting. | 
 **model_zoo_location** | **str** | The link to the model on the Kipoi repository. | [optional] 
-**software_version** | **str** | Version of software used for the derivation of this model set. | [optional] 
-**geneid** | **str** | ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix. | [optional] 
-**symbol** | **str** | Gene symbol approved by the official nomenclature. | [optional] 
+**software_version** | **str** | Version of software used for the derivation of this model set. | 
+**geneid** | **str** | ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix. | 
+**symbol** | **str** | Gene symbol approved by the official nomenclature. | 
 **locations** | [**List[GeneLocation]**](GeneLocation.md) | Gene locations specified using 1-based, closed coordinates for different versions of reference genome assemblies. | [optional] 
-**version_number** | **str** | Current ENSEMBL GeneID version number of the gene. | [optional] 
+**version_number** | **str** | Current ENSEMBL GeneID version number of the gene. | 
 **geneid_with_version** | **str** | The ENSEMBL GeneID concatenated with its version number. | [optional] 
 **caption** | **str** | The caption of the image. | [optional] 
 **thumb_nail** | **str** | Image url | [optional] 
 **download_url** | **str** | Download Url | [optional] 
-**certificate_identifier** | **str** | A unique identifier for the certificate. | [optional] 
+**certificate_identifier** | **str** | A unique identifier for the certificate. | 
 **data_use_limitation** | **str** | Code indicating the limitations on data use for data generated from the applicable samples. GRU (General research use): Use of the data is limited only by the terms of the Data Use Certification: these data will be added to the dbGaP Collection. HMB (Health/medical/biomedical): Use of the data is limited to health/medical/biomedical purposes, does not include the study of population origins or ancestry. DS (Disease specific): Use of the data must be related to the specified disease. Other: any other customized limitation. | [optional] 
 **data_use_limitation_modifiers** | **List[str]** | Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community. | [optional] 
-**pi** | **str** | Principle Investigator of the lab. | [optional] 
+**pi** | **str** | Principle Investigator of the lab. | 
 **awards** | **List[str]** | Grants associated with the lab. | [optional] 
-**institute_label** | **str** | An abbreviation for the institute the lab is associated with. | [optional] [default to '']
-**cas** | **str** | The name of the CRISPR associated protein used in the modification. | [optional] 
+**institute_label** | **str** | An abbreviation for the institute the lab is associated with. | [default to '']
+**cas** | **str** | The name of the CRISPR associated protein used in the modification. | 
 **fused_domain** | **str** | The name of the molecule fused to a Cas protein. | [optional] 
-**modality** | **str** | The purpose or intended effect of a CRISPR modification. | [optional] 
+**modality** | **str** | The purpose or intended effect of a CRISPR modification. | 
 **tagged_protein** | **str** | The tagged protein in modifications in which the Cas nuclease is fused to an antibody. | [optional] 
-**cas_species** | **str** | The originating species of the Cas nuclease. | [optional] 
+**cas_species** | **str** | The originating species of the Cas nuclease. | 
 **activated** | **bool** | A boolean indicating whether the modification has been activated by a chemical agent. | [optional] 
 **activating_agent_term_id** | **str** | The CHEBI identifier for the activating agent of the modification. | [optional] 
 **activating_agent_term_name** | **str** | The CHEBI name for the activating agent of the modification. | [optional] 
-**term_id** | **str** | An ontology identifier describing a biological sample | [optional] 
-**term_name** | **str** | Ontology term describing a biological sample, assay, trait, or disease. | [optional] 
+**term_id** | **str** | An ontology identifier describing a biological sample | 
+**term_name** | **str** | Ontology term describing a biological sample, assay, trait, or disease. | 
 **deprecated_ntr_terms** | **List[str]** | A list of deprecated NTR terms previously associated with this ontology term. | [optional] 
 **is_a** | **List[str]** | A list of ontology terms which are the nearest ancestor to this ontology term. | [optional] 
 **preferred_assay_titles** | **List[str]** | The custom lab preferred labels that this assay term may be associated with. | [optional] 
@@ -202,15 +202,15 @@ Name | Type | Description | Notes
 **cell_slims** | **List[str]** | Cells associated with the sample term. | [optional] 
 **developmental_slims** | **List[str]** | Developmental stages associated with the sample term. | [optional] 
 **system_slims** | **List[str]** | Organ systems associated with the sample term. | [optional] 
-**orf_id** | **str** | Open reading frame ID. | [optional] 
+**orf_id** | **str** | Open reading frame ID. | 
 **protein_id** | **str** | ENSEMBL ProteinID of official nomenclature approved protein. The ProteinID does not include the current version number suffix. | [optional] 
 **pct_identical_protein** | **float** | The percentage of identical matches to Ensembl protein. | [optional] 
 **pct_coverage_protein** | **float** | The percentage of ORF covered by Ensembl protein. | [optional] 
 **pct_coverage_orf** | **float** | The percentage of Ensembl protein covered by ORF. | [optional] 
-**parent** | **object** | The parent page associated with this page. | [optional] 
+**parent** | **str** | The parent page associated with this page. | [optional] 
 **layout** | [**PageLayout**](PageLayout.md) |  | [optional] 
 **canonical_uri** | **str** | The path of the page. | [optional] 
-**feature** | **str** | The phenotypic feature observed for the donor. | [optional] 
+**feature** | **str** | The phenotypic feature observed for the donor. | 
 **quantity** | **float** | A quantity associated with the phenotypic feature, if applicable. | [optional] 
 **quantity_units** | **str** | The unit of measurement for a quantity associated with the phenotypic feature. | [optional] 
 **observation_date** | **date** | The date the feature was observed or measured. | [optional] 
@@ -222,12 +222,12 @@ Name | Type | Description | Notes
 **page** | **str** | Pagination of the reference | [optional] 
 **volume** | **str** | The volume of the publication. | [optional] 
 **journal** | **str** | The journal of the publication. | [optional] 
-**published_by** | **List[str]** | The affiliation of the lab with a larger organization, such as IGVF. | [optional] [default to ["IGVF"]]
+**published_by** | **List[str]** | The affiliation of the lab with a larger organization, such as IGVF. | [optional] [default to [IGVF]]
 **publication_year** | **int** | The year the publication was published. | [optional] 
 **lower_bound_age** | **float** | Lower bound of age of the organism at the time of collection of the sample. | [optional] 
 **upper_bound_age** | **float** | Upper bound of age of the organism at the time of collection of the sample. | [optional] 
 **age_units** | **str** | The units of time associated with age of the biosample. | [optional] 
-**sample_terms** | **List[str]** | Ontology terms identifying a biosample. | [optional] [default to ["25d5ad53-15fd-4a44-878a-ece2f7e86509"]]
+**sample_terms** | **List[str]** | Ontology terms identifying a biosample. | [default to [25d5ad53-15fd-4a44-878a-ece2f7e86509]]
 **disease_terms** | **List[str]** | Ontology term of the disease associated with the biosample. | [optional] 
 **pooled_from** | **List[str]** | The biosamples this biosample is pooled from. | [optional] 
 **part_of** | **str** | Links to a biosample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth. | [optional] 
@@ -247,7 +247,7 @@ Name | Type | Description | Notes
 **nucleic_acid_delivery** | **str** | Method of introduction of nucleic acid into the cell. | [optional] 
 **time_post_library_delivery** | **float** | The time that elapsed past the time-point when the construct library sets were introduced. | [optional] 
 **time_post_library_delivery_units** | **str** | The units of time that elapsed past the point when the construct library sets were introduced. | [optional] 
-**classifications** | **List[str]** | The general category of this type of sample. | [optional] 
+**classifications** | **List[str]** | The general category of this type of sample. | 
 **time_post_change** | **float** | The time that elapsed past the time-point when the cell fate change treatments were introduced. | [optional] 
 **time_post_change_units** | **str** | The units of time that elapsed past the point when the cell fate change treatments were introduced. | [optional] 
 **cell_fate_change_treatments** | **List[str]** | A list of treatments applied to the biosample with the purpose of differentiation, dedifferentiation, or reprogramming. | [optional] 
@@ -256,20 +256,20 @@ Name | Type | Description | Notes
 **passage_number** | **int** | Number of passages including the passages from the source. | [optional] 
 **targeted_sample_term** | **str** | Ontology term identifying the targeted endpoint biosample resulting from differentation or reprogramming. | [optional] 
 **growth_medium** | **str** | A growth medium of the in vitro system. | [optional] 
-**file_sets** | **List[object]** | The file sets linked to this sample. | [optional] 
-**multiplexed_in** | **List[object]** | The multiplexed samples in which this sample is included. | [optional] 
-**sorted_fractions** | **List[object]** | The fractions into which this sample has been sorted. | [optional] 
-**origin_of** | **List[object]** | The samples which originate from this sample, such as through a process of cell differentiation. | [optional] 
-**institutional_certificates** | **List[object]** | The institutional certificates under which use of this sample is approved. | [optional] 
+**file_sets** | [**List[FileSet]**](FileSet.md) | The file sets linked to this sample. | [optional] 
+**multiplexed_in** | [**List[MultiplexedIn]**](MultiplexedIn.md) | The multiplexed samples in which this sample is included. | [optional] 
+**sorted_fractions** | [**List[SortedFractionSample]**](SortedFractionSample.md) | The fractions into which this sample has been sorted. | [optional] 
+**origin_of** | [**List[OriginatedSample]**](OriginatedSample.md) | The samples which originate from this sample, such as through a process of cell differentiation. | [optional] 
+**institutional_certificates** | [**List[InstitutionalCertificate]**](InstitutionalCertificate.md) | The institutional certificates under which use of this sample is approved. | [optional] 
 **age** | **str** | Age of organism at the time of collection of the sample. | [optional] 
 **upper_bound_age_in_hours** | **float** | Upper bound of age of organism in hours at the time of collection of the sample. | [optional] 
 **lower_bound_age_in_hours** | **float** | Lower bound of age of organism in hours at the time of collection of the sample . | [optional] 
-**parts** | **List[object]** | The parts into which this sample has been divided. | [optional] 
-**pooled_in** | **List[object]** | The pooled samples in which this sample is included. | [optional] 
-**demultiplexed_to** | **List[object]** | The parts into which this sample has been demultiplexed. | [optional] 
-**multiplexed_samples** | **List[str]** | The samples multiplexed together to produce this sample. | [optional] 
+**parts** | [**List[BiosamplePart]**](BiosamplePart.md) | The parts into which this sample has been divided. | [optional] 
+**pooled_in** | [**List[BiosamplePooledIn]**](BiosamplePooledIn.md) | The pooled samples in which this sample is included. | [optional] 
+**demultiplexed_to** | [**List[DemultiplexedTo]**](DemultiplexedTo.md) | The parts into which this sample has been demultiplexed. | [optional] 
+**multiplexed_samples** | **List[str]** | The samples multiplexed together to produce this sample. | 
 **barcode_sample_map** | **str** | The link to the barcode to sample mapping tabular file. | [optional] 
-**sample_material** | **str** |  | [optional] [default to 'undefined']
+**sample_material** | **str** |  | [default to 'undefined']
 **pmi** | **int** | The amount of time elapsed since death. | [optional] 
 **pmi_units** | **str** | The unit in which the PMI time was reported. | [optional] 
 **ccf_id** | **str** | HubMap Common Coordinate Framework unique identifier corresponding to the organ, biological structure, and spatial location of the tissue specimen. | [optional] 
@@ -285,25 +285,25 @@ Name | Type | Description | Notes
 **duration** | **float** | Duration indicates the time elapsed between the start and end of the treatment. | [optional] 
 **duration_units** | **str** | A unit of time. | [optional] 
 **p_h** | **float** | Final pH of the solution containing a chemical compound (if applicable) | [optional] 
-**purpose** | **str** | The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway. | [optional] 
+**purpose** | **str** | The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway. | 
 **post_treatment_time** | **float** | Post treatment time in conjunction with post treatment time units is used to specify the time that has passed between the point when biosamples were removed from the treatment solution before being sampled or treated with the next treatment. | [optional] 
 **post_treatment_time_units** | **str** | A unit of time. | [optional] 
 **temperature** | **float** | The temperature in Celsius to which the sample was exposed | [optional] 
 **temperature_units** | **str** | A unit of temperature. | [optional] 
-**treatment_type** | **str** | The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness. | [optional] 
+**treatment_type** | **str** | The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness. | 
 **treatment_term_id** | **str** | Ontology identifier describing a component in the treatment. | [optional] 
-**treatment_term_name** | **str** | Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc. | [optional] 
-**depletion** | **bool** | Treatment is depleted. | [optional] 
-**email** | **str** | The email associated with the user&#39;s account. | [optional] 
-**first_name** | **str** | The user&#39;s first (given) name. | [optional] 
-**last_name** | **str** | The user&#39;s last (family) name. | [optional] 
+**treatment_term_name** | **str** | Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc. | 
+**depletion** | **bool** | Treatment is depleted. | 
+**email** | **str** | The email associated with the user&#39;s account. | 
+**first_name** | **str** | The user&#39;s first (given) name. | 
+**last_name** | **str** | The user&#39;s last (family) name. | 
 **submits_for** | **List[str]** | Labs user is authorized to submit data for. | [optional] 
 **groups** | **List[str]** | Additional access control groups | [optional] 
 **viewing_groups** | **List[str]** | The group that determines which set of data the user has permission to view. | [optional] 
 **job_title** | **str** | The role of the user in their lab or organization. | [optional] 
 **workflow_repositories** | **List[str]** | Resources hosting the workflow. | [optional] 
 **standards_page** | **str** | A link to a page describing the standards for this workflow. | [optional] 
-**analysis_steps** | **List[object]** | The analysis steps which are part of this workflow. | [optional] 
+**analysis_steps** | [**List[AnalysisStep]**](AnalysisStep.md) | The analysis steps which are part of this workflow. | [optional] 
 
 ## Example
 

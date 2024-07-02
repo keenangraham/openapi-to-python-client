@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class Award(BaseModel):
     """
-    Award
+    A grant providing financial support for a scientific project. For example, HG012076 supporting \"Single-cell Mapping Center for Human Regulatory Elements and Gene Activity.\"
     """ # noqa: E501
     status: Optional[StrictStr] = Field(default='current', description="The status of the metadata object.")
     url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
@@ -38,13 +38,13 @@ class Award(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    title: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The grant name from the NIH database, if applicable.")
-    name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The official grant number from the NIH database, if applicable")
+    title: Annotated[str, Field(strict=True)] = Field(description="The grant name from the NIH database, if applicable.")
+    name: Annotated[str, Field(strict=True)] = Field(description="The official grant number from the NIH database, if applicable")
     start_date: Optional[date] = Field(default=None, description="The date when the award begins.")
     end_date: Optional[date] = Field(default=None, description="The date when the award concludes.")
     pis: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Principal Investigator(s) of the grant.")
     contact_pi: Optional[StrictStr] = Field(default=None, description="The contact Principal Investigator of the grant.")
-    project: Optional[StrictStr] = Field(default=None, description="The collection of biological data related to a single initiative, originating from a consortium.")
+    project: StrictStr = Field(description="The collection of biological data related to a single initiative, originating from a consortium.")
     viewing_group: Optional[StrictStr] = Field(default=None, description="The group that determines which set of data the user has permission to view.")
     component: Optional[StrictStr] = Field(default=None, description="The project component the award is associated with.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
@@ -105,9 +105,6 @@ class Award(BaseModel):
     @field_validator('title')
     def title_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value
@@ -115,9 +112,6 @@ class Award(BaseModel):
     @field_validator('name')
     def name_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^[A-Za-z0-9\-]+$", value):
             raise ValueError(r"must validate the regular expression /^[A-Za-z0-9\-]+$/")
         return value
@@ -125,9 +119,6 @@ class Award(BaseModel):
     @field_validator('project')
     def project_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['community', 'ENCODE', 'IGVF']):
             raise ValueError("must be one of enum values ('community', 'ENCODE', 'IGVF')")
         return value

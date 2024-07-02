@@ -21,19 +21,23 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
+from openapi_client.models.gene_list_for import GeneListFor
+from openapi_client.models.integrated_in import IntegratedIn
+from openapi_client.models.loci_list_for import LociListFor
+from openapi_client.models.seqspecs import Seqspecs
 from typing import Optional, Set
 from typing_extensions import Self
 
 class SequenceFile(BaseModel):
     """
-    SequenceFile
+    A file containing sequencing results in bam, fastq, or pod5 formats.
     """ # noqa: E501
-    controlled_access: Optional[StrictBool] = Field(default=None, description="Boolean value, indicating the file being controlled access, if true.")
+    controlled_access: StrictBool = Field(description="Boolean value, indicating the file being controlled access, if true.")
     anvil_url: Optional[StrictStr] = Field(default=None, description="URL linking to the controlled access file that has been deposited at AnVIL workspace.")
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -48,14 +52,14 @@ class SequenceFile(BaseModel):
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     content_md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The MD5sum of the uncompressed file.")
-    content_type: Optional[StrictStr] = Field(default=None, description="The type of content in the file.")
+    content_type: StrictStr = Field(description="The type of content in the file.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects.")
     derived_from: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The files participating as inputs into software to produce this output file.")
-    file_format: Optional[StrictStr] = Field(default=None, description="The file format or extension of the file.")
+    file_format: StrictStr = Field(description="The file format or extension of the file.")
     file_format_specifications: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Document that further explains the file format.")
-    file_set: Optional[StrictStr] = Field(default=None, description="The file set that this file belongs to.")
+    file_set: StrictStr = Field(description="The file set that this file belongs to.")
     file_size: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="File size specified in bytes.")
-    md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The md5sum of the file being transferred.")
+    md5sum: Annotated[str, Field(strict=True, max_length=32)] = Field(description="The md5sum of the file being transferred.")
     submitted_file_name: Optional[StrictStr] = Field(default=None, description="Original name of the file.")
     upload_status: Optional[StrictStr] = Field(default='pending', description="The upload/validation status of the file.")
     validation_error_detail: Optional[StrictStr] = Field(default=None, description="Explanation of why the file failed the automated content checks.")
@@ -65,21 +69,21 @@ class SequenceFile(BaseModel):
     minimum_read_length: Optional[Annotated[int, Field(le=300000000, strict=True, ge=0)]] = Field(default=None, description="For high-throughput sequencing, the minimum number of contiguous nucleotides determined by sequencing.")
     maximum_read_length: Optional[Annotated[int, Field(le=300000000, strict=True, ge=0)]] = Field(default=None, description="For high-throughput sequencing, the maximum number of contiguous nucleotides determined by sequencing.")
     mean_read_length: Optional[Union[Annotated[float, Field(le=300000000, strict=True, ge=0)], Annotated[int, Field(le=300000000, strict=True, ge=0)]]] = Field(default=None, description="For high-throughput sequencing, the mean number of contiguous nucleotides determined by sequencing.")
-    sequencing_platform: Optional[StrictStr] = Field(default=None, description="The measurement device used to produce sequencing data.")
+    sequencing_platform: StrictStr = Field(description="The measurement device used to produce sequencing data.")
     sequencing_kit: Optional[StrictStr] = Field(default=None, description="A reagent kit used with a library to prepare it for sequencing.")
-    sequencing_run: Optional[Annotated[int, Field(strict=True, ge=1)]] = Field(default=None, description="An ordinal number indicating which sequencing run of the associated library that the file belongs to.")
+    sequencing_run: Annotated[int, Field(strict=True, ge=1)] = Field(description="An ordinal number indicating which sequencing run of the associated library that the file belongs to.")
     illumina_read_type: Optional[StrictStr] = Field(default=None, description="The read type of the file. Relevant only for files produced using an Illumina sequencing platform.")
     index: Optional[StrictStr] = Field(default=None, description="An Illumina index associated with the file.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
-    integrated_in: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="Construct library set(s) that this file was used for in insert design.")
-    gene_list_for: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="File Set(s) that this file is a gene list for.")
-    loci_list_for: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="File Set(s) that this file is a loci list for.")
+    integrated_in: Optional[Annotated[List[IntegratedIn], Field(min_length=1)]] = Field(default=None, description="Construct library set(s) that this file was used for in insert design.")
+    gene_list_for: Optional[Annotated[List[GeneListFor], Field(min_length=1)]] = Field(default=None, description="File Set(s) that this file is a gene list for.")
+    loci_list_for: Optional[Annotated[List[LociListFor], Field(min_length=1)]] = Field(default=None, description="File Set(s) that this file is a loci list for.")
     href: Optional[StrictStr] = Field(default=None, description="The download path to obtain file.")
     s3_uri: Optional[StrictStr] = Field(default=None, description="The S3 URI of public file object.")
     upload_credentials: Optional[Dict[str, Any]] = Field(default=None, description="The upload credentials for S3 to submit the file content.")
-    seqspecs: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="Link(s) to the associated seqspec YAML configuration file(s).")
+    seqspecs: Optional[Annotated[List[Seqspecs], Field(min_length=1)]] = Field(default=None, description="Link(s) to the associated seqspec YAML configuration file(s).")
     __properties: ClassVar[List[str]] = ["controlled_access", "anvil_url", "release_timestamp", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "content_md5sum", "content_type", "dbxrefs", "derived_from", "file_format", "file_format_specifications", "file_set", "file_size", "md5sum", "submitted_file_name", "upload_status", "validation_error_detail", "flowcell_id", "lane", "read_count", "minimum_read_length", "maximum_read_length", "mean_read_length", "sequencing_platform", "sequencing_kit", "sequencing_run", "illumina_read_type", "index", "@id", "@type", "summary", "integrated_in", "gene_list_for", "loci_list_for", "href", "s3_uri", "upload_credentials", "seqspecs"]
 
     @field_validator('collections')
@@ -166,9 +170,6 @@ class SequenceFile(BaseModel):
     @field_validator('content_type')
     def content_type_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['Nanopore reads', 'PacBio subreads', 'reads']):
             raise ValueError("must be one of enum values ('Nanopore reads', 'PacBio subreads', 'reads')")
         return value
@@ -176,9 +177,6 @@ class SequenceFile(BaseModel):
     @field_validator('file_format')
     def file_format_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['bam', 'fastq', 'pod5']):
             raise ValueError("must be one of enum values ('bam', 'fastq', 'pod5')")
         return value
@@ -186,9 +184,6 @@ class SequenceFile(BaseModel):
     @field_validator('md5sum')
     def md5sum_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"[a-f\d]{32}|[A-F\d]{32}", value):
             raise ValueError(r"must validate the regular expression /[a-f\d]{32}|[A-F\d]{32}/")
         return value
@@ -272,6 +267,34 @@ class SequenceFile(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in integrated_in (list)
+        _items = []
+        if self.integrated_in:
+            for _item in self.integrated_in:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['integrated_in'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in gene_list_for (list)
+        _items = []
+        if self.gene_list_for:
+            for _item in self.gene_list_for:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['gene_list_for'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in loci_list_for (list)
+        _items = []
+        if self.loci_list_for:
+            for _item in self.loci_list_for:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['loci_list_for'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in seqspecs (list)
+        _items = []
+        if self.seqspecs:
+            for _item in self.seqspecs:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['seqspecs'] = _items
         return _dict
 
     @classmethod
@@ -329,13 +352,13 @@ class SequenceFile(BaseModel):
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),
-            "integrated_in": obj.get("integrated_in"),
-            "gene_list_for": obj.get("gene_list_for"),
-            "loci_list_for": obj.get("loci_list_for"),
+            "integrated_in": [IntegratedIn.from_dict(_item) for _item in obj["integrated_in"]] if obj.get("integrated_in") is not None else None,
+            "gene_list_for": [GeneListFor.from_dict(_item) for _item in obj["gene_list_for"]] if obj.get("gene_list_for") is not None else None,
+            "loci_list_for": [LociListFor.from_dict(_item) for _item in obj["loci_list_for"]] if obj.get("loci_list_for") is not None else None,
             "href": obj.get("href"),
             "s3_uri": obj.get("s3_uri"),
             "upload_credentials": obj.get("upload_credentials"),
-            "seqspecs": obj.get("seqspecs")
+            "seqspecs": [Seqspecs.from_dict(_item) for _item in obj["seqspecs"]] if obj.get("seqspecs") is not None else None
         })
         return _obj
 

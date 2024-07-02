@@ -1,5 +1,6 @@
 # OpenReadingFrame
 
+Protein-encoding open reading frames (ORF)
 
 ## Properties
 
@@ -15,10 +16,10 @@ Name | Type | Description | Notes
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**lab** | **str** | Lab associated with the submission. | [optional] 
-**award** | **str** | Grant associated with the submission. | [optional] 
-**orf_id** | **str** | Open reading frame ID. | [optional] 
-**gene** | **List[str]** | ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix. | [optional] 
+**lab** | **str** | Lab associated with the submission. | 
+**award** | **str** | Grant associated with the submission. | 
+**orf_id** | **str** | Open reading frame ID. | 
+**gene** | **List[str]** | ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix. | 
 **protein_id** | **str** | ENSEMBL ProteinID of official nomenclature approved protein. The ProteinID does not include the current version number suffix. | [optional] 
 **dbxrefs** | **List[str]** | Unique identifiers from the hORFeome database | [optional] 
 **pct_identical_protein** | **float** | The percentage of identical matches to Ensembl protein. | [optional] 

@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class User(BaseModel):
     """
-    User
+    A user of IGVF data portal who is a member or affiliate member of IGVF.
     """ # noqa: E501
     status: Optional[StrictStr] = Field(default='current', description="The status of the metadata object.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='5', description="The version of the JSON schema that the server uses to validate the object.")
@@ -37,9 +37,9 @@ class User(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    email: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The email associated with the user's account.")
-    first_name: Optional[StrictStr] = Field(default=None, description="The user's first (given) name.")
-    last_name: Optional[StrictStr] = Field(default=None, description="The user's last (family) name.")
+    email: Annotated[str, Field(strict=True)] = Field(description="The email associated with the user's account.")
+    first_name: StrictStr = Field(description="The user's first (given) name.")
+    last_name: StrictStr = Field(description="The user's last (family) name.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab user is primarily associated with.")
     submits_for: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Labs user is authorized to submit data for.")
     groups: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Additional access control groups")
@@ -104,9 +104,6 @@ class User(BaseModel):
     @field_validator('email')
     def email_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^[^\s@]+@[^\s@]+\.[^\s@]+$", value):
             raise ValueError(r"must validate the regular expression /^[^\s@]+@[^\s@]+\.[^\s@]+$/")
         return value

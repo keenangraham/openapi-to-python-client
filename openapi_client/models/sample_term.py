@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class SampleTerm(BaseModel):
     """
-    SampleTerm
+    An ontology term from Cell Ontology (CL), Cell Line Ontology (CLO), Experimental Factor Ontology (EFO), or Uber-anatomy ontology (UBERON) for biological or technical samples.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
@@ -38,8 +38,8 @@ class SampleTerm(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    term_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="An ontology identifier describing a biological sample")
-    term_name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Ontology term describing a biological sample, assay, trait, or disease.")
+    term_id: Annotated[str, Field(strict=True)] = Field(description="An ontology identifier describing a biological sample")
+    term_name: Annotated[str, Field(strict=True)] = Field(description="Ontology term describing a biological sample, assay, trait, or disease.")
     deprecated_ntr_terms: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="A list of deprecated NTR terms previously associated with this ontology term.")
     is_a: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="A list of ontology terms which are the nearest ancestor to this ontology term.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Sample identifiers from external resources, such as Cellosaurus.")
@@ -109,9 +109,6 @@ class SampleTerm(BaseModel):
     @field_validator('term_id')
     def term_id_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^(UBERON|EFO|CL|CLO|NTR):[0-9]{2,8}$", value):
             raise ValueError(r"must validate the regular expression /^(UBERON|EFO|CL|CLO|NTR):[0-9]{2,8}$/")
         return value
@@ -119,9 +116,6 @@ class SampleTerm(BaseModel):
     @field_validator('term_name')
     def term_name_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^(?![\s\"\'])[\S|\s]*[^\s\"\']$", value):
             raise ValueError(r"must validate the regular expression /^(?![\s\"'])[\S|\s]*[^\s\"']$/")
         return value

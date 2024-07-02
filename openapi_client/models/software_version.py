@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class SoftwareVersion(BaseModel):
     """
-    SoftwareVersion
+    A specific version of a software used for computational analysis. For example, Bowtie2 v2.3.0.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
@@ -49,7 +49,7 @@ class SoftwareVersion(BaseModel):
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
     name: Optional[StrictStr] = Field(default=None, description="A unique identifier for a software version.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "lab", "award", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "software", "version", "download_id", "downloaded_url", "@id", "@type", "summary", "name"]
+    __properties: ClassVar[List[str]] = []
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -162,27 +162,6 @@ class SoftwareVersion(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "release_timestamp": obj.get("release_timestamp"),
-            "publication_identifiers": obj.get("publication_identifiers"),
-            "lab": obj.get("lab"),
-            "award": obj.get("award"),
-            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '5',
-            "uuid": obj.get("uuid"),
-            "notes": obj.get("notes"),
-            "aliases": obj.get("aliases"),
-            "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": obj.get("submitted_by"),
-            "submitter_comment": obj.get("submitter_comment"),
-            "description": obj.get("description"),
-            "software": obj.get("software"),
-            "version": obj.get("version"),
-            "download_id": obj.get("download_id"),
-            "downloaded_url": obj.get("downloaded_url"),
-            "@id": obj.get("@id"),
-            "@type": obj.get("@type"),
-            "summary": obj.get("summary"),
-            "name": obj.get("name")
         })
         return _obj
 

@@ -27,13 +27,13 @@ from typing_extensions import Self
 
 class Document(BaseModel):
     """
-    Document
+    A document with additional information regarding another object submitted to the data portal. For example, a plasmid map document associated with a transduced cell line sample.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
-    attachment: Optional[Attachment] = None
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
+    attachment: Attachment
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
@@ -41,13 +41,14 @@ class Document(BaseModel):
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
-    description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    document_type: Optional[StrictStr] = Field(default=None, description="The category that best describes the document.")
+    description: Annotated[str, Field(strict=True)] = Field(description="A plain text description of the object.")
+    document_type: StrictStr = Field(description="The category that best describes the document.")
     characterization_method: Optional[StrictStr] = Field(default=None, description="The method used for the characterization.")
     urls: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="External resources with additional information to the document.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["release_timestamp", "status", "lab", "award", "attachment", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "document_type", "characterization_method", "urls", "@id", "@type", "summary"]
 
     @field_validator('status')
@@ -93,9 +94,6 @@ class Document(BaseModel):
     @field_validator('description')
     def description_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value
@@ -103,9 +101,6 @@ class Document(BaseModel):
     @field_validator('document_type')
     def document_type_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['cell fate change protocol', 'characterization', 'computational protocol', 'experimental protocol', 'file format specification', 'image', 'plate map', 'plasmid map', 'plasmid sequence', 'standards']):
             raise ValueError("must be one of enum values ('cell fate change protocol', 'characterization', 'computational protocol', 'experimental protocol', 'file format specification', 'image', 'plate map', 'plasmid map', 'plasmid sequence', 'standards')")
         return value
@@ -150,8 +145,10 @@ class Document(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -162,6 +159,11 @@ class Document(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of attachment
         if self.attachment:
             _dict['attachment'] = self.attachment.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -194,6 +196,11 @@ class Document(BaseModel):
             "@type": obj.get("@type"),
             "summary": obj.get("summary")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

@@ -27,7 +27,7 @@ from typing_extensions import Self
 
 class Page(BaseModel):
     """
-    Page
+    A page on the IGVF portal.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
@@ -41,14 +41,15 @@ class Page(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    parent: Optional[Any] = Field(default=None, description="The parent page associated with this page.")
-    name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The name shown in this page's URL.")
-    title: Optional[StrictStr] = Field(default=None, description="The name shown in the browser's title bar and tabs.")
+    parent: Optional[StrictStr] = Field(default=None, description="The parent page associated with this page.")
+    name: Annotated[str, Field(strict=True)] = Field(description="The name shown in this page's URL.")
+    title: StrictStr = Field(description="The name shown in the browser's title bar and tabs.")
     layout: Optional[PageLayout] = None
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
     canonical_uri: Optional[StrictStr] = Field(default=None, description="The path of the page.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["release_timestamp", "lab", "award", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "parent", "name", "title", "layout", "@id", "@type", "summary", "canonical_uri"]
 
     @field_validator('status')
@@ -104,9 +105,6 @@ class Page(BaseModel):
     @field_validator('name')
     def name_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^[a-z0-9_-]+$", value):
             raise ValueError(r"must validate the regular expression /^[a-z0-9_-]+$/")
         return value
@@ -141,8 +139,10 @@ class Page(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -153,10 +153,10 @@ class Page(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of layout
         if self.layout:
             _dict['layout'] = self.layout.to_dict()
-        # set to None if parent (nullable) is None
-        # and model_fields_set contains the field
-        if self.parent is None and "parent" in self.model_fields_set:
-            _dict['parent'] = None
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
 
         return _dict
 
@@ -191,6 +191,11 @@ class Page(BaseModel):
             "summary": obj.get("summary"),
             "canonical_uri": obj.get("canonical_uri")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

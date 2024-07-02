@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class Modification(BaseModel):
     """
-    Modification
+    A genetic modification altering sample genomic material. For example, CRISPRi dCas9-KRAB modification.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     sources: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
@@ -34,8 +34,8 @@ class Modification(BaseModel):
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product or catalog identifier provided following deposition to addgene.org.")
     documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='6', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
@@ -44,11 +44,11 @@ class Modification(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    cas: Optional[StrictStr] = Field(default=None, description="The name of the CRISPR associated protein used in the modification.")
+    cas: StrictStr = Field(description="The name of the CRISPR associated protein used in the modification.")
     fused_domain: Optional[StrictStr] = Field(default=None, description="The name of the molecule fused to a Cas protein.")
-    modality: Optional[StrictStr] = Field(default=None, description="The purpose or intended effect of a CRISPR modification.")
+    modality: StrictStr = Field(description="The purpose or intended effect of a CRISPR modification.")
     tagged_protein: Optional[StrictStr] = Field(default=None, description="The tagged protein in modifications in which the Cas nuclease is fused to an antibody.")
-    cas_species: Optional[StrictStr] = Field(default=None, description="The originating species of the Cas nuclease.")
+    cas_species: StrictStr = Field(description="The originating species of the Cas nuclease.")
     activated: Optional[StrictBool] = Field(default=None, description="A boolean indicating whether the modification has been activated by a chemical agent.")
     activating_agent_term_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The CHEBI identifier for the activating agent of the modification.")
     activating_agent_term_name: Optional[StrictStr] = Field(default=None, description="The CHEBI name for the activating agent of the modification.")
@@ -130,9 +130,6 @@ class Modification(BaseModel):
     @field_validator('cas')
     def cas_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['Cas9', 'Cas12a', 'Cas13', 'dCas9', 'nCas9', 'SpG', 'SpRY']):
             raise ValueError("must be one of enum values ('Cas9', 'Cas12a', 'Cas13', 'dCas9', 'nCas9', 'SpG', 'SpRY')")
         return value
@@ -150,9 +147,6 @@ class Modification(BaseModel):
     @field_validator('modality')
     def modality_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['activation', 'base editing', 'cutting', 'interference', 'knockout', 'localizing', 'prime editing']):
             raise ValueError("must be one of enum values ('activation', 'base editing', 'cutting', 'interference', 'knockout', 'localizing', 'prime editing')")
         return value
@@ -160,9 +154,6 @@ class Modification(BaseModel):
     @field_validator('cas_species')
     def cas_species_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['Streptococcus pyogenes (Sp)', 'Staphylococcus aureus (Sa)', 'Campylobacter jejuni (Cj)', 'Neisseria meningitidis (Nm)']):
             raise ValueError("must be one of enum values ('Streptococcus pyogenes (Sp)', 'Staphylococcus aureus (Sa)', 'Campylobacter jejuni (Cj)', 'Neisseria meningitidis (Nm)')")
         return value

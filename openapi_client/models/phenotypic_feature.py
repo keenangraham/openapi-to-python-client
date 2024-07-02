@@ -26,12 +26,12 @@ from typing_extensions import Self
 
 class PhenotypicFeature(BaseModel):
     """
-    PhenotypicFeature
+    A phenotypic feature of a donor the sample is coming from. For example, the donor’s height measured at the time of sample collection.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='3', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
@@ -40,7 +40,7 @@ class PhenotypicFeature(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    feature: Optional[StrictStr] = Field(default=None, description="The phenotypic feature observed for the donor.")
+    feature: StrictStr = Field(description="The phenotypic feature observed for the donor.")
     quantity: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="A quantity associated with the phenotypic feature, if applicable.")
     quantity_units: Optional[StrictStr] = Field(default=None, description="The unit of measurement for a quantity associated with the phenotypic feature.")
     observation_date: Optional[date] = Field(default=None, description="The date the feature was observed or measured.")

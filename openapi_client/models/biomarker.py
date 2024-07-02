@@ -26,12 +26,12 @@ from typing_extensions import Self
 
 class Biomarker(BaseModel):
     """
-    Biomarker
+    A biomarker, such as a cell surface protein, that is measured, detected, or used for sample sorting based upon the biomarker's presence, absence, or quantification. For example, a CD19 positive biomarker that was detected in a sample.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
@@ -40,9 +40,9 @@ class Biomarker(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    name: Optional[StrictStr] = Field(default=None, description="The biomarker name.")
+    name: StrictStr = Field(description="The biomarker name.")
     classification: Optional[StrictStr] = Field(default=None, description="Sample specific biomarker.")
-    quantification: Optional[StrictStr] = Field(default=None, description="The biomarker association to the biosample, disease or other condition.  This can be the absence of the biomarker or the presence of the biomarker in some low, intermediate or high quantity.")
+    quantification: StrictStr = Field(description="The biomarker association to the biosample, disease or other condition.  This can be the absence of the biomarker or the presence of the biomarker in some low, intermediate or high quantity.")
     synonyms: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Alternate names for this biomarker.")
     gene: Optional[StrictStr] = Field(default=None, description="Biomarker gene.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
@@ -114,9 +114,6 @@ class Biomarker(BaseModel):
     @field_validator('quantification')
     def quantification_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['negative', 'positive', 'low', 'intermediate', 'high']):
             raise ValueError("must be one of enum values ('negative', 'positive', 'low', 'intermediate', 'high')")
         return value

@@ -1,5 +1,6 @@
 # AuxiliarySet
 
+A file set for auxiliary raw data files that were produced alongside raw data files from a measurement set. For example, in a CRISPR screen experiment the measurement set would capture the result of single-cell transcript sequencing and the auxiliary set the result of gRNA sequencing with the associated cellular barcodes.
 
 ## Properties
 
@@ -8,8 +9,8 @@ Name | Type | Description | Notes
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
-**lab** | **str** | Lab associated with the submission. | [optional] 
-**award** | **str** | Grant associated with the submission. | [optional] 
+**lab** | **str** | Lab associated with the submission. | 
+**award** | **str** | Grant associated with the submission. | 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -27,16 +28,16 @@ Name | Type | Description | Notes
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets. | [optional] 
 **samples** | **List[str]** | The sample(s) associated with this file set. | [optional] 
 **donors** | **List[str]** | The donors of the samples associated with this auxiliary set. | [optional] 
-**file_set_type** | **str** | The category that best describes this auxiliary file set. | [optional] 
+**file_set_type** | **str** | The category that best describes this auxiliary file set. | 
 **library_construction_platform** | **str** | The platform used to construct the library sequenced in this auxiliary set. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
-**files** | **List[object]** | The files associated with this file set. | [optional] 
-**control_for** | **List[object]** | The file sets for which this file set is a control. | [optional] 
+**files** | [**List[File]**](File.md) | The files associated with this file set. | [optional] 
+**control_for** | [**List[FileSetControlledByThisFileSet]**](FileSetControlledByThisFileSet.md) | The file sets for which this file set is a control. | [optional] 
 **submitted_files_timestamp** | **datetime** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
-**input_file_set_for** | **List[object]** | The Analysis Sets that use this File Set as an input. | [optional] 
-**measurement_sets** | **List[object]** | The measurement sets that link to this auxiliary set. | [optional] 
+**input_file_set_for** | [**List[InputFileSetFor]**](InputFileSetFor.md) | The Analysis Sets that use this File Set as an input. | [optional] 
+**measurement_sets** | [**List[MeasurementSet]**](MeasurementSet.md) | The measurement sets that link to this auxiliary set. | [optional] 
 
 ## Example
 

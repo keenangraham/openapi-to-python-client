@@ -1,5 +1,6 @@
 # Biomarker
 
+A biomarker, such as a cell surface protein, that is measured, detected, or used for sample sorting based upon the biomarker's presence, absence, or quantification. For example, a CD19 positive biomarker that was detected in a sample.
 
 ## Properties
 
@@ -7,8 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
-**lab** | **str** | Lab associated with the submission. | [optional] 
-**award** | **str** | Grant associated with the submission. | [optional] 
+**lab** | **str** | Lab associated with the submission. | 
+**award** | **str** | Grant associated with the submission. | 
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '4']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
@@ -17,9 +18,9 @@ Name | Type | Description | Notes
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**name** | **str** | The biomarker name. | [optional] 
+**name** | **str** | The biomarker name. | 
 **classification** | **str** | Sample specific biomarker. | [optional] 
-**quantification** | **str** | The biomarker association to the biosample, disease or other condition.  This can be the absence of the biomarker or the presence of the biomarker in some low, intermediate or high quantity. | [optional] 
+**quantification** | **str** | The biomarker association to the biosample, disease or other condition.  This can be the absence of the biomarker or the presence of the biomarker in some low, intermediate or high quantity. | 
 **synonyms** | **List[str]** | Alternate names for this biomarker. | [optional] 
 **gene** | **str** | Biomarker gene. | [optional] 
 **id** | **str** |  | [optional] 

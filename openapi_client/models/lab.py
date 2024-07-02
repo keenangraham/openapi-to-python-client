@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class Lab(BaseModel):
     """
-    Lab
+    A lab that is part of or affiliated with the IGVF consortium.
     """ # noqa: E501
     status: Optional[StrictStr] = Field(default='current', description="The status of the metadata object.")
     url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
@@ -38,10 +38,10 @@ class Lab(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A short unique name for the lab, current convention is lower cased and hyphen delimited of PI's first and last name (e.g. john-doe).")
-    pi: Optional[StrictStr] = Field(default=None, description="Principle Investigator of the lab.")
+    name: Annotated[str, Field(strict=True)] = Field(description="A short unique name for the lab, current convention is lower cased and hyphen delimited of PI's first and last name (e.g. john-doe).")
+    pi: StrictStr = Field(description="Principle Investigator of the lab.")
     awards: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Grants associated with the lab.")
-    institute_label: Optional[Annotated[str, Field(strict=True)]] = Field(default='', description="An abbreviation for the institute the lab is associated with.")
+    institute_label: Annotated[str, Field(strict=True)] = Field(description="An abbreviation for the institute the lab is associated with.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
@@ -101,9 +101,6 @@ class Lab(BaseModel):
     @field_validator('name')
     def name_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^[a-z0-9\-]+$", value):
             raise ValueError(r"must validate the regular expression /^[a-z0-9\-]+$/")
         return value
@@ -111,9 +108,6 @@ class Lab(BaseModel):
     @field_validator('institute_label')
     def institute_label_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^(\S+(\s|\S)*\S+|\S)$|^$", value):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$|^$/")
         return value

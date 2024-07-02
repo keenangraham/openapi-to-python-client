@@ -26,11 +26,11 @@ from typing_extensions import Self
 
 class Treatment(BaseModel):
     """
-    Treatment
+    A protein or chemical treatment applied to samples such as lipopolysaccharide, interleukin-2, or leucine.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
     sources: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
     lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product identifier provided by the originating lab or vendor.")
@@ -49,15 +49,15 @@ class Treatment(BaseModel):
     duration: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Duration indicates the time elapsed between the start and end of the treatment.")
     duration_units: Optional[StrictStr] = Field(default=None, description="A unit of time.")
     p_h: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Final pH of the solution containing a chemical compound (if applicable)", alias="pH")
-    purpose: Optional[StrictStr] = Field(default=None, description="The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway.")
+    purpose: StrictStr = Field(description="The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway.")
     post_treatment_time: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Post treatment time in conjunction with post treatment time units is used to specify the time that has passed between the point when biosamples were removed from the treatment solution before being sampled or treated with the next treatment.")
     post_treatment_time_units: Optional[StrictStr] = Field(default=None, description="A unit of time.")
     temperature: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The temperature in Celsius to which the sample was exposed")
     temperature_units: Optional[StrictStr] = Field(default=None, description="A unit of temperature.")
-    treatment_type: Optional[StrictStr] = Field(default=None, description="The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness.")
+    treatment_type: StrictStr = Field(description="The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness.")
     treatment_term_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Ontology identifier describing a component in the treatment.")
-    treatment_term_name: Optional[StrictStr] = Field(default=None, description="Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc.")
-    depletion: Optional[StrictBool] = Field(default=None, description="Treatment is depleted.")
+    treatment_term_name: StrictStr = Field(description="Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc.")
+    depletion: StrictBool = Field(description="Treatment is depleted.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = None
@@ -156,9 +156,6 @@ class Treatment(BaseModel):
     @field_validator('purpose')
     def purpose_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['activation', 'agonist', 'antagonist', 'control', 'differentiation', 'de-differentiation', 'perturbation', 'selection', 'stimulation']):
             raise ValueError("must be one of enum values ('activation', 'agonist', 'antagonist', 'control', 'differentiation', 'de-differentiation', 'perturbation', 'selection', 'stimulation')")
         return value
@@ -186,9 +183,6 @@ class Treatment(BaseModel):
     @field_validator('treatment_type')
     def treatment_type_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['chemical', 'protein', 'environmental']):
             raise ValueError("must be one of enum values ('chemical', 'protein', 'environmental')")
         return value

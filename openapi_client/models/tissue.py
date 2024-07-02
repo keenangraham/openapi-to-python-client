@@ -21,23 +21,30 @@ from datetime import date, datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
+from openapi_client.models.biosample_part import BiosamplePart
+from openapi_client.models.biosample_pooled_in import BiosamplePooledIn
+from openapi_client.models.file_set import FileSet
+from openapi_client.models.institutional_certificate import InstitutionalCertificate
+from openapi_client.models.multiplexed_in import MultiplexedIn
+from openapi_client.models.originated_sample import OriginatedSample
+from openapi_client.models.sorted_fraction_sample import SortedFractionSample
 from typing import Optional, Set
 from typing_extensions import Self
 
 class Tissue(BaseModel):
     """
-    Tissue
+    A biosample that is directly harvested from a donor, typically a dissection from an organ.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     taxa: Optional[StrictStr] = Field(default=None, description="The species of the organism.")
     url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
-    sources: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
+    sources: Annotated[List[StrictStr], Field(min_length=1, max_length=1)] = Field(description="The originating lab(s) or vendor(s).")
     lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product identifier provided by the originating lab or vendor.")
     documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -54,13 +61,13 @@ class Tissue(BaseModel):
     lower_bound_age: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Lower bound of age of the organism at the time of collection of the sample.")
     upper_bound_age: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Upper bound of age of the organism at the time of collection of the sample.")
     age_units: Optional[StrictStr] = Field(default=None, description="The units of time associated with age of the biosample.")
-    sample_terms: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="Ontology terms identifying a biosample.")
+    sample_terms: Annotated[List[StrictStr], Field(min_length=1, max_length=1)] = Field(description="Ontology terms identifying a biosample.")
     disease_terms: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Ontology term of the disease associated with the biosample.")
     pooled_from: Optional[Annotated[List[StrictStr], Field(min_length=2)]] = Field(default=None, description="The biosamples this biosample is pooled from.")
     part_of: Optional[StrictStr] = Field(default=None, description="Links to a biosample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth.")
     originated_from: Optional[StrictStr] = Field(default=None, description="Links to a biosample that was originated from due to differentiation, dedifferentiation, reprogramming, or the introduction of a genetic modification.")
     treatments: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="A list of treatments applied to the biosample with the purpose of perturbation.")
-    donors: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Donor(s) the sample was derived from.")
+    donors: Annotated[List[StrictStr], Field(min_length=1)] = Field(description="Donor(s) the sample was derived from.")
     biomarkers: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Biological markers that are associated with this sample.")
     embryonic: Optional[StrictBool] = Field(default=None, description="Biosample is embryonic.")
     modifications: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=2)]] = Field(default=None, description="Links to modifications applied to this biosample.")
@@ -85,17 +92,17 @@ class Tissue(BaseModel):
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the sample.")
-    file_sets: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The file sets linked to this sample.")
-    multiplexed_in: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The multiplexed samples in which this sample is included.")
-    sorted_fractions: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The fractions into which this sample has been sorted.")
-    origin_of: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The samples which originate from this sample, such as through a process of cell differentiation.")
-    institutional_certificates: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The institutional certificates under which use of this sample is approved.")
+    file_sets: Optional[Annotated[List[FileSet], Field(min_length=1)]] = Field(default=None, description="The file sets linked to this sample.")
+    multiplexed_in: Optional[Annotated[List[MultiplexedIn], Field(min_length=1)]] = Field(default=None, description="The multiplexed samples in which this sample is included.")
+    sorted_fractions: Optional[Annotated[List[SortedFractionSample], Field(min_length=1)]] = Field(default=None, description="The fractions into which this sample has been sorted.")
+    origin_of: Optional[Annotated[List[OriginatedSample], Field(min_length=1)]] = Field(default=None, description="The samples which originate from this sample, such as through a process of cell differentiation.")
+    institutional_certificates: Optional[Annotated[List[InstitutionalCertificate], Field(min_length=1)]] = Field(default=None, description="The institutional certificates under which use of this sample is approved.")
     sex: Optional[StrictStr] = None
     age: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Age of organism at the time of collection of the sample.")
     upper_bound_age_in_hours: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Upper bound of age of organism in hours at the time of collection of the sample.")
     lower_bound_age_in_hours: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Lower bound of age of organism in hours at the time of collection of the sample .")
-    parts: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The parts into which this sample has been divided.")
-    pooled_in: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The pooled samples in which this sample is included.")
+    parts: Optional[Annotated[List[BiosamplePart], Field(min_length=1)]] = Field(default=None, description="The parts into which this sample has been divided.")
+    pooled_in: Optional[Annotated[List[BiosamplePooledIn], Field(min_length=1)]] = Field(default=None, description="The pooled samples in which this sample is included.")
     classifications: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The general category of this type of sample.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "taxa", "url", "sources", "lot_id", "product_id", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "lower_bound_age", "upper_bound_age", "age_units", "sample_terms", "disease_terms", "pooled_from", "part_of", "originated_from", "treatments", "donors", "biomarkers", "embryonic", "modifications", "cellular_sub_pool", "starting_amount", "starting_amount_units", "dbxrefs", "date_obtained", "sorted_from", "sorted_from_detail", "virtual", "construct_library_sets", "moi", "nucleic_acid_delivery", "time_post_library_delivery", "time_post_library_delivery_units", "protocols", "pmi", "pmi_units", "ccf_id", "preservation_method", "@id", "@type", "summary", "file_sets", "multiplexed_in", "sorted_fractions", "origin_of", "institutional_certificates", "sex", "age", "upper_bound_age_in_hours", "lower_bound_age_in_hours", "parts", "pooled_in", "classifications"]
 
@@ -329,6 +336,55 @@ class Tissue(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in file_sets (list)
+        _items = []
+        if self.file_sets:
+            for _item in self.file_sets:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['file_sets'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in multiplexed_in (list)
+        _items = []
+        if self.multiplexed_in:
+            for _item in self.multiplexed_in:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['multiplexed_in'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in sorted_fractions (list)
+        _items = []
+        if self.sorted_fractions:
+            for _item in self.sorted_fractions:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['sorted_fractions'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in origin_of (list)
+        _items = []
+        if self.origin_of:
+            for _item in self.origin_of:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['origin_of'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in institutional_certificates (list)
+        _items = []
+        if self.institutional_certificates:
+            for _item in self.institutional_certificates:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['institutional_certificates'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in parts (list)
+        _items = []
+        if self.parts:
+            for _item in self.parts:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['parts'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in pooled_in (list)
+        _items = []
+        if self.pooled_in:
+            for _item in self.pooled_in:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['pooled_in'] = _items
         return _dict
 
     @classmethod
@@ -398,17 +454,17 @@ class Tissue(BaseModel):
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),
-            "file_sets": obj.get("file_sets"),
-            "multiplexed_in": obj.get("multiplexed_in"),
-            "sorted_fractions": obj.get("sorted_fractions"),
-            "origin_of": obj.get("origin_of"),
-            "institutional_certificates": obj.get("institutional_certificates"),
+            "file_sets": [FileSet.from_dict(_item) for _item in obj["file_sets"]] if obj.get("file_sets") is not None else None,
+            "multiplexed_in": [MultiplexedIn.from_dict(_item) for _item in obj["multiplexed_in"]] if obj.get("multiplexed_in") is not None else None,
+            "sorted_fractions": [SortedFractionSample.from_dict(_item) for _item in obj["sorted_fractions"]] if obj.get("sorted_fractions") is not None else None,
+            "origin_of": [OriginatedSample.from_dict(_item) for _item in obj["origin_of"]] if obj.get("origin_of") is not None else None,
+            "institutional_certificates": [InstitutionalCertificate.from_dict(_item) for _item in obj["institutional_certificates"]] if obj.get("institutional_certificates") is not None else None,
             "sex": obj.get("sex"),
             "age": obj.get("age"),
             "upper_bound_age_in_hours": obj.get("upper_bound_age_in_hours"),
             "lower_bound_age_in_hours": obj.get("lower_bound_age_in_hours"),
-            "parts": obj.get("parts"),
-            "pooled_in": obj.get("pooled_in"),
+            "parts": [BiosamplePart.from_dict(_item) for _item in obj["parts"]] if obj.get("parts") is not None else None,
+            "pooled_in": [BiosamplePooledIn.from_dict(_item) for _item in obj["pooled_in"]] if obj.get("pooled_in") is not None else None,
             "classifications": obj.get("classifications")
         })
         return _obj

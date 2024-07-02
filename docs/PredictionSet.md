@@ -1,11 +1,12 @@
 # PredictionSet
 
+A file set of computational predictions. Prediction sets contain results of analyses to predict functions or traits of genomic features.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**small_scale_loci_list** | [**List[Locus]**](Locus.md) | A small scale (&lt;&#x3D;100) list of specific chromosomal region(s). | [optional] 
+**small_scale_loci_list** | **List[object]** | A small scale (&lt;&#x3D;100) list of specific chromosomal region(s). | [optional] 
 **large_scale_loci_list** | **str** | A large scale list (&gt;100) of specific chromosomal regions. | [optional] 
 **small_scale_gene_list** | **List[str]** | The specific, small scale list of (&lt;&#x3D;100) gene(s) this prediction set targets. | [optional] 
 **large_scale_gene_list** | **str** | The large scale list of (&gt;100 genes) this this prediction set targets. | [optional] 
@@ -36,10 +37,10 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 
-**files** | **List[object]** | The files associated with this file set. | [optional] 
-**control_for** | **List[object]** | The file sets for which this file set is a control. | [optional] 
+**files** | **List[str]** | The files associated with this file set. | [optional] 
+**control_for** | **List[str]** | The file sets for which this file set is a control. | [optional] 
 **submitted_files_timestamp** | **datetime** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
-**input_file_set_for** | **List[object]** | The Analysis Sets that use this File Set as an input. | [optional] 
+**input_file_set_for** | **List[str]** | The Analysis Sets that use this File Set as an input. | [optional] 
 
 ## Example
 

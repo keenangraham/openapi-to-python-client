@@ -26,18 +26,18 @@ from typing_extensions import Self
 
 class RodentDonor(BaseModel):
     """
-    RodentDonor
+    A rodent donor of a biosample. Submission of any sample originating from a rodent donor requires submission of information about the relevant donor. The rodent donor can be a generic representative of an inbred strain, or a unique, individual mouse. For example, submission of a B6 mouse donor is a prerequisite for submission of any B6 mouse samples.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    taxa: Optional[StrictStr] = Field(default=None, description="The species of the organism.")
+    taxa: StrictStr = Field(description="The species of the organism.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
     sources: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
     lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product identifier provided by the originating lab or vendor.")
     documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -52,11 +52,11 @@ class RodentDonor(BaseModel):
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF donors.")
-    sex: Optional[StrictStr] = Field(default='unspecified', description="Sex of the donor.")
+    sex: StrictStr = Field(description="Sex of the donor.")
     phenotypic_features: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="A list of associated phenotypic features of the donor.")
     virtual: Optional[StrictBool] = Field(default=False, description="Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for.")
     strain_background: Optional[StrictStr] = Field(default=None, description="The specific parent strain designation of a non-human donor.")
-    strain: Optional[StrictStr] = Field(default=None, description="The specific strain designation of a non-human donor.")
+    strain: StrictStr = Field(description="The specific strain designation of a non-human donor.")
     genotype: Optional[StrictStr] = Field(default=None, description="The genotype of the strain according to accepted nomenclature conventions.")
     individual_rodent: Optional[StrictBool] = Field(default=False, description="This rodent donor represents an individual rodent.")
     rodent_identifier: Optional[StrictStr] = Field(default=None, description="The identifier for this individual rodent donor.")
@@ -68,9 +68,6 @@ class RodentDonor(BaseModel):
     @field_validator('taxa')
     def taxa_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['Mus musculus']):
             raise ValueError("must be one of enum values ('Mus musculus')")
         return value
@@ -169,9 +166,6 @@ class RodentDonor(BaseModel):
     @field_validator('sex')
     def sex_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['male', 'female', 'unspecified']):
             raise ValueError("must be one of enum values ('male', 'female', 'unspecified')")
         return value

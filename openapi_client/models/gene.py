@@ -27,11 +27,11 @@ from typing_extensions import Self
 
 class Gene(BaseModel):
     """
-    Gene
+    A gene in the human or mouse genomes. The genes objects in IGVF are imported from GENCODE.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    transcriptome_annotation: Optional[StrictStr] = Field(default=None, description="The annotation and version of the reference resource.")
-    taxa: Optional[StrictStr] = Field(default=None, description="The species of the organism.")
+    transcriptome_annotation: StrictStr = Field(description="The annotation and version of the reference resource.")
+    taxa: StrictStr = Field(description="The species of the organism.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='9', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
@@ -41,26 +41,24 @@ class Gene(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    geneid: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix.")
-    symbol: Optional[StrictStr] = Field(default=None, description="Gene symbol approved by the official nomenclature.")
+    geneid: Annotated[str, Field(strict=True)] = Field(description="ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix.")
+    symbol: StrictStr = Field(description="Gene symbol approved by the official nomenclature.")
     name: Optional[StrictStr] = Field(default=None, description="The full gene name preferably approved by the official nomenclature.")
     synonyms: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Alternative symbols that have been used to refer to the gene.")
-    dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Unique identifiers from external resources.")
+    dbxrefs: Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)] = Field(description="Unique identifiers from external resources.")
     locations: Optional[Annotated[List[GeneLocation], Field(min_length=1)]] = Field(default=None, description="Gene locations specified using 1-based, closed coordinates for different versions of reference genome assemblies.")
-    version_number: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Current ENSEMBL GeneID version number of the gene.")
+    version_number: Annotated[str, Field(strict=True)] = Field(description="Current ENSEMBL GeneID version number of the gene.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
     title: Optional[StrictStr] = None
     geneid_with_version: Optional[StrictStr] = Field(default=None, description="The ENSEMBL GeneID concatenated with its version number.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["release_timestamp", "transcriptome_annotation", "taxa", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "geneid", "symbol", "name", "synonyms", "dbxrefs", "locations", "version_number", "@id", "@type", "summary", "title", "geneid_with_version"]
 
     @field_validator('transcriptome_annotation')
     def transcriptome_annotation_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['GENCODE 40', 'GENCODE 41', 'GENCODE 42', 'GENCODE 43', 'GENCODE 44', 'GENCODE 45', 'GENCODE M30', 'GENCODE M31', 'GENCODE M32', 'GENCODE M33', 'GENCODE M34']):
             raise ValueError("must be one of enum values ('GENCODE 40', 'GENCODE 41', 'GENCODE 42', 'GENCODE 43', 'GENCODE 44', 'GENCODE 45', 'GENCODE M30', 'GENCODE M31', 'GENCODE M32', 'GENCODE M33', 'GENCODE M34')")
         return value
@@ -68,9 +66,6 @@ class Gene(BaseModel):
     @field_validator('taxa')
     def taxa_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['Homo sapiens', 'Mus musculus']):
             raise ValueError("must be one of enum values ('Homo sapiens', 'Mus musculus')")
         return value
@@ -128,9 +123,6 @@ class Gene(BaseModel):
     @field_validator('geneid')
     def geneid_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^ENS[A-Z]*G\d{11}(_PAR_Y)?$", value):
             raise ValueError(r"must validate the regular expression /^ENS[A-Z]*G\d{11}(_PAR_Y)?$/")
         return value
@@ -138,9 +130,6 @@ class Gene(BaseModel):
     @field_validator('version_number')
     def version_number_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^\d+?", value):
             raise ValueError(r"must validate the regular expression /^\d+?/")
         return value
@@ -175,8 +164,10 @@ class Gene(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -191,6 +182,11 @@ class Gene(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['locations'] = _items
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -228,6 +224,11 @@ class Gene(BaseModel):
             "title": obj.get("title"),
             "geneid_with_version": obj.get("geneid_with_version")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

@@ -1,5 +1,6 @@
 # ConstructLibrarySet
 
+A file set containing raw data files resulting from sequencing of the library delivered to the sample. For example, a guide RNA library.
 
 ## Properties
 
@@ -15,8 +16,8 @@ Name | Type | Description | Notes
 **sources** | **List[str]** | The originating lab(s) or vendor(s). | [optional] 
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 
 **product_id** | **str** | The product or catalog identifier provided following deposition to addgene.org. | [optional] 
-**lab** | **str** | Lab associated with the submission. | [optional] 
-**award** | **str** | Grant associated with the submission. | [optional] 
+**lab** | **str** | Lab associated with the submission. | 
+**award** | **str** | Grant associated with the submission. | 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -30,9 +31,9 @@ Name | Type | Description | Notes
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**file_set_type** | **str** | The type or category of this construct library set. | [optional] 
-**scope** | **str** | The scope or scale that this construct library is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. If exon is specified, an exon identifier and the associated gene will need to be listed in exon and genes properties. If tile is specified, a tile identifier, start and stop coordinates, and the associated gene will need to be listed in tile and small_scale_gene_list or large_scale_gene_list properties. | [optional] 
-**selection_criteria** | **List[str]** | The criteria used to select the sequence material cloned into the library. | [optional] 
+**file_set_type** | **str** | The type or category of this construct library set. | 
+**scope** | **str** | The scope or scale that this construct library is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. If exon is specified, an exon identifier and the associated gene will need to be listed in exon and genes properties. If tile is specified, a tile identifier, start and stop coordinates, and the associated gene will need to be listed in tile and small_scale_gene_list or large_scale_gene_list properties. | 
+**selection_criteria** | **List[str]** | The criteria used to select the sequence material cloned into the library. | 
 **integrated_content_files** | **List[str]** | The files containing sequence material of interest either used for insert design or directly cloned into vectors in this library. | [optional] 
 **associated_phenotypes** | **List[str]** | Ontological terms for diseases or phenotypes associated with the sequence material cloned in this construct library. | [optional] 
 **orf_list** | **List[str]** | List of Open Reading Frame this construct library was designed to target. | [optional] 
@@ -49,11 +50,11 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
-**files** | **List[object]** | The files associated with this file set. | [optional] 
-**control_for** | **List[object]** | The file sets for which this file set is a control. | [optional] 
+**files** | **List[str]** | The files associated with this file set. | [optional] 
+**control_for** | **List[str]** | The file sets for which this file set is a control. | [optional] 
 **submitted_files_timestamp** | **datetime** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
-**input_file_set_for** | **List[object]** | The Analysis Sets that use this File Set as an input. | [optional] 
-**applied_to_samples** | **List[object]** | The samples that link to this construct library set. | [optional] 
+**input_file_set_for** | **List[str]** | The Analysis Sets that use this File Set as an input. | [optional] 
+**applied_to_samples** | **List[str]** | The samples that link to this construct library set. | [optional] 
 
 ## Example
 

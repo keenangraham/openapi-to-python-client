@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class AssayTerm(BaseModel):
     """
-    AssayTerm
+    An ontology term from Ontology of Biomedical Investigations (OBI) for assays.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
@@ -38,8 +38,8 @@ class AssayTerm(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    term_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="An ontology term identifier describing an assay.")
-    term_name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Ontology term describing a biological sample, assay, trait, or disease.")
+    term_id: Annotated[str, Field(strict=True)] = Field(description="An ontology term identifier describing an assay.")
+    term_name: Annotated[str, Field(strict=True)] = Field(description="Ontology term describing a biological sample, assay, trait, or disease.")
     deprecated_ntr_terms: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="A list of deprecated NTR terms previously associated with this ontology term.")
     is_a: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="A list of ontology terms which are the nearest ancestor to this ontology term.")
     preferred_assay_titles: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The custom lab preferred labels that this assay term may be associated with.")
@@ -108,9 +108,6 @@ class AssayTerm(BaseModel):
     @field_validator('term_id')
     def term_id_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^(OBI|NTR):[0-9]{2,8}$", value):
             raise ValueError(r"must validate the regular expression /^(OBI|NTR):[0-9]{2,8}$/")
         return value
@@ -118,9 +115,6 @@ class AssayTerm(BaseModel):
     @field_validator('term_name')
     def term_name_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^(?![\s\"\'])[\S|\s]*[^\s\"\']$", value):
             raise ValueError(r"must validate the regular expression /^(?![\s\"'])[\S|\s]*[^\s\"']$/")
         return value

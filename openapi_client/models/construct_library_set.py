@@ -28,7 +28,7 @@ from typing_extensions import Self
 
 class ConstructLibrarySet(BaseModel):
     """
-    ConstructLibrarySet
+    A file set containing raw data files resulting from sequencing of the library delivered to the sample. For example, a guide RNA library.
     """ # noqa: E501
     small_scale_loci_list: Optional[Annotated[List[Locus], Field(min_length=1, max_length=100)]] = Field(default=None, description="A small scale (<=100) list of specific chromosomal region(s).")
     large_scale_loci_list: Optional[StrictStr] = Field(default=None, description="A large scale list (>100) of specific chromosomal regions.")
@@ -40,8 +40,8 @@ class ConstructLibrarySet(BaseModel):
     sources: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
     lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product or catalog identifier provided following deposition to addgene.org.")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -55,9 +55,9 @@ class ConstructLibrarySet(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    file_set_type: Optional[StrictStr] = Field(default=None, description="The type or category of this construct library set.")
-    scope: Optional[StrictStr] = Field(default=None, description="The scope or scale that this construct library is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. If exon is specified, an exon identifier and the associated gene will need to be listed in exon and genes properties. If tile is specified, a tile identifier, start and stop coordinates, and the associated gene will need to be listed in tile and small_scale_gene_list or large_scale_gene_list properties.")
-    selection_criteria: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The criteria used to select the sequence material cloned into the library.")
+    file_set_type: StrictStr = Field(description="The type or category of this construct library set.")
+    scope: StrictStr = Field(description="The scope or scale that this construct library is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. If exon is specified, an exon identifier and the associated gene will need to be listed in exon and genes properties. If tile is specified, a tile identifier, start and stop coordinates, and the associated gene will need to be listed in tile and small_scale_gene_list or large_scale_gene_list properties.")
+    selection_criteria: Annotated[List[StrictStr], Field(min_length=1)] = Field(description="The criteria used to select the sequence material cloned into the library.")
     integrated_content_files: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The files containing sequence material of interest either used for insert design or directly cloned into vectors in this library.")
     associated_phenotypes: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Ontological terms for diseases or phenotypes associated with the sequence material cloned in this construct library.")
     orf_list: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="List of Open Reading Frame this construct library was designed to target.")
@@ -74,11 +74,12 @@ class ConstructLibrarySet(BaseModel):
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = None
-    files: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The files associated with this file set.")
-    control_for: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The file sets for which this file set is a control.")
+    files: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The files associated with this file set.")
+    control_for: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The file sets for which this file set is a control.")
     submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
-    input_file_set_for: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The Analysis Sets that use this File Set as an input.")
-    applied_to_samples: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The samples that link to this construct library set.")
+    input_file_set_for: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The Analysis Sets that use this File Set as an input.")
+    applied_to_samples: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The samples that link to this construct library set.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["small_scale_loci_list", "large_scale_loci_list", "small_scale_gene_list", "large_scale_gene_list", "release_timestamp", "publication_identifiers", "documents", "sources", "lot_id", "product_id", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "file_set_type", "scope", "selection_criteria", "integrated_content_files", "associated_phenotypes", "orf_list", "exon", "tile", "guide_type", "tiling_modality", "average_guide_coverage", "lower_bound_guide_coverage", "upper_bound_guide_coverage", "average_insert_size", "lower_bound_insert_size", "upper_bound_insert_size", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "applied_to_samples"]
 
     @field_validator('lot_id')
@@ -175,9 +176,6 @@ class ConstructLibrarySet(BaseModel):
     @field_validator('file_set_type')
     def file_set_type_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['guide library', 'reporter library', 'expression vector library']):
             raise ValueError("must be one of enum values ('guide library', 'reporter library', 'expression vector library')")
         return value
@@ -185,9 +183,6 @@ class ConstructLibrarySet(BaseModel):
     @field_validator('scope')
     def scope_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['tile', 'exon', 'genes', 'loci', 'genome-wide', 'interactors']):
             raise ValueError("must be one of enum values ('tile', 'exon', 'genes', 'loci', 'genome-wide', 'interactors')")
         return value
@@ -195,9 +190,6 @@ class ConstructLibrarySet(BaseModel):
     @field_validator('selection_criteria')
     def selection_criteria_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         for i in value:
             if i not in set(['accessible genome regions', 'candidate cis-regulatory elements', 'chromatin states', 'phenotype-associated variants', 'DNase hypersensitive sites', 'genes', 'histone modifications', 'protein interactors', 'sequence variants', 'synthetic elements', 'transcription start sites', 'TF binding sites']):
                 raise ValueError("each list item must be one of ('accessible genome regions', 'candidate cis-regulatory elements', 'chromatin states', 'phenotype-associated variants', 'DNase hypersensitive sites', 'genes', 'histone modifications', 'protein interactors', 'sequence variants', 'synthetic elements', 'transcription start sites', 'TF binding sites')")
@@ -263,8 +255,10 @@ class ConstructLibrarySet(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -282,6 +276,11 @@ class ConstructLibrarySet(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of tile
         if self.tile:
             _dict['tile'] = self.tile.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -344,6 +343,11 @@ class ConstructLibrarySet(BaseModel):
             "input_file_set_for": obj.get("input_file_set_for"),
             "applied_to_samples": obj.get("applied_to_samples")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

@@ -21,18 +21,21 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from openapi_client.models.gene_list_for import GeneListFor
+from openapi_client.models.integrated_in import IntegratedIn
+from openapi_client.models.loci_list_for import LociListFor
 from typing import Optional, Set
 from typing_extensions import Self
 
 class MatrixFile(BaseModel):
     """
-    MatrixFile
+    A file containing quantification data in a multi-dimension format.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    reference_files: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Link to the reference files used to generate this file.")
+    reference_files: Annotated[List[StrictStr], Field(min_length=1)] = Field(description="Link to the reference files used to generate this file.")
     documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -47,25 +50,25 @@ class MatrixFile(BaseModel):
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     content_md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The MD5sum of the uncompressed file.")
-    content_type: Optional[StrictStr] = Field(default=None, description="The type of content in the file.")
+    content_type: StrictStr = Field(description="The type of content in the file.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects.")
     derived_from: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The files participating as inputs into software to produce this output file.")
-    file_format: Optional[StrictStr] = Field(default=None, description="The file format or extension of the file.")
+    file_format: StrictStr = Field(description="The file format or extension of the file.")
     file_format_specifications: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Document that further explains the file format.")
-    file_set: Optional[StrictStr] = Field(default=None, description="The file set that this file belongs to.")
+    file_set: StrictStr = Field(description="The file set that this file belongs to.")
     file_size: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="File size specified in bytes.")
-    md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The md5sum of the file being transferred.")
+    md5sum: Annotated[str, Field(strict=True, max_length=32)] = Field(description="The md5sum of the file being transferred.")
     submitted_file_name: Optional[StrictStr] = Field(default=None, description="Original name of the file.")
     upload_status: Optional[StrictStr] = Field(default='pending', description="The upload/validation status of the file.")
     validation_error_detail: Optional[StrictStr] = Field(default=None, description="Explanation of why the file failed the automated content checks.")
-    dimension1: Optional[StrictStr] = Field(default=None, description="First dimension of the matrix.")
-    dimension2: Optional[StrictStr] = Field(default=None, description="Second dimension of the matrix.")
+    dimension1: StrictStr = Field(description="First dimension of the matrix.")
+    dimension2: StrictStr = Field(description="Second dimension of the matrix.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
-    integrated_in: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="Construct library set(s) that this file was used for in insert design.")
-    gene_list_for: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="File Set(s) that this file is a gene list for.")
-    loci_list_for: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="File Set(s) that this file is a loci list for.")
+    integrated_in: Optional[Annotated[List[IntegratedIn], Field(min_length=1)]] = Field(default=None, description="Construct library set(s) that this file was used for in insert design.")
+    gene_list_for: Optional[Annotated[List[GeneListFor], Field(min_length=1)]] = Field(default=None, description="File Set(s) that this file is a gene list for.")
+    loci_list_for: Optional[Annotated[List[LociListFor], Field(min_length=1)]] = Field(default=None, description="File Set(s) that this file is a loci list for.")
     href: Optional[StrictStr] = Field(default=None, description="The download path to obtain file.")
     s3_uri: Optional[StrictStr] = Field(default=None, description="The S3 URI of public file object.")
     upload_credentials: Optional[Dict[str, Any]] = Field(default=None, description="The upload credentials for S3 to submit the file content.")
@@ -156,9 +159,6 @@ class MatrixFile(BaseModel):
     @field_validator('content_type')
     def content_type_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['contact matrix', 'sparse gene count matrix', 'sparse peak count matrix', 'sparse transcript count matrix', 'transcriptome annotations']):
             raise ValueError("must be one of enum values ('contact matrix', 'sparse gene count matrix', 'sparse peak count matrix', 'sparse transcript count matrix', 'transcriptome annotations')")
         return value
@@ -166,9 +166,6 @@ class MatrixFile(BaseModel):
     @field_validator('file_format')
     def file_format_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['h5ad', 'hdf5', 'mtx', 'tar', 'hic']):
             raise ValueError("must be one of enum values ('h5ad', 'hdf5', 'mtx', 'tar', 'hic')")
         return value
@@ -176,9 +173,6 @@ class MatrixFile(BaseModel):
     @field_validator('md5sum')
     def md5sum_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"[a-f\d]{32}|[A-F\d]{32}", value):
             raise ValueError(r"must validate the regular expression /[a-f\d]{32}|[A-F\d]{32}/")
         return value
@@ -196,9 +190,6 @@ class MatrixFile(BaseModel):
     @field_validator('dimension1')
     def dimension1_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['cell', 'fragment', 'gene', 'time', 'treatment', 'variant', 'genomic position']):
             raise ValueError("must be one of enum values ('cell', 'fragment', 'gene', 'time', 'treatment', 'variant', 'genomic position')")
         return value
@@ -206,9 +197,6 @@ class MatrixFile(BaseModel):
     @field_validator('dimension2')
     def dimension2_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['cell', 'fragment', 'gene', 'time', 'treatment', 'variant', 'genomic position']):
             raise ValueError("must be one of enum values ('cell', 'fragment', 'gene', 'time', 'treatment', 'variant', 'genomic position')")
         return value
@@ -252,6 +240,27 @@ class MatrixFile(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in integrated_in (list)
+        _items = []
+        if self.integrated_in:
+            for _item in self.integrated_in:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['integrated_in'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in gene_list_for (list)
+        _items = []
+        if self.gene_list_for:
+            for _item in self.gene_list_for:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['gene_list_for'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in loci_list_for (list)
+        _items = []
+        if self.loci_list_for:
+            for _item in self.loci_list_for:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['loci_list_for'] = _items
         return _dict
 
     @classmethod
@@ -299,9 +308,9 @@ class MatrixFile(BaseModel):
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),
-            "integrated_in": obj.get("integrated_in"),
-            "gene_list_for": obj.get("gene_list_for"),
-            "loci_list_for": obj.get("loci_list_for"),
+            "integrated_in": [IntegratedIn.from_dict(_item) for _item in obj["integrated_in"]] if obj.get("integrated_in") is not None else None,
+            "gene_list_for": [GeneListFor.from_dict(_item) for _item in obj["gene_list_for"]] if obj.get("gene_list_for") is not None else None,
+            "loci_list_for": [LociListFor.from_dict(_item) for _item in obj["loci_list_for"]] if obj.get("loci_list_for") is not None else None,
             "href": obj.get("href"),
             "s3_uri": obj.get("s3_uri"),
             "upload_credentials": obj.get("upload_credentials"),

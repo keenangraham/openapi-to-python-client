@@ -21,18 +21,19 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from openapi_client.models.analysis_step import AnalysisStep
 from typing import Optional, Set
 from typing_extensions import Self
 
 class Workflow(BaseModel):
     """
-    Workflow
+    A workflow for computational analysis of genomic data. A workflow is made up of analysis steps.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -46,14 +47,14 @@ class Workflow(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The preferred viewable name of the workflow.")
-    source_url: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="An external resource to the code base of the workflow in github.")
+    name: Annotated[str, Field(strict=True)] = Field(description="The preferred viewable name of the workflow.")
+    source_url: Annotated[str, Field(strict=True)] = Field(description="An external resource to the code base of the workflow in github.")
     workflow_repositories: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Resources hosting the workflow.")
     standards_page: Optional[StrictStr] = Field(default=None, description="A link to a page describing the standards for this workflow.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
-    analysis_steps: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The analysis steps which are part of this workflow.")
+    analysis_steps: Optional[Annotated[List[AnalysisStep], Field(min_length=1)]] = Field(default=None, description="The analysis steps which are part of this workflow.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "source_url", "workflow_repositories", "standards_page", "@id", "@type", "summary", "analysis_steps"]
 
     @field_validator('collections')
@@ -130,9 +131,6 @@ class Workflow(BaseModel):
     @field_validator('name')
     def name_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value
@@ -140,9 +138,6 @@ class Workflow(BaseModel):
     @field_validator('source_url')
     def source_url_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^https?:\/\/github\.com\/(\S+)$", value):
             raise ValueError(r"must validate the regular expression /^https?:\/\/github\.com\/(\S+)$/")
         return value
@@ -186,6 +181,13 @@ class Workflow(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in analysis_steps (list)
+        _items = []
+        if self.analysis_steps:
+            for _item in self.analysis_steps:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['analysis_steps'] = _items
         return _dict
 
     @classmethod
@@ -223,7 +225,7 @@ class Workflow(BaseModel):
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),
-            "analysis_steps": obj.get("analysis_steps")
+            "analysis_steps": [AnalysisStep.from_dict(_item) for _item in obj["analysis_steps"]] if obj.get("analysis_steps") is not None else None
         })
         return _obj
 

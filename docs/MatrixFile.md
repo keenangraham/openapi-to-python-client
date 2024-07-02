@@ -1,15 +1,16 @@
 # MatrixFile
 
+A file containing quantification data in a multi-dimension format.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
-**reference_files** | **List[str]** | Link to the reference files used to generate this file. | [optional] 
+**reference_files** | **List[str]** | Link to the reference files used to generate this file. | 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
-**lab** | **str** | Lab associated with the submission. | [optional] 
-**award** | **str** | Grant associated with the submission. | [optional] 
+**lab** | **str** | Lab associated with the submission. | 
+**award** | **str** | Grant associated with the submission. | 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -24,25 +25,25 @@ Name | Type | Description | Notes
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **content_md5sum** | **str** | The MD5sum of the uncompressed file. | [optional] 
-**content_type** | **str** | The type of content in the file. | [optional] 
+**content_type** | **str** | The type of content in the file. | 
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects. | [optional] 
 **derived_from** | **List[str]** | The files participating as inputs into software to produce this output file. | [optional] 
-**file_format** | **str** | The file format or extension of the file. | [optional] 
+**file_format** | **str** | The file format or extension of the file. | 
 **file_format_specifications** | **List[str]** | Document that further explains the file format. | [optional] 
-**file_set** | **str** | The file set that this file belongs to. | [optional] 
+**file_set** | **str** | The file set that this file belongs to. | 
 **file_size** | **int** | File size specified in bytes. | [optional] 
-**md5sum** | **str** | The md5sum of the file being transferred. | [optional] 
+**md5sum** | **str** | The md5sum of the file being transferred. | 
 **submitted_file_name** | **str** | Original name of the file. | [optional] 
 **upload_status** | **str** | The upload/validation status of the file. | [optional] [default to 'pending']
 **validation_error_detail** | **str** | Explanation of why the file failed the automated content checks. | [optional] 
-**dimension1** | **str** | First dimension of the matrix. | [optional] 
-**dimension2** | **str** | Second dimension of the matrix. | [optional] 
+**dimension1** | **str** | First dimension of the matrix. | 
+**dimension2** | **str** | Second dimension of the matrix. | 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 
-**integrated_in** | **List[object]** | Construct library set(s) that this file was used for in insert design. | [optional] 
-**gene_list_for** | **List[object]** | File Set(s) that this file is a gene list for. | [optional] 
-**loci_list_for** | **List[object]** | File Set(s) that this file is a loci list for. | [optional] 
+**integrated_in** | [**List[IntegratedIn]**](IntegratedIn.md) | Construct library set(s) that this file was used for in insert design. | [optional] 
+**gene_list_for** | [**List[GeneListFor]**](GeneListFor.md) | File Set(s) that this file is a gene list for. | [optional] 
+**loci_list_for** | [**List[LociListFor]**](LociListFor.md) | File Set(s) that this file is a loci list for. | [optional] 
 **href** | **str** | The download path to obtain file. | [optional] 
 **s3_uri** | **str** | The S3 URI of public file object. | [optional] 
 **upload_credentials** | **object** | The upload credentials for S3 to submit the file content. | [optional] 

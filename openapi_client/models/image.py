@@ -27,11 +27,11 @@ from typing_extensions import Self
 
 class Image(BaseModel):
     """
-    Image
+    An image to be displayed on an IGVF portal page. This is not a data object.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='released', description="The status of the metadata object.")
-    attachment: Optional[Attachment1] = None
+    attachment: Attachment1
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
@@ -46,6 +46,7 @@ class Image(BaseModel):
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
     thumb_nail: Optional[StrictStr] = Field(default=None, description="Image url")
     download_url: Optional[StrictStr] = Field(default=None, description="Download Url")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["release_timestamp", "status", "attachment", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "caption", "@id", "@type", "summary", "thumb_nail", "download_url"]
 
     @field_validator('status')
@@ -128,8 +129,10 @@ class Image(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -140,6 +143,11 @@ class Image(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of attachment
         if self.attachment:
             _dict['attachment'] = self.attachment.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -170,6 +178,11 @@ class Image(BaseModel):
             "thumb_nail": obj.get("thumb_nail"),
             "download_url": obj.get("download_url")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

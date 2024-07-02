@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class Source(BaseModel):
     """
-    Source
+    A vendor or a lab that provides samples for study.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
@@ -39,8 +39,8 @@ class Source(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    title: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The complete name of the originating lab or vendor.")
-    name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A short unique name for the source.")
+    title: Annotated[str, Field(strict=True)] = Field(description="The complete name of the originating lab or vendor.")
+    name: Annotated[str, Field(strict=True)] = Field(description="A short unique name for the source.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
@@ -99,9 +99,6 @@ class Source(BaseModel):
     @field_validator('title')
     def title_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value
@@ -109,9 +106,6 @@ class Source(BaseModel):
     @field_validator('name')
     def name_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^[a-z0-9\-]+$", value):
             raise ValueError(r"must validate the regular expression /^[a-z0-9\-]+$/")
         return value

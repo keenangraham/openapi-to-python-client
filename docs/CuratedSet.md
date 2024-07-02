@@ -1,5 +1,6 @@
 # CuratedSet
 
+A file set for reference files which are utilized in the analysis of IGVF experiments. For example, genomic references from GENCODE.
 
 ## Properties
 
@@ -9,8 +10,8 @@ Name | Type | Description | Notes
 **taxa** | **str** | The species of the organism. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
-**lab** | **str** | Lab associated with the submission. | [optional] 
-**award** | **str** | Grant associated with the submission. | [optional] 
+**lab** | **str** | Lab associated with the submission. | 
+**award** | **str** | Grant associated with the submission. | 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -28,14 +29,14 @@ Name | Type | Description | Notes
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets. | [optional] 
 **samples** | **List[str]** | The sample(s) associated with this file set. | [optional] 
 **donors** | **List[str]** | The donor(s) associated with this file set. | [optional] 
-**file_set_type** | **str** | The category that best describes this curated file set. | [optional] 
+**file_set_type** | **str** | The category that best describes this curated file set. | 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
-**files** | **List[object]** | The files associated with this file set. | [optional] 
-**control_for** | **List[object]** | The file sets for which this file set is a control. | [optional] 
+**files** | [**List[File]**](File.md) | The files associated with this file set. | [optional] 
+**control_for** | [**List[FileSetControlledByThisFileSet]**](FileSetControlledByThisFileSet.md) | The file sets for which this file set is a control. | [optional] 
 **submitted_files_timestamp** | **datetime** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
-**input_file_set_for** | **List[object]** | The Analysis Sets that use this File Set as an input. | [optional] 
+**input_file_set_for** | [**List[InputFileSetFor]**](InputFileSetFor.md) | The Analysis Sets that use this File Set as an input. | [optional] 
 **assemblies** | **List[str]** | The genome assemblies to which the referencing files in the file set are utilizing (e.g., GRCh38). | [optional] 
 **transcriptome_annotations** | **List[str]** | The annotation versions of the reference resource. | [optional] 
 

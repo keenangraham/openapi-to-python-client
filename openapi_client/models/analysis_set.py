@@ -21,18 +21,21 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from openapi_client.models.file import File
+from openapi_client.models.file_set_controlled_by_this_file_set import FileSetControlledByThisFileSet
+from openapi_client.models.input_file_set_for import InputFileSetFor
 from typing import Optional, Set
 from typing_extensions import Self
 
 class AnalysisSet(BaseModel):
     """
-    AnalysisSet
+    A file set for analyses. Analysis sets represent the results of a computational analysis of raw genomic data or other analyses.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -49,15 +52,15 @@ class AnalysisSet(BaseModel):
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets.")
     samples: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The sample(s) associated with this file set.")
     donors: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The donors of the samples associated with this analysis set.")
-    file_set_type: Optional[StrictStr] = Field(default=None, description="The level of this analysis set. An intermediate analysis cannot be interpreted on its own and is part of a principal analysis. A principal analysis is the core analysis for an experimental design, the results of which can be interpretable on their own.")
+    file_set_type: StrictStr = Field(description="The level of this analysis set. An intermediate analysis cannot be interpreted on its own and is part of a principal analysis. A principal analysis is the core analysis for an experimental design, the results of which can be interpretable on their own.")
     input_file_sets: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The file set(s) required for this analysis.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = None
-    files: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The files associated with this file set.")
-    control_for: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The file sets for which this file set is a control.")
+    files: Optional[Annotated[List[File], Field(min_length=1)]] = Field(default=None, description="The files associated with this file set.")
+    control_for: Optional[Annotated[List[FileSetControlledByThisFileSet], Field(min_length=1)]] = Field(default=None, description="The file sets for which this file set is a control.")
     submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
-    input_file_set_for: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The Analysis Sets that use this File Set as an input.")
+    input_file_set_for: Optional[Annotated[List[InputFileSetFor], Field(min_length=1)]] = Field(default=None, description="The Analysis Sets that use this File Set as an input.")
     assay_titles: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Title(s) of assays that produced data analyzed in the analysis set.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "input_file_sets", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "assay_titles"]
 
@@ -135,9 +138,6 @@ class AnalysisSet(BaseModel):
     @field_validator('file_set_type')
     def file_set_type_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['intermediate analysis', 'principal analysis']):
             raise ValueError("must be one of enum values ('intermediate analysis', 'principal analysis')")
         return value
@@ -181,6 +181,27 @@ class AnalysisSet(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in files (list)
+        _items = []
+        if self.files:
+            for _item in self.files:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['files'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in control_for (list)
+        _items = []
+        if self.control_for:
+            for _item in self.control_for:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['control_for'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in input_file_set_for (list)
+        _items = []
+        if self.input_file_set_for:
+            for _item in self.input_file_set_for:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['input_file_set_for'] = _items
         return _dict
 
     @classmethod
@@ -219,10 +240,10 @@ class AnalysisSet(BaseModel):
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),
-            "files": obj.get("files"),
-            "control_for": obj.get("control_for"),
+            "files": [File.from_dict(_item) for _item in obj["files"]] if obj.get("files") is not None else None,
+            "control_for": [FileSetControlledByThisFileSet.from_dict(_item) for _item in obj["control_for"]] if obj.get("control_for") is not None else None,
             "submitted_files_timestamp": obj.get("submitted_files_timestamp"),
-            "input_file_set_for": obj.get("input_file_set_for"),
+            "input_file_set_for": [InputFileSetFor.from_dict(_item) for _item in obj["input_file_set_for"]] if obj.get("input_file_set_for") is not None else None,
             "assay_titles": obj.get("assay_titles")
         })
         return _obj

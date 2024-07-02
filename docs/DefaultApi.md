@@ -8,11 +8,11 @@ Method | HTTP request | Description
 
 
 # **search_get**
-> SearchGet200Response search_get(datastore=datastore, debug=debug, var_field=var_field, format=format, frame=frame, var_from=var_from, limit=limit, mode=mode, sort=sort, type=type, config=config, advanced_query=advanced_query, search_term=search_term, query=query, field_filters=field_filters)
+> SearchGet200Response search_get(debug=debug, var_field=var_field, frame=frame, var_from=var_from, limit=limit, mode=mode, sort=sort, type=type, config=config, advanced_query=advanced_query, query=query, field_filters=field_filters)
 
 Search for objects in the IGVF Project
 
-Search endpoint that accepts various query parameters to filter and format results. Supports complex filtering on types and fields within JSON objects.
+Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
 
 ### Example
 
@@ -34,10 +34,8 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.DefaultApi(api_client)
-    datastore = 'datastore_example' # str | Specifies the datastore to search in. (optional)
     debug = True # bool | Enables debug mode for the search. (optional)
     var_field = ['var_field_example'] # List[str] | Fields to include in the response. Can be repeated for multiple fields. (optional)
-    format = 'format_example' # str | Response format. Use 'json' for machine-readable response. (optional)
     frame = 'frame_example' # str | Specifies the format of the returned objects. (optional)
     var_from = 56 # int | Starting index for pagination. (optional)
     limit = 'limit_example' # str | Maximum number of results to return. Use 'all' for all results. (optional)
@@ -46,13 +44,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     type = ['type_example'] # List[str] | Type of objects to return. Can be repeated for multiple types. (optional)
     config = 'config_example' # str | Configuration options for the search. (optional)
     advanced_query = 'advanced_query_example' # str | Advanced query string for complex searches. (optional)
-    search_term = 'search_term_example' # str | General search term that can return multiple object types. (optional)
     query = 'query_example' # str | Query string for searching. (optional)
     field_filters = None # object | Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
 
     try:
         # Search for objects in the IGVF Project
-        api_response = api_instance.search_get(datastore=datastore, debug=debug, var_field=var_field, format=format, frame=frame, var_from=var_from, limit=limit, mode=mode, sort=sort, type=type, config=config, advanced_query=advanced_query, search_term=search_term, query=query, field_filters=field_filters)
+        api_response = api_instance.search_get(debug=debug, var_field=var_field, frame=frame, var_from=var_from, limit=limit, mode=mode, sort=sort, type=type, config=config, advanced_query=advanced_query, query=query, field_filters=field_filters)
         print("The response of DefaultApi->search_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -66,10 +63,8 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **datastore** | **str**| Specifies the datastore to search in. | [optional] 
  **debug** | **bool**| Enables debug mode for the search. | [optional] 
  **var_field** | [**List[str]**](str.md)| Fields to include in the response. Can be repeated for multiple fields. | [optional] 
- **format** | **str**| Response format. Use &#39;json&#39; for machine-readable response. | [optional] 
  **frame** | **str**| Specifies the format of the returned objects. | [optional] 
  **var_from** | **int**| Starting index for pagination. | [optional] 
  **limit** | **str**| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
@@ -78,7 +73,6 @@ Name | Type | Description  | Notes
  **type** | [**List[str]**](str.md)| Type of objects to return. Can be repeated for multiple types. | [optional] 
  **config** | **str**| Configuration options for the search. | [optional] 
  **advanced_query** | **str**| Advanced query string for complex searches. | [optional] 
- **search_term** | **str**| General search term that can return multiple object types. | [optional] 
  **query** | **str**| Query string for searching. | [optional] 
  **field_filters** | [**object**](.md)| Any field from any object type can be used as a filter. Use &#39;!&#x3D;&#39; for negation, &#39;*&#39; as a wildcard, and &#39;lt:&#39;, &#39;lte:&#39;, &#39;gt:&#39;, &#39;gte:&#39; for range queries on numeric fields. | [optional] 
 

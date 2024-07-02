@@ -1,5 +1,6 @@
 # User
 
+A user of IGVF data portal who is a member or affiliate member of IGVF.
 
 ## Properties
 
@@ -14,9 +15,9 @@ Name | Type | Description | Notes
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**email** | **str** | The email associated with the user&#39;s account. | [optional] 
-**first_name** | **str** | The user&#39;s first (given) name. | [optional] 
-**last_name** | **str** | The user&#39;s last (family) name. | [optional] 
+**email** | **str** | The email associated with the user&#39;s account. | 
+**first_name** | **str** | The user&#39;s first (given) name. | 
+**last_name** | **str** | The user&#39;s last (family) name. | 
 **lab** | **str** | Lab user is primarily associated with. | [optional] 
 **submits_for** | **List[str]** | Labs user is authorized to submit data for. | [optional] 
 **groups** | **List[str]** | Additional access control groups | [optional] 

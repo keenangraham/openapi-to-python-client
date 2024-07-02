@@ -21,22 +21,27 @@ from datetime import date, datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
+from openapi_client.models.file_set import FileSet
+from openapi_client.models.institutional_certificate import InstitutionalCertificate
+from openapi_client.models.multiplexed_in import MultiplexedIn
+from openapi_client.models.originated_sample import OriginatedSample
+from openapi_client.models.sorted_fraction_sample import SortedFractionSample
 from typing import Optional, Set
 from typing_extensions import Self
 
 class TechnicalSample(BaseModel):
     """
-    TechnicalSample
+    A sample that is used as a medium to perform biological measurement without the intent to characterize the technical sample itself. For example, the solution in which RNA oligos binding experiments are performed.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
-    sources: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
+    sources: Annotated[List[StrictStr], Field(min_length=1, max_length=1)] = Field(description="The originating lab(s) or vendor(s).")
     lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product identifier provided by the originating lab or vendor.")
     documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -63,17 +68,17 @@ class TechnicalSample(BaseModel):
     time_post_library_delivery: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The time that elapsed past the time-point when the construct library sets were introduced.")
     time_post_library_delivery_units: Optional[StrictStr] = Field(default=None, description="The units of time that elapsed past the point when the construct library sets were introduced.")
     protocols: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Links to the protocol(s) for preparing the samples on Protocols.io.")
-    sample_material: Optional[StrictStr] = 'undefined'
+    sample_material: StrictStr
     taxa: Optional[StrictStr] = None
-    sample_terms: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="Ontology terms identifying a technical sample.")
+    sample_terms: Annotated[List[StrictStr], Field(min_length=1, max_length=1)] = Field(description="Ontology terms identifying a technical sample.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of this sample.")
-    file_sets: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The file sets linked to this sample.")
-    multiplexed_in: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The multiplexed samples in which this sample is included.")
-    sorted_fractions: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The fractions into which this sample has been sorted.")
-    origin_of: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The samples which originate from this sample, such as through a process of cell differentiation.")
-    institutional_certificates: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The institutional certificates under which use of this sample is approved.")
+    file_sets: Optional[Annotated[List[FileSet], Field(min_length=1)]] = Field(default=None, description="The file sets linked to this sample.")
+    multiplexed_in: Optional[Annotated[List[MultiplexedIn], Field(min_length=1)]] = Field(default=None, description="The multiplexed samples in which this sample is included.")
+    sorted_fractions: Optional[Annotated[List[SortedFractionSample], Field(min_length=1)]] = Field(default=None, description="The fractions into which this sample has been sorted.")
+    origin_of: Optional[Annotated[List[OriginatedSample], Field(min_length=1)]] = Field(default=None, description="The samples which originate from this sample, such as through a process of cell differentiation.")
+    institutional_certificates: Optional[Annotated[List[InstitutionalCertificate], Field(min_length=1)]] = Field(default=None, description="The institutional certificates under which use of this sample is approved.")
     classifications: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The general category of this type of sample.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "url", "sources", "lot_id", "product_id", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "starting_amount", "starting_amount_units", "dbxrefs", "date_obtained", "sorted_from", "sorted_from_detail", "virtual", "construct_library_sets", "moi", "nucleic_acid_delivery", "time_post_library_delivery", "time_post_library_delivery_units", "protocols", "sample_material", "taxa", "sample_terms", "@id", "@type", "summary", "file_sets", "multiplexed_in", "sorted_fractions", "origin_of", "institutional_certificates", "classifications"]
 
@@ -201,9 +206,6 @@ class TechnicalSample(BaseModel):
     @field_validator('sample_material')
     def sample_material_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['undefined', 'inorganic', 'synthetic', 'organic']):
             raise ValueError("must be one of enum values ('undefined', 'inorganic', 'synthetic', 'organic')")
         return value
@@ -257,6 +259,41 @@ class TechnicalSample(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in file_sets (list)
+        _items = []
+        if self.file_sets:
+            for _item in self.file_sets:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['file_sets'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in multiplexed_in (list)
+        _items = []
+        if self.multiplexed_in:
+            for _item in self.multiplexed_in:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['multiplexed_in'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in sorted_fractions (list)
+        _items = []
+        if self.sorted_fractions:
+            for _item in self.sorted_fractions:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['sorted_fractions'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in origin_of (list)
+        _items = []
+        if self.origin_of:
+            for _item in self.origin_of:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['origin_of'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in institutional_certificates (list)
+        _items = []
+        if self.institutional_certificates:
+            for _item in self.institutional_certificates:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['institutional_certificates'] = _items
         return _dict
 
     @classmethod
@@ -310,11 +347,11 @@ class TechnicalSample(BaseModel):
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),
-            "file_sets": obj.get("file_sets"),
-            "multiplexed_in": obj.get("multiplexed_in"),
-            "sorted_fractions": obj.get("sorted_fractions"),
-            "origin_of": obj.get("origin_of"),
-            "institutional_certificates": obj.get("institutional_certificates"),
+            "file_sets": [FileSet.from_dict(_item) for _item in obj["file_sets"]] if obj.get("file_sets") is not None else None,
+            "multiplexed_in": [MultiplexedIn.from_dict(_item) for _item in obj["multiplexed_in"]] if obj.get("multiplexed_in") is not None else None,
+            "sorted_fractions": [SortedFractionSample.from_dict(_item) for _item in obj["sorted_fractions"]] if obj.get("sorted_fractions") is not None else None,
+            "origin_of": [OriginatedSample.from_dict(_item) for _item in obj["origin_of"]] if obj.get("origin_of") is not None else None,
+            "institutional_certificates": [InstitutionalCertificate.from_dict(_item) for _item in obj["institutional_certificates"]] if obj.get("institutional_certificates") is not None else None,
             "classifications": obj.get("classifications")
         })
         return _obj

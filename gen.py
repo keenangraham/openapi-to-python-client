@@ -4,7 +4,7 @@ import requests
 
 def generate_openapi_spec(schemas):
     openapi_spec = {
-        "openapi": "3.0.0",
+        "openapi": "3.1.0",
         "info": {
             "title": "IGVF Project API",
             "version": "0.1.0"
@@ -13,7 +13,7 @@ def generate_openapi_spec(schemas):
             "/search": {
                 "get": {
                     "summary": "Search for objects in the IGVF Project",
-                    "description": "Search endpoint that accepts various query parameters to filter and format results. Supports complex filtering on types and fields within JSON objects.",
+                    "description": "Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.",
                     "parameters": [],
                     "responses": {
                         "200": {
@@ -85,7 +85,6 @@ def generate_openapi_spec(schemas):
 
     FREE_TEXT_QUERIES = [
         'advancedQuery',
-        'searchTerm',
         'query',
     ]
 
@@ -93,12 +92,6 @@ def generate_openapi_spec(schemas):
 
     # Define the parameters
     parameters = [
-        {
-            "name": "datastore",
-            "in": "query",
-            "schema": {"type": "string"},
-            "description": "Specifies the datastore to search in."
-        },
         {
             "name": "debug",
             "in": "query",
@@ -112,12 +105,6 @@ def generate_openapi_spec(schemas):
             "style": "form",
             "explode": True,
             "description": "Fields to include in the response. Can be repeated for multiple fields."
-        },
-        {
-            "name": "format",
-            "in": "query",
-            "schema": {"type": "string", "enum": ["json", "html"]},
-            "description": "Response format. Use 'json' for machine-readable response."
         },
         {
             "name": "frame",
@@ -172,12 +159,6 @@ def generate_openapi_spec(schemas):
             "description": "Advanced query string for complex searches."
         },
         {
-            "name": "searchTerm",
-            "in": "query",
-            "schema": {"type": "string"},
-            "description": "General search term that can return multiple object types."
-        },
-        {
             "name": "query",
             "in": "query",
             "schema": {"type": "string"},
@@ -197,7 +178,7 @@ def generate_openapi_spec(schemas):
     }
     openapi_spec["paths"]["/search"]["get"]["parameters"].append(field_filter_note)
 
-    # Update the description to mention reserved keys
+
     search_description = openapi_spec["paths"]["/search"]["get"]["description"]
     search_description += f"\n\nReserved query parameters: {', '.join(RESERVED_KEYS)}"
     search_description += "\nThese parameters have special meanings and cannot be used as field names for filtering."
@@ -228,27 +209,53 @@ def generate_openapi_spec(schemas):
             "frame": "object"
         }
     }
-    openapi_spec["paths"]["/search"]["get"]["examples"] = [complex_example]
+  #  openapi_spec["paths"]["/search"]["get"]["examples"] = [complex_example]
 
     return openapi_spec
 
-r = requests.get('https://api.data.igvf.org/profiles').json()
-nfr = {}
-for k, v in r.items():
-    if k.startswith('_') or k.startswith('@'):
-        continue
-    new_v = {}
-    for x, y in v.items():
-        if x == 'properties' or x == 'type':
-            new_v[x] = y
-    nfr[k] = new_v
-schemas = nfr
 
+schemas = {
+    k: v for
+    k, v in requests.get('https://api.data.igvf.org/profiles').json().items()
+    if not k.startswith('_') and not k.startswith('@')
+}
+
+
+def clean_schema(schema):
+        valid_attrs = [
+            "type", "properties", "required", "additionalProperties",
+            "items", "allOf", "anyOf", "oneOf", "not", "enum",
+            "const", "multipleOf", "maximum", "exclusiveMaximum",
+            "minimum", "exclusiveMinimum", "maxLength", "minLength",
+            "pattern", "maxItems", "minItems", "uniqueItems",
+            "maxContains", "minContains", "maxProperties", "minProperties",
+            "format", "default", "title", "description"
+        ]
+        cleaned = {}
+        for key, value in schema.items():
+            if key in valid_attrs:
+                if key == "properties":
+                    cleaned[key] = {k: clean_schema(v) for k, v in value.items()}
+                elif key == "required" and not isinstance(value, list):
+                    cleaned[key] = list(value)  # Convert to list if it's not already
+                elif isinstance(value, dict):
+                    cleaned[key] = clean_schema(value)
+                else:
+                    cleaned[key] = value
+        return cleaned
+
+schemas = {
+    k: clean_schema(v)
+    for k, v in schemas.items()
+}
+
+print(json.dumps(schemas, indent=4))
 
 openapi_spec = generate_openapi_spec(schemas)
 
-# Write the OpenAPI spec to a file
+
 with open('api_spec.json', 'w') as f:
     json.dump(openapi_spec, f, indent=2)
+
 
 print("OpenAPI specification has been generated and saved to 'api_spec.json'")

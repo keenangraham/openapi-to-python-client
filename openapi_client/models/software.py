@@ -26,12 +26,12 @@ from typing_extensions import Self
 
 class Software(BaseModel):
     """
-    Software
+    A software used for computational  analysis. For example, Bowtie2 alignment software.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='5', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
@@ -40,10 +40,10 @@ class Software(BaseModel):
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
-    description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Unique name of the software package; a lowercase version of the title.")
-    title: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The preferred viewable name of the software.")
-    source_url: Optional[StrictStr] = Field(default=None, description="An external resource to the codebase.")
+    description: Annotated[str, Field(strict=True)] = Field(description="A plain text description of the object.")
+    name: Annotated[str, Field(strict=True)] = Field(description="Unique name of the software package; a lowercase version of the title.")
+    title: Annotated[str, Field(strict=True)] = Field(description="The preferred viewable name of the software.")
+    source_url: StrictStr = Field(description="An external resource to the codebase.")
     used_by: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The component(s) of the IGVF consortium that utilize this software.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
@@ -94,9 +94,6 @@ class Software(BaseModel):
     @field_validator('description')
     def description_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value
@@ -104,9 +101,6 @@ class Software(BaseModel):
     @field_validator('name')
     def name_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^[a-z0-9\-\_]+", value):
             raise ValueError(r"must validate the regular expression /^[a-z0-9\-\_]+/")
         return value
@@ -114,9 +108,6 @@ class Software(BaseModel):
     @field_validator('title')
     def title_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value

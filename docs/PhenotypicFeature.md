@@ -1,5 +1,6 @@
 # PhenotypicFeature
 
+A phenotypic feature of a donor the sample is coming from. For example, the donor’s height measured at the time of sample collection.
 
 ## Properties
 
@@ -7,8 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
-**lab** | **str** | Lab associated with the submission. | [optional] 
-**award** | **str** | Grant associated with the submission. | [optional] 
+**lab** | **str** | Lab associated with the submission. | 
+**award** | **str** | Grant associated with the submission. | 
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '3']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
@@ -17,7 +18,7 @@ Name | Type | Description | Notes
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**feature** | **str** | The phenotypic feature observed for the donor. | [optional] 
+**feature** | **str** | The phenotypic feature observed for the donor. | 
 **quantity** | **float** | A quantity associated with the phenotypic feature, if applicable. | [optional] 
 **quantity_units** | **str** | The unit of measurement for a quantity associated with the phenotypic feature. | [optional] 
 **observation_date** | **date** | The date the feature was observed or measured. | [optional] 

@@ -1,5 +1,6 @@
 # SampleTerm
 
+An ontology term from Cell Ontology (CL), Cell Line Ontology (CLO), Experimental Factor Ontology (EFO), or Uber-anatomy ontology (UBERON) for biological or technical samples.
 
 ## Properties
 
@@ -15,8 +16,8 @@ Name | Type | Description | Notes
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**term_id** | **str** | An ontology identifier describing a biological sample | [optional] 
-**term_name** | **str** | Ontology term describing a biological sample, assay, trait, or disease. | [optional] 
+**term_id** | **str** | An ontology identifier describing a biological sample | 
+**term_name** | **str** | Ontology term describing a biological sample, assay, trait, or disease. | 
 **deprecated_ntr_terms** | **List[str]** | A list of deprecated NTR terms previously associated with this ontology term. | [optional] 
 **is_a** | **List[str]** | A list of ontology terms which are the nearest ancestor to this ontology term. | [optional] 
 **dbxrefs** | **List[str]** | Sample identifiers from external resources, such as Cellosaurus. | [optional] 

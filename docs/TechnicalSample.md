@@ -1,5 +1,6 @@
 # TechnicalSample
 
+A sample that is used as a medium to perform biological measurement without the intent to characterize the technical sample itself. For example, the solution in which RNA oligos binding experiments are performed.
 
 ## Properties
 
@@ -8,12 +9,12 @@ Name | Type | Description | Notes
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **url** | **str** | An external resource with additional information. | [optional] 
-**sources** | **List[str]** | The originating lab(s) or vendor(s). | [optional] 
+**sources** | **List[str]** | The originating lab(s) or vendor(s). | 
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 
 **product_id** | **str** | The product identifier provided by the originating lab or vendor. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
-**lab** | **str** | Lab associated with the submission. | [optional] 
-**award** | **str** | Grant associated with the submission. | [optional] 
+**lab** | **str** | Lab associated with the submission. | 
+**award** | **str** | Grant associated with the submission. | 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -40,17 +41,17 @@ Name | Type | Description | Notes
 **time_post_library_delivery** | **float** | The time that elapsed past the time-point when the construct library sets were introduced. | [optional] 
 **time_post_library_delivery_units** | **str** | The units of time that elapsed past the point when the construct library sets were introduced. | [optional] 
 **protocols** | **List[str]** | Links to the protocol(s) for preparing the samples on Protocols.io. | [optional] 
-**sample_material** | **str** |  | [optional] [default to 'undefined']
+**sample_material** | **str** |  | [default to 'undefined']
 **taxa** | **str** |  | [optional] 
-**sample_terms** | **List[str]** | Ontology terms identifying a technical sample. | [optional] 
+**sample_terms** | **List[str]** | Ontology terms identifying a technical sample. | 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of this sample. | [optional] 
-**file_sets** | **List[object]** | The file sets linked to this sample. | [optional] 
-**multiplexed_in** | **List[object]** | The multiplexed samples in which this sample is included. | [optional] 
-**sorted_fractions** | **List[object]** | The fractions into which this sample has been sorted. | [optional] 
-**origin_of** | **List[object]** | The samples which originate from this sample, such as through a process of cell differentiation. | [optional] 
-**institutional_certificates** | **List[object]** | The institutional certificates under which use of this sample is approved. | [optional] 
+**file_sets** | [**List[FileSet]**](FileSet.md) | The file sets linked to this sample. | [optional] 
+**multiplexed_in** | [**List[MultiplexedIn]**](MultiplexedIn.md) | The multiplexed samples in which this sample is included. | [optional] 
+**sorted_fractions** | [**List[SortedFractionSample]**](SortedFractionSample.md) | The fractions into which this sample has been sorted. | [optional] 
+**origin_of** | [**List[OriginatedSample]**](OriginatedSample.md) | The samples which originate from this sample, such as through a process of cell differentiation. | [optional] 
+**institutional_certificates** | [**List[InstitutionalCertificate]**](InstitutionalCertificate.md) | The institutional certificates under which use of this sample is approved. | [optional] 
 **classifications** | **List[str]** | The general category of this type of sample. | [optional] 
 
 ## Example

@@ -1,5 +1,6 @@
 # Software
 
+A software used for computational  analysis. For example, Bowtie2 alignment software.
 
 ## Properties
 
@@ -7,8 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
-**lab** | **str** | Lab associated with the submission. | [optional] 
-**award** | **str** | Grant associated with the submission. | [optional] 
+**lab** | **str** | Lab associated with the submission. | 
+**award** | **str** | Grant associated with the submission. | 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '5']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
@@ -17,10 +18,10 @@ Name | Type | Description | Notes
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
-**description** | **str** | A plain text description of the object. | [optional] 
-**name** | **str** | Unique name of the software package; a lowercase version of the title. | [optional] 
-**title** | **str** | The preferred viewable name of the software. | [optional] 
-**source_url** | **str** | An external resource to the codebase. | [optional] 
+**description** | **str** | A plain text description of the object. | 
+**name** | **str** | Unique name of the software package; a lowercase version of the title. | 
+**title** | **str** | The preferred viewable name of the software. | 
+**source_url** | **str** | An external resource to the codebase. | 
 **used_by** | **List[str]** | The component(s) of the IGVF consortium that utilize this software. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 

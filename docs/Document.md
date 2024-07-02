@@ -1,5 +1,6 @@
 # Document
 
+A document with additional information regarding another object submitted to the data portal. For example, a plasmid map document associated with a transduced cell line sample.
 
 ## Properties
 
@@ -7,9 +8,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
-**lab** | **str** | Lab associated with the submission. | [optional] 
-**award** | **str** | Grant associated with the submission. | [optional] 
-**attachment** | [**Attachment**](Attachment.md) |  | [optional] 
+**lab** | **str** | Lab associated with the submission. | 
+**award** | **str** | Grant associated with the submission. | 
+**attachment** | [**Attachment**](Attachment.md) |  | 
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '4']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
@@ -17,8 +18,8 @@ Name | Type | Description | Notes
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
-**description** | **str** | A plain text description of the object. | [optional] 
-**document_type** | **str** | The category that best describes the document. | [optional] 
+**description** | **str** | A plain text description of the object. | 
+**document_type** | **str** | The category that best describes the document. | 
 **characterization_method** | **str** | The method used for the characterization. | [optional] 
 **urls** | **List[str]** | External resources with additional information to the document. | [optional] 
 **id** | **str** |  | [optional] 

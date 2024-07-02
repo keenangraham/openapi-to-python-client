@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class OpenReadingFrame(BaseModel):
     """
-    OpenReadingFrame
+    Protein-encoding open reading frames (ORF)
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
@@ -38,10 +38,10 @@ class OpenReadingFrame(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
-    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
-    orf_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Open reading frame ID.")
-    gene: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix.")
+    lab: StrictStr = Field(description="Lab associated with the submission.")
+    award: StrictStr = Field(description="Grant associated with the submission.")
+    orf_id: Annotated[str, Field(strict=True)] = Field(description="Open reading frame ID.")
+    gene: Annotated[List[StrictStr], Field(min_length=1)] = Field(description="ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix.")
     protein_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="ENSEMBL ProteinID of official nomenclature approved protein. The ProteinID does not include the current version number suffix.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Unique identifiers from the hORFeome database")
     pct_identical_protein: Optional[Union[Annotated[float, Field(le=100, strict=True, ge=0)], Annotated[int, Field(le=100, strict=True, ge=0)]]] = Field(default=None, description="The percentage of identical matches to Ensembl protein.")
@@ -105,9 +105,6 @@ class OpenReadingFrame(BaseModel):
     @field_validator('orf_id')
     def orf_id_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if value is None:
-            return value
-
         if not re.match(r"^CCSBORF[1-9][0-9]*$", value):
             raise ValueError(r"must validate the regular expression /^CCSBORF[1-9][0-9]*$/")
         return value

@@ -1,5 +1,6 @@
 # Source
 
+A vendor or a lab that provides samples for study.
 
 ## Properties
 
@@ -16,8 +17,8 @@ Name | Type | Description | Notes
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**title** | **str** | The complete name of the originating lab or vendor. | [optional] 
-**name** | **str** | A short unique name for the source. | [optional] 
+**title** | **str** | The complete name of the originating lab or vendor. | 
+**name** | **str** | A short unique name for the source. | 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 

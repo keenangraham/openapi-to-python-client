@@ -1,5 +1,6 @@
 # Award
 
+A grant providing financial support for a scientific project. For example, HG012076 supporting \"Single-cell Mapping Center for Human Regulatory Elements and Gene Activity.\"
 
 ## Properties
 
@@ -15,13 +16,13 @@ Name | Type | Description | Notes
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**title** | **str** | The grant name from the NIH database, if applicable. | [optional] 
-**name** | **str** | The official grant number from the NIH database, if applicable | [optional] 
+**title** | **str** | The grant name from the NIH database, if applicable. | 
+**name** | **str** | The official grant number from the NIH database, if applicable | 
 **start_date** | **date** | The date when the award begins. | [optional] 
 **end_date** | **date** | The date when the award concludes. | [optional] 
 **pis** | **List[str]** | Principal Investigator(s) of the grant. | [optional] 
 **contact_pi** | **str** | The contact Principal Investigator of the grant. | [optional] 
-**project** | **str** | The collection of biological data related to a single initiative, originating from a consortium. | [optional] 
+**project** | **str** | The collection of biological data related to a single initiative, originating from a consortium. | 
 **viewing_group** | **str** | The group that determines which set of data the user has permission to view. | [optional] 
 **component** | **str** | The project component the award is associated with. | [optional] 
 **id** | **str** |  | [optional] 
