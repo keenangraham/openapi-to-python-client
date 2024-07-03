@@ -75,7 +75,7 @@ def generate_openapi_spec(schemas):
         }
     }
 
-    OPTIONAL_PARAMS = [
+    RESERVED_KEYS = [
         'datastore',
         'debug',
         'field',
@@ -87,14 +87,9 @@ def generate_openapi_spec(schemas):
         'sort',
         'type',
         'config',
-    ]
-
-    FREE_TEXT_QUERIES = [
         'advancedQuery',
         'query',
     ]
-
-    RESERVED_KEYS = OPTIONAL_PARAMS + FREE_TEXT_QUERIES
 
     # Define the parameters
     parameters = [
