@@ -257,14 +257,14 @@ def clean_schema(schema):
                     for v in value:
                         resolved_subtypes.update(subtypes[v])
                     value = list(sorted(resolved_subtypes))
-                    res = [
+                    res = [{'type': 'string'}]
+                    res.append([
                         {
                             '$ref': f"#/components/schemas/{v}",
                             'title': f"{v}"
                         }
                         for v in value
-                    ]
-                    res.append({'type': 'string'})
+                    ])
                     cleaned = {}
                     cleaned['oneOf'] = res
                     return cleaned
