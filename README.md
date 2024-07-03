@@ -82,11 +82,11 @@ with openapi_client.ApiClient(configuration) as api_client:
 
     try:
         # Search for objects in the IGVF Project
-        api_response = api_instance.search_get(debug=debug, var_field=var_field, frame=frame, var_from=var_from, limit=limit, mode=mode, sort=sort, type=type, config=config, advanced_query=advanced_query, query=query, field_filters=field_filters)
-        print("The response of DefaultApi->search_get:\n")
+        api_response = api_instance.search(debug=debug, var_field=var_field, frame=frame, var_from=var_from, limit=limit, mode=mode, sort=sort, type=type, config=config, advanced_query=advanced_query, query=query, field_filters=field_filters)
+        print("The response of DefaultApi->search:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DefaultApi->search_get: %s\n" % e)
+        print("Exception when calling DefaultApi->search: %s\n" % e)
 
 ```
 
@@ -96,7 +96,7 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**search_get**](docs/DefaultApi.md#search_get) | **GET** /search | Search for objects in the IGVF Project
+*DefaultApi* | [**search**](docs/DefaultApi.md#search) | **GET** /search | Search for objects in the IGVF Project
 
 
 ## Documentation For Models
@@ -193,10 +193,10 @@ Class | Method | HTTP request | Description
  - [RodentDonorPhenotypicFeaturesInner](docs/RodentDonorPhenotypicFeaturesInner.md)
  - [RodentDonorSourcesInner](docs/RodentDonorSourcesInner.md)
  - [SampleTerm](docs/SampleTerm.md)
- - [SearchGet200Response](docs/SearchGet200Response.md)
- - [SearchGet200ResponseFacetsInner](docs/SearchGet200ResponseFacetsInner.md)
- - [SearchGet200ResponseFacetsInnerTermsInner](docs/SearchGet200ResponseFacetsInnerTermsInner.md)
- - [SearchGet200ResponseGraphInner](docs/SearchGet200ResponseGraphInner.md)
+ - [Search200Response](docs/Search200Response.md)
+ - [Search200ResponseFacetsInner](docs/Search200ResponseFacetsInner.md)
+ - [Search200ResponseFacetsInnerTermsInner](docs/Search200ResponseFacetsInnerTermsInner.md)
+ - [Search200ResponseGraphInner](docs/Search200ResponseGraphInner.md)
  - [SequenceFile](docs/SequenceFile.md)
  - [SequenceFileSequencingPlatform](docs/SequenceFileSequencingPlatform.md)
  - [SignalFile](docs/SignalFile.md)

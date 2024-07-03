@@ -1,0 +1,64 @@
+# PredictionSet
+
+A file set of computational predictions. Prediction sets contain results of analyses to predict functions or traits of genomic features.
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**small_scale_loci_list** | **List[object]** | A small scale (&lt;&#x3D;100) list of specific chromosomal region(s). | [optional] 
+**large_scale_loci_list** | [**OneOfReferenceFileTabularFilestring**](OneOfReferenceFileTabularFilestring.md) |  | [optional] 
+**small_scale_gene_list** | [**List[OneOfGenestring]**](OneOfGenestring.md) | The specific, small scale list of (&lt;&#x3D;100) gene(s) this prediction set targets. | [optional] 
+**large_scale_gene_list** | [**OneOfReferenceFileTabularFilestring**](OneOfReferenceFileTabularFilestring.md) |  | [optional] 
+**release_timestamp** | **datetime** | The date the object was released. | [optional] 
+**publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
+**documents** | [**List[DocumentsInner]**](DocumentsInner.md) | Documents that provide additional information (not data file). | [optional] 
+**lab** | [**OneOfLabstring**](OneOfLabstring.md) |  | [optional] 
+**award** | [**OneOfAwardstring**](OneOfAwardstring.md) |  | [optional] 
+**accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
+**alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
+**collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
+**status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
+**revoke_detail** | **str** | Explanation of why an object was transitioned to the revoked status. | [optional] 
+**url** | **str** | An external resource with additional information. | [optional] 
+**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '7']
+**uuid** | **str** | The unique identifier associated with every object. | [optional] 
+**notes** | **str** | DACC internal notes. | [optional] 
+**aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
+**creation_timestamp** | **datetime** | The date the object was created. | [optional] 
+**submitted_by** | [**OneOfUserstring**](OneOfUserstring.md) |  | [optional] 
+**submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
+**description** | **str** | A plain text description of the object. | [optional] 
+**dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets. | [optional] 
+**samples** | [**List[OneOfInVitroSystemMultiplexedSamplePrimaryCellTechnicalSampleTissueWholeOrganismstring]**](OneOfInVitroSystemMultiplexedSamplePrimaryCellTechnicalSampleTissueWholeOrganismstring.md) | The sample(s) associated with this file set. | [optional] 
+**donors** | [**List[OneOfHumanDonorRodentDonorstring]**](OneOfHumanDonorRodentDonorstring.md) | The donor(s) associated with this file set. | [optional] 
+**file_set_type** | **str** | The category that best describes this prediction set. | [optional] 
+**scope** | **str** | The scope or scale that this prediction set is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. | [optional] 
+**id** | **str** |  | [optional] 
+**type** | **List[str]** |  | [optional] 
+**summary** | **str** | A summary of the object. | [optional] 
+**files** | **List[object]** | The files associated with this file set. | [optional] 
+**control_for** | **List[object]** | The file sets for which this file set is a control. | [optional] 
+**submitted_files_timestamp** | **datetime** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
+**input_file_set_for** | **List[object]** | The Analysis Sets that use this File Set as an input. | [optional] 
+
+## Example
+
+```python
+from openapi_client.models.prediction_set import PredictionSet
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of PredictionSet from a JSON string
+prediction_set_instance = PredictionSet.from_json(json)
+# print the JSON string representation of the object
+print(PredictionSet.to_json())
+
+# convert the object into a dict
+prediction_set_dict = prediction_set_instance.to_dict()
+# create an instance of PredictionSet from a dict
+prediction_set_from_dict = PredictionSet.from_dict(prediction_set_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

@@ -14,6 +14,7 @@ def generate_openapi_spec(schemas):
                 "get": {
                     "summary": "Search for objects in the IGVF Project",
                     "description": "Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.",
+                    "operationId": "search",
                     "parameters": [],
                     "responses": {
                         "200": {
