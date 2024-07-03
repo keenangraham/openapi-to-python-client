@@ -60,7 +60,7 @@ class TestInVitroSystemPooledFromInner(unittest.TestCase):
                     ],
                 status = 'in progress',
                 revoke_detail = 'k',
-                schema_version = '21',
+                schema_version = '22',
                 uuid = '',
                 notes = 'k',
                 aliases = [
@@ -117,7 +117,19 @@ class TestInVitroSystemPooledFromInner(unittest.TestCase):
                 protocols = [
                     'https://www.protocols.io/k'
                     ],
+                classifications = [
+                    ''
+                    ],
+                time_post_change = 1.337,
+                time_post_change_units = 'minute',
+                cell_fate_change_treatments = [
+                    null
+                    ],
+                cell_fate_change_protocol = None,
+                demultiplexed_from = None,
                 passage_number = 0,
+                targeted_sample_term = None,
+                growth_medium = 'DMEM with serum',
                 id = '',
                 type = [
                     ''
@@ -148,25 +160,13 @@ class TestInVitroSystemPooledFromInner(unittest.TestCase):
                 pooled_in = [
                     null
                     ],
-                classifications = [
-                    'organoid'
+                demultiplexed_to = [
+                    null
                     ],
                 pmi = 1,
                 pmi_units = 'second',
                 ccf_id = '',
-                preservation_method = 'cryopreservation',
-                time_post_change = 1.337,
-                time_post_change_units = 'minute',
-                cell_fate_change_treatments = [
-                    null
-                    ],
-                cell_fate_change_protocol = None,
-                demultiplexed_from = None,
-                targeted_sample_term = None,
-                growth_medium = 'DMEM with serum',
-                demultiplexed_to = [
-                    null
-                    ]
+                preservation_method = 'cryopreservation'
             )
         else:
             return InVitroSystemPooledFromInner(
@@ -182,7 +182,7 @@ class TestInVitroSystemPooledFromInner(unittest.TestCase):
                     null
                     ],
                 classifications = [
-                    'organoid'
+                    ''
                     ],
         )
         """

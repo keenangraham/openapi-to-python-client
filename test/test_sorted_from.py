@@ -39,7 +39,7 @@ class TestSortedFrom(unittest.TestCase):
                 publication_identifiers = [
                     'PMCID:PMC80728'
                     ],
-                taxa = 'Saccharomyces cerevisiae',
+                taxa = 'Homo sapiens',
                 url = '',
                 sources = [
                     null
@@ -60,7 +60,7 @@ class TestSortedFrom(unittest.TestCase):
                     ],
                 status = 'in progress',
                 revoke_detail = 'k',
-                schema_version = '12',
+                schema_version = '22',
                 uuid = '',
                 notes = 'k',
                 aliases = [
@@ -163,15 +163,15 @@ class TestSortedFrom(unittest.TestCase):
                 demultiplexed_to = [
                     null
                     ],
-                pmi = 1,
-                pmi_units = 'second',
-                ccf_id = '',
-                preservation_method = 'cryopreservation',
                 multiplexed_samples = [
                     null
                     ],
                 barcode_sample_map = None,
-                sample_material = 'undefined'
+                sample_material = 'undefined',
+                pmi = 1,
+                pmi_units = 'second',
+                ccf_id = '',
+                preservation_method = 'cryopreservation'
             )
         else:
             return SortedFrom(

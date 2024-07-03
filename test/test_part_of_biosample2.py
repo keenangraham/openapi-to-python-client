@@ -36,10 +36,10 @@ class TestPartOfBiosample2(unittest.TestCase):
         if include_optional:
             return PartOfBiosample2(
                 release_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                taxa = 'Homo sapiens',
                 publication_identifiers = [
                     'PMCID:PMC80728'
                     ],
+                taxa = 'Homo sapiens',
                 url = '',
                 sources = [
                     null
@@ -60,7 +60,7 @@ class TestPartOfBiosample2(unittest.TestCase):
                     ],
                 status = 'in progress',
                 revoke_detail = 'k',
-                schema_version = '19',
+                schema_version = '22',
                 uuid = '',
                 notes = 'k',
                 aliases = [
@@ -117,6 +117,10 @@ class TestPartOfBiosample2(unittest.TestCase):
                 protocols = [
                     'https://www.protocols.io/k'
                     ],
+                pmi = 1,
+                pmi_units = 'second',
+                ccf_id = '',
+                preservation_method = 'cryopreservation',
                 id = '',
                 type = [
                     ''
@@ -149,11 +153,7 @@ class TestPartOfBiosample2(unittest.TestCase):
                     ],
                 classifications = [
                     ''
-                    ],
-                pmi = 1,
-                pmi_units = 'second',
-                ccf_id = '',
-                preservation_method = 'cryopreservation'
+                    ]
             )
         else:
             return PartOfBiosample2(

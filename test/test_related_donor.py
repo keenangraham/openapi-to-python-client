@@ -35,12 +35,12 @@ class TestRelatedDonor(unittest.TestCase):
         model = RelatedDonor()
         if include_optional:
             return RelatedDonor(
-                donor = '',
+                donor = None,
                 relationship_type = 'aunt'
             )
         else:
             return RelatedDonor(
-                donor = '',
+                donor = None,
                 relationship_type = 'aunt',
         )
         """

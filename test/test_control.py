@@ -53,7 +53,7 @@ class TestControl(unittest.TestCase):
                     ],
                 status = 'in progress',
                 revoke_detail = 'k',
-                schema_version = '8',
+                schema_version = '7',
                 uuid = '',
                 notes = 'k',
                 aliases = [
@@ -72,7 +72,7 @@ class TestControl(unittest.TestCase):
                 donors = [
                     null
                     ],
-                file_set_type = 'guide library',
+                file_set_type = 'pathogenicity',
                 input_file_sets = [
                     null
                     ],
@@ -94,6 +94,11 @@ class TestControl(unittest.TestCase):
                 assay_titles = [
                     ''
                     ],
+                url = '',
+                library_construction_platform = None,
+                measurement_sets = [
+                    null
+                    ],
                 small_scale_loci_list = [
                     openapi_client.models.locus.Locus(
                         assembly = 'GRCh38', 
@@ -106,50 +111,12 @@ class TestControl(unittest.TestCase):
                     null
                     ],
                 large_scale_gene_list = None,
-                url = '',
-                scope = 'tile',
-                taxa = 'Homo sapiens',
-                assemblies = [
-                    ''
-                    ],
-                transcriptome_annotations = [
-                    ''
-                    ],
-                library_construction_platform = None,
-                measurement_sets = [
-                    null
-                    ],
-                model_name = '',
-                model_version = 'v/jUR,888001528021798096225500850762068629339333975650685139102691291732729478601482026509127275504.757701929816286488291663322877052191911664783785638755659868361524878442.528468720999697682157936442848967131',
-                prediction_objects = [
-                    'coding variants'
-                    ],
-                model_zoo_location = 'https://kipoi.org/models/%?x!u',
-                software_version = None,
-                assay_term = None,
-                protocols = [
-                    'https://www.protocols.io/k'
-                    ],
-                preferred_assay_title = '10x multiome',
-                multiome_size = 2,
-                control_file_sets = [
-                    null
-                    ],
-                sequencing_library_types = [
-                    'direct RNA'
-                    ],
-                auxiliary_sets = [
-                    null
-                    ],
-                external_image_url = 'https://cellpainting-gallery.s3.amazonaws.comk',
-                related_multiome_datasets = [
-                    null
-                    ],
                 sources = [
                     null
                     ],
                 lot_id = 'k',
                 product_id = 'addgene:480728',
+                scope = 'genes',
                 selection_criteria = [
                     'accessible genome regions'
                     ],
@@ -177,7 +144,40 @@ class TestControl(unittest.TestCase):
                 upper_bound_insert_size = 56,
                 applied_to_samples = [
                     null
-                    ]
+                    ],
+                taxa = 'Homo sapiens',
+                assemblies = [
+                    ''
+                    ],
+                transcriptome_annotations = [
+                    ''
+                    ],
+                assay_term = None,
+                protocols = [
+                    'https://www.protocols.io/k'
+                    ],
+                preferred_assay_title = '10x multiome',
+                multiome_size = 2,
+                control_file_sets = [
+                    null
+                    ],
+                sequencing_library_types = [
+                    'direct RNA'
+                    ],
+                auxiliary_sets = [
+                    null
+                    ],
+                external_image_url = 'https://cellpainting-gallery.s3.amazonaws.comk',
+                related_multiome_datasets = [
+                    null
+                    ],
+                model_name = '',
+                model_version = 'v/jUR,888001528021798096225500850762068629339333975650685139102691291732729478601482026509127275504.757701929816286488291663322877052191911664783785638755659868361524878442.528468720999697682157936442848967131',
+                prediction_objects = [
+                    'coding variants'
+                    ],
+                model_zoo_location = 'https://kipoi.org/models/%?x!u',
+                software_version = None
             )
         else:
             return Control(
@@ -189,18 +189,18 @@ class TestControl(unittest.TestCase):
                 donors = [
                     null
                     ],
-                file_set_type = 'guide library',
-                scope = 'tile',
+                file_set_type = 'pathogenicity',
+                scope = 'genes',
+                selection_criteria = [
+                    'accessible genome regions'
+                    ],
+                assay_term = None,
                 model_name = '',
                 model_version = 'v/jUR,888001528021798096225500850762068629339333975650685139102691291732729478601482026509127275504.757701929816286488291663322877052191911664783785638755659868361524878442.528468720999697682157936442848967131',
                 prediction_objects = [
                     'coding variants'
                     ],
                 software_version = None,
-                assay_term = None,
-                selection_criteria = [
-                    'accessible genome regions'
-                    ],
         )
         """
 

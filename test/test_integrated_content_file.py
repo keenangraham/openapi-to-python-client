@@ -35,6 +35,10 @@ class TestIntegratedContentFile(unittest.TestCase):
         model = IntegratedContentFile()
         if include_optional:
             return IntegratedContentFile(
+                controlled_access = True,
+                anvil_url = '',
+                transcriptome_annotation = 'GENCODE 40',
+                assembly = 'GRCh38',
                 release_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 reference_files = [
                     null
@@ -53,7 +57,7 @@ class TestIntegratedContentFile(unittest.TestCase):
                     ],
                 status = 'in progress',
                 revoke_detail = 'k',
-                schema_version = '7',
+                schema_version = '11',
                 uuid = '',
                 notes = 'k',
                 aliases = [
@@ -64,14 +68,14 @@ class TestIntegratedContentFile(unittest.TestCase):
                 submitter_comment = 'k',
                 description = 'k',
                 content_md5sum = 'F325375E030FCCBA00917317C5747731',
-                content_type = 'seqspec',
+                content_type = 'barcode to element mapping',
                 dbxrefs = [
                     '/'
                     ],
                 derived_from = [
                     null
                     ],
-                file_format = 'yaml',
+                file_format = 'bed',
                 file_format_specifications = [
                     null
                     ],
@@ -81,8 +85,8 @@ class TestIntegratedContentFile(unittest.TestCase):
                 submitted_file_name = '',
                 upload_status = 'pending',
                 validation_error_detail = '',
-                dimension1 = 'cell',
-                dimension2 = 'cell',
+                redacted = True,
+                filtered = True,
                 id = '',
                 type = [
                     ''
@@ -101,22 +105,18 @@ class TestIntegratedContentFile(unittest.TestCase):
                 s3_uri = '',
                 upload_credentials = openapi_client.models.upload_credentials.Upload Credentials(),
                 content_summary = '',
-                assembly = 'GRCh38',
+                seqspec_of = [
+                    null
+                    ],
                 file_format_type = 'bed12',
-                transcriptome_annotation = 'GENCODE 40',
-                controlled_access = True,
-                anvil_url = '',
-                strand_specificity = 'plus',
-                filtered = True,
-                normalized = True,
-                start_view_position = 'chrM:80728',
+                dimension1 = 'cell',
+                dimension2 = 'cell',
                 source_url = '',
                 sources = [
                     null
                     ],
                 external = True,
                 external_id = '',
-                redacted = True,
                 flowcell_id = 'G',
                 lane = 1,
                 read_count = 0,
@@ -131,32 +131,32 @@ class TestIntegratedContentFile(unittest.TestCase):
                 seqspecs = [
                     null
                     ],
-                seqspec_of = [
-                    null
-                    ]
+                strand_specificity = 'plus',
+                normalized = True,
+                start_view_position = 'chrM:80728'
             )
         else:
             return IntegratedContentFile(
+                controlled_access = True,
                 reference_files = [
                     null
                     ],
                 lab = None,
                 award = None,
-                content_type = 'seqspec',
+                content_type = 'barcode to element mapping',
                 derived_from = [
                     null
                     ],
-                file_format = 'yaml',
+                file_format = 'bed',
                 file_set = None,
                 md5sum = 'F325375E030FCCBA00917317C5747731',
+                redacted = True,
+                filtered = True,
                 dimension1 = 'cell',
                 dimension2 = 'cell',
-                controlled_access = True,
-                strand_specificity = 'plus',
-                filtered = True,
-                redacted = True,
                 sequencing_platform = None,
                 sequencing_run = 1,
+                strand_specificity = 'plus',
         )
         """
 
