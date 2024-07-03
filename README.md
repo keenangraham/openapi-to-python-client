@@ -70,7 +70,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     type = ['type_example'] # List[str] | Type of objects to return. Can be repeated for multiple types. (optional)
     var_field = ['var_field_example'] # List[str] | Fields to include in the response. Can be repeated for multiple fields. (optional)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = 'limit_example' # str | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = 3.4 # float | Maximum number of results to return. Use 'all' for all results. (optional)
     debug = True # bool | Enables debug mode for the search. (optional)
     frame = 'frame_example' # str | Specifies the format of the returned objects. (optional)
     var_from = 56 # int | Starting index for pagination. (optional)

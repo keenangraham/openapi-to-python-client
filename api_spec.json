@@ -54,7 +54,7 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "type": "string"
+              "type": "number"
             },
             "description": "Maximum number of results to return. Use 'all' for all results."
           },
@@ -286,7 +286,11 @@
                           {
                             "$ref": "#/components/schemas/Workflow"
                           }
-                        ]
+                        ],
+                        "discriminator": {
+                          "propertyName": "@type",
+                          "mapping": {}
+                        }
                       }
                     },
                     "@id": {
@@ -445,6 +449,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "AccessKey"
             }
           },
           "summary": {
@@ -932,6 +939,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "AnalysisStep"
             }
           },
           "summary": {
@@ -1127,6 +1137,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "Award"
             }
           },
           "summary": {
@@ -1302,6 +1315,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "Biomarker"
             }
           },
           "summary": {
@@ -1535,6 +1551,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "Document"
             }
           },
           "summary": {
@@ -1901,6 +1920,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "HumanDonor"
             }
           },
           "summary": {
@@ -2242,6 +2264,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "RodentDonor"
             }
           },
           "summary": {
@@ -2669,6 +2694,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "AlignmentFile"
             }
           },
           "summary": {
@@ -3094,6 +3122,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "ConfigurationFile"
             }
           },
           "summary": {
@@ -3542,6 +3573,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "GenomeBrowserAnnotationFile"
             }
           },
           "summary": {
@@ -3958,6 +3992,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "ImageFile"
             }
           },
           "summary": {
@@ -4417,6 +4454,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "MatrixFile"
             }
           },
           "summary": {
@@ -4840,6 +4880,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "ModelFile"
             }
           },
           "summary": {
@@ -5414,6 +5457,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "ReferenceFile"
             }
           },
           "summary": {
@@ -5947,6 +5993,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "SequenceFile"
             }
           },
           "summary": {
@@ -6439,6 +6488,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "SignalFile"
             }
           },
           "summary": {
@@ -6921,6 +6973,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "TabularFile"
             }
           },
           "summary": {
@@ -7281,6 +7336,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "AnalysisSet"
             }
           },
           "summary": {
@@ -7629,6 +7687,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "AuxiliarySet"
             }
           },
           "summary": {
@@ -8217,6 +8278,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "ConstructLibrarySet"
             }
           },
           "summary": {
@@ -8563,6 +8627,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "CuratedSet"
             }
           },
           "summary": {
@@ -9066,6 +9133,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "MeasurementSet"
             }
           },
           "summary": {
@@ -9505,6 +9575,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "ModelSet"
             }
           },
           "summary": {
@@ -9944,6 +10017,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "PredictionSet"
             }
           },
           "summary": {
@@ -10215,6 +10291,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "Gene"
             }
           },
           "summary": {
@@ -10379,6 +10458,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "Image"
             }
           },
           "summary": {
@@ -10605,6 +10687,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "InstitutionalCertificate"
             }
           },
           "summary": {
@@ -10751,6 +10836,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "Lab"
             }
           },
           "summary": {
@@ -11025,6 +11113,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "CrisprModification"
             }
           },
           "summary": {
@@ -11294,6 +11385,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "Modification"
             }
           },
           "summary": {
@@ -11504,6 +11598,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "AssayTerm"
             }
           },
           "summary": {
@@ -11721,6 +11818,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "PhenotypeTerm"
             }
           },
           "summary": {
@@ -11969,6 +12069,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "PlatformTerm"
             }
           },
           "summary": {
@@ -12169,6 +12272,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "SampleTerm"
             }
           },
           "summary": {
@@ -12430,6 +12536,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "OpenReadingFrame"
             }
           },
           "summary": {
@@ -12616,6 +12725,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "Page"
             }
           },
           "summary": {
@@ -12787,6 +12899,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "PhenotypicFeature"
             }
           },
           "summary": {
@@ -13047,6 +13162,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "Publication"
             }
           },
           "summary": {
@@ -13758,6 +13876,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "InVitroSystem"
             }
           },
           "summary": {
@@ -14291,6 +14412,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "MultiplexedSample"
             }
           },
           "summary": {
@@ -15076,6 +15200,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "PrimaryCell"
             }
           },
           "summary": {
@@ -15605,6 +15732,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "TechnicalSample"
             }
           },
           "summary": {
@@ -16286,6 +16416,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "Tissue"
             }
           },
           "summary": {
@@ -17012,6 +17145,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "WholeOrganism"
             }
           },
           "summary": {
@@ -17296,6 +17432,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "Software"
             }
           },
           "summary": {
@@ -17496,6 +17635,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "SoftwareVersion"
             }
           },
           "summary": {
@@ -17625,6 +17767,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "Source"
             }
           },
           "summary": {
@@ -17921,6 +18066,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "Treatment"
             }
           },
           "summary": {
@@ -17964,70 +18112,6 @@
             "type": "string",
             "format": "uuid"
           },
-          "notes": {
-            "title": "Notes",
-            "description": "DACC internal notes.",
-            "type": "string",
-            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
-          },
-          "aliases": {
-            "title": "Aliases",
-            "description": "Lab specific identifiers to reference an object.",
-            "type": "array",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-              "title": "Lab Alias",
-              "description": "A lab specific identifier to reference an object.",
-              "type": "string",
-              "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|igvf|igvf-dacc):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$"
-            }
-          },
-          "creation_timestamp": {
-            "title": "Creation Timestamp",
-            "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
-          },
-          "submitted_by": {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/User"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "submitter_comment": {
-            "title": "Submitter Comment",
-            "description": "Additional information specified by the submitter to be displayed as a comment on the portal.",
-            "type": "string",
-            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
-          },
-          "description": {
-            "title": "Description",
-            "description": "A plain text description of the object.",
-            "type": "string",
-            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
-          },
-          "email": {
-            "title": "Email",
-            "type": "string",
-            "description": "The email associated with the user's account.",
-            "format": "email",
-            "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
-          },
-          "first_name": {
-            "title": "First Name",
-            "description": "The user's first (given) name.",
-            "type": "string"
-          },
-          "last_name": {
-            "title": "Last Name",
-            "description": "The user's last (family) name.",
-            "type": "string"
-          },
           "lab": {
             "oneOf": [
               {
@@ -18036,72 +18120,6 @@
               {
                 "type": "string"
               }
-            ]
-          },
-          "submits_for": {
-            "title": "Submits For",
-            "description": "Labs user is authorized to submit data for.",
-            "type": "array",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/Lab"
-                },
-                {
-                  "type": "string"
-                }
-              ]
-            }
-          },
-          "groups": {
-            "title": "Groups",
-            "description": "Additional access control groups",
-            "type": "array",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-              "title": "Group",
-              "type": "string",
-              "enum": [
-                "admin",
-                "read-only-admin",
-                "verified"
-              ]
-            }
-          },
-          "viewing_groups": {
-            "title": "View Access Groups",
-            "description": "The group that determines which set of data the user has permission to view.",
-            "type": "array",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-              "title": "View Access Group",
-              "type": "string",
-              "enum": [
-                "community",
-                "IGVF"
-              ]
-            }
-          },
-          "job_title": {
-            "title": "Job Title",
-            "type": "string",
-            "description": "The role of the user in their lab or organization.",
-            "enum": [
-              "Principal Investigator",
-              "Co-Investigator",
-              "Project Manager",
-              "Submitter",
-              "Post Doc",
-              "Data Wrangler",
-              "Scientist",
-              "Computational Scientist",
-              "Software Developer",
-              "NHGRI staff member",
-              "Other"
             ]
           },
           "@id": {
@@ -18113,12 +18131,10 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "User"
             }
-          },
-          "summary": {
-            "title": "Summary",
-            "type": "string",
-            "description": "A summary of the object."
           },
           "title": {
             "title": "Title",
@@ -18361,6 +18377,9 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "contains": {
+              "const": "Workflow"
             }
           },
           "summary": {

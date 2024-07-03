@@ -17,7 +17,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
@@ -31,25 +30,11 @@ class User(BaseModel):
     status: Optional[StrictStr] = Field(default='current', description="The status of the metadata object.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='5', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
-    notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
-    aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
-    creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
-    submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
-    description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    email: Annotated[str, Field(strict=True)] = Field(description="The email associated with the user's account.")
-    first_name: StrictStr = Field(description="The user's first (given) name.")
-    last_name: StrictStr = Field(description="The user's last (family) name.")
     lab: Optional[AnalysisStepLab] = None
-    submits_for: Optional[Annotated[List[AnalysisStepLab], Field(min_length=1)]] = Field(default=None, description="Labs user is authorized to submit data for.")
-    groups: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Additional access control groups")
-    viewing_groups: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The group that determines which set of data the user has permission to view.")
-    job_title: Optional[StrictStr] = Field(default=None, description="The role of the user in their lab or organization.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
     title: Optional[StrictStr] = Field(default=None, description="The full name of the user.")
-    __properties: ClassVar[List[str]] = ["status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "email", "first_name", "last_name", "lab", "submits_for", "groups", "viewing_groups", "job_title", "@id", "@type", "summary", "title"]
+    __properties: ClassVar[List[str]] = ["status", "schema_version", "uuid", "lab", "@id", "@type", "title"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -69,75 +54,6 @@ class User(BaseModel):
 
         if not re.match(r"^\d+(\.\d+)*$", value):
             raise ValueError(r"must validate the regular expression /^\d+(\.\d+)*$/")
-        return value
-
-    @field_validator('notes')
-    def notes_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
-            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
-        return value
-
-    @field_validator('submitter_comment')
-    def submitter_comment_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
-            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
-        return value
-
-    @field_validator('description')
-    def description_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
-            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
-        return value
-
-    @field_validator('email')
-    def email_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if not re.match(r"^[^\s@]+@[^\s@]+\.[^\s@]+$", value):
-            raise ValueError(r"must validate the regular expression /^[^\s@]+@[^\s@]+\.[^\s@]+$/")
-        return value
-
-    @field_validator('groups')
-    def groups_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        for i in value:
-            if i not in set(['admin', 'read-only-admin', 'verified']):
-                raise ValueError("each list item must be one of ('admin', 'read-only-admin', 'verified')")
-        return value
-
-    @field_validator('viewing_groups')
-    def viewing_groups_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        for i in value:
-            if i not in set(['community', 'IGVF']):
-                raise ValueError("each list item must be one of ('community', 'IGVF')")
-        return value
-
-    @field_validator('job_title')
-    def job_title_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['Principal Investigator', 'Co-Investigator', 'Project Manager', 'Submitter', 'Post Doc', 'Data Wrangler', 'Scientist', 'Computational Scientist', 'Software Developer', 'NHGRI staff member', 'Other']):
-            raise ValueError("must be one of enum values ('Principal Investigator', 'Co-Investigator', 'Project Manager', 'Submitter', 'Post Doc', 'Data Wrangler', 'Scientist', 'Computational Scientist', 'Software Developer', 'NHGRI staff member', 'Other')")
         return value
 
     model_config = ConfigDict(
@@ -179,19 +95,9 @@ class User(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
         # override the default output from pydantic by calling `to_dict()` of lab
         if self.lab:
             _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in submits_for (list)
-        _items = []
-        if self.submits_for:
-            for _item in self.submits_for:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['submits_for'] = _items
         return _dict
 
     @classmethod
@@ -207,28 +113,13 @@ class User(BaseModel):
             "status": obj.get("status") if obj.get("status") is not None else 'current',
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '5',
             "uuid": obj.get("uuid"),
-            "notes": obj.get("notes"),
-            "aliases": obj.get("aliases"),
-            "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
-            "submitter_comment": obj.get("submitter_comment"),
-            "description": obj.get("description"),
-            "email": obj.get("email"),
-            "first_name": obj.get("first_name"),
-            "last_name": obj.get("last_name"),
             "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "submits_for": [AnalysisStepLab.from_dict(_item) for _item in obj["submits_for"]] if obj.get("submits_for") is not None else None,
-            "groups": obj.get("groups"),
-            "viewing_groups": obj.get("viewing_groups"),
-            "job_title": obj.get("job_title"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
-            "summary": obj.get("summary"),
             "title": obj.get("title")
         })
         return _obj
 
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
 from openapi_client.models.analysis_step_lab import AnalysisStepLab
 # TODO: Rewrite to not use raise_errors
 User.model_rebuild(raise_errors=False)

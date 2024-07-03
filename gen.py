@@ -32,7 +32,11 @@ def generate_openapi_spec(schemas):
                                             "@graph": {
                                                 "type": "array",
                                                 "items": {
-                                                    "oneOf": []
+                                                    "oneOf": [],
+                                                    "discriminator": {
+                                                        "propertyName": "@type",
+                                                        "mapping": {}
+                                                    },
                                                 }
                                             },
                                             "@id": {"type": "string"},
@@ -123,7 +127,7 @@ def generate_openapi_spec(schemas):
         {
             "name": "limit",
             "in": "query",
-            "schema": {"type": "string"},
+            "schema": {"type": "number"},
             "description": "Maximum number of results to return. Use 'all' for all results."
         },
         {
@@ -280,6 +284,15 @@ schemas = {
     for k, v in schemas.items()
 }
 
+for k, v in schemas.items():
+    v['properties']['@type']['contains'] = {'const': k}
+
+user_fields = ['notes', 'aliases', 'creation_timestamp', 'submitted_by', 'submitter_comment', 'description', 'email', 'first_name', 'last_name', 'submits_for', 'groups', 'viewing_groups', 'job_title', 'summary']
+
+for field in user_fields:
+    del schemas['User']['properties'][field]
+
+print(schemas['User']['properties'].keys())
 #print(json.dumps(schemas, indent=4))
 
 openapi_spec = generate_openapi_spec(schemas)

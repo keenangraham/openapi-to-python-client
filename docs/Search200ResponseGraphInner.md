@@ -294,13 +294,6 @@ Name | Type | Description | Notes
 **treatment_term_id** | **str** | Ontology identifier describing a component in the treatment. | [optional] 
 **treatment_term_name** | **str** | Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc. | 
 **depletion** | **bool** | Treatment is depleted. | 
-**email** | **str** | The email associated with the user&#39;s account. | 
-**first_name** | **str** | The user&#39;s first (given) name. | 
-**last_name** | **str** | The user&#39;s last (family) name. | 
-**submits_for** | [**List[AnalysisStepLab]**](AnalysisStepLab.md) | Labs user is authorized to submit data for. | [optional] 
-**groups** | **List[str]** | Additional access control groups | [optional] 
-**viewing_groups** | **List[str]** | The group that determines which set of data the user has permission to view. | [optional] 
-**job_title** | **str** | The role of the user in their lab or organization. | [optional] 
 **workflow_repositories** | **List[str]** | Resources hosting the workflow. | [optional] 
 **standards_page** | [**WorkflowStandardsPage**](WorkflowStandardsPage.md) |  | [optional] 
 **analysis_steps** | **List[object]** | The analysis steps which are part of this workflow. | [optional] 
