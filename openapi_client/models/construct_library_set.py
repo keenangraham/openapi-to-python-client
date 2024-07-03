@@ -21,15 +21,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
-from openapi_client.models.associated_phenotypes_inner import AssociatedPhenotypesInner
-from openapi_client.models.document_award import DocumentAward
-from openapi_client.models.document_lab import DocumentLab
-from openapi_client.models.document_submitted_by import DocumentSubmittedBy
-from openapi_client.models.documents_inner import DocumentsInner
-from openapi_client.models.list_of_open_reading_frames_orf_inner import ListOfOpenReadingFramesORFInner
 from openapi_client.models.locus import Locus
-from openapi_client.models.small_scale_gene_list_inner import SmallScaleGeneListInner
-from openapi_client.models.sources_inner import SourcesInner
 from openapi_client.models.tile import Tile
 from typing import Optional, Set
 from typing_extensions import Self
@@ -39,17 +31,17 @@ class ConstructLibrarySet(BaseModel):
     A file set containing raw data files resulting from sequencing of the library delivered to the sample. For example, a guide RNA library.
     """ # noqa: E501
     small_scale_loci_list: Optional[Annotated[List[Locus], Field(min_length=1, max_length=100)]] = Field(default=None, description="A small scale (<=100) list of specific chromosomal region(s).")
-    large_scale_loci_list: Optional[ConstructLibrarySetLargeScaleLociList] = None
-    small_scale_gene_list: Optional[Annotated[List[SmallScaleGeneListInner], Field(min_length=1, max_length=100)]] = Field(default=None, description="The specific, small scale list of (<=100) gene(s) this construct library was designed to target.")
-    large_scale_gene_list: Optional[ConstructLibrarySetLargeScaleLociList] = None
+    large_scale_loci_list: Optional[StrictStr] = Field(default=None, description="A large scale list (>100) of specific chromosomal regions.")
+    small_scale_gene_list: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=100)]] = Field(default=None, description="The specific, small scale list of (<=100) gene(s) this construct library was designed to target.")
+    large_scale_gene_list: Optional[StrictStr] = Field(default=None, description="The large scale list of (>100 genes) this construct library was designed to target.")
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
-    documents: Optional[Annotated[List[DocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    sources: Optional[Annotated[List[SourcesInner], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
+    documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    sources: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
     lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product or catalog identifier provided following deposition to addgene.org.")
-    lab: DocumentLab
-    award: DocumentAward
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -60,15 +52,15 @@ class ConstructLibrarySet(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[DocumentSubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    file_set_type: StrictStr = Field(description="The type or category of this construct library set.")
-    scope: StrictStr = Field(description="The scope or scale that this construct library is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. If exon is specified, an exon identifier and the associated gene will need to be listed in exon and genes properties. If tile is specified, a tile identifier, start and stop coordinates, and the associated gene will need to be listed in tile and small_scale_gene_list or large_scale_gene_list properties.")
-    selection_criteria: Annotated[List[StrictStr], Field(min_length=1)] = Field(description="The criteria used to select the sequence material cloned into the library.")
-    integrated_content_files: Optional[Annotated[List[IntegratedContentFilesInner], Field(min_length=1)]] = Field(default=None, description="The files containing sequence material of interest either used for insert design or directly cloned into vectors in this library.")
-    associated_phenotypes: Optional[Annotated[List[AssociatedPhenotypesInner], Field(min_length=1)]] = Field(default=None, description="Ontological terms for diseases or phenotypes associated with the sequence material cloned in this construct library.")
-    orf_list: Optional[Annotated[List[ListOfOpenReadingFramesORFInner], Field(min_length=1)]] = Field(default=None, description="List of Open Reading Frame this construct library was designed to target.")
+    file_set_type: Optional[StrictStr] = Field(default=None, description="The type or category of this construct library set.")
+    scope: Optional[StrictStr] = Field(default=None, description="The scope or scale that this construct library is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. If exon is specified, an exon identifier and the associated gene will need to be listed in exon and genes properties. If tile is specified, a tile identifier, start and stop coordinates, and the associated gene will need to be listed in tile and small_scale_gene_list or large_scale_gene_list properties.")
+    selection_criteria: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The criteria used to select the sequence material cloned into the library.")
+    integrated_content_files: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The files containing sequence material of interest either used for insert design or directly cloned into vectors in this library.")
+    associated_phenotypes: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Ontological terms for diseases or phenotypes associated with the sequence material cloned in this construct library.")
+    orf_list: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="List of Open Reading Frame this construct library was designed to target.")
     exon: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="An identifier in plain text for the specific exon in an expression vector library. The associated gene must be listed in the small_scale_gene_list property.")
     tile: Optional[Tile] = None
     guide_type: Optional[StrictStr] = Field(default=None, description="The design of guides used in a CRISPR library, paired-guide (pgRNA) or single-guide (sgRNA).")
@@ -184,6 +176,9 @@ class ConstructLibrarySet(BaseModel):
     @field_validator('file_set_type')
     def file_set_type_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['guide library', 'reporter library', 'expression vector library']):
             raise ValueError("must be one of enum values ('guide library', 'reporter library', 'expression vector library')")
         return value
@@ -191,6 +186,9 @@ class ConstructLibrarySet(BaseModel):
     @field_validator('scope')
     def scope_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['tile', 'exon', 'genes', 'loci', 'genome-wide', 'interactors']):
             raise ValueError("must be one of enum values ('tile', 'exon', 'genes', 'loci', 'genome-wide', 'interactors')")
         return value
@@ -198,6 +196,9 @@ class ConstructLibrarySet(BaseModel):
     @field_validator('selection_criteria')
     def selection_criteria_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         for i in value:
             if i not in set(['accessible genome regions', 'candidate cis-regulatory elements', 'chromatin states', 'phenotype-associated variants', 'DNase hypersensitive sites', 'genes', 'histone modifications', 'protein interactors', 'sequence variants', 'synthetic elements', 'transcription start sites', 'TF binding sites']):
                 raise ValueError("each list item must be one of ('accessible genome regions', 'candidate cis-regulatory elements', 'chromatin states', 'phenotype-associated variants', 'DNase hypersensitive sites', 'genes', 'histone modifications', 'protein interactors', 'sequence variants', 'synthetic elements', 'transcription start sites', 'TF binding sites')")
@@ -281,63 +282,6 @@ class ConstructLibrarySet(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['small_scale_loci_list'] = _items
-        # override the default output from pydantic by calling `to_dict()` of large_scale_loci_list
-        if self.large_scale_loci_list:
-            _dict['large_scale_loci_list'] = self.large_scale_loci_list.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in small_scale_gene_list (list)
-        _items = []
-        if self.small_scale_gene_list:
-            for _item in self.small_scale_gene_list:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['small_scale_gene_list'] = _items
-        # override the default output from pydantic by calling `to_dict()` of large_scale_gene_list
-        if self.large_scale_gene_list:
-            _dict['large_scale_gene_list'] = self.large_scale_gene_list.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in documents (list)
-        _items = []
-        if self.documents:
-            for _item in self.documents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['documents'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in sources (list)
-        _items = []
-        if self.sources:
-            for _item in self.sources:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['sources'] = _items
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in integrated_content_files (list)
-        _items = []
-        if self.integrated_content_files:
-            for _item in self.integrated_content_files:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['integrated_content_files'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in associated_phenotypes (list)
-        _items = []
-        if self.associated_phenotypes:
-            for _item in self.associated_phenotypes:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['associated_phenotypes'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in orf_list (list)
-        _items = []
-        if self.orf_list:
-            for _item in self.orf_list:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['orf_list'] = _items
         # override the default output from pydantic by calling `to_dict()` of tile
         if self.tile:
             _dict['tile'] = self.tile.to_dict()
@@ -359,17 +303,17 @@ class ConstructLibrarySet(BaseModel):
 
         _obj = cls.model_validate({
             "small_scale_loci_list": [Locus.from_dict(_item) for _item in obj["small_scale_loci_list"]] if obj.get("small_scale_loci_list") is not None else None,
-            "large_scale_loci_list": ConstructLibrarySetLargeScaleLociList.from_dict(obj["large_scale_loci_list"]) if obj.get("large_scale_loci_list") is not None else None,
-            "small_scale_gene_list": [SmallScaleGeneListInner.from_dict(_item) for _item in obj["small_scale_gene_list"]] if obj.get("small_scale_gene_list") is not None else None,
-            "large_scale_gene_list": ConstructLibrarySetLargeScaleLociList.from_dict(obj["large_scale_gene_list"]) if obj.get("large_scale_gene_list") is not None else None,
+            "large_scale_loci_list": obj.get("large_scale_loci_list"),
+            "small_scale_gene_list": obj.get("small_scale_gene_list"),
+            "large_scale_gene_list": obj.get("large_scale_gene_list"),
             "release_timestamp": obj.get("release_timestamp"),
             "publication_identifiers": obj.get("publication_identifiers"),
-            "documents": [DocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
-            "sources": [SourcesInner.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
+            "documents": obj.get("documents"),
+            "sources": obj.get("sources"),
             "lot_id": obj.get("lot_id"),
             "product_id": obj.get("product_id"),
-            "lab": DocumentLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": DocumentAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
@@ -380,15 +324,15 @@ class ConstructLibrarySet(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": DocumentSubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "file_set_type": obj.get("file_set_type"),
             "scope": obj.get("scope"),
             "selection_criteria": obj.get("selection_criteria"),
-            "integrated_content_files": [IntegratedContentFilesInner.from_dict(_item) for _item in obj["integrated_content_files"]] if obj.get("integrated_content_files") is not None else None,
-            "associated_phenotypes": [AssociatedPhenotypesInner.from_dict(_item) for _item in obj["associated_phenotypes"]] if obj.get("associated_phenotypes") is not None else None,
-            "orf_list": [ListOfOpenReadingFramesORFInner.from_dict(_item) for _item in obj["orf_list"]] if obj.get("orf_list") is not None else None,
+            "integrated_content_files": obj.get("integrated_content_files"),
+            "associated_phenotypes": obj.get("associated_phenotypes"),
+            "orf_list": obj.get("orf_list"),
             "exon": obj.get("exon"),
             "tile": Tile.from_dict(obj["tile"]) if obj.get("tile") is not None else None,
             "guide_type": obj.get("guide_type"),
@@ -415,8 +359,4 @@ class ConstructLibrarySet(BaseModel):
 
         return _obj
 
-from openapi_client.models.construct_library_set_large_scale_loci_list import ConstructLibrarySetLargeScaleLociList
-from openapi_client.models.integrated_content_files_inner import IntegratedContentFilesInner
-# TODO: Rewrite to not use raise_errors
-ConstructLibrarySet.model_rebuild(raise_errors=False)
 

@@ -21,7 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.document_submitted_by import DocumentSubmittedBy
 from openapi_client.models.gene_location import GeneLocation
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,24 +30,24 @@ class Gene(BaseModel):
     A gene in the human or mouse genomes. The genes objects in IGVF are imported from GENCODE.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    transcriptome_annotation: StrictStr = Field(description="The annotation and version of the reference resource.")
-    taxa: StrictStr = Field(description="The species of the organism.")
+    transcriptome_annotation: Optional[StrictStr] = Field(default=None, description="The annotation and version of the reference resource.")
+    taxa: Optional[StrictStr] = Field(default=None, description="The species of the organism.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='9', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[DocumentSubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    geneid: Annotated[str, Field(strict=True)] = Field(description="ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix.")
-    symbol: StrictStr = Field(description="Gene symbol approved by the official nomenclature.")
+    geneid: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix.")
+    symbol: Optional[StrictStr] = Field(default=None, description="Gene symbol approved by the official nomenclature.")
     name: Optional[StrictStr] = Field(default=None, description="The full gene name preferably approved by the official nomenclature.")
     synonyms: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Alternative symbols that have been used to refer to the gene.")
-    dbxrefs: Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)] = Field(description="Unique identifiers from external resources.")
+    dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Unique identifiers from external resources.")
     locations: Optional[Annotated[List[GeneLocation], Field(min_length=1)]] = Field(default=None, description="Gene locations specified using 1-based, closed coordinates for different versions of reference genome assemblies.")
-    version_number: Annotated[str, Field(strict=True)] = Field(description="Current ENSEMBL GeneID version number of the gene.")
+    version_number: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Current ENSEMBL GeneID version number of the gene.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
@@ -60,6 +59,9 @@ class Gene(BaseModel):
     @field_validator('transcriptome_annotation')
     def transcriptome_annotation_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['GENCODE 40', 'GENCODE 41', 'GENCODE 42', 'GENCODE 43', 'GENCODE 44', 'GENCODE 45', 'GENCODE M30', 'GENCODE M31', 'GENCODE M32', 'GENCODE M33', 'GENCODE M34']):
             raise ValueError("must be one of enum values ('GENCODE 40', 'GENCODE 41', 'GENCODE 42', 'GENCODE 43', 'GENCODE 44', 'GENCODE 45', 'GENCODE M30', 'GENCODE M31', 'GENCODE M32', 'GENCODE M33', 'GENCODE M34')")
         return value
@@ -67,6 +69,9 @@ class Gene(BaseModel):
     @field_validator('taxa')
     def taxa_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['Homo sapiens', 'Mus musculus']):
             raise ValueError("must be one of enum values ('Homo sapiens', 'Mus musculus')")
         return value
@@ -124,6 +129,9 @@ class Gene(BaseModel):
     @field_validator('geneid')
     def geneid_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r"^ENS[A-Z]*G\d{11}(_PAR_Y)?$", value):
             raise ValueError(r"must validate the regular expression /^ENS[A-Z]*G\d{11}(_PAR_Y)?$/")
         return value
@@ -131,6 +139,9 @@ class Gene(BaseModel):
     @field_validator('version_number')
     def version_number_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r"^\d+?", value):
             raise ValueError(r"must validate the regular expression /^\d+?/")
         return value
@@ -176,9 +187,6 @@ class Gene(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in locations (list)
         _items = []
         if self.locations:
@@ -212,7 +220,7 @@ class Gene(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": DocumentSubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "geneid": obj.get("geneid"),

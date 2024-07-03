@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
-**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
-**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
+**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | [optional] 
+**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | [optional] 
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '4']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
@@ -17,9 +17,9 @@ Name | Type | Description | Notes
 **submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**name** | **str** | The biomarker name. | 
+**name** | **str** | The biomarker name. | [optional] 
 **classification** | **str** | Sample specific biomarker. | [optional] 
-**quantification** | **str** | The biomarker association to the biosample, disease or other condition.  This can be the absence of the biomarker or the presence of the biomarker in some low, intermediate or high quantity. | 
+**quantification** | **str** | The biomarker association to the biosample, disease or other condition.  This can be the absence of the biomarker or the presence of the biomarker in some low, intermediate or high quantity. | [optional] 
 **synonyms** | **List[str]** | Alternate names for this biomarker. | [optional] 
 **gene** | [**BiomarkerGene**](BiomarkerGene.md) |  | [optional] 
 **id** | **str** |  | [optional] 

@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 **submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**name** | **str** | A short unique name for the source. | 
-**pi** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | 
+**name** | **str** | A short unique name for the source. | [optional] 
+**pi** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
 **awards** | [**List[AnalysisStepAward]**](AnalysisStepAward.md) | Grants associated with the lab. | [optional] 
-**institute_label** | **str** | An abbreviation for the institute the lab is associated with. | [default to '']
+**institute_label** | **str** | An abbreviation for the institute the lab is associated with. | [optional] [default to '']
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 
-**title** | **str** | The complete name of the originating lab or vendor. | 
+**title** | **str** | The complete name of the originating lab or vendor. | [optional] 
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 
 ## Example

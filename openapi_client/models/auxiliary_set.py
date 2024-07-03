@@ -21,12 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
-from openapi_client.models.analysis_set_donors_inner import AnalysisSetDonorsInner
-from openapi_client.models.analysis_step_award import AnalysisStepAward
-from openapi_client.models.analysis_step_lab import AnalysisStepLab
-from openapi_client.models.rodent_donor_documents_inner import RodentDonorDocumentsInner
-from openapi_client.models.sequence_file_sequencing_platform import SequenceFileSequencingPlatform
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,9 +30,9 @@ class AuxiliarySet(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
-    documents: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: AnalysisStepLab
-    award: AnalysisStepAward
+    documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -50,14 +44,14 @@ class AuxiliarySet(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets.")
-    samples: Optional[Annotated[List[AnalysisSetSamplesInner], Field(min_length=1)]] = Field(default=None, description="The sample(s) associated with this file set.")
-    donors: Optional[Annotated[List[AnalysisSetDonorsInner], Field(min_length=1)]] = Field(default=None, description="The donors of the samples associated with this auxiliary set.")
-    file_set_type: StrictStr = Field(description="The category that best describes this auxiliary file set.")
-    library_construction_platform: Optional[SequenceFileSequencingPlatform] = None
+    samples: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The sample(s) associated with this file set.")
+    donors: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The donors of the samples associated with this auxiliary set.")
+    file_set_type: Optional[StrictStr] = Field(default=None, description="The category that best describes this auxiliary file set.")
+    library_construction_platform: Optional[StrictStr] = Field(default=None, description="The platform used to construct the library sequenced in this auxiliary set.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = None
@@ -142,6 +136,9 @@ class AuxiliarySet(BaseModel):
     @field_validator('file_set_type')
     def file_set_type_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['cell hashing', 'cell sorting', 'circularized barcode detection', 'gRNA sequencing', 'oligo-conjugated lipids', 'quantification barcode sequencing', 'variant sequencing']):
             raise ValueError("must be one of enum values ('cell hashing', 'cell sorting', 'circularized barcode detection', 'gRNA sequencing', 'oligo-conjugated lipids', 'quantification barcode sequencing', 'variant sequencing')")
         return value
@@ -185,39 +182,6 @@ class AuxiliarySet(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in documents (list)
-        _items = []
-        if self.documents:
-            for _item in self.documents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['documents'] = _items
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in samples (list)
-        _items = []
-        if self.samples:
-            for _item in self.samples:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['samples'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in donors (list)
-        _items = []
-        if self.donors:
-            for _item in self.donors:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['donors'] = _items
-        # override the default output from pydantic by calling `to_dict()` of library_construction_platform
-        if self.library_construction_platform:
-            _dict['library_construction_platform'] = self.library_construction_platform.to_dict()
         return _dict
 
     @classmethod
@@ -232,9 +196,9 @@ class AuxiliarySet(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "publication_identifiers": obj.get("publication_identifiers"),
-            "documents": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
-            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "documents": obj.get("documents"),
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
@@ -246,14 +210,14 @@ class AuxiliarySet(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "dbxrefs": obj.get("dbxrefs"),
-            "samples": [AnalysisSetSamplesInner.from_dict(_item) for _item in obj["samples"]] if obj.get("samples") is not None else None,
-            "donors": [AnalysisSetDonorsInner.from_dict(_item) for _item in obj["donors"]] if obj.get("donors") is not None else None,
+            "samples": obj.get("samples"),
+            "donors": obj.get("donors"),
             "file_set_type": obj.get("file_set_type"),
-            "library_construction_platform": SequenceFileSequencingPlatform.from_dict(obj["library_construction_platform"]) if obj.get("library_construction_platform") is not None else None,
+            "library_construction_platform": obj.get("library_construction_platform"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),
@@ -265,7 +229,4 @@ class AuxiliarySet(BaseModel):
         })
         return _obj
 
-from openapi_client.models.analysis_set_samples_inner import AnalysisSetSamplesInner
-# TODO: Rewrite to not use raise_errors
-AuxiliarySet.model_rebuild(raise_errors=False)
 

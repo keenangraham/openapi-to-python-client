@@ -30,18 +30,18 @@ class SoftwareVersion(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
-    lab: Optional[Any] = None
-    award: Optional[Any] = None
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='5', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[Any] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    software: Optional[Any] = None
+    software: Optional[StrictStr] = Field(default=None, description="Unique name of the software package.")
     version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of a particular software.")
     download_id: Optional[StrictStr] = Field(default=None, description="The MD5 checksum, SHA-1 commit ID, image hash, or similar permanent identifier of the particular version of software used.")
     downloaded_url: Optional[StrictStr] = Field(default=None, description="An external resource to track the version of the software downloaded.")

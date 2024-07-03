@@ -7,26 +7,26 @@ A CRISPR modification altering sample genomic material. For example, CRISPRi dCa
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
-**sources** | [**List[RodentDonorSourcesInner]**](RodentDonorSourcesInner.md) | The originating lab(s) or vendor(s). | [optional] 
+**sources** | **List[str]** | The originating lab(s) or vendor(s). | [optional] 
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 
 **product_id** | **str** | The product or catalog identifier provided following deposition to addgene.org. | [optional] 
-**documents** | [**List[RodentDonorDocumentsInner]**](RodentDonorDocumentsInner.md) | Documents that provide additional information (not data file). | [optional] 
+**documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
-**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
-**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
+**lab** | **str** | Lab associated with the submission. | [optional] 
+**award** | **str** | Grant associated with the submission. | [optional] 
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '2']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
-**submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
+**submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**cas** | **str** | The name of the CRISPR associated protein used in the modification. | 
+**cas** | **str** | The name of the CRISPR associated protein used in the modification. | [optional] 
 **fused_domain** | **str** | The name of the molecule fused to a Cas protein. | [optional] 
-**modality** | **str** | The purpose or intended effect of a CRISPR modification. | 
-**tagged_protein** | [**BiomarkerGene**](BiomarkerGene.md) |  | [optional] 
-**cas_species** | **str** | The originating species of the Cas nuclease. | 
+**modality** | **str** | The purpose or intended effect of a CRISPR modification. | [optional] 
+**tagged_protein** | **str** | The tagged protein in modifications in which the Cas nuclease is fused to an antibody. | [optional] 
+**cas_species** | **str** | The originating species of the Cas nuclease. | [optional] 
 **activated** | **bool** | A boolean indicating whether the modification has been activated by a chemical agent. | [optional] 
 **activating_agent_term_id** | **str** | The CHEBI identifier for the activating agent of the modification. | [optional] 
 **activating_agent_term_name** | **str** | The CHEBI name for the activating agent of the modification. | [optional] 

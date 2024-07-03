@@ -33,10 +33,6 @@ def generate_openapi_spec(schemas):
                                                 "type": "array",
                                                 "items": {
                                                     "oneOf": [],
-                                                    "discriminator": {
-                                                        "propertyName": "@type",
-                                                        "mapping": {}
-                                                    },
                                                 }
                                             },
                                             "@id": {"type": "string"},
@@ -255,6 +251,8 @@ def clean_schema(schema):
                     else:
                         cleaned[key] = value
                 elif key == 'linkTo':
+                    cleaned['type'] = 'string'
+                    continue
                     if isinstance(value, str):
                         value = [value]
                     resolved_subtypes = set()
@@ -284,15 +282,12 @@ schemas = {
     for k, v in schemas.items()
 }
 
-for k, v in schemas.items():
-    v['properties']['@type']['contains'] = {'const': k}
 
-user_fields = ['notes', 'aliases', 'creation_timestamp', 'submitted_by', 'submitter_comment', 'description', 'email', 'first_name', 'last_name', 'submits_for', 'groups', 'viewing_groups', 'job_title', 'summary']
+for k in schemas.keys():
+    if 'required' in schemas[k]:
+        del schemas[k]['required']
 
-for field in user_fields:
-    del schemas['User']['properties'][field]
 
-print(schemas['User']['properties'].keys())
 #print(json.dumps(schemas, indent=4))
 
 openapi_spec = generate_openapi_spec(schemas)

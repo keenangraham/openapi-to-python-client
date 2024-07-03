@@ -21,12 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
-from openapi_client.models.analysis_step_award import AnalysisStepAward
-from openapi_client.models.analysis_step_lab import AnalysisStepLab
-from openapi_client.models.biomarker_gene import BiomarkerGene
-from openapi_client.models.rodent_donor_documents_inner import RodentDonorDocumentsInner
-from openapi_client.models.rodent_donor_sources_inner import RodentDonorSourcesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,26 +29,26 @@ class Modification(BaseModel):
     A genetic modification altering sample genomic material. For example, CRISPRi dCas9-KRAB modification.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    sources: Optional[Annotated[List[RodentDonorSourcesInner], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
+    sources: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
     lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product or catalog identifier provided following deposition to addgene.org.")
-    documents: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    lab: AnalysisStepLab
-    award: AnalysisStepAward
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='6', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    cas: StrictStr = Field(description="The name of the CRISPR associated protein used in the modification.")
+    cas: Optional[StrictStr] = Field(default=None, description="The name of the CRISPR associated protein used in the modification.")
     fused_domain: Optional[StrictStr] = Field(default=None, description="The name of the molecule fused to a Cas protein.")
-    modality: StrictStr = Field(description="The purpose or intended effect of a CRISPR modification.")
-    tagged_protein: Optional[BiomarkerGene] = None
-    cas_species: StrictStr = Field(description="The originating species of the Cas nuclease.")
+    modality: Optional[StrictStr] = Field(default=None, description="The purpose or intended effect of a CRISPR modification.")
+    tagged_protein: Optional[StrictStr] = Field(default=None, description="The tagged protein in modifications in which the Cas nuclease is fused to an antibody.")
+    cas_species: Optional[StrictStr] = Field(default=None, description="The originating species of the Cas nuclease.")
     activated: Optional[StrictBool] = Field(default=None, description="A boolean indicating whether the modification has been activated by a chemical agent.")
     activating_agent_term_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The CHEBI identifier for the activating agent of the modification.")
     activating_agent_term_name: Optional[StrictStr] = Field(default=None, description="The CHEBI name for the activating agent of the modification.")
@@ -136,6 +130,9 @@ class Modification(BaseModel):
     @field_validator('cas')
     def cas_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['Cas9', 'Cas12a', 'Cas13', 'dCas9', 'nCas9', 'SpG', 'SpRY']):
             raise ValueError("must be one of enum values ('Cas9', 'Cas12a', 'Cas13', 'dCas9', 'nCas9', 'SpG', 'SpRY')")
         return value
@@ -153,6 +150,9 @@ class Modification(BaseModel):
     @field_validator('modality')
     def modality_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['activation', 'base editing', 'cutting', 'interference', 'knockout', 'localizing', 'prime editing']):
             raise ValueError("must be one of enum values ('activation', 'base editing', 'cutting', 'interference', 'knockout', 'localizing', 'prime editing')")
         return value
@@ -160,6 +160,9 @@ class Modification(BaseModel):
     @field_validator('cas_species')
     def cas_species_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['Streptococcus pyogenes (Sp)', 'Staphylococcus aureus (Sa)', 'Campylobacter jejuni (Cj)', 'Neisseria meningitidis (Nm)']):
             raise ValueError("must be one of enum values ('Streptococcus pyogenes (Sp)', 'Staphylococcus aureus (Sa)', 'Campylobacter jejuni (Cj)', 'Neisseria meningitidis (Nm)')")
         return value
@@ -213,32 +216,6 @@ class Modification(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in sources (list)
-        _items = []
-        if self.sources:
-            for _item in self.sources:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['sources'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in documents (list)
-        _items = []
-        if self.documents:
-            for _item in self.documents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['documents'] = _items
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of tagged_protein
-        if self.tagged_protein:
-            _dict['tagged_protein'] = self.tagged_protein.to_dict()
         return _dict
 
     @classmethod
@@ -252,25 +229,25 @@ class Modification(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
-            "sources": [RodentDonorSourcesInner.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
+            "sources": obj.get("sources"),
             "lot_id": obj.get("lot_id"),
             "product_id": obj.get("product_id"),
-            "documents": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
+            "documents": obj.get("documents"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '6',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "cas": obj.get("cas"),
             "fused_domain": obj.get("fused_domain"),
             "modality": obj.get("modality"),
-            "tagged_protein": BiomarkerGene.from_dict(obj["tagged_protein"]) if obj.get("tagged_protein") is not None else None,
+            "tagged_protein": obj.get("tagged_protein"),
             "cas_species": obj.get("cas_species"),
             "activated": obj.get("activated"),
             "activating_agent_term_id": obj.get("activating_agent_term_id"),

@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **parent** | [**PageParent**](PageParent.md) |  | [optional] 
-**name** | **str** | The name shown in this page&#39;s URL. | 
-**title** | **str** | The name shown in the browser&#39;s title bar and tabs. | 
+**name** | **str** | The name shown in this page&#39;s URL. | [optional] 
+**title** | **str** | The name shown in the browser&#39;s title bar and tabs. | [optional] 
 **layout** | [**PageLayout**](PageLayout.md) |  | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 

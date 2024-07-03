@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **documents** | [**List[RodentDonorDocumentsInner]**](RodentDonorDocumentsInner.md) | Documents that provide additional information (not data file). | [optional] 
-**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
-**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
+**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | [optional] 
+**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | [optional] 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -24,10 +24,10 @@ Name | Type | Description | Notes
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets. | [optional] 
-**samples** | [**List[AnalysisSetSamplesInner]**](AnalysisSetSamplesInner.md) | The sample(s) associated with this file set. | 
+**samples** | [**List[AnalysisSetSamplesInner]**](AnalysisSetSamplesInner.md) | The sample(s) associated with this file set. | [optional] 
 **donors** | [**List[AnalysisSetDonorsInner]**](AnalysisSetDonorsInner.md) | The donors of the samples associated with this measurement set. | [optional] 
-**file_set_type** | **str** | The category that best describes this measurement set. | [default to 'experimental data']
-**assay_term** | [**MeasurementSetAssayTerm**](MeasurementSetAssayTerm.md) |  | 
+**file_set_type** | **str** | The category that best describes this measurement set. | [optional] [default to 'experimental data']
+**assay_term** | [**MeasurementSetAssayTerm**](MeasurementSetAssayTerm.md) |  | [optional] 
 **library_construction_platform** | [**SequenceFileSequencingPlatform**](SequenceFileSequencingPlatform.md) |  | [optional] 
 **protocols** | **List[str]** | Links to the protocol(s) for conducting the assay on Protocols.io. | [optional] 
 **preferred_assay_title** | **str** | The custom lab preferred label for the experiment performed in this measurement set. | [optional] 

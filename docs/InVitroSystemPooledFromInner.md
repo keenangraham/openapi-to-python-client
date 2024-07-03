@@ -9,12 +9,12 @@ Name | Type | Description | Notes
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **taxa** | **str** | The species of the organism. | [optional] 
 **url** | **str** | An external resource with additional information. | [optional] 
-**sources** | [**List[RodentDonorSourcesInner]**](RodentDonorSourcesInner.md) | The originating lab(s) or vendor(s). | 
+**sources** | [**List[RodentDonorSourcesInner]**](RodentDonorSourcesInner.md) | The originating lab(s) or vendor(s). | [optional] 
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 
 **product_id** | **str** | The product identifier provided by the originating lab or vendor. | [optional] 
 **documents** | [**List[RodentDonorDocumentsInner]**](RodentDonorDocumentsInner.md) | Documents that provide additional information (not data file). | [optional] 
-**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
-**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
+**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | [optional] 
+**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | [optional] 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -31,13 +31,13 @@ Name | Type | Description | Notes
 **lower_bound_age** | **float** | Lower bound of age of the organism at the time of collection of the sample. | [optional] 
 **upper_bound_age** | **float** | Upper bound of age of the organism at the time of collection of the sample. | [optional] 
 **age_units** | **str** | The units of time associated with age of the biosample. | [optional] 
-**sample_terms** | [**List[InVitroSystemSampleTermsInner]**](InVitroSystemSampleTermsInner.md) | Ontology terms identifying a biosample. | [default to [25d5ad53-15fd-4a44-878a-ece2f7e86509]]
+**sample_terms** | [**List[InVitroSystemSampleTermsInner]**](InVitroSystemSampleTermsInner.md) | Ontology terms identifying a biosample. | [optional] [default to [25d5ad53-15fd-4a44-878a-ece2f7e86509]]
 **disease_terms** | [**List[PhenotypicFeatureFeature]**](PhenotypicFeatureFeature.md) | Ontology term of the disease associated with the biosample. | [optional] 
 **pooled_from** | [**List[InVitroSystemPooledFromInner]**](InVitroSystemPooledFromInner.md) | The biosamples this biosample is pooled from. | [optional] 
 **part_of** | [**InVitroSystemPooledFromInner**](InVitroSystemPooledFromInner.md) |  | [optional] 
 **originated_from** | [**InVitroSystemPooledFromInner**](InVitroSystemPooledFromInner.md) |  | [optional] 
 **treatments** | [**List[InVitroSystemTreatmentsInner]**](InVitroSystemTreatmentsInner.md) | A list of treatments applied to the biosample with the purpose of perturbation. | [optional] 
-**donors** | [**List[AnalysisSetDonorsInner]**](AnalysisSetDonorsInner.md) | Donor(s) the sample was derived from. | 
+**donors** | [**List[AnalysisSetDonorsInner]**](AnalysisSetDonorsInner.md) | Donor(s) the sample was derived from. | [optional] 
 **biomarkers** | [**List[InVitroSystemBiomarkersInner]**](InVitroSystemBiomarkersInner.md) | Biological markers that are associated with this sample. | [optional] 
 **embryonic** | **bool** | Biosample is embryonic. | [optional] 
 **modifications** | [**List[InVitroSystemModificationsInner]**](InVitroSystemModificationsInner.md) | Links to modifications applied to this biosample. | [optional] 
@@ -55,7 +55,7 @@ Name | Type | Description | Notes
 **time_post_library_delivery** | **float** | The time that elapsed past the time-point when the construct library sets were introduced. | [optional] 
 **time_post_library_delivery_units** | **str** | The units of time that elapsed past the point when the construct library sets were introduced. | [optional] 
 **protocols** | **List[str]** | Links to the protocol(s) for preparing the samples on Protocols.io. | [optional] 
-**classifications** | **List[str]** | The general category of this type of sample. | 
+**classifications** | **List[str]** | The general category of this type of sample. | [optional] 
 **time_post_change** | **float** | The time that elapsed past the time-point when the cell fate change treatments were introduced. | [optional] 
 **time_post_change_units** | **str** | The units of time that elapsed past the point when the cell fate change treatments were introduced. | [optional] 
 **cell_fate_change_treatments** | [**List[InVitroSystemTreatmentsInner]**](InVitroSystemTreatmentsInner.md) | A list of treatments applied to the biosample with the purpose of differentiation, dedifferentiation, or reprogramming. | [optional] 

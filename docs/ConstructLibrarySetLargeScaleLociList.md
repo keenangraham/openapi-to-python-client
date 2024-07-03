@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**controlled_access** | **bool** | Boolean value, indicating the file being controlled access, if true. | 
+**controlled_access** | **bool** | Boolean value, indicating the file being controlled access, if true. | [optional] 
 **anvil_url** | **str** | URL linking to the controlled access file that has been deposited at AnVIL workspace. | [optional] 
 **assembly** | **str** | Genome assembly applicable for the tabular data. | [optional] 
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **file_format_type** | **str** | The subtype of bed files. | [optional] 
 **transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
 **documents** | [**List[RodentDonorDocumentsInner]**](RodentDonorDocumentsInner.md) | Documents that provide additional information (not data file). | [optional] 
-**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
-**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
+**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | [optional] 
+**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | [optional] 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -28,14 +28,14 @@ Name | Type | Description | Notes
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **content_md5sum** | **str** | The MD5sum of the uncompressed file. | [optional] 
-**content_type** | **str** | The type of content in the file. | 
+**content_type** | **str** | The type of content in the file. | [optional] 
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects. | [optional] 
 **derived_from** | [**List[AlignmentFileDerivedFromInner]**](AlignmentFileDerivedFromInner.md) | The files participating as inputs into software to produce this output file. | [optional] 
-**file_format** | **str** | The file format or extension of the file. | 
+**file_format** | **str** | The file format or extension of the file. | [optional] 
 **file_format_specifications** | [**List[RodentDonorDocumentsInner]**](RodentDonorDocumentsInner.md) | Document that further explains the file format. | [optional] 
-**file_set** | [**AlignmentFileFileSet**](AlignmentFileFileSet.md) |  | 
+**file_set** | [**AlignmentFileFileSet**](AlignmentFileFileSet.md) |  | [optional] 
 **file_size** | **int** | File size specified in bytes. | [optional] 
-**md5sum** | **str** | The md5sum of the file being transferred. | 
+**md5sum** | **str** | The md5sum of the file being transferred. | [optional] 
 **submitted_file_name** | **str** | Original name of the file. | [optional] 
 **upload_status** | **str** | The upload/validation status of the file. | [optional] [default to 'pending']
 **validation_error_detail** | **str** | Explanation of why the file failed the automated content checks. | [optional] 

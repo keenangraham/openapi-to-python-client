@@ -6,12 +6,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
-**taxa** | **str** | The species of the organism. | 
+**taxa** | **str** | The species of the organism. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **url** | **str** | An external resource with additional information. | [optional] 
 **documents** | [**List[RodentDonorDocumentsInner]**](RodentDonorDocumentsInner.md) | Documents that provide additional information (not data file). | [optional] 
-**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
-**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
+**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | [optional] 
+**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | [optional] 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF donors. | [optional] 
-**sex** | **str** | Sex of the donor. | [default to 'unspecified']
+**sex** | **str** | Sex of the donor. | [optional] [default to 'unspecified']
 **phenotypic_features** | [**List[RodentDonorPhenotypicFeaturesInner]**](RodentDonorPhenotypicFeaturesInner.md) | A list of associated phenotypic features of the donor. | [optional] 
 **virtual** | **bool** | Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for. | [optional] [default to False]
 **related_donors** | [**List[RelatedDonor]**](RelatedDonor.md) | Familial relations of this donor. | [optional] 
@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 
 **product_id** | **str** | The product identifier provided by the originating lab or vendor. | [optional] 
 **strain_background** | **str** | The specific parent strain designation of a non-human donor. | [optional] 
-**strain** | **str** | The specific strain designation of a non-human donor. | 
+**strain** | **str** | The specific strain designation of a non-human donor. | [optional] 
 **genotype** | **str** | The genotype of the strain according to accepted nomenclature conventions. | [optional] 
 **individual_rodent** | **bool** | This rodent donor represents an individual rodent. | [optional] [default to False]
 **rodent_identifier** | **str** | The identifier for this individual rodent donor. | [optional] 

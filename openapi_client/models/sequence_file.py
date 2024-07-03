@@ -21,11 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
-from openapi_client.models.analysis_step_award import AnalysisStepAward
-from openapi_client.models.analysis_step_lab import AnalysisStepLab
-from openapi_client.models.rodent_donor_documents_inner import RodentDonorDocumentsInner
-from openapi_client.models.sequence_file_sequencing_platform import SequenceFileSequencingPlatform
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,12 +28,12 @@ class SequenceFile(BaseModel):
     """
     A file containing sequencing results in bam, fastq, or pod5 formats.
     """ # noqa: E501
-    controlled_access: StrictBool = Field(description="Boolean value, indicating the file being controlled access, if true.")
+    controlled_access: Optional[StrictBool] = Field(default=None, description="Boolean value, indicating the file being controlled access, if true.")
     anvil_url: Optional[StrictStr] = Field(default=None, description="URL linking to the controlled access file that has been deposited at AnVIL workspace.")
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    documents: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: AnalysisStepLab
-    award: AnalysisStepAward
+    documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -49,18 +44,18 @@ class SequenceFile(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     content_md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The MD5sum of the uncompressed file.")
-    content_type: StrictStr = Field(description="The type of content in the file.")
+    content_type: Optional[StrictStr] = Field(default=None, description="The type of content in the file.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects.")
-    derived_from: Optional[Annotated[List[AlignmentFileDerivedFromInner], Field(min_length=1)]] = Field(default=None, description="The files participating as inputs into software to produce this output file.")
-    file_format: StrictStr = Field(description="The file format or extension of the file.")
-    file_format_specifications: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Document that further explains the file format.")
-    file_set: AlignmentFileFileSet
+    derived_from: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The files participating as inputs into software to produce this output file.")
+    file_format: Optional[StrictStr] = Field(default=None, description="The file format or extension of the file.")
+    file_format_specifications: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Document that further explains the file format.")
+    file_set: Optional[StrictStr] = Field(default=None, description="The file set that this file belongs to.")
     file_size: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="File size specified in bytes.")
-    md5sum: Annotated[str, Field(strict=True, max_length=32)] = Field(description="The md5sum of the file being transferred.")
+    md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The md5sum of the file being transferred.")
     submitted_file_name: Optional[StrictStr] = Field(default=None, description="Original name of the file.")
     upload_status: Optional[StrictStr] = Field(default='pending', description="The upload/validation status of the file.")
     validation_error_detail: Optional[StrictStr] = Field(default=None, description="Explanation of why the file failed the automated content checks.")
@@ -70,9 +65,9 @@ class SequenceFile(BaseModel):
     minimum_read_length: Optional[Annotated[int, Field(le=300000000, strict=True, ge=0)]] = Field(default=None, description="For high-throughput sequencing, the minimum number of contiguous nucleotides determined by sequencing.")
     maximum_read_length: Optional[Annotated[int, Field(le=300000000, strict=True, ge=0)]] = Field(default=None, description="For high-throughput sequencing, the maximum number of contiguous nucleotides determined by sequencing.")
     mean_read_length: Optional[Union[Annotated[float, Field(le=300000000, strict=True, ge=0)], Annotated[int, Field(le=300000000, strict=True, ge=0)]]] = Field(default=None, description="For high-throughput sequencing, the mean number of contiguous nucleotides determined by sequencing.")
-    sequencing_platform: SequenceFileSequencingPlatform
+    sequencing_platform: Optional[StrictStr] = Field(default=None, description="The measurement device used to produce sequencing data.")
     sequencing_kit: Optional[StrictStr] = Field(default=None, description="A reagent kit used with a library to prepare it for sequencing.")
-    sequencing_run: Annotated[int, Field(strict=True, ge=1)] = Field(description="An ordinal number indicating which sequencing run of the associated library that the file belongs to.")
+    sequencing_run: Optional[Annotated[int, Field(strict=True, ge=1)]] = Field(default=None, description="An ordinal number indicating which sequencing run of the associated library that the file belongs to.")
     illumina_read_type: Optional[StrictStr] = Field(default=None, description="The read type of the file. Relevant only for files produced using an Illumina sequencing platform.")
     index: Optional[StrictStr] = Field(default=None, description="An Illumina index associated with the file.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
@@ -171,6 +166,9 @@ class SequenceFile(BaseModel):
     @field_validator('content_type')
     def content_type_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['Nanopore reads', 'PacBio subreads', 'reads']):
             raise ValueError("must be one of enum values ('Nanopore reads', 'PacBio subreads', 'reads')")
         return value
@@ -178,6 +176,9 @@ class SequenceFile(BaseModel):
     @field_validator('file_format')
     def file_format_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['bam', 'fastq', 'pod5']):
             raise ValueError("must be one of enum values ('bam', 'fastq', 'pod5')")
         return value
@@ -185,6 +186,9 @@ class SequenceFile(BaseModel):
     @field_validator('md5sum')
     def md5sum_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r"[a-f\d]{32}|[A-F\d]{32}", value):
             raise ValueError(r"must validate the regular expression /[a-f\d]{32}|[A-F\d]{32}/")
         return value
@@ -268,42 +272,6 @@ class SequenceFile(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in documents (list)
-        _items = []
-        if self.documents:
-            for _item in self.documents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['documents'] = _items
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in derived_from (list)
-        _items = []
-        if self.derived_from:
-            for _item in self.derived_from:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['derived_from'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in file_format_specifications (list)
-        _items = []
-        if self.file_format_specifications:
-            for _item in self.file_format_specifications:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['file_format_specifications'] = _items
-        # override the default output from pydantic by calling `to_dict()` of file_set
-        if self.file_set:
-            _dict['file_set'] = self.file_set.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of sequencing_platform
-        if self.sequencing_platform:
-            _dict['sequencing_platform'] = self.sequencing_platform.to_dict()
         return _dict
 
     @classmethod
@@ -319,9 +287,9 @@ class SequenceFile(BaseModel):
             "controlled_access": obj.get("controlled_access"),
             "anvil_url": obj.get("anvil_url"),
             "release_timestamp": obj.get("release_timestamp"),
-            "documents": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
-            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "documents": obj.get("documents"),
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
@@ -332,16 +300,16 @@ class SequenceFile(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "content_md5sum": obj.get("content_md5sum"),
             "content_type": obj.get("content_type"),
             "dbxrefs": obj.get("dbxrefs"),
-            "derived_from": [AlignmentFileDerivedFromInner.from_dict(_item) for _item in obj["derived_from"]] if obj.get("derived_from") is not None else None,
+            "derived_from": obj.get("derived_from"),
             "file_format": obj.get("file_format"),
-            "file_format_specifications": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["file_format_specifications"]] if obj.get("file_format_specifications") is not None else None,
-            "file_set": AlignmentFileFileSet.from_dict(obj["file_set"]) if obj.get("file_set") is not None else None,
+            "file_format_specifications": obj.get("file_format_specifications"),
+            "file_set": obj.get("file_set"),
             "file_size": obj.get("file_size"),
             "md5sum": obj.get("md5sum"),
             "submitted_file_name": obj.get("submitted_file_name"),
@@ -353,7 +321,7 @@ class SequenceFile(BaseModel):
             "minimum_read_length": obj.get("minimum_read_length"),
             "maximum_read_length": obj.get("maximum_read_length"),
             "mean_read_length": obj.get("mean_read_length"),
-            "sequencing_platform": SequenceFileSequencingPlatform.from_dict(obj["sequencing_platform"]) if obj.get("sequencing_platform") is not None else None,
+            "sequencing_platform": obj.get("sequencing_platform"),
             "sequencing_kit": obj.get("sequencing_kit"),
             "sequencing_run": obj.get("sequencing_run"),
             "illumina_read_type": obj.get("illumina_read_type"),
@@ -371,8 +339,4 @@ class SequenceFile(BaseModel):
         })
         return _obj
 
-from openapi_client.models.alignment_file_derived_from_inner import AlignmentFileDerivedFromInner
-from openapi_client.models.alignment_file_file_set import AlignmentFileFileSet
-# TODO: Rewrite to not use raise_errors
-SequenceFile.model_rebuild(raise_errors=False)
 

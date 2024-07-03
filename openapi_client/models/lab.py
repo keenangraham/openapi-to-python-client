@@ -35,13 +35,13 @@ class Lab(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    name: Annotated[str, Field(strict=True)] = Field(description="A short unique name for the lab, current convention is lower cased and hyphen delimited of PI's first and last name (e.g. john-doe).")
-    pi: AccessKeySubmittedBy
-    awards: Optional[Annotated[List[AnalysisStepAward], Field(min_length=1)]] = Field(default=None, description="Grants associated with the lab.")
-    institute_label: Annotated[str, Field(strict=True)] = Field(description="An abbreviation for the institute the lab is associated with.")
+    name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A short unique name for the lab, current convention is lower cased and hyphen delimited of PI's first and last name (e.g. john-doe).")
+    pi: Optional[StrictStr] = Field(default=None, description="Principle Investigator of the lab.")
+    awards: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Grants associated with the lab.")
+    institute_label: Optional[Annotated[str, Field(strict=True)]] = Field(default='', description="An abbreviation for the institute the lab is associated with.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
@@ -101,6 +101,9 @@ class Lab(BaseModel):
     @field_validator('name')
     def name_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r"^[a-z0-9\-]+$", value):
             raise ValueError(r"must validate the regular expression /^[a-z0-9\-]+$/")
         return value
@@ -108,6 +111,9 @@ class Lab(BaseModel):
     @field_validator('institute_label')
     def institute_label_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r"^(\S+(\s|\S)*\S+|\S)$|^$", value):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$|^$/")
         return value
@@ -151,19 +157,6 @@ class Lab(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of pi
-        if self.pi:
-            _dict['pi'] = self.pi.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in awards (list)
-        _items = []
-        if self.awards:
-            for _item in self.awards:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['awards'] = _items
         return _dict
 
     @classmethod
@@ -183,12 +176,12 @@ class Lab(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "name": obj.get("name"),
-            "pi": AccessKeySubmittedBy.from_dict(obj["pi"]) if obj.get("pi") is not None else None,
-            "awards": [AnalysisStepAward.from_dict(_item) for _item in obj["awards"]] if obj.get("awards") is not None else None,
+            "pi": obj.get("pi"),
+            "awards": obj.get("awards"),
             "institute_label": obj.get("institute_label") if obj.get("institute_label") is not None else '',
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
@@ -197,8 +190,4 @@ class Lab(BaseModel):
         })
         return _obj
 
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
-from openapi_client.models.analysis_step_award import AnalysisStepAward
-# TODO: Rewrite to not use raise_errors
-Lab.model_rebuild(raise_errors=False)
 

@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
-**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
-**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
+**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | [optional] 
+**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | [optional] 
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '5']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
@@ -17,13 +17,13 @@ Name | Type | Description | Notes
 **submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**analysis_step_types** | **List[str]** | The classification of the software. | 
-**step_label** | **str** | Unique lowercased label of the analysis step that includes the relevant assays, the software used, and the purpose of the step, e.g. rampage-grit-peak-calling-step | 
-**title** | **str** | The preferred viewable name of the analysis step, likely the same as the step label. | 
-**workflow** | [**AnalysisStepWorkflow**](AnalysisStepWorkflow.md) |  | 
+**analysis_step_types** | **List[str]** | The classification of the software. | [optional] 
+**step_label** | **str** | Unique lowercased label of the analysis step that includes the relevant assays, the software used, and the purpose of the step, e.g. rampage-grit-peak-calling-step | [optional] 
+**title** | **str** | The preferred viewable name of the analysis step, likely the same as the step label. | [optional] 
+**workflow** | [**AnalysisStepWorkflow**](AnalysisStepWorkflow.md) |  | [optional] 
 **parents** | [**List[AnalysisStepParentsInner]**](AnalysisStepParentsInner.md) | The precursor steps. | [optional] 
-**input_content_types** | [**List[InputContentType]**](InputContentType.md) | The content types used as input for the analysis step. | 
-**output_content_types** | [**List[OutputContentType]**](OutputContentType.md) | The content types produced as output by the analysis step. | 
+**input_content_types** | [**List[InputContentType]**](InputContentType.md) | The content types used as input for the analysis step. | [optional] 
+**output_content_types** | [**List[OutputContentType]**](OutputContentType.md) | The content types produced as output by the analysis step. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 

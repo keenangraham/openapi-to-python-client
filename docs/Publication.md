@@ -7,20 +7,20 @@ A publication related to IGVF.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
-**publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | 
+**publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
-**lab** | [**DocumentLab**](DocumentLab.md) |  | 
-**award** | [**DocumentAward**](DocumentAward.md) |  | 
+**lab** | **str** | Lab associated with the submission. | [optional] 
+**award** | **str** | Grant associated with the submission. | [optional] 
 **attachment** | [**Attachment**](Attachment.md) |  | [optional] 
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '6']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
-**submitted_by** | [**DocumentSubmittedBy**](DocumentSubmittedBy.md) |  | [optional] 
+**submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**title** | **str** | Title of the publication or communication. | 
+**title** | **str** | Title of the publication or communication. | [optional] 
 **abstract** | **str** | Abstract of the publication or communication. | [optional] 
 **authors** | **str** | The authors of the publication. | [optional] 
 **date_published** | **date** | The date the publication or communication was published; must be in YYYY-MM-DD format. | [optional] 

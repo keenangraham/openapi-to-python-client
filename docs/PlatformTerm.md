@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
-**submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
+**submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**term_id** | **str** | An ontology term identifier describing a platform. | 
-**term_name** | **str** | Ontology term describing a biological sample, assay, trait, or disease. | 
+**term_id** | **str** | An ontology term identifier describing a platform. | [optional] 
+**term_name** | **str** | Ontology term describing a biological sample, assay, trait, or disease. | [optional] 
 **deprecated_ntr_terms** | **List[str]** | A list of deprecated NTR terms previously associated with this ontology term. | [optional] 
-**is_a** | [**List[AssayTermIsAInner]**](AssayTermIsAInner.md) | A list of ontology terms which are the nearest ancestor to this ontology term. | [optional] 
+**is_a** | **List[str]** | A list of ontology terms which are the nearest ancestor to this ontology term. | [optional] 
 **company** | **str** | The company that developed and sells the instrument. | [optional] 
 **sequencing_kits** | **List[str]** | The available sequencing kits for this platform. | [optional] 
 **id** | **str** |  | [optional] 

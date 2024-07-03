@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
-**transcriptome_annotation** | **str** | The annotation and version of the reference resource. | 
-**taxa** | **str** | The species of the organism. | 
+**transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
+**taxa** | **str** | The species of the organism. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '9']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
@@ -17,13 +17,13 @@ Name | Type | Description | Notes
 **submitted_by** | [**DocumentSubmittedBy**](DocumentSubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**geneid** | **str** | ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix. | 
-**symbol** | **str** | Gene symbol approved by the official nomenclature. | 
+**geneid** | **str** | ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix. | [optional] 
+**symbol** | **str** | Gene symbol approved by the official nomenclature. | [optional] 
 **name** | **str** | The full gene name preferably approved by the official nomenclature. | [optional] 
 **synonyms** | **List[str]** | Alternative symbols that have been used to refer to the gene. | [optional] 
-**dbxrefs** | **List[str]** | Unique identifiers from external resources. | 
+**dbxrefs** | **List[str]** | Unique identifiers from external resources. | [optional] 
 **locations** | [**List[GeneLocation]**](GeneLocation.md) | Gene locations specified using 1-based, closed coordinates for different versions of reference genome assemblies. | [optional] 
-**version_number** | **str** | Current ENSEMBL GeneID version number of the gene. | 
+**version_number** | **str** | Current ENSEMBL GeneID version number of the gene. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 

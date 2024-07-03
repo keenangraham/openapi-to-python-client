@@ -6,12 +6,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
-**taxa** | **str** | The species of the organism. | 
+**taxa** | **str** | The species of the organism. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **url** | **str** | An external resource with additional information. | [optional] 
 **documents** | [**List[DocumentsInner]**](DocumentsInner.md) | Documents that provide additional information (not data file). | [optional] 
-**lab** | [**DocumentLab**](DocumentLab.md) |  | 
-**award** | [**DocumentAward**](DocumentAward.md) |  | 
+**lab** | [**DocumentLab**](DocumentLab.md) |  | [optional] 
+**award** | [**DocumentAward**](DocumentAward.md) |  | [optional] 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 

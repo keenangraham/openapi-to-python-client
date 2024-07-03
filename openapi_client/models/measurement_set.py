@@ -21,13 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
-from openapi_client.models.analysis_set_donors_inner import AnalysisSetDonorsInner
-from openapi_client.models.analysis_step_award import AnalysisStepAward
-from openapi_client.models.analysis_step_lab import AnalysisStepLab
-from openapi_client.models.measurement_set_assay_term import MeasurementSetAssayTerm
-from openapi_client.models.rodent_donor_documents_inner import RodentDonorDocumentsInner
-from openapi_client.models.sequence_file_sequencing_platform import SequenceFileSequencingPlatform
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -37,9 +30,9 @@ class MeasurementSet(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
-    documents: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: AnalysisStepLab
-    award: AnalysisStepAward
+    documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -50,21 +43,21 @@ class MeasurementSet(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets.")
-    samples: Annotated[List[AnalysisSetSamplesInner], Field(min_length=1, max_length=1)] = Field(description="The sample(s) associated with this file set.")
-    donors: Optional[Annotated[List[AnalysisSetDonorsInner], Field(min_length=1)]] = Field(default=None, description="The donors of the samples associated with this measurement set.")
-    file_set_type: StrictStr = Field(description="The category that best describes this measurement set.")
-    assay_term: MeasurementSetAssayTerm
-    library_construction_platform: Optional[SequenceFileSequencingPlatform] = None
+    samples: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="The sample(s) associated with this file set.")
+    donors: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The donors of the samples associated with this measurement set.")
+    file_set_type: Optional[StrictStr] = Field(default='experimental data', description="The category that best describes this measurement set.")
+    assay_term: Optional[StrictStr] = Field(default=None, description="The assay used to produce data in this measurement set.")
+    library_construction_platform: Optional[StrictStr] = Field(default=None, description="The platform used to construct the library sequenced in this measurement set.")
     protocols: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Links to the protocol(s) for conducting the assay on Protocols.io.")
     preferred_assay_title: Optional[StrictStr] = Field(default=None, description="The custom lab preferred label for the experiment performed in this measurement set.")
     multiome_size: Optional[Annotated[int, Field(strict=True, ge=2)]] = Field(default=None, description="The number of datasets included in the multiome experiment this measurement set is a part of.")
-    control_file_sets: Optional[Annotated[List[AlignmentFileFileSet], Field(min_length=1)]] = Field(default=None, description="File sets that can serve as scientific controls for this measurement_set.")
+    control_file_sets: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="File sets that can serve as scientific controls for this measurement_set.")
     sequencing_library_types: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Description of the libraries sequenced in this measurement set.")
-    auxiliary_sets: Optional[Annotated[List[MeasurementSetAuxiliarySetsInner], Field(min_length=1)]] = Field(default=None, description="The auxiliary sets of files produced alongside raw data from this measurement set.")
+    auxiliary_sets: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The auxiliary sets of files produced alongside raw data from this measurement set.")
     external_image_url: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Links to the external site where images produced by this measurement are stored.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
@@ -73,7 +66,7 @@ class MeasurementSet(BaseModel):
     control_for: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The file sets for which this file set is a control.")
     submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
     input_file_set_for: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The Analysis Sets that use this File Set as an input.")
-    related_multiome_datasets: Optional[Annotated[List[MeasurementSetRelatedMultiomeDatasetsInner], Field(min_length=1)]] = Field(default=None, description="Related datasets included in the multiome experiment this measurement set is a part of.")
+    related_multiome_datasets: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Related datasets included in the multiome experiment this measurement set is a part of.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "assay_term", "library_construction_platform", "protocols", "preferred_assay_title", "multiome_size", "control_file_sets", "sequencing_library_types", "auxiliary_sets", "external_image_url", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "related_multiome_datasets"]
 
     @field_validator('collections')
@@ -150,6 +143,9 @@ class MeasurementSet(BaseModel):
     @field_validator('file_set_type')
     def file_set_type_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['experimental data']):
             raise ValueError("must be one of enum values ('experimental data')")
         return value
@@ -224,63 +220,6 @@ class MeasurementSet(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in documents (list)
-        _items = []
-        if self.documents:
-            for _item in self.documents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['documents'] = _items
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in samples (list)
-        _items = []
-        if self.samples:
-            for _item in self.samples:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['samples'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in donors (list)
-        _items = []
-        if self.donors:
-            for _item in self.donors:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['donors'] = _items
-        # override the default output from pydantic by calling `to_dict()` of assay_term
-        if self.assay_term:
-            _dict['assay_term'] = self.assay_term.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of library_construction_platform
-        if self.library_construction_platform:
-            _dict['library_construction_platform'] = self.library_construction_platform.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in control_file_sets (list)
-        _items = []
-        if self.control_file_sets:
-            for _item in self.control_file_sets:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['control_file_sets'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in auxiliary_sets (list)
-        _items = []
-        if self.auxiliary_sets:
-            for _item in self.auxiliary_sets:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['auxiliary_sets'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in related_multiome_datasets (list)
-        _items = []
-        if self.related_multiome_datasets:
-            for _item in self.related_multiome_datasets:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['related_multiome_datasets'] = _items
         return _dict
 
     @classmethod
@@ -295,9 +234,9 @@ class MeasurementSet(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "publication_identifiers": obj.get("publication_identifiers"),
-            "documents": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
-            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "documents": obj.get("documents"),
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
@@ -308,21 +247,21 @@ class MeasurementSet(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "dbxrefs": obj.get("dbxrefs"),
-            "samples": [AnalysisSetSamplesInner.from_dict(_item) for _item in obj["samples"]] if obj.get("samples") is not None else None,
-            "donors": [AnalysisSetDonorsInner.from_dict(_item) for _item in obj["donors"]] if obj.get("donors") is not None else None,
+            "samples": obj.get("samples"),
+            "donors": obj.get("donors"),
             "file_set_type": obj.get("file_set_type") if obj.get("file_set_type") is not None else 'experimental data',
-            "assay_term": MeasurementSetAssayTerm.from_dict(obj["assay_term"]) if obj.get("assay_term") is not None else None,
-            "library_construction_platform": SequenceFileSequencingPlatform.from_dict(obj["library_construction_platform"]) if obj.get("library_construction_platform") is not None else None,
+            "assay_term": obj.get("assay_term"),
+            "library_construction_platform": obj.get("library_construction_platform"),
             "protocols": obj.get("protocols"),
             "preferred_assay_title": obj.get("preferred_assay_title"),
             "multiome_size": obj.get("multiome_size"),
-            "control_file_sets": [AlignmentFileFileSet.from_dict(_item) for _item in obj["control_file_sets"]] if obj.get("control_file_sets") is not None else None,
+            "control_file_sets": obj.get("control_file_sets"),
             "sequencing_library_types": obj.get("sequencing_library_types"),
-            "auxiliary_sets": [MeasurementSetAuxiliarySetsInner.from_dict(_item) for _item in obj["auxiliary_sets"]] if obj.get("auxiliary_sets") is not None else None,
+            "auxiliary_sets": obj.get("auxiliary_sets"),
             "external_image_url": obj.get("external_image_url"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
@@ -331,14 +270,8 @@ class MeasurementSet(BaseModel):
             "control_for": obj.get("control_for"),
             "submitted_files_timestamp": obj.get("submitted_files_timestamp"),
             "input_file_set_for": obj.get("input_file_set_for"),
-            "related_multiome_datasets": [MeasurementSetRelatedMultiomeDatasetsInner.from_dict(_item) for _item in obj["related_multiome_datasets"]] if obj.get("related_multiome_datasets") is not None else None
+            "related_multiome_datasets": obj.get("related_multiome_datasets")
         })
         return _obj
 
-from openapi_client.models.alignment_file_file_set import AlignmentFileFileSet
-from openapi_client.models.analysis_set_samples_inner import AnalysisSetSamplesInner
-from openapi_client.models.measurement_set_auxiliary_sets_inner import MeasurementSetAuxiliarySetsInner
-from openapi_client.models.measurement_set_related_multiome_datasets_inner import MeasurementSetRelatedMultiomeDatasetsInner
-# TODO: Rewrite to not use raise_errors
-MeasurementSet.model_rebuild(raise_errors=False)
 

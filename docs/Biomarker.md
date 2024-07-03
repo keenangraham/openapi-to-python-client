@@ -8,21 +8,21 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
-**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
-**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
+**lab** | **str** | Lab associated with the submission. | [optional] 
+**award** | **str** | Grant associated with the submission. | [optional] 
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '4']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
-**submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
+**submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**name** | **str** | The biomarker name. | 
+**name** | **str** | The biomarker name. | [optional] 
 **classification** | **str** | Sample specific biomarker. | [optional] 
-**quantification** | **str** | The biomarker association to the biosample, disease or other condition.  This can be the absence of the biomarker or the presence of the biomarker in some low, intermediate or high quantity. | 
+**quantification** | **str** | The biomarker association to the biosample, disease or other condition.  This can be the absence of the biomarker or the presence of the biomarker in some low, intermediate or high quantity. | [optional] 
 **synonyms** | **List[str]** | Alternate names for this biomarker. | [optional] 
-**gene** | [**BiomarkerGene**](BiomarkerGene.md) |  | [optional] 
+**gene** | **str** | Biomarker gene. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 

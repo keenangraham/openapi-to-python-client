@@ -21,12 +21,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
-from openapi_client.models.analysis_step_award import AnalysisStepAward
-from openapi_client.models.analysis_step_lab import AnalysisStepLab
 from openapi_client.models.content_type1 import ContentType1
-from openapi_client.models.rodent_donor_documents_inner import RodentDonorDocumentsInner
-from openapi_client.models.rodent_donor_sources_inner import RodentDonorSourcesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,15 +29,15 @@ class ReferenceFile(BaseModel):
     """
     A file containing diverse reference related information.
     """ # noqa: E501
-    controlled_access: StrictBool = Field(description="Boolean value, indicating the file being controlled access, if true.")
+    controlled_access: Optional[StrictBool] = Field(default=None, description="Boolean value, indicating the file being controlled access, if true.")
     anvil_url: Optional[StrictStr] = Field(default=None, description="URL linking to the controlled access file that has been deposited at AnVIL workspace.")
     assembly: Optional[StrictStr] = Field(default=None, description="Genome assembly applicable for the reference data.")
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     file_format_type: Optional[StrictStr] = Field(default=None, description="The subtype of bed files.")
     transcriptome_annotation: Optional[StrictStr] = Field(default=None, description="The annotation and version of the reference resource.")
-    documents: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: AnalysisStepLab
-    award: AnalysisStepAward
+    documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -53,23 +48,23 @@ class ReferenceFile(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     content_md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The MD5sum of the uncompressed file.")
-    content_type: ContentType1
+    content_type: Optional[ContentType1] = None
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects.")
-    derived_from: Optional[Annotated[List[AlignmentFileDerivedFromInner], Field(min_length=1)]] = Field(default=None, description="The files participating as inputs into software to produce this output file.")
-    file_format: StrictStr = Field(description="The file format or extension of the file.")
-    file_format_specifications: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Document that further explains the file format.")
-    file_set: AlignmentFileFileSet
+    derived_from: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The files participating as inputs into software to produce this output file.")
+    file_format: Optional[StrictStr] = Field(default=None, description="The file format or extension of the file.")
+    file_format_specifications: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Document that further explains the file format.")
+    file_set: Optional[StrictStr] = Field(default=None, description="The file set that this file belongs to.")
     file_size: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="File size specified in bytes.")
-    md5sum: Annotated[str, Field(strict=True, max_length=32)] = Field(description="The md5sum of the file being transferred.")
+    md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The md5sum of the file being transferred.")
     submitted_file_name: Optional[StrictStr] = Field(default=None, description="Original name of the file.")
     upload_status: Optional[StrictStr] = Field(default='pending', description="The upload/validation status of the file.")
     validation_error_detail: Optional[StrictStr] = Field(default=None, description="Explanation of why the file failed the automated content checks.")
     source_url: Optional[StrictStr] = Field(default=None, description="Link to external resource, such as NCBI or GENCODE, where the reference data was obtained.")
-    sources: Optional[Annotated[List[RodentDonorSourcesInner], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
+    sources: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
     external: Optional[StrictBool] = Field(default=False, description="Indicates whether the file was obtained from an external, non-IGVF source.")
     external_id: Optional[StrictStr] = Field(default=None, description="A unique identifier for the file at its original source.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
@@ -197,6 +192,9 @@ class ReferenceFile(BaseModel):
     @field_validator('file_format')
     def file_format_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['bed', 'csv', 'dat', 'fasta', 'gaf', 'gds', 'gtf', 'obo', 'owl', 'PWM', 'tar', 'tsv', 'txt', 'vcf', 'xml']):
             raise ValueError("must be one of enum values ('bed', 'csv', 'dat', 'fasta', 'gaf', 'gds', 'gtf', 'obo', 'owl', 'PWM', 'tar', 'tsv', 'txt', 'vcf', 'xml')")
         return value
@@ -204,6 +202,9 @@ class ReferenceFile(BaseModel):
     @field_validator('md5sum')
     def md5sum_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r"[a-f\d]{32}|[A-F\d]{32}", value):
             raise ValueError(r"must validate the regular expression /[a-f\d]{32}|[A-F\d]{32}/")
         return value
@@ -257,49 +258,9 @@ class ReferenceFile(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in documents (list)
-        _items = []
-        if self.documents:
-            for _item in self.documents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['documents'] = _items
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
         # override the default output from pydantic by calling `to_dict()` of content_type
         if self.content_type:
             _dict['content_type'] = self.content_type.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in derived_from (list)
-        _items = []
-        if self.derived_from:
-            for _item in self.derived_from:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['derived_from'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in file_format_specifications (list)
-        _items = []
-        if self.file_format_specifications:
-            for _item in self.file_format_specifications:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['file_format_specifications'] = _items
-        # override the default output from pydantic by calling `to_dict()` of file_set
-        if self.file_set:
-            _dict['file_set'] = self.file_set.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in sources (list)
-        _items = []
-        if self.sources:
-            for _item in self.sources:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['sources'] = _items
         return _dict
 
     @classmethod
@@ -318,9 +279,9 @@ class ReferenceFile(BaseModel):
             "release_timestamp": obj.get("release_timestamp"),
             "file_format_type": obj.get("file_format_type"),
             "transcriptome_annotation": obj.get("transcriptome_annotation"),
-            "documents": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
-            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "documents": obj.get("documents"),
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
@@ -331,23 +292,23 @@ class ReferenceFile(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "content_md5sum": obj.get("content_md5sum"),
             "content_type": ContentType1.from_dict(obj["content_type"]) if obj.get("content_type") is not None else None,
             "dbxrefs": obj.get("dbxrefs"),
-            "derived_from": [AlignmentFileDerivedFromInner.from_dict(_item) for _item in obj["derived_from"]] if obj.get("derived_from") is not None else None,
+            "derived_from": obj.get("derived_from"),
             "file_format": obj.get("file_format"),
-            "file_format_specifications": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["file_format_specifications"]] if obj.get("file_format_specifications") is not None else None,
-            "file_set": AlignmentFileFileSet.from_dict(obj["file_set"]) if obj.get("file_set") is not None else None,
+            "file_format_specifications": obj.get("file_format_specifications"),
+            "file_set": obj.get("file_set"),
             "file_size": obj.get("file_size"),
             "md5sum": obj.get("md5sum"),
             "submitted_file_name": obj.get("submitted_file_name"),
             "upload_status": obj.get("upload_status") if obj.get("upload_status") is not None else 'pending',
             "validation_error_detail": obj.get("validation_error_detail"),
             "source_url": obj.get("source_url"),
-            "sources": [RodentDonorSourcesInner.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
+            "sources": obj.get("sources"),
             "external": obj.get("external") if obj.get("external") is not None else False,
             "external_id": obj.get("external_id"),
             "@id": obj.get("@id"),
@@ -362,8 +323,4 @@ class ReferenceFile(BaseModel):
         })
         return _obj
 
-from openapi_client.models.alignment_file_derived_from_inner import AlignmentFileDerivedFromInner
-from openapi_client.models.alignment_file_file_set import AlignmentFileFileSet
-# TODO: Rewrite to not use raise_errors
-ReferenceFile.model_rebuild(raise_errors=False)
 

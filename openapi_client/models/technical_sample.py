@@ -21,12 +21,6 @@ from datetime import date, datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
-from openapi_client.models.analysis_step_award import AnalysisStepAward
-from openapi_client.models.analysis_step_lab import AnalysisStepLab
-from openapi_client.models.in_vitro_system_sample_terms_inner import InVitroSystemSampleTermsInner
-from openapi_client.models.rodent_donor_documents_inner import RodentDonorDocumentsInner
-from openapi_client.models.rodent_donor_sources_inner import RodentDonorSourcesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -37,12 +31,12 @@ class TechnicalSample(BaseModel):
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
-    sources: Annotated[List[RodentDonorSourcesInner], Field(min_length=1, max_length=1)] = Field(description="The originating lab(s) or vendor(s).")
+    sources: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
     lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product identifier provided by the originating lab or vendor.")
-    documents: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: AnalysisStepLab
-    award: AnalysisStepAward
+    documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -53,25 +47,25 @@ class TechnicalSample(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     starting_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The initial quantity of samples obtained.")
     starting_amount_units: Optional[StrictStr] = Field(default=None, description="The units used to quantify the amount of samples obtained.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Biosample identifiers from external resources, such as Biosample database or Cellosaurus.")
     date_obtained: Optional[date] = Field(default=None, description="The date the sample was harvested, dissected or created, depending on the type of the sample.")
-    sorted_from: Optional[AnalysisSetSamplesInner] = None
+    sorted_from: Optional[StrictStr] = Field(default=None, description="Links to a larger sample from which this sample was obtained through sorting.")
     sorted_from_detail: Optional[StrictStr] = Field(default=None, description="Detail for sample sorted into fractions capturing information about sorting.")
     virtual: Optional[StrictBool] = Field(default=False, description="Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for.")
-    construct_library_sets: Optional[Annotated[List[InVitroSystemConstructLibrarySetsInner], Field(min_length=1)]] = Field(default=None, description="The construct library sets of vectors introduced to this sample prior to performing an assay.")
+    construct_library_sets: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The construct library sets of vectors introduced to this sample prior to performing an assay.")
     moi: Optional[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]] = Field(default=None, description="The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI.")
     nucleic_acid_delivery: Optional[StrictStr] = Field(default=None, description="Method of introduction of nucleic acid into the cell.")
     time_post_library_delivery: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The time that elapsed past the time-point when the construct library sets were introduced.")
     time_post_library_delivery_units: Optional[StrictStr] = Field(default=None, description="The units of time that elapsed past the point when the construct library sets were introduced.")
     protocols: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Links to the protocol(s) for preparing the samples on Protocols.io.")
-    sample_material: StrictStr
+    sample_material: Optional[StrictStr] = 'undefined'
     taxa: Optional[StrictStr] = None
-    sample_terms: Annotated[List[InVitroSystemSampleTermsInner], Field(min_length=1, max_length=1)] = Field(description="Ontology terms identifying a technical sample.")
+    sample_terms: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="Ontology terms identifying a technical sample.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of this sample.")
@@ -207,6 +201,9 @@ class TechnicalSample(BaseModel):
     @field_validator('sample_material')
     def sample_material_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['undefined', 'inorganic', 'synthetic', 'organic']):
             raise ValueError("must be one of enum values ('undefined', 'inorganic', 'synthetic', 'organic')")
         return value
@@ -260,46 +257,6 @@ class TechnicalSample(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in sources (list)
-        _items = []
-        if self.sources:
-            for _item in self.sources:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['sources'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in documents (list)
-        _items = []
-        if self.documents:
-            for _item in self.documents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['documents'] = _items
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of sorted_from
-        if self.sorted_from:
-            _dict['sorted_from'] = self.sorted_from.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in construct_library_sets (list)
-        _items = []
-        if self.construct_library_sets:
-            for _item in self.construct_library_sets:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['construct_library_sets'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in sample_terms (list)
-        _items = []
-        if self.sample_terms:
-            for _item in self.sample_terms:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['sample_terms'] = _items
         return _dict
 
     @classmethod
@@ -315,12 +272,12 @@ class TechnicalSample(BaseModel):
             "release_timestamp": obj.get("release_timestamp"),
             "publication_identifiers": obj.get("publication_identifiers"),
             "url": obj.get("url"),
-            "sources": [RodentDonorSourcesInner.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
+            "sources": obj.get("sources"),
             "lot_id": obj.get("lot_id"),
             "product_id": obj.get("product_id"),
-            "documents": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
-            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "documents": obj.get("documents"),
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
@@ -331,17 +288,17 @@ class TechnicalSample(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "starting_amount": obj.get("starting_amount"),
             "starting_amount_units": obj.get("starting_amount_units"),
             "dbxrefs": obj.get("dbxrefs"),
             "date_obtained": obj.get("date_obtained"),
-            "sorted_from": AnalysisSetSamplesInner.from_dict(obj["sorted_from"]) if obj.get("sorted_from") is not None else None,
+            "sorted_from": obj.get("sorted_from"),
             "sorted_from_detail": obj.get("sorted_from_detail"),
             "virtual": obj.get("virtual") if obj.get("virtual") is not None else False,
-            "construct_library_sets": [InVitroSystemConstructLibrarySetsInner.from_dict(_item) for _item in obj["construct_library_sets"]] if obj.get("construct_library_sets") is not None else None,
+            "construct_library_sets": obj.get("construct_library_sets"),
             "moi": obj.get("moi"),
             "nucleic_acid_delivery": obj.get("nucleic_acid_delivery"),
             "time_post_library_delivery": obj.get("time_post_library_delivery"),
@@ -349,7 +306,7 @@ class TechnicalSample(BaseModel):
             "protocols": obj.get("protocols"),
             "sample_material": obj.get("sample_material") if obj.get("sample_material") is not None else 'undefined',
             "taxa": obj.get("taxa"),
-            "sample_terms": [InVitroSystemSampleTermsInner.from_dict(_item) for _item in obj["sample_terms"]] if obj.get("sample_terms") is not None else None,
+            "sample_terms": obj.get("sample_terms"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),
@@ -362,8 +319,4 @@ class TechnicalSample(BaseModel):
         })
         return _obj
 
-from openapi_client.models.analysis_set_samples_inner import AnalysisSetSamplesInner
-from openapi_client.models.in_vitro_system_construct_library_sets_inner import InVitroSystemConstructLibrarySetsInner
-# TODO: Rewrite to not use raise_errors
-TechnicalSample.model_rebuild(raise_errors=False)
 

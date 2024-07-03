@@ -21,10 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
-from openapi_client.models.analysis_step_award import AnalysisStepAward
-from openapi_client.models.analysis_step_lab import AnalysisStepLab
-from openapi_client.models.model_set_software_version import ModelSetSoftwareVersion
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,25 +30,25 @@ class Software(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
-    lab: AnalysisStepLab
-    award: AnalysisStepAward
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='5', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
-    description: Annotated[str, Field(strict=True)] = Field(description="A plain text description of the object.")
-    name: Annotated[str, Field(strict=True)] = Field(description="Unique name of the software package; a lowercase version of the title.")
-    title: Annotated[str, Field(strict=True)] = Field(description="The preferred viewable name of the software.")
-    source_url: StrictStr = Field(description="An external resource to the codebase.")
+    description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
+    name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Unique name of the software package; a lowercase version of the title.")
+    title: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The preferred viewable name of the software.")
+    source_url: Optional[StrictStr] = Field(default=None, description="An external resource to the codebase.")
     used_by: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The component(s) of the IGVF consortium that utilize this software.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
-    versions: Optional[Annotated[List[ModelSetSoftwareVersion], Field(min_length=1)]] = Field(default=None, description="A list of versions that have been released for this software.")
+    versions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="A list of versions that have been released for this software.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "lab", "award", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "title", "source_url", "used_by", "@id", "@type", "summary", "versions"]
 
     @field_validator('status')
@@ -98,6 +94,9 @@ class Software(BaseModel):
     @field_validator('description')
     def description_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value
@@ -105,6 +104,9 @@ class Software(BaseModel):
     @field_validator('name')
     def name_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r"^[a-z0-9\-\_]+", value):
             raise ValueError(r"must validate the regular expression /^[a-z0-9\-\_]+/")
         return value
@@ -112,6 +114,9 @@ class Software(BaseModel):
     @field_validator('title')
     def title_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value
@@ -166,22 +171,6 @@ class Software(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in versions (list)
-        _items = []
-        if self.versions:
-            for _item in self.versions:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['versions'] = _items
         return _dict
 
     @classmethod
@@ -196,15 +185,15 @@ class Software(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "publication_identifiers": obj.get("publication_identifiers"),
-            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '5',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "name": obj.get("name"),
@@ -214,7 +203,7 @@ class Software(BaseModel):
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),
-            "versions": [ModelSetSoftwareVersion.from_dict(_item) for _item in obj["versions"]] if obj.get("versions") is not None else None
+            "versions": obj.get("versions")
         })
         return _obj
 

@@ -15,10 +15,10 @@ Name | Type | Description | Notes
 **submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**name** | **str** | A short unique name for the lab, current convention is lower cased and hyphen delimited of PI&#39;s first and last name (e.g. john-doe). | 
-**pi** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | 
+**name** | **str** | A short unique name for the lab, current convention is lower cased and hyphen delimited of PI&#39;s first and last name (e.g. john-doe). | [optional] 
+**pi** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
 **awards** | [**List[AnalysisStepAward]**](AnalysisStepAward.md) | Grants associated with the lab. | [optional] 
-**institute_label** | **str** | An abbreviation for the institute the lab is associated with. | [default to '']
+**institute_label** | **str** | An abbreviation for the institute the lab is associated with. | [optional] [default to '']
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 

@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**term_id** | **str** | An ontology term identifier describing a phenotype. | 
-**term_name** | **str** | Ontology term describing a biological sample, assay, trait, or disease. | 
+**term_id** | **str** | An ontology term identifier describing a phenotype. | [optional] 
+**term_name** | **str** | Ontology term describing a biological sample, assay, trait, or disease. | [optional] 
 **deprecated_ntr_terms** | **List[str]** | A list of deprecated NTR terms previously associated with this ontology term. | [optional] 
 **is_a** | [**List[AssayTermIsAInner]**](AssayTermIsAInner.md) | A list of ontology terms which are the nearest ancestor to this ontology term. | [optional] 
 **id** | **str** |  | [optional] 

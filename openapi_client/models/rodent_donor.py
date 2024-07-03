@@ -21,12 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
-from openapi_client.models.analysis_step_award import AnalysisStepAward
-from openapi_client.models.analysis_step_lab import AnalysisStepLab
-from openapi_client.models.rodent_donor_documents_inner import RodentDonorDocumentsInner
-from openapi_client.models.rodent_donor_phenotypic_features_inner import RodentDonorPhenotypicFeaturesInner
-from openapi_client.models.rodent_donor_sources_inner import RodentDonorSourcesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,15 +29,15 @@ class RodentDonor(BaseModel):
     A rodent donor of a biosample. Submission of any sample originating from a rodent donor requires submission of information about the relevant donor. The rodent donor can be a generic representative of an inbred strain, or a unique, individual mouse. For example, submission of a B6 mouse donor is a prerequisite for submission of any B6 mouse samples.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    taxa: StrictStr = Field(description="The species of the organism.")
+    taxa: Optional[StrictStr] = Field(default=None, description="The species of the organism.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
-    sources: Optional[Annotated[List[RodentDonorSourcesInner], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
+    sources: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
     lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product identifier provided by the originating lab or vendor.")
-    documents: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: AnalysisStepLab
-    award: AnalysisStepAward
+    documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -54,15 +48,15 @@ class RodentDonor(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF donors.")
-    sex: StrictStr = Field(description="Sex of the donor.")
-    phenotypic_features: Optional[Annotated[List[RodentDonorPhenotypicFeaturesInner], Field(min_length=1)]] = Field(default=None, description="A list of associated phenotypic features of the donor.")
+    sex: Optional[StrictStr] = Field(default='unspecified', description="Sex of the donor.")
+    phenotypic_features: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="A list of associated phenotypic features of the donor.")
     virtual: Optional[StrictBool] = Field(default=False, description="Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for.")
     strain_background: Optional[StrictStr] = Field(default=None, description="The specific parent strain designation of a non-human donor.")
-    strain: StrictStr = Field(description="The specific strain designation of a non-human donor.")
+    strain: Optional[StrictStr] = Field(default=None, description="The specific strain designation of a non-human donor.")
     genotype: Optional[StrictStr] = Field(default=None, description="The genotype of the strain according to accepted nomenclature conventions.")
     individual_rodent: Optional[StrictBool] = Field(default=False, description="This rodent donor represents an individual rodent.")
     rodent_identifier: Optional[StrictStr] = Field(default=None, description="The identifier for this individual rodent donor.")
@@ -74,6 +68,9 @@ class RodentDonor(BaseModel):
     @field_validator('taxa')
     def taxa_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['Mus musculus']):
             raise ValueError("must be one of enum values ('Mus musculus')")
         return value
@@ -172,6 +169,9 @@ class RodentDonor(BaseModel):
     @field_validator('sex')
     def sex_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['male', 'female', 'unspecified']):
             raise ValueError("must be one of enum values ('male', 'female', 'unspecified')")
         return value
@@ -225,36 +225,6 @@ class RodentDonor(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in sources (list)
-        _items = []
-        if self.sources:
-            for _item in self.sources:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['sources'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in documents (list)
-        _items = []
-        if self.documents:
-            for _item in self.documents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['documents'] = _items
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in phenotypic_features (list)
-        _items = []
-        if self.phenotypic_features:
-            for _item in self.phenotypic_features:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['phenotypic_features'] = _items
         return _dict
 
     @classmethod
@@ -271,12 +241,12 @@ class RodentDonor(BaseModel):
             "taxa": obj.get("taxa"),
             "publication_identifiers": obj.get("publication_identifiers"),
             "url": obj.get("url"),
-            "sources": [RodentDonorSourcesInner.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
+            "sources": obj.get("sources"),
             "lot_id": obj.get("lot_id"),
             "product_id": obj.get("product_id"),
-            "documents": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
-            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "documents": obj.get("documents"),
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
@@ -287,12 +257,12 @@ class RodentDonor(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "dbxrefs": obj.get("dbxrefs"),
             "sex": obj.get("sex") if obj.get("sex") is not None else 'unspecified',
-            "phenotypic_features": [RodentDonorPhenotypicFeaturesInner.from_dict(_item) for _item in obj["phenotypic_features"]] if obj.get("phenotypic_features") is not None else None,
+            "phenotypic_features": obj.get("phenotypic_features"),
             "virtual": obj.get("virtual") if obj.get("virtual") is not None else False,
             "strain_background": obj.get("strain_background"),
             "strain": obj.get("strain"),

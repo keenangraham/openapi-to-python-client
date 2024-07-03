@@ -21,9 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.document_award import DocumentAward
-from openapi_client.models.document_lab import DocumentLab
-from openapi_client.models.document_submitted_by import DocumentSubmittedBy
 from openapi_client.models.page_layout import PageLayout
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,20 +30,20 @@ class Page(BaseModel):
     A page on the IGVF portal.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    lab: Optional[DocumentLab] = None
-    award: Optional[DocumentAward] = None
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[DocumentSubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    parent: Optional[PageParent] = None
-    name: Annotated[str, Field(strict=True)] = Field(description="The name shown in this page's URL.")
-    title: StrictStr = Field(description="The name shown in the browser's title bar and tabs.")
+    parent: Optional[StrictStr] = Field(default=None, description="The parent page associated with this page.")
+    name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The name shown in this page's URL.")
+    title: Optional[StrictStr] = Field(default=None, description="The name shown in the browser's title bar and tabs.")
     layout: Optional[PageLayout] = None
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
@@ -108,6 +105,9 @@ class Page(BaseModel):
     @field_validator('name')
     def name_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r"^[a-z0-9_-]+$", value):
             raise ValueError(r"must validate the regular expression /^[a-z0-9_-]+$/")
         return value
@@ -153,18 +153,6 @@ class Page(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of parent
-        if self.parent:
-            _dict['parent'] = self.parent.to_dict()
         # override the default output from pydantic by calling `to_dict()` of layout
         if self.layout:
             _dict['layout'] = self.layout.to_dict()
@@ -186,18 +174,18 @@ class Page(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
-            "lab": DocumentLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": DocumentAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '4',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": DocumentSubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
-            "parent": PageParent.from_dict(obj["parent"]) if obj.get("parent") is not None else None,
+            "parent": obj.get("parent"),
             "name": obj.get("name"),
             "title": obj.get("title"),
             "layout": PageLayout.from_dict(obj["layout"]) if obj.get("layout") is not None else None,
@@ -213,7 +201,4 @@ class Page(BaseModel):
 
         return _obj
 
-from openapi_client.models.page_parent import PageParent
-# TODO: Rewrite to not use raise_errors
-Page.model_rebuild(raise_errors=False)
 

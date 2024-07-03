@@ -13,16 +13,16 @@ Name | Type | Description | Notes
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
-**submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
+**submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**title** | **str** | The grant name from the NIH database, if applicable. | 
-**name** | **str** | The official grant number from the NIH database, if applicable | 
+**title** | **str** | The grant name from the NIH database, if applicable. | [optional] 
+**name** | **str** | The official grant number from the NIH database, if applicable | [optional] 
 **start_date** | **date** | The date when the award begins. | [optional] 
 **end_date** | **date** | The date when the award concludes. | [optional] 
-**pis** | [**List[AccessKeySubmittedBy]**](AccessKeySubmittedBy.md) | Principal Investigator(s) of the grant. | [optional] 
-**contact_pi** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
-**project** | **str** | The collection of biological data related to a single initiative, originating from a consortium. | 
+**pis** | **List[str]** | Principal Investigator(s) of the grant. | [optional] 
+**contact_pi** | **str** | The contact Principal Investigator of the grant. | [optional] 
+**project** | **str** | The collection of biological data related to a single initiative, originating from a consortium. | [optional] 
 **viewing_group** | **str** | The group that determines which set of data the user has permission to view. | [optional] 
 **component** | **str** | The project component the award is associated with. | [optional] 
 **id** | **str** |  | [optional] 

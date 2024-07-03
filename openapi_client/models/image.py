@@ -22,7 +22,6 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from openapi_client.models.attachment1 import Attachment1
-from openapi_client.models.document_submitted_by import DocumentSubmittedBy
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,13 +31,13 @@ class Image(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='released', description="The status of the metadata object.")
-    attachment: Attachment1
+    attachment: Optional[Attachment1] = None
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[DocumentSubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     caption: Optional[StrictStr] = Field(default=None, description="The caption of the image.")
@@ -144,9 +143,6 @@ class Image(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of attachment
         if self.attachment:
             _dict['attachment'] = self.attachment.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -172,7 +168,7 @@ class Image(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": DocumentSubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "caption": obj.get("caption"),

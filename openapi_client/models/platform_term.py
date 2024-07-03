@@ -21,7 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,13 +35,13 @@ class PlatformTerm(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    term_id: Annotated[str, Field(strict=True)] = Field(description="An ontology term identifier describing a platform.")
-    term_name: Annotated[str, Field(strict=True)] = Field(description="Ontology term describing a biological sample, assay, trait, or disease.")
+    term_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="An ontology term identifier describing a platform.")
+    term_name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Ontology term describing a biological sample, assay, trait, or disease.")
     deprecated_ntr_terms: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="A list of deprecated NTR terms previously associated with this ontology term.")
-    is_a: Optional[Annotated[List[AssayTermIsAInner], Field(min_length=1)]] = Field(default=None, description="A list of ontology terms which are the nearest ancestor to this ontology term.")
+    is_a: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="A list of ontology terms which are the nearest ancestor to this ontology term.")
     company: Optional[StrictStr] = Field(default=None, description="The company that developed and sells the instrument.")
     sequencing_kits: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The available sequencing kits for this platform.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
@@ -107,6 +106,9 @@ class PlatformTerm(BaseModel):
     @field_validator('term_id')
     def term_id_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r"^(EFO|NTR):[0-9]{2,8}$", value):
             raise ValueError(r"must validate the regular expression /^(EFO|NTR):[0-9]{2,8}$/")
         return value
@@ -114,6 +116,9 @@ class PlatformTerm(BaseModel):
     @field_validator('term_name')
     def term_name_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r"^(?![\s\"\'])[\S|\s]*[^\s\"\']$", value):
             raise ValueError(r"must validate the regular expression /^(?![\s\"'])[\S|\s]*[^\s\"']$/")
         return value
@@ -178,16 +183,6 @@ class PlatformTerm(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in is_a (list)
-        _items = []
-        if self.is_a:
-            for _item in self.is_a:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['is_a'] = _items
         return _dict
 
     @classmethod
@@ -207,13 +202,13 @@ class PlatformTerm(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "term_id": obj.get("term_id"),
             "term_name": obj.get("term_name"),
             "deprecated_ntr_terms": obj.get("deprecated_ntr_terms"),
-            "is_a": [AssayTermIsAInner.from_dict(_item) for _item in obj["is_a"]] if obj.get("is_a") is not None else None,
+            "is_a": obj.get("is_a"),
             "company": obj.get("company"),
             "sequencing_kits": obj.get("sequencing_kits"),
             "@id": obj.get("@id"),
@@ -226,7 +221,4 @@ class PlatformTerm(BaseModel):
         })
         return _obj
 
-from openapi_client.models.assay_term_is_a_inner import AssayTermIsAInner
-# TODO: Rewrite to not use raise_errors
-PlatformTerm.model_rebuild(raise_errors=False)
 

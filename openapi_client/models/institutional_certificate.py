@@ -21,10 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
-from openapi_client.models.analysis_set_samples_inner import AnalysisSetSamplesInner
-from openapi_client.models.analysis_step_award import AnalysisStepAward
-from openapi_client.models.analysis_step_lab import AnalysisStepLab
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,22 +30,22 @@ class InstitutionalCertificate(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    lab: AnalysisStepLab
-    award: AnalysisStepAward
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='2', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    certificate_identifier: Annotated[str, Field(strict=True)] = Field(description="A unique identifier for the certificate.")
-    controlled_access: StrictBool = Field(description="Indicator of whether the samples are under controlled access.")
+    certificate_identifier: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A unique identifier for the certificate.")
+    controlled_access: Optional[StrictBool] = Field(default=None, description="Indicator of whether the samples are under controlled access.")
     data_use_limitation: Optional[StrictStr] = Field(default=None, description="Code indicating the limitations on data use for data generated from the applicable samples. GRU (General research use): Use of the data is limited only by the terms of the Data Use Certification: these data will be added to the dbGaP Collection. HMB (Health/medical/biomedical): Use of the data is limited to health/medical/biomedical purposes, does not include the study of population origins or ancestry. DS (Disease specific): Use of the data must be related to the specified disease. Other: any other customized limitation.")
     data_use_limitation_modifiers: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Code indicating a modifier on the limitations on data use for data generated from the applicable samples. COL: Requestor must provide a letter of collaboration with the primary study investigator(s). GSO: Use of the data is limited to genetic studies only. IRB: Approval Required IRB Requestor must provide documentation of local IRB approval. MDS: Use of the data includes methods development research (e.g., development and testing of software or algorithms). NPU: Use of the data is limited to not-for-profit organizations. PUB: Requestor agrees to make results of studies using the data available to the larger scientific community.")
-    samples: Optional[Annotated[List[AnalysisSetSamplesInner], Field(min_length=1)]] = Field(default=None, description="Samples covered by this institutional certificate.")
-    urls: Annotated[List[StrictStr], Field(min_length=1, max_length=1)] = Field(description="Link to the institutional certification form.")
+    samples: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Samples covered by this institutional certificate.")
+    urls: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="Link to the institutional certification form.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
@@ -108,6 +104,9 @@ class InstitutionalCertificate(BaseModel):
     @field_validator('certificate_identifier')
     def certificate_identifier_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r"^IP\d{3}-\d{2}$", value):
             raise ValueError(r"must validate the regular expression /^IP\d{3}-\d{2}$/")
         return value
@@ -172,22 +171,6 @@ class InstitutionalCertificate(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in samples (list)
-        _items = []
-        if self.samples:
-            for _item in self.samples:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['samples'] = _items
         return _dict
 
     @classmethod
@@ -202,21 +185,21 @@ class InstitutionalCertificate(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '2',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "certificate_identifier": obj.get("certificate_identifier"),
             "controlled_access": obj.get("controlled_access"),
             "data_use_limitation": obj.get("data_use_limitation"),
             "data_use_limitation_modifiers": obj.get("data_use_limitation_modifiers"),
-            "samples": [AnalysisSetSamplesInner.from_dict(_item) for _item in obj["samples"]] if obj.get("samples") is not None else None,
+            "samples": obj.get("samples"),
             "urls": obj.get("urls"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),

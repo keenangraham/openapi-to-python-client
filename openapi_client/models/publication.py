@@ -22,9 +22,6 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_v
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from openapi_client.models.attachment import Attachment
-from openapi_client.models.document_award import DocumentAward
-from openapi_client.models.document_lab import DocumentLab
-from openapi_client.models.document_submitted_by import DocumentSubmittedBy
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,20 +30,20 @@ class Publication(BaseModel):
     A publication related to IGVF.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    publication_identifiers: Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)] = Field(description="The publication identifiers that provide more information about the object.")
+    publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    lab: DocumentLab
-    award: DocumentAward
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     attachment: Optional[Attachment] = None
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='6', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[DocumentSubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    title: StrictStr = Field(description="Title of the publication or communication.")
+    title: Optional[StrictStr] = Field(default=None, description="Title of the publication or communication.")
     abstract: Optional[StrictStr] = Field(default=None, description="Abstract of the publication or communication.")
     authors: Optional[StrictStr] = Field(default=None, description="The authors of the publication.")
     date_published: Optional[date] = Field(default=None, description="The date the publication or communication was published; must be in YYYY-MM-DD format.")
@@ -165,18 +162,9 @@ class Publication(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
         # override the default output from pydantic by calling `to_dict()` of attachment
         if self.attachment:
             _dict['attachment'] = self.attachment.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -197,15 +185,15 @@ class Publication(BaseModel):
             "release_timestamp": obj.get("release_timestamp"),
             "publication_identifiers": obj.get("publication_identifiers"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "lab": DocumentLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": DocumentAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "attachment": Attachment.from_dict(obj["attachment"]) if obj.get("attachment") is not None else None,
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '6',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": DocumentSubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "title": obj.get("title"),

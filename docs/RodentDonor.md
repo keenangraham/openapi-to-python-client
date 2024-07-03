@@ -7,15 +7,15 @@ A rodent donor of a biosample. Submission of any sample originating from a roden
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
-**taxa** | **str** | The species of the organism. | 
+**taxa** | **str** | The species of the organism. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **url** | **str** | An external resource with additional information. | [optional] 
-**sources** | [**List[RodentDonorSourcesInner]**](RodentDonorSourcesInner.md) | The originating lab(s) or vendor(s). | [optional] 
+**sources** | **List[str]** | The originating lab(s) or vendor(s). | [optional] 
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 
 **product_id** | **str** | The product identifier provided by the originating lab or vendor. | [optional] 
-**documents** | [**List[RodentDonorDocumentsInner]**](RodentDonorDocumentsInner.md) | Documents that provide additional information (not data file). | [optional] 
-**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
-**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
+**documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
+**lab** | **str** | Lab associated with the submission. | [optional] 
+**award** | **str** | Grant associated with the submission. | [optional] 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -26,15 +26,15 @@ Name | Type | Description | Notes
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
-**submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
+**submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF donors. | [optional] 
-**sex** | **str** | Sex of the donor. | [default to 'unspecified']
-**phenotypic_features** | [**List[RodentDonorPhenotypicFeaturesInner]**](RodentDonorPhenotypicFeaturesInner.md) | A list of associated phenotypic features of the donor. | [optional] 
+**sex** | **str** | Sex of the donor. | [optional] [default to 'unspecified']
+**phenotypic_features** | **List[str]** | A list of associated phenotypic features of the donor. | [optional] 
 **virtual** | **bool** | Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for. | [optional] [default to False]
 **strain_background** | **str** | The specific parent strain designation of a non-human donor. | [optional] 
-**strain** | **str** | The specific strain designation of a non-human donor. | 
+**strain** | **str** | The specific strain designation of a non-human donor. | [optional] 
 **genotype** | **str** | The genotype of the strain according to accepted nomenclature conventions. | [optional] 
 **individual_rodent** | **bool** | This rodent donor represents an individual rodent. | [optional] [default to False]
 **rodent_identifier** | **str** | The identifier for this individual rodent donor. | [optional] 

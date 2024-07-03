@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **sources** | [**List[SourcesInner]**](SourcesInner.md) | The originating lab(s) or vendor(s). | [optional] 
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 
 **product_id** | **str** | The product or catalog identifier provided following deposition to addgene.org. | [optional] 
-**lab** | [**DocumentLab**](DocumentLab.md) |  | 
-**award** | [**DocumentAward**](DocumentAward.md) |  | 
+**lab** | [**DocumentLab**](DocumentLab.md) |  | [optional] 
+**award** | [**DocumentAward**](DocumentAward.md) |  | [optional] 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -30,9 +30,9 @@ Name | Type | Description | Notes
 **submitted_by** | [**DocumentSubmittedBy**](DocumentSubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**file_set_type** | **str** | The type or category of this construct library set. | 
-**scope** | **str** | The scope or scale that this construct library is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. If exon is specified, an exon identifier and the associated gene will need to be listed in exon and genes properties. If tile is specified, a tile identifier, start and stop coordinates, and the associated gene will need to be listed in tile and small_scale_gene_list or large_scale_gene_list properties. | 
-**selection_criteria** | **List[str]** | The criteria used to select the sequence material cloned into the library. | 
+**file_set_type** | **str** | The type or category of this construct library set. | [optional] 
+**scope** | **str** | The scope or scale that this construct library is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. If exon is specified, an exon identifier and the associated gene will need to be listed in exon and genes properties. If tile is specified, a tile identifier, start and stop coordinates, and the associated gene will need to be listed in tile and small_scale_gene_list or large_scale_gene_list properties. | [optional] 
+**selection_criteria** | **List[str]** | The criteria used to select the sequence material cloned into the library. | [optional] 
 **integrated_content_files** | [**List[IntegratedContentFilesInner]**](IntegratedContentFilesInner.md) | The files containing sequence material of interest either used for insert design or directly cloned into vectors in this library. | [optional] 
 **associated_phenotypes** | [**List[AssociatedPhenotypesInner]**](AssociatedPhenotypesInner.md) | Ontological terms for diseases or phenotypes associated with the sequence material cloned in this construct library. | [optional] 
 **orf_list** | [**List[ListOfOpenReadingFramesORFInner]**](ListOfOpenReadingFramesORFInner.md) | List of Open Reading Frame this construct library was designed to target. | [optional] 

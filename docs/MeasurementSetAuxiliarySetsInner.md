@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **documents** | [**List[RodentDonorDocumentsInner]**](RodentDonorDocumentsInner.md) | Documents that provide additional information (not data file). | [optional] 
-**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
-**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
+**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | [optional] 
+**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | [optional] 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets. | [optional] 
 **samples** | [**List[AnalysisSetSamplesInner]**](AnalysisSetSamplesInner.md) | The sample(s) associated with this file set. | [optional] 
 **donors** | [**List[AnalysisSetDonorsInner]**](AnalysisSetDonorsInner.md) | The donors of the samples associated with this auxiliary set. | [optional] 
-**file_set_type** | **str** | The category that best describes this auxiliary file set. | 
+**file_set_type** | **str** | The category that best describes this auxiliary file set. | [optional] 
 **library_construction_platform** | [**SequenceFileSequencingPlatform**](SequenceFileSequencingPlatform.md) |  | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 

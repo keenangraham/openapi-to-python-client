@@ -21,7 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,11 +33,11 @@ class AccessKey(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default='', description="Description of the access key.")
     status: Optional[StrictStr] = 'current'
-    user: Optional[AccessKeySubmittedBy] = None
+    user: Optional[StrictStr] = Field(default=None, description="The user that is assigned to this access key.")
     access_key_id: Optional[StrictStr] = Field(default=None, description="An access key.")
     secret_access_key_hash: Optional[StrictStr] = Field(default=None, description="A secret access key.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
@@ -135,12 +134,6 @@ class AccessKey(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of user
-        if self.user:
-            _dict['user'] = self.user.to_dict()
         return _dict
 
     @classmethod
@@ -158,11 +151,11 @@ class AccessKey(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description") if obj.get("description") is not None else '',
             "status": obj.get("status") if obj.get("status") is not None else 'current',
-            "user": AccessKeySubmittedBy.from_dict(obj["user"]) if obj.get("user") is not None else None,
+            "user": obj.get("user"),
             "access_key_id": obj.get("access_key_id"),
             "secret_access_key_hash": obj.get("secret_access_key_hash"),
             "@id": obj.get("@id"),

@@ -6,7 +6,7 @@ Familial relation of this donor.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**donor** | [**RelatedDonorDonor**](RelatedDonorDonor.md) |  | 
+**donor** | **str** | An identifier for the related donor. | 
 **relationship_type** | **str** | A descriptive term for the related donor’s relationship to this donor. | 
 
 ## Example

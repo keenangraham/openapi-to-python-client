@@ -46,8 +46,8 @@ Name | Type | Description | Notes
 **sources** | [**List[SourcesInner]**](SourcesInner.md) | The originating lab(s) or vendor(s). | [optional] 
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 
 **product_id** | **str** | The product or catalog identifier provided following deposition to addgene.org. | [optional] 
-**scope** | **str** | The scope or scale that this prediction set is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. | 
-**selection_criteria** | **List[str]** | The criteria used to select the sequence material cloned into the library. | 
+**scope** | **str** | The scope or scale that this prediction set is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. | [optional] 
+**selection_criteria** | **List[str]** | The criteria used to select the sequence material cloned into the library. | [optional] 
 **integrated_content_files** | [**List[IntegratedContentFilesInner]**](IntegratedContentFilesInner.md) | The files containing sequence material of interest either used for insert design or directly cloned into vectors in this library. | [optional] 
 **associated_phenotypes** | [**List[AssociatedPhenotypesInner]**](AssociatedPhenotypesInner.md) | Ontological terms for diseases or phenotypes associated with the sequence material cloned in this construct library. | [optional] 
 **orf_list** | [**List[ListOfOpenReadingFramesORFInner]**](ListOfOpenReadingFramesORFInner.md) | List of Open Reading Frame this construct library was designed to target. | [optional] 
@@ -65,7 +65,7 @@ Name | Type | Description | Notes
 **taxa** | **str** | The species of the organism. | [optional] 
 **assemblies** | **List[str]** | The genome assemblies to which the referencing files in the file set are utilizing (e.g., GRCh38). | [optional] 
 **transcriptome_annotations** | **List[str]** | The annotation versions of the reference resource. | [optional] 
-**assay_term** | [**MeasurementSetAssayTerm**](MeasurementSetAssayTerm.md) |  | 
+**assay_term** | [**MeasurementSetAssayTerm**](MeasurementSetAssayTerm.md) |  | [optional] 
 **protocols** | **List[str]** | Links to the protocol(s) for conducting the assay on Protocols.io. | [optional] 
 **preferred_assay_title** | **str** | The custom lab preferred label for the experiment performed in this measurement set. | [optional] 
 **multiome_size** | **int** | The number of datasets included in the multiome experiment this measurement set is a part of. | [optional] 
@@ -74,11 +74,11 @@ Name | Type | Description | Notes
 **auxiliary_sets** | [**List[MeasurementSetAuxiliarySetsInner]**](MeasurementSetAuxiliarySetsInner.md) | The auxiliary sets of files produced alongside raw data from this measurement set. | [optional] 
 **external_image_url** | **str** | Links to the external site where images produced by this measurement are stored. | [optional] 
 **related_multiome_datasets** | [**List[MeasurementSetRelatedMultiomeDatasetsInner]**](MeasurementSetRelatedMultiomeDatasetsInner.md) | Related datasets included in the multiome experiment this measurement set is a part of. | [optional] 
-**model_name** | **str** | The custom lab name given to this predictive model set. | 
-**model_version** | **str** | The semantic version number for this predictive model set. | 
-**prediction_objects** | **List[str]** | The objects this predictive model set is targeting. | 
+**model_name** | **str** | The custom lab name given to this predictive model set. | [optional] 
+**model_version** | **str** | The semantic version number for this predictive model set. | [optional] 
+**prediction_objects** | **List[str]** | The objects this predictive model set is targeting. | [optional] 
 **model_zoo_location** | **str** | The link to the model on the Kipoi repository. | [optional] 
-**software_version** | [**ModelSetSoftwareVersion**](ModelSetSoftwareVersion.md) |  | 
+**software_version** | [**ModelSetSoftwareVersion**](ModelSetSoftwareVersion.md) |  | [optional] 
 
 ## Example
 

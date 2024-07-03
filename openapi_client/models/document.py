@@ -22,9 +22,6 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from openapi_client.models.attachment import Attachment
-from openapi_client.models.document_award import DocumentAward
-from openapi_client.models.document_lab import DocumentLab
-from openapi_client.models.document_submitted_by import DocumentSubmittedBy
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,18 +31,18 @@ class Document(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    lab: DocumentLab
-    award: DocumentAward
-    attachment: Attachment
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    attachment: Optional[Attachment] = None
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[DocumentSubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
-    description: Annotated[str, Field(strict=True)] = Field(description="A plain text description of the object.")
-    document_type: StrictStr = Field(description="The category that best describes the document.")
+    description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
+    document_type: Optional[StrictStr] = Field(default=None, description="The category that best describes the document.")
     characterization_method: Optional[StrictStr] = Field(default=None, description="The method used for the characterization.")
     urls: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="External resources with additional information to the document.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
@@ -97,6 +94,9 @@ class Document(BaseModel):
     @field_validator('description')
     def description_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value
@@ -104,6 +104,9 @@ class Document(BaseModel):
     @field_validator('document_type')
     def document_type_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['cell fate change protocol', 'characterization', 'computational protocol', 'experimental protocol', 'file format specification', 'image', 'plate map', 'plasmid map', 'plasmid sequence', 'standards']):
             raise ValueError("must be one of enum values ('cell fate change protocol', 'characterization', 'computational protocol', 'experimental protocol', 'file format specification', 'image', 'plate map', 'plasmid map', 'plasmid sequence', 'standards')")
         return value
@@ -159,18 +162,9 @@ class Document(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
         # override the default output from pydantic by calling `to_dict()` of attachment
         if self.attachment:
             _dict['attachment'] = self.attachment.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -190,15 +184,15 @@ class Document(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "lab": DocumentLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": DocumentAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "attachment": Attachment.from_dict(obj["attachment"]) if obj.get("attachment") is not None else None,
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '4',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": DocumentSubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "document_type": obj.get("document_type"),

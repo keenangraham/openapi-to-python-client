@@ -21,10 +21,6 @@ from datetime import date, datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
-from openapi_client.models.analysis_step_award import AnalysisStepAward
-from openapi_client.models.analysis_step_lab import AnalysisStepLab
-from openapi_client.models.phenotypic_feature_feature import PhenotypicFeatureFeature
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,17 +30,17 @@ class PhenotypicFeature(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    lab: AnalysisStepLab
-    award: AnalysisStepAward
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='3', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    feature: PhenotypicFeatureFeature
+    feature: Optional[StrictStr] = Field(default=None, description="The phenotypic feature observed for the donor.")
     quantity: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="A quantity associated with the phenotypic feature, if applicable.")
     quantity_units: Optional[StrictStr] = Field(default=None, description="The unit of measurement for a quantity associated with the phenotypic feature.")
     observation_date: Optional[date] = Field(default=None, description="The date the feature was observed or measured.")
@@ -152,18 +148,6 @@ class PhenotypicFeature(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of feature
-        if self.feature:
-            _dict['feature'] = self.feature.to_dict()
         return _dict
 
     @classmethod
@@ -178,17 +162,17 @@ class PhenotypicFeature(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '3',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
-            "feature": PhenotypicFeatureFeature.from_dict(obj["feature"]) if obj.get("feature") is not None else None,
+            "feature": obj.get("feature"),
             "quantity": obj.get("quantity"),
             "quantity_units": obj.get("quantity_units"),
             "observation_date": obj.get("observation_date"),

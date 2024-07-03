@@ -21,11 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
-from openapi_client.models.analysis_step_award import AnalysisStepAward
-from openapi_client.models.analysis_step_lab import AnalysisStepLab
-from openapi_client.models.rodent_donor_documents_inner import RodentDonorDocumentsInner
-from openapi_client.models.rodent_donor_sources_inner import RodentDonorSourcesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,19 +29,19 @@ class Treatment(BaseModel):
     A protein or chemical treatment applied to samples such as lipopolysaccharide, interleukin-2, or leucine.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    lab: AnalysisStepLab
-    award: AnalysisStepAward
-    sources: Optional[Annotated[List[RodentDonorSourcesInner], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    sources: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
     lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product identifier provided by the originating lab or vendor.")
-    documents: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that describe the treatment protocol details.")
+    documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that describe the treatment protocol details.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='7', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Specific quantity of the applied treatment (used in conjunction with amount_units).")
@@ -54,15 +49,15 @@ class Treatment(BaseModel):
     duration: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Duration indicates the time elapsed between the start and end of the treatment.")
     duration_units: Optional[StrictStr] = Field(default=None, description="A unit of time.")
     p_h: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Final pH of the solution containing a chemical compound (if applicable)", alias="pH")
-    purpose: StrictStr = Field(description="The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway.")
+    purpose: Optional[StrictStr] = Field(default=None, description="The intended purpose for treating the samples; Activation: treatment is known to activate a pathway in the biosample; Agonist: a substance which is known to initiate a physiological response when combined with a receptor; Antagonist: a substance that is known to interfere with or inhibits the physiological action of another; Control: treatment applied to a sample for control purposes; Differentiation: treatment that is applied to convert a less specialized cell to a more specialized cell; De-differentiation: treatment used to reprogram differentiated cells back to less determined cell states; Perturbation: treatment applied to the sample in order to study the effect of its application; Selection: treatment used to affect biosample in a way that can be used to distinguish cells and select for in the downstream steps; Stimulation: treatment applied to stimulate a cellular pathway.")
     post_treatment_time: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Post treatment time in conjunction with post treatment time units is used to specify the time that has passed between the point when biosamples were removed from the treatment solution before being sampled or treated with the next treatment.")
     post_treatment_time_units: Optional[StrictStr] = Field(default=None, description="A unit of time.")
     temperature: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The temperature in Celsius to which the sample was exposed")
     temperature_units: Optional[StrictStr] = Field(default=None, description="A unit of temperature.")
-    treatment_type: StrictStr = Field(description="The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness.")
+    treatment_type: Optional[StrictStr] = Field(default=None, description="The classification of treatment agent that specifies its exact molecular nature. Chemical type refers to (natural or synthetic) organic/inorganic compounds and also includes drugs, while protein type is restricted to active protein biomolecules that are naturally or artifically synthesized via cellular translation mechanism of converting DNA into a protein. Environmental type referes to other external conditions that directly influence biological processes or reactions within a given environment. Example of chemical type: lactate, ethanol,hydrocortisone, LPS etc. Example of protein type: Interferons, interlukin, antibodies, etc. Example of chemical type: stiffness.")
     treatment_term_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Ontology identifier describing a component in the treatment.")
-    treatment_term_name: StrictStr = Field(description="Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc.")
-    depletion: StrictBool = Field(description="Treatment is depleted.")
+    treatment_term_name: Optional[StrictStr] = Field(default=None, description="Ontology term describing a component in the treatment that is the principal component affecting the biosample being treated. Examples: interferon gamma, interleukin-4, Fibroblast growth factor 2, 20-hydroxyecdysone, 5-bromouridine etc.")
+    depletion: Optional[StrictBool] = Field(default=None, description="Treatment is depleted.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = None
@@ -161,6 +156,9 @@ class Treatment(BaseModel):
     @field_validator('purpose')
     def purpose_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['activation', 'agonist', 'antagonist', 'control', 'differentiation', 'de-differentiation', 'perturbation', 'selection', 'stimulation']):
             raise ValueError("must be one of enum values ('activation', 'agonist', 'antagonist', 'control', 'differentiation', 'de-differentiation', 'perturbation', 'selection', 'stimulation')")
         return value
@@ -188,6 +186,9 @@ class Treatment(BaseModel):
     @field_validator('treatment_type')
     def treatment_type_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['chemical', 'protein', 'environmental']):
             raise ValueError("must be one of enum values ('chemical', 'protein', 'environmental')")
         return value
@@ -241,29 +242,6 @@ class Treatment(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in sources (list)
-        _items = []
-        if self.sources:
-            for _item in self.sources:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['sources'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in documents (list)
-        _items = []
-        if self.documents:
-            for _item in self.documents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['documents'] = _items
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
         return _dict
 
     @classmethod
@@ -277,19 +255,19 @@ class Treatment(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
-            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
-            "sources": [RodentDonorSourcesInner.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
+            "sources": obj.get("sources"),
             "lot_id": obj.get("lot_id"),
             "product_id": obj.get("product_id"),
-            "documents": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
+            "documents": obj.get("documents"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '7',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "amount": obj.get("amount"),

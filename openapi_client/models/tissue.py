@@ -21,17 +21,6 @@ from datetime import date, datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
-from openapi_client.models.analysis_set_donors_inner import AnalysisSetDonorsInner
-from openapi_client.models.analysis_step_award import AnalysisStepAward
-from openapi_client.models.analysis_step_lab import AnalysisStepLab
-from openapi_client.models.in_vitro_system_biomarkers_inner import InVitroSystemBiomarkersInner
-from openapi_client.models.in_vitro_system_modifications_inner import InVitroSystemModificationsInner
-from openapi_client.models.in_vitro_system_sample_terms_inner import InVitroSystemSampleTermsInner
-from openapi_client.models.in_vitro_system_treatments_inner import InVitroSystemTreatmentsInner
-from openapi_client.models.phenotypic_feature_feature import PhenotypicFeatureFeature
-from openapi_client.models.rodent_donor_documents_inner import RodentDonorDocumentsInner
-from openapi_client.models.rodent_donor_sources_inner import RodentDonorSourcesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -43,12 +32,12 @@ class Tissue(BaseModel):
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     taxa: Optional[StrictStr] = Field(default=None, description="The species of the organism.")
     url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
-    sources: Annotated[List[RodentDonorSourcesInner], Field(min_length=1, max_length=1)] = Field(description="The originating lab(s) or vendor(s).")
+    sources: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
     lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product identifier provided by the originating lab or vendor.")
-    documents: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: AnalysisStepLab
-    award: AnalysisStepAward
+    documents: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -59,31 +48,31 @@ class Tissue(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     lower_bound_age: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Lower bound of age of the organism at the time of collection of the sample.")
     upper_bound_age: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Upper bound of age of the organism at the time of collection of the sample.")
     age_units: Optional[StrictStr] = Field(default=None, description="The units of time associated with age of the biosample.")
-    sample_terms: Annotated[List[InVitroSystemSampleTermsInner], Field(min_length=1, max_length=1)] = Field(description="Ontology terms identifying a biosample.")
-    disease_terms: Optional[Annotated[List[PhenotypicFeatureFeature], Field(min_length=1)]] = Field(default=None, description="Ontology term of the disease associated with the biosample.")
-    pooled_from: Optional[Annotated[List[TissuePooledFromInner], Field(min_length=2)]] = Field(default=None, description="The biosamples this biosample is pooled from.")
-    part_of: Optional[TissuePartOf] = None
-    originated_from: Optional[InVitroSystemPooledFromInner] = None
-    treatments: Optional[Annotated[List[InVitroSystemTreatmentsInner], Field(min_length=1)]] = Field(default=None, description="A list of treatments applied to the biosample with the purpose of perturbation.")
-    donors: Annotated[List[AnalysisSetDonorsInner], Field(min_length=1)] = Field(description="Donor(s) the sample was derived from.")
-    biomarkers: Optional[Annotated[List[InVitroSystemBiomarkersInner], Field(min_length=1)]] = Field(default=None, description="Biological markers that are associated with this sample.")
+    sample_terms: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1)]] = Field(default=None, description="Ontology terms identifying a biosample.")
+    disease_terms: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Ontology term of the disease associated with the biosample.")
+    pooled_from: Optional[Annotated[List[StrictStr], Field(min_length=2)]] = Field(default=None, description="The biosamples this biosample is pooled from.")
+    part_of: Optional[StrictStr] = Field(default=None, description="Links to a biosample which represents a larger sample from which this sample was taken regardless of whether it is a tissue taken from an organism or smaller slices of a piece of tissue or aliquots of a cell growth.")
+    originated_from: Optional[StrictStr] = Field(default=None, description="Links to a biosample that was originated from due to differentiation, dedifferentiation, reprogramming, or the introduction of a genetic modification.")
+    treatments: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="A list of treatments applied to the biosample with the purpose of perturbation.")
+    donors: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Donor(s) the sample was derived from.")
+    biomarkers: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Biological markers that are associated with this sample.")
     embryonic: Optional[StrictBool] = Field(default=None, description="Biosample is embryonic.")
-    modifications: Optional[Annotated[List[InVitroSystemModificationsInner], Field(min_length=1, max_length=2)]] = Field(default=None, description="Links to modifications applied to this biosample.")
+    modifications: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=2)]] = Field(default=None, description="Links to modifications applied to this biosample.")
     cellular_sub_pool: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Cellular sub-pool fraction of the sample. Also known as PKR and sub-library.")
     starting_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The initial quantity of samples obtained.")
     starting_amount_units: Optional[StrictStr] = Field(default=None, description="The units used to quantify the amount of samples obtained.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Biosample identifiers from external resources, such as Biosample database or Cellosaurus.")
     date_obtained: Optional[date] = Field(default=None, description="The date the sample was harvested, dissected or created, depending on the type of the sample.")
-    sorted_from: Optional[AnalysisSetSamplesInner] = None
+    sorted_from: Optional[StrictStr] = Field(default=None, description="Links to a larger sample from which this sample was obtained through sorting.")
     sorted_from_detail: Optional[StrictStr] = Field(default=None, description="Detail for sample sorted into fractions capturing information about sorting.")
     virtual: Optional[StrictBool] = Field(default=False, description="Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for.")
-    construct_library_sets: Optional[Annotated[List[InVitroSystemConstructLibrarySetsInner], Field(min_length=1)]] = Field(default=None, description="The construct library sets of vectors introduced to this sample prior to performing an assay.")
+    construct_library_sets: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The construct library sets of vectors introduced to this sample prior to performing an assay.")
     moi: Optional[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]] = Field(default=None, description="The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI.")
     nucleic_acid_delivery: Optional[StrictStr] = Field(default=None, description="Method of introduction of nucleic acid into the cell.")
     time_post_library_delivery: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The time that elapsed past the time-point when the construct library sets were introduced.")
@@ -340,94 +329,6 @@ class Tissue(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in sources (list)
-        _items = []
-        if self.sources:
-            for _item in self.sources:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['sources'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in documents (list)
-        _items = []
-        if self.documents:
-            for _item in self.documents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['documents'] = _items
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in sample_terms (list)
-        _items = []
-        if self.sample_terms:
-            for _item in self.sample_terms:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['sample_terms'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in disease_terms (list)
-        _items = []
-        if self.disease_terms:
-            for _item in self.disease_terms:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['disease_terms'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in pooled_from (list)
-        _items = []
-        if self.pooled_from:
-            for _item in self.pooled_from:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['pooled_from'] = _items
-        # override the default output from pydantic by calling `to_dict()` of part_of
-        if self.part_of:
-            _dict['part_of'] = self.part_of.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of originated_from
-        if self.originated_from:
-            _dict['originated_from'] = self.originated_from.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in treatments (list)
-        _items = []
-        if self.treatments:
-            for _item in self.treatments:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['treatments'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in donors (list)
-        _items = []
-        if self.donors:
-            for _item in self.donors:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['donors'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in biomarkers (list)
-        _items = []
-        if self.biomarkers:
-            for _item in self.biomarkers:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['biomarkers'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in modifications (list)
-        _items = []
-        if self.modifications:
-            for _item in self.modifications:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['modifications'] = _items
-        # override the default output from pydantic by calling `to_dict()` of sorted_from
-        if self.sorted_from:
-            _dict['sorted_from'] = self.sorted_from.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in construct_library_sets (list)
-        _items = []
-        if self.construct_library_sets:
-            for _item in self.construct_library_sets:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['construct_library_sets'] = _items
         return _dict
 
     @classmethod
@@ -444,12 +345,12 @@ class Tissue(BaseModel):
             "publication_identifiers": obj.get("publication_identifiers"),
             "taxa": obj.get("taxa"),
             "url": obj.get("url"),
-            "sources": [RodentDonorSourcesInner.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
+            "sources": obj.get("sources"),
             "lot_id": obj.get("lot_id"),
             "product_id": obj.get("product_id"),
-            "documents": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
-            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "documents": obj.get("documents"),
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
@@ -460,31 +361,31 @@ class Tissue(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "lower_bound_age": obj.get("lower_bound_age"),
             "upper_bound_age": obj.get("upper_bound_age"),
             "age_units": obj.get("age_units"),
-            "sample_terms": [InVitroSystemSampleTermsInner.from_dict(_item) for _item in obj["sample_terms"]] if obj.get("sample_terms") is not None else None,
-            "disease_terms": [PhenotypicFeatureFeature.from_dict(_item) for _item in obj["disease_terms"]] if obj.get("disease_terms") is not None else None,
-            "pooled_from": [TissuePooledFromInner.from_dict(_item) for _item in obj["pooled_from"]] if obj.get("pooled_from") is not None else None,
-            "part_of": TissuePartOf.from_dict(obj["part_of"]) if obj.get("part_of") is not None else None,
-            "originated_from": InVitroSystemPooledFromInner.from_dict(obj["originated_from"]) if obj.get("originated_from") is not None else None,
-            "treatments": [InVitroSystemTreatmentsInner.from_dict(_item) for _item in obj["treatments"]] if obj.get("treatments") is not None else None,
-            "donors": [AnalysisSetDonorsInner.from_dict(_item) for _item in obj["donors"]] if obj.get("donors") is not None else None,
-            "biomarkers": [InVitroSystemBiomarkersInner.from_dict(_item) for _item in obj["biomarkers"]] if obj.get("biomarkers") is not None else None,
+            "sample_terms": obj.get("sample_terms"),
+            "disease_terms": obj.get("disease_terms"),
+            "pooled_from": obj.get("pooled_from"),
+            "part_of": obj.get("part_of"),
+            "originated_from": obj.get("originated_from"),
+            "treatments": obj.get("treatments"),
+            "donors": obj.get("donors"),
+            "biomarkers": obj.get("biomarkers"),
             "embryonic": obj.get("embryonic"),
-            "modifications": [InVitroSystemModificationsInner.from_dict(_item) for _item in obj["modifications"]] if obj.get("modifications") is not None else None,
+            "modifications": obj.get("modifications"),
             "cellular_sub_pool": obj.get("cellular_sub_pool"),
             "starting_amount": obj.get("starting_amount"),
             "starting_amount_units": obj.get("starting_amount_units"),
             "dbxrefs": obj.get("dbxrefs"),
             "date_obtained": obj.get("date_obtained"),
-            "sorted_from": AnalysisSetSamplesInner.from_dict(obj["sorted_from"]) if obj.get("sorted_from") is not None else None,
+            "sorted_from": obj.get("sorted_from"),
             "sorted_from_detail": obj.get("sorted_from_detail"),
             "virtual": obj.get("virtual") if obj.get("virtual") is not None else False,
-            "construct_library_sets": [InVitroSystemConstructLibrarySetsInner.from_dict(_item) for _item in obj["construct_library_sets"]] if obj.get("construct_library_sets") is not None else None,
+            "construct_library_sets": obj.get("construct_library_sets"),
             "moi": obj.get("moi"),
             "nucleic_acid_delivery": obj.get("nucleic_acid_delivery"),
             "time_post_library_delivery": obj.get("time_post_library_delivery"),
@@ -512,11 +413,4 @@ class Tissue(BaseModel):
         })
         return _obj
 
-from openapi_client.models.analysis_set_samples_inner import AnalysisSetSamplesInner
-from openapi_client.models.in_vitro_system_construct_library_sets_inner import InVitroSystemConstructLibrarySetsInner
-from openapi_client.models.in_vitro_system_pooled_from_inner import InVitroSystemPooledFromInner
-from openapi_client.models.tissue_part_of import TissuePartOf
-from openapi_client.models.tissue_pooled_from_inner import TissuePooledFromInner
-# TODO: Rewrite to not use raise_errors
-Tissue.model_rebuild(raise_errors=False)
 

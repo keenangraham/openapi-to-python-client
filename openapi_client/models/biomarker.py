@@ -21,10 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
-from openapi_client.models.analysis_step_award import AnalysisStepAward
-from openapi_client.models.analysis_step_lab import AnalysisStepLab
-from openapi_client.models.biomarker_gene import BiomarkerGene
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,21 +30,21 @@ class Biomarker(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    lab: AnalysisStepLab
-    award: AnalysisStepAward
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    name: StrictStr = Field(description="The biomarker name.")
+    name: Optional[StrictStr] = Field(default=None, description="The biomarker name.")
     classification: Optional[StrictStr] = Field(default=None, description="Sample specific biomarker.")
-    quantification: StrictStr = Field(description="The biomarker association to the biosample, disease or other condition.  This can be the absence of the biomarker or the presence of the biomarker in some low, intermediate or high quantity.")
+    quantification: Optional[StrictStr] = Field(default=None, description="The biomarker association to the biosample, disease or other condition.  This can be the absence of the biomarker or the presence of the biomarker in some low, intermediate or high quantity.")
     synonyms: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Alternate names for this biomarker.")
-    gene: Optional[BiomarkerGene] = None
+    gene: Optional[StrictStr] = Field(default=None, description="Biomarker gene.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
@@ -118,6 +114,9 @@ class Biomarker(BaseModel):
     @field_validator('quantification')
     def quantification_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['negative', 'positive', 'low', 'intermediate', 'high']):
             raise ValueError("must be one of enum values ('negative', 'positive', 'low', 'intermediate', 'high')")
         return value
@@ -161,18 +160,6 @@ class Biomarker(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of lab
-        if self.lab:
-            _dict['lab'] = self.lab.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of award
-        if self.award:
-            _dict['award'] = self.award.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of submitted_by
-        if self.submitted_by:
-            _dict['submitted_by'] = self.submitted_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of gene
-        if self.gene:
-            _dict['gene'] = self.gene.to_dict()
         return _dict
 
     @classmethod
@@ -187,21 +174,21 @@ class Biomarker(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '4',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "name": obj.get("name"),
             "classification": obj.get("classification"),
             "quantification": obj.get("quantification"),
             "synonyms": obj.get("synonyms"),
-            "gene": BiomarkerGene.from_dict(obj["gene"]) if obj.get("gene") is not None else None,
+            "gene": obj.get("gene"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),

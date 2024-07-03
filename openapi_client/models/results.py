@@ -71,11 +71,11 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-SEARCH200RESPONSEGRAPHINNER_ONE_OF_SCHEMAS = ["AccessKey", "AlignmentFile", "AnalysisSet", "AnalysisStep", "AssayTerm", "AuxiliarySet", "Award", "Biomarker", "ConfigurationFile", "ConstructLibrarySet", "CrisprModification", "CuratedSet", "Document", "Gene", "GenomeBrowserAnnotationFile", "HumanDonor", "Image", "ImageFile", "InVitroSystem", "InstitutionalCertificate", "Lab", "MatrixFile", "MeasurementSet", "ModelFile", "ModelSet", "Modification", "MultiplexedSample", "OpenReadingFrame", "Page", "PhenotypeTerm", "PhenotypicFeature", "PlatformTerm", "PredictionSet", "PrimaryCell", "Publication", "ReferenceFile", "RodentDonor", "SampleTerm", "SequenceFile", "SignalFile", "Software", "SoftwareVersion", "Source", "TabularFile", "TechnicalSample", "Tissue", "Treatment", "User", "WholeOrganism", "Workflow"]
+RESULTS_ONE_OF_SCHEMAS = ["AccessKey", "AlignmentFile", "AnalysisSet", "AnalysisStep", "AssayTerm", "AuxiliarySet", "Award", "Biomarker", "ConfigurationFile", "ConstructLibrarySet", "CrisprModification", "CuratedSet", "Document", "Gene", "GenomeBrowserAnnotationFile", "HumanDonor", "Image", "ImageFile", "InVitroSystem", "InstitutionalCertificate", "Lab", "MatrixFile", "MeasurementSet", "ModelFile", "ModelSet", "Modification", "MultiplexedSample", "OpenReadingFrame", "Page", "PhenotypeTerm", "PhenotypicFeature", "PlatformTerm", "PredictionSet", "PrimaryCell", "Publication", "ReferenceFile", "RodentDonor", "SampleTerm", "SequenceFile", "SignalFile", "Software", "SoftwareVersion", "Source", "TabularFile", "TechnicalSample", "Tissue", "Treatment", "User", "WholeOrganism", "Workflow"]
 
-class Search200ResponseGraphInner(BaseModel):
+class Results(BaseModel):
     """
-    Search200ResponseGraphInner
+    Results
     """
     # data type: AccessKey
     oneof_schema_1_validator: Optional[AccessKey] = None
@@ -198,7 +198,7 @@ class Search200ResponseGraphInner(BaseModel):
 
     @field_validator('actual_instance')
     def actual_instance_must_validate_oneof(cls, v):
-        instance = Search200ResponseGraphInner.model_construct()
+        instance = Results.model_construct()
         error_messages = []
         match = 0
         # validate data type: AccessKey
@@ -453,10 +453,10 @@ class Search200ResponseGraphInner(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in Search200ResponseGraphInner with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in Results with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in Search200ResponseGraphInner with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in Results with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -774,10 +774,10 @@ class Search200ResponseGraphInner(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into Search200ResponseGraphInner with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into Results with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into Search200ResponseGraphInner with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into Results with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
         else:
             return instance
 
