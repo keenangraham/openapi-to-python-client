@@ -389,7 +389,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -421,7 +422,8 @@
           "user": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -493,7 +495,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -503,7 +506,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -551,7 +555,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -601,7 +606,8 @@
           "workflow": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Workflow"
+                "$ref": "#/components/schemas/Workflow",
+                "title": "Workflow"
               },
               {
                 "type": "string"
@@ -617,7 +623,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AnalysisStep"
+                  "$ref": "#/components/schemas/AnalysisStep",
+                  "title": "AnalysisStep"
                 },
                 {
                   "type": "string"
@@ -1017,7 +1024,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -1069,7 +1077,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/User",
+                  "title": "User"
                 },
                 {
                   "type": "string"
@@ -1080,7 +1089,8 @@
           "contact_pi": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -1171,7 +1181,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -1181,7 +1192,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -1229,7 +1241,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -1288,7 +1301,8 @@
           "gene": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Gene"
+                "$ref": "#/components/schemas/Gene",
+                "title": "Gene"
               },
               {
                 "type": "string"
@@ -1352,7 +1366,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -1362,7 +1377,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -1463,7 +1479,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -1599,7 +1616,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -1610,7 +1628,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -1620,7 +1639,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -1729,7 +1749,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -1781,7 +1802,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/PhenotypicFeature"
+                  "$ref": "#/components/schemas/PhenotypicFeature",
+                  "title": "PhenotypicFeature"
                 },
                 {
                   "type": "string"
@@ -1814,7 +1836,8 @@
                 "donor": {
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/HumanDonor"
+                      "$ref": "#/components/schemas/HumanDonor",
+                      "title": "HumanDonor"
                     },
                     {
                       "type": "string"
@@ -1968,10 +1991,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Lab"
+                  "$ref": "#/components/schemas/Lab",
+                  "title": "Lab"
                 },
                 {
-                  "$ref": "#/components/schemas/Source"
+                  "$ref": "#/components/schemas/Source",
+                  "title": "Source"
                 },
                 {
                   "type": "string"
@@ -2000,7 +2025,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -2011,7 +2037,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -2021,7 +2048,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -2130,7 +2158,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -2182,7 +2211,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/PhenotypicFeature"
+                  "$ref": "#/components/schemas/PhenotypicFeature",
+                  "title": "PhenotypicFeature"
                 },
                 {
                   "type": "string"
@@ -2323,7 +2353,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/ReferenceFile"
+                  "$ref": "#/components/schemas/ReferenceFile",
+                  "title": "ReferenceFile"
                 },
                 {
                   "type": "string"
@@ -2340,7 +2371,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -2351,7 +2383,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -2361,7 +2394,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -2470,7 +2504,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -2528,34 +2563,44 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AlignmentFile"
+                  "$ref": "#/components/schemas/AlignmentFile",
+                  "title": "AlignmentFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ConfigurationFile"
+                  "$ref": "#/components/schemas/ConfigurationFile",
+                  "title": "ConfigurationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile"
+                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile",
+                  "title": "GenomeBrowserAnnotationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ImageFile"
+                  "$ref": "#/components/schemas/ImageFile",
+                  "title": "ImageFile"
                 },
                 {
-                  "$ref": "#/components/schemas/MatrixFile"
+                  "$ref": "#/components/schemas/MatrixFile",
+                  "title": "MatrixFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ModelFile"
+                  "$ref": "#/components/schemas/ModelFile",
+                  "title": "ModelFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ReferenceFile"
+                  "$ref": "#/components/schemas/ReferenceFile",
+                  "title": "ReferenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SequenceFile"
+                  "$ref": "#/components/schemas/SequenceFile",
+                  "title": "SequenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SignalFile"
+                  "$ref": "#/components/schemas/SignalFile",
+                  "title": "SignalFile"
                 },
                 {
-                  "$ref": "#/components/schemas/TabularFile"
+                  "$ref": "#/components/schemas/TabularFile",
+                  "title": "TabularFile"
                 },
                 {
                   "type": "string"
@@ -2580,7 +2625,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -2591,25 +2637,32 @@
           "file_set": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/AnalysisSet"
+                "$ref": "#/components/schemas/AnalysisSet",
+                "title": "AnalysisSet"
               },
               {
-                "$ref": "#/components/schemas/AuxiliarySet"
+                "$ref": "#/components/schemas/AuxiliarySet",
+                "title": "AuxiliarySet"
               },
               {
-                "$ref": "#/components/schemas/ConstructLibrarySet"
+                "$ref": "#/components/schemas/ConstructLibrarySet",
+                "title": "ConstructLibrarySet"
               },
               {
-                "$ref": "#/components/schemas/CuratedSet"
+                "$ref": "#/components/schemas/CuratedSet",
+                "title": "CuratedSet"
               },
               {
-                "$ref": "#/components/schemas/MeasurementSet"
+                "$ref": "#/components/schemas/MeasurementSet",
+                "title": "MeasurementSet"
               },
               {
-                "$ref": "#/components/schemas/ModelSet"
+                "$ref": "#/components/schemas/ModelSet",
+                "title": "ModelSet"
               },
               {
-                "$ref": "#/components/schemas/PredictionSet"
+                "$ref": "#/components/schemas/PredictionSet",
+                "title": "PredictionSet"
               },
               {
                 "type": "string"
@@ -2759,7 +2812,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -2770,7 +2824,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -2780,7 +2835,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -2889,7 +2945,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -2946,34 +3003,44 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AlignmentFile"
+                  "$ref": "#/components/schemas/AlignmentFile",
+                  "title": "AlignmentFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ConfigurationFile"
+                  "$ref": "#/components/schemas/ConfigurationFile",
+                  "title": "ConfigurationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile"
+                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile",
+                  "title": "GenomeBrowserAnnotationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ImageFile"
+                  "$ref": "#/components/schemas/ImageFile",
+                  "title": "ImageFile"
                 },
                 {
-                  "$ref": "#/components/schemas/MatrixFile"
+                  "$ref": "#/components/schemas/MatrixFile",
+                  "title": "MatrixFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ModelFile"
+                  "$ref": "#/components/schemas/ModelFile",
+                  "title": "ModelFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ReferenceFile"
+                  "$ref": "#/components/schemas/ReferenceFile",
+                  "title": "ReferenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SequenceFile"
+                  "$ref": "#/components/schemas/SequenceFile",
+                  "title": "SequenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SignalFile"
+                  "$ref": "#/components/schemas/SignalFile",
+                  "title": "SignalFile"
                 },
                 {
-                  "$ref": "#/components/schemas/TabularFile"
+                  "$ref": "#/components/schemas/TabularFile",
+                  "title": "TabularFile"
                 },
                 {
                   "type": "string"
@@ -2998,7 +3065,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -3009,25 +3077,32 @@
           "file_set": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/AnalysisSet"
+                "$ref": "#/components/schemas/AnalysisSet",
+                "title": "AnalysisSet"
               },
               {
-                "$ref": "#/components/schemas/AuxiliarySet"
+                "$ref": "#/components/schemas/AuxiliarySet",
+                "title": "AuxiliarySet"
               },
               {
-                "$ref": "#/components/schemas/ConstructLibrarySet"
+                "$ref": "#/components/schemas/ConstructLibrarySet",
+                "title": "ConstructLibrarySet"
               },
               {
-                "$ref": "#/components/schemas/CuratedSet"
+                "$ref": "#/components/schemas/CuratedSet",
+                "title": "CuratedSet"
               },
               {
-                "$ref": "#/components/schemas/MeasurementSet"
+                "$ref": "#/components/schemas/MeasurementSet",
+                "title": "MeasurementSet"
               },
               {
-                "$ref": "#/components/schemas/ModelSet"
+                "$ref": "#/components/schemas/ModelSet",
+                "title": "ModelSet"
               },
               {
-                "$ref": "#/components/schemas/PredictionSet"
+                "$ref": "#/components/schemas/PredictionSet",
+                "title": "PredictionSet"
               },
               {
                 "type": "string"
@@ -3079,7 +3154,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/SequenceFile"
+                  "$ref": "#/components/schemas/SequenceFile",
+                  "title": "SequenceFile"
                 },
                 {
                   "type": "string"
@@ -3223,7 +3299,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -3234,7 +3311,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -3244,7 +3322,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -3353,7 +3432,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -3410,34 +3490,44 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AlignmentFile"
+                  "$ref": "#/components/schemas/AlignmentFile",
+                  "title": "AlignmentFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ConfigurationFile"
+                  "$ref": "#/components/schemas/ConfigurationFile",
+                  "title": "ConfigurationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile"
+                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile",
+                  "title": "GenomeBrowserAnnotationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ImageFile"
+                  "$ref": "#/components/schemas/ImageFile",
+                  "title": "ImageFile"
                 },
                 {
-                  "$ref": "#/components/schemas/MatrixFile"
+                  "$ref": "#/components/schemas/MatrixFile",
+                  "title": "MatrixFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ModelFile"
+                  "$ref": "#/components/schemas/ModelFile",
+                  "title": "ModelFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ReferenceFile"
+                  "$ref": "#/components/schemas/ReferenceFile",
+                  "title": "ReferenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SequenceFile"
+                  "$ref": "#/components/schemas/SequenceFile",
+                  "title": "SequenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SignalFile"
+                  "$ref": "#/components/schemas/SignalFile",
+                  "title": "SignalFile"
                 },
                 {
-                  "$ref": "#/components/schemas/TabularFile"
+                  "$ref": "#/components/schemas/TabularFile",
+                  "title": "TabularFile"
                 },
                 {
                   "type": "string"
@@ -3463,7 +3553,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -3474,25 +3565,32 @@
           "file_set": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/AnalysisSet"
+                "$ref": "#/components/schemas/AnalysisSet",
+                "title": "AnalysisSet"
               },
               {
-                "$ref": "#/components/schemas/AuxiliarySet"
+                "$ref": "#/components/schemas/AuxiliarySet",
+                "title": "AuxiliarySet"
               },
               {
-                "$ref": "#/components/schemas/ConstructLibrarySet"
+                "$ref": "#/components/schemas/ConstructLibrarySet",
+                "title": "ConstructLibrarySet"
               },
               {
-                "$ref": "#/components/schemas/CuratedSet"
+                "$ref": "#/components/schemas/CuratedSet",
+                "title": "CuratedSet"
               },
               {
-                "$ref": "#/components/schemas/MeasurementSet"
+                "$ref": "#/components/schemas/MeasurementSet",
+                "title": "MeasurementSet"
               },
               {
-                "$ref": "#/components/schemas/ModelSet"
+                "$ref": "#/components/schemas/ModelSet",
+                "title": "ModelSet"
               },
               {
-                "$ref": "#/components/schemas/PredictionSet"
+                "$ref": "#/components/schemas/PredictionSet",
+                "title": "PredictionSet"
               },
               {
                 "type": "string"
@@ -3627,7 +3725,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -3638,7 +3737,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -3648,7 +3748,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -3757,7 +3858,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -3826,34 +3928,44 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AlignmentFile"
+                  "$ref": "#/components/schemas/AlignmentFile",
+                  "title": "AlignmentFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ConfigurationFile"
+                  "$ref": "#/components/schemas/ConfigurationFile",
+                  "title": "ConfigurationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile"
+                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile",
+                  "title": "GenomeBrowserAnnotationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ImageFile"
+                  "$ref": "#/components/schemas/ImageFile",
+                  "title": "ImageFile"
                 },
                 {
-                  "$ref": "#/components/schemas/MatrixFile"
+                  "$ref": "#/components/schemas/MatrixFile",
+                  "title": "MatrixFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ModelFile"
+                  "$ref": "#/components/schemas/ModelFile",
+                  "title": "ModelFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ReferenceFile"
+                  "$ref": "#/components/schemas/ReferenceFile",
+                  "title": "ReferenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SequenceFile"
+                  "$ref": "#/components/schemas/SequenceFile",
+                  "title": "SequenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SignalFile"
+                  "$ref": "#/components/schemas/SignalFile",
+                  "title": "SignalFile"
                 },
                 {
-                  "$ref": "#/components/schemas/TabularFile"
+                  "$ref": "#/components/schemas/TabularFile",
+                  "title": "TabularFile"
                 },
                 {
                   "type": "string"
@@ -3879,7 +3991,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -3890,25 +4003,32 @@
           "file_set": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/AnalysisSet"
+                "$ref": "#/components/schemas/AnalysisSet",
+                "title": "AnalysisSet"
               },
               {
-                "$ref": "#/components/schemas/AuxiliarySet"
+                "$ref": "#/components/schemas/AuxiliarySet",
+                "title": "AuxiliarySet"
               },
               {
-                "$ref": "#/components/schemas/ConstructLibrarySet"
+                "$ref": "#/components/schemas/ConstructLibrarySet",
+                "title": "ConstructLibrarySet"
               },
               {
-                "$ref": "#/components/schemas/CuratedSet"
+                "$ref": "#/components/schemas/CuratedSet",
+                "title": "CuratedSet"
               },
               {
-                "$ref": "#/components/schemas/MeasurementSet"
+                "$ref": "#/components/schemas/MeasurementSet",
+                "title": "MeasurementSet"
               },
               {
-                "$ref": "#/components/schemas/ModelSet"
+                "$ref": "#/components/schemas/ModelSet",
+                "title": "ModelSet"
               },
               {
-                "$ref": "#/components/schemas/PredictionSet"
+                "$ref": "#/components/schemas/PredictionSet",
+                "title": "PredictionSet"
               },
               {
                 "type": "string"
@@ -4046,7 +4166,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/ReferenceFile"
+                  "$ref": "#/components/schemas/ReferenceFile",
+                  "title": "ReferenceFile"
                 },
                 {
                   "type": "string"
@@ -4063,7 +4184,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -4074,7 +4196,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -4084,7 +4207,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -4193,7 +4317,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -4254,34 +4379,44 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AlignmentFile"
+                  "$ref": "#/components/schemas/AlignmentFile",
+                  "title": "AlignmentFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ConfigurationFile"
+                  "$ref": "#/components/schemas/ConfigurationFile",
+                  "title": "ConfigurationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile"
+                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile",
+                  "title": "GenomeBrowserAnnotationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ImageFile"
+                  "$ref": "#/components/schemas/ImageFile",
+                  "title": "ImageFile"
                 },
                 {
-                  "$ref": "#/components/schemas/MatrixFile"
+                  "$ref": "#/components/schemas/MatrixFile",
+                  "title": "MatrixFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ModelFile"
+                  "$ref": "#/components/schemas/ModelFile",
+                  "title": "ModelFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ReferenceFile"
+                  "$ref": "#/components/schemas/ReferenceFile",
+                  "title": "ReferenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SequenceFile"
+                  "$ref": "#/components/schemas/SequenceFile",
+                  "title": "SequenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SignalFile"
+                  "$ref": "#/components/schemas/SignalFile",
+                  "title": "SignalFile"
                 },
                 {
-                  "$ref": "#/components/schemas/TabularFile"
+                  "$ref": "#/components/schemas/TabularFile",
+                  "title": "TabularFile"
                 },
                 {
                   "type": "string"
@@ -4310,7 +4445,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -4321,25 +4457,32 @@
           "file_set": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/AnalysisSet"
+                "$ref": "#/components/schemas/AnalysisSet",
+                "title": "AnalysisSet"
               },
               {
-                "$ref": "#/components/schemas/AuxiliarySet"
+                "$ref": "#/components/schemas/AuxiliarySet",
+                "title": "AuxiliarySet"
               },
               {
-                "$ref": "#/components/schemas/ConstructLibrarySet"
+                "$ref": "#/components/schemas/ConstructLibrarySet",
+                "title": "ConstructLibrarySet"
               },
               {
-                "$ref": "#/components/schemas/CuratedSet"
+                "$ref": "#/components/schemas/CuratedSet",
+                "title": "CuratedSet"
               },
               {
-                "$ref": "#/components/schemas/MeasurementSet"
+                "$ref": "#/components/schemas/MeasurementSet",
+                "title": "MeasurementSet"
               },
               {
-                "$ref": "#/components/schemas/ModelSet"
+                "$ref": "#/components/schemas/ModelSet",
+                "title": "ModelSet"
               },
               {
-                "$ref": "#/components/schemas/PredictionSet"
+                "$ref": "#/components/schemas/PredictionSet",
+                "title": "PredictionSet"
               },
               {
                 "type": "string"
@@ -4517,7 +4660,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -4528,7 +4672,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -4538,7 +4683,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -4647,7 +4793,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -4706,34 +4853,44 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AlignmentFile"
+                  "$ref": "#/components/schemas/AlignmentFile",
+                  "title": "AlignmentFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ConfigurationFile"
+                  "$ref": "#/components/schemas/ConfigurationFile",
+                  "title": "ConfigurationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile"
+                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile",
+                  "title": "GenomeBrowserAnnotationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ImageFile"
+                  "$ref": "#/components/schemas/ImageFile",
+                  "title": "ImageFile"
                 },
                 {
-                  "$ref": "#/components/schemas/MatrixFile"
+                  "$ref": "#/components/schemas/MatrixFile",
+                  "title": "MatrixFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ModelFile"
+                  "$ref": "#/components/schemas/ModelFile",
+                  "title": "ModelFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ReferenceFile"
+                  "$ref": "#/components/schemas/ReferenceFile",
+                  "title": "ReferenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SequenceFile"
+                  "$ref": "#/components/schemas/SequenceFile",
+                  "title": "SequenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SignalFile"
+                  "$ref": "#/components/schemas/SignalFile",
+                  "title": "SignalFile"
                 },
                 {
-                  "$ref": "#/components/schemas/TabularFile"
+                  "$ref": "#/components/schemas/TabularFile",
+                  "title": "TabularFile"
                 },
                 {
                   "type": "string"
@@ -4761,7 +4918,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -4772,25 +4930,32 @@
           "file_set": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/AnalysisSet"
+                "$ref": "#/components/schemas/AnalysisSet",
+                "title": "AnalysisSet"
               },
               {
-                "$ref": "#/components/schemas/AuxiliarySet"
+                "$ref": "#/components/schemas/AuxiliarySet",
+                "title": "AuxiliarySet"
               },
               {
-                "$ref": "#/components/schemas/ConstructLibrarySet"
+                "$ref": "#/components/schemas/ConstructLibrarySet",
+                "title": "ConstructLibrarySet"
               },
               {
-                "$ref": "#/components/schemas/CuratedSet"
+                "$ref": "#/components/schemas/CuratedSet",
+                "title": "CuratedSet"
               },
               {
-                "$ref": "#/components/schemas/MeasurementSet"
+                "$ref": "#/components/schemas/MeasurementSet",
+                "title": "MeasurementSet"
               },
               {
-                "$ref": "#/components/schemas/ModelSet"
+                "$ref": "#/components/schemas/ModelSet",
+                "title": "ModelSet"
               },
               {
-                "$ref": "#/components/schemas/PredictionSet"
+                "$ref": "#/components/schemas/PredictionSet",
+                "title": "PredictionSet"
               },
               {
                 "type": "string"
@@ -4981,7 +5146,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -4992,7 +5158,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -5002,7 +5169,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -5111,7 +5279,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -5231,34 +5400,44 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AlignmentFile"
+                  "$ref": "#/components/schemas/AlignmentFile",
+                  "title": "AlignmentFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ConfigurationFile"
+                  "$ref": "#/components/schemas/ConfigurationFile",
+                  "title": "ConfigurationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile"
+                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile",
+                  "title": "GenomeBrowserAnnotationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ImageFile"
+                  "$ref": "#/components/schemas/ImageFile",
+                  "title": "ImageFile"
                 },
                 {
-                  "$ref": "#/components/schemas/MatrixFile"
+                  "$ref": "#/components/schemas/MatrixFile",
+                  "title": "MatrixFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ModelFile"
+                  "$ref": "#/components/schemas/ModelFile",
+                  "title": "ModelFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ReferenceFile"
+                  "$ref": "#/components/schemas/ReferenceFile",
+                  "title": "ReferenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SequenceFile"
+                  "$ref": "#/components/schemas/SequenceFile",
+                  "title": "SequenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SignalFile"
+                  "$ref": "#/components/schemas/SignalFile",
+                  "title": "SignalFile"
                 },
                 {
-                  "$ref": "#/components/schemas/TabularFile"
+                  "$ref": "#/components/schemas/TabularFile",
+                  "title": "TabularFile"
                 },
                 {
                   "type": "string"
@@ -5297,7 +5476,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -5308,25 +5488,32 @@
           "file_set": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/AnalysisSet"
+                "$ref": "#/components/schemas/AnalysisSet",
+                "title": "AnalysisSet"
               },
               {
-                "$ref": "#/components/schemas/AuxiliarySet"
+                "$ref": "#/components/schemas/AuxiliarySet",
+                "title": "AuxiliarySet"
               },
               {
-                "$ref": "#/components/schemas/ConstructLibrarySet"
+                "$ref": "#/components/schemas/ConstructLibrarySet",
+                "title": "ConstructLibrarySet"
               },
               {
-                "$ref": "#/components/schemas/CuratedSet"
+                "$ref": "#/components/schemas/CuratedSet",
+                "title": "CuratedSet"
               },
               {
-                "$ref": "#/components/schemas/MeasurementSet"
+                "$ref": "#/components/schemas/MeasurementSet",
+                "title": "MeasurementSet"
               },
               {
-                "$ref": "#/components/schemas/ModelSet"
+                "$ref": "#/components/schemas/ModelSet",
+                "title": "ModelSet"
               },
               {
-                "$ref": "#/components/schemas/PredictionSet"
+                "$ref": "#/components/schemas/PredictionSet",
+                "title": "PredictionSet"
               },
               {
                 "type": "string"
@@ -5385,10 +5572,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Lab"
+                  "$ref": "#/components/schemas/Lab",
+                  "title": "Lab"
                 },
                 {
-                  "$ref": "#/components/schemas/Source"
+                  "$ref": "#/components/schemas/Source",
+                  "title": "Source"
                 },
                 {
                   "type": "string"
@@ -5512,7 +5701,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -5523,7 +5713,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -5533,7 +5724,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -5642,7 +5834,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -5702,34 +5895,44 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AlignmentFile"
+                  "$ref": "#/components/schemas/AlignmentFile",
+                  "title": "AlignmentFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ConfigurationFile"
+                  "$ref": "#/components/schemas/ConfigurationFile",
+                  "title": "ConfigurationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile"
+                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile",
+                  "title": "GenomeBrowserAnnotationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ImageFile"
+                  "$ref": "#/components/schemas/ImageFile",
+                  "title": "ImageFile"
                 },
                 {
-                  "$ref": "#/components/schemas/MatrixFile"
+                  "$ref": "#/components/schemas/MatrixFile",
+                  "title": "MatrixFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ModelFile"
+                  "$ref": "#/components/schemas/ModelFile",
+                  "title": "ModelFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ReferenceFile"
+                  "$ref": "#/components/schemas/ReferenceFile",
+                  "title": "ReferenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SequenceFile"
+                  "$ref": "#/components/schemas/SequenceFile",
+                  "title": "SequenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SignalFile"
+                  "$ref": "#/components/schemas/SignalFile",
+                  "title": "SignalFile"
                 },
                 {
-                  "$ref": "#/components/schemas/TabularFile"
+                  "$ref": "#/components/schemas/TabularFile",
+                  "title": "TabularFile"
                 },
                 {
                   "type": "string"
@@ -5756,7 +5959,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -5767,25 +5971,32 @@
           "file_set": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/AnalysisSet"
+                "$ref": "#/components/schemas/AnalysisSet",
+                "title": "AnalysisSet"
               },
               {
-                "$ref": "#/components/schemas/AuxiliarySet"
+                "$ref": "#/components/schemas/AuxiliarySet",
+                "title": "AuxiliarySet"
               },
               {
-                "$ref": "#/components/schemas/ConstructLibrarySet"
+                "$ref": "#/components/schemas/ConstructLibrarySet",
+                "title": "ConstructLibrarySet"
               },
               {
-                "$ref": "#/components/schemas/CuratedSet"
+                "$ref": "#/components/schemas/CuratedSet",
+                "title": "CuratedSet"
               },
               {
-                "$ref": "#/components/schemas/MeasurementSet"
+                "$ref": "#/components/schemas/MeasurementSet",
+                "title": "MeasurementSet"
               },
               {
-                "$ref": "#/components/schemas/ModelSet"
+                "$ref": "#/components/schemas/ModelSet",
+                "title": "ModelSet"
               },
               {
-                "$ref": "#/components/schemas/PredictionSet"
+                "$ref": "#/components/schemas/PredictionSet",
+                "title": "PredictionSet"
               },
               {
                 "type": "string"
@@ -5870,7 +6081,8 @@
           "sequencing_platform": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/PlatformTerm"
+                "$ref": "#/components/schemas/PlatformTerm",
+                "title": "PlatformTerm"
               },
               {
                 "type": "string"
@@ -6071,7 +6283,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/ReferenceFile"
+                  "$ref": "#/components/schemas/ReferenceFile",
+                  "title": "ReferenceFile"
                 },
                 {
                   "type": "string"
@@ -6088,7 +6301,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -6099,7 +6313,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -6109,7 +6324,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -6218,7 +6434,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -6282,34 +6499,44 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AlignmentFile"
+                  "$ref": "#/components/schemas/AlignmentFile",
+                  "title": "AlignmentFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ConfigurationFile"
+                  "$ref": "#/components/schemas/ConfigurationFile",
+                  "title": "ConfigurationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile"
+                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile",
+                  "title": "GenomeBrowserAnnotationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ImageFile"
+                  "$ref": "#/components/schemas/ImageFile",
+                  "title": "ImageFile"
                 },
                 {
-                  "$ref": "#/components/schemas/MatrixFile"
+                  "$ref": "#/components/schemas/MatrixFile",
+                  "title": "MatrixFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ModelFile"
+                  "$ref": "#/components/schemas/ModelFile",
+                  "title": "ModelFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ReferenceFile"
+                  "$ref": "#/components/schemas/ReferenceFile",
+                  "title": "ReferenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SequenceFile"
+                  "$ref": "#/components/schemas/SequenceFile",
+                  "title": "SequenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SignalFile"
+                  "$ref": "#/components/schemas/SignalFile",
+                  "title": "SignalFile"
                 },
                 {
-                  "$ref": "#/components/schemas/TabularFile"
+                  "$ref": "#/components/schemas/TabularFile",
+                  "title": "TabularFile"
                 },
                 {
                   "type": "string"
@@ -6334,7 +6561,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -6345,25 +6573,32 @@
           "file_set": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/AnalysisSet"
+                "$ref": "#/components/schemas/AnalysisSet",
+                "title": "AnalysisSet"
               },
               {
-                "$ref": "#/components/schemas/AuxiliarySet"
+                "$ref": "#/components/schemas/AuxiliarySet",
+                "title": "AuxiliarySet"
               },
               {
-                "$ref": "#/components/schemas/ConstructLibrarySet"
+                "$ref": "#/components/schemas/ConstructLibrarySet",
+                "title": "ConstructLibrarySet"
               },
               {
-                "$ref": "#/components/schemas/CuratedSet"
+                "$ref": "#/components/schemas/CuratedSet",
+                "title": "CuratedSet"
               },
               {
-                "$ref": "#/components/schemas/MeasurementSet"
+                "$ref": "#/components/schemas/MeasurementSet",
+                "title": "MeasurementSet"
               },
               {
-                "$ref": "#/components/schemas/ModelSet"
+                "$ref": "#/components/schemas/ModelSet",
+                "title": "ModelSet"
               },
               {
-                "$ref": "#/components/schemas/PredictionSet"
+                "$ref": "#/components/schemas/PredictionSet",
+                "title": "PredictionSet"
               },
               {
                 "type": "string"
@@ -6583,7 +6818,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -6594,7 +6830,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -6604,7 +6841,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -6713,7 +6951,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -6785,34 +7024,44 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AlignmentFile"
+                  "$ref": "#/components/schemas/AlignmentFile",
+                  "title": "AlignmentFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ConfigurationFile"
+                  "$ref": "#/components/schemas/ConfigurationFile",
+                  "title": "ConfigurationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile"
+                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile",
+                  "title": "GenomeBrowserAnnotationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ImageFile"
+                  "$ref": "#/components/schemas/ImageFile",
+                  "title": "ImageFile"
                 },
                 {
-                  "$ref": "#/components/schemas/MatrixFile"
+                  "$ref": "#/components/schemas/MatrixFile",
+                  "title": "MatrixFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ModelFile"
+                  "$ref": "#/components/schemas/ModelFile",
+                  "title": "ModelFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ReferenceFile"
+                  "$ref": "#/components/schemas/ReferenceFile",
+                  "title": "ReferenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SequenceFile"
+                  "$ref": "#/components/schemas/SequenceFile",
+                  "title": "SequenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SignalFile"
+                  "$ref": "#/components/schemas/SignalFile",
+                  "title": "SignalFile"
                 },
                 {
-                  "$ref": "#/components/schemas/TabularFile"
+                  "$ref": "#/components/schemas/TabularFile",
+                  "title": "TabularFile"
                 },
                 {
                   "type": "string"
@@ -6842,7 +7091,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -6853,25 +7103,32 @@
           "file_set": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/AnalysisSet"
+                "$ref": "#/components/schemas/AnalysisSet",
+                "title": "AnalysisSet"
               },
               {
-                "$ref": "#/components/schemas/AuxiliarySet"
+                "$ref": "#/components/schemas/AuxiliarySet",
+                "title": "AuxiliarySet"
               },
               {
-                "$ref": "#/components/schemas/ConstructLibrarySet"
+                "$ref": "#/components/schemas/ConstructLibrarySet",
+                "title": "ConstructLibrarySet"
               },
               {
-                "$ref": "#/components/schemas/CuratedSet"
+                "$ref": "#/components/schemas/CuratedSet",
+                "title": "CuratedSet"
               },
               {
-                "$ref": "#/components/schemas/MeasurementSet"
+                "$ref": "#/components/schemas/MeasurementSet",
+                "title": "MeasurementSet"
               },
               {
-                "$ref": "#/components/schemas/ModelSet"
+                "$ref": "#/components/schemas/ModelSet",
+                "title": "ModelSet"
               },
               {
-                "$ref": "#/components/schemas/PredictionSet"
+                "$ref": "#/components/schemas/PredictionSet",
+                "title": "PredictionSet"
               },
               {
                 "type": "string"
@@ -7016,7 +7273,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -7027,7 +7285,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -7037,7 +7296,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -7146,7 +7406,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -7187,22 +7448,28 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/InVitroSystem"
+                  "$ref": "#/components/schemas/InVitroSystem",
+                  "title": "InVitroSystem"
                 },
                 {
-                  "$ref": "#/components/schemas/MultiplexedSample"
+                  "$ref": "#/components/schemas/MultiplexedSample",
+                  "title": "MultiplexedSample"
                 },
                 {
-                  "$ref": "#/components/schemas/PrimaryCell"
+                  "$ref": "#/components/schemas/PrimaryCell",
+                  "title": "PrimaryCell"
                 },
                 {
-                  "$ref": "#/components/schemas/TechnicalSample"
+                  "$ref": "#/components/schemas/TechnicalSample",
+                  "title": "TechnicalSample"
                 },
                 {
-                  "$ref": "#/components/schemas/Tissue"
+                  "$ref": "#/components/schemas/Tissue",
+                  "title": "Tissue"
                 },
                 {
-                  "$ref": "#/components/schemas/WholeOrganism"
+                  "$ref": "#/components/schemas/WholeOrganism",
+                  "title": "WholeOrganism"
                 },
                 {
                   "type": "string"
@@ -7219,10 +7486,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/HumanDonor"
+                  "$ref": "#/components/schemas/HumanDonor",
+                  "title": "HumanDonor"
                 },
                 {
-                  "$ref": "#/components/schemas/RodentDonor"
+                  "$ref": "#/components/schemas/RodentDonor",
+                  "title": "RodentDonor"
                 },
                 {
                   "type": "string"
@@ -7248,25 +7517,32 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AnalysisSet"
+                  "$ref": "#/components/schemas/AnalysisSet",
+                  "title": "AnalysisSet"
                 },
                 {
-                  "$ref": "#/components/schemas/AuxiliarySet"
+                  "$ref": "#/components/schemas/AuxiliarySet",
+                  "title": "AuxiliarySet"
                 },
                 {
-                  "$ref": "#/components/schemas/ConstructLibrarySet"
+                  "$ref": "#/components/schemas/ConstructLibrarySet",
+                  "title": "ConstructLibrarySet"
                 },
                 {
-                  "$ref": "#/components/schemas/CuratedSet"
+                  "$ref": "#/components/schemas/CuratedSet",
+                  "title": "CuratedSet"
                 },
                 {
-                  "$ref": "#/components/schemas/MeasurementSet"
+                  "$ref": "#/components/schemas/MeasurementSet",
+                  "title": "MeasurementSet"
                 },
                 {
-                  "$ref": "#/components/schemas/ModelSet"
+                  "$ref": "#/components/schemas/ModelSet",
+                  "title": "ModelSet"
                 },
                 {
-                  "$ref": "#/components/schemas/PredictionSet"
+                  "$ref": "#/components/schemas/PredictionSet",
+                  "title": "PredictionSet"
                 },
                 {
                   "type": "string"
@@ -7378,7 +7654,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -7389,7 +7666,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -7399,7 +7677,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -7514,7 +7793,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -7555,22 +7835,28 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/InVitroSystem"
+                  "$ref": "#/components/schemas/InVitroSystem",
+                  "title": "InVitroSystem"
                 },
                 {
-                  "$ref": "#/components/schemas/MultiplexedSample"
+                  "$ref": "#/components/schemas/MultiplexedSample",
+                  "title": "MultiplexedSample"
                 },
                 {
-                  "$ref": "#/components/schemas/PrimaryCell"
+                  "$ref": "#/components/schemas/PrimaryCell",
+                  "title": "PrimaryCell"
                 },
                 {
-                  "$ref": "#/components/schemas/TechnicalSample"
+                  "$ref": "#/components/schemas/TechnicalSample",
+                  "title": "TechnicalSample"
                 },
                 {
-                  "$ref": "#/components/schemas/Tissue"
+                  "$ref": "#/components/schemas/Tissue",
+                  "title": "Tissue"
                 },
                 {
-                  "$ref": "#/components/schemas/WholeOrganism"
+                  "$ref": "#/components/schemas/WholeOrganism",
+                  "title": "WholeOrganism"
                 },
                 {
                   "type": "string"
@@ -7587,10 +7873,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/HumanDonor"
+                  "$ref": "#/components/schemas/HumanDonor",
+                  "title": "HumanDonor"
                 },
                 {
-                  "$ref": "#/components/schemas/RodentDonor"
+                  "$ref": "#/components/schemas/RodentDonor",
+                  "title": "RodentDonor"
                 },
                 {
                   "type": "string"
@@ -7615,7 +7903,8 @@
           "library_construction_platform": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/PlatformTerm"
+                "$ref": "#/components/schemas/PlatformTerm",
+                "title": "PlatformTerm"
               },
               {
                 "type": "string"
@@ -7749,10 +8038,12 @@
           "large_scale_loci_list": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/ReferenceFile"
+                "$ref": "#/components/schemas/ReferenceFile",
+                "title": "ReferenceFile"
               },
               {
-                "$ref": "#/components/schemas/TabularFile"
+                "$ref": "#/components/schemas/TabularFile",
+                "title": "TabularFile"
               },
               {
                 "type": "string"
@@ -7769,7 +8060,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Gene"
+                  "$ref": "#/components/schemas/Gene",
+                  "title": "Gene"
                 },
                 {
                   "type": "string"
@@ -7780,10 +8072,12 @@
           "large_scale_gene_list": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/ReferenceFile"
+                "$ref": "#/components/schemas/ReferenceFile",
+                "title": "ReferenceFile"
               },
               {
-                "$ref": "#/components/schemas/TabularFile"
+                "$ref": "#/components/schemas/TabularFile",
+                "title": "TabularFile"
               },
               {
                 "type": "string"
@@ -7818,7 +8112,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -7836,10 +8131,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Lab"
+                  "$ref": "#/components/schemas/Lab",
+                  "title": "Lab"
                 },
                 {
-                  "$ref": "#/components/schemas/Source"
+                  "$ref": "#/components/schemas/Source",
+                  "title": "Source"
                 },
                 {
                   "type": "string"
@@ -7862,7 +8159,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -7872,7 +8170,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -7981,7 +8280,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -8058,34 +8358,44 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AlignmentFile"
+                  "$ref": "#/components/schemas/AlignmentFile",
+                  "title": "AlignmentFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ConfigurationFile"
+                  "$ref": "#/components/schemas/ConfigurationFile",
+                  "title": "ConfigurationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile"
+                  "$ref": "#/components/schemas/GenomeBrowserAnnotationFile",
+                  "title": "GenomeBrowserAnnotationFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ImageFile"
+                  "$ref": "#/components/schemas/ImageFile",
+                  "title": "ImageFile"
                 },
                 {
-                  "$ref": "#/components/schemas/MatrixFile"
+                  "$ref": "#/components/schemas/MatrixFile",
+                  "title": "MatrixFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ModelFile"
+                  "$ref": "#/components/schemas/ModelFile",
+                  "title": "ModelFile"
                 },
                 {
-                  "$ref": "#/components/schemas/ReferenceFile"
+                  "$ref": "#/components/schemas/ReferenceFile",
+                  "title": "ReferenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SequenceFile"
+                  "$ref": "#/components/schemas/SequenceFile",
+                  "title": "SequenceFile"
                 },
                 {
-                  "$ref": "#/components/schemas/SignalFile"
+                  "$ref": "#/components/schemas/SignalFile",
+                  "title": "SignalFile"
                 },
                 {
-                  "$ref": "#/components/schemas/TabularFile"
+                  "$ref": "#/components/schemas/TabularFile",
+                  "title": "TabularFile"
                 },
                 {
                   "type": "string"
@@ -8102,7 +8412,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/PhenotypeTerm"
+                  "$ref": "#/components/schemas/PhenotypeTerm",
+                  "title": "PhenotypeTerm"
                 },
                 {
                   "type": "string"
@@ -8119,7 +8430,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/OpenReadingFrame"
+                  "$ref": "#/components/schemas/OpenReadingFrame",
+                  "title": "OpenReadingFrame"
                 },
                 {
                   "type": "string"
@@ -8321,7 +8633,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -8332,7 +8645,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -8342,7 +8656,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -8457,7 +8772,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -8498,22 +8814,28 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/InVitroSystem"
+                  "$ref": "#/components/schemas/InVitroSystem",
+                  "title": "InVitroSystem"
                 },
                 {
-                  "$ref": "#/components/schemas/MultiplexedSample"
+                  "$ref": "#/components/schemas/MultiplexedSample",
+                  "title": "MultiplexedSample"
                 },
                 {
-                  "$ref": "#/components/schemas/PrimaryCell"
+                  "$ref": "#/components/schemas/PrimaryCell",
+                  "title": "PrimaryCell"
                 },
                 {
-                  "$ref": "#/components/schemas/TechnicalSample"
+                  "$ref": "#/components/schemas/TechnicalSample",
+                  "title": "TechnicalSample"
                 },
                 {
-                  "$ref": "#/components/schemas/Tissue"
+                  "$ref": "#/components/schemas/Tissue",
+                  "title": "Tissue"
                 },
                 {
-                  "$ref": "#/components/schemas/WholeOrganism"
+                  "$ref": "#/components/schemas/WholeOrganism",
+                  "title": "WholeOrganism"
                 },
                 {
                   "type": "string"
@@ -8530,10 +8852,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/HumanDonor"
+                  "$ref": "#/components/schemas/HumanDonor",
+                  "title": "HumanDonor"
                 },
                 {
-                  "$ref": "#/components/schemas/RodentDonor"
+                  "$ref": "#/components/schemas/RodentDonor",
+                  "title": "RodentDonor"
                 },
                 {
                   "type": "string"
@@ -8672,7 +8996,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -8683,7 +9008,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -8693,7 +9019,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -8802,7 +9129,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -8843,22 +9171,28 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/InVitroSystem"
+                  "$ref": "#/components/schemas/InVitroSystem",
+                  "title": "InVitroSystem"
                 },
                 {
-                  "$ref": "#/components/schemas/MultiplexedSample"
+                  "$ref": "#/components/schemas/MultiplexedSample",
+                  "title": "MultiplexedSample"
                 },
                 {
-                  "$ref": "#/components/schemas/PrimaryCell"
+                  "$ref": "#/components/schemas/PrimaryCell",
+                  "title": "PrimaryCell"
                 },
                 {
-                  "$ref": "#/components/schemas/TechnicalSample"
+                  "$ref": "#/components/schemas/TechnicalSample",
+                  "title": "TechnicalSample"
                 },
                 {
-                  "$ref": "#/components/schemas/Tissue"
+                  "$ref": "#/components/schemas/Tissue",
+                  "title": "Tissue"
                 },
                 {
-                  "$ref": "#/components/schemas/WholeOrganism"
+                  "$ref": "#/components/schemas/WholeOrganism",
+                  "title": "WholeOrganism"
                 },
                 {
                   "type": "string"
@@ -8876,10 +9210,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/HumanDonor"
+                  "$ref": "#/components/schemas/HumanDonor",
+                  "title": "HumanDonor"
                 },
                 {
-                  "$ref": "#/components/schemas/RodentDonor"
+                  "$ref": "#/components/schemas/RodentDonor",
+                  "title": "RodentDonor"
                 },
                 {
                   "type": "string"
@@ -8899,7 +9235,8 @@
           "assay_term": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/AssayTerm"
+                "$ref": "#/components/schemas/AssayTerm",
+                "title": "AssayTerm"
               },
               {
                 "type": "string"
@@ -8909,7 +9246,8 @@
           "library_construction_platform": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/PlatformTerm"
+                "$ref": "#/components/schemas/PlatformTerm",
+                "title": "PlatformTerm"
               },
               {
                 "type": "string"
@@ -8990,25 +9328,32 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AnalysisSet"
+                  "$ref": "#/components/schemas/AnalysisSet",
+                  "title": "AnalysisSet"
                 },
                 {
-                  "$ref": "#/components/schemas/AuxiliarySet"
+                  "$ref": "#/components/schemas/AuxiliarySet",
+                  "title": "AuxiliarySet"
                 },
                 {
-                  "$ref": "#/components/schemas/ConstructLibrarySet"
+                  "$ref": "#/components/schemas/ConstructLibrarySet",
+                  "title": "ConstructLibrarySet"
                 },
                 {
-                  "$ref": "#/components/schemas/CuratedSet"
+                  "$ref": "#/components/schemas/CuratedSet",
+                  "title": "CuratedSet"
                 },
                 {
-                  "$ref": "#/components/schemas/MeasurementSet"
+                  "$ref": "#/components/schemas/MeasurementSet",
+                  "title": "MeasurementSet"
                 },
                 {
-                  "$ref": "#/components/schemas/ModelSet"
+                  "$ref": "#/components/schemas/ModelSet",
+                  "title": "ModelSet"
                 },
                 {
-                  "$ref": "#/components/schemas/PredictionSet"
+                  "$ref": "#/components/schemas/PredictionSet",
+                  "title": "PredictionSet"
                 },
                 {
                   "type": "string"
@@ -9044,7 +9389,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AuxiliarySet"
+                  "$ref": "#/components/schemas/AuxiliarySet",
+                  "title": "AuxiliarySet"
                 },
                 {
                   "type": "string"
@@ -9119,7 +9465,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/MeasurementSet"
+                  "$ref": "#/components/schemas/MeasurementSet",
+                  "title": "MeasurementSet"
                 },
                 {
                   "type": "string"
@@ -9186,7 +9533,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -9197,7 +9545,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -9207,7 +9556,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -9322,7 +9672,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -9363,22 +9714,28 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/InVitroSystem"
+                  "$ref": "#/components/schemas/InVitroSystem",
+                  "title": "InVitroSystem"
                 },
                 {
-                  "$ref": "#/components/schemas/MultiplexedSample"
+                  "$ref": "#/components/schemas/MultiplexedSample",
+                  "title": "MultiplexedSample"
                 },
                 {
-                  "$ref": "#/components/schemas/PrimaryCell"
+                  "$ref": "#/components/schemas/PrimaryCell",
+                  "title": "PrimaryCell"
                 },
                 {
-                  "$ref": "#/components/schemas/TechnicalSample"
+                  "$ref": "#/components/schemas/TechnicalSample",
+                  "title": "TechnicalSample"
                 },
                 {
-                  "$ref": "#/components/schemas/Tissue"
+                  "$ref": "#/components/schemas/Tissue",
+                  "title": "Tissue"
                 },
                 {
-                  "$ref": "#/components/schemas/WholeOrganism"
+                  "$ref": "#/components/schemas/WholeOrganism",
+                  "title": "WholeOrganism"
                 },
                 {
                   "type": "string"
@@ -9395,10 +9752,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/HumanDonor"
+                  "$ref": "#/components/schemas/HumanDonor",
+                  "title": "HumanDonor"
                 },
                 {
-                  "$ref": "#/components/schemas/RodentDonor"
+                  "$ref": "#/components/schemas/RodentDonor",
+                  "title": "RodentDonor"
                 },
                 {
                   "type": "string"
@@ -9456,25 +9815,32 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AnalysisSet"
+                  "$ref": "#/components/schemas/AnalysisSet",
+                  "title": "AnalysisSet"
                 },
                 {
-                  "$ref": "#/components/schemas/AuxiliarySet"
+                  "$ref": "#/components/schemas/AuxiliarySet",
+                  "title": "AuxiliarySet"
                 },
                 {
-                  "$ref": "#/components/schemas/ConstructLibrarySet"
+                  "$ref": "#/components/schemas/ConstructLibrarySet",
+                  "title": "ConstructLibrarySet"
                 },
                 {
-                  "$ref": "#/components/schemas/CuratedSet"
+                  "$ref": "#/components/schemas/CuratedSet",
+                  "title": "CuratedSet"
                 },
                 {
-                  "$ref": "#/components/schemas/MeasurementSet"
+                  "$ref": "#/components/schemas/MeasurementSet",
+                  "title": "MeasurementSet"
                 },
                 {
-                  "$ref": "#/components/schemas/ModelSet"
+                  "$ref": "#/components/schemas/ModelSet",
+                  "title": "ModelSet"
                 },
                 {
-                  "$ref": "#/components/schemas/PredictionSet"
+                  "$ref": "#/components/schemas/PredictionSet",
+                  "title": "PredictionSet"
                 },
                 {
                   "type": "string"
@@ -9491,7 +9857,8 @@
           "software_version": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/SoftwareVersion"
+                "$ref": "#/components/schemas/SoftwareVersion",
+                "title": "SoftwareVersion"
               },
               {
                 "type": "string"
@@ -9627,10 +9994,12 @@
           "large_scale_loci_list": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/ReferenceFile"
+                "$ref": "#/components/schemas/ReferenceFile",
+                "title": "ReferenceFile"
               },
               {
-                "$ref": "#/components/schemas/TabularFile"
+                "$ref": "#/components/schemas/TabularFile",
+                "title": "TabularFile"
               },
               {
                 "type": "string"
@@ -9647,7 +10016,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Gene"
+                  "$ref": "#/components/schemas/Gene",
+                  "title": "Gene"
                 },
                 {
                   "type": "string"
@@ -9658,10 +10028,12 @@
           "large_scale_gene_list": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/ReferenceFile"
+                "$ref": "#/components/schemas/ReferenceFile",
+                "title": "ReferenceFile"
               },
               {
-                "$ref": "#/components/schemas/TabularFile"
+                "$ref": "#/components/schemas/TabularFile",
+                "title": "TabularFile"
               },
               {
                 "type": "string"
@@ -9696,7 +10068,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -9707,7 +10080,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -9717,7 +10091,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -9832,7 +10207,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -9873,22 +10249,28 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/InVitroSystem"
+                  "$ref": "#/components/schemas/InVitroSystem",
+                  "title": "InVitroSystem"
                 },
                 {
-                  "$ref": "#/components/schemas/MultiplexedSample"
+                  "$ref": "#/components/schemas/MultiplexedSample",
+                  "title": "MultiplexedSample"
                 },
                 {
-                  "$ref": "#/components/schemas/PrimaryCell"
+                  "$ref": "#/components/schemas/PrimaryCell",
+                  "title": "PrimaryCell"
                 },
                 {
-                  "$ref": "#/components/schemas/TechnicalSample"
+                  "$ref": "#/components/schemas/TechnicalSample",
+                  "title": "TechnicalSample"
                 },
                 {
-                  "$ref": "#/components/schemas/Tissue"
+                  "$ref": "#/components/schemas/Tissue",
+                  "title": "Tissue"
                 },
                 {
-                  "$ref": "#/components/schemas/WholeOrganism"
+                  "$ref": "#/components/schemas/WholeOrganism",
+                  "title": "WholeOrganism"
                 },
                 {
                   "type": "string"
@@ -9905,10 +10287,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/HumanDonor"
+                  "$ref": "#/components/schemas/HumanDonor",
+                  "title": "HumanDonor"
                 },
                 {
-                  "$ref": "#/components/schemas/RodentDonor"
+                  "$ref": "#/components/schemas/RodentDonor",
+                  "title": "RodentDonor"
                 },
                 {
                   "type": "string"
@@ -10091,7 +10475,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -10348,7 +10733,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -10434,7 +10820,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -10444,7 +10831,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -10492,7 +10880,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -10561,22 +10950,28 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/InVitroSystem"
+                  "$ref": "#/components/schemas/InVitroSystem",
+                  "title": "InVitroSystem"
                 },
                 {
-                  "$ref": "#/components/schemas/MultiplexedSample"
+                  "$ref": "#/components/schemas/MultiplexedSample",
+                  "title": "MultiplexedSample"
                 },
                 {
-                  "$ref": "#/components/schemas/PrimaryCell"
+                  "$ref": "#/components/schemas/PrimaryCell",
+                  "title": "PrimaryCell"
                 },
                 {
-                  "$ref": "#/components/schemas/TechnicalSample"
+                  "$ref": "#/components/schemas/TechnicalSample",
+                  "title": "TechnicalSample"
                 },
                 {
-                  "$ref": "#/components/schemas/Tissue"
+                  "$ref": "#/components/schemas/Tissue",
+                  "title": "Tissue"
                 },
                 {
-                  "$ref": "#/components/schemas/WholeOrganism"
+                  "$ref": "#/components/schemas/WholeOrganism",
+                  "title": "WholeOrganism"
                 },
                 {
                   "type": "string"
@@ -10685,7 +11080,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -10713,7 +11109,8 @@
           "pi": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -10729,7 +11126,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Award"
+                  "$ref": "#/components/schemas/Award",
+                  "title": "Award"
                 },
                 {
                   "type": "string"
@@ -10795,10 +11193,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Lab"
+                  "$ref": "#/components/schemas/Lab",
+                  "title": "Lab"
                 },
                 {
-                  "$ref": "#/components/schemas/Source"
+                  "$ref": "#/components/schemas/Source",
+                  "title": "Source"
                 },
                 {
                   "type": "string"
@@ -10827,7 +11227,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -10850,7 +11251,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -10860,7 +11262,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -10908,7 +11311,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -10984,7 +11388,8 @@
           "tagged_protein": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Gene"
+                "$ref": "#/components/schemas/Gene",
+                "title": "Gene"
               },
               {
                 "type": "string"
@@ -11064,10 +11469,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Lab"
+                  "$ref": "#/components/schemas/Lab",
+                  "title": "Lab"
                 },
                 {
-                  "$ref": "#/components/schemas/Source"
+                  "$ref": "#/components/schemas/Source",
+                  "title": "Source"
                 },
                 {
                   "type": "string"
@@ -11096,7 +11503,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -11119,7 +11527,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -11129,7 +11538,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -11177,7 +11587,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -11253,7 +11664,8 @@
           "tagged_protein": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Gene"
+                "$ref": "#/components/schemas/Gene",
+                "title": "Gene"
               },
               {
                 "type": "string"
@@ -11373,7 +11785,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -11426,16 +11839,20 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AssayTerm"
+                  "$ref": "#/components/schemas/AssayTerm",
+                  "title": "AssayTerm"
                 },
                 {
-                  "$ref": "#/components/schemas/PhenotypeTerm"
+                  "$ref": "#/components/schemas/PhenotypeTerm",
+                  "title": "PhenotypeTerm"
                 },
                 {
-                  "$ref": "#/components/schemas/PlatformTerm"
+                  "$ref": "#/components/schemas/PlatformTerm",
+                  "title": "PlatformTerm"
                 },
                 {
-                  "$ref": "#/components/schemas/SampleTerm"
+                  "$ref": "#/components/schemas/SampleTerm",
+                  "title": "SampleTerm"
                 },
                 {
                   "type": "string"
@@ -11644,7 +12061,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -11697,16 +12115,20 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AssayTerm"
+                  "$ref": "#/components/schemas/AssayTerm",
+                  "title": "AssayTerm"
                 },
                 {
-                  "$ref": "#/components/schemas/PhenotypeTerm"
+                  "$ref": "#/components/schemas/PhenotypeTerm",
+                  "title": "PhenotypeTerm"
                 },
                 {
-                  "$ref": "#/components/schemas/PlatformTerm"
+                  "$ref": "#/components/schemas/PlatformTerm",
+                  "title": "PlatformTerm"
                 },
                 {
-                  "$ref": "#/components/schemas/SampleTerm"
+                  "$ref": "#/components/schemas/SampleTerm",
+                  "title": "SampleTerm"
                 },
                 {
                   "type": "string"
@@ -11831,7 +12253,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -11884,16 +12307,20 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AssayTerm"
+                  "$ref": "#/components/schemas/AssayTerm",
+                  "title": "AssayTerm"
                 },
                 {
-                  "$ref": "#/components/schemas/PhenotypeTerm"
+                  "$ref": "#/components/schemas/PhenotypeTerm",
+                  "title": "PhenotypeTerm"
                 },
                 {
-                  "$ref": "#/components/schemas/PlatformTerm"
+                  "$ref": "#/components/schemas/PlatformTerm",
+                  "title": "PlatformTerm"
                 },
                 {
-                  "$ref": "#/components/schemas/SampleTerm"
+                  "$ref": "#/components/schemas/SampleTerm",
+                  "title": "SampleTerm"
                 },
                 {
                   "type": "string"
@@ -12079,7 +12506,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -12132,16 +12560,20 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/AssayTerm"
+                  "$ref": "#/components/schemas/AssayTerm",
+                  "title": "AssayTerm"
                 },
                 {
-                  "$ref": "#/components/schemas/PhenotypeTerm"
+                  "$ref": "#/components/schemas/PhenotypeTerm",
+                  "title": "PhenotypeTerm"
                 },
                 {
-                  "$ref": "#/components/schemas/PlatformTerm"
+                  "$ref": "#/components/schemas/PlatformTerm",
+                  "title": "PlatformTerm"
                 },
                 {
-                  "$ref": "#/components/schemas/SampleTerm"
+                  "$ref": "#/components/schemas/SampleTerm",
+                  "title": "SampleTerm"
                 },
                 {
                   "type": "string"
@@ -12321,7 +12753,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -12343,7 +12776,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -12353,7 +12787,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -12375,7 +12810,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Gene"
+                  "$ref": "#/components/schemas/Gene",
+                  "title": "Gene"
                 },
                 {
                   "type": "string"
@@ -12460,7 +12896,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -12470,7 +12907,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -12530,7 +12968,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -12552,7 +12991,8 @@
           "parent": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Page"
+                "$ref": "#/components/schemas/Page",
+                "title": "Page"
               },
               {
                 "type": "string"
@@ -12664,7 +13104,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -12674,7 +13115,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -12722,7 +13164,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -12744,7 +13187,8 @@
           "feature": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/PhenotypeTerm"
+                "$ref": "#/components/schemas/PhenotypeTerm",
+                "title": "PhenotypeTerm"
               },
               {
                 "type": "string"
@@ -12844,7 +13288,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -12854,7 +13299,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -12955,7 +13401,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -13121,10 +13568,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Lab"
+                  "$ref": "#/components/schemas/Lab",
+                  "title": "Lab"
                 },
                 {
-                  "$ref": "#/components/schemas/Source"
+                  "$ref": "#/components/schemas/Source",
+                  "title": "Source"
                 },
                 {
                   "type": "string"
@@ -13153,7 +13602,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -13164,7 +13614,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -13174,7 +13625,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -13283,7 +13735,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -13335,7 +13788,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/SampleTerm"
+                  "$ref": "#/components/schemas/SampleTerm",
+                  "title": "SampleTerm"
                 },
                 {
                   "type": "string"
@@ -13352,7 +13806,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/PhenotypeTerm"
+                  "$ref": "#/components/schemas/PhenotypeTerm",
+                  "title": "PhenotypeTerm"
                 },
                 {
                   "type": "string"
@@ -13369,16 +13824,20 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/InVitroSystem"
+                  "$ref": "#/components/schemas/InVitroSystem",
+                  "title": "InVitroSystem"
                 },
                 {
-                  "$ref": "#/components/schemas/PrimaryCell"
+                  "$ref": "#/components/schemas/PrimaryCell",
+                  "title": "PrimaryCell"
                 },
                 {
-                  "$ref": "#/components/schemas/Tissue"
+                  "$ref": "#/components/schemas/Tissue",
+                  "title": "Tissue"
                 },
                 {
-                  "$ref": "#/components/schemas/WholeOrganism"
+                  "$ref": "#/components/schemas/WholeOrganism",
+                  "title": "WholeOrganism"
                 },
                 {
                   "type": "string"
@@ -13389,16 +13848,20 @@
           "part_of": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/InVitroSystem"
+                "$ref": "#/components/schemas/InVitroSystem",
+                "title": "InVitroSystem"
               },
               {
-                "$ref": "#/components/schemas/PrimaryCell"
+                "$ref": "#/components/schemas/PrimaryCell",
+                "title": "PrimaryCell"
               },
               {
-                "$ref": "#/components/schemas/Tissue"
+                "$ref": "#/components/schemas/Tissue",
+                "title": "Tissue"
               },
               {
-                "$ref": "#/components/schemas/WholeOrganism"
+                "$ref": "#/components/schemas/WholeOrganism",
+                "title": "WholeOrganism"
               },
               {
                 "type": "string"
@@ -13408,16 +13871,20 @@
           "originated_from": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/InVitroSystem"
+                "$ref": "#/components/schemas/InVitroSystem",
+                "title": "InVitroSystem"
               },
               {
-                "$ref": "#/components/schemas/PrimaryCell"
+                "$ref": "#/components/schemas/PrimaryCell",
+                "title": "PrimaryCell"
               },
               {
-                "$ref": "#/components/schemas/Tissue"
+                "$ref": "#/components/schemas/Tissue",
+                "title": "Tissue"
               },
               {
-                "$ref": "#/components/schemas/WholeOrganism"
+                "$ref": "#/components/schemas/WholeOrganism",
+                "title": "WholeOrganism"
               },
               {
                 "type": "string"
@@ -13433,7 +13900,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Treatment"
+                  "$ref": "#/components/schemas/Treatment",
+                  "title": "Treatment"
                 },
                 {
                   "type": "string"
@@ -13450,10 +13918,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/HumanDonor"
+                  "$ref": "#/components/schemas/HumanDonor",
+                  "title": "HumanDonor"
                 },
                 {
-                  "$ref": "#/components/schemas/RodentDonor"
+                  "$ref": "#/components/schemas/RodentDonor",
+                  "title": "RodentDonor"
                 },
                 {
                   "type": "string"
@@ -13470,7 +13940,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Biomarker"
+                  "$ref": "#/components/schemas/Biomarker",
+                  "title": "Biomarker"
                 },
                 {
                   "type": "string"
@@ -13493,10 +13964,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/CrisprModification"
+                  "$ref": "#/components/schemas/CrisprModification",
+                  "title": "CrisprModification"
                 },
                 {
-                  "$ref": "#/components/schemas/Modification"
+                  "$ref": "#/components/schemas/Modification",
+                  "title": "Modification"
                 },
                 {
                   "type": "string"
@@ -13553,22 +14026,28 @@
           "sorted_from": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/InVitroSystem"
+                "$ref": "#/components/schemas/InVitroSystem",
+                "title": "InVitroSystem"
               },
               {
-                "$ref": "#/components/schemas/MultiplexedSample"
+                "$ref": "#/components/schemas/MultiplexedSample",
+                "title": "MultiplexedSample"
               },
               {
-                "$ref": "#/components/schemas/PrimaryCell"
+                "$ref": "#/components/schemas/PrimaryCell",
+                "title": "PrimaryCell"
               },
               {
-                "$ref": "#/components/schemas/TechnicalSample"
+                "$ref": "#/components/schemas/TechnicalSample",
+                "title": "TechnicalSample"
               },
               {
-                "$ref": "#/components/schemas/Tissue"
+                "$ref": "#/components/schemas/Tissue",
+                "title": "Tissue"
               },
               {
-                "$ref": "#/components/schemas/WholeOrganism"
+                "$ref": "#/components/schemas/WholeOrganism",
+                "title": "WholeOrganism"
               },
               {
                 "type": "string"
@@ -13595,7 +14074,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/ConstructLibrarySet"
+                  "$ref": "#/components/schemas/ConstructLibrarySet",
+                  "title": "ConstructLibrarySet"
                 },
                 {
                   "type": "string"
@@ -13696,7 +14176,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Treatment"
+                  "$ref": "#/components/schemas/Treatment",
+                  "title": "Treatment"
                 },
                 {
                   "type": "string"
@@ -13707,7 +14188,8 @@
           "cell_fate_change_protocol": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Document"
+                "$ref": "#/components/schemas/Document",
+                "title": "Document"
               },
               {
                 "type": "string"
@@ -13717,7 +14199,8 @@
           "demultiplexed_from": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/InVitroSystem"
+                "$ref": "#/components/schemas/InVitroSystem",
+                "title": "InVitroSystem"
               },
               {
                 "type": "string"
@@ -13733,7 +14216,8 @@
           "targeted_sample_term": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/SampleTerm"
+                "$ref": "#/components/schemas/SampleTerm",
+                "title": "SampleTerm"
               },
               {
                 "type": "string"
@@ -13949,7 +14433,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -13960,7 +14445,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -13970,7 +14456,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -14079,7 +14566,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -14141,22 +14629,28 @@
           "sorted_from": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/InVitroSystem"
+                "$ref": "#/components/schemas/InVitroSystem",
+                "title": "InVitroSystem"
               },
               {
-                "$ref": "#/components/schemas/MultiplexedSample"
+                "$ref": "#/components/schemas/MultiplexedSample",
+                "title": "MultiplexedSample"
               },
               {
-                "$ref": "#/components/schemas/PrimaryCell"
+                "$ref": "#/components/schemas/PrimaryCell",
+                "title": "PrimaryCell"
               },
               {
-                "$ref": "#/components/schemas/TechnicalSample"
+                "$ref": "#/components/schemas/TechnicalSample",
+                "title": "TechnicalSample"
               },
               {
-                "$ref": "#/components/schemas/Tissue"
+                "$ref": "#/components/schemas/Tissue",
+                "title": "Tissue"
               },
               {
-                "$ref": "#/components/schemas/WholeOrganism"
+                "$ref": "#/components/schemas/WholeOrganism",
+                "title": "WholeOrganism"
               },
               {
                 "type": "string"
@@ -14183,7 +14677,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/ConstructLibrarySet"
+                  "$ref": "#/components/schemas/ConstructLibrarySet",
+                  "title": "ConstructLibrarySet"
                 },
                 {
                   "type": "string"
@@ -14245,22 +14740,28 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/InVitroSystem"
+                  "$ref": "#/components/schemas/InVitroSystem",
+                  "title": "InVitroSystem"
                 },
                 {
-                  "$ref": "#/components/schemas/MultiplexedSample"
+                  "$ref": "#/components/schemas/MultiplexedSample",
+                  "title": "MultiplexedSample"
                 },
                 {
-                  "$ref": "#/components/schemas/PrimaryCell"
+                  "$ref": "#/components/schemas/PrimaryCell",
+                  "title": "PrimaryCell"
                 },
                 {
-                  "$ref": "#/components/schemas/TechnicalSample"
+                  "$ref": "#/components/schemas/TechnicalSample",
+                  "title": "TechnicalSample"
                 },
                 {
-                  "$ref": "#/components/schemas/Tissue"
+                  "$ref": "#/components/schemas/Tissue",
+                  "title": "Tissue"
                 },
                 {
-                  "$ref": "#/components/schemas/WholeOrganism"
+                  "$ref": "#/components/schemas/WholeOrganism",
+                  "title": "WholeOrganism"
                 },
                 {
                   "type": "string"
@@ -14277,7 +14778,8 @@
           "barcode_sample_map": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/TabularFile"
+                "$ref": "#/components/schemas/TabularFile",
+                "title": "TabularFile"
               },
               {
                 "type": "string"
@@ -14359,7 +14861,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/SampleTerm"
+                  "$ref": "#/components/schemas/SampleTerm",
+                  "title": "SampleTerm"
                 },
                 {
                   "type": "string"
@@ -14376,7 +14879,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/PhenotypeTerm"
+                  "$ref": "#/components/schemas/PhenotypeTerm",
+                  "title": "PhenotypeTerm"
                 },
                 {
                   "type": "string"
@@ -14393,7 +14897,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Treatment"
+                  "$ref": "#/components/schemas/Treatment",
+                  "title": "Treatment"
                 },
                 {
                   "type": "string"
@@ -14410,10 +14915,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/CrisprModification"
+                  "$ref": "#/components/schemas/CrisprModification",
+                  "title": "CrisprModification"
                 },
                 {
-                  "$ref": "#/components/schemas/Modification"
+                  "$ref": "#/components/schemas/Modification",
+                  "title": "Modification"
                 },
                 {
                   "type": "string"
@@ -14430,10 +14937,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/HumanDonor"
+                  "$ref": "#/components/schemas/HumanDonor",
+                  "title": "HumanDonor"
                 },
                 {
-                  "$ref": "#/components/schemas/RodentDonor"
+                  "$ref": "#/components/schemas/RodentDonor",
+                  "title": "RodentDonor"
                 },
                 {
                   "type": "string"
@@ -14450,7 +14959,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Biomarker"
+                  "$ref": "#/components/schemas/Biomarker",
+                  "title": "Biomarker"
                 },
                 {
                   "type": "string"
@@ -14467,10 +14977,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Lab"
+                  "$ref": "#/components/schemas/Lab",
+                  "title": "Lab"
                 },
                 {
-                  "$ref": "#/components/schemas/Source"
+                  "$ref": "#/components/schemas/Source",
+                  "title": "Source"
                 },
                 {
                   "type": "string"
@@ -14548,10 +15060,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Lab"
+                  "$ref": "#/components/schemas/Lab",
+                  "title": "Lab"
                 },
                 {
-                  "$ref": "#/components/schemas/Source"
+                  "$ref": "#/components/schemas/Source",
+                  "title": "Source"
                 },
                 {
                   "type": "string"
@@ -14580,7 +15094,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -14591,7 +15106,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -14601,7 +15117,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -14710,7 +15227,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -14762,7 +15280,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/SampleTerm"
+                  "$ref": "#/components/schemas/SampleTerm",
+                  "title": "SampleTerm"
                 },
                 {
                   "type": "string"
@@ -14779,7 +15298,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/PhenotypeTerm"
+                  "$ref": "#/components/schemas/PhenotypeTerm",
+                  "title": "PhenotypeTerm"
                 },
                 {
                   "type": "string"
@@ -14796,7 +15316,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/PrimaryCell"
+                  "$ref": "#/components/schemas/PrimaryCell",
+                  "title": "PrimaryCell"
                 },
                 {
                   "type": "string"
@@ -14807,13 +15328,16 @@
           "part_of": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/PrimaryCell"
+                "$ref": "#/components/schemas/PrimaryCell",
+                "title": "PrimaryCell"
               },
               {
-                "$ref": "#/components/schemas/Tissue"
+                "$ref": "#/components/schemas/Tissue",
+                "title": "Tissue"
               },
               {
-                "$ref": "#/components/schemas/WholeOrganism"
+                "$ref": "#/components/schemas/WholeOrganism",
+                "title": "WholeOrganism"
               },
               {
                 "type": "string"
@@ -14823,16 +15347,20 @@
           "originated_from": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/InVitroSystem"
+                "$ref": "#/components/schemas/InVitroSystem",
+                "title": "InVitroSystem"
               },
               {
-                "$ref": "#/components/schemas/PrimaryCell"
+                "$ref": "#/components/schemas/PrimaryCell",
+                "title": "PrimaryCell"
               },
               {
-                "$ref": "#/components/schemas/Tissue"
+                "$ref": "#/components/schemas/Tissue",
+                "title": "Tissue"
               },
               {
-                "$ref": "#/components/schemas/WholeOrganism"
+                "$ref": "#/components/schemas/WholeOrganism",
+                "title": "WholeOrganism"
               },
               {
                 "type": "string"
@@ -14848,7 +15376,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Treatment"
+                  "$ref": "#/components/schemas/Treatment",
+                  "title": "Treatment"
                 },
                 {
                   "type": "string"
@@ -14865,10 +15394,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/HumanDonor"
+                  "$ref": "#/components/schemas/HumanDonor",
+                  "title": "HumanDonor"
                 },
                 {
-                  "$ref": "#/components/schemas/RodentDonor"
+                  "$ref": "#/components/schemas/RodentDonor",
+                  "title": "RodentDonor"
                 },
                 {
                   "type": "string"
@@ -14885,7 +15416,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Biomarker"
+                  "$ref": "#/components/schemas/Biomarker",
+                  "title": "Biomarker"
                 },
                 {
                   "type": "string"
@@ -14908,10 +15440,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/CrisprModification"
+                  "$ref": "#/components/schemas/CrisprModification",
+                  "title": "CrisprModification"
                 },
                 {
-                  "$ref": "#/components/schemas/Modification"
+                  "$ref": "#/components/schemas/Modification",
+                  "title": "Modification"
                 },
                 {
                   "type": "string"
@@ -14968,22 +15502,28 @@
           "sorted_from": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/InVitroSystem"
+                "$ref": "#/components/schemas/InVitroSystem",
+                "title": "InVitroSystem"
               },
               {
-                "$ref": "#/components/schemas/MultiplexedSample"
+                "$ref": "#/components/schemas/MultiplexedSample",
+                "title": "MultiplexedSample"
               },
               {
-                "$ref": "#/components/schemas/PrimaryCell"
+                "$ref": "#/components/schemas/PrimaryCell",
+                "title": "PrimaryCell"
               },
               {
-                "$ref": "#/components/schemas/TechnicalSample"
+                "$ref": "#/components/schemas/TechnicalSample",
+                "title": "TechnicalSample"
               },
               {
-                "$ref": "#/components/schemas/Tissue"
+                "$ref": "#/components/schemas/Tissue",
+                "title": "Tissue"
               },
               {
-                "$ref": "#/components/schemas/WholeOrganism"
+                "$ref": "#/components/schemas/WholeOrganism",
+                "title": "WholeOrganism"
               },
               {
                 "type": "string"
@@ -15010,7 +15550,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/ConstructLibrarySet"
+                  "$ref": "#/components/schemas/ConstructLibrarySet",
+                  "title": "ConstructLibrarySet"
                 },
                 {
                   "type": "string"
@@ -15242,10 +15783,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Lab"
+                  "$ref": "#/components/schemas/Lab",
+                  "title": "Lab"
                 },
                 {
-                  "$ref": "#/components/schemas/Source"
+                  "$ref": "#/components/schemas/Source",
+                  "title": "Source"
                 },
                 {
                   "type": "string"
@@ -15274,7 +15817,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -15285,7 +15829,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -15295,7 +15840,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -15404,7 +15950,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -15466,22 +16013,28 @@
           "sorted_from": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/InVitroSystem"
+                "$ref": "#/components/schemas/InVitroSystem",
+                "title": "InVitroSystem"
               },
               {
-                "$ref": "#/components/schemas/MultiplexedSample"
+                "$ref": "#/components/schemas/MultiplexedSample",
+                "title": "MultiplexedSample"
               },
               {
-                "$ref": "#/components/schemas/PrimaryCell"
+                "$ref": "#/components/schemas/PrimaryCell",
+                "title": "PrimaryCell"
               },
               {
-                "$ref": "#/components/schemas/TechnicalSample"
+                "$ref": "#/components/schemas/TechnicalSample",
+                "title": "TechnicalSample"
               },
               {
-                "$ref": "#/components/schemas/Tissue"
+                "$ref": "#/components/schemas/Tissue",
+                "title": "Tissue"
               },
               {
-                "$ref": "#/components/schemas/WholeOrganism"
+                "$ref": "#/components/schemas/WholeOrganism",
+                "title": "WholeOrganism"
               },
               {
                 "type": "string"
@@ -15508,7 +16061,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/ConstructLibrarySet"
+                  "$ref": "#/components/schemas/ConstructLibrarySet",
+                  "title": "ConstructLibrarySet"
                 },
                 {
                   "type": "string"
@@ -15590,7 +16144,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/SampleTerm"
+                  "$ref": "#/components/schemas/SampleTerm",
+                  "title": "SampleTerm"
                 },
                 {
                   "type": "string"
@@ -15734,10 +16289,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Lab"
+                  "$ref": "#/components/schemas/Lab",
+                  "title": "Lab"
                 },
                 {
-                  "$ref": "#/components/schemas/Source"
+                  "$ref": "#/components/schemas/Source",
+                  "title": "Source"
                 },
                 {
                   "type": "string"
@@ -15766,7 +16323,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -15777,7 +16335,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -15787,7 +16346,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -15896,7 +16456,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -15948,7 +16509,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/SampleTerm"
+                  "$ref": "#/components/schemas/SampleTerm",
+                  "title": "SampleTerm"
                 },
                 {
                   "type": "string"
@@ -15965,7 +16527,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/PhenotypeTerm"
+                  "$ref": "#/components/schemas/PhenotypeTerm",
+                  "title": "PhenotypeTerm"
                 },
                 {
                   "type": "string"
@@ -15982,7 +16545,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Tissue"
+                  "$ref": "#/components/schemas/Tissue",
+                  "title": "Tissue"
                 },
                 {
                   "type": "string"
@@ -15993,10 +16557,12 @@
           "part_of": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Tissue"
+                "$ref": "#/components/schemas/Tissue",
+                "title": "Tissue"
               },
               {
-                "$ref": "#/components/schemas/WholeOrganism"
+                "$ref": "#/components/schemas/WholeOrganism",
+                "title": "WholeOrganism"
               },
               {
                 "type": "string"
@@ -16006,16 +16572,20 @@
           "originated_from": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/InVitroSystem"
+                "$ref": "#/components/schemas/InVitroSystem",
+                "title": "InVitroSystem"
               },
               {
-                "$ref": "#/components/schemas/PrimaryCell"
+                "$ref": "#/components/schemas/PrimaryCell",
+                "title": "PrimaryCell"
               },
               {
-                "$ref": "#/components/schemas/Tissue"
+                "$ref": "#/components/schemas/Tissue",
+                "title": "Tissue"
               },
               {
-                "$ref": "#/components/schemas/WholeOrganism"
+                "$ref": "#/components/schemas/WholeOrganism",
+                "title": "WholeOrganism"
               },
               {
                 "type": "string"
@@ -16031,7 +16601,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Treatment"
+                  "$ref": "#/components/schemas/Treatment",
+                  "title": "Treatment"
                 },
                 {
                   "type": "string"
@@ -16048,10 +16619,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/HumanDonor"
+                  "$ref": "#/components/schemas/HumanDonor",
+                  "title": "HumanDonor"
                 },
                 {
-                  "$ref": "#/components/schemas/RodentDonor"
+                  "$ref": "#/components/schemas/RodentDonor",
+                  "title": "RodentDonor"
                 },
                 {
                   "type": "string"
@@ -16068,7 +16641,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Biomarker"
+                  "$ref": "#/components/schemas/Biomarker",
+                  "title": "Biomarker"
                 },
                 {
                   "type": "string"
@@ -16091,10 +16665,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/CrisprModification"
+                  "$ref": "#/components/schemas/CrisprModification",
+                  "title": "CrisprModification"
                 },
                 {
-                  "$ref": "#/components/schemas/Modification"
+                  "$ref": "#/components/schemas/Modification",
+                  "title": "Modification"
                 },
                 {
                   "type": "string"
@@ -16151,22 +16727,28 @@
           "sorted_from": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/InVitroSystem"
+                "$ref": "#/components/schemas/InVitroSystem",
+                "title": "InVitroSystem"
               },
               {
-                "$ref": "#/components/schemas/MultiplexedSample"
+                "$ref": "#/components/schemas/MultiplexedSample",
+                "title": "MultiplexedSample"
               },
               {
-                "$ref": "#/components/schemas/PrimaryCell"
+                "$ref": "#/components/schemas/PrimaryCell",
+                "title": "PrimaryCell"
               },
               {
-                "$ref": "#/components/schemas/TechnicalSample"
+                "$ref": "#/components/schemas/TechnicalSample",
+                "title": "TechnicalSample"
               },
               {
-                "$ref": "#/components/schemas/Tissue"
+                "$ref": "#/components/schemas/Tissue",
+                "title": "Tissue"
               },
               {
-                "$ref": "#/components/schemas/WholeOrganism"
+                "$ref": "#/components/schemas/WholeOrganism",
+                "title": "WholeOrganism"
               },
               {
                 "type": "string"
@@ -16193,7 +16775,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/ConstructLibrarySet"
+                  "$ref": "#/components/schemas/ConstructLibrarySet",
+                  "title": "ConstructLibrarySet"
                 },
                 {
                   "type": "string"
@@ -16475,10 +17058,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Lab"
+                  "$ref": "#/components/schemas/Lab",
+                  "title": "Lab"
                 },
                 {
-                  "$ref": "#/components/schemas/Source"
+                  "$ref": "#/components/schemas/Source",
+                  "title": "Source"
                 },
                 {
                   "type": "string"
@@ -16507,7 +17092,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -16518,7 +17104,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -16528,7 +17115,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -16637,7 +17225,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -16689,7 +17278,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/SampleTerm"
+                  "$ref": "#/components/schemas/SampleTerm",
+                  "title": "SampleTerm"
                 },
                 {
                   "type": "string"
@@ -16709,7 +17299,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/PhenotypeTerm"
+                  "$ref": "#/components/schemas/PhenotypeTerm",
+                  "title": "PhenotypeTerm"
                 },
                 {
                   "type": "string"
@@ -16726,16 +17317,20 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/InVitroSystem"
+                  "$ref": "#/components/schemas/InVitroSystem",
+                  "title": "InVitroSystem"
                 },
                 {
-                  "$ref": "#/components/schemas/PrimaryCell"
+                  "$ref": "#/components/schemas/PrimaryCell",
+                  "title": "PrimaryCell"
                 },
                 {
-                  "$ref": "#/components/schemas/Tissue"
+                  "$ref": "#/components/schemas/Tissue",
+                  "title": "Tissue"
                 },
                 {
-                  "$ref": "#/components/schemas/WholeOrganism"
+                  "$ref": "#/components/schemas/WholeOrganism",
+                  "title": "WholeOrganism"
                 },
                 {
                   "type": "string"
@@ -16746,16 +17341,20 @@
           "part_of": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/InVitroSystem"
+                "$ref": "#/components/schemas/InVitroSystem",
+                "title": "InVitroSystem"
               },
               {
-                "$ref": "#/components/schemas/PrimaryCell"
+                "$ref": "#/components/schemas/PrimaryCell",
+                "title": "PrimaryCell"
               },
               {
-                "$ref": "#/components/schemas/Tissue"
+                "$ref": "#/components/schemas/Tissue",
+                "title": "Tissue"
               },
               {
-                "$ref": "#/components/schemas/WholeOrganism"
+                "$ref": "#/components/schemas/WholeOrganism",
+                "title": "WholeOrganism"
               },
               {
                 "type": "string"
@@ -16765,16 +17364,20 @@
           "originated_from": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/InVitroSystem"
+                "$ref": "#/components/schemas/InVitroSystem",
+                "title": "InVitroSystem"
               },
               {
-                "$ref": "#/components/schemas/PrimaryCell"
+                "$ref": "#/components/schemas/PrimaryCell",
+                "title": "PrimaryCell"
               },
               {
-                "$ref": "#/components/schemas/Tissue"
+                "$ref": "#/components/schemas/Tissue",
+                "title": "Tissue"
               },
               {
-                "$ref": "#/components/schemas/WholeOrganism"
+                "$ref": "#/components/schemas/WholeOrganism",
+                "title": "WholeOrganism"
               },
               {
                 "type": "string"
@@ -16790,7 +17393,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Treatment"
+                  "$ref": "#/components/schemas/Treatment",
+                  "title": "Treatment"
                 },
                 {
                   "type": "string"
@@ -16807,10 +17411,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/HumanDonor"
+                  "$ref": "#/components/schemas/HumanDonor",
+                  "title": "HumanDonor"
                 },
                 {
-                  "$ref": "#/components/schemas/RodentDonor"
+                  "$ref": "#/components/schemas/RodentDonor",
+                  "title": "RodentDonor"
                 },
                 {
                   "type": "string"
@@ -16827,7 +17433,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Biomarker"
+                  "$ref": "#/components/schemas/Biomarker",
+                  "title": "Biomarker"
                 },
                 {
                   "type": "string"
@@ -16850,10 +17457,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/CrisprModification"
+                  "$ref": "#/components/schemas/CrisprModification",
+                  "title": "CrisprModification"
                 },
                 {
-                  "$ref": "#/components/schemas/Modification"
+                  "$ref": "#/components/schemas/Modification",
+                  "title": "Modification"
                 },
                 {
                   "type": "string"
@@ -16910,22 +17519,28 @@
           "sorted_from": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/InVitroSystem"
+                "$ref": "#/components/schemas/InVitroSystem",
+                "title": "InVitroSystem"
               },
               {
-                "$ref": "#/components/schemas/MultiplexedSample"
+                "$ref": "#/components/schemas/MultiplexedSample",
+                "title": "MultiplexedSample"
               },
               {
-                "$ref": "#/components/schemas/PrimaryCell"
+                "$ref": "#/components/schemas/PrimaryCell",
+                "title": "PrimaryCell"
               },
               {
-                "$ref": "#/components/schemas/TechnicalSample"
+                "$ref": "#/components/schemas/TechnicalSample",
+                "title": "TechnicalSample"
               },
               {
-                "$ref": "#/components/schemas/Tissue"
+                "$ref": "#/components/schemas/Tissue",
+                "title": "Tissue"
               },
               {
-                "$ref": "#/components/schemas/WholeOrganism"
+                "$ref": "#/components/schemas/WholeOrganism",
+                "title": "WholeOrganism"
               },
               {
                 "type": "string"
@@ -16952,7 +17567,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/ConstructLibrarySet"
+                  "$ref": "#/components/schemas/ConstructLibrarySet",
+                  "title": "ConstructLibrarySet"
                 },
                 {
                   "type": "string"
@@ -17166,7 +17782,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -17176,7 +17793,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -17236,7 +17854,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -17314,7 +17933,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/SoftwareVersion"
+                  "$ref": "#/components/schemas/SoftwareVersion",
+                  "title": "SoftwareVersion"
                 },
                 {
                   "type": "string"
@@ -17372,7 +17992,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -17382,7 +18003,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -17442,7 +18064,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -17464,7 +18087,8 @@
           "software": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Software"
+                "$ref": "#/components/schemas/Software",
+                "title": "Software"
               },
               {
                 "type": "string"
@@ -17587,7 +18211,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -17659,7 +18284,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -17669,7 +18295,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -17686,10 +18313,12 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Lab"
+                  "$ref": "#/components/schemas/Lab",
+                  "title": "Lab"
                 },
                 {
-                  "$ref": "#/components/schemas/Source"
+                  "$ref": "#/components/schemas/Source",
+                  "title": "Source"
                 },
                 {
                   "type": "string"
@@ -17718,7 +18347,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -17779,7 +18409,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -17994,7 +18625,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -18033,7 +18665,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -18049,7 +18682,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Lab"
+                  "$ref": "#/components/schemas/Lab",
+                  "title": "Lab"
                 },
                 {
                   "type": "string"
@@ -18169,7 +18803,8 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "#/components/schemas/Document"
+                  "$ref": "#/components/schemas/Document",
+                  "title": "Document"
                 },
                 {
                   "type": "string"
@@ -18180,7 +18815,8 @@
           "lab": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Lab"
+                "$ref": "#/components/schemas/Lab",
+                "title": "Lab"
               },
               {
                 "type": "string"
@@ -18190,7 +18826,8 @@
           "award": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Award"
+                "$ref": "#/components/schemas/Award",
+                "title": "Award"
               },
               {
                 "type": "string"
@@ -18299,7 +18936,8 @@
           "submitted_by": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/User",
+                "title": "User"
               },
               {
                 "type": "string"
@@ -18347,7 +18985,8 @@
           "standards_page": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/Page"
+                "$ref": "#/components/schemas/Page",
+                "title": "Page"
               },
               {
                 "type": "string"

@@ -259,7 +259,7 @@ def clean_schema(schema):
                     value = list(sorted(resolved_subtypes))
                     res = [
                         {
-                            '$ref': f"#/components/schemas/{v}"
+                            '$ref': f"#/components/schemas/{v}",
                         }
                         for v in value
                     ]
