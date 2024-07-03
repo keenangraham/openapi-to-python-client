@@ -266,9 +266,6 @@ def clean_schema(schema):
                     ]
                     res.append({'type': 'string'})
                     cleaned = {}
-#                    title = schema.get('title')
- #                   if title:
-  #                      cleaned['title'] = title
                     cleaned['oneOf'] = res
                     return cleaned
                 elif key == "required" and not isinstance(value, list):
