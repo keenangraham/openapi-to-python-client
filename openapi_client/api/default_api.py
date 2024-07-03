@@ -42,17 +42,16 @@ class DefaultApi:
     @validate_call
     def search(
         self,
-        debug: Annotated[Optional[StrictBool], Field(description="Enables debug mode for the search.")] = None,
+        type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        debug: Annotated[Optional[StrictBool], Field(description="Enables debug mode for the search.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Specifies the format of the returned objects.")] = None,
         var_from: Annotated[Optional[StrictInt], Field(description="Starting index for pagination.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        mode: Annotated[Optional[StrictStr], Field(description="Specifies the search mode.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
-        type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         config: Annotated[Optional[StrictStr], Field(description="Configuration options for the search.")] = None,
         advanced_query: Annotated[Optional[StrictStr], Field(description="Advanced query string for complex searches.")] = None,
-        query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
@@ -71,28 +70,26 @@ class DefaultApi:
 
         Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
 
-        :param debug: Enables debug mode for the search.
-        :type debug: bool
+        :param type: Type of objects to return. Can be repeated for multiple types.
+        :type type: List[str]
         :param var_field: Fields to include in the response. Can be repeated for multiple fields.
         :type var_field: List[str]
+        :param query: Query string for searching.
+        :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: str
+        :param debug: Enables debug mode for the search.
+        :type debug: bool
         :param frame: Specifies the format of the returned objects.
         :type frame: str
         :param var_from: Starting index for pagination.
         :type var_from: int
-        :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: str
-        :param mode: Specifies the search mode.
-        :type mode: str
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
         :type sort: List[str]
-        :param type: Type of objects to return. Can be repeated for multiple types.
-        :type type: List[str]
         :param config: Configuration options for the search.
         :type config: str
         :param advanced_query: Advanced query string for complex searches.
         :type advanced_query: str
-        :param query: Query string for searching.
-        :type query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
         :param _request_timeout: timeout setting for this request. If one
@@ -118,17 +115,16 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._search_serialize(
-            debug=debug,
+            type=type,
             var_field=var_field,
+            query=query,
+            limit=limit,
+            debug=debug,
             frame=frame,
             var_from=var_from,
-            limit=limit,
-            mode=mode,
             sort=sort,
-            type=type,
             config=config,
             advanced_query=advanced_query,
-            query=query,
             field_filters=field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -153,17 +149,16 @@ class DefaultApi:
     @validate_call
     def search_with_http_info(
         self,
-        debug: Annotated[Optional[StrictBool], Field(description="Enables debug mode for the search.")] = None,
+        type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        debug: Annotated[Optional[StrictBool], Field(description="Enables debug mode for the search.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Specifies the format of the returned objects.")] = None,
         var_from: Annotated[Optional[StrictInt], Field(description="Starting index for pagination.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        mode: Annotated[Optional[StrictStr], Field(description="Specifies the search mode.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
-        type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         config: Annotated[Optional[StrictStr], Field(description="Configuration options for the search.")] = None,
         advanced_query: Annotated[Optional[StrictStr], Field(description="Advanced query string for complex searches.")] = None,
-        query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
@@ -182,28 +177,26 @@ class DefaultApi:
 
         Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
 
-        :param debug: Enables debug mode for the search.
-        :type debug: bool
+        :param type: Type of objects to return. Can be repeated for multiple types.
+        :type type: List[str]
         :param var_field: Fields to include in the response. Can be repeated for multiple fields.
         :type var_field: List[str]
+        :param query: Query string for searching.
+        :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: str
+        :param debug: Enables debug mode for the search.
+        :type debug: bool
         :param frame: Specifies the format of the returned objects.
         :type frame: str
         :param var_from: Starting index for pagination.
         :type var_from: int
-        :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: str
-        :param mode: Specifies the search mode.
-        :type mode: str
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
         :type sort: List[str]
-        :param type: Type of objects to return. Can be repeated for multiple types.
-        :type type: List[str]
         :param config: Configuration options for the search.
         :type config: str
         :param advanced_query: Advanced query string for complex searches.
         :type advanced_query: str
-        :param query: Query string for searching.
-        :type query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
         :param _request_timeout: timeout setting for this request. If one
@@ -229,17 +222,16 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._search_serialize(
-            debug=debug,
+            type=type,
             var_field=var_field,
+            query=query,
+            limit=limit,
+            debug=debug,
             frame=frame,
             var_from=var_from,
-            limit=limit,
-            mode=mode,
             sort=sort,
-            type=type,
             config=config,
             advanced_query=advanced_query,
-            query=query,
             field_filters=field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -264,17 +256,16 @@ class DefaultApi:
     @validate_call
     def search_without_preload_content(
         self,
-        debug: Annotated[Optional[StrictBool], Field(description="Enables debug mode for the search.")] = None,
+        type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        debug: Annotated[Optional[StrictBool], Field(description="Enables debug mode for the search.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Specifies the format of the returned objects.")] = None,
         var_from: Annotated[Optional[StrictInt], Field(description="Starting index for pagination.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        mode: Annotated[Optional[StrictStr], Field(description="Specifies the search mode.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
-        type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         config: Annotated[Optional[StrictStr], Field(description="Configuration options for the search.")] = None,
         advanced_query: Annotated[Optional[StrictStr], Field(description="Advanced query string for complex searches.")] = None,
-        query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
@@ -293,28 +284,26 @@ class DefaultApi:
 
         Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
 
-        :param debug: Enables debug mode for the search.
-        :type debug: bool
+        :param type: Type of objects to return. Can be repeated for multiple types.
+        :type type: List[str]
         :param var_field: Fields to include in the response. Can be repeated for multiple fields.
         :type var_field: List[str]
+        :param query: Query string for searching.
+        :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: str
+        :param debug: Enables debug mode for the search.
+        :type debug: bool
         :param frame: Specifies the format of the returned objects.
         :type frame: str
         :param var_from: Starting index for pagination.
         :type var_from: int
-        :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: str
-        :param mode: Specifies the search mode.
-        :type mode: str
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
         :type sort: List[str]
-        :param type: Type of objects to return. Can be repeated for multiple types.
-        :type type: List[str]
         :param config: Configuration options for the search.
         :type config: str
         :param advanced_query: Advanced query string for complex searches.
         :type advanced_query: str
-        :param query: Query string for searching.
-        :type query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
         :param _request_timeout: timeout setting for this request. If one
@@ -340,17 +329,16 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._search_serialize(
-            debug=debug,
+            type=type,
             var_field=var_field,
+            query=query,
+            limit=limit,
+            debug=debug,
             frame=frame,
             var_from=var_from,
-            limit=limit,
-            mode=mode,
             sort=sort,
-            type=type,
             config=config,
             advanced_query=advanced_query,
-            query=query,
             field_filters=field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -370,17 +358,16 @@ class DefaultApi:
 
     def _search_serialize(
         self,
-        debug,
+        type,
         var_field,
+        query,
+        limit,
+        debug,
         frame,
         var_from,
-        limit,
-        mode,
         sort,
-        type,
         config,
         advanced_query,
-        query,
         field_filters,
         _request_auth,
         _content_type,
@@ -391,9 +378,9 @@ class DefaultApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'type': 'multi',
             'field': 'multi',
             'sort': 'multi',
-            'type': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -405,13 +392,25 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
-        if debug is not None:
+        if type is not None:
             
-            _query_params.append(('debug', debug))
+            _query_params.append(('type', type))
             
         if var_field is not None:
             
             _query_params.append(('field', var_field))
+            
+        if query is not None:
+            
+            _query_params.append(('query', query))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if debug is not None:
+            
+            _query_params.append(('debug', debug))
             
         if frame is not None:
             
@@ -421,21 +420,9 @@ class DefaultApi:
             
             _query_params.append(('from', var_from))
             
-        if limit is not None:
-            
-            _query_params.append(('limit', limit))
-            
-        if mode is not None:
-            
-            _query_params.append(('mode', mode))
-            
         if sort is not None:
             
             _query_params.append(('sort', sort))
-            
-        if type is not None:
-            
-            _query_params.append(('type', type))
             
         if config is not None:
             
@@ -444,10 +431,6 @@ class DefaultApi:
         if advanced_query is not None:
             
             _query_params.append(('advancedQuery', advanced_query))
-            
-        if query is not None:
-            
-            _query_params.append(('query', query))
             
         if field_filters is not None:
             

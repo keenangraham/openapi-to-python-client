@@ -17,12 +17,17 @@
         "operationId": "search",
         "parameters": [
           {
-            "name": "debug",
+            "name": "type",
             "in": "query",
             "schema": {
-              "type": "boolean"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
-            "description": "Enables debug mode for the search."
+            "style": "form",
+            "explode": true,
+            "description": "Type of objects to return. Can be repeated for multiple types."
           },
           {
             "name": "field",
@@ -36,6 +41,30 @@
             "style": "form",
             "explode": true,
             "description": "Fields to include in the response. Can be repeated for multiple fields."
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Query string for searching."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Maximum number of results to return. Use 'all' for all results."
+          },
+          {
+            "name": "debug",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Enables debug mode for the search."
           },
           {
             "name": "frame",
@@ -58,22 +87,6 @@
             "description": "Starting index for pagination."
           },
           {
-            "name": "limit",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Maximum number of results to return. Use 'all' for all results."
-          },
-          {
-            "name": "mode",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Specifies the search mode."
-          },
-          {
             "name": "sort",
             "in": "query",
             "schema": {
@@ -85,19 +98,6 @@
             "style": "form",
             "explode": true,
             "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields."
-          },
-          {
-            "name": "type",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "style": "form",
-            "explode": true,
-            "description": "Type of objects to return. Can be repeated for multiple types."
           },
           {
             "name": "config",
@@ -114,14 +114,6 @@
               "type": "string"
             },
             "description": "Advanced query string for complex searches."
-          },
-          {
-            "name": "query",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Query string for searching."
           },
           {
             "name": "field_filters",

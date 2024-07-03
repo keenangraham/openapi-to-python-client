@@ -98,19 +98,39 @@ def generate_openapi_spec(schemas):
 
     # Define the parameters
     parameters = [
-        {
-            "name": "debug",
+         {
+            "name": "type",
             "in": "query",
-            "schema": {"type": "boolean"},
-            "description": "Enables debug mode for the search."
-        },
-        {
+            "schema": {"type": "array", "items": {"type": "string"}},
+            "style": "form",
+            "explode": True,
+            "description": "Type of objects to return. Can be repeated for multiple types."
+         },
+         {
             "name": "field",
             "in": "query",
             "schema": {"type": "array", "items": {"type": "string"}},
             "style": "form",
             "explode": True,
             "description": "Fields to include in the response. Can be repeated for multiple fields."
+        },
+        {
+            "name": "query",
+            "in": "query",
+            "schema": {"type": "string"},
+            "description": "Query string for searching."
+        },
+        {
+            "name": "limit",
+            "in": "query",
+            "schema": {"type": "string"},
+            "description": "Maximum number of results to return. Use 'all' for all results."
+        },
+        {
+            "name": "debug",
+            "in": "query",
+            "schema": {"type": "boolean"},
+            "description": "Enables debug mode for the search."
         },
         {
             "name": "frame",
@@ -125,32 +145,12 @@ def generate_openapi_spec(schemas):
             "description": "Starting index for pagination."
         },
         {
-            "name": "limit",
-            "in": "query",
-            "schema": {"type": "string"},
-            "description": "Maximum number of results to return. Use 'all' for all results."
-        },
-        {
-            "name": "mode",
-            "in": "query",
-            "schema": {"type": "string"},
-            "description": "Specifies the search mode."
-        },
-        {
             "name": "sort",
             "in": "query",
             "schema": {"type": "array", "items": {"type": "string"}},
             "style": "form",
             "explode": True,
             "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields."
-        },
-        {
-            "name": "type",
-            "in": "query",
-            "schema": {"type": "array", "items": {"type": "string"}},
-            "style": "form",
-            "explode": True,
-            "description": "Type of objects to return. Can be repeated for multiple types."
         },
         {
             "name": "config",
@@ -163,12 +163,6 @@ def generate_openapi_spec(schemas):
             "in": "query",
             "schema": {"type": "string"},
             "description": "Advanced query string for complex searches."
-        },
-        {
-            "name": "query",
-            "in": "query",
-            "schema": {"type": "string"},
-            "description": "Query string for searching."
         }
     ]
 
@@ -269,8 +263,8 @@ def clean_schema(schema):
                         }
                         for v in value
                     ]
-                    res.append({'type': 'string'})
                     cleaned = {}
+                    res.append({'type': 'string'})
                     cleaned['oneOf'] = res
                     return cleaned
                 elif key == "required" and not isinstance(value, list):

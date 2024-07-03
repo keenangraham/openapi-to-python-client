@@ -67,22 +67,21 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.DefaultApi(api_client)
-    debug = True # bool | Enables debug mode for the search. (optional)
+    type = ['type_example'] # List[str] | Type of objects to return. Can be repeated for multiple types. (optional)
     var_field = ['var_field_example'] # List[str] | Fields to include in the response. Can be repeated for multiple fields. (optional)
+    query = 'query_example' # str | Query string for searching. (optional)
+    limit = 'limit_example' # str | Maximum number of results to return. Use 'all' for all results. (optional)
+    debug = True # bool | Enables debug mode for the search. (optional)
     frame = 'frame_example' # str | Specifies the format of the returned objects. (optional)
     var_from = 56 # int | Starting index for pagination. (optional)
-    limit = 'limit_example' # str | Maximum number of results to return. Use 'all' for all results. (optional)
-    mode = 'mode_example' # str | Specifies the search mode. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. (optional)
-    type = ['type_example'] # List[str] | Type of objects to return. Can be repeated for multiple types. (optional)
     config = 'config_example' # str | Configuration options for the search. (optional)
     advanced_query = 'advanced_query_example' # str | Advanced query string for complex searches. (optional)
-    query = 'query_example' # str | Query string for searching. (optional)
     field_filters = None # object | Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
 
     try:
         # Search for objects in the IGVF Project
-        api_response = api_instance.search(debug=debug, var_field=var_field, frame=frame, var_from=var_from, limit=limit, mode=mode, sort=sort, type=type, config=config, advanced_query=advanced_query, query=query, field_filters=field_filters)
+        api_response = api_instance.search(type=type, var_field=var_field, query=query, limit=limit, debug=debug, frame=frame, var_from=var_from, sort=sort, config=config, advanced_query=advanced_query, field_filters=field_filters)
         print("The response of DefaultApi->search:\n")
         pprint(api_response)
     except ApiException as e:
