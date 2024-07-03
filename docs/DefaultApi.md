@@ -1,6 +1,6 @@
 # openapi_client.DefaultApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.data.igvf.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,10 +23,10 @@ from openapi_client.models.search200_response import Search200Response
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://api.data.igvf.org"
 )
 
 

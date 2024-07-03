@@ -251,8 +251,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_search200_response.py
-test/test_search200_response_facets_inner.py
-test/test_search200_response_facets_inner_terms_inner.py
-test/test_search200_response_graph_inner.py
 tox.ini

@@ -9,6 +9,11 @@ def generate_openapi_spec(schemas):
             "title": "IGVF Project API",
             "version": "0.1.0"
         },
+        "servers": [
+            {
+                "url": "https://api.data.igvf.org"
+            }
+        ],
         "paths": {
             "/search": {
                 "get": {
