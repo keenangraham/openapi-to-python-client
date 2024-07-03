@@ -24,6 +24,7 @@ def generate_openapi_spec(schemas):
                                         "type": "object",
                                         "properties": {
                                             "@graph": {
+                                                "title": "results",
                                                 "type": "array",
                                                 "items": {
                                                     "oneOf": []
@@ -36,6 +37,7 @@ def generate_openapi_spec(schemas):
                                             },
                                             "total": {"type": "integer"},
                                             "facets": {
+                                                "title": "facets",
                                                 "type": "array",
                                                 "items": {
                                                     "type": "object",
@@ -213,10 +215,13 @@ def generate_openapi_spec(schemas):
 
     return openapi_spec
 
+res = requests.get('https://api.data.igvf.org/profiles').json()
+
+subtypes = res['_subtypes']
 
 schemas = {
     k: v for
-    k, v in requests.get('https://api.data.igvf.org/profiles').json().items()
+    k, v in res.items()
     if not k.startswith('_') and not k.startswith('@')
 }
 
@@ -229,13 +234,44 @@ def clean_schema(schema):
             "minimum", "exclusiveMinimum", "maxLength", "minLength",
             "pattern", "maxItems", "minItems", "uniqueItems",
             "maxContains", "minContains", "maxProperties", "minProperties",
-            "format", "default", "title", "description"
+            "format", "default", "title", "description", "linkTo",
         ]
         cleaned = {}
         for key, value in schema.items():
+#           print(key, value)
             if key in valid_attrs:
                 if key == "properties":
                     cleaned[key] = {k: clean_schema(v) for k, v in value.items()}
+                elif key == 'type':
+                    if isinstance(value, list):
+                        if 'linkFrom' not in schema:
+                            print('multiple types', key, value, schema)
+                            print('setting type string')
+                            cleaned['type'] = 'string'
+                    elif 'linkFrom' in schema:
+                        cleaned['type'] = 'string'
+                    else:
+                        cleaned[key] = value
+                elif key == 'linkTo':
+                    if isinstance(value, str):
+                        value = [value]
+                    resolved_subtypes = set()
+                    for v in value:
+                        resolved_subtypes.update(subtypes[v])
+                    value = list(sorted(resolved_subtypes))
+                    res = [
+                        {
+                            '$ref': f"#/components/schemas/{v}"
+                        }
+                        for v in value
+                    ]
+                    res.append({'type': 'string'})
+                    cleaned = {}
+                    title = schema.get('title')
+                    if title:
+                        cleaned['title'] = title
+                    cleaned['oneOf'] = res
+                    return cleaned
                 elif key == "required" and not isinstance(value, list):
                     cleaned[key] = list(value)  # Convert to list if it's not already
                 elif isinstance(value, dict):
@@ -249,7 +285,7 @@ schemas = {
     for k, v in schemas.items()
 }
 
-print(json.dumps(schemas, indent=4))
+#print(json.dumps(schemas, indent=4))
 
 openapi_spec = generate_openapi_spec(schemas)
 
