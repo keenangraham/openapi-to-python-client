@@ -9,15 +9,15 @@ Name | Type | Description | Notes
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
-**lab** | [**Lab2**](Lab2.md) |  | 
-**award** | [**Award2**](Award2.md) |  | 
+**lab** | [**DocumentLab**](DocumentLab.md) |  | 
+**award** | [**DocumentAward**](DocumentAward.md) |  | 
 **attachment** | [**Attachment**](Attachment.md) |  | [optional] 
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '6']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
-**submitted_by** | [**SubmittedBy1**](SubmittedBy1.md) |  | [optional] 
+**submitted_by** | [**DocumentSubmittedBy**](DocumentSubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **title** | **str** | Title of the publication or communication. | 

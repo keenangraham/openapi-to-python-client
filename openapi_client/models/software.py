@@ -21,10 +21,10 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.award1 import Award1
-from openapi_client.models.lab1 import Lab1
-from openapi_client.models.submitted_by import SubmittedBy
-from openapi_client.models.version import Version
+from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
+from openapi_client.models.analysis_step_award import AnalysisStepAward
+from openapi_client.models.analysis_step_lab import AnalysisStepLab
+from openapi_client.models.model_set_software_version import ModelSetSoftwareVersion
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,15 +34,15 @@ class Software(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
-    lab: Lab1
-    award: Award1
+    lab: AnalysisStepLab
+    award: AnalysisStepAward
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='5', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[SubmittedBy] = None
+    submitted_by: Optional[AccessKeySubmittedBy] = None
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Annotated[str, Field(strict=True)] = Field(description="A plain text description of the object.")
     name: Annotated[str, Field(strict=True)] = Field(description="Unique name of the software package; a lowercase version of the title.")
@@ -52,7 +52,7 @@ class Software(BaseModel):
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
-    versions: Optional[Annotated[List[Version], Field(min_length=1)]] = Field(default=None, description="A list of versions that have been released for this software.")
+    versions: Optional[Annotated[List[ModelSetSoftwareVersion], Field(min_length=1)]] = Field(default=None, description="A list of versions that have been released for this software.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "lab", "award", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "title", "source_url", "used_by", "@id", "@type", "summary", "versions"]
 
     @field_validator('status')
@@ -196,15 +196,15 @@ class Software(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "publication_identifiers": obj.get("publication_identifiers"),
-            "lab": Lab1.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": Award1.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
+            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '5',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": SubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "name": obj.get("name"),
@@ -214,7 +214,7 @@ class Software(BaseModel):
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),
-            "versions": [Version.from_dict(_item) for _item in obj["versions"]] if obj.get("versions") is not None else None
+            "versions": [ModelSetSoftwareVersion.from_dict(_item) for _item in obj["versions"]] if obj.get("versions") is not None else None
         })
         return _obj
 

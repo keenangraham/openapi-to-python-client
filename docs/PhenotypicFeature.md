@@ -1,5 +1,6 @@
 # PhenotypicFeature
 
+A phenotypic feature of a donor the sample is coming from. For example, the donor’s height measured at the time of sample collection.
 
 ## Properties
 
@@ -7,17 +8,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
-**lab** | [**Lab1**](Lab1.md) |  | 
-**award** | [**Award1**](Award1.md) |  | 
+**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
+**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '3']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
-**submitted_by** | [**SubmittedBy**](SubmittedBy.md) |  | [optional] 
+**submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
-**feature** | [**PhenotypicFeature2**](PhenotypicFeature2.md) |  | 
+**feature** | [**PhenotypicFeatureFeature**](PhenotypicFeatureFeature.md) |  | 
 **quantity** | **float** | A quantity associated with the phenotypic feature, if applicable. | [optional] 
 **quantity_units** | **str** | The unit of measurement for a quantity associated with the phenotypic feature. | [optional] 
 **observation_date** | **date** | The date the feature was observed or measured. | [optional] 

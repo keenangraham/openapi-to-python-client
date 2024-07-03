@@ -1,22 +1,23 @@
 # ConstructLibrarySet
 
+A file set containing raw data files resulting from sequencing of the library delivered to the sample. For example, a guide RNA library.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **small_scale_loci_list** | [**List[Locus]**](Locus.md) | A small scale (&lt;&#x3D;100) list of specific chromosomal region(s). | [optional] 
-**large_scale_loci_list** | [**LargeScaleLociList**](LargeScaleLociList.md) |  | [optional] 
-**small_scale_gene_list** | [**List[Gene2]**](Gene2.md) | The specific, small scale list of (&lt;&#x3D;100) gene(s) this construct library was designed to target. | [optional] 
-**large_scale_gene_list** | [**LargeScaleGeneList**](LargeScaleGeneList.md) |  | [optional] 
+**large_scale_loci_list** | [**ConstructLibrarySetLargeScaleLociList**](ConstructLibrarySetLargeScaleLociList.md) |  | [optional] 
+**small_scale_gene_list** | [**List[SmallScaleGeneListInner]**](SmallScaleGeneListInner.md) | The specific, small scale list of (&lt;&#x3D;100) gene(s) this construct library was designed to target. | [optional] 
+**large_scale_gene_list** | [**ConstructLibrarySetLargeScaleLociList**](ConstructLibrarySetLargeScaleLociList.md) |  | [optional] 
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
-**documents** | [**List[Document1]**](Document1.md) | Documents that provide additional information (not data file). | [optional] 
-**sources** | [**List[Source2]**](Source2.md) | The originating lab(s) or vendor(s). | [optional] 
+**documents** | [**List[DocumentsInner]**](DocumentsInner.md) | Documents that provide additional information (not data file). | [optional] 
+**sources** | [**List[SourcesInner]**](SourcesInner.md) | The originating lab(s) or vendor(s). | [optional] 
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 
 **product_id** | **str** | The product or catalog identifier provided following deposition to addgene.org. | [optional] 
-**lab** | [**Lab2**](Lab2.md) |  | 
-**award** | [**Award2**](Award2.md) |  | 
+**lab** | [**DocumentLab**](DocumentLab.md) |  | 
+**award** | [**DocumentAward**](DocumentAward.md) |  | 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -27,15 +28,15 @@ Name | Type | Description | Notes
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
-**submitted_by** | [**SubmittedBy1**](SubmittedBy1.md) |  | [optional] 
+**submitted_by** | [**DocumentSubmittedBy**](DocumentSubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **file_set_type** | **str** | The type or category of this construct library set. | 
 **scope** | **str** | The scope or scale that this construct library is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. If exon is specified, an exon identifier and the associated gene will need to be listed in exon and genes properties. If tile is specified, a tile identifier, start and stop coordinates, and the associated gene will need to be listed in tile and small_scale_gene_list or large_scale_gene_list properties. | 
 **selection_criteria** | **List[str]** | The criteria used to select the sequence material cloned into the library. | 
-**integrated_content_files** | [**List[IntegratedContentFile]**](IntegratedContentFile.md) | The files containing sequence material of interest either used for insert design or directly cloned into vectors in this library. | [optional] 
-**associated_phenotypes** | [**List[AssociatedPhenotype]**](AssociatedPhenotype.md) | Ontological terms for diseases or phenotypes associated with the sequence material cloned in this construct library. | [optional] 
-**orf_list** | [**List[ListOfOpenReadingFramesORF]**](ListOfOpenReadingFramesORF.md) | List of Open Reading Frame this construct library was designed to target. | [optional] 
+**integrated_content_files** | [**List[IntegratedContentFilesInner]**](IntegratedContentFilesInner.md) | The files containing sequence material of interest either used for insert design or directly cloned into vectors in this library. | [optional] 
+**associated_phenotypes** | [**List[AssociatedPhenotypesInner]**](AssociatedPhenotypesInner.md) | Ontological terms for diseases or phenotypes associated with the sequence material cloned in this construct library. | [optional] 
+**orf_list** | [**List[ListOfOpenReadingFramesORFInner]**](ListOfOpenReadingFramesORFInner.md) | List of Open Reading Frame this construct library was designed to target. | [optional] 
 **exon** | **str** | An identifier in plain text for the specific exon in an expression vector library. The associated gene must be listed in the small_scale_gene_list property. | [optional] 
 **tile** | [**Tile**](Tile.md) |  | [optional] 
 **guide_type** | **str** | The design of guides used in a CRISPR library, paired-guide (pgRNA) or single-guide (sgRNA). | [optional] 

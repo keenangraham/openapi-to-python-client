@@ -13,129 +13,189 @@
 
 
 from __future__ import annotations
-import json
 import pprint
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
-from typing import Any, List, Optional
-from pydantic import StrictStr, Field
-from typing import Union, List, Set, Optional, Dict
-from typing_extensions import Literal, Self
+import re  # noqa: F401
+import json
 
-PHENOTYPICFEATURE_ONE_OF_SCHEMAS = ["PhenotypicFeature", "str"]
+from datetime import date, datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from typing_extensions import Annotated
+from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
+from openapi_client.models.analysis_step_award import AnalysisStepAward
+from openapi_client.models.analysis_step_lab import AnalysisStepLab
+from openapi_client.models.phenotypic_feature_feature import PhenotypicFeatureFeature
+from typing import Optional, Set
+from typing_extensions import Self
 
 class PhenotypicFeature(BaseModel):
     """
-    PhenotypicFeature
-    """
-    # data type: PhenotypicFeature
-    oneof_schema_1_validator: Optional[PhenotypicFeature] = None
-    # data type: str
-    oneof_schema_2_validator: Optional[StrictStr] = None
-    actual_instance: Optional[Union[PhenotypicFeature, str]] = None
-    one_of_schemas: Set[str] = { "PhenotypicFeature", "str" }
+    A phenotypic feature of a donor the sample is coming from. For example, the donor’s height measured at the time of sample collection.
+    """ # noqa: E501
+    release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
+    lab: AnalysisStepLab
+    award: AnalysisStepAward
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='3', description="The version of the JSON schema that the server uses to validate the object.")
+    uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
+    notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
+    aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
+    creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
+    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
+    description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
+    feature: PhenotypicFeatureFeature
+    quantity: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="A quantity associated with the phenotypic feature, if applicable.")
+    quantity_units: Optional[StrictStr] = Field(default=None, description="The unit of measurement for a quantity associated with the phenotypic feature.")
+    observation_date: Optional[date] = Field(default=None, description="The date the feature was observed or measured.")
+    id: Optional[StrictStr] = Field(default=None, alias="@id")
+    type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
+    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
+    __properties: ClassVar[List[str]] = ["release_timestamp", "status", "lab", "award", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "feature", "quantity", "quantity_units", "observation_date", "@id", "@type", "summary"]
+
+    @field_validator('status')
+    def status_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['archived', 'deleted', 'in progress', 'released']):
+            raise ValueError("must be one of enum values ('archived', 'deleted', 'in progress', 'released')")
+        return value
+
+    @field_validator('schema_version')
+    def schema_version_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^\d+(\.\d+)*$", value):
+            raise ValueError(r"must validate the regular expression /^\d+(\.\d+)*$/")
+        return value
+
+    @field_validator('notes')
+    def notes_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('submitter_comment')
+    def submitter_comment_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('description')
+    def description_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('quantity_units')
+    def quantity_units_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['meter', 'micromole', 'nanogram', 'microgram', 'milligram', 'gram', 'kilogram', 'milli-International Unit per milliliter', 'picogram per milliliter', 'nanogram per milliliter', 'milligram per deciliter']):
+            raise ValueError("must be one of enum values ('meter', 'micromole', 'nanogram', 'microgram', 'milligram', 'gram', 'kilogram', 'milli-International Unit per milliliter', 'picogram per milliliter', 'nanogram per milliliter', 'milligram per deciliter')")
+        return value
 
     model_config = ConfigDict(
+        populate_by_name=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
 
 
-    def __init__(self, *args, **kwargs) -> None:
-        if args:
-            if len(args) > 1:
-                raise ValueError("If a position argument is used, only 1 is allowed to set `actual_instance`")
-            if kwargs:
-                raise ValueError("If a position argument is used, keyword arguments cannot be used.")
-            super().__init__(actual_instance=args[0])
-        else:
-            super().__init__(**kwargs)
-
-    @field_validator('actual_instance')
-    def actual_instance_must_validate_oneof(cls, v):
-        instance = PhenotypicFeature.model_construct()
-        error_messages = []
-        match = 0
-        # validate data type: PhenotypicFeature
-        if not isinstance(v, PhenotypicFeature):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `PhenotypicFeature`")
-        else:
-            match += 1
-        # validate data type: str
-        try:
-            instance.oneof_schema_2_validator = v
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        if match > 1:
-            # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in PhenotypicFeature with oneOf schemas: PhenotypicFeature, str. Details: " + ", ".join(error_messages))
-        elif match == 0:
-            # no match
-            raise ValueError("No match found when setting `actual_instance` in PhenotypicFeature with oneOf schemas: PhenotypicFeature, str. Details: " + ", ".join(error_messages))
-        else:
-            return v
-
-    @classmethod
-    def from_dict(cls, obj: Union[str, Dict[str, Any]]) -> Self:
-        return cls.from_json(json.dumps(obj))
-
-    @classmethod
-    def from_json(cls, json_str: str) -> Self:
-        """Returns the object represented by the json string"""
-        instance = cls.model_construct()
-        error_messages = []
-        match = 0
-
-        # deserialize data into PhenotypicFeature
-        try:
-            instance.actual_instance = PhenotypicFeature.from_json(json_str)
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # deserialize data into str
-        try:
-            # validation
-            instance.oneof_schema_2_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_2_validator
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-
-        if match > 1:
-            # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into PhenotypicFeature with oneOf schemas: PhenotypicFeature, str. Details: " + ", ".join(error_messages))
-        elif match == 0:
-            # no match
-            raise ValueError("No match found when deserializing the JSON string into PhenotypicFeature with oneOf schemas: PhenotypicFeature, str. Details: " + ", ".join(error_messages))
-        else:
-            return instance
+    def to_str(self) -> str:
+        """Returns the string representation of the model using alias"""
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
-        """Returns the JSON representation of the actual instance"""
-        if self.actual_instance is None:
-            return "null"
+        """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
+        return json.dumps(self.to_dict())
 
-        if hasattr(self.actual_instance, "to_json") and callable(self.actual_instance.to_json):
-            return self.actual_instance.to_json()
-        else:
-            return json.dumps(self.actual_instance)
+    @classmethod
+    def from_json(cls, json_str: str) -> Optional[Self]:
+        """Create an instance of PhenotypicFeature from a JSON string"""
+        return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], PhenotypicFeature, str]]:
-        """Returns the dict representation of the actual instance"""
-        if self.actual_instance is None:
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
+        # override the default output from pydantic by calling `to_dict()` of lab
+        if self.lab:
+            _dict['lab'] = self.lab.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of award
+        if self.award:
+            _dict['award'] = self.award.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of submitted_by
+        if self.submitted_by:
+            _dict['submitted_by'] = self.submitted_by.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of feature
+        if self.feature:
+            _dict['feature'] = self.feature.to_dict()
+        return _dict
+
+    @classmethod
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+        """Create an instance of PhenotypicFeature from a dict"""
+        if obj is None:
             return None
 
-        if hasattr(self.actual_instance, "to_dict") and callable(self.actual_instance.to_dict):
-            return self.actual_instance.to_dict()
-        else:
-            # primitive type
-            return self.actual_instance
+        if not isinstance(obj, dict):
+            return cls.model_validate(obj)
 
-    def to_str(self) -> str:
-        """Returns the string representation of the actual instance"""
-        return pprint.pformat(self.model_dump())
+        _obj = cls.model_validate({
+            "release_timestamp": obj.get("release_timestamp"),
+            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
+            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
+            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '3',
+            "uuid": obj.get("uuid"),
+            "notes": obj.get("notes"),
+            "aliases": obj.get("aliases"),
+            "creation_timestamp": obj.get("creation_timestamp"),
+            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitter_comment": obj.get("submitter_comment"),
+            "description": obj.get("description"),
+            "feature": PhenotypicFeatureFeature.from_dict(obj["feature"]) if obj.get("feature") is not None else None,
+            "quantity": obj.get("quantity"),
+            "quantity_units": obj.get("quantity_units"),
+            "observation_date": obj.get("observation_date"),
+            "@id": obj.get("@id"),
+            "@type": obj.get("@type"),
+            "summary": obj.get("summary")
+        })
+        return _obj
 
-# TODO: Rewrite to not use raise_errors
-PhenotypicFeature.model_rebuild(raise_errors=False)
 

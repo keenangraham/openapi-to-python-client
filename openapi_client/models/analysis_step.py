@@ -21,12 +21,12 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.award1 import Award1
+from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
+from openapi_client.models.analysis_step_award import AnalysisStepAward
+from openapi_client.models.analysis_step_lab import AnalysisStepLab
+from openapi_client.models.analysis_step_workflow import AnalysisStepWorkflow
 from openapi_client.models.input_content_type import InputContentType
-from openapi_client.models.lab1 import Lab1
 from openapi_client.models.output_content_type import OutputContentType
-from openapi_client.models.submitted_by import SubmittedBy
-from openapi_client.models.workflow1 import Workflow1
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,21 +36,21 @@ class AnalysisStep(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    lab: Lab1
-    award: Award1
+    lab: AnalysisStepLab
+    award: AnalysisStepAward
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='5', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[SubmittedBy] = None
+    submitted_by: Optional[AccessKeySubmittedBy] = None
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     analysis_step_types: Annotated[List[StrictStr], Field(min_length=1)] = Field(description="The classification of the software.")
     step_label: Annotated[str, Field(strict=True)] = Field(description="Unique lowercased label of the analysis step that includes the relevant assays, the software used, and the purpose of the step, e.g. rampage-grit-peak-calling-step")
     title: Annotated[str, Field(strict=True)] = Field(description="The preferred viewable name of the analysis step, likely the same as the step label.")
-    workflow: Workflow1
-    parents: Optional[Annotated[List[Parent], Field(min_length=1)]] = Field(default=None, description="The precursor steps.")
+    workflow: AnalysisStepWorkflow
+    parents: Optional[Annotated[List[AnalysisStepParentsInner], Field(min_length=1)]] = Field(default=None, description="The precursor steps.")
     input_content_types: Annotated[List[InputContentType], Field(min_length=1)] = Field(description="The content types used as input for the analysis step.")
     output_content_types: Annotated[List[OutputContentType], Field(min_length=1)] = Field(description="The content types produced as output by the analysis step.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
@@ -217,21 +217,21 @@ class AnalysisStep(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "lab": Lab1.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": Award1.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
+            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '5',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": SubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "analysis_step_types": obj.get("analysis_step_types"),
             "step_label": obj.get("step_label"),
             "title": obj.get("title"),
-            "workflow": Workflow1.from_dict(obj["workflow"]) if obj.get("workflow") is not None else None,
-            "parents": [Parent.from_dict(_item) for _item in obj["parents"]] if obj.get("parents") is not None else None,
+            "workflow": AnalysisStepWorkflow.from_dict(obj["workflow"]) if obj.get("workflow") is not None else None,
+            "parents": [AnalysisStepParentsInner.from_dict(_item) for _item in obj["parents"]] if obj.get("parents") is not None else None,
             "input_content_types": [InputContentType.from_dict(_item) for _item in obj["input_content_types"]] if obj.get("input_content_types") is not None else None,
             "output_content_types": [OutputContentType.from_dict(_item) for _item in obj["output_content_types"]] if obj.get("output_content_types") is not None else None,
             "@id": obj.get("@id"),
@@ -241,7 +241,7 @@ class AnalysisStep(BaseModel):
         })
         return _obj
 
-from openapi_client.models.parent import Parent
+from openapi_client.models.analysis_step_parents_inner import AnalysisStepParentsInner
 # TODO: Rewrite to not use raise_errors
 AnalysisStep.model_rebuild(raise_errors=False)
 

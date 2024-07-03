@@ -21,11 +21,11 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.award2 import Award2
-from openapi_client.models.document1 import Document1
-from openapi_client.models.lab2 import Lab2
-from openapi_client.models.phenotypic_feature import PhenotypicFeature
-from openapi_client.models.submitted_by1 import SubmittedBy1
+from openapi_client.models.document_award import DocumentAward
+from openapi_client.models.document_lab import DocumentLab
+from openapi_client.models.document_submitted_by import DocumentSubmittedBy
+from openapi_client.models.documents_inner import DocumentsInner
+from openapi_client.models.phenotypic_features_inner import PhenotypicFeaturesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -37,9 +37,9 @@ class HumanDonor(BaseModel):
     taxa: StrictStr = Field(description="The species of the organism.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
-    documents: Optional[Annotated[List[Document1], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: Lab2
-    award: Award2
+    documents: Optional[Annotated[List[DocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    lab: DocumentLab
+    award: DocumentAward
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -50,12 +50,12 @@ class HumanDonor(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[SubmittedBy1] = None
+    submitted_by: Optional[DocumentSubmittedBy] = None
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF donors.")
     sex: Optional[StrictStr] = Field(default='unspecified', description="Sex of the donor.")
-    phenotypic_features: Optional[Annotated[List[PhenotypicFeature], Field(min_length=1)]] = Field(default=None, description="A list of associated phenotypic features of the donor.")
+    phenotypic_features: Optional[Annotated[List[PhenotypicFeaturesInner], Field(min_length=1)]] = Field(default=None, description="A list of associated phenotypic features of the donor.")
     virtual: Optional[StrictBool] = Field(default=False, description="Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for.")
     related_donors: Optional[Annotated[List[RelatedDonor], Field(min_length=1)]] = Field(default=None, description="Familial relations of this donor.")
     ethnicities: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Ethnicity of the donor.")
@@ -257,9 +257,9 @@ class HumanDonor(BaseModel):
             "taxa": obj.get("taxa"),
             "publication_identifiers": obj.get("publication_identifiers"),
             "url": obj.get("url"),
-            "documents": [Document1.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
-            "lab": Lab2.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": Award2.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "documents": [DocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
+            "lab": DocumentLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
+            "award": DocumentAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
@@ -270,12 +270,12 @@ class HumanDonor(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": SubmittedBy1.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": DocumentSubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "dbxrefs": obj.get("dbxrefs"),
             "sex": obj.get("sex") if obj.get("sex") is not None else 'unspecified',
-            "phenotypic_features": [PhenotypicFeature.from_dict(_item) for _item in obj["phenotypic_features"]] if obj.get("phenotypic_features") is not None else None,
+            "phenotypic_features": [PhenotypicFeaturesInner.from_dict(_item) for _item in obj["phenotypic_features"]] if obj.get("phenotypic_features") is not None else None,
             "virtual": obj.get("virtual") if obj.get("virtual") is not None else False,
             "related_donors": [RelatedDonor.from_dict(_item) for _item in obj["related_donors"]] if obj.get("related_donors") is not None else None,
             "ethnicities": obj.get("ethnicities"),

@@ -35,12 +35,12 @@ class Lab(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[SubmittedBy] = None
+    submitted_by: Optional[AccessKeySubmittedBy] = None
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     name: Annotated[str, Field(strict=True)] = Field(description="A short unique name for the lab, current convention is lower cased and hyphen delimited of PI's first and last name (e.g. john-doe).")
-    pi: PI
-    awards: Optional[Annotated[List[Grant], Field(min_length=1)]] = Field(default=None, description="Grants associated with the lab.")
+    pi: AccessKeySubmittedBy
+    awards: Optional[Annotated[List[AnalysisStepAward], Field(min_length=1)]] = Field(default=None, description="Grants associated with the lab.")
     institute_label: Annotated[str, Field(strict=True)] = Field(description="An abbreviation for the institute the lab is associated with.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
@@ -183,12 +183,12 @@ class Lab(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": SubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "name": obj.get("name"),
-            "pi": PI.from_dict(obj["pi"]) if obj.get("pi") is not None else None,
-            "awards": [Grant.from_dict(_item) for _item in obj["awards"]] if obj.get("awards") is not None else None,
+            "pi": AccessKeySubmittedBy.from_dict(obj["pi"]) if obj.get("pi") is not None else None,
+            "awards": [AnalysisStepAward.from_dict(_item) for _item in obj["awards"]] if obj.get("awards") is not None else None,
             "institute_label": obj.get("institute_label") if obj.get("institute_label") is not None else '',
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
@@ -197,9 +197,8 @@ class Lab(BaseModel):
         })
         return _obj
 
-from openapi_client.models.grant import Grant
-from openapi_client.models.pi import PI
-from openapi_client.models.submitted_by import SubmittedBy
+from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
+from openapi_client.models.analysis_step_award import AnalysisStepAward
 # TODO: Rewrite to not use raise_errors
 Lab.model_rebuild(raise_errors=False)
 

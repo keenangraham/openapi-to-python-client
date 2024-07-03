@@ -21,10 +21,10 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
-from openapi_client.models.award1 import Award1
-from openapi_client.models.ensembl_gene_id import ENSEMBLGeneID
-from openapi_client.models.lab1 import Lab1
-from openapi_client.models.submitted_by import SubmittedBy
+from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
+from openapi_client.models.analysis_step_award import AnalysisStepAward
+from openapi_client.models.analysis_step_lab import AnalysisStepLab
+from openapi_client.models.biomarker_gene import BiomarkerGene
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -39,13 +39,13 @@ class OpenReadingFrame(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[SubmittedBy] = None
+    submitted_by: Optional[AccessKeySubmittedBy] = None
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    lab: Lab1
-    award: Award1
+    lab: AnalysisStepLab
+    award: AnalysisStepAward
     orf_id: Annotated[str, Field(strict=True)] = Field(description="Open reading frame ID.")
-    gene: Annotated[List[ENSEMBLGeneID], Field(min_length=1)] = Field(description="ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix.")
+    gene: Annotated[List[BiomarkerGene], Field(min_length=1)] = Field(description="ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix.")
     protein_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="ENSEMBL ProteinID of official nomenclature approved protein. The ProteinID does not include the current version number suffix.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Unique identifiers from the hORFeome database")
     pct_identical_protein: Optional[Union[Annotated[float, Field(le=100, strict=True, ge=0)], Annotated[int, Field(le=100, strict=True, ge=0)]]] = Field(default=None, description="The percentage of identical matches to Ensembl protein.")
@@ -197,13 +197,13 @@ class OpenReadingFrame(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": SubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
-            "lab": Lab1.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": Award1.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
+            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
             "orf_id": obj.get("orf_id"),
-            "gene": [ENSEMBLGeneID.from_dict(_item) for _item in obj["gene"]] if obj.get("gene") is not None else None,
+            "gene": [BiomarkerGene.from_dict(_item) for _item in obj["gene"]] if obj.get("gene") is not None else None,
             "protein_id": obj.get("protein_id"),
             "dbxrefs": obj.get("dbxrefs"),
             "pct_identical_protein": obj.get("pct_identical_protein"),

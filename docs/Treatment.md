@@ -7,19 +7,19 @@ A protein or chemical treatment applied to samples such as lipopolysaccharide, i
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
-**lab** | [**Lab1**](Lab1.md) |  | 
-**award** | [**Award1**](Award1.md) |  | 
-**sources** | [**List[Source1]**](Source1.md) | The originating lab(s) or vendor(s). | [optional] 
+**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
+**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
+**sources** | [**List[RodentDonorSourcesInner]**](RodentDonorSourcesInner.md) | The originating lab(s) or vendor(s). | [optional] 
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 
 **product_id** | **str** | The product identifier provided by the originating lab or vendor. | [optional] 
-**documents** | [**List[Document2]**](Document2.md) | Documents that describe the treatment protocol details. | [optional] 
+**documents** | [**List[RodentDonorDocumentsInner]**](RodentDonorDocumentsInner.md) | Documents that describe the treatment protocol details. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '7']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
-**submitted_by** | [**SubmittedBy**](SubmittedBy.md) |  | [optional] 
+**submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **amount** | **float** | Specific quantity of the applied treatment (used in conjunction with amount_units). | [optional] 

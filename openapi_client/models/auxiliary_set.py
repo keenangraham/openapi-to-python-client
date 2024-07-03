@@ -13,129 +13,259 @@
 
 
 from __future__ import annotations
-import json
 import pprint
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
-from typing import Any, List, Optional
-from pydantic import StrictStr, Field
-from typing import Union, List, Set, Optional, Dict
-from typing_extensions import Literal, Self
+import re  # noqa: F401
+import json
 
-AUXILIARYSET_ONE_OF_SCHEMAS = ["AuxiliarySet", "str"]
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
+from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
+from openapi_client.models.analysis_set_donors_inner import AnalysisSetDonorsInner
+from openapi_client.models.analysis_step_award import AnalysisStepAward
+from openapi_client.models.analysis_step_lab import AnalysisStepLab
+from openapi_client.models.rodent_donor_documents_inner import RodentDonorDocumentsInner
+from openapi_client.models.sequence_file_sequencing_platform import SequenceFileSequencingPlatform
+from typing import Optional, Set
+from typing_extensions import Self
 
 class AuxiliarySet(BaseModel):
     """
-    AuxiliarySet
-    """
-    # data type: AuxiliarySet
-    oneof_schema_1_validator: Optional[AuxiliarySet] = None
-    # data type: str
-    oneof_schema_2_validator: Optional[StrictStr] = None
-    actual_instance: Optional[Union[AuxiliarySet, str]] = None
-    one_of_schemas: Set[str] = { "AuxiliarySet", "str" }
+    A file set for auxiliary raw data files that were produced alongside raw data files from a measurement set. For example, in a CRISPR screen experiment the measurement set would capture the result of single-cell transcript sequencing and the auxiliary set the result of gRNA sequencing with the associated cellular barcodes.
+    """ # noqa: E501
+    release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
+    documents: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    lab: AnalysisStepLab
+    award: AnalysisStepAward
+    accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
+    alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
+    collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
+    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
+    revoke_detail: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Explanation of why an object was transitioned to the revoked status.")
+    url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='7', description="The version of the JSON schema that the server uses to validate the object.")
+    uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
+    notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
+    aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
+    creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
+    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
+    description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
+    dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets.")
+    samples: Optional[Annotated[List[AnalysisSetSamplesInner], Field(min_length=1)]] = Field(default=None, description="The sample(s) associated with this file set.")
+    donors: Optional[Annotated[List[AnalysisSetDonorsInner], Field(min_length=1)]] = Field(default=None, description="The donors of the samples associated with this auxiliary set.")
+    file_set_type: StrictStr = Field(description="The category that best describes this auxiliary file set.")
+    library_construction_platform: Optional[SequenceFileSequencingPlatform] = None
+    id: Optional[StrictStr] = Field(default=None, alias="@id")
+    type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
+    summary: Optional[StrictStr] = None
+    files: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The files associated with this file set.")
+    control_for: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The file sets for which this file set is a control.")
+    submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
+    input_file_set_for: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The Analysis Sets that use this File Set as an input.")
+    measurement_sets: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The measurement sets that link to this auxiliary set.")
+    __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "url", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "library_construction_platform", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "measurement_sets"]
+
+    @field_validator('collections')
+    def collections_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        for i in value:
+            if i not in set(['ClinGen', 'ENCODE', 'GREGoR', 'IGVF_catalog_beta_v0.1', 'IGVF_catalog_beta_v0.2', 'IGVF_catalog_beta_v0.3', 'IGVF_catalog_beta_v0.4', 'MaveDB', 'MPRAbase', 'Vista']):
+                raise ValueError("each list item must be one of ('ClinGen', 'ENCODE', 'GREGoR', 'IGVF_catalog_beta_v0.1', 'IGVF_catalog_beta_v0.2', 'IGVF_catalog_beta_v0.3', 'IGVF_catalog_beta_v0.4', 'MaveDB', 'MPRAbase', 'Vista')")
+        return value
+
+    @field_validator('status')
+    def status_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['in progress', 'released', 'deleted', 'replaced', 'revoked', 'archived']):
+            raise ValueError("must be one of enum values ('in progress', 'released', 'deleted', 'replaced', 'revoked', 'archived')")
+        return value
+
+    @field_validator('revoke_detail')
+    def revoke_detail_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('schema_version')
+    def schema_version_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^\d+(\.\d+)*$", value):
+            raise ValueError(r"must validate the regular expression /^\d+(\.\d+)*$/")
+        return value
+
+    @field_validator('notes')
+    def notes_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('submitter_comment')
+    def submitter_comment_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('description')
+    def description_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('file_set_type')
+    def file_set_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['cell hashing', 'cell sorting', 'circularized barcode detection', 'gRNA sequencing', 'oligo-conjugated lipids', 'quantification barcode sequencing', 'variant sequencing']):
+            raise ValueError("must be one of enum values ('cell hashing', 'cell sorting', 'circularized barcode detection', 'gRNA sequencing', 'oligo-conjugated lipids', 'quantification barcode sequencing', 'variant sequencing')")
+        return value
 
     model_config = ConfigDict(
+        populate_by_name=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
 
 
-    def __init__(self, *args, **kwargs) -> None:
-        if args:
-            if len(args) > 1:
-                raise ValueError("If a position argument is used, only 1 is allowed to set `actual_instance`")
-            if kwargs:
-                raise ValueError("If a position argument is used, keyword arguments cannot be used.")
-            super().__init__(actual_instance=args[0])
-        else:
-            super().__init__(**kwargs)
-
-    @field_validator('actual_instance')
-    def actual_instance_must_validate_oneof(cls, v):
-        instance = AuxiliarySet.model_construct()
-        error_messages = []
-        match = 0
-        # validate data type: AuxiliarySet
-        if not isinstance(v, AuxiliarySet):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `AuxiliarySet`")
-        else:
-            match += 1
-        # validate data type: str
-        try:
-            instance.oneof_schema_2_validator = v
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        if match > 1:
-            # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in AuxiliarySet with oneOf schemas: AuxiliarySet, str. Details: " + ", ".join(error_messages))
-        elif match == 0:
-            # no match
-            raise ValueError("No match found when setting `actual_instance` in AuxiliarySet with oneOf schemas: AuxiliarySet, str. Details: " + ", ".join(error_messages))
-        else:
-            return v
-
-    @classmethod
-    def from_dict(cls, obj: Union[str, Dict[str, Any]]) -> Self:
-        return cls.from_json(json.dumps(obj))
-
-    @classmethod
-    def from_json(cls, json_str: str) -> Self:
-        """Returns the object represented by the json string"""
-        instance = cls.model_construct()
-        error_messages = []
-        match = 0
-
-        # deserialize data into AuxiliarySet
-        try:
-            instance.actual_instance = AuxiliarySet.from_json(json_str)
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # deserialize data into str
-        try:
-            # validation
-            instance.oneof_schema_2_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_2_validator
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-
-        if match > 1:
-            # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into AuxiliarySet with oneOf schemas: AuxiliarySet, str. Details: " + ", ".join(error_messages))
-        elif match == 0:
-            # no match
-            raise ValueError("No match found when deserializing the JSON string into AuxiliarySet with oneOf schemas: AuxiliarySet, str. Details: " + ", ".join(error_messages))
-        else:
-            return instance
+    def to_str(self) -> str:
+        """Returns the string representation of the model using alias"""
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
-        """Returns the JSON representation of the actual instance"""
-        if self.actual_instance is None:
-            return "null"
+        """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
+        return json.dumps(self.to_dict())
 
-        if hasattr(self.actual_instance, "to_json") and callable(self.actual_instance.to_json):
-            return self.actual_instance.to_json()
-        else:
-            return json.dumps(self.actual_instance)
+    @classmethod
+    def from_json(cls, json_str: str) -> Optional[Self]:
+        """Create an instance of AuxiliarySet from a JSON string"""
+        return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], AuxiliarySet, str]]:
-        """Returns the dict representation of the actual instance"""
-        if self.actual_instance is None:
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
+        # override the default output from pydantic by calling `to_dict()` of each item in documents (list)
+        _items = []
+        if self.documents:
+            for _item in self.documents:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['documents'] = _items
+        # override the default output from pydantic by calling `to_dict()` of lab
+        if self.lab:
+            _dict['lab'] = self.lab.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of award
+        if self.award:
+            _dict['award'] = self.award.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of submitted_by
+        if self.submitted_by:
+            _dict['submitted_by'] = self.submitted_by.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in samples (list)
+        _items = []
+        if self.samples:
+            for _item in self.samples:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['samples'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in donors (list)
+        _items = []
+        if self.donors:
+            for _item in self.donors:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['donors'] = _items
+        # override the default output from pydantic by calling `to_dict()` of library_construction_platform
+        if self.library_construction_platform:
+            _dict['library_construction_platform'] = self.library_construction_platform.to_dict()
+        return _dict
+
+    @classmethod
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+        """Create an instance of AuxiliarySet from a dict"""
+        if obj is None:
             return None
 
-        if hasattr(self.actual_instance, "to_dict") and callable(self.actual_instance.to_dict):
-            return self.actual_instance.to_dict()
-        else:
-            # primitive type
-            return self.actual_instance
+        if not isinstance(obj, dict):
+            return cls.model_validate(obj)
 
-    def to_str(self) -> str:
-        """Returns the string representation of the actual instance"""
-        return pprint.pformat(self.model_dump())
+        _obj = cls.model_validate({
+            "release_timestamp": obj.get("release_timestamp"),
+            "publication_identifiers": obj.get("publication_identifiers"),
+            "documents": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
+            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
+            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "accession": obj.get("accession"),
+            "alternate_accessions": obj.get("alternate_accessions"),
+            "collections": obj.get("collections"),
+            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
+            "revoke_detail": obj.get("revoke_detail"),
+            "url": obj.get("url"),
+            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '7',
+            "uuid": obj.get("uuid"),
+            "notes": obj.get("notes"),
+            "aliases": obj.get("aliases"),
+            "creation_timestamp": obj.get("creation_timestamp"),
+            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitter_comment": obj.get("submitter_comment"),
+            "description": obj.get("description"),
+            "dbxrefs": obj.get("dbxrefs"),
+            "samples": [AnalysisSetSamplesInner.from_dict(_item) for _item in obj["samples"]] if obj.get("samples") is not None else None,
+            "donors": [AnalysisSetDonorsInner.from_dict(_item) for _item in obj["donors"]] if obj.get("donors") is not None else None,
+            "file_set_type": obj.get("file_set_type"),
+            "library_construction_platform": SequenceFileSequencingPlatform.from_dict(obj["library_construction_platform"]) if obj.get("library_construction_platform") is not None else None,
+            "@id": obj.get("@id"),
+            "@type": obj.get("@type"),
+            "summary": obj.get("summary"),
+            "files": obj.get("files"),
+            "control_for": obj.get("control_for"),
+            "submitted_files_timestamp": obj.get("submitted_files_timestamp"),
+            "input_file_set_for": obj.get("input_file_set_for"),
+            "measurement_sets": obj.get("measurement_sets")
+        })
+        return _obj
 
+from openapi_client.models.analysis_set_samples_inner import AnalysisSetSamplesInner
 # TODO: Rewrite to not use raise_errors
 AuxiliarySet.model_rebuild(raise_errors=False)
 

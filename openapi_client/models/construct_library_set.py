@@ -13,129 +13,410 @@
 
 
 from __future__ import annotations
-import json
 import pprint
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
-from typing import Any, List, Optional
-from pydantic import StrictStr, Field
-from typing import Union, List, Set, Optional, Dict
-from typing_extensions import Literal, Self
+import re  # noqa: F401
+import json
 
-CONSTRUCTLIBRARYSET_ONE_OF_SCHEMAS = ["ConstructLibrarySet", "str"]
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from typing_extensions import Annotated
+from openapi_client.models.associated_phenotypes_inner import AssociatedPhenotypesInner
+from openapi_client.models.document_award import DocumentAward
+from openapi_client.models.document_lab import DocumentLab
+from openapi_client.models.document_submitted_by import DocumentSubmittedBy
+from openapi_client.models.documents_inner import DocumentsInner
+from openapi_client.models.list_of_open_reading_frames_orf_inner import ListOfOpenReadingFramesORFInner
+from openapi_client.models.locus import Locus
+from openapi_client.models.small_scale_gene_list_inner import SmallScaleGeneListInner
+from openapi_client.models.sources_inner import SourcesInner
+from openapi_client.models.tile import Tile
+from typing import Optional, Set
+from typing_extensions import Self
 
 class ConstructLibrarySet(BaseModel):
     """
-    ConstructLibrarySet
-    """
-    # data type: ConstructLibrarySet
-    oneof_schema_1_validator: Optional[ConstructLibrarySet] = None
-    # data type: str
-    oneof_schema_2_validator: Optional[StrictStr] = None
-    actual_instance: Optional[Union[ConstructLibrarySet, str]] = None
-    one_of_schemas: Set[str] = { "ConstructLibrarySet", "str" }
+    A file set containing raw data files resulting from sequencing of the library delivered to the sample. For example, a guide RNA library.
+    """ # noqa: E501
+    small_scale_loci_list: Optional[Annotated[List[Locus], Field(min_length=1, max_length=100)]] = Field(default=None, description="A small scale (<=100) list of specific chromosomal region(s).")
+    large_scale_loci_list: Optional[ConstructLibrarySetLargeScaleLociList] = None
+    small_scale_gene_list: Optional[Annotated[List[SmallScaleGeneListInner], Field(min_length=1, max_length=100)]] = Field(default=None, description="The specific, small scale list of (<=100) gene(s) this construct library was designed to target.")
+    large_scale_gene_list: Optional[ConstructLibrarySetLargeScaleLociList] = None
+    release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
+    documents: Optional[Annotated[List[DocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    sources: Optional[Annotated[List[SourcesInner], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
+    lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
+    product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product or catalog identifier provided following deposition to addgene.org.")
+    lab: DocumentLab
+    award: DocumentAward
+    accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
+    alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
+    collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
+    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
+    revoke_detail: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Explanation of why an object was transitioned to the revoked status.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='8', description="The version of the JSON schema that the server uses to validate the object.")
+    uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
+    notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
+    aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
+    creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
+    submitted_by: Optional[DocumentSubmittedBy] = None
+    submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
+    description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
+    file_set_type: StrictStr = Field(description="The type or category of this construct library set.")
+    scope: StrictStr = Field(description="The scope or scale that this construct library is designed to target. If the scope is across gene(s) or loci, these will need to be specified in the genes or loci property. If exon is specified, an exon identifier and the associated gene will need to be listed in exon and genes properties. If tile is specified, a tile identifier, start and stop coordinates, and the associated gene will need to be listed in tile and small_scale_gene_list or large_scale_gene_list properties.")
+    selection_criteria: Annotated[List[StrictStr], Field(min_length=1)] = Field(description="The criteria used to select the sequence material cloned into the library.")
+    integrated_content_files: Optional[Annotated[List[IntegratedContentFilesInner], Field(min_length=1)]] = Field(default=None, description="The files containing sequence material of interest either used for insert design or directly cloned into vectors in this library.")
+    associated_phenotypes: Optional[Annotated[List[AssociatedPhenotypesInner], Field(min_length=1)]] = Field(default=None, description="Ontological terms for diseases or phenotypes associated with the sequence material cloned in this construct library.")
+    orf_list: Optional[Annotated[List[ListOfOpenReadingFramesORFInner], Field(min_length=1)]] = Field(default=None, description="List of Open Reading Frame this construct library was designed to target.")
+    exon: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="An identifier in plain text for the specific exon in an expression vector library. The associated gene must be listed in the small_scale_gene_list property.")
+    tile: Optional[Tile] = None
+    guide_type: Optional[StrictStr] = Field(default=None, description="The design of guides used in a CRISPR library, paired-guide (pgRNA) or single-guide (sgRNA).")
+    tiling_modality: Optional[StrictStr] = Field(default=None, description="The tiling modality of guides across elements or loci in a CRISPR library.")
+    average_guide_coverage: Optional[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]] = Field(default=None, description="The average number of guides targeting each element of interest in the library.")
+    lower_bound_guide_coverage: Optional[StrictInt] = Field(default=None, description="Lower bound of the number of guides targeting each element of interest in the library.")
+    upper_bound_guide_coverage: Optional[StrictInt] = Field(default=None, description="Upper bound of the number of guides targeting each element of interest in the library.")
+    average_insert_size: Optional[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]] = Field(default=None, description="The average size of the inserts cloned into vectors in the library.")
+    lower_bound_insert_size: Optional[StrictInt] = Field(default=None, description="Lower bound of the size of the inserts cloned in vectors in the library.")
+    upper_bound_insert_size: Optional[StrictInt] = Field(default=None, description="Upper bound of the size of the inserts cloned in vectors in the library.")
+    id: Optional[StrictStr] = Field(default=None, alias="@id")
+    type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
+    summary: Optional[StrictStr] = None
+    files: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The files associated with this file set.")
+    control_for: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The file sets for which this file set is a control.")
+    submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
+    input_file_set_for: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The Analysis Sets that use this File Set as an input.")
+    applied_to_samples: Optional[Annotated[List[Any], Field(min_length=1)]] = Field(default=None, description="The samples that link to this construct library set.")
+    additional_properties: Dict[str, Any] = {}
+    __properties: ClassVar[List[str]] = ["small_scale_loci_list", "large_scale_loci_list", "small_scale_gene_list", "large_scale_gene_list", "release_timestamp", "publication_identifiers", "documents", "sources", "lot_id", "product_id", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "file_set_type", "scope", "selection_criteria", "integrated_content_files", "associated_phenotypes", "orf_list", "exon", "tile", "guide_type", "tiling_modality", "average_guide_coverage", "lower_bound_guide_coverage", "upper_bound_guide_coverage", "average_insert_size", "lower_bound_insert_size", "upper_bound_insert_size", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "applied_to_samples"]
+
+    @field_validator('lot_id')
+    def lot_id_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('product_id')
+    def product_id_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^addgene:\d{5,6}$", value):
+            raise ValueError(r"must validate the regular expression /^addgene:\d{5,6}$/")
+        return value
+
+    @field_validator('collections')
+    def collections_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        for i in value:
+            if i not in set(['ClinGen', 'ENCODE', 'GREGoR', 'IGVF_catalog_beta_v0.1', 'IGVF_catalog_beta_v0.2', 'IGVF_catalog_beta_v0.3', 'IGVF_catalog_beta_v0.4', 'MaveDB', 'MPRAbase', 'Vista']):
+                raise ValueError("each list item must be one of ('ClinGen', 'ENCODE', 'GREGoR', 'IGVF_catalog_beta_v0.1', 'IGVF_catalog_beta_v0.2', 'IGVF_catalog_beta_v0.3', 'IGVF_catalog_beta_v0.4', 'MaveDB', 'MPRAbase', 'Vista')")
+        return value
+
+    @field_validator('status')
+    def status_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['in progress', 'released', 'deleted', 'replaced', 'revoked', 'archived']):
+            raise ValueError("must be one of enum values ('in progress', 'released', 'deleted', 'replaced', 'revoked', 'archived')")
+        return value
+
+    @field_validator('revoke_detail')
+    def revoke_detail_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('schema_version')
+    def schema_version_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^\d+(\.\d+)*$", value):
+            raise ValueError(r"must validate the regular expression /^\d+(\.\d+)*$/")
+        return value
+
+    @field_validator('notes')
+    def notes_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('submitter_comment')
+    def submitter_comment_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('description')
+    def description_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('file_set_type')
+    def file_set_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['guide library', 'reporter library', 'expression vector library']):
+            raise ValueError("must be one of enum values ('guide library', 'reporter library', 'expression vector library')")
+        return value
+
+    @field_validator('scope')
+    def scope_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['tile', 'exon', 'genes', 'loci', 'genome-wide', 'interactors']):
+            raise ValueError("must be one of enum values ('tile', 'exon', 'genes', 'loci', 'genome-wide', 'interactors')")
+        return value
+
+    @field_validator('selection_criteria')
+    def selection_criteria_validate_enum(cls, value):
+        """Validates the enum"""
+        for i in value:
+            if i not in set(['accessible genome regions', 'candidate cis-regulatory elements', 'chromatin states', 'phenotype-associated variants', 'DNase hypersensitive sites', 'genes', 'histone modifications', 'protein interactors', 'sequence variants', 'synthetic elements', 'transcription start sites', 'TF binding sites']):
+                raise ValueError("each list item must be one of ('accessible genome regions', 'candidate cis-regulatory elements', 'chromatin states', 'phenotype-associated variants', 'DNase hypersensitive sites', 'genes', 'histone modifications', 'protein interactors', 'sequence variants', 'synthetic elements', 'transcription start sites', 'TF binding sites')")
+        return value
+
+    @field_validator('exon')
+    def exon_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('guide_type')
+    def guide_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['sgRNA', 'pgRNA']):
+            raise ValueError("must be one of enum values ('sgRNA', 'pgRNA')")
+        return value
+
+    @field_validator('tiling_modality')
+    def tiling_modality_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['peak tiling', 'full tiling', 'sparse peaks']):
+            raise ValueError("must be one of enum values ('peak tiling', 'full tiling', 'sparse peaks')")
+        return value
 
     model_config = ConfigDict(
+        populate_by_name=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
 
 
-    def __init__(self, *args, **kwargs) -> None:
-        if args:
-            if len(args) > 1:
-                raise ValueError("If a position argument is used, only 1 is allowed to set `actual_instance`")
-            if kwargs:
-                raise ValueError("If a position argument is used, keyword arguments cannot be used.")
-            super().__init__(actual_instance=args[0])
-        else:
-            super().__init__(**kwargs)
-
-    @field_validator('actual_instance')
-    def actual_instance_must_validate_oneof(cls, v):
-        instance = ConstructLibrarySet.model_construct()
-        error_messages = []
-        match = 0
-        # validate data type: ConstructLibrarySet
-        if not isinstance(v, ConstructLibrarySet):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `ConstructLibrarySet`")
-        else:
-            match += 1
-        # validate data type: str
-        try:
-            instance.oneof_schema_2_validator = v
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        if match > 1:
-            # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in ConstructLibrarySet with oneOf schemas: ConstructLibrarySet, str. Details: " + ", ".join(error_messages))
-        elif match == 0:
-            # no match
-            raise ValueError("No match found when setting `actual_instance` in ConstructLibrarySet with oneOf schemas: ConstructLibrarySet, str. Details: " + ", ".join(error_messages))
-        else:
-            return v
-
-    @classmethod
-    def from_dict(cls, obj: Union[str, Dict[str, Any]]) -> Self:
-        return cls.from_json(json.dumps(obj))
-
-    @classmethod
-    def from_json(cls, json_str: str) -> Self:
-        """Returns the object represented by the json string"""
-        instance = cls.model_construct()
-        error_messages = []
-        match = 0
-
-        # deserialize data into ConstructLibrarySet
-        try:
-            instance.actual_instance = ConstructLibrarySet.from_json(json_str)
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # deserialize data into str
-        try:
-            # validation
-            instance.oneof_schema_2_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_2_validator
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-
-        if match > 1:
-            # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into ConstructLibrarySet with oneOf schemas: ConstructLibrarySet, str. Details: " + ", ".join(error_messages))
-        elif match == 0:
-            # no match
-            raise ValueError("No match found when deserializing the JSON string into ConstructLibrarySet with oneOf schemas: ConstructLibrarySet, str. Details: " + ", ".join(error_messages))
-        else:
-            return instance
+    def to_str(self) -> str:
+        """Returns the string representation of the model using alias"""
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
-        """Returns the JSON representation of the actual instance"""
-        if self.actual_instance is None:
-            return "null"
+        """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
+        return json.dumps(self.to_dict())
 
-        if hasattr(self.actual_instance, "to_json") and callable(self.actual_instance.to_json):
-            return self.actual_instance.to_json()
-        else:
-            return json.dumps(self.actual_instance)
+    @classmethod
+    def from_json(cls, json_str: str) -> Optional[Self]:
+        """Create an instance of ConstructLibrarySet from a JSON string"""
+        return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], ConstructLibrarySet, str]]:
-        """Returns the dict representation of the actual instance"""
-        if self.actual_instance is None:
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
+        """
+        excluded_fields: Set[str] = set([
+            "additional_properties",
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
+        # override the default output from pydantic by calling `to_dict()` of each item in small_scale_loci_list (list)
+        _items = []
+        if self.small_scale_loci_list:
+            for _item in self.small_scale_loci_list:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['small_scale_loci_list'] = _items
+        # override the default output from pydantic by calling `to_dict()` of large_scale_loci_list
+        if self.large_scale_loci_list:
+            _dict['large_scale_loci_list'] = self.large_scale_loci_list.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in small_scale_gene_list (list)
+        _items = []
+        if self.small_scale_gene_list:
+            for _item in self.small_scale_gene_list:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['small_scale_gene_list'] = _items
+        # override the default output from pydantic by calling `to_dict()` of large_scale_gene_list
+        if self.large_scale_gene_list:
+            _dict['large_scale_gene_list'] = self.large_scale_gene_list.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in documents (list)
+        _items = []
+        if self.documents:
+            for _item in self.documents:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['documents'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in sources (list)
+        _items = []
+        if self.sources:
+            for _item in self.sources:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['sources'] = _items
+        # override the default output from pydantic by calling `to_dict()` of lab
+        if self.lab:
+            _dict['lab'] = self.lab.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of award
+        if self.award:
+            _dict['award'] = self.award.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of submitted_by
+        if self.submitted_by:
+            _dict['submitted_by'] = self.submitted_by.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in integrated_content_files (list)
+        _items = []
+        if self.integrated_content_files:
+            for _item in self.integrated_content_files:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['integrated_content_files'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in associated_phenotypes (list)
+        _items = []
+        if self.associated_phenotypes:
+            for _item in self.associated_phenotypes:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['associated_phenotypes'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in orf_list (list)
+        _items = []
+        if self.orf_list:
+            for _item in self.orf_list:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['orf_list'] = _items
+        # override the default output from pydantic by calling `to_dict()` of tile
+        if self.tile:
+            _dict['tile'] = self.tile.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
+        return _dict
+
+    @classmethod
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+        """Create an instance of ConstructLibrarySet from a dict"""
+        if obj is None:
             return None
 
-        if hasattr(self.actual_instance, "to_dict") and callable(self.actual_instance.to_dict):
-            return self.actual_instance.to_dict()
-        else:
-            # primitive type
-            return self.actual_instance
+        if not isinstance(obj, dict):
+            return cls.model_validate(obj)
 
-    def to_str(self) -> str:
-        """Returns the string representation of the actual instance"""
-        return pprint.pformat(self.model_dump())
+        _obj = cls.model_validate({
+            "small_scale_loci_list": [Locus.from_dict(_item) for _item in obj["small_scale_loci_list"]] if obj.get("small_scale_loci_list") is not None else None,
+            "large_scale_loci_list": ConstructLibrarySetLargeScaleLociList.from_dict(obj["large_scale_loci_list"]) if obj.get("large_scale_loci_list") is not None else None,
+            "small_scale_gene_list": [SmallScaleGeneListInner.from_dict(_item) for _item in obj["small_scale_gene_list"]] if obj.get("small_scale_gene_list") is not None else None,
+            "large_scale_gene_list": ConstructLibrarySetLargeScaleLociList.from_dict(obj["large_scale_gene_list"]) if obj.get("large_scale_gene_list") is not None else None,
+            "release_timestamp": obj.get("release_timestamp"),
+            "publication_identifiers": obj.get("publication_identifiers"),
+            "documents": [DocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
+            "sources": [SourcesInner.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
+            "lot_id": obj.get("lot_id"),
+            "product_id": obj.get("product_id"),
+            "lab": DocumentLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
+            "award": DocumentAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "accession": obj.get("accession"),
+            "alternate_accessions": obj.get("alternate_accessions"),
+            "collections": obj.get("collections"),
+            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
+            "revoke_detail": obj.get("revoke_detail"),
+            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '8',
+            "uuid": obj.get("uuid"),
+            "notes": obj.get("notes"),
+            "aliases": obj.get("aliases"),
+            "creation_timestamp": obj.get("creation_timestamp"),
+            "submitted_by": DocumentSubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitter_comment": obj.get("submitter_comment"),
+            "description": obj.get("description"),
+            "file_set_type": obj.get("file_set_type"),
+            "scope": obj.get("scope"),
+            "selection_criteria": obj.get("selection_criteria"),
+            "integrated_content_files": [IntegratedContentFilesInner.from_dict(_item) for _item in obj["integrated_content_files"]] if obj.get("integrated_content_files") is not None else None,
+            "associated_phenotypes": [AssociatedPhenotypesInner.from_dict(_item) for _item in obj["associated_phenotypes"]] if obj.get("associated_phenotypes") is not None else None,
+            "orf_list": [ListOfOpenReadingFramesORFInner.from_dict(_item) for _item in obj["orf_list"]] if obj.get("orf_list") is not None else None,
+            "exon": obj.get("exon"),
+            "tile": Tile.from_dict(obj["tile"]) if obj.get("tile") is not None else None,
+            "guide_type": obj.get("guide_type"),
+            "tiling_modality": obj.get("tiling_modality"),
+            "average_guide_coverage": obj.get("average_guide_coverage"),
+            "lower_bound_guide_coverage": obj.get("lower_bound_guide_coverage"),
+            "upper_bound_guide_coverage": obj.get("upper_bound_guide_coverage"),
+            "average_insert_size": obj.get("average_insert_size"),
+            "lower_bound_insert_size": obj.get("lower_bound_insert_size"),
+            "upper_bound_insert_size": obj.get("upper_bound_insert_size"),
+            "@id": obj.get("@id"),
+            "@type": obj.get("@type"),
+            "summary": obj.get("summary"),
+            "files": obj.get("files"),
+            "control_for": obj.get("control_for"),
+            "submitted_files_timestamp": obj.get("submitted_files_timestamp"),
+            "input_file_set_for": obj.get("input_file_set_for"),
+            "applied_to_samples": obj.get("applied_to_samples")
+        })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
 
+        return _obj
+
+from openapi_client.models.construct_library_set_large_scale_loci_list import ConstructLibrarySetLargeScaleLociList
+from openapi_client.models.integrated_content_files_inner import IntegratedContentFilesInner
 # TODO: Rewrite to not use raise_errors
 ConstructLibrarySet.model_rebuild(raise_errors=False)
 

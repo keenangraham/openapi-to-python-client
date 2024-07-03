@@ -21,11 +21,11 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.award1 import Award1
-from openapi_client.models.document2 import Document2
-from openapi_client.models.lab1 import Lab1
-from openapi_client.models.standards_page import StandardsPage
-from openapi_client.models.submitted_by import SubmittedBy
+from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
+from openapi_client.models.analysis_step_award import AnalysisStepAward
+from openapi_client.models.analysis_step_lab import AnalysisStepLab
+from openapi_client.models.rodent_donor_documents_inner import RodentDonorDocumentsInner
+from openapi_client.models.workflow_standards_page import WorkflowStandardsPage
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,9 +35,9 @@ class Workflow(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
-    documents: Optional[Annotated[List[Document2], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: Lab1
-    award: Award1
+    documents: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    lab: AnalysisStepLab
+    award: AnalysisStepAward
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -48,13 +48,13 @@ class Workflow(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[SubmittedBy] = None
+    submitted_by: Optional[AccessKeySubmittedBy] = None
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     name: Annotated[str, Field(strict=True)] = Field(description="The preferred viewable name of the workflow.")
     source_url: Annotated[str, Field(strict=True)] = Field(description="An external resource to the code base of the workflow in github.")
     workflow_repositories: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Resources hosting the workflow.")
-    standards_page: Optional[StandardsPage] = None
+    standards_page: Optional[WorkflowStandardsPage] = None
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
@@ -218,9 +218,9 @@ class Workflow(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "publication_identifiers": obj.get("publication_identifiers"),
-            "documents": [Document2.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
-            "lab": Lab1.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": Award1.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "documents": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
+            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
+            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
@@ -231,13 +231,13 @@ class Workflow(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": SubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "name": obj.get("name"),
             "source_url": obj.get("source_url"),
             "workflow_repositories": obj.get("workflow_repositories"),
-            "standards_page": StandardsPage.from_dict(obj["standards_page"]) if obj.get("standards_page") is not None else None,
+            "standards_page": WorkflowStandardsPage.from_dict(obj["standards_page"]) if obj.get("standards_page") is not None else None,
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),

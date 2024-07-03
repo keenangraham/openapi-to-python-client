@@ -12,14 +12,14 @@ Name | Type | Description | Notes
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
-**submitted_by** | [**SubmittedBy**](SubmittedBy.md) |  | [optional] 
+**submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **email** | **str** | The email associated with the user&#39;s account. | 
 **first_name** | **str** | The user&#39;s first (given) name. | 
 **last_name** | **str** | The user&#39;s last (family) name. | 
-**lab** | [**Lab1**](Lab1.md) |  | [optional] 
-**submits_for** | [**List[LabSubmittableFor]**](LabSubmittableFor.md) | Labs user is authorized to submit data for. | [optional] 
+**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | [optional] 
+**submits_for** | [**List[AnalysisStepLab]**](AnalysisStepLab.md) | Labs user is authorized to submit data for. | [optional] 
 **groups** | **List[str]** | Additional access control groups | [optional] 
 **viewing_groups** | **List[str]** | The group that determines which set of data the user has permission to view. | [optional] 
 **job_title** | **str** | The role of the user in their lab or organization. | [optional] 

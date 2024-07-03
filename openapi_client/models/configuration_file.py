@@ -21,12 +21,10 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.award1 import Award1
-from openapi_client.models.document2 import Document2
-from openapi_client.models.file_format_specifications_document import FileFormatSpecificationsDocument
-from openapi_client.models.file_set import FileSet
-from openapi_client.models.lab1 import Lab1
-from openapi_client.models.submitted_by import SubmittedBy
+from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
+from openapi_client.models.analysis_step_award import AnalysisStepAward
+from openapi_client.models.analysis_step_lab import AnalysisStepLab
+from openapi_client.models.rodent_donor_documents_inner import RodentDonorDocumentsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,9 +33,9 @@ class ConfigurationFile(BaseModel):
     A file containing configuration settings or information defining the structure of other data files' content.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    documents: Optional[Annotated[List[Document2], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: Lab1
-    award: Award1
+    documents: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    lab: AnalysisStepLab
+    award: AnalysisStepAward
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -48,22 +46,22 @@ class ConfigurationFile(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[SubmittedBy] = None
+    submitted_by: Optional[AccessKeySubmittedBy] = None
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     content_md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The MD5sum of the uncompressed file.")
     content_type: StrictStr = Field(description="The type of content in the file.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects.")
-    derived_from: Optional[Annotated[List[FileDerivedFrom], Field(min_length=1)]] = Field(default=None, description="The files participating as inputs into software to produce this output file.")
+    derived_from: Optional[Annotated[List[AlignmentFileDerivedFromInner], Field(min_length=1)]] = Field(default=None, description="The files participating as inputs into software to produce this output file.")
     file_format: StrictStr = Field(description="The file format or extension of the file.")
-    file_format_specifications: Optional[Annotated[List[FileFormatSpecificationsDocument], Field(min_length=1)]] = Field(default=None, description="Document that further explains the file format.")
-    file_set: FileSet
+    file_format_specifications: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Document that further explains the file format.")
+    file_set: AlignmentFileFileSet
     file_size: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="File size specified in bytes.")
     md5sum: Annotated[str, Field(strict=True, max_length=32)] = Field(description="The md5sum of the file being transferred.")
     submitted_file_name: Optional[StrictStr] = Field(default=None, description="Original name of the file.")
     upload_status: Optional[StrictStr] = Field(default='pending', description="The upload/validation status of the file.")
     validation_error_detail: Optional[StrictStr] = Field(default=None, description="Explanation of why the file failed the automated content checks.")
-    seqspec_of: Optional[Annotated[List[SeqspecOf], Field(min_length=1)]] = Field(default=None, description="Sequence files this file is a seqspec of.")
+    seqspec_of: Optional[Annotated[List[ConfigurationFileSeqspecOfInner], Field(min_length=1)]] = Field(default=None, description="Sequence files this file is a seqspec of.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
@@ -279,9 +277,9 @@ class ConfigurationFile(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
-            "documents": [Document2.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
-            "lab": Lab1.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": Award1.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "documents": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
+            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
+            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
@@ -292,22 +290,22 @@ class ConfigurationFile(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": SubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "content_md5sum": obj.get("content_md5sum"),
             "content_type": obj.get("content_type"),
             "dbxrefs": obj.get("dbxrefs"),
-            "derived_from": [FileDerivedFrom.from_dict(_item) for _item in obj["derived_from"]] if obj.get("derived_from") is not None else None,
+            "derived_from": [AlignmentFileDerivedFromInner.from_dict(_item) for _item in obj["derived_from"]] if obj.get("derived_from") is not None else None,
             "file_format": obj.get("file_format"),
-            "file_format_specifications": [FileFormatSpecificationsDocument.from_dict(_item) for _item in obj["file_format_specifications"]] if obj.get("file_format_specifications") is not None else None,
-            "file_set": FileSet.from_dict(obj["file_set"]) if obj.get("file_set") is not None else None,
+            "file_format_specifications": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["file_format_specifications"]] if obj.get("file_format_specifications") is not None else None,
+            "file_set": AlignmentFileFileSet.from_dict(obj["file_set"]) if obj.get("file_set") is not None else None,
             "file_size": obj.get("file_size"),
             "md5sum": obj.get("md5sum"),
             "submitted_file_name": obj.get("submitted_file_name"),
             "upload_status": obj.get("upload_status") if obj.get("upload_status") is not None else 'pending',
             "validation_error_detail": obj.get("validation_error_detail"),
-            "seqspec_of": [SeqspecOf.from_dict(_item) for _item in obj["seqspec_of"]] if obj.get("seqspec_of") is not None else None,
+            "seqspec_of": [ConfigurationFileSeqspecOfInner.from_dict(_item) for _item in obj["seqspec_of"]] if obj.get("seqspec_of") is not None else None,
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),
@@ -320,8 +318,9 @@ class ConfigurationFile(BaseModel):
         })
         return _obj
 
-from openapi_client.models.file_derived_from import FileDerivedFrom
-from openapi_client.models.seqspec_of import SeqspecOf
+from openapi_client.models.alignment_file_derived_from_inner import AlignmentFileDerivedFromInner
+from openapi_client.models.alignment_file_file_set import AlignmentFileFileSet
+from openapi_client.models.configuration_file_seqspec_of_inner import ConfigurationFileSeqspecOfInner
 # TODO: Rewrite to not use raise_errors
 ConfigurationFile.model_rebuild(raise_errors=False)
 

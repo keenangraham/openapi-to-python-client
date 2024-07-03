@@ -21,10 +21,10 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.award2 import Award2
-from openapi_client.models.lab2 import Lab2
+from openapi_client.models.document_award import DocumentAward
+from openapi_client.models.document_lab import DocumentLab
+from openapi_client.models.document_submitted_by import DocumentSubmittedBy
 from openapi_client.models.page_layout import PageLayout
-from openapi_client.models.submitted_by1 import SubmittedBy1
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,18 +33,18 @@ class Page(BaseModel):
     A page on the IGVF portal.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    lab: Optional[Lab2] = None
-    award: Optional[Award2] = None
+    lab: Optional[DocumentLab] = None
+    award: Optional[DocumentAward] = None
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[SubmittedBy1] = None
+    submitted_by: Optional[DocumentSubmittedBy] = None
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    parent: Optional[ParentPage] = None
+    parent: Optional[PageParent] = None
     name: Annotated[str, Field(strict=True)] = Field(description="The name shown in this page's URL.")
     title: StrictStr = Field(description="The name shown in the browser's title bar and tabs.")
     layout: Optional[PageLayout] = None
@@ -186,18 +186,18 @@ class Page(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
-            "lab": Lab2.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": Award2.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": DocumentLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
+            "award": DocumentAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '4',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": SubmittedBy1.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": DocumentSubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
-            "parent": ParentPage.from_dict(obj["parent"]) if obj.get("parent") is not None else None,
+            "parent": PageParent.from_dict(obj["parent"]) if obj.get("parent") is not None else None,
             "name": obj.get("name"),
             "title": obj.get("title"),
             "layout": PageLayout.from_dict(obj["layout"]) if obj.get("layout") is not None else None,
@@ -213,7 +213,7 @@ class Page(BaseModel):
 
         return _obj
 
-from openapi_client.models.parent_page import ParentPage
+from openapi_client.models.page_parent import PageParent
 # TODO: Rewrite to not use raise_errors
 Page.model_rebuild(raise_errors=False)
 

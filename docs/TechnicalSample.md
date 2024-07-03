@@ -9,12 +9,12 @@ Name | Type | Description | Notes
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **url** | **str** | An external resource with additional information. | [optional] 
-**sources** | [**List[Source1]**](Source1.md) | The originating lab(s) or vendor(s). | 
+**sources** | [**List[RodentDonorSourcesInner]**](RodentDonorSourcesInner.md) | The originating lab(s) or vendor(s). | 
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 
 **product_id** | **str** | The product identifier provided by the originating lab or vendor. | [optional] 
-**documents** | [**List[Document2]**](Document2.md) | Documents that provide additional information (not data file). | [optional] 
-**lab** | [**Lab1**](Lab1.md) |  | 
-**award** | [**Award1**](Award1.md) |  | 
+**documents** | [**List[RodentDonorDocumentsInner]**](RodentDonorDocumentsInner.md) | Documents that provide additional information (not data file). | [optional] 
+**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
+**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -25,17 +25,17 @@ Name | Type | Description | Notes
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
-**submitted_by** | [**SubmittedBy**](SubmittedBy.md) |  | [optional] 
+**submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **starting_amount** | **float** | The initial quantity of samples obtained. | [optional] 
 **starting_amount_units** | **str** | The units used to quantify the amount of samples obtained. | [optional] 
 **dbxrefs** | **List[str]** | Biosample identifiers from external resources, such as Biosample database or Cellosaurus. | [optional] 
 **date_obtained** | **date** | The date the sample was harvested, dissected or created, depending on the type of the sample. | [optional] 
-**sorted_from** | [**SortedFrom**](SortedFrom.md) |  | [optional] 
+**sorted_from** | [**AnalysisSetSamplesInner**](AnalysisSetSamplesInner.md) |  | [optional] 
 **sorted_from_detail** | **str** | Detail for sample sorted into fractions capturing information about sorting. | [optional] 
 **virtual** | **bool** | Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for. | [optional] [default to False]
-**construct_library_sets** | [**List[ConstructLibrarySet]**](ConstructLibrarySet.md) | The construct library sets of vectors introduced to this sample prior to performing an assay. | [optional] 
+**construct_library_sets** | [**List[InVitroSystemConstructLibrarySetsInner]**](InVitroSystemConstructLibrarySetsInner.md) | The construct library sets of vectors introduced to this sample prior to performing an assay. | [optional] 
 **moi** | **float** | The actual multiplicity of infection (MOI) for vectors introduced to this sample. At least one construct library set must be specified in order to specify MOI. This property should capture the actual MOI, and not the targeted MOI. | [optional] 
 **nucleic_acid_delivery** | **str** | Method of introduction of nucleic acid into the cell. | [optional] 
 **time_post_library_delivery** | **float** | The time that elapsed past the time-point when the construct library sets were introduced. | [optional] 
@@ -43,7 +43,7 @@ Name | Type | Description | Notes
 **protocols** | **List[str]** | Links to the protocol(s) for preparing the samples on Protocols.io. | [optional] 
 **sample_material** | **str** |  | [default to 'undefined']
 **taxa** | **str** |  | [optional] 
-**sample_terms** | [**List[SampleTerm]**](SampleTerm.md) | Ontology terms identifying a technical sample. | 
+**sample_terms** | [**List[InVitroSystemSampleTermsInner]**](InVitroSystemSampleTermsInner.md) | Ontology terms identifying a technical sample. | 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of this sample. | [optional] 

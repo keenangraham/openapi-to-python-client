@@ -10,12 +10,12 @@ Name | Type | Description | Notes
 **taxa** | **str** | The species of the organism. | 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **url** | **str** | An external resource with additional information. | [optional] 
-**sources** | [**List[Source1]**](Source1.md) | The originating lab(s) or vendor(s). | [optional] 
+**sources** | [**List[RodentDonorSourcesInner]**](RodentDonorSourcesInner.md) | The originating lab(s) or vendor(s). | [optional] 
 **lot_id** | **str** | The lot identifier provided by the originating lab or vendor. | [optional] 
 **product_id** | **str** | The product identifier provided by the originating lab or vendor. | [optional] 
-**documents** | [**List[Document2]**](Document2.md) | Documents that provide additional information (not data file). | [optional] 
-**lab** | [**Lab1**](Lab1.md) |  | 
-**award** | [**Award1**](Award1.md) |  | 
+**documents** | [**List[RodentDonorDocumentsInner]**](RodentDonorDocumentsInner.md) | Documents that provide additional information (not data file). | [optional] 
+**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
+**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -26,12 +26,12 @@ Name | Type | Description | Notes
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
-**submitted_by** | [**SubmittedBy**](SubmittedBy.md) |  | [optional] 
+**submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF donors. | [optional] 
 **sex** | **str** | Sex of the donor. | [default to 'unspecified']
-**phenotypic_features** | [**List[PhenotypicFeature1]**](PhenotypicFeature1.md) | A list of associated phenotypic features of the donor. | [optional] 
+**phenotypic_features** | [**List[RodentDonorPhenotypicFeaturesInner]**](RodentDonorPhenotypicFeaturesInner.md) | A list of associated phenotypic features of the donor. | [optional] 
 **virtual** | **bool** | Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for. | [optional] [default to False]
 **strain_background** | **str** | The specific parent strain designation of a non-human donor. | [optional] 
 **strain** | **str** | The specific strain designation of a non-human donor. | 

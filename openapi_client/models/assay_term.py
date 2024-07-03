@@ -13,129 +13,214 @@
 
 
 from __future__ import annotations
-import json
 import pprint
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
-from typing import Any, List, Optional
-from pydantic import StrictStr, Field
-from typing import Union, List, Set, Optional, Dict
-from typing_extensions import Literal, Self
+import re  # noqa: F401
+import json
 
-ASSAYTERM_ONE_OF_SCHEMAS = ["AssayTerm", "str"]
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
+from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
+from typing import Optional, Set
+from typing_extensions import Self
 
 class AssayTerm(BaseModel):
     """
-    AssayTerm
-    """
-    # data type: AssayTerm
-    oneof_schema_1_validator: Optional[AssayTerm] = None
-    # data type: str
-    oneof_schema_2_validator: Optional[StrictStr] = None
-    actual_instance: Optional[Union[AssayTerm, str]] = None
-    one_of_schemas: Set[str] = { "AssayTerm", "str" }
+    An ontology term from Ontology of Biomedical Investigations (OBI) for assays.
+    """ # noqa: E501
+    release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='6', description="The version of the JSON schema that the server uses to validate the object.")
+    uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
+    notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
+    aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
+    creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
+    submitted_by: Optional[AccessKeySubmittedBy] = None
+    submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
+    description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
+    term_id: Annotated[str, Field(strict=True)] = Field(description="An ontology term identifier describing an assay.")
+    term_name: Annotated[str, Field(strict=True)] = Field(description="Ontology term describing a biological sample, assay, trait, or disease.")
+    deprecated_ntr_terms: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="A list of deprecated NTR terms previously associated with this ontology term.")
+    is_a: Optional[Annotated[List[AssayTermIsAInner], Field(min_length=1)]] = Field(default=None, description="A list of ontology terms which are the nearest ancestor to this ontology term.")
+    preferred_assay_titles: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The custom lab preferred labels that this assay term may be associated with.")
+    id: Optional[StrictStr] = Field(default=None, alias="@id")
+    type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
+    summary: Optional[StrictStr] = Field(default=None, description="A summary of the ontology term.")
+    name: Optional[StrictStr] = Field(default=None, description="A unique identifier for the ontology term, reformatted from the original term ID.")
+    synonyms: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Synonyms for the term that have been recorded in an ontology.")
+    ancestors: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="List of term names of ontological terms that precede the given term in the ontological tree. These ancestor terms are typically more general ontological terms under which the term is classified.")
+    ontology: Optional[StrictStr] = Field(default=None, description="The ontology in which the term is recorded.")
+    assay_slims: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="A broad categorization of the assay term.")
+    category_slims: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The type of feature or interaction measured by the assay.")
+    objective_slims: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The purpose of the assay.")
+    __properties: ClassVar[List[str]] = ["release_timestamp", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "term_id", "term_name", "deprecated_ntr_terms", "is_a", "preferred_assay_titles", "@id", "@type", "summary", "name", "synonyms", "ancestors", "ontology", "assay_slims", "category_slims", "objective_slims"]
+
+    @field_validator('status')
+    def status_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['archived', 'deleted', 'in progress', 'released']):
+            raise ValueError("must be one of enum values ('archived', 'deleted', 'in progress', 'released')")
+        return value
+
+    @field_validator('schema_version')
+    def schema_version_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^\d+(\.\d+)*$", value):
+            raise ValueError(r"must validate the regular expression /^\d+(\.\d+)*$/")
+        return value
+
+    @field_validator('notes')
+    def notes_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('submitter_comment')
+    def submitter_comment_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('description')
+    def description_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('term_id')
+    def term_id_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if not re.match(r"^(OBI|NTR):[0-9]{2,8}$", value):
+            raise ValueError(r"must validate the regular expression /^(OBI|NTR):[0-9]{2,8}$/")
+        return value
+
+    @field_validator('term_name')
+    def term_name_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if not re.match(r"^(?![\s\"\'])[\S|\s]*[^\s\"\']$", value):
+            raise ValueError(r"must validate the regular expression /^(?![\s\"'])[\S|\s]*[^\s\"']$/")
+        return value
+
+    @field_validator('preferred_assay_titles')
+    def preferred_assay_titles_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        for i in value:
+            if i not in set(['10x multiome', '10x multiome with MULTI-seq', 'AAV-MPRA', 'ATAC-seq', 'CERES-seq', 'Cell painting', 'CRISPR FlowFISH', 'DOGMA-seq', 'Histone ChIP-seq', 'lentiMPRA', 'MERFISH', 'MIAA', 'mN2H', 'MPRA', 'MPRA (scQer)', 'MULTI-seq', 'Parse SPLiT-seq', 'Perturb-seq', 'RNA-seq', 'SGE', 'scATAC-seq', 'scNT-seq', 'scNT-seq2', 'scRNA-seq', 'semi-qY2H', 'SHARE-seq', 'smFISH', 'snATAC-seq', 'snmC-Seq2', 'snMCT-seq', 'snM3C-seq', 'snRNA-seq', 'SUPERSTARR', 'TAP-seq', 'TF ChIP-seq', 'VAMP-seq', 'Variant FlowFISH', 'Variant painting', 'Y2H', 'yN2H']):
+                raise ValueError("each list item must be one of ('10x multiome', '10x multiome with MULTI-seq', 'AAV-MPRA', 'ATAC-seq', 'CERES-seq', 'Cell painting', 'CRISPR FlowFISH', 'DOGMA-seq', 'Histone ChIP-seq', 'lentiMPRA', 'MERFISH', 'MIAA', 'mN2H', 'MPRA', 'MPRA (scQer)', 'MULTI-seq', 'Parse SPLiT-seq', 'Perturb-seq', 'RNA-seq', 'SGE', 'scATAC-seq', 'scNT-seq', 'scNT-seq2', 'scRNA-seq', 'semi-qY2H', 'SHARE-seq', 'smFISH', 'snATAC-seq', 'snmC-Seq2', 'snMCT-seq', 'snM3C-seq', 'snRNA-seq', 'SUPERSTARR', 'TAP-seq', 'TF ChIP-seq', 'VAMP-seq', 'Variant FlowFISH', 'Variant painting', 'Y2H', 'yN2H')")
+        return value
 
     model_config = ConfigDict(
+        populate_by_name=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
 
 
-    def __init__(self, *args, **kwargs) -> None:
-        if args:
-            if len(args) > 1:
-                raise ValueError("If a position argument is used, only 1 is allowed to set `actual_instance`")
-            if kwargs:
-                raise ValueError("If a position argument is used, keyword arguments cannot be used.")
-            super().__init__(actual_instance=args[0])
-        else:
-            super().__init__(**kwargs)
-
-    @field_validator('actual_instance')
-    def actual_instance_must_validate_oneof(cls, v):
-        instance = AssayTerm.model_construct()
-        error_messages = []
-        match = 0
-        # validate data type: AssayTerm
-        if not isinstance(v, AssayTerm):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `AssayTerm`")
-        else:
-            match += 1
-        # validate data type: str
-        try:
-            instance.oneof_schema_2_validator = v
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        if match > 1:
-            # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in AssayTerm with oneOf schemas: AssayTerm, str. Details: " + ", ".join(error_messages))
-        elif match == 0:
-            # no match
-            raise ValueError("No match found when setting `actual_instance` in AssayTerm with oneOf schemas: AssayTerm, str. Details: " + ", ".join(error_messages))
-        else:
-            return v
-
-    @classmethod
-    def from_dict(cls, obj: Union[str, Dict[str, Any]]) -> Self:
-        return cls.from_json(json.dumps(obj))
-
-    @classmethod
-    def from_json(cls, json_str: str) -> Self:
-        """Returns the object represented by the json string"""
-        instance = cls.model_construct()
-        error_messages = []
-        match = 0
-
-        # deserialize data into AssayTerm
-        try:
-            instance.actual_instance = AssayTerm.from_json(json_str)
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # deserialize data into str
-        try:
-            # validation
-            instance.oneof_schema_2_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_2_validator
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-
-        if match > 1:
-            # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into AssayTerm with oneOf schemas: AssayTerm, str. Details: " + ", ".join(error_messages))
-        elif match == 0:
-            # no match
-            raise ValueError("No match found when deserializing the JSON string into AssayTerm with oneOf schemas: AssayTerm, str. Details: " + ", ".join(error_messages))
-        else:
-            return instance
+    def to_str(self) -> str:
+        """Returns the string representation of the model using alias"""
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
-        """Returns the JSON representation of the actual instance"""
-        if self.actual_instance is None:
-            return "null"
+        """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
+        return json.dumps(self.to_dict())
 
-        if hasattr(self.actual_instance, "to_json") and callable(self.actual_instance.to_json):
-            return self.actual_instance.to_json()
-        else:
-            return json.dumps(self.actual_instance)
+    @classmethod
+    def from_json(cls, json_str: str) -> Optional[Self]:
+        """Create an instance of AssayTerm from a JSON string"""
+        return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], AssayTerm, str]]:
-        """Returns the dict representation of the actual instance"""
-        if self.actual_instance is None:
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
+        # override the default output from pydantic by calling `to_dict()` of submitted_by
+        if self.submitted_by:
+            _dict['submitted_by'] = self.submitted_by.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in is_a (list)
+        _items = []
+        if self.is_a:
+            for _item in self.is_a:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['is_a'] = _items
+        return _dict
+
+    @classmethod
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+        """Create an instance of AssayTerm from a dict"""
+        if obj is None:
             return None
 
-        if hasattr(self.actual_instance, "to_dict") and callable(self.actual_instance.to_dict):
-            return self.actual_instance.to_dict()
-        else:
-            # primitive type
-            return self.actual_instance
+        if not isinstance(obj, dict):
+            return cls.model_validate(obj)
 
-    def to_str(self) -> str:
-        """Returns the string representation of the actual instance"""
-        return pprint.pformat(self.model_dump())
+        _obj = cls.model_validate({
+            "release_timestamp": obj.get("release_timestamp"),
+            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
+            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '6',
+            "uuid": obj.get("uuid"),
+            "notes": obj.get("notes"),
+            "aliases": obj.get("aliases"),
+            "creation_timestamp": obj.get("creation_timestamp"),
+            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitter_comment": obj.get("submitter_comment"),
+            "description": obj.get("description"),
+            "term_id": obj.get("term_id"),
+            "term_name": obj.get("term_name"),
+            "deprecated_ntr_terms": obj.get("deprecated_ntr_terms"),
+            "is_a": [AssayTermIsAInner.from_dict(_item) for _item in obj["is_a"]] if obj.get("is_a") is not None else None,
+            "preferred_assay_titles": obj.get("preferred_assay_titles"),
+            "@id": obj.get("@id"),
+            "@type": obj.get("@type"),
+            "summary": obj.get("summary"),
+            "name": obj.get("name"),
+            "synonyms": obj.get("synonyms"),
+            "ancestors": obj.get("ancestors"),
+            "ontology": obj.get("ontology"),
+            "assay_slims": obj.get("assay_slims"),
+            "category_slims": obj.get("category_slims"),
+            "objective_slims": obj.get("objective_slims")
+        })
+        return _obj
 
+from openapi_client.models.assay_term_is_a_inner import AssayTermIsAInner
 # TODO: Rewrite to not use raise_errors
 AssayTerm.model_rebuild(raise_errors=False)
 

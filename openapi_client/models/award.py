@@ -35,15 +35,15 @@ class Award(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[SubmittedBy] = None
+    submitted_by: Optional[AccessKeySubmittedBy] = None
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     title: Annotated[str, Field(strict=True)] = Field(description="The grant name from the NIH database, if applicable.")
     name: Annotated[str, Field(strict=True)] = Field(description="The official grant number from the NIH database, if applicable")
     start_date: Optional[date] = Field(default=None, description="The date when the award begins.")
     end_date: Optional[date] = Field(default=None, description="The date when the award concludes.")
-    pis: Optional[Annotated[List[Investigator], Field(min_length=1)]] = Field(default=None, description="Principal Investigator(s) of the grant.")
-    contact_pi: Optional[ContactPI] = None
+    pis: Optional[Annotated[List[AccessKeySubmittedBy], Field(min_length=1)]] = Field(default=None, description="Principal Investigator(s) of the grant.")
+    contact_pi: Optional[AccessKeySubmittedBy] = None
     project: StrictStr = Field(description="The collection of biological data related to a single initiative, originating from a consortium.")
     viewing_group: Optional[StrictStr] = Field(default=None, description="The group that determines which set of data the user has permission to view.")
     component: Optional[StrictStr] = Field(default=None, description="The project component the award is associated with.")
@@ -214,15 +214,15 @@ class Award(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": SubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "title": obj.get("title"),
             "name": obj.get("name"),
             "start_date": obj.get("start_date"),
             "end_date": obj.get("end_date"),
-            "pis": [Investigator.from_dict(_item) for _item in obj["pis"]] if obj.get("pis") is not None else None,
-            "contact_pi": ContactPI.from_dict(obj["contact_pi"]) if obj.get("contact_pi") is not None else None,
+            "pis": [AccessKeySubmittedBy.from_dict(_item) for _item in obj["pis"]] if obj.get("pis") is not None else None,
+            "contact_pi": AccessKeySubmittedBy.from_dict(obj["contact_pi"]) if obj.get("contact_pi") is not None else None,
             "project": obj.get("project"),
             "viewing_group": obj.get("viewing_group"),
             "component": obj.get("component"),
@@ -232,9 +232,7 @@ class Award(BaseModel):
         })
         return _obj
 
-from openapi_client.models.contact_pi import ContactPI
-from openapi_client.models.investigator import Investigator
-from openapi_client.models.submitted_by import SubmittedBy
+from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
 # TODO: Rewrite to not use raise_errors
 Award.model_rebuild(raise_errors=False)
 

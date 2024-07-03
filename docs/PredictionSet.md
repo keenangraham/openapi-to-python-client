@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **large_scale_gene_list** | [**OneOfReferenceFileTabularFilestring**](OneOfReferenceFileTabularFilestring.md) |  | [optional] 
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
-**documents** | [**List[Document1]**](Document1.md) | Documents that provide additional information (not data file). | [optional] 
+**documents** | [**List[DocumentsInner]**](DocumentsInner.md) | Documents that provide additional information (not data file). | [optional] 
 **lab** | [**OneOfLabstring**](OneOfLabstring.md) |  | [optional] 
 **award** | [**OneOfAwardstring**](OneOfAwardstring.md) |  | [optional] 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 

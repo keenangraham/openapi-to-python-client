@@ -21,8 +21,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.submitted_by import SubmittedBy
-from openapi_client.models.user1 import User1
+from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,11 +34,11 @@ class AccessKey(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[SubmittedBy] = None
+    submitted_by: Optional[AccessKeySubmittedBy] = None
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default='', description="Description of the access key.")
     status: Optional[StrictStr] = 'current'
-    user: Optional[User1] = None
+    user: Optional[AccessKeySubmittedBy] = None
     access_key_id: Optional[StrictStr] = Field(default=None, description="An access key.")
     secret_access_key_hash: Optional[StrictStr] = Field(default=None, description="A secret access key.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
@@ -159,11 +158,11 @@ class AccessKey(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": SubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description") if obj.get("description") is not None else '',
             "status": obj.get("status") if obj.get("status") is not None else 'current',
-            "user": User1.from_dict(obj["user"]) if obj.get("user") is not None else None,
+            "user": AccessKeySubmittedBy.from_dict(obj["user"]) if obj.get("user") is not None else None,
             "access_key_id": obj.get("access_key_id"),
             "secret_access_key_hash": obj.get("secret_access_key_hash"),
             "@id": obj.get("@id"),

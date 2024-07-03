@@ -22,9 +22,9 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_v
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from openapi_client.models.attachment import Attachment
-from openapi_client.models.award2 import Award2
-from openapi_client.models.lab2 import Lab2
-from openapi_client.models.submitted_by1 import SubmittedBy1
+from openapi_client.models.document_award import DocumentAward
+from openapi_client.models.document_lab import DocumentLab
+from openapi_client.models.document_submitted_by import DocumentSubmittedBy
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,15 +35,15 @@ class Publication(BaseModel):
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)] = Field(description="The publication identifiers that provide more information about the object.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    lab: Lab2
-    award: Award2
+    lab: DocumentLab
+    award: DocumentAward
     attachment: Optional[Attachment] = None
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='6', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[SubmittedBy1] = None
+    submitted_by: Optional[DocumentSubmittedBy] = None
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     title: StrictStr = Field(description="Title of the publication or communication.")
@@ -197,15 +197,15 @@ class Publication(BaseModel):
             "release_timestamp": obj.get("release_timestamp"),
             "publication_identifiers": obj.get("publication_identifiers"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "lab": Lab2.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": Award2.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": DocumentLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
+            "award": DocumentAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
             "attachment": Attachment.from_dict(obj["attachment"]) if obj.get("attachment") is not None else None,
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '6',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": SubmittedBy1.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": DocumentSubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "title": obj.get("title"),

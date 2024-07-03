@@ -34,14 +34,14 @@ class User(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[SubmittedBy] = None
+    submitted_by: Optional[AccessKeySubmittedBy] = None
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     email: Annotated[str, Field(strict=True)] = Field(description="The email associated with the user's account.")
     first_name: StrictStr = Field(description="The user's first (given) name.")
     last_name: StrictStr = Field(description="The user's last (family) name.")
-    lab: Optional[Lab1] = None
-    submits_for: Optional[Annotated[List[LabSubmittableFor], Field(min_length=1)]] = Field(default=None, description="Labs user is authorized to submit data for.")
+    lab: Optional[AnalysisStepLab] = None
+    submits_for: Optional[Annotated[List[AnalysisStepLab], Field(min_length=1)]] = Field(default=None, description="Labs user is authorized to submit data for.")
     groups: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Additional access control groups")
     viewing_groups: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The group that determines which set of data the user has permission to view.")
     job_title: Optional[StrictStr] = Field(default=None, description="The role of the user in their lab or organization.")
@@ -210,14 +210,14 @@ class User(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": SubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "email": obj.get("email"),
             "first_name": obj.get("first_name"),
             "last_name": obj.get("last_name"),
-            "lab": Lab1.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "submits_for": [LabSubmittableFor.from_dict(_item) for _item in obj["submits_for"]] if obj.get("submits_for") is not None else None,
+            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
+            "submits_for": [AnalysisStepLab.from_dict(_item) for _item in obj["submits_for"]] if obj.get("submits_for") is not None else None,
             "groups": obj.get("groups"),
             "viewing_groups": obj.get("viewing_groups"),
             "job_title": obj.get("job_title"),
@@ -228,9 +228,8 @@ class User(BaseModel):
         })
         return _obj
 
-from openapi_client.models.lab1 import Lab1
-from openapi_client.models.lab_submittable_for import LabSubmittableFor
-from openapi_client.models.submitted_by import SubmittedBy
+from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
+from openapi_client.models.analysis_step_lab import AnalysisStepLab
 # TODO: Rewrite to not use raise_errors
 User.model_rebuild(raise_errors=False)
 

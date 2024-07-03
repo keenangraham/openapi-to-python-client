@@ -26,7 +26,7 @@ class RelatedDonor(BaseModel):
     """
     Familial relation of this donor.
     """ # noqa: E501
-    donor: RelatedDonorIdentifier
+    donor: RelatedDonorDonor
     relationship_type: StrictStr = Field(description="A descriptive term for the related donor’s relationship to this donor.")
     __properties: ClassVar[List[str]] = ["donor", "relationship_type"]
 
@@ -91,12 +91,12 @@ class RelatedDonor(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "donor": RelatedDonorIdentifier.from_dict(obj["donor"]) if obj.get("donor") is not None else None,
+            "donor": RelatedDonorDonor.from_dict(obj["donor"]) if obj.get("donor") is not None else None,
             "relationship_type": obj.get("relationship_type")
         })
         return _obj
 
-from openapi_client.models.related_donor_identifier import RelatedDonorIdentifier
+from openapi_client.models.related_donor_donor import RelatedDonorDonor
 # TODO: Rewrite to not use raise_errors
 RelatedDonor.model_rebuild(raise_errors=False)
 

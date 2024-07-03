@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **taxa** | **str** | The species of the organism. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
-**documents** | [**List[Document2]**](Document2.md) | Documents that provide additional information (not data file). | [optional] 
-**lab** | [**Lab1**](Lab1.md) |  | 
-**award** | [**Award1**](Award1.md) |  | 
+**documents** | [**List[RodentDonorDocumentsInner]**](RodentDonorDocumentsInner.md) | Documents that provide additional information (not data file). | [optional] 
+**lab** | [**AnalysisStepLab**](AnalysisStepLab.md) |  | 
+**award** | [**AnalysisStepAward**](AnalysisStepAward.md) |  | 
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
@@ -23,12 +23,12 @@ Name | Type | Description | Notes
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
 **creation_timestamp** | **datetime** | The date the object was created. | [optional] 
-**submitted_by** | [**SubmittedBy**](SubmittedBy.md) |  | [optional] 
+**submitted_by** | [**AccessKeySubmittedBy**](AccessKeySubmittedBy.md) |  | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets. | [optional] 
-**samples** | [**List[Sample]**](Sample.md) | The sample(s) associated with this file set. | [optional] 
-**donors** | [**List[Donor]**](Donor.md) | The donor(s) associated with this file set. | [optional] 
+**samples** | [**List[AnalysisSetSamplesInner]**](AnalysisSetSamplesInner.md) | The sample(s) associated with this file set. | [optional] 
+**donors** | [**List[AnalysisSetDonorsInner]**](AnalysisSetDonorsInner.md) | The donor(s) associated with this file set. | [optional] 
 **file_set_type** | **str** | The category that best describes this curated file set. | 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 

@@ -24,7 +24,6 @@ def generate_openapi_spec(schemas):
                                         "type": "object",
                                         "properties": {
                                             "@graph": {
-                                                "title": "results",
                                                 "type": "array",
                                                 "items": {
                                                     "oneOf": []
@@ -37,7 +36,6 @@ def generate_openapi_spec(schemas):
                                             },
                                             "total": {"type": "integer"},
                                             "facets": {
-                                                "title": "facets",
                                                 "type": "array",
                                                 "items": {
                                                     "type": "object",
@@ -261,15 +259,16 @@ def clean_schema(schema):
                     value = list(sorted(resolved_subtypes))
                     res = [
                         {
-                            '$ref': f"#/components/schemas/{v}"
+                            '$ref': f"#/components/schemas/{v}",
+                            'title': f"{v}"
                         }
                         for v in value
                     ]
                     res.append({'type': 'string'})
                     cleaned = {}
-                    title = schema.get('title')
-                    if title:
-                        cleaned['title'] = title
+#                    title = schema.get('title')
+ #                   if title:
+  #                      cleaned['title'] = title
                     cleaned['oneOf'] = res
                     return cleaned
                 elif key == "required" and not isinstance(value, list):

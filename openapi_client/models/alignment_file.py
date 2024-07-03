@@ -21,13 +21,10 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.award1 import Award1
-from openapi_client.models.document2 import Document2
-from openapi_client.models.file_format_specifications_document import FileFormatSpecificationsDocument
-from openapi_client.models.file_set import FileSet
-from openapi_client.models.lab1 import Lab1
-from openapi_client.models.reference_file import ReferenceFile
-from openapi_client.models.submitted_by import SubmittedBy
+from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
+from openapi_client.models.analysis_step_award import AnalysisStepAward
+from openapi_client.models.analysis_step_lab import AnalysisStepLab
+from openapi_client.models.rodent_donor_documents_inner import RodentDonorDocumentsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -40,10 +37,10 @@ class AlignmentFile(BaseModel):
     transcriptome_annotation: Optional[StrictStr] = Field(default=None, description="The annotation and version of the reference resource.")
     assembly: Optional[StrictStr] = Field(default=None, description="Genome assembly applicable for the annotation data.")
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    reference_files: Annotated[List[ReferenceFile], Field(min_length=1)] = Field(description="Link to the reference files used to generate this file.")
-    documents: Optional[Annotated[List[Document2], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    lab: Lab1
-    award: Award1
+    reference_files: Annotated[List[AlignmentFileReferenceFilesInner], Field(min_length=1)] = Field(description="Link to the reference files used to generate this file.")
+    documents: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    lab: AnalysisStepLab
+    award: AnalysisStepAward
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Some samples are part of particular data collections.")
@@ -54,16 +51,16 @@ class AlignmentFile(BaseModel):
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[SubmittedBy] = None
+    submitted_by: Optional[AccessKeySubmittedBy] = None
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     content_md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The MD5sum of the uncompressed file.")
     content_type: StrictStr = Field(description="The type of content in the file.")
     dbxrefs: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects.")
-    derived_from: Optional[Annotated[List[FileDerivedFrom], Field(min_length=1)]] = Field(default=None, description="The files participating as inputs into software to produce this output file.")
+    derived_from: Optional[Annotated[List[AlignmentFileDerivedFromInner], Field(min_length=1)]] = Field(default=None, description="The files participating as inputs into software to produce this output file.")
     file_format: StrictStr = Field(description="The file format or extension of the file.")
-    file_format_specifications: Optional[Annotated[List[FileFormatSpecificationsDocument], Field(min_length=1)]] = Field(default=None, description="Document that further explains the file format.")
-    file_set: FileSet
+    file_format_specifications: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Document that further explains the file format.")
+    file_set: AlignmentFileFileSet
     file_size: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="File size specified in bytes.")
     md5sum: Annotated[str, Field(strict=True, max_length=32)] = Field(description="The md5sum of the file being transferred.")
     submitted_file_name: Optional[StrictStr] = Field(default=None, description="Original name of the file.")
@@ -311,10 +308,10 @@ class AlignmentFile(BaseModel):
             "transcriptome_annotation": obj.get("transcriptome_annotation"),
             "assembly": obj.get("assembly"),
             "release_timestamp": obj.get("release_timestamp"),
-            "reference_files": [ReferenceFile.from_dict(_item) for _item in obj["reference_files"]] if obj.get("reference_files") is not None else None,
-            "documents": [Document2.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
-            "lab": Lab1.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": Award1.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "reference_files": [AlignmentFileReferenceFilesInner.from_dict(_item) for _item in obj["reference_files"]] if obj.get("reference_files") is not None else None,
+            "documents": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
+            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
+            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
@@ -325,16 +322,16 @@ class AlignmentFile(BaseModel):
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": SubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "content_md5sum": obj.get("content_md5sum"),
             "content_type": obj.get("content_type"),
             "dbxrefs": obj.get("dbxrefs"),
-            "derived_from": [FileDerivedFrom.from_dict(_item) for _item in obj["derived_from"]] if obj.get("derived_from") is not None else None,
+            "derived_from": [AlignmentFileDerivedFromInner.from_dict(_item) for _item in obj["derived_from"]] if obj.get("derived_from") is not None else None,
             "file_format": obj.get("file_format"),
-            "file_format_specifications": [FileFormatSpecificationsDocument.from_dict(_item) for _item in obj["file_format_specifications"]] if obj.get("file_format_specifications") is not None else None,
-            "file_set": FileSet.from_dict(obj["file_set"]) if obj.get("file_set") is not None else None,
+            "file_format_specifications": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["file_format_specifications"]] if obj.get("file_format_specifications") is not None else None,
+            "file_set": AlignmentFileFileSet.from_dict(obj["file_set"]) if obj.get("file_set") is not None else None,
             "file_size": obj.get("file_size"),
             "md5sum": obj.get("md5sum"),
             "submitted_file_name": obj.get("submitted_file_name"),
@@ -355,7 +352,9 @@ class AlignmentFile(BaseModel):
         })
         return _obj
 
-from openapi_client.models.file_derived_from import FileDerivedFrom
+from openapi_client.models.alignment_file_derived_from_inner import AlignmentFileDerivedFromInner
+from openapi_client.models.alignment_file_file_set import AlignmentFileFileSet
+from openapi_client.models.alignment_file_reference_files_inner import AlignmentFileReferenceFilesInner
 # TODO: Rewrite to not use raise_errors
 AlignmentFile.model_rebuild(raise_errors=False)
 

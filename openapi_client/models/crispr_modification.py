@@ -21,12 +21,12 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.award1 import Award1
-from openapi_client.models.document2 import Document2
-from openapi_client.models.lab1 import Lab1
-from openapi_client.models.source1 import Source1
-from openapi_client.models.submitted_by import SubmittedBy
-from openapi_client.models.tagged_protein import TaggedProtein
+from openapi_client.models.access_key_submitted_by import AccessKeySubmittedBy
+from openapi_client.models.analysis_step_award import AnalysisStepAward
+from openapi_client.models.analysis_step_lab import AnalysisStepLab
+from openapi_client.models.biomarker_gene import BiomarkerGene
+from openapi_client.models.rodent_donor_documents_inner import RodentDonorDocumentsInner
+from openapi_client.models.rodent_donor_sources_inner import RodentDonorSourcesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,25 +35,25 @@ class CrisprModification(BaseModel):
     A CRISPR modification altering sample genomic material. For example, CRISPRi dCas9-KRAB modification.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    sources: Optional[Annotated[List[Source1], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
+    sources: Optional[Annotated[List[RodentDonorSourcesInner], Field(min_length=1, max_length=1)]] = Field(default=None, description="The originating lab(s) or vendor(s).")
     lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product or catalog identifier provided following deposition to addgene.org.")
-    documents: Optional[Annotated[List[Document2], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
+    documents: Optional[Annotated[List[RodentDonorDocumentsInner], Field(min_length=1)]] = Field(default=None, description="Documents that provide additional information (not data file).")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    lab: Lab1
-    award: Award1
+    lab: AnalysisStepLab
+    award: AnalysisStepAward
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='2', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
-    submitted_by: Optional[SubmittedBy] = None
+    submitted_by: Optional[AccessKeySubmittedBy] = None
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     cas: StrictStr = Field(description="The name of the CRISPR associated protein used in the modification.")
     fused_domain: Optional[StrictStr] = Field(default=None, description="The name of the molecule fused to a Cas protein.")
     modality: StrictStr = Field(description="The purpose or intended effect of a CRISPR modification.")
-    tagged_protein: Optional[TaggedProtein] = None
+    tagged_protein: Optional[BiomarkerGene] = None
     cas_species: StrictStr = Field(description="The originating species of the Cas nuclease.")
     activated: Optional[StrictBool] = Field(default=None, description="A boolean indicating whether the modification has been activated by a chemical agent.")
     activating_agent_term_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The CHEBI identifier for the activating agent of the modification.")
@@ -252,25 +252,25 @@ class CrisprModification(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
-            "sources": [Source1.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
+            "sources": [RodentDonorSourcesInner.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
             "lot_id": obj.get("lot_id"),
             "product_id": obj.get("product_id"),
-            "documents": [Document2.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
+            "documents": [RodentDonorDocumentsInner.from_dict(_item) for _item in obj["documents"]] if obj.get("documents") is not None else None,
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "lab": Lab1.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
-            "award": Award1.from_dict(obj["award"]) if obj.get("award") is not None else None,
+            "lab": AnalysisStepLab.from_dict(obj["lab"]) if obj.get("lab") is not None else None,
+            "award": AnalysisStepAward.from_dict(obj["award"]) if obj.get("award") is not None else None,
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '2',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
-            "submitted_by": SubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
+            "submitted_by": AccessKeySubmittedBy.from_dict(obj["submitted_by"]) if obj.get("submitted_by") is not None else None,
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "cas": obj.get("cas"),
             "fused_domain": obj.get("fused_domain"),
             "modality": obj.get("modality"),
-            "tagged_protein": TaggedProtein.from_dict(obj["tagged_protein"]) if obj.get("tagged_protein") is not None else None,
+            "tagged_protein": BiomarkerGene.from_dict(obj["tagged_protein"]) if obj.get("tagged_protein") is not None else None,
             "cas_species": obj.get("cas_species"),
             "activated": obj.get("activated"),
             "activating_agent_term_id": obj.get("activating_agent_term_id"),
