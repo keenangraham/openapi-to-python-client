@@ -33,6 +33,10 @@ def generate_openapi_spec(schemas):
                                                 "type": "array",
                                                 "items": {
                                                     "oneOf": [],
+                                                    "discriminator": {
+                                                        "propertyName": "@type",
+                                                        "mapping": {}
+                                                    },
                                                 }
                                             },
                                             "@id": {"type": "string"},

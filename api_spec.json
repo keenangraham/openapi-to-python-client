@@ -74,8 +74,7 @@
               "enum": [
                 "object",
                 "embedded"
-              ],
-              "default": "object"
+              ]
             },
             "description": "Specifies the format of the returned objects."
           },
@@ -287,7 +286,11 @@
                           {
                             "$ref": "#/components/schemas/Workflow"
                           }
-                        ]
+                        ],
+                        "discriminator": {
+                          "propertyName": "@type",
+                          "mapping": {}
+                        }
                       }
                     },
                     "@id": {

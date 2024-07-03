@@ -72,7 +72,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     query = 'query_example' # str | Query string for searching. (optional)
     limit = 3.4 # float | Maximum number of results to return. Use 'all' for all results. (optional)
     debug = True # bool | Enables debug mode for the search. (optional)
-    frame = 'object' # str | Specifies the format of the returned objects. (optional) (default to 'object')
+    frame = 'frame_example' # str | Specifies the format of the returned objects. (optional)
     var_from = 56 # int | Starting index for pagination. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. (optional)
     config = 'config_example' # str | Configuration options for the search. (optional)
