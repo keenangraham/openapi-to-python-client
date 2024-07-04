@@ -28,10 +28,12 @@ def generate_openapi_spec(schemas):
                                 "application/json": {
                                     "schema": {
                                         "type": "object",
+                                        "title": "SearchResults",
                                         "properties": {
                                             "@graph": {
                                                 "type": "array",
                                                 "items": {
+                                                    "title": "SearchResultItem",
                                                     "oneOf": [],
                                                     "discriminator": {
                                                         "propertyName": "@id",
@@ -49,12 +51,14 @@ def generate_openapi_spec(schemas):
                                                 "type": "array",
                                                 "items": {
                                                     "type": "object",
+                                                    "title": "SearchFacet",
                                                     "properties": {
                                                         "field": {"type": "string"},
                                                         "title": {"type": "string"},
                                                         "terms": {
                                                             "type": "array",
                                                             "items": {
+                                                                "title": "SearchFacetTermValue",
                                                                 "type": "object",
                                                                 "properties": {
                                                                     "key": {"type": "string"},
@@ -229,7 +233,7 @@ def clean_schema(schema):
             "items", "allOf", "anyOf", "oneOf", "not", "enum",
             "const", "multipleOf", "maximum", "exclusiveMaximum",
             "minimum", "exclusiveMinimum", "maxLength", "minLength",
-            "pattern", "maxItems", "minItems", "uniqueItems",
+            "pattern", "uniqueItems",
             "maxContains", "minContains", "maxProperties", "minProperties",
             "format", "default", "title", "description", "linkTo",
         ]

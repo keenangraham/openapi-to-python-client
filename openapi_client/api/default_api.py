@@ -19,7 +19,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, Dict, List, Optional, Union
 from typing_extensions import Annotated
-from openapi_client.models.search200_response import Search200Response
+from openapi_client.models.search_results import SearchResults
 
 from openapi_client.api_client import ApiClient, RequestSerialized
 from openapi_client.api_response import ApiResponse
@@ -65,7 +65,7 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Search200Response:
+    ) -> SearchResults:
         """Search for objects in the IGVF Project
 
         Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
@@ -133,7 +133,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Search200Response",
+            '200': "SearchResults",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -172,7 +172,7 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Search200Response]:
+    ) -> ApiResponse[SearchResults]:
         """Search for objects in the IGVF Project
 
         Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
@@ -240,7 +240,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Search200Response",
+            '200': "SearchResults",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -347,7 +347,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Search200Response",
+            '200': "SearchResults",
         }
         response_data = self.api_client.call_api(
             *_param,

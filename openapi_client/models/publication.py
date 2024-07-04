@@ -30,7 +30,7 @@ class Publication(BaseModel):
     A publication related to IGVF.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
+    publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
@@ -38,7 +38,7 @@ class Publication(BaseModel):
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='6', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
-    aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
+    aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
@@ -52,7 +52,7 @@ class Publication(BaseModel):
     page: Optional[StrictStr] = Field(default=None, description="Pagination of the reference")
     volume: Optional[StrictStr] = Field(default=None, description="The volume of the publication.")
     journal: Optional[StrictStr] = Field(default=None, description="The journal of the publication.")
-    published_by: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The affiliation of the lab with a larger organization, such as IGVF.")
+    published_by: Optional[List[StrictStr]] = Field(default=None, description="The affiliation of the lab with a larger organization, such as IGVF.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")

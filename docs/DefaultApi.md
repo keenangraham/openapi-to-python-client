@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **search**
-> Search200Response search(type=type, var_field=var_field, query=query, limit=limit, debug=debug, frame=frame, var_from=var_from, sort=sort, config=config, advanced_query=advanced_query, field_filters=field_filters)
+> SearchResults search(type=type, var_field=var_field, query=query, limit=limit, debug=debug, frame=frame, var_from=var_from, sort=sort, config=config, advanced_query=advanced_query, field_filters=field_filters)
 
 Search for objects in the IGVF Project
 
@@ -19,7 +19,7 @@ Search endpoint that accepts various query parameters to filter, sort, and pagin
 
 ```python
 import openapi_client
-from openapi_client.models.search200_response import Search200Response
+from openapi_client.models.search_results import SearchResults
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Search200Response**](Search200Response.md)
+[**SearchResults**](SearchResults.md)
 
 ### Authorization
 

@@ -81,10 +81,10 @@ from openapi_client.models.reference_file import ReferenceFile
 from openapi_client.models.related_donor import RelatedDonor
 from openapi_client.models.rodent_donor import RodentDonor
 from openapi_client.models.sample_term import SampleTerm
-from openapi_client.models.search200_response import Search200Response
-from openapi_client.models.search200_response_facets_inner import Search200ResponseFacetsInner
-from openapi_client.models.search200_response_facets_inner_terms_inner import Search200ResponseFacetsInnerTermsInner
-from openapi_client.models.search200_response_graph_inner import Search200ResponseGraphInner
+from openapi_client.models.search_facet import SearchFacet
+from openapi_client.models.search_facet_term_value import SearchFacetTermValue
+from openapi_client.models.search_result_item import SearchResultItem
+from openapi_client.models.search_results import SearchResults
 from openapi_client.models.sequence_file import SequenceFile
 from openapi_client.models.signal_file import SignalFile
 from openapi_client.models.software import Software

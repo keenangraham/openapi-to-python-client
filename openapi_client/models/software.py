@@ -29,14 +29,14 @@ class Software(BaseModel):
     A software used for computational  analysis. For example, Bowtie2 alignment software.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    publication_identifiers: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
+    publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='5', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
-    aliases: Optional[Annotated[List[Annotated[str, Field(strict=True)]], Field(min_length=1)]] = Field(default=None, description="Lab specific identifiers to reference an object.")
+    aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
@@ -44,11 +44,11 @@ class Software(BaseModel):
     name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Unique name of the software package; a lowercase version of the title.")
     title: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The preferred viewable name of the software.")
     source_url: Optional[StrictStr] = Field(default=None, description="An external resource to the codebase.")
-    used_by: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="The component(s) of the IGVF consortium that utilize this software.")
+    used_by: Optional[List[StrictStr]] = Field(default=None, description="The component(s) of the IGVF consortium that utilize this software.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
-    versions: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="A list of versions that have been released for this software.")
+    versions: Optional[List[StrictStr]] = Field(default=None, description="A list of versions that have been released for this software.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "lab", "award", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "title", "source_url", "used_by", "@id", "@type", "summary", "versions"]
 
     @field_validator('status')

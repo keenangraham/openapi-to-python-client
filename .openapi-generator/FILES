@@ -54,10 +54,10 @@ docs/ReferenceFile.md
 docs/RelatedDonor.md
 docs/RodentDonor.md
 docs/SampleTerm.md
-docs/Search200Response.md
-docs/Search200ResponseFacetsInner.md
-docs/Search200ResponseFacetsInnerTermsInner.md
-docs/Search200ResponseGraphInner.md
+docs/SearchFacet.md
+docs/SearchFacetTermValue.md
+docs/SearchResultItem.md
+docs/SearchResults.md
 docs/SequenceFile.md
 docs/SignalFile.md
 docs/Software.md
@@ -130,10 +130,10 @@ openapi_client/models/reference_file.py
 openapi_client/models/related_donor.py
 openapi_client/models/rodent_donor.py
 openapi_client/models/sample_term.py
-openapi_client/models/search200_response.py
-openapi_client/models/search200_response_facets_inner.py
-openapi_client/models/search200_response_facets_inner_terms_inner.py
-openapi_client/models/search200_response_graph_inner.py
+openapi_client/models/search_facet.py
+openapi_client/models/search_facet_term_value.py
+openapi_client/models/search_result_item.py
+openapi_client/models/search_results.py
 openapi_client/models/sequence_file.py
 openapi_client/models/signal_file.py
 openapi_client/models/software.py
@@ -155,4 +155,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_search_facet_term_value.py
 tox.ini

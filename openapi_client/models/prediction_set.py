@@ -20,7 +20,7 @@ from typing import Any, List, Optional
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
-
+import logging
 PREDICTIONSET_ONE_OF_SCHEMAS = ["object"]
 
 class PredictionSet(BaseModel):
@@ -138,6 +138,6 @@ class PredictionSet(BaseModel):
 
     def to_str(self) -> str:
         """Returns the string representation of the actual instance"""
-        return pprint.pformat(self.model_dump())
+        return self.to_dict()
 
 
