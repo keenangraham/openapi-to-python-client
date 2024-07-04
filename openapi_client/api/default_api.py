@@ -16,8 +16,8 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
-from typing import Any, Dict, List, Optional, Union
+from pydantic import Field, StrictBool, StrictInt, StrictStr, field_validator
+from typing import Any, Dict, List, Optional
 from typing_extensions import Annotated
 from openapi_client.models.search_results import SearchResults
 
@@ -45,7 +45,7 @@ class DefaultApi:
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         debug: Annotated[Optional[StrictBool], Field(description="Enables debug mode for the search.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Specifies the format of the returned objects.")] = None,
         var_from: Annotated[Optional[StrictInt], Field(description="Starting index for pagination.")] = None,
@@ -77,7 +77,7 @@ class DefaultApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: float
+        :type limit: int
         :param debug: Enables debug mode for the search.
         :type debug: bool
         :param frame: Specifies the format of the returned objects.
@@ -152,7 +152,7 @@ class DefaultApi:
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         debug: Annotated[Optional[StrictBool], Field(description="Enables debug mode for the search.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Specifies the format of the returned objects.")] = None,
         var_from: Annotated[Optional[StrictInt], Field(description="Starting index for pagination.")] = None,
@@ -184,7 +184,7 @@ class DefaultApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: float
+        :type limit: int
         :param debug: Enables debug mode for the search.
         :type debug: bool
         :param frame: Specifies the format of the returned objects.
@@ -259,7 +259,7 @@ class DefaultApi:
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         debug: Annotated[Optional[StrictBool], Field(description="Enables debug mode for the search.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Specifies the format of the returned objects.")] = None,
         var_from: Annotated[Optional[StrictInt], Field(description="Starting index for pagination.")] = None,
@@ -291,7 +291,7 @@ class DefaultApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: float
+        :type limit: int
         :param debug: Enables debug mode for the search.
         :type debug: bool
         :param frame: Specifies the format of the returned objects.

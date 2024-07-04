@@ -54,7 +54,7 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "type": "number"
+              "type": "integer"
             },
             "description": "Maximum number of results to return. Use 'all' for all results."
           },

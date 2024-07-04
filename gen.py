@@ -126,7 +126,7 @@ def generate_openapi_spec(schemas):
         {
             "name": "limit",
             "in": "query",
-            "schema": {"type": "number"},
+            "schema": {"type": "integer"},
             "description": "Maximum number of results to return. Use 'all' for all results."
         },
         {
