@@ -288,7 +288,7 @@
                           }
                         ],
                         "discriminator": {
-                          "propertyName": "@type",
+                          "propertyName": "@id",
                           "mapping": {}
                         }
                       }

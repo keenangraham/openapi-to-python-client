@@ -34,7 +34,7 @@ def generate_openapi_spec(schemas):
                                                 "items": {
                                                     "oneOf": [],
                                                     "discriminator": {
-                                                        "propertyName": "@type",
+                                                        "propertyName": "@id",
                                                         "mapping": {}
                                                     },
                                                 }

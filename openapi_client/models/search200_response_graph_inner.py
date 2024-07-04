@@ -474,6 +474,265 @@ class Search200ResponseGraphInner(BaseModel):
         error_messages = []
         match = 0
 
+        # use oneOf discriminator to lookup the data type
+        _data = json.loads(json_str)
+        if "@type" in _data:
+            _data_type = _data.get('@type')[0]
+        else:
+            _data_type = json.loads(json_str).get("@id")
+        if not _data_type:
+            raise ValueError("Failed to lookup data type from the field `@id` in the input.")
+
+        # check if data type is `AccessKey`
+        if _data_type == "AccessKey":
+            instance.actual_instance = AccessKey.from_json(json_str)
+            return instance
+
+        # check if data type is `AlignmentFile`
+        if _data_type == "AlignmentFile":
+            instance.actual_instance = AlignmentFile.from_json(json_str)
+            return instance
+
+        # check if data type is `AnalysisSet`
+        if _data_type == "AnalysisSet":
+            instance.actual_instance = AnalysisSet.from_json(json_str)
+            return instance
+
+        # check if data type is `AnalysisStep`
+        if _data_type == "AnalysisStep":
+            instance.actual_instance = AnalysisStep.from_json(json_str)
+            return instance
+
+        # check if data type is `AssayTerm`
+        if _data_type == "AssayTerm":
+            instance.actual_instance = AssayTerm.from_json(json_str)
+            return instance
+
+        # check if data type is `AuxiliarySet`
+        if _data_type == "AuxiliarySet":
+            instance.actual_instance = AuxiliarySet.from_json(json_str)
+            return instance
+
+        # check if data type is `Award`
+        if _data_type == "Award":
+            instance.actual_instance = Award.from_json(json_str)
+            return instance
+
+        # check if data type is `Biomarker`
+        if _data_type == "Biomarker":
+            instance.actual_instance = Biomarker.from_json(json_str)
+            return instance
+
+        # check if data type is `ConfigurationFile`
+        if _data_type == "ConfigurationFile":
+            instance.actual_instance = ConfigurationFile.from_json(json_str)
+            return instance
+
+        # check if data type is `ConstructLibrarySet`
+        if _data_type == "ConstructLibrarySet":
+            instance.actual_instance = ConstructLibrarySet.from_json(json_str)
+            return instance
+
+        # check if data type is `CrisprModification`
+        if _data_type == "CrisprModification":
+            instance.actual_instance = CrisprModification.from_json(json_str)
+            return instance
+
+        # check if data type is `CuratedSet`
+        if _data_type == "CuratedSet":
+            instance.actual_instance = CuratedSet.from_json(json_str)
+            return instance
+
+        # check if data type is `Document`
+        if _data_type == "Document":
+            instance.actual_instance = Document.from_json(json_str)
+            return instance
+
+        # check if data type is `Gene`
+        if _data_type == "Gene":
+            instance.actual_instance = Gene.from_json(json_str)
+            return instance
+
+        # check if data type is `GenomeBrowserAnnotationFile`
+        if _data_type == "GenomeBrowserAnnotationFile":
+            instance.actual_instance = GenomeBrowserAnnotationFile.from_json(json_str)
+            return instance
+
+        # check if data type is `HumanDonor`
+        if _data_type == "HumanDonor":
+            instance.actual_instance = HumanDonor.from_json(json_str)
+            return instance
+
+        # check if data type is `Image`
+        if _data_type == "Image":
+            instance.actual_instance = Image.from_json(json_str)
+            return instance
+
+        # check if data type is `ImageFile`
+        if _data_type == "ImageFile":
+            instance.actual_instance = ImageFile.from_json(json_str)
+            return instance
+
+        # check if data type is `InVitroSystem`
+        if _data_type == "InVitroSystem":
+            instance.actual_instance = InVitroSystem.from_json(json_str)
+            return instance
+
+        # check if data type is `InstitutionalCertificate`
+        if _data_type == "InstitutionalCertificate":
+            instance.actual_instance = InstitutionalCertificate.from_json(json_str)
+            return instance
+
+        # check if data type is `Lab`
+        if _data_type == "Lab":
+            instance.actual_instance = Lab.from_json(json_str)
+            return instance
+
+        # check if data type is `MatrixFile`
+        if _data_type == "MatrixFile":
+            instance.actual_instance = MatrixFile.from_json(json_str)
+            return instance
+
+        # check if data type is `MeasurementSet`
+        if _data_type == "MeasurementSet":
+            instance.actual_instance = MeasurementSet.from_json(json_str)
+            return instance
+
+        # check if data type is `ModelFile`
+        if _data_type == "ModelFile":
+            instance.actual_instance = ModelFile.from_json(json_str)
+            return instance
+
+        # check if data type is `ModelSet`
+        if _data_type == "ModelSet":
+            instance.actual_instance = ModelSet.from_json(json_str)
+            return instance
+
+        # check if data type is `Modification`
+        if _data_type == "Modification":
+            instance.actual_instance = Modification.from_json(json_str)
+            return instance
+
+        # check if data type is `MultiplexedSample`
+        if _data_type == "MultiplexedSample":
+            instance.actual_instance = MultiplexedSample.from_json(json_str)
+            return instance
+
+        # check if data type is `OpenReadingFrame`
+        if _data_type == "OpenReadingFrame":
+            instance.actual_instance = OpenReadingFrame.from_json(json_str)
+            return instance
+
+        # check if data type is `Page`
+        if _data_type == "Page":
+            instance.actual_instance = Page.from_json(json_str)
+            return instance
+
+        # check if data type is `PhenotypeTerm`
+        if _data_type == "PhenotypeTerm":
+            instance.actual_instance = PhenotypeTerm.from_json(json_str)
+            return instance
+
+        # check if data type is `PhenotypicFeature`
+        if _data_type == "PhenotypicFeature":
+            instance.actual_instance = PhenotypicFeature.from_json(json_str)
+            return instance
+
+        # check if data type is `PlatformTerm`
+        if _data_type == "PlatformTerm":
+            instance.actual_instance = PlatformTerm.from_json(json_str)
+            return instance
+
+        # check if data type is `PredictionSet`
+        if _data_type == "PredictionSet":
+            instance.actual_instance = PredictionSet.from_json(json_str)
+            return instance
+
+        # check if data type is `PrimaryCell`
+        if _data_type == "PrimaryCell":
+            instance.actual_instance = PrimaryCell.from_json(json_str)
+            return instance
+
+        # check if data type is `Publication`
+        if _data_type == "Publication":
+            instance.actual_instance = Publication.from_json(json_str)
+            return instance
+
+        # check if data type is `ReferenceFile`
+        if _data_type == "ReferenceFile":
+            instance.actual_instance = ReferenceFile.from_json(json_str)
+            return instance
+
+        # check if data type is `RodentDonor`
+        if _data_type == "RodentDonor":
+            instance.actual_instance = RodentDonor.from_json(json_str)
+            return instance
+
+        # check if data type is `SampleTerm`
+        if _data_type == "SampleTerm":
+            instance.actual_instance = SampleTerm.from_json(json_str)
+            return instance
+
+        # check if data type is `SequenceFile`
+        if _data_type == "SequenceFile":
+            instance.actual_instance = SequenceFile.from_json(json_str)
+            return instance
+
+        # check if data type is `SignalFile`
+        if _data_type == "SignalFile":
+            instance.actual_instance = SignalFile.from_json(json_str)
+            return instance
+
+        # check if data type is `Software`
+        if _data_type == "Software":
+            instance.actual_instance = Software.from_json(json_str)
+            return instance
+
+        # check if data type is `SoftwareVersion`
+        if _data_type == "SoftwareVersion":
+            instance.actual_instance = SoftwareVersion.from_json(json_str)
+            return instance
+
+        # check if data type is `Source`
+        if _data_type == "Source":
+            instance.actual_instance = Source.from_json(json_str)
+            return instance
+
+        # check if data type is `TabularFile`
+        if _data_type == "TabularFile":
+            instance.actual_instance = TabularFile.from_json(json_str)
+            return instance
+
+        # check if data type is `TechnicalSample`
+        if _data_type == "TechnicalSample":
+            instance.actual_instance = TechnicalSample.from_json(json_str)
+            return instance
+
+        # check if data type is `Tissue`
+        if _data_type == "Tissue":
+            instance.actual_instance = Tissue.from_json(json_str)
+            return instance
+
+        # check if data type is `Treatment`
+        if _data_type == "Treatment":
+            instance.actual_instance = Treatment.from_json(json_str)
+            return instance
+
+        # check if data type is `User`
+        if _data_type == "User":
+            instance.actual_instance = User.from_json(json_str)
+            return instance
+
+        # check if data type is `WholeOrganism`
+        if _data_type == "WholeOrganism":
+            instance.actual_instance = WholeOrganism.from_json(json_str)
+            return instance
+
+        # check if data type is `Workflow`
+        if _data_type == "Workflow":
+            instance.actual_instance = Workflow.from_json(json_str)
+            return instance
+
         # deserialize data into AccessKey
         try:
             instance.actual_instance = AccessKey.from_json(json_str)
