@@ -159,5 +159,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_no_results_response.py
 tox.ini
