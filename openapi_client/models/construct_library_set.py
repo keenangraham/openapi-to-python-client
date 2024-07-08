@@ -71,16 +71,17 @@ class ConstructLibrarySet(BaseModel):
     average_insert_size: Optional[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]] = Field(default=None, description="The average size of the inserts cloned into vectors in the library.")
     lower_bound_insert_size: Optional[StrictInt] = Field(default=None, description="Lower bound of the size of the inserts cloned in vectors in the library.")
     upper_bound_insert_size: Optional[StrictInt] = Field(default=None, description="Upper bound of the size of the inserts cloned in vectors in the library.")
+    targeton: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="An identifier in plain text for the specific targeton in an editing template library. The associated gene must be listed in the small_scale_gene_list property.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = None
     files: Optional[List[Any]] = Field(default=None, description="The files associated with this file set.")
     control_for: Optional[List[Any]] = Field(default=None, description="The file sets for which this file set is a control.")
     submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
-    input_file_set_for: Optional[List[Any]] = Field(default=None, description="The Analysis Sets that use this File Set as an input.")
+    input_file_set_for: Optional[List[Any]] = Field(default=None, description="The file sets that use this file set as an input.")
     applied_to_samples: Optional[List[Any]] = Field(default=None, description="The samples that link to this construct library set.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["small_scale_loci_list", "large_scale_loci_list", "small_scale_gene_list", "large_scale_gene_list", "release_timestamp", "publication_identifiers", "documents", "sources", "lot_id", "product_id", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "file_set_type", "scope", "selection_criteria", "integrated_content_files", "associated_phenotypes", "orf_list", "exon", "tile", "guide_type", "tiling_modality", "average_guide_coverage", "lower_bound_guide_coverage", "upper_bound_guide_coverage", "average_insert_size", "lower_bound_insert_size", "upper_bound_insert_size", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "applied_to_samples"]
+    __properties: ClassVar[List[str]] = ["small_scale_loci_list", "large_scale_loci_list", "small_scale_gene_list", "large_scale_gene_list", "release_timestamp", "publication_identifiers", "documents", "sources", "lot_id", "product_id", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "file_set_type", "scope", "selection_criteria", "integrated_content_files", "associated_phenotypes", "orf_list", "exon", "tile", "guide_type", "tiling_modality", "average_guide_coverage", "lower_bound_guide_coverage", "upper_bound_guide_coverage", "average_insert_size", "lower_bound_insert_size", "upper_bound_insert_size", "targeton", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "applied_to_samples"]
 
     @field_validator('lot_id')
     def lot_id_validate_regular_expression(cls, value):
@@ -179,8 +180,8 @@ class ConstructLibrarySet(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['guide library', 'reporter library', 'expression vector library']):
-            raise ValueError("must be one of enum values ('guide library', 'reporter library', 'expression vector library')")
+        if value not in set(['guide library', 'reporter library', 'expression vector library', 'editing template library']):
+            raise ValueError("must be one of enum values ('guide library', 'reporter library', 'expression vector library', 'editing template library')")
         return value
 
     @field_validator('scope')
@@ -189,8 +190,8 @@ class ConstructLibrarySet(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['tile', 'exon', 'genes', 'loci', 'genome-wide', 'interactors']):
-            raise ValueError("must be one of enum values ('tile', 'exon', 'genes', 'loci', 'genome-wide', 'interactors')")
+        if value not in set(['tile', 'exon', 'genes', 'loci', 'genome-wide', 'interactors', 'alleles', 'targeton']):
+            raise ValueError("must be one of enum values ('tile', 'exon', 'genes', 'loci', 'genome-wide', 'interactors', 'alleles', 'targeton')")
         return value
 
     @field_validator('selection_criteria')
@@ -232,6 +233,16 @@ class ConstructLibrarySet(BaseModel):
 
         if value not in set(['peak tiling', 'full tiling', 'sparse peaks']):
             raise ValueError("must be one of enum values ('peak tiling', 'full tiling', 'sparse peaks')")
+        return value
+
+    @field_validator('targeton')
+    def targeton_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value
 
     model_config = ConfigDict(
@@ -343,6 +354,7 @@ class ConstructLibrarySet(BaseModel):
             "average_insert_size": obj.get("average_insert_size"),
             "lower_bound_insert_size": obj.get("lower_bound_insert_size"),
             "upper_bound_insert_size": obj.get("upper_bound_insert_size"),
+            "targeton": obj.get("targeton"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),

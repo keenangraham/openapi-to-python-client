@@ -36,7 +36,7 @@ def generate_openapi_spec(schemas):
                                                     "title": "SearchResultItem",
                                                     "oneOf": [],
                                                     "discriminator": {
-                                                        "propertyName": "@id",
+                                                        "propertyName": "@type",
                                                         "mapping": {}
                                                     },
                                                 }
@@ -79,8 +79,18 @@ def generate_openapi_spec(schemas):
             }
         },
         "components": {
-            "schemas": {}
-        }
+            "schemas": {},
+            "securitySchemes": {
+                "basicAuth": {
+                    "type": "http",
+                    "scheme": "basic"
+                }
+            }
+        },
+        "security": [
+            {},
+            {"basicAuth": []}
+        ]
     }
 
     RESERVED_KEYS = [

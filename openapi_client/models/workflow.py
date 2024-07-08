@@ -50,11 +50,12 @@ class Workflow(BaseModel):
     source_url: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="An external resource to the code base of the workflow in github.")
     workflow_repositories: Optional[List[StrictStr]] = Field(default=None, description="Resources hosting the workflow.")
     standards_page: Optional[StrictStr] = Field(default=None, description="A link to a page describing the standards for this workflow.")
+    workflow_version: Optional[Annotated[int, Field(strict=True, ge=1)]] = Field(default=None, description="The version of this workflow.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
     analysis_steps: Optional[List[Any]] = Field(default=None, description="The analysis steps which are part of this workflow.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "source_url", "workflow_repositories", "standards_page", "@id", "@type", "summary", "analysis_steps"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "source_url", "workflow_repositories", "standards_page", "workflow_version", "@id", "@type", "summary", "analysis_steps"]
 
     @field_validator('collections')
     def collections_validate_enum(cls, value):
@@ -220,6 +221,7 @@ class Workflow(BaseModel):
             "source_url": obj.get("source_url"),
             "workflow_repositories": obj.get("workflow_repositories"),
             "standards_page": obj.get("standards_page"),
+            "workflow_version": obj.get("workflow_version"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),

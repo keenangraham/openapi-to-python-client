@@ -58,7 +58,7 @@ class CuratedSet(BaseModel):
     files: Optional[List[Any]] = Field(default=None, description="The files associated with this file set.")
     control_for: Optional[List[Any]] = Field(default=None, description="The file sets for which this file set is a control.")
     submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
-    input_file_set_for: Optional[List[Any]] = Field(default=None, description="The Analysis Sets that use this File Set as an input.")
+    input_file_set_for: Optional[List[Any]] = Field(default=None, description="The file sets that use this file set as an input.")
     assemblies: Optional[List[StrictStr]] = Field(default=None, description="The genome assemblies to which the referencing files in the file set are utilizing (e.g., GRCh38).")
     transcriptome_annotations: Optional[List[StrictStr]] = Field(default=None, description="The annotation versions of the reference resource.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "taxa", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "url", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "assemblies", "transcriptome_annotations"]
@@ -150,8 +150,8 @@ class CuratedSet(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['barcodes', 'elements', 'external data for catalog', 'genome', 'genes', 'guide RNAs', 'transcriptome', 'variants']):
-            raise ValueError("must be one of enum values ('barcodes', 'elements', 'external data for catalog', 'genome', 'genes', 'guide RNAs', 'transcriptome', 'variants')")
+        if value not in set(['barcodes', 'editing templates', 'elements', 'external data for catalog', 'genome', 'genes', 'guide RNAs', 'transcriptome', 'variants']):
+            raise ValueError("must be one of enum values ('barcodes', 'editing templates', 'elements', 'external data for catalog', 'genome', 'genes', 'guide RNAs', 'transcriptome', 'variants')")
         return value
 
     model_config = ConfigDict(

@@ -49,7 +49,8 @@ class Biomarker(BaseModel):
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
     name_quantification: Optional[StrictStr] = Field(default=None, description="A concatenation of the name and quantification of the biomarker.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "status", "lab", "award", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "classification", "quantification", "synonyms", "gene", "@id", "@type", "summary", "name_quantification"]
+    biomarker_for: Optional[List[Any]] = Field(default=None, description="The samples which have been confirmed to have this biomarker.")
+    __properties: ClassVar[List[str]] = ["release_timestamp", "status", "lab", "award", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "classification", "quantification", "synonyms", "gene", "@id", "@type", "summary", "name_quantification", "biomarker_for"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -192,7 +193,8 @@ class Biomarker(BaseModel):
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),
-            "name_quantification": obj.get("name_quantification")
+            "name_quantification": obj.get("name_quantification"),
+            "biomarker_for": obj.get("biomarker_for")
         })
         return _obj
 

@@ -43,7 +43,7 @@ Name | Type | Description | Notes
 **files** | **List[object]** | The files associated with this file set. | [optional] 
 **control_for** | **List[object]** | The file sets for which this file set is a control. | [optional] 
 **submitted_files_timestamp** | **datetime** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
-**input_file_set_for** | **List[object]** | The Analysis Sets that use this File Set as an input. | [optional] 
+**input_file_set_for** | **List[object]** | The file sets that use this file set as an input. | [optional] 
 **related_multiome_datasets** | **List[str]** | Related datasets included in the multiome experiment this measurement set is a part of. | [optional] 
 
 ## Example

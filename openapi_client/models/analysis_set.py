@@ -28,6 +28,7 @@ class AnalysisSet(BaseModel):
     """
     A file set for analyses. Analysis sets represent the results of a computational analysis of raw genomic data or other analyses.
     """ # noqa: E501
+    input_file_sets: Optional[List[StrictStr]] = Field(default=None, description="The file set(s) required for this analysis.")
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
@@ -50,16 +51,15 @@ class AnalysisSet(BaseModel):
     samples: Optional[List[StrictStr]] = Field(default=None, description="The sample(s) associated with this file set.")
     donors: Optional[List[StrictStr]] = Field(default=None, description="The donors of the samples associated with this analysis set.")
     file_set_type: Optional[StrictStr] = Field(default=None, description="The level of this analysis set. An intermediate analysis cannot be interpreted on its own and is part of a principal analysis. A principal analysis is the core analysis for an experimental design, the results of which can be interpretable on their own.")
-    input_file_sets: Optional[List[StrictStr]] = Field(default=None, description="The file set(s) required for this analysis.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = None
     files: Optional[List[Any]] = Field(default=None, description="The files associated with this file set.")
     control_for: Optional[List[Any]] = Field(default=None, description="The file sets for which this file set is a control.")
     submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
-    input_file_set_for: Optional[List[Any]] = Field(default=None, description="The Analysis Sets that use this File Set as an input.")
+    input_file_set_for: Optional[List[Any]] = Field(default=None, description="The file sets that use this file set as an input.")
     assay_titles: Optional[List[StrictStr]] = Field(default=None, description="Title(s) of assays that produced data analyzed in the analysis set.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "input_file_sets", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "assay_titles"]
+    __properties: ClassVar[List[str]] = ["input_file_sets", "release_timestamp", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "assay_titles"]
 
     @field_validator('collections')
     def collections_validate_enum(cls, value):
@@ -193,6 +193,7 @@ class AnalysisSet(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "input_file_sets": obj.get("input_file_sets"),
             "release_timestamp": obj.get("release_timestamp"),
             "publication_identifiers": obj.get("publication_identifiers"),
             "documents": obj.get("documents"),
@@ -215,7 +216,6 @@ class AnalysisSet(BaseModel):
             "samples": obj.get("samples"),
             "donors": obj.get("donors"),
             "file_set_type": obj.get("file_set_type"),
-            "input_file_sets": obj.get("input_file_sets"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),

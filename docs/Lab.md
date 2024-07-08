@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **institute_label** | **str** | An abbreviation for the institute the lab is associated with. | [optional] [default to '']
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** | A summary of the lab. | [optional] 
 **title** | **str** |  | [optional] 
 
 ## Example

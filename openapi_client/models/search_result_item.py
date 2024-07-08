@@ -21,6 +21,7 @@ from openapi_client.models.access_key import AccessKey
 from openapi_client.models.alignment_file import AlignmentFile
 from openapi_client.models.analysis_set import AnalysisSet
 from openapi_client.models.analysis_step import AnalysisStep
+from openapi_client.models.analysis_step_version import AnalysisStepVersion
 from openapi_client.models.assay_term import AssayTerm
 from openapi_client.models.auxiliary_set import AuxiliarySet
 from openapi_client.models.award import Award
@@ -71,7 +72,7 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 import logging
-SEARCHRESULTITEM_ONE_OF_SCHEMAS = ["AccessKey", "AlignmentFile", "AnalysisSet", "AnalysisStep", "AssayTerm", "AuxiliarySet", "Award", "Biomarker", "ConfigurationFile", "ConstructLibrarySet", "CrisprModification", "CuratedSet", "Document", "Gene", "GenomeBrowserAnnotationFile", "HumanDonor", "Image", "ImageFile", "InVitroSystem", "InstitutionalCertificate", "Lab", "MatrixFile", "MeasurementSet", "ModelFile", "ModelSet", "Modification", "MultiplexedSample", "OpenReadingFrame", "Page", "PhenotypeTerm", "PhenotypicFeature", "PlatformTerm", "PredictionSet", "PrimaryCell", "Publication", "ReferenceFile", "RodentDonor", "SampleTerm", "SequenceFile", "SignalFile", "Software", "SoftwareVersion", "Source", "TabularFile", "TechnicalSample", "Tissue", "Treatment", "User", "WholeOrganism", "Workflow"]
+SEARCHRESULTITEM_ONE_OF_SCHEMAS = ["AccessKey", "AlignmentFile", "AnalysisSet", "AnalysisStep", "AnalysisStepVersion", "AssayTerm", "AuxiliarySet", "Award", "Biomarker", "ConfigurationFile", "ConstructLibrarySet", "CrisprModification", "CuratedSet", "Document", "Gene", "GenomeBrowserAnnotationFile", "HumanDonor", "Image", "ImageFile", "InVitroSystem", "InstitutionalCertificate", "Lab", "MatrixFile", "MeasurementSet", "ModelFile", "ModelSet", "Modification", "MultiplexedSample", "OpenReadingFrame", "Page", "PhenotypeTerm", "PhenotypicFeature", "PlatformTerm", "PredictionSet", "PrimaryCell", "Publication", "ReferenceFile", "RodentDonor", "SampleTerm", "SequenceFile", "SignalFile", "Software", "SoftwareVersion", "Source", "TabularFile", "TechnicalSample", "Tissue", "Treatment", "User", "WholeOrganism", "Workflow"]
 
 class SearchResultItem(BaseModel):
     """
@@ -81,104 +82,106 @@ class SearchResultItem(BaseModel):
     oneof_schema_1_validator: Optional[AccessKey] = None
     # data type: AnalysisStep
     oneof_schema_2_validator: Optional[AnalysisStep] = None
+    # data type: AnalysisStepVersion
+    oneof_schema_3_validator: Optional[AnalysisStepVersion] = None
     # data type: Award
-    oneof_schema_3_validator: Optional[Award] = None
+    oneof_schema_4_validator: Optional[Award] = None
     # data type: Biomarker
-    oneof_schema_4_validator: Optional[Biomarker] = None
+    oneof_schema_5_validator: Optional[Biomarker] = None
     # data type: Document
-    oneof_schema_5_validator: Optional[Document] = None
+    oneof_schema_6_validator: Optional[Document] = None
     # data type: HumanDonor
-    oneof_schema_6_validator: Optional[HumanDonor] = None
+    oneof_schema_7_validator: Optional[HumanDonor] = None
     # data type: RodentDonor
-    oneof_schema_7_validator: Optional[RodentDonor] = None
+    oneof_schema_8_validator: Optional[RodentDonor] = None
     # data type: AlignmentFile
-    oneof_schema_8_validator: Optional[AlignmentFile] = None
+    oneof_schema_9_validator: Optional[AlignmentFile] = None
     # data type: ConfigurationFile
-    oneof_schema_9_validator: Optional[ConfigurationFile] = None
+    oneof_schema_10_validator: Optional[ConfigurationFile] = None
     # data type: GenomeBrowserAnnotationFile
-    oneof_schema_10_validator: Optional[GenomeBrowserAnnotationFile] = None
+    oneof_schema_11_validator: Optional[GenomeBrowserAnnotationFile] = None
     # data type: ImageFile
-    oneof_schema_11_validator: Optional[ImageFile] = None
+    oneof_schema_12_validator: Optional[ImageFile] = None
     # data type: MatrixFile
-    oneof_schema_12_validator: Optional[MatrixFile] = None
+    oneof_schema_13_validator: Optional[MatrixFile] = None
     # data type: ModelFile
-    oneof_schema_13_validator: Optional[ModelFile] = None
+    oneof_schema_14_validator: Optional[ModelFile] = None
     # data type: ReferenceFile
-    oneof_schema_14_validator: Optional[ReferenceFile] = None
+    oneof_schema_15_validator: Optional[ReferenceFile] = None
     # data type: SequenceFile
-    oneof_schema_15_validator: Optional[SequenceFile] = None
+    oneof_schema_16_validator: Optional[SequenceFile] = None
     # data type: SignalFile
-    oneof_schema_16_validator: Optional[SignalFile] = None
+    oneof_schema_17_validator: Optional[SignalFile] = None
     # data type: TabularFile
-    oneof_schema_17_validator: Optional[TabularFile] = None
+    oneof_schema_18_validator: Optional[TabularFile] = None
     # data type: AnalysisSet
-    oneof_schema_18_validator: Optional[AnalysisSet] = None
+    oneof_schema_19_validator: Optional[AnalysisSet] = None
     # data type: AuxiliarySet
-    oneof_schema_19_validator: Optional[AuxiliarySet] = None
+    oneof_schema_20_validator: Optional[AuxiliarySet] = None
     # data type: ConstructLibrarySet
-    oneof_schema_20_validator: Optional[ConstructLibrarySet] = None
+    oneof_schema_21_validator: Optional[ConstructLibrarySet] = None
     # data type: CuratedSet
-    oneof_schema_21_validator: Optional[CuratedSet] = None
+    oneof_schema_22_validator: Optional[CuratedSet] = None
     # data type: MeasurementSet
-    oneof_schema_22_validator: Optional[MeasurementSet] = None
+    oneof_schema_23_validator: Optional[MeasurementSet] = None
     # data type: ModelSet
-    oneof_schema_23_validator: Optional[ModelSet] = None
+    oneof_schema_24_validator: Optional[ModelSet] = None
     # data type: PredictionSet
-    oneof_schema_24_validator: Optional[PredictionSet] = None
+    oneof_schema_25_validator: Optional[PredictionSet] = None
     # data type: Gene
-    oneof_schema_25_validator: Optional[Gene] = None
+    oneof_schema_26_validator: Optional[Gene] = None
     # data type: Image
-    oneof_schema_26_validator: Optional[Image] = None
+    oneof_schema_27_validator: Optional[Image] = None
     # data type: InstitutionalCertificate
-    oneof_schema_27_validator: Optional[InstitutionalCertificate] = None
+    oneof_schema_28_validator: Optional[InstitutionalCertificate] = None
     # data type: Lab
-    oneof_schema_28_validator: Optional[Lab] = None
+    oneof_schema_29_validator: Optional[Lab] = None
     # data type: CrisprModification
-    oneof_schema_29_validator: Optional[CrisprModification] = None
+    oneof_schema_30_validator: Optional[CrisprModification] = None
     # data type: Modification
-    oneof_schema_30_validator: Optional[Modification] = None
+    oneof_schema_31_validator: Optional[Modification] = None
     # data type: AssayTerm
-    oneof_schema_31_validator: Optional[AssayTerm] = None
+    oneof_schema_32_validator: Optional[AssayTerm] = None
     # data type: PhenotypeTerm
-    oneof_schema_32_validator: Optional[PhenotypeTerm] = None
+    oneof_schema_33_validator: Optional[PhenotypeTerm] = None
     # data type: PlatformTerm
-    oneof_schema_33_validator: Optional[PlatformTerm] = None
+    oneof_schema_34_validator: Optional[PlatformTerm] = None
     # data type: SampleTerm
-    oneof_schema_34_validator: Optional[SampleTerm] = None
+    oneof_schema_35_validator: Optional[SampleTerm] = None
     # data type: OpenReadingFrame
-    oneof_schema_35_validator: Optional[OpenReadingFrame] = None
+    oneof_schema_36_validator: Optional[OpenReadingFrame] = None
     # data type: Page
-    oneof_schema_36_validator: Optional[Page] = None
+    oneof_schema_37_validator: Optional[Page] = None
     # data type: PhenotypicFeature
-    oneof_schema_37_validator: Optional[PhenotypicFeature] = None
+    oneof_schema_38_validator: Optional[PhenotypicFeature] = None
     # data type: Publication
-    oneof_schema_38_validator: Optional[Publication] = None
+    oneof_schema_39_validator: Optional[Publication] = None
     # data type: InVitroSystem
-    oneof_schema_39_validator: Optional[InVitroSystem] = None
+    oneof_schema_40_validator: Optional[InVitroSystem] = None
     # data type: MultiplexedSample
-    oneof_schema_40_validator: Optional[MultiplexedSample] = None
+    oneof_schema_41_validator: Optional[MultiplexedSample] = None
     # data type: PrimaryCell
-    oneof_schema_41_validator: Optional[PrimaryCell] = None
+    oneof_schema_42_validator: Optional[PrimaryCell] = None
     # data type: TechnicalSample
-    oneof_schema_42_validator: Optional[TechnicalSample] = None
+    oneof_schema_43_validator: Optional[TechnicalSample] = None
     # data type: Tissue
-    oneof_schema_43_validator: Optional[Tissue] = None
+    oneof_schema_44_validator: Optional[Tissue] = None
     # data type: WholeOrganism
-    oneof_schema_44_validator: Optional[WholeOrganism] = None
+    oneof_schema_45_validator: Optional[WholeOrganism] = None
     # data type: Software
-    oneof_schema_45_validator: Optional[Software] = None
+    oneof_schema_46_validator: Optional[Software] = None
     # data type: SoftwareVersion
-    oneof_schema_46_validator: Optional[SoftwareVersion] = None
+    oneof_schema_47_validator: Optional[SoftwareVersion] = None
     # data type: Source
-    oneof_schema_47_validator: Optional[Source] = None
+    oneof_schema_48_validator: Optional[Source] = None
     # data type: Treatment
-    oneof_schema_48_validator: Optional[Treatment] = None
+    oneof_schema_49_validator: Optional[Treatment] = None
     # data type: User
-    oneof_schema_49_validator: Optional[User] = None
+    oneof_schema_50_validator: Optional[User] = None
     # data type: Workflow
-    oneof_schema_50_validator: Optional[Workflow] = None
-    actual_instance: Optional[Union[AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow]] = None
-    one_of_schemas: Set[str] = { "AccessKey", "AlignmentFile", "AnalysisSet", "AnalysisStep", "AssayTerm", "AuxiliarySet", "Award", "Biomarker", "ConfigurationFile", "ConstructLibrarySet", "CrisprModification", "CuratedSet", "Document", "Gene", "GenomeBrowserAnnotationFile", "HumanDonor", "Image", "ImageFile", "InVitroSystem", "InstitutionalCertificate", "Lab", "MatrixFile", "MeasurementSet", "ModelFile", "ModelSet", "Modification", "MultiplexedSample", "OpenReadingFrame", "Page", "PhenotypeTerm", "PhenotypicFeature", "PlatformTerm", "PredictionSet", "PrimaryCell", "Publication", "ReferenceFile", "RodentDonor", "SampleTerm", "SequenceFile", "SignalFile", "Software", "SoftwareVersion", "Source", "TabularFile", "TechnicalSample", "Tissue", "Treatment", "User", "WholeOrganism", "Workflow" }
+    oneof_schema_51_validator: Optional[Workflow] = None
+    actual_instance: Optional[Union[AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow]] = None
+    one_of_schemas: Set[str] = { "AccessKey", "AlignmentFile", "AnalysisSet", "AnalysisStep", "AnalysisStepVersion", "AssayTerm", "AuxiliarySet", "Award", "Biomarker", "ConfigurationFile", "ConstructLibrarySet", "CrisprModification", "CuratedSet", "Document", "Gene", "GenomeBrowserAnnotationFile", "HumanDonor", "Image", "ImageFile", "InVitroSystem", "InstitutionalCertificate", "Lab", "MatrixFile", "MeasurementSet", "ModelFile", "ModelSet", "Modification", "MultiplexedSample", "OpenReadingFrame", "Page", "PhenotypeTerm", "PhenotypicFeature", "PlatformTerm", "PredictionSet", "PrimaryCell", "Publication", "ReferenceFile", "RodentDonor", "SampleTerm", "SequenceFile", "SignalFile", "Software", "SoftwareVersion", "Source", "TabularFile", "TechnicalSample", "Tissue", "Treatment", "User", "WholeOrganism", "Workflow" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -212,6 +215,11 @@ class SearchResultItem(BaseModel):
         # validate data type: AnalysisStep
         if not isinstance(v, AnalysisStep):
             error_messages.append(f"Error! Input type `{type(v)}` is not `AnalysisStep`")
+        else:
+            match += 1
+        # validate data type: AnalysisStepVersion
+        if not isinstance(v, AnalysisStepVersion):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `AnalysisStepVersion`")
         else:
             match += 1
         # validate data type: Award
@@ -456,10 +464,10 @@ class SearchResultItem(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in SearchResultItem with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in SearchResultItem with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in SearchResultItem with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in SearchResultItem with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -502,6 +510,11 @@ class SearchResultItem(BaseModel):
         # check if data type is `AnalysisStep`
         if _data_type == "AnalysisStep":
             instance.actual_instance = AnalysisStep.from_json(json_str)
+            return instance
+
+        # check if data type is `AnalysisStepVersion`
+        if _data_type == "AnalysisStepVersion":
+            instance.actual_instance = AnalysisStepVersion.from_json(json_str)
             return instance
 
         # check if data type is `AssayTerm`
@@ -743,6 +756,12 @@ class SearchResultItem(BaseModel):
         # deserialize data into AnalysisStep
         try:
             instance.actual_instance = AnalysisStep.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into AnalysisStepVersion
+        try:
+            instance.actual_instance = AnalysisStepVersion.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -1037,10 +1056,10 @@ class SearchResultItem(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into SearchResultItem with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into SearchResultItem with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into SearchResultItem with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into SearchResultItem with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -1054,7 +1073,7 @@ class SearchResultItem(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

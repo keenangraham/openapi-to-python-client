@@ -46,6 +46,7 @@ class MatrixFile(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
+    analysis_step_version: Optional[StrictStr] = Field(default=None, description="The analysis step version of the file.")
     content_md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The MD5sum of the uncompressed file.")
     content_type: Optional[StrictStr] = Field(default=None, description="The type of content in the file.")
     dbxrefs: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects.")
@@ -64,13 +65,14 @@ class MatrixFile(BaseModel):
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
     integrated_in: Optional[List[Any]] = Field(default=None, description="Construct library set(s) that this file was used for in insert design.")
+    input_file_for: Optional[List[Any]] = Field(default=None, description="The files which are derived from this file.")
     gene_list_for: Optional[List[Any]] = Field(default=None, description="File Set(s) that this file is a gene list for.")
     loci_list_for: Optional[List[Any]] = Field(default=None, description="File Set(s) that this file is a loci list for.")
     href: Optional[StrictStr] = Field(default=None, description="The download path to obtain file.")
     s3_uri: Optional[StrictStr] = Field(default=None, description="The S3 URI of public file object.")
     upload_credentials: Optional[Dict[str, Any]] = Field(default=None, description="The upload credentials for S3 to submit the file content.")
     content_summary: Optional[StrictStr] = Field(default=None, description="A summary of the data in the matrix file.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "reference_files", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "content_md5sum", "content_type", "dbxrefs", "derived_from", "file_format", "file_format_specifications", "file_set", "file_size", "md5sum", "submitted_file_name", "upload_status", "validation_error_detail", "dimension1", "dimension2", "@id", "@type", "summary", "integrated_in", "gene_list_for", "loci_list_for", "href", "s3_uri", "upload_credentials", "content_summary"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "reference_files", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "analysis_step_version", "content_md5sum", "content_type", "dbxrefs", "derived_from", "file_format", "file_format_specifications", "file_set", "file_size", "md5sum", "submitted_file_name", "upload_status", "validation_error_detail", "dimension1", "dimension2", "@id", "@type", "summary", "integrated_in", "input_file_for", "gene_list_for", "loci_list_for", "href", "s3_uri", "upload_credentials", "content_summary"]
 
     @field_validator('collections')
     def collections_validate_enum(cls, value):
@@ -282,6 +284,7 @@ class MatrixFile(BaseModel):
             "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
+            "analysis_step_version": obj.get("analysis_step_version"),
             "content_md5sum": obj.get("content_md5sum"),
             "content_type": obj.get("content_type"),
             "dbxrefs": obj.get("dbxrefs"),
@@ -300,6 +303,7 @@ class MatrixFile(BaseModel):
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),
             "integrated_in": obj.get("integrated_in"),
+            "input_file_for": obj.get("input_file_for"),
             "gene_list_for": obj.get("gene_list_for"),
             "loci_list_for": obj.get("loci_list_for"),
             "href": obj.get("href"),

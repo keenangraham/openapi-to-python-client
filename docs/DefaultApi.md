@@ -16,6 +16,7 @@ Search endpoint that accepts various query parameters to filter, sort, and pagin
 
 ### Example
 
+* Basic Authentication (basicAuth):
 
 ```python
 import openapi_client
@@ -29,6 +30,16 @@ configuration = openapi_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = openapi_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -80,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 

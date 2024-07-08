@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **component** | **str** | The project component the award is associated with. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** | A summary of the award. | [optional] 
 
 ## Example
 

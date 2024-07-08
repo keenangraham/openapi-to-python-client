@@ -24,14 +24,15 @@ from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Source(BaseModel):
+class AnalysisStepVersion(BaseModel):
     """
-    A vendor or a lab that provides samples for study.
+    A step version in a computational analysis workflow.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='1', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -39,12 +40,12 @@ class Source(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    title: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The complete name of the originating lab or vendor.")
-    name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A short unique name for the source.")
+    analysis_step: Optional[StrictStr] = Field(default=None, description="The analysis step which this version belongs to.")
+    software_versions: Optional[List[StrictStr]] = Field(default=None, description="The software versions used in this analysis step versions.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the source.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "status", "url", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "title", "name", "@id", "@type", "summary"]
+    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
+    __properties: ClassVar[List[str]] = ["release_timestamp", "status", "lab", "award", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "analysis_step", "software_versions", "@id", "@type", "summary"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -96,26 +97,6 @@ class Source(BaseModel):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value
 
-    @field_validator('title')
-    def title_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
-            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
-        return value
-
-    @field_validator('name')
-    def name_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r"^[a-z0-9\-]+$", value):
-            raise ValueError(r"must validate the regular expression /^[a-z0-9\-]+$/")
-        return value
-
     model_config = ConfigDict(
         populate_by_name=True,
         validate_assignment=True,
@@ -134,7 +115,7 @@ class Source(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Source from a JSON string"""
+        """Create an instance of AnalysisStepVersion from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -159,7 +140,7 @@ class Source(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Source from a dict"""
+        """Create an instance of AnalysisStepVersion from a dict"""
         if obj is None:
             return None
 
@@ -169,8 +150,9 @@ class Source(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "url": obj.get("url"),
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '4',
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
+            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '1',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
@@ -178,8 +160,8 @@ class Source(BaseModel):
             "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
-            "title": obj.get("title"),
-            "name": obj.get("name"),
+            "analysis_step": obj.get("analysis_step"),
+            "software_versions": obj.get("software_versions"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary")

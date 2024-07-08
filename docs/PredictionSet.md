@@ -6,6 +6,7 @@ A file set of computational predictions. Prediction sets contain results of anal
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**input_file_sets** | **List[str]** | The file set(s) required for this prediction set. | [optional] 
 **small_scale_loci_list** | **List[object]** | A small scale (&lt;&#x3D;100) list of specific chromosomal region(s). | [optional] 
 **large_scale_loci_list** | **str** | A large scale list (&gt;100) of specific chromosomal regions. | [optional] 
 **small_scale_gene_list** | **List[str]** | The specific, small scale list of (&lt;&#x3D;100) gene(s) this prediction set targets. | [optional] 
@@ -40,7 +41,7 @@ Name | Type | Description | Notes
 **files** | **List[object]** | The files associated with this file set. | [optional] 
 **control_for** | **List[object]** | The file sets for which this file set is a control. | [optional] 
 **submitted_files_timestamp** | **datetime** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
-**input_file_set_for** | **List[object]** | The Analysis Sets that use this File Set as an input. | [optional] 
+**input_file_set_for** | **List[object]** | The file sets that use this file set as an input. | [optional] 
 
 ## Example
 

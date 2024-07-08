@@ -61,6 +61,16 @@ configuration = openapi_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = openapi_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
 
 
 # Enter a context with an instance of the API client
@@ -104,6 +114,7 @@ Class | Method | HTTP request | Description
  - [AlignmentFile](docs/AlignmentFile.md)
  - [AnalysisSet](docs/AnalysisSet.md)
  - [AnalysisStep](docs/AnalysisStep.md)
+ - [AnalysisStepVersion](docs/AnalysisStepVersion.md)
  - [AssayTerm](docs/AssayTerm.md)
  - [Attachment](docs/Attachment.md)
  - [Attachment1](docs/Attachment1.md)
@@ -172,7 +183,12 @@ Class | Method | HTTP request | Description
 <a id="documentation-for-authorization"></a>
 ## Documentation For Authorization
 
-Endpoints do not require authorization.
+
+Authentication schemes defined for the API:
+<a id="basicAuth"></a>
+### basicAuth
+
+- **Type**: HTTP basic authentication
 
 
 ## Author

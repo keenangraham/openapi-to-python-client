@@ -47,13 +47,14 @@ Name | Type | Description | Notes
 **average_insert_size** | **float** | The average size of the inserts cloned into vectors in the library. | [optional] 
 **lower_bound_insert_size** | **int** | Lower bound of the size of the inserts cloned in vectors in the library. | [optional] 
 **upper_bound_insert_size** | **int** | Upper bound of the size of the inserts cloned in vectors in the library. | [optional] 
+**targeton** | **str** | An identifier in plain text for the specific targeton in an editing template library. The associated gene must be listed in the small_scale_gene_list property. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **files** | **List[object]** | The files associated with this file set. | [optional] 
 **control_for** | **List[object]** | The file sets for which this file set is a control. | [optional] 
 **submitted_files_timestamp** | **datetime** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
-**input_file_set_for** | **List[object]** | The Analysis Sets that use this File Set as an input. | [optional] 
+**input_file_set_for** | **List[object]** | The file sets that use this file set as an input. | [optional] 
 **applied_to_samples** | **List[object]** | The samples that link to this construct library set. | [optional] 
 
 ## Example

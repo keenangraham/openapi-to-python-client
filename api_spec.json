@@ -145,6 +145,9 @@
                             "$ref": "#/components/schemas/AnalysisStep"
                           },
                           {
+                            "$ref": "#/components/schemas/AnalysisStepVersion"
+                          },
+                          {
                             "$ref": "#/components/schemas/Award"
                           },
                           {
@@ -902,6 +905,128 @@
           }
         }
       },
+      "AnalysisStepVersion": {
+        "title": "Analysis Step Version",
+        "description": "A step version in a computational analysis workflow.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "release_timestamp": {
+            "title": "Release Timestamp",
+            "description": "The date the object was released.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string",
+            "description": "The status of the metadata object.",
+            "default": "in progress",
+            "enum": [
+              "archived",
+              "deleted",
+              "in progress",
+              "released"
+            ]
+          },
+          "lab": {
+            "title": "Lab",
+            "description": "Lab associated with the submission.",
+            "type": "string"
+          },
+          "award": {
+            "title": "Award",
+            "description": "Grant associated with the submission.",
+            "type": "string"
+          },
+          "schema_version": {
+            "title": "Schema Version",
+            "description": "The version of the JSON schema that the server uses to validate the object.",
+            "type": "string",
+            "pattern": "^\\d+(\\.\\d+)*$",
+            "default": "1"
+          },
+          "uuid": {
+            "title": "UUID",
+            "description": "The unique identifier associated with every object.",
+            "type": "string",
+            "format": "uuid"
+          },
+          "notes": {
+            "title": "Notes",
+            "description": "DACC internal notes.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "aliases": {
+            "title": "Aliases",
+            "description": "Lab specific identifiers to reference an object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Lab Alias",
+              "description": "A lab specific identifier to reference an object.",
+              "type": "string",
+              "pattern": "^(?:j-michael-cherry|ali-mortazavi|barbara-wold|lior-pachter|grant-macgregor|kim-green|mark-craven|qiongshi-lu|audrey-gasch|robert-steiner|jesse-engreitz|thomas-quertermous|anshul-kundaje|michael-bassik|will-greenleaf|marlene-rabinovitch|lars-steinmetz|jay-shendure|nadav-ahituv|martin-kircher|danwei-huangfu|michael-beer|anna-katerina-hadjantonakis|christina-leslie|alexander-rudensky|laura-donlin|hannah-carter|bing-ren|kyle-gaulton|maike-sander|charles-gersbach|gregory-crawford|tim-reddy|ansuman-satpathy|andrew-allen|gary-hon|nikhil-munshi|maria-chahrour|w-lee-kraus|lea-starita|doug-fowler|luca-pinello|guillaume-lettre|benhur-lee|daniel-bauer|richard-sherwood|benjamin-kleinstiver|marc-vidal|david-hill|frederick-roth|mikko-taipale|anne-carpenter|hyejung-won|karen-mohlke|michael-love|jason-buenrostro|bradley-bernstein|hilary-finucane|chongyuan-luo|noah-zaitlen|kathrin-plath|roy-wollman|jason-ernst|zhiping-weng|manuel-garber|xihong-lin|alan-boyle|ryan-mills|jie-liu|maureen-sartor|joshua-welch|stephen-montgomery|alexis-battle|livnat-jerby|jonathan-pritchard|predrag-radivojac|sean-mooney|harinder-singh|nidhi-sahni|jishnu-das|hao-wu|sreeram-kannan|hongjun-song|alkes-price|soumya-raychaudhuri|shamil-sunyaev|len-pennacchio|axel-visel|jill-moore|ting-wang|feng-yue|buenrostro-bernstein|igvf|igvf-dacc):[a-zA-Z\\d_$.+!*,()'-]+(?:\\s[a-zA-Z\\d_$.+!*,()'-]+)*$"
+            }
+          },
+          "creation_timestamp": {
+            "title": "Creation Timestamp",
+            "description": "The date the object was created.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "submitted_by": {
+            "title": "Submitted By",
+            "description": "The user who submitted the object.",
+            "type": "string"
+          },
+          "submitter_comment": {
+            "title": "Submitter Comment",
+            "description": "Additional information specified by the submitter to be displayed as a comment on the portal.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "description": {
+            "title": "Description",
+            "description": "A plain text description of the object.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "analysis_step": {
+            "title": "Analysis Step",
+            "description": "The analysis step which this version belongs to.",
+            "type": "string"
+          },
+          "software_versions": {
+            "title": "Software Versions",
+            "description": "The software versions used in this analysis step versions.",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "title": "Software Versions",
+              "description": "The software versions used in this analysis step versions.",
+              "type": "string"
+            }
+          },
+          "@id": {
+            "title": "ID",
+            "type": "string"
+          },
+          "@type": {
+            "title": "Type",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "summary": {
+            "title": "Summary",
+            "type": "string",
+            "description": "A summary of the object."
+          }
+        }
+      },
       "Award": {
         "title": "Grant",
         "description": "A grant providing financial support for a scientific project. For example, HG012076 supporting \"Single-cell Mapping Center for Human Regulatory Elements and Gene Activity.\"",
@@ -1066,7 +1191,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the award."
           }
         }
       },
@@ -1219,6 +1344,15 @@
             "title": "Name and Quantification",
             "type": "string",
             "description": "A concatenation of the name and quantification of the biomarker."
+          },
+          "biomarker_for": {
+            "title": "Biomarker For",
+            "description": "The samples which have been confirmed to have this biomarker.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Biomarker For"
+            }
           }
         }
       },
@@ -2233,6 +2367,11 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the file.",
+            "type": "string"
+          },
           "content_md5sum": {
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
@@ -2364,6 +2503,15 @@
             "uniqueItems": true,
             "items": {
               "title": "Integrated In"
+            }
+          },
+          "input_file_for": {
+            "title": "Input File For",
+            "description": "The files which are derived from this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Input File For"
             }
           },
           "gene_list_for": {
@@ -2552,6 +2700,11 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the file.",
+            "type": "string"
+          },
           "content_md5sum": {
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
@@ -2682,6 +2835,15 @@
             "uniqueItems": true,
             "items": {
               "title": "Integrated In"
+            }
+          },
+          "input_file_for": {
+            "title": "Input File For",
+            "description": "The files which are derived from this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Input File For"
             }
           },
           "gene_list_for": {
@@ -2908,6 +3070,11 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the file.",
+            "type": "string"
+          },
           "content_md5sum": {
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
@@ -3029,6 +3196,15 @@
             "uniqueItems": true,
             "items": {
               "title": "Integrated In"
+            }
+          },
+          "input_file_for": {
+            "title": "Input File For",
+            "description": "The files which are derived from this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Input File For"
             }
           },
           "gene_list_for": {
@@ -3212,6 +3388,11 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the file.",
+            "type": "string"
+          },
           "content_md5sum": {
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
@@ -3345,6 +3526,15 @@
             "uniqueItems": true,
             "items": {
               "title": "Integrated In"
+            }
+          },
+          "input_file_for": {
+            "title": "Input File For",
+            "description": "The files which are derived from this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Input File For"
             }
           },
           "gene_list_for": {
@@ -3539,6 +3729,11 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the file.",
+            "type": "string"
+          },
           "content_md5sum": {
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
@@ -3695,6 +3890,15 @@
             "uniqueItems": true,
             "items": {
               "title": "Integrated In"
+            }
+          },
+          "input_file_for": {
+            "title": "Input File For",
+            "description": "The files which are derived from this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Input File For"
             }
           },
           "gene_list_for": {
@@ -3893,6 +4097,11 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the file.",
+            "type": "string"
+          },
           "content_md5sum": {
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
@@ -4018,6 +4227,15 @@
             "uniqueItems": true,
             "items": {
               "title": "Integrated In"
+            }
+          },
+          "input_file_for": {
+            "title": "Input File For",
+            "description": "The files which are derived from this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Input File For"
             }
           },
           "gene_list_for": {
@@ -4256,6 +4474,11 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the file.",
+            "type": "string"
+          },
           "content_md5sum": {
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
@@ -4482,6 +4705,15 @@
               "title": "Integrated In"
             }
           },
+          "input_file_for": {
+            "title": "Input File For",
+            "description": "The files which are derived from this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Input File For"
+            }
+          },
           "gene_list_for": {
             "title": "Gene List For",
             "description": "File Set(s) that this file is a gene list for.",
@@ -4672,6 +4904,11 @@
             "description": "A plain text description of the object.",
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the file.",
+            "type": "string"
           },
           "content_md5sum": {
             "title": "Content MD5sum",
@@ -4906,6 +5143,15 @@
               "title": "Integrated In"
             }
           },
+          "input_file_for": {
+            "title": "Input File For",
+            "description": "The files which are derived from this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Input File For"
+            }
+          },
           "gene_list_for": {
             "title": "Gene List For",
             "description": "File Set(s) that this file is a gene list for.",
@@ -5134,6 +5380,11 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the file.",
+            "type": "string"
+          },
           "content_md5sum": {
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
@@ -5287,6 +5538,15 @@
             "uniqueItems": true,
             "items": {
               "title": "Integrated In"
+            }
+          },
+          "input_file_for": {
+            "title": "Input File For",
+            "description": "The files which are derived from this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Input File For"
             }
           },
           "gene_list_for": {
@@ -5528,6 +5788,11 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
+          "analysis_step_version": {
+            "title": "Analysis Step Version",
+            "description": "The analysis step version of the file.",
+            "type": "string"
+          },
           "content_md5sum": {
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
@@ -5545,6 +5810,7 @@
               "barcode to sample mapping",
               "differential gene expression quantifications",
               "differential transcript expression quantifications",
+              "editing templates",
               "element quantifications",
               "elements reference",
               "fold change over control",
@@ -5555,6 +5821,7 @@
               "protein to protein interaction score",
               "sample sort parameters",
               "sequence barcodes",
+              "variants",
               "variant effects",
               "variant to element mapping"
             ]
@@ -5670,6 +5937,15 @@
               "title": "Integrated In"
             }
           },
+          "input_file_for": {
+            "title": "Input File For",
+            "description": "The files which are derived from this file.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Input File For"
+            }
+          },
           "gene_list_for": {
             "title": "Gene List For",
             "description": "File Set(s) that this file is a gene list for.",
@@ -5711,6 +5987,17 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "input_file_sets": {
+            "title": "Input File Sets",
+            "description": "The file set(s) required for this analysis.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Input File Set",
+              "description": "A file set that serves as input for this file set.",
+              "type": "string"
+            }
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -5906,17 +6193,6 @@
               "principal analysis"
             ]
           },
-          "input_file_sets": {
-            "title": "Input File Sets",
-            "description": "The file set(s) required for this analysis.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Input File Set",
-              "description": "A file set required for this analysis.",
-              "type": "string"
-            }
-          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -5958,7 +6234,7 @@
           },
           "input_file_set_for": {
             "title": "Input File Set For",
-            "description": "The Analysis Sets that use this File Set as an input.",
+            "description": "The file sets that use this file set as an input.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -6236,7 +6512,7 @@
           },
           "input_file_set_for": {
             "title": "Input File Set For",
-            "description": "The Analysis Sets that use this File Set as an input.",
+            "description": "The file sets that use this file set as an input.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -6508,7 +6784,8 @@
             "enum": [
               "guide library",
               "reporter library",
-              "expression vector library"
+              "expression vector library",
+              "editing template library"
             ]
           },
           "scope": {
@@ -6521,7 +6798,9 @@
               "genes",
               "loci",
               "genome-wide",
-              "interactors"
+              "interactors",
+              "alleles",
+              "targeton"
             ]
           },
           "selection_criteria": {
@@ -6663,6 +6942,12 @@
             "description": "Upper bound of the size of the inserts cloned in vectors in the library.",
             "type": "integer"
           },
+          "targeton": {
+            "title": "Targeton",
+            "description": "An identifier in plain text for the specific targeton in an editing template library. The associated gene must be listed in the small_scale_gene_list property.",
+            "type": "string",
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -6704,7 +6989,7 @@
           },
           "input_file_set_for": {
             "title": "Input File Set For",
-            "description": "The Analysis Sets that use this File Set as an input.",
+            "description": "The file sets that use this file set as an input.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -6935,6 +7220,7 @@
             "type": "string",
             "enum": [
               "barcodes",
+              "editing templates",
               "elements",
               "external data for catalog",
               "genome",
@@ -6985,7 +7271,7 @@
           },
           "input_file_set_for": {
             "title": "Input File Set For",
-            "description": "The Analysis Sets that use this File Set as an input.",
+            "description": "The file sets that use this file set as an input.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -7377,7 +7663,7 @@
           },
           "input_file_set_for": {
             "title": "Input File Set For",
-            "description": "The Analysis Sets that use this File Set as an input.",
+            "description": "The file sets that use this file set as an input.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -7417,6 +7703,17 @@
         },
         "additionalProperties": false,
         "properties": {
+          "input_file_sets": {
+            "title": "Input File Sets",
+            "description": "The file set(s) that served as inputs for the derivation of this model set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Input File Set",
+              "description": "A file set that serves as input for this file set.",
+              "type": "string"
+            }
+          },
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
@@ -7649,17 +7946,6 @@
               ]
             }
           },
-          "input_file_sets": {
-            "title": "Input File Sets",
-            "description": "The file set(s) that served as inputs for the derivation of this model set.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "title": "Input File Set",
-              "description": "A file set that serves as input for the derivation of this model set.",
-              "type": "string"
-            }
-          },
           "model_zoo_location": {
             "title": "Model Zoo Location",
             "description": "The link to the model on the Kipoi repository.",
@@ -7713,7 +7999,7 @@
           },
           "input_file_set_for": {
             "title": "Input File Set For",
-            "description": "The Analysis Sets that use this File Set as an input.",
+            "description": "The file sets that use this file set as an input.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -7746,6 +8032,17 @@
         ],
         "additionalProperties": false,
         "properties": {
+          "input_file_sets": {
+            "title": "Input File Sets",
+            "description": "The file set(s) required for this prediction set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Input File Set",
+              "description": "A file set that serves as input for this file set.",
+              "type": "string"
+            }
+          },
           "small_scale_loci_list": {
             "title": "Small Scale Loci List",
             "description": "A small scale (<=100) list of specific chromosomal region(s).",
@@ -8067,7 +8364,7 @@
           },
           "input_file_set_for": {
             "title": "Input File Set For",
-            "description": "The Analysis Sets that use this File Set as an input.",
+            "description": "The file sets that use this file set as an input.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -8747,7 +9044,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the lab."
           },
           "title": {
             "title": "Title",
@@ -8977,6 +9274,15 @@
           "summary": {
             "title": "Summary",
             "type": "string"
+          },
+          "biosamples_modified": {
+            "title": "Biosamples Modified",
+            "description": "The biosamples which have been modified with this modification.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Biosamples Modified"
+            }
           }
         }
       },
@@ -9202,6 +9508,15 @@
           "summary": {
             "title": "Summary",
             "type": "string"
+          },
+          "biosamples_modified": {
+            "title": "Biosamples Modified",
+            "description": "The biosamples which have been modified with this modification.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Biosamples Modified"
+            }
           }
         }
       },
@@ -14331,7 +14646,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the source."
           }
         }
       },
@@ -14587,6 +14902,15 @@
           "summary": {
             "title": "Summary",
             "type": "string"
+          },
+          "biosamples_treated": {
+            "title": "Biosamples Treated",
+            "description": "The samples which have been treated using this treatment.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Biosamples Treated"
+            }
           }
         }
       },
@@ -14952,6 +15276,12 @@
             "description": "A link to a page describing the standards for this workflow.",
             "type": "string"
           },
+          "workflow_version": {
+            "title": "Workflow Version",
+            "description": "The version of this workflow.",
+            "type": "integer",
+            "minimum": 1
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -14979,6 +15309,18 @@
           }
         }
       }
+    },
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
     }
-  }
+  },
+  "security": [
+    {},
+    {
+      "basicAuth": []
+    }
+  ]
 }

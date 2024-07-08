@@ -44,7 +44,7 @@ class Lab(BaseModel):
     institute_label: Optional[Annotated[str, Field(strict=True)]] = Field(default='', description="An abbreviation for the institute the lab is associated with.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
+    summary: Optional[StrictStr] = Field(default=None, description="A summary of the lab.")
     title: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["status", "url", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "pi", "awards", "institute_label", "@id", "@type", "summary", "title"]
 

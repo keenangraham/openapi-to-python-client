@@ -35,6 +35,7 @@ from openapi_client.models.access_key import AccessKey
 from openapi_client.models.alignment_file import AlignmentFile
 from openapi_client.models.analysis_set import AnalysisSet
 from openapi_client.models.analysis_step import AnalysisStep
+from openapi_client.models.analysis_step_version import AnalysisStepVersion
 from openapi_client.models.assay_term import AssayTerm
 from openapi_client.models.attachment import Attachment
 from openapi_client.models.attachment1 import Attachment1

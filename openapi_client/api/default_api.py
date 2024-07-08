@@ -451,6 +451,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'basicAuth'
         ]
 
         return self.api_client.param_serialize(

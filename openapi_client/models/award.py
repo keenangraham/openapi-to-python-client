@@ -49,7 +49,7 @@ class Award(BaseModel):
     component: Optional[StrictStr] = Field(default=None, description="The project component the award is associated with.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
+    summary: Optional[StrictStr] = Field(default=None, description="A summary of the award.")
     __properties: ClassVar[List[str]] = ["status", "url", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "title", "name", "start_date", "end_date", "pis", "contact_pi", "project", "viewing_group", "component", "@id", "@type", "summary"]
 
     @field_validator('status')

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **name** | **str** | A short unique name for the source. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** | A summary of the source. | [optional] 
 
 ## Example
 
