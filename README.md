@@ -146,6 +146,7 @@ Class | Method | HTTP request | Description
  - [ModelSet](docs/ModelSet.md)
  - [Modification](docs/Modification.md)
  - [MultiplexedSample](docs/MultiplexedSample.md)
+ - [NoResultsResponse](docs/NoResultsResponse.md)
  - [OpenReadingFrame](docs/OpenReadingFrame.md)
  - [OutputContentType](docs/OutputContentType.md)
  - [Page](docs/Page.md)

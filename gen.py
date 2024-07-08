@@ -72,6 +72,16 @@ def generate_openapi_spec(schemas):
                                         }
                                     }
                                 }
+                            },
+                        },
+                        "404": {
+                            "description": "No results found",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/NoResultsResponse"
+                                    }
+                                }
                             }
                         }
                     }
@@ -79,13 +89,32 @@ def generate_openapi_spec(schemas):
             }
         },
         "components": {
-            "schemas": {},
+            "schemas": {
+                "NoResultsResponse": {
+                    "type": "object",
+                    "properties": {
+                        "@context": {"type": "string"},
+                        "@graph": {"type": "array"},
+                        "@id": {"type": "string"},
+                        "@type": {"type": "array", "items": {"type": "string"}},
+                        "clear_filters": {"type": "string"},
+                        "columns": {"type": "object"},
+                        "facet_groups": {"type": "array"},
+                        "facets": {"type": "array"},
+                        "filters": {"type": "array"},
+                        "notification": {"type": "string"},
+                        "sort": {"type": "object"},
+                        "title": {"type": "string"},
+                        "total": {"type": "integer"}
+                    }
+                }
+            },
             "securitySchemes": {
                 "basicAuth": {
                     "type": "http",
                     "scheme": "basic"
                 }
-            }
+            },
         },
         "security": [
             {},

@@ -40,6 +40,7 @@ docs/ModelFile.md
 docs/ModelSet.md
 docs/Modification.md
 docs/MultiplexedSample.md
+docs/NoResultsResponse.md
 docs/OpenReadingFrame.md
 docs/OutputContentType.md
 docs/Page.md
@@ -117,6 +118,7 @@ openapi_client/models/model_file.py
 openapi_client/models/model_set.py
 openapi_client/models/modification.py
 openapi_client/models/multiplexed_sample.py
+openapi_client/models/no_results_response.py
 openapi_client/models/open_reading_frame.py
 openapi_client/models/output_content_type.py
 openapi_client/models/page.py
@@ -157,4 +159,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_no_results_response.py
 tox.ini

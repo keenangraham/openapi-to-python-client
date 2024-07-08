@@ -488,9 +488,9 @@ class SearchResultItem(BaseModel):
             _data_type = _data.get('@type')[0]
             logging.info(f"Found {_data_type} when deserializing")
         else:
-            _data_type = json.loads(json_str).get("@id")
+            _data_type = json.loads(json_str).get("@type")
         if not _data_type:
-            raise ValueError("Failed to lookup data type from the field `@id` in the input.")
+            raise ValueError("Failed to lookup data type from the field `@type` in the input.")
 
         # check if data type is `AccessKey`
         if _data_type == "AccessKey":
