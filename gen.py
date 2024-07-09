@@ -213,7 +213,6 @@ def generate_openapi_spec(schemas):
         "description": "Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
         "style": "form",
         "explode": True,
-        "example": {"status": "released"}
     }
     openapi_spec["paths"]["/search"]["get"]["parameters"].append(field_filter_note)
 

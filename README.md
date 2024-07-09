@@ -86,7 +86,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. (optional)
     config = 'config_example' # str | Configuration options for the search. (optional)
     advanced_query = 'advanced_query_example' # str | Advanced query string for complex searches. (optional)
-    field_filters = {'key': {"status":"released"}} # object | Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
+    field_filters = None # object | Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
 
     try:
         # Search for objects in the IGVF Project

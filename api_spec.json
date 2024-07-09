@@ -115,10 +115,7 @@
             },
             "description": "Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
-            "explode": true,
-            "example": {
-              "status": "released"
-            }
+            "explode": true
           }
         ],
         "responses": {
