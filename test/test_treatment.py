@@ -75,7 +75,10 @@ class TestTreatment(unittest.TestCase):
                 type = [
                     ''
                     ],
-                summary = ''
+                summary = '',
+                biosamples_treated = [
+                    null
+                    ]
             )
         else:
             return Treatment(

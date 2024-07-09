@@ -9,11 +9,6 @@
       "url": "https://api.data.igvf.org"
     }
   ],
-  "tags": [
-    {
-      "name": "IGVF"
-    }
-  ],
   "paths": {
     "/search": {
       "get": {

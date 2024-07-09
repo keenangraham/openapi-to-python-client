@@ -73,6 +73,10 @@ class TestSearchResultItem(unittest.TestCase):
                     ''
                     ],
                 name = 'k',
+                analysis_step = '',
+                software_versions = [
+                    ''
+                    ],
                 url = '',
                 start_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
                 end_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
@@ -92,14 +96,10 @@ class TestSearchResultItem(unittest.TestCase):
                     ''
                     ],
                 name_quantification = '',
-                attachment = openapi_client.models.attachment.Attachment(
-                    download = '', 
-                    href = '', 
-                    type = 'application/json', 
-                    md5sum = '', 
-                    size = 0, 
-                    width = 0, 
-                    height = 0, ),
+                biomarker_for = [
+                    null
+                    ],
+                attachment = { },
                 document_type = 'cell fate change protocol',
                 characterization_method = 'FACS',
                 urls = [
@@ -129,9 +129,7 @@ class TestSearchResultItem(unittest.TestCase):
                     ],
                 virtual = True,
                 related_donors = [
-                    openapi_client.models.related_donor.Related Donor(
-                        donor = '', 
-                        relationship_type = 'aunt', )
+                    { }
                     ],
                 ethnicities = [
                     'African American'
@@ -156,6 +154,7 @@ class TestSearchResultItem(unittest.TestCase):
                 reference_files = [
                     ''
                     ],
+                analysis_step_version = '',
                 content_md5sum = 'F325375E030FCCBA00917317C5747731',
                 content_type = 'barcode to element mapping',
                 derived_from = [
@@ -174,6 +173,9 @@ class TestSearchResultItem(unittest.TestCase):
                 redacted = True,
                 filtered = True,
                 integrated_in = [
+                    null
+                    ],
+                input_file_for = [
                     null
                     ],
                 gene_list_for = [
@@ -212,6 +214,9 @@ class TestSearchResultItem(unittest.TestCase):
                 strand_specificity = 'plus',
                 normalized = True,
                 start_view_position = 'chrM:80728',
+                input_file_sets = [
+                    ''
+                    ],
                 samples = [
                     ''
                     ],
@@ -219,9 +224,6 @@ class TestSearchResultItem(unittest.TestCase):
                     ''
                     ],
                 file_set_type = 'pathogenicity',
-                input_file_sets = [
-                    ''
-                    ],
                 files = [
                     null
                     ],
@@ -240,11 +242,7 @@ class TestSearchResultItem(unittest.TestCase):
                     null
                     ],
                 small_scale_loci_list = [
-                    openapi_client.models.locus.Locus(
-                        assembly = 'GRCh38', 
-                        chromosome = 'chrH', 
-                        start = 1, 
-                        end = 1, )
+                    { }
                     ],
                 large_scale_loci_list = '',
                 small_scale_gene_list = [
@@ -265,10 +263,7 @@ class TestSearchResultItem(unittest.TestCase):
                     ''
                     ],
                 exon = 'k',
-                tile = openapi_client.models.tile.Tile(
-                    tile_id = 'k', 
-                    tile_start = 1, 
-                    tile_end = 1, ),
+                tile = { },
                 guide_type = 'sgRNA',
                 tiling_modality = 'peak tiling',
                 average_guide_coverage = 0,
@@ -277,6 +272,7 @@ class TestSearchResultItem(unittest.TestCase):
                 average_insert_size = 0,
                 lower_bound_insert_size = 56,
                 upper_bound_insert_size = 56,
+                targeton = 'k',
                 applied_to_samples = [
                     null
                     ],
@@ -315,11 +311,7 @@ class TestSearchResultItem(unittest.TestCase):
                 geneid = 'ENSEIOTGSWWMEJTCMOSLLNYULG62255008507',
                 symbol = '',
                 locations = [
-                    openapi_client.models.gene_location.Gene Location(
-                        assembly = 'GRCh38', 
-                        chromosome = 'chrC', 
-                        start = 0, 
-                        end = 0, )
+                    { }
                     ],
                 version_number = '80728',
                 geneid_with_version = '',
@@ -344,6 +336,9 @@ class TestSearchResultItem(unittest.TestCase):
                 activated = True,
                 activating_agent_term_id = 'CHEBI:4807288',
                 activating_agent_term_name = '',
+                biosamples_modified = [
+                    null
+                    ],
                 term_id = 'UBERON:80728',
                 term_name = 'WAa6w77ikCX*cKCmv|`K/V+w>\\uu!',
                 deprecated_ntr_terms = [
@@ -390,14 +385,7 @@ class TestSearchResultItem(unittest.TestCase):
                 pct_coverage_protein = 0,
                 pct_coverage_orf = 0,
                 parent = '',
-                layout = openapi_client.models.page_layout.Page Layout(
-                    blocks = [
-                        openapi_client.models.page_layout_components.Page Layout Components(
-                            @id = '', 
-                            @type = '', 
-                            body = '', 
-                            direction = '', )
-                        ], ),
+                layout = { },
                 canonical_uri = '',
                 feature = '',
                 quantity = 1.337,
@@ -525,6 +513,9 @@ class TestSearchResultItem(unittest.TestCase):
                 treatment_term_id = 'NTR:80728',
                 treatment_term_name = '',
                 depletion = True,
+                biosamples_treated = [
+                    null
+                    ],
                 email = 'l@CuMd&B<a6*$hGd.dx&p\\^}pPEUP0U%_(e!_`LQ'.!OIh\\*QJ)o\"*P0uJ.VB^PPGXOPg67I*b}1\\t`Q71?|7E',
                 first_name = '',
                 last_name = '',
@@ -542,6 +533,7 @@ class TestSearchResultItem(unittest.TestCase):
                     ''
                     ],
                 standards_page = '',
+                workflow_version = 1,
                 analysis_steps = [
                     null
                     ]

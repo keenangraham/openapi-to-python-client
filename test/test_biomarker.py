@@ -61,7 +61,10 @@ class TestBiomarker(unittest.TestCase):
                     ''
                     ],
                 summary = '',
-                name_quantification = ''
+                name_quantification = '',
+                biomarker_for = [
+                    null
+                    ]
             )
         else:
             return Biomarker(

@@ -69,7 +69,10 @@ class TestCrisprModification(unittest.TestCase):
                 type = [
                     ''
                     ],
-                summary = ''
+                summary = '',
+                biosamples_modified = [
+                    null
+                    ]
             )
         else:
             return CrisprModification(

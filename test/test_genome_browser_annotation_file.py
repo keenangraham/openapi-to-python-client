@@ -63,6 +63,7 @@ class TestGenomeBrowserAnnotationFile(unittest.TestCase):
                 submitted_by = '',
                 submitter_comment = 'k',
                 description = 'k',
+                analysis_step_version = '',
                 content_md5sum = 'F325375E030FCCBA00917317C5747731',
                 content_type = 'peaks',
                 dbxrefs = [
@@ -87,6 +88,9 @@ class TestGenomeBrowserAnnotationFile(unittest.TestCase):
                     ],
                 summary = '',
                 integrated_in = [
+                    null
+                    ],
+                input_file_for = [
                     null
                     ],
                 gene_list_for = [

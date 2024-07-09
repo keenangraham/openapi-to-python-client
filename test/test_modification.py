@@ -69,7 +69,10 @@ class TestModification(unittest.TestCase):
                 type = [
                     ''
                     ],
-                summary = ''
+                summary = '',
+                biosamples_modified = [
+                    null
+                    ]
             )
         else:
             return Modification(

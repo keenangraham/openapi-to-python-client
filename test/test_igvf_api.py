@@ -14,14 +14,14 @@
 
 import unittest
 
-from openapi_client.api.default_api import DefaultApi
+from openapi_client.api.igvf_api import IgvfApi
 
 
-class TestDefaultApi(unittest.TestCase):
-    """DefaultApi unit test stubs"""
+class TestIgvfApi(unittest.TestCase):
+    """IgvfApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = DefaultApi()
+        self.api = IgvfApi()
 
     def tearDown(self) -> None:
         pass

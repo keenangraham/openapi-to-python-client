@@ -14,7 +14,6 @@ def generate_openapi_spec(schemas):
                 "url": "https://api.data.igvf.org"
             }
         ],
-        "tags": [{"name": "IGVF"}],
         "paths": {
             "/search": {
                 "get": {

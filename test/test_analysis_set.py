@@ -35,6 +35,9 @@ class TestAnalysisSet(unittest.TestCase):
         model = AnalysisSet()
         if include_optional:
             return AnalysisSet(
+                input_file_sets = [
+                    ''
+                    ],
                 release_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 publication_identifiers = [
                     'PMCID:PMC80728'
@@ -73,9 +76,6 @@ class TestAnalysisSet(unittest.TestCase):
                     ''
                     ],
                 file_set_type = 'intermediate analysis',
-                input_file_sets = [
-                    ''
-                    ],
                 id = '',
                 type = [
                     ''

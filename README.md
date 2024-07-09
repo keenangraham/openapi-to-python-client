@@ -76,7 +76,7 @@ configuration = openapi_client.Configuration(
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DefaultApi(api_client)
+    api_instance = openapi_client.IgvfApi(api_client)
     type = ['type_example'] # List[str] | Type of objects to return. Can be repeated for multiple types. (optional)
     var_field = ['var_field_example'] # List[str] | Fields to include in the response. Can be repeated for multiple fields. (optional)
     query = 'query_example' # str | Query string for searching. (optional)
@@ -92,10 +92,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     try:
         # Search for objects in the IGVF Project
         api_response = api_instance.search(type=type, var_field=var_field, query=query, limit=limit, debug=debug, frame=frame, var_from=var_from, sort=sort, config=config, advanced_query=advanced_query, field_filters=field_filters)
-        print("The response of DefaultApi->search:\n")
+        print("The response of IgvfApi->search:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DefaultApi->search: %s\n" % e)
+        print("Exception when calling IgvfApi->search: %s\n" % e)
 
 ```
 
@@ -105,7 +105,7 @@ All URIs are relative to *https://api.data.igvf.org*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**search**](docs/DefaultApi.md#search) | **GET** /search | Search for objects in the IGVF Project
+*IgvfApi* | [**search**](docs/IgvfApi.md#search) | **GET** /search | Search for objects in the IGVF Project
 
 
 ## Documentation For Models

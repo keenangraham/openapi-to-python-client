@@ -52,14 +52,7 @@ class TestPage(unittest.TestCase):
                 parent = '',
                 name = 'y',
                 title = '',
-                layout = openapi_client.models.page_layout.Page Layout(
-                    blocks = [
-                        openapi_client.models.page_layout_components.Page Layout Components(
-                            @id = '', 
-                            @type = '', 
-                            body = '', 
-                            direction = '', )
-                        ], ),
+                layout = { },
                 id = '',
                 type = [
                     ''

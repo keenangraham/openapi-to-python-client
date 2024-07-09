@@ -69,6 +69,7 @@ class TestWorkflow(unittest.TestCase):
                     ''
                     ],
                 standards_page = '',
+                workflow_version = 1,
                 id = '',
                 type = [
                     ''

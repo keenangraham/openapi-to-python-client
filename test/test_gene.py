@@ -59,11 +59,7 @@ class TestGene(unittest.TestCase):
                     'ENTREZ:9072888001528021798096225500850762068629339333975650685139102691291'
                     ],
                 locations = [
-                    openapi_client.models.gene_location.Gene Location(
-                        assembly = 'GRCh38', 
-                        chromosome = 'chrC', 
-                        start = 0, 
-                        end = 0, )
+                    { }
                     ],
                 version_number = '80728',
                 id = '',
