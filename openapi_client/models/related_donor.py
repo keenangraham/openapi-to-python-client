@@ -28,6 +28,7 @@ class RelatedDonor(BaseModel):
     """ # noqa: E501
     donor: StrictStr = Field(description="An identifier for the related donor.")
     relationship_type: StrictStr = Field(description="A descriptive term for the related donor’s relationship to this donor.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["donor", "relationship_type"]
 
     @field_validator('relationship_type')
@@ -67,8 +68,10 @@ class RelatedDonor(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -76,6 +79,11 @@ class RelatedDonor(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -91,6 +99,11 @@ class RelatedDonor(BaseModel):
             "donor": obj.get("donor"),
             "relationship_type": obj.get("relationship_type")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

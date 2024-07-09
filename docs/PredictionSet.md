@@ -7,7 +7,7 @@ A file set of computational predictions. Prediction sets contain results of anal
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **input_file_sets** | **List[str]** | The file set(s) required for this prediction set. | [optional] 
-**small_scale_loci_list** | **List[object]** | A small scale (&lt;&#x3D;100) list of specific chromosomal region(s). | [optional] 
+**small_scale_loci_list** | **List[Dict[str, object]]** | A small scale (&lt;&#x3D;100) list of specific chromosomal region(s). | [optional] 
 **large_scale_loci_list** | **str** | A large scale list (&gt;100) of specific chromosomal regions. | [optional] 
 **small_scale_gene_list** | **List[str]** | The specific, small scale list of (&lt;&#x3D;100) gene(s) this prediction set targets. | [optional] 
 **large_scale_gene_list** | **str** | The large scale list of (&gt;100 genes) this this prediction set targets. | [optional] 

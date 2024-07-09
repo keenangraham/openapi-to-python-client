@@ -54,6 +54,7 @@ class SampleTerm(BaseModel):
     cell_slims: Optional[List[StrictStr]] = Field(default=None, description="Cells associated with the sample term.")
     developmental_slims: Optional[List[StrictStr]] = Field(default=None, description="Developmental stages associated with the sample term.")
     system_slims: Optional[List[StrictStr]] = Field(default=None, description="Organ systems associated with the sample term.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["release_timestamp", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "term_id", "term_name", "deprecated_ntr_terms", "is_a", "dbxrefs", "@id", "@type", "summary", "name", "synonyms", "ancestors", "ontology", "organ_slims", "cell_slims", "developmental_slims", "system_slims"]
 
     @field_validator('status')
@@ -156,8 +157,10 @@ class SampleTerm(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -165,6 +168,11 @@ class SampleTerm(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -204,6 +212,11 @@ class SampleTerm(BaseModel):
             "developmental_slims": obj.get("developmental_slims"),
             "system_slims": obj.get("system_slims")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

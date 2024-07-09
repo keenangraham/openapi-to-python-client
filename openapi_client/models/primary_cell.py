@@ -94,6 +94,7 @@ class PrimaryCell(BaseModel):
     parts: Optional[List[Any]] = Field(default=None, description="The parts into which this sample has been divided.")
     pooled_in: Optional[List[Any]] = Field(default=None, description="The pooled samples in which this sample is included.")
     classifications: Optional[List[StrictStr]] = Field(default=None, description="The general category of this type of sample.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "taxa", "url", "sources", "lot_id", "product_id", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "lower_bound_age", "upper_bound_age", "age_units", "sample_terms", "disease_terms", "pooled_from", "part_of", "originated_from", "treatments", "donors", "biomarkers", "embryonic", "modifications", "cellular_sub_pool", "starting_amount", "starting_amount_units", "dbxrefs", "date_obtained", "sorted_from", "sorted_from_detail", "virtual", "construct_library_sets", "moi", "nucleic_acid_delivery", "time_post_library_delivery", "time_post_library_delivery_units", "protocols", "passage_number", "@id", "@type", "summary", "file_sets", "multiplexed_in", "sorted_fractions", "origin_of", "institutional_certificates", "sex", "age", "upper_bound_age_in_hours", "lower_bound_age_in_hours", "parts", "pooled_in", "classifications"]
 
     @field_validator('taxa')
@@ -297,8 +298,10 @@ class PrimaryCell(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -306,6 +309,11 @@ class PrimaryCell(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -385,6 +393,11 @@ class PrimaryCell(BaseModel):
             "pooled_in": obj.get("pooled_in"),
             "classifications": obj.get("classifications")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

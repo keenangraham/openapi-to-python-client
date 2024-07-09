@@ -55,7 +55,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. (optional)
     config = 'config_example' # str | Configuration options for the search. (optional)
     advanced_query = 'advanced_query_example' # str | Advanced query string for complex searches. (optional)
-    field_filters = None # object | Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
+    field_filters = {'key': {"status":"released"}} # Dict[str, object] | Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
 
     try:
         # Search for objects in the IGVF Project
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
  **sort** | [**List[str]**](str.md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. | [optional] 
  **config** | **str**| Configuration options for the search. | [optional] 
  **advanced_query** | **str**| Advanced query string for complex searches. | [optional] 
- **field_filters** | [**object**](.md)| Any field from any object type can be used as a filter. Use &#39;!&#x3D;&#39; for negation, &#39;*&#39; as a wildcard, and &#39;lt:&#39;, &#39;lte:&#39;, &#39;gt:&#39;, &#39;gte:&#39; for range queries on numeric fields. | [optional] 
+ **field_filters** | [**Dict[str, object]**](object.md)| Any field from any object type can be used as a filter. Use &#39;!&#x3D;&#39; for negation, &#39;*&#39; as a wildcard, and &#39;lt:&#39;, &#39;lte:&#39;, &#39;gt:&#39;, &#39;gte:&#39; for range queries on numeric fields. | [optional] 
 
 ### Return type
 

@@ -56,6 +56,7 @@ class Modification(BaseModel):
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = None
     biosamples_modified: Optional[List[Any]] = Field(default=None, description="The biosamples which have been modified with this modification.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["release_timestamp", "sources", "lot_id", "product_id", "documents", "status", "lab", "award", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "cas", "fused_domain", "modality", "tagged_protein", "cas_species", "activated", "activating_agent_term_id", "activating_agent_term_name", "@id", "@type", "summary", "biosamples_modified"]
 
     @field_validator('lot_id')
@@ -208,8 +209,10 @@ class Modification(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -217,6 +220,11 @@ class Modification(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -258,6 +266,11 @@ class Modification(BaseModel):
             "summary": obj.get("summary"),
             "biosamples_modified": obj.get("biosamples_modified")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

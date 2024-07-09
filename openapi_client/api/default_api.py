@@ -91,7 +91,7 @@ class DefaultApi:
         :param advanced_query: Advanced query string for complex searches.
         :type advanced_query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type field_filters: object
+        :type field_filters: Dict[str, object]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -199,7 +199,7 @@ class DefaultApi:
         :param advanced_query: Advanced query string for complex searches.
         :type advanced_query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type field_filters: object
+        :type field_filters: Dict[str, object]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -307,7 +307,7 @@ class DefaultApi:
         :param advanced_query: Advanced query string for complex searches.
         :type advanced_query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type field_filters: object
+        :type field_filters: Dict[str, object]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of

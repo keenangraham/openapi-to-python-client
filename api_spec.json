@@ -9,6 +9,11 @@
       "url": "https://api.data.igvf.org"
     }
   ],
+  "tags": [
+    {
+      "name": "IGVF"
+    }
+  ],
   "paths": {
     "/search": {
       "get": {
@@ -119,9 +124,15 @@
             "name": "field_filters",
             "in": "query",
             "schema": {
-              "type": "object"
+              "type": "object",
+              "additionalProperties": true,
+              "example": {
+                "status": "released"
+              }
             },
-            "description": "Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields."
+            "description": "Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {

@@ -76,6 +76,7 @@ class SignalFile(BaseModel):
     s3_uri: Optional[StrictStr] = Field(default=None, description="The S3 URI of public file object.")
     upload_credentials: Optional[Dict[str, Any]] = Field(default=None, description="The upload credentials for S3 to submit the file content.")
     content_summary: Optional[StrictStr] = Field(default=None, description="A summary of the data in the signal file.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["transcriptome_annotation", "assembly", "release_timestamp", "reference_files", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "analysis_step_version", "content_md5sum", "content_type", "dbxrefs", "derived_from", "file_format", "file_format_specifications", "file_set", "file_size", "md5sum", "submitted_file_name", "upload_status", "validation_error_detail", "strand_specificity", "filtered", "normalized", "start_view_position", "@id", "@type", "summary", "integrated_in", "input_file_for", "gene_list_for", "loci_list_for", "href", "s3_uri", "upload_credentials", "content_summary"]
 
     @field_validator('transcriptome_annotation')
@@ -269,8 +270,10 @@ class SignalFile(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -278,6 +281,11 @@ class SignalFile(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -339,6 +347,11 @@ class SignalFile(BaseModel):
             "upload_credentials": obj.get("upload_credentials"),
             "content_summary": obj.get("content_summary")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

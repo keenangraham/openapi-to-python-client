@@ -14,6 +14,7 @@ def generate_openapi_spec(schemas):
                 "url": "https://api.data.igvf.org"
             }
         ],
+        "tags": [{"name": "IGVF"}],
         "paths": {
             "/search": {
                 "get": {
@@ -215,8 +216,10 @@ def generate_openapi_spec(schemas):
     field_filter_note = {
         "name": "field_filters",
         "in": "query",
-        "schema": {"type": "object"},
-        "description": "Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields."
+        "schema": {"type": "object", "additionalProperties": True, "example": {"status": "released"}},
+        "description": "Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+        "style": "form",
+        "explode": True,
     }
     openapi_spec["paths"]["/search"]["get"]["parameters"].append(field_filter_note)
 

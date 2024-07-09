@@ -31,6 +31,7 @@ class GeneLocation(BaseModel):
     chromosome: Annotated[str, Field(strict=True)] = Field(description="The number (or letter) designation for the chromosome, e.g. chr1 or chrX")
     start: Annotated[int, Field(strict=True, ge=0)] = Field(description="The starting coordinate.")
     end: Annotated[int, Field(strict=True, ge=0)] = Field(description="The ending coordinate.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["assembly", "chromosome", "start", "end"]
 
     @field_validator('assembly')
@@ -77,8 +78,10 @@ class GeneLocation(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -86,6 +89,11 @@ class GeneLocation(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -103,6 +111,11 @@ class GeneLocation(BaseModel):
             "start": obj.get("start"),
             "end": obj.get("end")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

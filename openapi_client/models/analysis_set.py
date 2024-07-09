@@ -59,6 +59,7 @@ class AnalysisSet(BaseModel):
     submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
     input_file_set_for: Optional[List[Any]] = Field(default=None, description="The file sets that use this file set as an input.")
     assay_titles: Optional[List[StrictStr]] = Field(default=None, description="Title(s) of assays that produced data analyzed in the analysis set.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["input_file_sets", "release_timestamp", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "assay_titles"]
 
     @field_validator('collections')
@@ -172,8 +173,10 @@ class AnalysisSet(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -181,6 +184,11 @@ class AnalysisSet(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -225,6 +233,11 @@ class AnalysisSet(BaseModel):
             "input_file_set_for": obj.get("input_file_set_for"),
             "assay_titles": obj.get("assay_titles")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

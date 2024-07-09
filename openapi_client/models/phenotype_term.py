@@ -49,6 +49,7 @@ class PhenotypeTerm(BaseModel):
     synonyms: Optional[List[StrictStr]] = Field(default=None, description="Synonyms for the term that have been recorded in an ontology.")
     ancestors: Optional[List[StrictStr]] = Field(default=None, description="List of term names of ontological terms that precede the given term in the ontological tree. These ancestor terms are typically more general ontological terms under which the term is classified.")
     ontology: Optional[StrictStr] = Field(default=None, description="The ontology in which the term is recorded.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["release_timestamp", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "term_id", "term_name", "deprecated_ntr_terms", "is_a", "@id", "@type", "summary", "name", "synonyms", "ancestors", "ontology"]
 
     @field_validator('status')
@@ -151,8 +152,10 @@ class PhenotypeTerm(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -160,6 +163,11 @@ class PhenotypeTerm(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -194,6 +202,11 @@ class PhenotypeTerm(BaseModel):
             "ancestors": obj.get("ancestors"),
             "ontology": obj.get("ontology")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 
