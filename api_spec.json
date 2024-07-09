@@ -79,14 +79,6 @@
             "description": "Specifies the format of the returned objects."
           },
           {
-            "name": "from",
-            "in": "query",
-            "schema": {
-              "type": "integer"
-            },
-            "description": "Starting index for pagination."
-          },
-          {
             "name": "sort",
             "in": "query",
             "schema": {
@@ -119,15 +111,14 @@
             "name": "field_filters",
             "in": "query",
             "schema": {
-              "type": "object",
-              "additionalProperties": true,
-              "example": {
-                "status": "released"
-              }
+              "type": "object"
             },
             "description": "Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
-            "explode": true
+            "explode": true,
+            "example": {
+              "status": "released"
+            }
           }
         ],
         "responses": {

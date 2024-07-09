@@ -75,7 +75,6 @@ class TechnicalSample(BaseModel):
     origin_of: Optional[List[Any]] = Field(default=None, description="The samples which originate from this sample, such as through a process of cell differentiation.")
     institutional_certificates: Optional[List[Any]] = Field(default=None, description="The institutional certificates under which use of this sample is approved.")
     classifications: Optional[List[StrictStr]] = Field(default=None, description="The general category of this type of sample.")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "url", "sources", "lot_id", "product_id", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "starting_amount", "starting_amount_units", "dbxrefs", "date_obtained", "sorted_from", "sorted_from_detail", "virtual", "construct_library_sets", "moi", "nucleic_acid_delivery", "time_post_library_delivery", "time_post_library_delivery_units", "protocols", "sample_material", "taxa", "sample_terms", "@id", "@type", "summary", "file_sets", "multiplexed_in", "sorted_fractions", "origin_of", "institutional_certificates", "classifications"]
 
     @field_validator('lot_id')
@@ -249,10 +248,8 @@ class TechnicalSample(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -260,11 +257,6 @@ class TechnicalSample(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -325,11 +317,6 @@ class TechnicalSample(BaseModel):
             "institutional_certificates": obj.get("institutional_certificates"),
             "classifications": obj.get("classifications")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

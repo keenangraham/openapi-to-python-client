@@ -30,7 +30,6 @@ class Tile(BaseModel):
     tile_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="An identifier in plain text for the specific tile of a protein region cloned in an expression vector library.")
     tile_start: Optional[Annotated[int, Field(strict=True, ge=1)]] = Field(default=None, description="The 1-based, closed (inclusive) starting coordinate.")
     tile_end: Optional[Annotated[int, Field(strict=True, ge=1)]] = Field(default=None, description="The 1-based, closed (inclusive) ending coordinate.")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["tile_id", "tile_start", "tile_end"]
 
     @field_validator('tile_id')
@@ -73,10 +72,8 @@ class Tile(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -84,11 +81,6 @@ class Tile(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -105,11 +97,6 @@ class Tile(BaseModel):
             "tile_start": obj.get("tile_start"),
             "tile_end": obj.get("tile_end")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

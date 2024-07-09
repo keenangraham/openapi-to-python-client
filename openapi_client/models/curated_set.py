@@ -61,7 +61,6 @@ class CuratedSet(BaseModel):
     input_file_set_for: Optional[List[Any]] = Field(default=None, description="The file sets that use this file set as an input.")
     assemblies: Optional[List[StrictStr]] = Field(default=None, description="The genome assemblies to which the referencing files in the file set are utilizing (e.g., GRCh38).")
     transcriptome_annotations: Optional[List[StrictStr]] = Field(default=None, description="The annotation versions of the reference resource.")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["release_timestamp", "taxa", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "url", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "assemblies", "transcriptome_annotations"]
 
     @field_validator('taxa')
@@ -185,10 +184,8 @@ class CuratedSet(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -196,11 +193,6 @@ class CuratedSet(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -247,11 +239,6 @@ class CuratedSet(BaseModel):
             "assemblies": obj.get("assemblies"),
             "transcriptome_annotations": obj.get("transcriptome_annotations")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

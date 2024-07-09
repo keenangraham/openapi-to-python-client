@@ -140,15 +140,15 @@ def generate_openapi_spec(schemas):
 
     # Define the parameters
     parameters = [
-         {
+        {
             "name": "type",
             "in": "query",
             "schema": {"type": "array", "items": {"type": "string"}},
             "style": "form",
             "explode": True,
             "description": "Type of objects to return. Can be repeated for multiple types."
-         },
-         {
+        },
+        {
             "name": "field",
             "in": "query",
             "schema": {"type": "array", "items": {"type": "string"}},
@@ -181,12 +181,6 @@ def generate_openapi_spec(schemas):
             "description": "Specifies the format of the returned objects."
         },
         {
-            "name": "from",
-            "in": "query",
-            "schema": {"type": "integer"},
-            "description": "Starting index for pagination."
-        },
-        {
             "name": "sort",
             "in": "query",
             "schema": {"type": "array", "items": {"type": "string"}},
@@ -215,10 +209,11 @@ def generate_openapi_spec(schemas):
     field_filter_note = {
         "name": "field_filters",
         "in": "query",
-        "schema": {"type": "object", "additionalProperties": True, "example": {"status": "released"}},
+        "schema": {"type": "object"},
         "description": "Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
         "style": "form",
         "explode": True,
+        "example": {"status": "released"}
     }
     openapi_spec["paths"]["/search"]["get"]["parameters"].append(field_filter_note)
 
