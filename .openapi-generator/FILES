@@ -171,10 +171,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_no_results_response_columns_value.py
-test/test_no_results_response_facet_groups_inner.py
-test/test_no_results_response_facets_inner.py
-test/test_no_results_response_facets_inner_terms_inner.py
-test/test_no_results_response_filters_inner.py
-test/test_no_results_response_sort_value.py
 tox.ini
