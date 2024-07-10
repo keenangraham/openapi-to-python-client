@@ -39,8 +39,8 @@ class Configuration:
     :param api_key_prefix: Dict to store API prefix (e.g. Bearer).
       The dict key is the name of the security scheme in the OAS specification.
       The dict value is an API key prefix when generating the auth data.
-    :param username: Username for HTTP basic authentication.
-    :param password: Password for HTTP basic authentication.
+    :param access_key: Access key for HTTP basic authentication.
+    :param secret_access_key: Secret access key for HTTP basic authentication.
     :param access_token: Access token.
     :param server_index: Index to servers configuration.
     :param server_variables: Mapping with string values to replace variables in
@@ -68,8 +68,9 @@ class Configuration:
     Configure API client with HTTP basic authentication:
 
 conf = openapi_client.Configuration(
-    username='the-user',
-    password='the-password',
+    # Your portal access key pair:
+    access_key='abc123',
+    secret_access_key='def456',
 )
 
     """
@@ -78,7 +79,7 @@ conf = openapi_client.Configuration(
 
     def __init__(self, host=None,
                  api_key=None, api_key_prefix=None,
-                 username=None, password=None,
+                 access_key=None, secret_access_key=None,
                  access_token=None,
                  server_index=None, server_variables=None,
                  server_operation_index=None, server_operation_variables=None,
@@ -114,10 +115,10 @@ conf = openapi_client.Configuration(
         self.refresh_api_key_hook = None
         """function hook to refresh API key if expired
         """
-        self.username = username
+        self.username = access_key
         """Username for HTTP basic authentication
         """
-        self.password = password
+        self.password = secret_access_key
         """Password for HTTP basic authentication
         """
         self.access_token = access_token
