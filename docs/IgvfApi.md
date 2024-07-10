@@ -38,7 +38,7 @@ configuration = openapi_client.Configuration(
 # Configure HTTP basic authorization: basicAuth
 configuration = openapi_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
-    secrete_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
+    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client

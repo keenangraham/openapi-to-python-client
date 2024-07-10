@@ -16,7 +16,7 @@ configuration = {{{packageName}}}.Configuration(
 # Configure HTTP basic authorization: {{{name}}}
 configuration = {{{packageName}}}.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
-    secrete_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
+    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 {{/isBasicBasic}}
 {{#isBasicBearer}}
