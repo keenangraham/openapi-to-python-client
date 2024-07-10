@@ -419,8 +419,8 @@ class IgvfApi:
             _query_params.append(('advancedQuery', advanced_query))
             
         if field_filters is not None:
-            
-            _query_params.append(('field_filters', field_filters))
+            for k, v in field_filters.items():
+                _query_params.append((k, v))
             
         # process the header parameters
         # process the form parameters

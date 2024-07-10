@@ -138,9 +138,13 @@ class {{classname}}:
             else:
                 _query_params.append(('{{baseName}}', {{paramName}}))
             {{/isDate}}
-            {{^isDateTime}}{{^isDate}}
+            {{#isFreeFormObject}}
+            for k, v in {{paramName}}.items():
+                _query_params.append((k, v))
+	    {{/isFreeFormObject}}
+            {{^isDateTime}}{{^isDate}}{{^isFreeFormObject}}
             _query_params.append(('{{baseName}}', {{paramName}}{{#isEnumRef}}.value{{/isEnumRef}}))
-            {{/isDate}}{{/isDateTime}}
+            {{/isFreeFormObject}}{{/isDate}}{{/isDateTime}}
 {{/queryParams}}
         # process the header parameters
 {{#headerParams}}
