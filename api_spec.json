@@ -362,7 +362,8 @@
             "type": "string"
           },
           "@graph": {
-            "type": "array"
+            "type": "array",
+            "items": {}
           },
           "@id": {
             "type": "string"
@@ -377,22 +378,109 @@
             "type": "string"
           },
           "columns": {
-            "type": "object"
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "facet_groups": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "facet_fields": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           },
           "facets": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "terms": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "key": {
+                        "type": "string"
+                      },
+                      "doc_count": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                },
+                "total": {
+                  "type": "integer"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "appended": {
+                  "type": "boolean"
+                },
+                "open_on_load": {
+                  "type": "boolean"
+                }
+              }
+            }
           },
           "filters": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "term": {
+                  "type": "string"
+                },
+                "remove": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "notification": {
             "type": "string"
           },
           "sort": {
-            "type": "object"
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "order": {
+                  "type": "string"
+                },
+                "unmapped_type": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "title": {
             "type": "string"

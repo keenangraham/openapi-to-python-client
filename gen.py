@@ -93,19 +93,136 @@ def generate_openapi_spec(schemas):
                 "NoResultsResponse": {
                     "type": "object",
                     "properties": {
-                        "@context": {"type": "string"},
-                        "@graph": {"type": "array"},
-                        "@id": {"type": "string"},
-                        "@type": {"type": "array", "items": {"type": "string"}},
-                        "clear_filters": {"type": "string"},
-                        "columns": {"type": "object"},
-                        "facet_groups": {"type": "array"},
-                        "facets": {"type": "array"},
-                        "filters": {"type": "array"},
-                        "notification": {"type": "string"},
-                        "sort": {"type": "object"},
-                        "title": {"type": "string"},
-                        "total": {"type": "integer"}
+                        "@context": {
+                            "type": "string"
+                        },
+                        "@graph": {
+                            "type": "array",
+                            "items": {}
+                        },
+                        "@id": {
+                            "type": "string"
+                        },
+                        "@type": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "clear_filters": {
+                            "type": "string"
+                        },
+                        "columns": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "facet_groups": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "facet_fields": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "facets": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "field": {
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "terms": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "key": {
+                                                    "type": "string"
+                                                },
+                                                "doc_count": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "total": {
+                                        "type": "integer"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    },
+                                    "appended": {
+                                        "type": "boolean"
+                                    },
+                                    "open_on_load": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            }
+                        },
+                        "filters": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "field": {
+                                        "type": "string"
+                                    },
+                                    "term": {
+                                        "type": "string"
+                                    },
+                                    "remove": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "notification": {
+                            "type": "string"
+                        },
+                        "sort": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "object",
+                                "properties": {
+                                    "order": {
+                                        "type": "string"
+                                    },
+                                    "unmapped_type": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "total": {
+                            "type": "integer"
+                        }
                     }
                 }
             },

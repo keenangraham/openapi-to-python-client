@@ -6,14 +6,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **context** | **str** |  | [optional] 
-**graph** | **List[str]** |  | [optional] 
+**graph** | **List[object]** |  | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **clear_filters** | **str** |  | [optional] 
 **columns** | **object** |  | [optional] 
-**facet_groups** | **List[str]** |  | [optional] 
-**facets** | **List[str]** |  | [optional] 
-**filters** | **List[str]** |  | [optional] 
+**facet_groups** | [**List[NoResultsResponseFacetGroupsInner]**](NoResultsResponseFacetGroupsInner.md) |  | [optional] 
+**facets** | [**List[NoResultsResponseFacetsInner]**](NoResultsResponseFacetsInner.md) |  | [optional] 
+**filters** | [**List[NoResultsResponseFiltersInner]**](NoResultsResponseFiltersInner.md) |  | [optional] 
 **notification** | **str** |  | [optional] 
 **sort** | **object** |  | [optional] 
 **title** | **str** |  | [optional] 

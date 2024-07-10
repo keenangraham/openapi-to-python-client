@@ -19,6 +19,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from openapi_client.models.no_results_response_facet_groups_inner import NoResultsResponseFacetGroupsInner
+from openapi_client.models.no_results_response_facets_inner import NoResultsResponseFacetsInner
+from openapi_client.models.no_results_response_filters_inner import NoResultsResponseFiltersInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,14 +30,14 @@ class NoResultsResponse(BaseModel):
     NoResultsResponse
     """ # noqa: E501
     context: Optional[StrictStr] = Field(default=None, alias="@context")
-    graph: Optional[List[StrictStr]] = Field(default=None, alias="@graph")
+    graph: Optional[List[Any]] = Field(default=None, alias="@graph")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     clear_filters: Optional[StrictStr] = None
     columns: Optional[Dict[str, Any]] = None
-    facet_groups: Optional[List[StrictStr]] = None
-    facets: Optional[List[StrictStr]] = None
-    filters: Optional[List[StrictStr]] = None
+    facet_groups: Optional[List[NoResultsResponseFacetGroupsInner]] = None
+    facets: Optional[List[NoResultsResponseFacetsInner]] = None
+    filters: Optional[List[NoResultsResponseFiltersInner]] = None
     notification: Optional[StrictStr] = None
     sort: Optional[Dict[str, Any]] = None
     title: Optional[StrictStr] = None
@@ -80,6 +83,27 @@ class NoResultsResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in facet_groups (list)
+        _items = []
+        if self.facet_groups:
+            for _item in self.facet_groups:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['facet_groups'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in facets (list)
+        _items = []
+        if self.facets:
+            for _item in self.facets:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['facets'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in filters (list)
+        _items = []
+        if self.filters:
+            for _item in self.filters:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['filters'] = _items
         return _dict
 
     @classmethod
@@ -98,9 +122,9 @@ class NoResultsResponse(BaseModel):
             "@type": obj.get("@type"),
             "clear_filters": obj.get("clear_filters"),
             "columns": obj.get("columns"),
-            "facet_groups": obj.get("facet_groups"),
-            "facets": obj.get("facets"),
-            "filters": obj.get("filters"),
+            "facet_groups": [NoResultsResponseFacetGroupsInner.from_dict(_item) for _item in obj["facet_groups"]] if obj.get("facet_groups") is not None else None,
+            "facets": [NoResultsResponseFacetsInner.from_dict(_item) for _item in obj["facets"]] if obj.get("facets") is not None else None,
+            "filters": [NoResultsResponseFiltersInner.from_dict(_item) for _item in obj["filters"]] if obj.get("filters") is not None else None,
             "notification": obj.get("notification"),
             "sort": obj.get("sort"),
             "title": obj.get("title"),
