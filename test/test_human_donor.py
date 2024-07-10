@@ -74,7 +74,9 @@ class TestHumanDonor(unittest.TestCase):
                     ],
                 virtual = True,
                 related_donors = [
-                    { }
+                    openapi_client.models.related_donor.Related Donor(
+                        donor = '', 
+                        relationship_type = 'aunt', )
                     ],
                 ethnicities = [
                     'African American'

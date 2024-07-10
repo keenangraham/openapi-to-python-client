@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **rodent_identifier** | **str** | The identifier for this individual rodent donor. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** | A summary of the rodent donor. | [optional] 
 
 ## Example
 

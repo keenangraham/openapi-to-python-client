@@ -164,6 +164,7 @@ Name | Type | Description | Notes
 **sequencing_library_types** | **List[str]** | Description of the libraries sequenced in this measurement set. | [optional] 
 **auxiliary_sets** | **List[str]** | The auxiliary sets of files produced alongside raw data from this measurement set. | [optional] 
 **external_image_url** | **str** | Links to the external site where images produced by this measurement are stored. | [optional] 
+**targeted_genes** | **List[str]** | A list of genes targeted in this assay. For example, TF ChIP-seq attempts to identify binding sites of a protein encoded by a specific gene. In CRISPR FlowFISH, the modified samples are sorted based on expression of a specific gene. This property differs from small_scale_gene_list in Construct Library Set, which describes genes targeted by the content integrated in the constructs (such as guide RNAs.) | [optional] 
 **related_multiome_datasets** | **List[str]** | Related datasets included in the multiome experiment this measurement set is a part of. | [optional] 
 **model_name** | **str** | The custom lab name given to this predictive model set. | [optional] 
 **model_version** | **str** | The semantic version number for this predictive model set. | [optional] 

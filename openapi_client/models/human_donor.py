@@ -58,7 +58,7 @@ class HumanDonor(BaseModel):
     human_donor_identifiers: Optional[List[StrictStr]] = Field(default=None, description="Identifiers of this human donor.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
+    summary: Optional[StrictStr] = Field(default=None, description="A summary of the human donor.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["release_timestamp", "taxa", "publication_identifiers", "url", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "sex", "phenotypic_features", "virtual", "related_donors", "ethnicities", "human_donor_identifiers", "@id", "@type", "summary"]
 

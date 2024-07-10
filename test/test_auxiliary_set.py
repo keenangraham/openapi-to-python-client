@@ -54,7 +54,7 @@ class TestAuxiliarySet(unittest.TestCase):
                 status = 'in progress',
                 revoke_detail = 'k',
                 url = '',
-                schema_version = '7',
+                schema_version = '8',
                 uuid = '',
                 notes = 'k',
                 aliases = [

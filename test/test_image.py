@@ -37,7 +37,14 @@ class TestImage(unittest.TestCase):
             return Image(
                 release_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 status = 'released',
-                attachment = { },
+                attachment = openapi_client.models.attachment.Attachment(
+                    download = '', 
+                    href = '', 
+                    type = 'image/png', 
+                    md5sum = '', 
+                    size = 0, 
+                    width = 0, 
+                    height = 0, ),
                 schema_version = '4',
                 uuid = '',
                 notes = 'k',

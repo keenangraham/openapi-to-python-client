@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **human_donor_identifiers** | **List[str]** | Identifiers of this human donor. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** | A summary of the human donor. | [optional] 
 
 ## Example
 

@@ -99,7 +99,14 @@ class TestSearchResultItem(unittest.TestCase):
                 biomarker_for = [
                     null
                     ],
-                attachment = { },
+                attachment = openapi_client.models.attachment.Attachment(
+                    download = '', 
+                    href = '', 
+                    type = 'application/json', 
+                    md5sum = '', 
+                    size = 0, 
+                    width = 0, 
+                    height = 0, ),
                 document_type = 'cell fate change protocol',
                 characterization_method = 'FACS',
                 urls = [
@@ -129,7 +136,9 @@ class TestSearchResultItem(unittest.TestCase):
                     ],
                 virtual = True,
                 related_donors = [
-                    { }
+                    openapi_client.models.related_donor.Related Donor(
+                        donor = '', 
+                        relationship_type = 'aunt', )
                     ],
                 ethnicities = [
                     'African American'
@@ -242,7 +251,11 @@ class TestSearchResultItem(unittest.TestCase):
                     null
                     ],
                 small_scale_loci_list = [
-                    { }
+                    openapi_client.models.locus.Locus(
+                        assembly = 'GRCh38', 
+                        chromosome = 'chrH', 
+                        start = 1, 
+                        end = 1, )
                     ],
                 large_scale_loci_list = '',
                 small_scale_gene_list = [
@@ -263,7 +276,10 @@ class TestSearchResultItem(unittest.TestCase):
                     ''
                     ],
                 exon = 'k',
-                tile = { },
+                tile = openapi_client.models.tile.Tile(
+                    tile_id = 'k', 
+                    tile_start = 1, 
+                    tile_end = 1, ),
                 guide_type = 'sgRNA',
                 tiling_modality = 'peak tiling',
                 average_guide_coverage = 0,
@@ -298,6 +314,9 @@ class TestSearchResultItem(unittest.TestCase):
                     ''
                     ],
                 external_image_url = 'https://cellpainting-gallery.s3.amazonaws.comk',
+                targeted_genes = [
+                    ''
+                    ],
                 related_multiome_datasets = [
                     ''
                     ],
@@ -311,7 +330,11 @@ class TestSearchResultItem(unittest.TestCase):
                 geneid = 'ENSEIOTGSWWMEJTCMOSLLNYULG62255008507',
                 symbol = '',
                 locations = [
-                    { }
+                    openapi_client.models.gene_location.Gene Location(
+                        assembly = 'GRCh38', 
+                        chromosome = 'chrC', 
+                        start = 0, 
+                        end = 0, )
                     ],
                 version_number = '80728',
                 geneid_with_version = '',
@@ -385,7 +408,14 @@ class TestSearchResultItem(unittest.TestCase):
                 pct_coverage_protein = 0,
                 pct_coverage_orf = 0,
                 parent = '',
-                layout = { },
+                layout = openapi_client.models.page_layout.Page Layout(
+                    blocks = [
+                        openapi_client.models.page_layout_components.Page Layout Components(
+                            @id = '', 
+                            @type = '', 
+                            body = '', 
+                            direction = '', )
+                        ], ),
                 canonical_uri = '',
                 feature = '',
                 quantity = 1.337,

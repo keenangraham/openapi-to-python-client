@@ -51,7 +51,7 @@ Name | Type | Description | Notes
 **index** | **str** | An Illumina index associated with the file. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** | A summary of the sequence file. | [optional] 
 **integrated_in** | **List[object]** | Construct library set(s) that this file was used for in insert design. | [optional] 
 **input_file_for** | **List[object]** | The files which are derived from this file. | [optional] 
 **gene_list_for** | **List[object]** | File Set(s) that this file is a gene list for. | [optional] 

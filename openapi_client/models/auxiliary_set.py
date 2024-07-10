@@ -39,7 +39,7 @@ class AuxiliarySet(BaseModel):
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     revoke_detail: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Explanation of why an object was transitioned to the revoked status.")
     url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='7', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='8', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -139,8 +139,8 @@ class AuxiliarySet(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['cell hashing', 'cell sorting', 'circularized barcode detection', 'gRNA sequencing', 'oligo-conjugated lipids', 'quantification barcode sequencing', 'variant sequencing']):
-            raise ValueError("must be one of enum values ('cell hashing', 'cell sorting', 'circularized barcode detection', 'gRNA sequencing', 'oligo-conjugated lipids', 'quantification barcode sequencing', 'variant sequencing')")
+        if value not in set(['cell hashing', 'cell sorting', 'circularized RNA barcode detection', 'gRNA sequencing', 'oligo-conjugated lipids', 'quantification DNA barcode sequencing', 'variant sequencing']):
+            raise ValueError("must be one of enum values ('cell hashing', 'cell sorting', 'circularized RNA barcode detection', 'gRNA sequencing', 'oligo-conjugated lipids', 'quantification DNA barcode sequencing', 'variant sequencing')")
         return value
 
     model_config = ConfigDict(
@@ -205,7 +205,7 @@ class AuxiliarySet(BaseModel):
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
             "revoke_detail": obj.get("revoke_detail"),
             "url": obj.get("url"),
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '7',
+            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '8',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),

@@ -36,7 +36,11 @@ class TestPageLayout(unittest.TestCase):
         if include_optional:
             return PageLayout(
                 blocks = [
-                    { }
+                    openapi_client.models.page_layout_components.Page Layout Components(
+                        @id = '', 
+                        @type = '', 
+                        body = '', 
+                        direction = '', )
                     ]
             )
         else:

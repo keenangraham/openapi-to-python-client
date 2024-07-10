@@ -39,7 +39,11 @@ class TestPredictionSet(unittest.TestCase):
                     ''
                     ],
                 small_scale_loci_list = [
-                    { }
+                    openapi_client.models.locus.Locus(
+                        assembly = 'GRCh38', 
+                        chromosome = 'chrH', 
+                        start = 1, 
+                        end = 1, )
                     ],
                 large_scale_loci_list = '',
                 small_scale_gene_list = [

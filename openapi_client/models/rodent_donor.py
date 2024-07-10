@@ -62,7 +62,7 @@ class RodentDonor(BaseModel):
     rodent_identifier: Optional[StrictStr] = Field(default=None, description="The identifier for this individual rodent donor.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
+    summary: Optional[StrictStr] = Field(default=None, description="A summary of the rodent donor.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "taxa", "publication_identifiers", "url", "sources", "lot_id", "product_id", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "sex", "phenotypic_features", "virtual", "strain_background", "strain", "genotype", "individual_rodent", "rodent_identifier", "@id", "@type", "summary"]
 
     @field_validator('taxa')

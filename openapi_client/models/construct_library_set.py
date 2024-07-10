@@ -32,7 +32,7 @@ class ConstructLibrarySet(BaseModel):
     """ # noqa: E501
     small_scale_loci_list: Optional[List[Locus]] = Field(default=None, description="A small scale (<=100) list of specific chromosomal region(s).")
     large_scale_loci_list: Optional[StrictStr] = Field(default=None, description="A large scale list (>100) of specific chromosomal regions.")
-    small_scale_gene_list: Optional[List[StrictStr]] = Field(default=None, description="The specific, small scale list of (<=100) gene(s) this construct library was designed to target.")
+    small_scale_gene_list: Optional[List[StrictStr]] = Field(default=None, description="The specific, small scale list of (<=100) gene(s) this construct library was designed to target. This property differs from targeted_genes in Measurement Set, which describes genes targeted for binding sites or used for sorting by expression.")
     large_scale_gene_list: Optional[StrictStr] = Field(default=None, description="The large scale list of (>100 genes) this construct library was designed to target.")
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")

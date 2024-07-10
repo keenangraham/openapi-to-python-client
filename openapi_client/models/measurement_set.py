@@ -59,6 +59,7 @@ class MeasurementSet(BaseModel):
     sequencing_library_types: Optional[List[StrictStr]] = Field(default=None, description="Description of the libraries sequenced in this measurement set.")
     auxiliary_sets: Optional[List[StrictStr]] = Field(default=None, description="The auxiliary sets of files produced alongside raw data from this measurement set.")
     external_image_url: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Links to the external site where images produced by this measurement are stored.")
+    targeted_genes: Optional[List[StrictStr]] = Field(default=None, description="A list of genes targeted in this assay. For example, TF ChIP-seq attempts to identify binding sites of a protein encoded by a specific gene. In CRISPR FlowFISH, the modified samples are sorted based on expression of a specific gene. This property differs from small_scale_gene_list in Construct Library Set, which describes genes targeted by the content integrated in the constructs (such as guide RNAs.)")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = None
@@ -67,7 +68,7 @@ class MeasurementSet(BaseModel):
     submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
     input_file_set_for: Optional[List[Any]] = Field(default=None, description="The file sets that use this file set as an input.")
     related_multiome_datasets: Optional[List[StrictStr]] = Field(default=None, description="Related datasets included in the multiome experiment this measurement set is a part of.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "assay_term", "library_construction_platform", "protocols", "preferred_assay_title", "multiome_size", "control_file_sets", "sequencing_library_types", "auxiliary_sets", "external_image_url", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "related_multiome_datasets"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "assay_term", "library_construction_platform", "protocols", "preferred_assay_title", "multiome_size", "control_file_sets", "sequencing_library_types", "auxiliary_sets", "external_image_url", "targeted_genes", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "related_multiome_datasets"]
 
     @field_validator('collections')
     def collections_validate_enum(cls, value):
@@ -263,6 +264,7 @@ class MeasurementSet(BaseModel):
             "sequencing_library_types": obj.get("sequencing_library_types"),
             "auxiliary_sets": obj.get("auxiliary_sets"),
             "external_image_url": obj.get("external_image_url"),
+            "targeted_genes": obj.get("targeted_genes"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),

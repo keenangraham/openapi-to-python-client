@@ -45,7 +45,7 @@ Name | Type | Description | Notes
 **start_view_position** | **str** | The 0-based coordinate for the default starting position when viewing the signal in a genome browser. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** | A summary of the signal file. | [optional] 
 **integrated_in** | **List[object]** | Construct library set(s) that this file was used for in insert design. | [optional] 
 **input_file_for** | **List[object]** | The files which are derived from this file. | [optional] 
 **gene_list_for** | **List[object]** | File Set(s) that this file is a gene list for. | [optional] 

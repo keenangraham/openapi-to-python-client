@@ -2016,7 +2016,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the human donor."
           }
         }
       },
@@ -2308,7 +2308,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the rodent donor."
           }
         }
       },
@@ -2633,7 +2633,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the alignment file."
           },
           "integrated_in": {
             "title": "Integrated In",
@@ -2965,7 +2965,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the configuration file."
           },
           "integrated_in": {
             "title": "Integrated In",
@@ -3326,7 +3326,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the genome browser annotation file."
           },
           "integrated_in": {
             "title": "Integrated In",
@@ -3656,7 +3656,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the image file."
           },
           "integrated_in": {
             "title": "Integrated In",
@@ -4020,7 +4020,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the matrix file."
           },
           "integrated_in": {
             "title": "Integrated In",
@@ -4357,7 +4357,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the model file."
           },
           "integrated_in": {
             "title": "Integrated In",
@@ -4833,7 +4833,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the reference file."
           },
           "integrated_in": {
             "title": "Integrated In",
@@ -5271,7 +5271,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the sequence file."
           },
           "integrated_in": {
             "title": "Integrated In",
@@ -5668,7 +5668,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the signal file."
           },
           "integrated_in": {
             "title": "Integrated In",
@@ -6065,7 +6065,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the tabular file."
           },
           "integrated_in": {
             "title": "Integrated In",
@@ -6508,7 +6508,7 @@
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
             "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "7"
+            "default": "8"
           },
           "uuid": {
             "title": "UUID",
@@ -6598,10 +6598,10 @@
             "enum": [
               "cell hashing",
               "cell sorting",
-              "circularized barcode detection",
+              "circularized RNA barcode detection",
               "gRNA sequencing",
               "oligo-conjugated lipids",
-              "quantification barcode sequencing",
+              "quantification DNA barcode sequencing",
               "variant sequencing"
             ]
           },
@@ -6728,7 +6728,7 @@
           },
           "small_scale_gene_list": {
             "title": "Small Scale Gene List",
-            "description": "The specific, small scale list of (<=100) gene(s) this construct library was designed to target.",
+            "description": "The specific, small scale list of (<=100) gene(s) this construct library was designed to target. This property differs from targeted_genes in Measurement Set, which describes genes targeted for binding sites or used for sorting by expression.",
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -7761,6 +7761,16 @@
             "format": "uri",
             "pattern": "^https://cellpainting-gallery\\.s3\\.amazonaws\\.com(\\S+)$"
           },
+          "targeted_genes": {
+            "title": "Targeted Genes",
+            "description": "A list of genes targeted in this assay. For example, TF ChIP-seq attempts to identify binding sites of a protein encoded by a specific gene. In CRISPR FlowFISH, the modified samples are sorted based on expression of a specific gene. This property differs from small_scale_gene_list in Construct Library Set, which describes genes targeted by the content integrated in the constructs (such as guide RNAs.)",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Gene",
+              "type": "string"
+            }
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -8053,7 +8063,8 @@
               "neural network",
               "random forest",
               "decision tree",
-              "support vector machine"
+              "support vector machine",
+              "variant binding effect"
             ]
           },
           "model_name": {
@@ -8448,7 +8459,8 @@
               "pathogenicity",
               "functional effect",
               "protein stability",
-              "activity level"
+              "activity level",
+              "binding effect"
             ]
           },
           "scope": {

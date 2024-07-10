@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **small_scale_loci_list** | [**List[Locus]**](Locus.md) | A small scale (&lt;&#x3D;100) list of specific chromosomal region(s). | [optional] 
 **large_scale_loci_list** | **str** | A large scale list (&gt;100) of specific chromosomal regions. | [optional] 
-**small_scale_gene_list** | **List[str]** | The specific, small scale list of (&lt;&#x3D;100) gene(s) this construct library was designed to target. | [optional] 
+**small_scale_gene_list** | **List[str]** | The specific, small scale list of (&lt;&#x3D;100) gene(s) this construct library was designed to target. This property differs from targeted_genes in Measurement Set, which describes genes targeted for binding sites or used for sorting by expression. | [optional] 
 **large_scale_gene_list** | **str** | The large scale list of (&gt;100 genes) this construct library was designed to target. | [optional] 
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 

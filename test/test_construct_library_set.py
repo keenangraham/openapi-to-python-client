@@ -36,7 +36,11 @@ class TestConstructLibrarySet(unittest.TestCase):
         if include_optional:
             return ConstructLibrarySet(
                 small_scale_loci_list = [
-                    { }
+                    openapi_client.models.locus.Locus(
+                        assembly = 'GRCh38', 
+                        chromosome = 'chrH', 
+                        start = 1, 
+                        end = 1, )
                     ],
                 large_scale_loci_list = '',
                 small_scale_gene_list = [
@@ -91,7 +95,10 @@ class TestConstructLibrarySet(unittest.TestCase):
                     ''
                     ],
                 exon = 'k',
-                tile = { },
+                tile = openapi_client.models.tile.Tile(
+                    tile_id = 'k', 
+                    tile_start = 1, 
+                    tile_end = 1, ),
                 guide_type = 'sgRNA',
                 tiling_modality = 'peak tiling',
                 average_guide_coverage = 0,

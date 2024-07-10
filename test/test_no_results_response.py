@@ -37,7 +37,7 @@ class TestNoResultsResponse(unittest.TestCase):
             return NoResultsResponse(
                 context = '',
                 graph = [
-                    ''
+                    null
                     ],
                 id = '',
                 type = [
@@ -46,13 +46,32 @@ class TestNoResultsResponse(unittest.TestCase):
                 clear_filters = '',
                 columns = None,
                 facet_groups = [
-                    ''
+                    openapi_client.models.no_results_response_facet_groups_inner.NoResultsResponse_facet_groups_inner(
+                        name = '', 
+                        title = '', 
+                        facet_fields = [
+                            ''
+                            ], )
                     ],
                 facets = [
-                    ''
+                    openapi_client.models.no_results_response_facets_inner.NoResultsResponse_facets_inner(
+                        field = '', 
+                        title = '', 
+                        terms = [
+                            openapi_client.models.no_results_response_facets_inner_terms_inner.NoResultsResponse_facets_inner_terms_inner(
+                                key = '', 
+                                doc_count = 56, )
+                            ], 
+                        total = 56, 
+                        type = '', 
+                        appended = True, 
+                        open_on_load = True, )
                     ],
                 filters = [
-                    ''
+                    openapi_client.models.no_results_response_filters_inner.NoResultsResponse_filters_inner(
+                        field = '', 
+                        term = '', 
+                        remove = '', )
                     ],
                 notification = '',
                 sort = None,

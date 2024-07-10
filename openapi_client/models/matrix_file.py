@@ -63,7 +63,7 @@ class MatrixFile(BaseModel):
     dimension2: Optional[StrictStr] = Field(default=None, description="Second dimension of the matrix.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
+    summary: Optional[StrictStr] = Field(default=None, description="A summary of the matrix file.")
     integrated_in: Optional[List[Any]] = Field(default=None, description="Construct library set(s) that this file was used for in insert design.")
     input_file_for: Optional[List[Any]] = Field(default=None, description="The files which are derived from this file.")
     gene_list_for: Optional[List[Any]] = Field(default=None, description="File Set(s) that this file is a gene list for.")

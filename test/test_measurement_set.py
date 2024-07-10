@@ -90,6 +90,9 @@ class TestMeasurementSet(unittest.TestCase):
                     ''
                     ],
                 external_image_url = 'https://cellpainting-gallery.s3.amazonaws.comk',
+                targeted_genes = [
+                    ''
+                    ],
                 id = '',
                 type = [
                     ''
