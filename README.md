@@ -97,7 +97,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *IgvfApi* | [**get_by_id**](docs/IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
 *IgvfApi* | [**get_schema_for_item_type**](docs/IgvfApi.md#get_schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schemas for all item types
-*IgvfApi* | [**get_schemas**](docs/IgvfApi.md#get_schemas) | **GET** /profiles/ | Retrieve JSON schemas for all item types
+*IgvfApi* | [**get_schemas**](docs/IgvfApi.md#get_schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
 *IgvfApi* | [**search**](docs/IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project
 
 

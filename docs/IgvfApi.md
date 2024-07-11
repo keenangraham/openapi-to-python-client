@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_by_id**](IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
 [**get_schema_for_item_type**](IgvfApi.md#get_schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schemas for all item types
-[**get_schemas**](IgvfApi.md#get_schemas) | **GET** /profiles/ | Retrieve JSON schemas for all item types
+[**get_schemas**](IgvfApi.md#get_schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
 [**search**](IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project
 
 
