@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **search**
-> SearchResults search(type=type, var_field=var_field, query=query, limit=limit, debug=debug, frame=frame, sort=sort, config=config, advanced_query=advanced_query, field_filters=field_filters)
+> SearchResults search(type=type, var_field=var_field, query=query, limit=limit, frame=frame, sort=sort, field_filters=field_filters)
 
 Search for objects in the IGVF Project
 
@@ -49,16 +49,13 @@ with openapi_client.ApiClient(configuration) as api_client:
     var_field = ['var_field_example'] # List[str] | Fields to include in the response. Can be repeated for multiple fields. (optional)
     query = 'query_example' # str | Query string for searching. (optional)
     limit = 56 # int | Maximum number of results to return. Use 'all' for all results. (optional)
-    debug = True # bool | Enables debug mode for the search. (optional)
     frame = 'frame_example' # str | Specifies the format of the returned objects. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. (optional)
-    config = 'config_example' # str | Configuration options for the search. (optional)
-    advanced_query = 'advanced_query_example' # str | Advanced query string for complex searches. (optional)
     field_filters = None # object | Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
 
     try:
         # Search for objects in the IGVF Project
-        api_response = api_instance.search(type=type, var_field=var_field, query=query, limit=limit, debug=debug, frame=frame, sort=sort, config=config, advanced_query=advanced_query, field_filters=field_filters)
+        api_response = api_instance.search(type=type, var_field=var_field, query=query, limit=limit, frame=frame, sort=sort, field_filters=field_filters)
         print("The response of IgvfApi->search:\n")
         pprint(api_response)
     except Exception as e:
@@ -76,11 +73,8 @@ Name | Type | Description  | Notes
  **var_field** | [**List[str]**](str.md)| Fields to include in the response. Can be repeated for multiple fields. | [optional] 
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | **int**| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
- **debug** | **bool**| Enables debug mode for the search. | [optional] 
  **frame** | **str**| Specifies the format of the returned objects. | [optional] 
  **sort** | [**List[str]**](str.md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. | [optional] 
- **config** | **str**| Configuration options for the search. | [optional] 
- **advanced_query** | **str**| Advanced query string for complex searches. | [optional] 
  **field_filters** | [**object**](.md)| Any field from any object type can be used as a filter. Use &#39;!&#x3D;&#39; for negation, &#39;*&#39; as a wildcard, and &#39;lt:&#39;, &#39;lte:&#39;, &#39;gt:&#39;, &#39;gte:&#39; for range queries on numeric fields. | [optional] 
 
 ### Return type

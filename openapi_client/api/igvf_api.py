@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr, field_validator
+from pydantic import Field, StrictInt, StrictStr, field_validator
 from typing import Any, Dict, List, Optional
 from typing_extensions import Annotated
 from openapi_client.models.search_results import SearchResults
@@ -46,11 +46,8 @@ class IgvfApi:
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        debug: Annotated[Optional[StrictBool], Field(description="Enables debug mode for the search.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Specifies the format of the returned objects.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
-        config: Annotated[Optional[StrictStr], Field(description="Configuration options for the search.")] = None,
-        advanced_query: Annotated[Optional[StrictStr], Field(description="Advanced query string for complex searches.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
@@ -77,16 +74,10 @@ class IgvfApi:
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: int
-        :param debug: Enables debug mode for the search.
-        :type debug: bool
         :param frame: Specifies the format of the returned objects.
         :type frame: str
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
         :type sort: List[str]
-        :param config: Configuration options for the search.
-        :type config: str
-        :param advanced_query: Advanced query string for complex searches.
-        :type advanced_query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
         :param _request_timeout: timeout setting for this request. If one
@@ -116,11 +107,8 @@ class IgvfApi:
             var_field=var_field,
             query=query,
             limit=limit,
-            debug=debug,
             frame=frame,
             sort=sort,
-            config=config,
-            advanced_query=advanced_query,
             field_filters=field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -150,11 +138,8 @@ class IgvfApi:
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        debug: Annotated[Optional[StrictBool], Field(description="Enables debug mode for the search.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Specifies the format of the returned objects.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
-        config: Annotated[Optional[StrictStr], Field(description="Configuration options for the search.")] = None,
-        advanced_query: Annotated[Optional[StrictStr], Field(description="Advanced query string for complex searches.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
@@ -181,16 +166,10 @@ class IgvfApi:
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: int
-        :param debug: Enables debug mode for the search.
-        :type debug: bool
         :param frame: Specifies the format of the returned objects.
         :type frame: str
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
         :type sort: List[str]
-        :param config: Configuration options for the search.
-        :type config: str
-        :param advanced_query: Advanced query string for complex searches.
-        :type advanced_query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
         :param _request_timeout: timeout setting for this request. If one
@@ -220,11 +199,8 @@ class IgvfApi:
             var_field=var_field,
             query=query,
             limit=limit,
-            debug=debug,
             frame=frame,
             sort=sort,
-            config=config,
-            advanced_query=advanced_query,
             field_filters=field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -254,11 +230,8 @@ class IgvfApi:
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        debug: Annotated[Optional[StrictBool], Field(description="Enables debug mode for the search.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Specifies the format of the returned objects.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
-        config: Annotated[Optional[StrictStr], Field(description="Configuration options for the search.")] = None,
-        advanced_query: Annotated[Optional[StrictStr], Field(description="Advanced query string for complex searches.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
@@ -285,16 +258,10 @@ class IgvfApi:
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: int
-        :param debug: Enables debug mode for the search.
-        :type debug: bool
         :param frame: Specifies the format of the returned objects.
         :type frame: str
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
         :type sort: List[str]
-        :param config: Configuration options for the search.
-        :type config: str
-        :param advanced_query: Advanced query string for complex searches.
-        :type advanced_query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
         :param _request_timeout: timeout setting for this request. If one
@@ -324,11 +291,8 @@ class IgvfApi:
             var_field=var_field,
             query=query,
             limit=limit,
-            debug=debug,
             frame=frame,
             sort=sort,
-            config=config,
-            advanced_query=advanced_query,
             field_filters=field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -353,11 +317,8 @@ class IgvfApi:
         var_field,
         query,
         limit,
-        debug,
         frame,
         sort,
-        config,
-        advanced_query,
         field_filters,
         _request_auth,
         _content_type,
@@ -398,10 +359,6 @@ class IgvfApi:
             
             _query_params.append(('limit', limit))
             
-        if debug is not None:
-            
-            _query_params.append(('debug', debug))
-            
         if frame is not None:
             
             _query_params.append(('frame', frame))
@@ -409,14 +366,6 @@ class IgvfApi:
         if sort is not None:
             
             _query_params.append(('sort', sort))
-            
-        if config is not None:
-            
-            _query_params.append(('config', config))
-            
-        if advanced_query is not None:
-            
-            _query_params.append(('advancedQuery', advanced_query))
             
         if field_filters is not None:
             for k, v in field_filters.items():

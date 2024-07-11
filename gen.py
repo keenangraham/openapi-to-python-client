@@ -286,12 +286,6 @@ def generate_openapi_spec(schemas):
             "description": "Maximum number of results to return. Use 'all' for all results."
         },
         {
-            "name": "debug",
-            "in": "query",
-            "schema": {"type": "boolean"},
-            "description": "Enables debug mode for the search."
-        },
-        {
             "name": "frame",
             "in": "query",
             "schema": {"type": "string", "enum": ["object", "embedded"]},
@@ -304,18 +298,6 @@ def generate_openapi_spec(schemas):
             "style": "form",
             "explode": True,
             "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields."
-        },
-        {
-            "name": "config",
-            "in": "query",
-            "schema": {"type": "string"},
-            "description": "Configuration options for the search."
-        },
-        {
-            "name": "advancedQuery",
-            "in": "query",
-            "schema": {"type": "string"},
-            "description": "Advanced query string for complex searches."
         }
     ]
 
