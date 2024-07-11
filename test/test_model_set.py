@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.model_set import ModelSet
+from igvf_client.models.model_set import ModelSet
 
 class TestModelSet(unittest.TestCase):
     """ModelSet unit test stubs"""

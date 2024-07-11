@@ -17,25 +17,24 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import date, datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.attachment import Attachment
+from igvf_client.models.attachment import Attachment
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Publication(BaseModel):
+class Document(BaseModel):
     """
-    A publication related to IGVF.
+    A document with additional information regarding another object submitted to the data portal. For example, a plasmid map document associated with a transduced cell line sample.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     attachment: Optional[Attachment] = None
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='6', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -43,22 +42,14 @@ class Publication(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    title: Optional[StrictStr] = Field(default=None, description="Title of the publication or communication.")
-    abstract: Optional[StrictStr] = Field(default=None, description="Abstract of the publication or communication.")
-    authors: Optional[StrictStr] = Field(default=None, description="The authors of the publication.")
-    date_published: Optional[date] = Field(default=None, description="The date the publication or communication was published; must be in YYYY-MM-DD format.")
-    date_revised: Optional[date] = Field(default=None, description="The date the publication was revised.")
-    issue: Optional[StrictStr] = Field(default=None, description="The issue of the publication.")
-    page: Optional[StrictStr] = Field(default=None, description="Pagination of the reference")
-    volume: Optional[StrictStr] = Field(default=None, description="The volume of the publication.")
-    journal: Optional[StrictStr] = Field(default=None, description="The journal of the publication.")
-    published_by: Optional[List[StrictStr]] = Field(default=None, description="The affiliation of the lab with a larger organization, such as IGVF.")
+    document_type: Optional[StrictStr] = Field(default=None, description="The category that best describes the document.")
+    characterization_method: Optional[StrictStr] = Field(default=None, description="The method used for the characterization.")
+    urls: Optional[List[StrictStr]] = Field(default=None, description="External resources with additional information to the document.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
-    publication_year: Optional[StrictInt] = Field(default=None, description="The year the publication was published.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "status", "lab", "award", "attachment", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "title", "abstract", "authors", "date_published", "date_revised", "issue", "page", "volume", "journal", "published_by", "@id", "@type", "summary", "publication_year"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "status", "lab", "award", "attachment", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "document_type", "characterization_method", "urls", "@id", "@type", "summary"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -110,15 +101,24 @@ class Publication(BaseModel):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value
 
-    @field_validator('published_by')
-    def published_by_validate_enum(cls, value):
+    @field_validator('document_type')
+    def document_type_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        for i in value:
-            if i not in set(['community', 'IGVF', 'ENCODE']):
-                raise ValueError("each list item must be one of ('community', 'IGVF', 'ENCODE')")
+        if value not in set(['cell fate change protocol', 'characterization', 'computational protocol', 'experimental protocol', 'file format specification', 'image', 'plate map', 'plasmid map', 'plasmid sequence', 'standards']):
+            raise ValueError("must be one of enum values ('cell fate change protocol', 'characterization', 'computational protocol', 'experimental protocol', 'file format specification', 'image', 'plate map', 'plasmid map', 'plasmid sequence', 'standards')")
+        return value
+
+    @field_validator('characterization_method')
+    def characterization_method_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['FACS', 'immunoblot', 'immunofluorescence', 'immunoprecipitation', 'mass spectrometry', 'PCR', 'restriction digest', 'RT-qPCR', 'sequencing']):
+            raise ValueError("must be one of enum values ('FACS', 'immunoblot', 'immunofluorescence', 'immunoprecipitation', 'mass spectrometry', 'PCR', 'restriction digest', 'RT-qPCR', 'sequencing')")
         return value
 
     model_config = ConfigDict(
@@ -139,7 +139,7 @@ class Publication(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Publication from a JSON string"""
+        """Create an instance of Document from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -174,7 +174,7 @@ class Publication(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Publication from a dict"""
+        """Create an instance of Document from a dict"""
         if obj is None:
             return None
 
@@ -183,12 +183,11 @@ class Publication(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
-            "publication_identifiers": obj.get("publication_identifiers"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
             "lab": obj.get("lab"),
             "award": obj.get("award"),
             "attachment": Attachment.from_dict(obj["attachment"]) if obj.get("attachment") is not None else None,
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '6',
+            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '4',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
@@ -196,20 +195,12 @@ class Publication(BaseModel):
             "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
-            "title": obj.get("title"),
-            "abstract": obj.get("abstract"),
-            "authors": obj.get("authors"),
-            "date_published": obj.get("date_published"),
-            "date_revised": obj.get("date_revised"),
-            "issue": obj.get("issue"),
-            "page": obj.get("page"),
-            "volume": obj.get("volume"),
-            "journal": obj.get("journal"),
-            "published_by": obj.get("published_by"),
+            "document_type": obj.get("document_type"),
+            "characterization_method": obj.get("characterization_method"),
+            "urls": obj.get("urls"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
-            "summary": obj.get("summary"),
-            "publication_year": obj.get("publication_year")
+            "summary": obj.get("summary")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.output_content_type import OutputContentType
+from igvf_client.models.output_content_type import OutputContentType
 
 # TODO update the JSON string below
 json = "{}"

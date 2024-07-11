@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.no_results_response import NoResultsResponse
+from igvf_client.models.no_results_response import NoResultsResponse
 
 class TestNoResultsResponse(unittest.TestCase):
     """NoResultsResponse unit test stubs"""
@@ -46,7 +46,7 @@ class TestNoResultsResponse(unittest.TestCase):
                 clear_filters = '',
                 columns = None,
                 facet_groups = [
-                    openapi_client.models.no_results_response_facet_groups_inner.NoResultsResponse_facet_groups_inner(
+                    igvf_client.models.no_results_response_facet_groups_inner.NoResultsResponse_facet_groups_inner(
                         name = '', 
                         title = '', 
                         facet_fields = [
@@ -54,11 +54,11 @@ class TestNoResultsResponse(unittest.TestCase):
                             ], )
                     ],
                 facets = [
-                    openapi_client.models.no_results_response_facets_inner.NoResultsResponse_facets_inner(
+                    igvf_client.models.no_results_response_facets_inner.NoResultsResponse_facets_inner(
                         field = '', 
                         title = '', 
                         terms = [
-                            openapi_client.models.no_results_response_facets_inner_terms_inner.NoResultsResponse_facets_inner_terms_inner(
+                            igvf_client.models.no_results_response_facets_inner_terms_inner.NoResultsResponse_facets_inner_terms_inner(
                                 key = '', 
                                 doc_count = 56, )
                             ], 
@@ -68,7 +68,7 @@ class TestNoResultsResponse(unittest.TestCase):
                         open_on_load = True, )
                     ],
                 filters = [
-                    openapi_client.models.no_results_response_filters_inner.NoResultsResponse_filters_inner(
+                    igvf_client.models.no_results_response_filters_inner.NoResultsResponse_filters_inner(
                         field = '', 
                         term = '', 
                         remove = '', )

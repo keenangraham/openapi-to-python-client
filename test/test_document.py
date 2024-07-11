@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.document import Document
+from igvf_client.models.document import Document
 
 class TestDocument(unittest.TestCase):
     """Document unit test stubs"""
@@ -39,7 +39,7 @@ class TestDocument(unittest.TestCase):
                 status = 'in progress',
                 lab = '',
                 award = '',
-                attachment = openapi_client.models.attachment.Attachment(
+                attachment = igvf_client.models.attachment.Attachment(
                     download = '', 
                     href = '', 
                     type = 'application/json', 

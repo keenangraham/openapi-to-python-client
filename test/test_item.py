@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.item import Item
+from igvf_client.models.item import Item
 
 class TestItem(unittest.TestCase):
     """Item unit test stubs"""
@@ -99,7 +99,7 @@ class TestItem(unittest.TestCase):
                 biomarker_for = [
                     null
                     ],
-                attachment = openapi_client.models.attachment.Attachment(
+                attachment = igvf_client.models.attachment.Attachment(
                     download = '', 
                     href = '', 
                     type = 'application/json', 
@@ -136,7 +136,7 @@ class TestItem(unittest.TestCase):
                     ],
                 virtual = True,
                 related_donors = [
-                    openapi_client.models.related_donor.Related Donor(
+                    igvf_client.models.related_donor.Related Donor(
                         donor = '', 
                         relationship_type = 'aunt', )
                     ],
@@ -195,7 +195,7 @@ class TestItem(unittest.TestCase):
                     ],
                 href = '',
                 s3_uri = '',
-                upload_credentials = openapi_client.models.upload_credentials.Upload Credentials(),
+                upload_credentials = igvf_client.models.upload_credentials.Upload Credentials(),
                 content_summary = '',
                 seqspec_of = [
                     ''
@@ -251,7 +251,7 @@ class TestItem(unittest.TestCase):
                     null
                     ],
                 small_scale_loci_list = [
-                    openapi_client.models.locus.Locus(
+                    igvf_client.models.locus.Locus(
                         assembly = 'GRCh38', 
                         chromosome = 'chrH', 
                         start = 1, 
@@ -276,7 +276,7 @@ class TestItem(unittest.TestCase):
                     ''
                     ],
                 exon = 'k',
-                tile = openapi_client.models.tile.Tile(
+                tile = igvf_client.models.tile.Tile(
                     tile_id = 'k', 
                     tile_start = 1, 
                     tile_end = 1, ),
@@ -330,7 +330,7 @@ class TestItem(unittest.TestCase):
                 geneid = 'ENSEIOTGSWWMEJTCMOSLLNYULG62255008507',
                 symbol = '',
                 locations = [
-                    openapi_client.models.gene_location.Gene Location(
+                    igvf_client.models.gene_location.Gene Location(
                         assembly = 'GRCh38', 
                         chromosome = 'chrC', 
                         start = 0, 
@@ -408,9 +408,9 @@ class TestItem(unittest.TestCase):
                 pct_coverage_protein = 0,
                 pct_coverage_orf = 0,
                 parent = '',
-                layout = openapi_client.models.page_layout.Page Layout(
+                layout = igvf_client.models.page_layout.Page Layout(
                     blocks = [
-                        openapi_client.models.page_layout_components.Page Layout Components(
+                        igvf_client.models.page_layout_components.Page Layout Components(
                             @id = '', 
                             @type = '', 
                             body = '', 

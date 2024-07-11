@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.prediction_set import PredictionSet
+from igvf_client.models.prediction_set import PredictionSet
 
 # TODO update the JSON string below
 json = "{}"

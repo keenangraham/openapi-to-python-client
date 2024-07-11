@@ -25,11 +25,11 @@ from urllib.parse import quote
 from typing import Tuple, Optional, List, Dict, Union
 from pydantic import SecretStr
 
-from openapi_client.configuration import Configuration
-from openapi_client.api_response import ApiResponse, T as ApiResponseT
-import openapi_client.models
-from openapi_client import rest
-from openapi_client.exceptions import (
+from igvf_client.configuration import Configuration
+from igvf_client.api_response import ApiResponse, T as ApiResponseT
+import igvf_client.models
+from igvf_client import rest
+from igvf_client.exceptions import (
     ApiValueError,
     ApiException,
     BadRequestException,
@@ -433,7 +433,7 @@ class ApiClient:
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(openapi_client.models, klass)
+                klass = getattr(igvf_client.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

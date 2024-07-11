@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.no_results_response_filters_inner import NoResultsResponseFiltersInner
+from igvf_client.models.no_results_response_filters_inner import NoResultsResponseFiltersInner
 
 class TestNoResultsResponseFiltersInner(unittest.TestCase):
     """NoResultsResponseFiltersInner unit test stubs"""

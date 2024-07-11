@@ -19,9 +19,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from openapi_client.models.no_results_response_facet_groups_inner import NoResultsResponseFacetGroupsInner
-from openapi_client.models.no_results_response_facets_inner import NoResultsResponseFacetsInner
-from openapi_client.models.no_results_response_filters_inner import NoResultsResponseFiltersInner
+from igvf_client.models.no_results_response_facet_groups_inner import NoResultsResponseFacetGroupsInner
+from igvf_client.models.no_results_response_facets_inner import NoResultsResponseFacetsInner
+from igvf_client.models.no_results_response_filters_inner import NoResultsResponseFiltersInner
 from typing import Optional, Set
 from typing_extensions import Self
 

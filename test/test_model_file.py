@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.model_file import ModelFile
+from igvf_client.models.model_file import ModelFile
 
 class TestModelFile(unittest.TestCase):
     """ModelFile unit test stubs"""
@@ -100,7 +100,7 @@ class TestModelFile(unittest.TestCase):
                     ],
                 href = '',
                 s3_uri = '',
-                upload_credentials = openapi_client.models.upload_credentials.Upload Credentials()
+                upload_credentials = igvf_client.models.upload_credentials.Upload Credentials()
             )
         else:
             return ModelFile(

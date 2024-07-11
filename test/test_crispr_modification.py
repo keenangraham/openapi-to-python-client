@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.crispr_modification import CrisprModification
+from igvf_client.models.crispr_modification import CrisprModification
 
 class TestCrisprModification(unittest.TestCase):
     """CrisprModification unit test stubs"""

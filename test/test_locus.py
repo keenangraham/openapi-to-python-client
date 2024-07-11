@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.locus import Locus
+from igvf_client.models.locus import Locus
 
 class TestLocus(unittest.TestCase):
     """Locus unit test stubs"""

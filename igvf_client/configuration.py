@@ -67,7 +67,7 @@ class Configuration:
 
     Configure API client with HTTP basic authentication:
 
-conf = openapi_client.Configuration(
+conf = igvf_client.Configuration(
     # Your portal access key pair:
     access_key='abc123',
     secret_access_key='def456',
@@ -127,7 +127,7 @@ conf = openapi_client.Configuration(
         self.logger = {}
         """Logging Settings
         """
-        self.logger["package_logger"] = logging.getLogger("openapi_client")
+        self.logger["package_logger"] = logging.getLogger("igvf_client")
         self.logger["urllib3_logger"] = logging.getLogger("urllib3")
         self.logger_format = '%(asctime)s %(levelname)s %(message)s'
         """Log format

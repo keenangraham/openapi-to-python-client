@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.genome_browser_annotation_file import GenomeBrowserAnnotationFile
+from igvf_client.models.genome_browser_annotation_file import GenomeBrowserAnnotationFile
 
 class TestGenomeBrowserAnnotationFile(unittest.TestCase):
     """GenomeBrowserAnnotationFile unit test stubs"""
@@ -101,7 +101,7 @@ class TestGenomeBrowserAnnotationFile(unittest.TestCase):
                     ],
                 href = '',
                 s3_uri = '',
-                upload_credentials = openapi_client.models.upload_credentials.Upload Credentials()
+                upload_credentials = igvf_client.models.upload_credentials.Upload Credentials()
             )
         else:
             return GenomeBrowserAnnotationFile(

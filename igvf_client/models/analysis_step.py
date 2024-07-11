@@ -21,8 +21,8 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.input_content_type import InputContentType
-from openapi_client.models.output_content_type import OutputContentType
+from igvf_client.models.input_content_type import InputContentType
+from igvf_client.models.output_content_type import OutputContentType
 from typing import Optional, Set
 from typing_extensions import Self
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.search_facet_term_value import SearchFacetTermValue
+from igvf_client.models.search_facet_term_value import SearchFacetTermValue
 
 # TODO update the JSON string below
 json = "{}"

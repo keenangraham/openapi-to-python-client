@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.search_results import SearchResults
+from igvf_client.models.search_results import SearchResults
 
 # TODO update the JSON string below
 json = "{}"

@@ -18,18 +18,23 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.content_type import ContentType
+from igvf_client.models.content_type1 import ContentType1
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ImageFile(BaseModel):
+class ReferenceFile(BaseModel):
     """
-    A file containing image data.
+    A file containing diverse reference related information.
     """ # noqa: E501
+    controlled_access: Optional[StrictBool] = Field(default=None, description="Boolean value, indicating the file being controlled access, if true.")
+    anvil_url: Optional[StrictStr] = Field(default=None, description="URL linking to the controlled access file that has been deposited at AnVIL workspace.")
+    assembly: Optional[StrictStr] = Field(default=None, description="Genome assembly applicable for the reference data.")
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    file_format_type: Optional[StrictStr] = Field(default=None, description="The subtype of bed files.")
+    transcriptome_annotation: Optional[StrictStr] = Field(default=None, description="The annotation and version of the reference resource.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
@@ -38,7 +43,7 @@ class ImageFile(BaseModel):
     collections: Optional[List[StrictStr]] = Field(default=None, description="Some samples are part of particular data collections.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     revoke_detail: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Explanation of why an object was transitioned to the revoked status.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='14', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -48,7 +53,7 @@ class ImageFile(BaseModel):
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     analysis_step_version: Optional[StrictStr] = Field(default=None, description="The analysis step version of the file.")
     content_md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The MD5sum of the uncompressed file.")
-    content_type: Optional[ContentType] = None
+    content_type: Optional[ContentType1] = None
     dbxrefs: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects.")
     derived_from: Optional[List[StrictStr]] = Field(default=None, description="The files participating as inputs into software to produce this output file.")
     file_format: Optional[StrictStr] = Field(default=None, description="The file format or extension of the file.")
@@ -59,9 +64,13 @@ class ImageFile(BaseModel):
     submitted_file_name: Optional[StrictStr] = Field(default=None, description="Original name of the file.")
     upload_status: Optional[StrictStr] = Field(default='pending', description="The upload/validation status of the file.")
     validation_error_detail: Optional[StrictStr] = Field(default=None, description="Explanation of why the file failed the automated content checks.")
+    source_url: Optional[StrictStr] = Field(default=None, description="Link to external resource, such as NCBI or GENCODE, where the reference data was obtained.")
+    sources: Optional[List[StrictStr]] = Field(default=None, description="The originating lab(s) or vendor(s).")
+    external: Optional[StrictBool] = Field(default=False, description="Indicates whether the file was obtained from an external, non-IGVF source.")
+    external_id: Optional[StrictStr] = Field(default=None, description="A unique identifier for the file at its original source.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the image file.")
+    summary: Optional[StrictStr] = Field(default=None, description="A summary of the reference file.")
     integrated_in: Optional[List[Any]] = Field(default=None, description="Construct library set(s) that this file was used for in insert design.")
     input_file_for: Optional[List[Any]] = Field(default=None, description="The files which are derived from this file.")
     gene_list_for: Optional[List[Any]] = Field(default=None, description="File Set(s) that this file is a gene list for.")
@@ -69,7 +78,37 @@ class ImageFile(BaseModel):
     href: Optional[StrictStr] = Field(default=None, description="The download path to obtain file.")
     s3_uri: Optional[StrictStr] = Field(default=None, description="The S3 URI of public file object.")
     upload_credentials: Optional[Dict[str, Any]] = Field(default=None, description="The upload credentials for S3 to submit the file content.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "analysis_step_version", "content_md5sum", "content_type", "dbxrefs", "derived_from", "file_format", "file_format_specifications", "file_set", "file_size", "md5sum", "submitted_file_name", "upload_status", "validation_error_detail", "@id", "@type", "summary", "integrated_in", "input_file_for", "gene_list_for", "loci_list_for", "href", "s3_uri", "upload_credentials"]
+    __properties: ClassVar[List[str]] = ["controlled_access", "anvil_url", "assembly", "release_timestamp", "file_format_type", "transcriptome_annotation", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "analysis_step_version", "content_md5sum", "content_type", "dbxrefs", "derived_from", "file_format", "file_format_specifications", "file_set", "file_size", "md5sum", "submitted_file_name", "upload_status", "validation_error_detail", "source_url", "sources", "external", "external_id", "@id", "@type", "summary", "integrated_in", "input_file_for", "gene_list_for", "loci_list_for", "href", "s3_uri", "upload_credentials"]
+
+    @field_validator('assembly')
+    def assembly_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['GRCh38', 'hg19', 'GRCm39', 'mm10']):
+            raise ValueError("must be one of enum values ('GRCh38', 'hg19', 'GRCm39', 'mm10')")
+        return value
+
+    @field_validator('file_format_type')
+    def file_format_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['bed12', 'bed3', 'bed3+', 'bed5', 'bed6', 'bed6+', 'bed9', 'bed9+', 'mpra_starr']):
+            raise ValueError("must be one of enum values ('bed12', 'bed3', 'bed3+', 'bed5', 'bed6', 'bed6+', 'bed9', 'bed9+', 'mpra_starr')")
+        return value
+
+    @field_validator('transcriptome_annotation')
+    def transcriptome_annotation_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['GENCODE 40', 'GENCODE 41', 'GENCODE 42', 'GENCODE 43', 'GENCODE 44', 'GENCODE 45', 'GENCODE M30', 'GENCODE M31', 'GENCODE M32', 'GENCODE M33', 'GENCODE M34']):
+            raise ValueError("must be one of enum values ('GENCODE 40', 'GENCODE 41', 'GENCODE 42', 'GENCODE 43', 'GENCODE 44', 'GENCODE 45', 'GENCODE M30', 'GENCODE M31', 'GENCODE M32', 'GENCODE M33', 'GENCODE M34')")
+        return value
 
     @field_validator('collections')
     def collections_validate_enum(cls, value):
@@ -158,8 +197,8 @@ class ImageFile(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['jpg', 'png']):
-            raise ValueError("must be one of enum values ('jpg', 'png')")
+        if value not in set(['bed', 'csv', 'dat', 'fasta', 'gaf', 'gds', 'gtf', 'obo', 'owl', 'PWM', 'tar', 'tsv', 'txt', 'vcf', 'xml']):
+            raise ValueError("must be one of enum values ('bed', 'csv', 'dat', 'fasta', 'gaf', 'gds', 'gtf', 'obo', 'owl', 'PWM', 'tar', 'tsv', 'txt', 'vcf', 'xml')")
         return value
 
     @field_validator('md5sum')
@@ -200,7 +239,7 @@ class ImageFile(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ImageFile from a JSON string"""
+        """Create an instance of ReferenceFile from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -228,7 +267,7 @@ class ImageFile(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ImageFile from a dict"""
+        """Create an instance of ReferenceFile from a dict"""
         if obj is None:
             return None
 
@@ -236,7 +275,12 @@ class ImageFile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "controlled_access": obj.get("controlled_access"),
+            "anvil_url": obj.get("anvil_url"),
+            "assembly": obj.get("assembly"),
             "release_timestamp": obj.get("release_timestamp"),
+            "file_format_type": obj.get("file_format_type"),
+            "transcriptome_annotation": obj.get("transcriptome_annotation"),
             "documents": obj.get("documents"),
             "lab": obj.get("lab"),
             "award": obj.get("award"),
@@ -245,7 +289,7 @@ class ImageFile(BaseModel):
             "collections": obj.get("collections"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
             "revoke_detail": obj.get("revoke_detail"),
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '4',
+            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '14',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
@@ -255,7 +299,7 @@ class ImageFile(BaseModel):
             "description": obj.get("description"),
             "analysis_step_version": obj.get("analysis_step_version"),
             "content_md5sum": obj.get("content_md5sum"),
-            "content_type": ContentType.from_dict(obj["content_type"]) if obj.get("content_type") is not None else None,
+            "content_type": ContentType1.from_dict(obj["content_type"]) if obj.get("content_type") is not None else None,
             "dbxrefs": obj.get("dbxrefs"),
             "derived_from": obj.get("derived_from"),
             "file_format": obj.get("file_format"),
@@ -266,6 +310,10 @@ class ImageFile(BaseModel):
             "submitted_file_name": obj.get("submitted_file_name"),
             "upload_status": obj.get("upload_status") if obj.get("upload_status") is not None else 'pending',
             "validation_error_detail": obj.get("validation_error_detail"),
+            "source_url": obj.get("source_url"),
+            "sources": obj.get("sources"),
+            "external": obj.get("external") if obj.get("external") is not None else False,
+            "external_id": obj.get("external_id"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),

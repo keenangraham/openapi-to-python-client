@@ -60,7 +60,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.construct_library_set import ConstructLibrarySet
+from igvf_client.models.construct_library_set import ConstructLibrarySet
 
 # TODO update the JSON string below
 json = "{}"

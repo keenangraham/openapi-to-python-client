@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.tile import Tile
+from igvf_client.models.tile import Tile
 
 class TestTile(unittest.TestCase):
     """Tile unit test stubs"""

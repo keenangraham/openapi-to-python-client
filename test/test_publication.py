@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.publication import Publication
+from igvf_client.models.publication import Publication
 
 class TestPublication(unittest.TestCase):
     """Publication unit test stubs"""
@@ -42,7 +42,7 @@ class TestPublication(unittest.TestCase):
                 status = 'in progress',
                 lab = '',
                 award = '',
-                attachment = openapi_client.models.attachment.Attachment(
+                attachment = igvf_client.models.attachment.Attachment(
                     download = '', 
                     href = '', 
                     type = 'application/json', 

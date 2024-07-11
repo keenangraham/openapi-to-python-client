@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.attachment1 import Attachment1
+from igvf_client.models.attachment1 import Attachment1
 
 class TestAttachment1(unittest.TestCase):
     """Attachment1 unit test stubs"""

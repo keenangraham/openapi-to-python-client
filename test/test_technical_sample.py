@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.technical_sample import TechnicalSample
+from igvf_client.models.technical_sample import TechnicalSample
 
 class TestTechnicalSample(unittest.TestCase):
     """TechnicalSample unit test stubs"""

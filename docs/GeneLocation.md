@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.gene_location import GeneLocation
+from igvf_client.models.gene_location import GeneLocation
 
 # TODO update the JSON string below
 json = "{}"

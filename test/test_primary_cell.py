@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.primary_cell import PrimaryCell
+from igvf_client.models.primary_cell import PrimaryCell
 
 class TestPrimaryCell(unittest.TestCase):
     """PrimaryCell unit test stubs"""

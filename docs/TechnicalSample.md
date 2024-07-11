@@ -57,7 +57,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.technical_sample import TechnicalSample
+from igvf_client.models.technical_sample import TechnicalSample
 
 # TODO update the JSON string below
 json = "{}"

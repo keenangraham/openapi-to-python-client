@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.image import Image
+from igvf_client.models.image import Image
 
 class TestImage(unittest.TestCase):
     """Image unit test stubs"""
@@ -37,7 +37,7 @@ class TestImage(unittest.TestCase):
             return Image(
                 release_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 status = 'released',
-                attachment = openapi_client.models.attachment.Attachment(
+                attachment = igvf_client.models.attachment.Attachment(
                     download = '', 
                     href = '', 
                     type = 'image/png', 

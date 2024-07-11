@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.human_donor import HumanDonor
+from igvf_client.models.human_donor import HumanDonor
 
 class TestHumanDonor(unittest.TestCase):
     """HumanDonor unit test stubs"""
@@ -74,7 +74,7 @@ class TestHumanDonor(unittest.TestCase):
                     ],
                 virtual = True,
                 related_donors = [
-                    openapi_client.models.related_donor.Related Donor(
+                    igvf_client.models.related_donor.Related Donor(
                         donor = '', 
                         relationship_type = 'aunt', )
                     ],

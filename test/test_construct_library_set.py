@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.construct_library_set import ConstructLibrarySet
+from igvf_client.models.construct_library_set import ConstructLibrarySet
 
 class TestConstructLibrarySet(unittest.TestCase):
     """ConstructLibrarySet unit test stubs"""
@@ -36,7 +36,7 @@ class TestConstructLibrarySet(unittest.TestCase):
         if include_optional:
             return ConstructLibrarySet(
                 small_scale_loci_list = [
-                    openapi_client.models.locus.Locus(
+                    igvf_client.models.locus.Locus(
                         assembly = 'GRCh38', 
                         chromosome = 'chrH', 
                         start = 1, 
@@ -95,7 +95,7 @@ class TestConstructLibrarySet(unittest.TestCase):
                     ''
                     ],
                 exon = 'k',
-                tile = openapi_client.models.tile.Tile(
+                tile = igvf_client.models.tile.Tile(
                     tile_id = 'k', 
                     tile_start = 1, 
                     tile_end = 1, ),

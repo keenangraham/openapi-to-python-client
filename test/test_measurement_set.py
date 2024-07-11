@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.measurement_set import MeasurementSet
+from igvf_client.models.measurement_set import MeasurementSet
 
 class TestMeasurementSet(unittest.TestCase):
     """MeasurementSet unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.source import Source
+from igvf_client.models.source import Source
 
 class TestSource(unittest.TestCase):
     """Source unit test stubs"""

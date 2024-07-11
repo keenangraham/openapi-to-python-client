@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.auxiliary_set import AuxiliarySet
+from igvf_client.models.auxiliary_set import AuxiliarySet
 
 class TestAuxiliarySet(unittest.TestCase):
     """AuxiliarySet unit test stubs"""

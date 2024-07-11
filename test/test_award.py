@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.award import Award
+from igvf_client.models.award import Award
 
 class TestAward(unittest.TestCase):
     """Award unit test stubs"""

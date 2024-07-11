@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.document import Document
+from igvf_client.models.document import Document
 
 # TODO update the JSON string below
 json = "{}"

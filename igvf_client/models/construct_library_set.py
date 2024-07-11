@@ -21,8 +21,8 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
-from openapi_client.models.locus import Locus
-from openapi_client.models.tile import Tile
+from igvf_client.models.locus import Locus
+from igvf_client.models.tile import Tile
 from typing import Optional, Set
 from typing_extensions import Self
 

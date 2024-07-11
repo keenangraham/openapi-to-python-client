@@ -55,7 +55,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.tabular_file import TabularFile
+from igvf_client.models.tabular_file import TabularFile
 
 # TODO update the JSON string below
 json = "{}"

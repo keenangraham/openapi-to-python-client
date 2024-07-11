@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.reference_file import ReferenceFile
+from igvf_client.models.reference_file import ReferenceFile
 
 class TestReferenceFile(unittest.TestCase):
     """ReferenceFile unit test stubs"""
@@ -109,7 +109,7 @@ class TestReferenceFile(unittest.TestCase):
                     ],
                 href = '',
                 s3_uri = '',
-                upload_credentials = openapi_client.models.upload_credentials.Upload Credentials()
+                upload_credentials = igvf_client.models.upload_credentials.Upload Credentials()
             )
         else:
             return ReferenceFile(

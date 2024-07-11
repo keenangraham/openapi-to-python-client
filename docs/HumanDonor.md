@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.human_donor import HumanDonor
+from igvf_client.models.human_donor import HumanDonor
 
 # TODO update the JSON string below
 json = "{}"

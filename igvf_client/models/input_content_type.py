@@ -19,16 +19,16 @@ import pprint
 import re  # noqa: F401
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Optional
-from openapi_client.models.input_content_type_any_of import InputContentTypeAnyOf
+from igvf_client.models.input_content_type_any_of import InputContentTypeAnyOf
 from typing import Union, Any, List, Set, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field
 
-OUTPUTCONTENTTYPE_ANY_OF_SCHEMAS = ["InputContentTypeAnyOf", "str"]
+INPUTCONTENTTYPE_ANY_OF_SCHEMAS = ["InputContentTypeAnyOf", "str"]
 
-class OutputContentType(BaseModel):
+class InputContentType(BaseModel):
     """
-    A content type produced as output by the analysis step.
+    A content type used as input for the analysis step.
     """
 
     # data type: str
@@ -66,7 +66,7 @@ class OutputContentType(BaseModel):
 
     @field_validator('actual_instance')
     def actual_instance_must_validate_anyof(cls, v):
-        instance = OutputContentType.model_construct()
+        instance = InputContentType.model_construct()
         error_messages = []
         # validate data type: str
         try:
@@ -106,7 +106,7 @@ class OutputContentType(BaseModel):
             error_messages.append(str(e))
         if error_messages:
             # no match
-            raise ValueError("No match found when setting the actual_instance in OutputContentType with anyOf schemas: InputContentTypeAnyOf, str. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting the actual_instance in InputContentType with anyOf schemas: InputContentTypeAnyOf, str. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -173,7 +173,7 @@ class OutputContentType(BaseModel):
 
         if error_messages:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into OutputContentType with anyOf schemas: InputContentTypeAnyOf, str. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into InputContentType with anyOf schemas: InputContentTypeAnyOf, str. Details: " + ", ".join(error_messages))
         else:
             return instance
 

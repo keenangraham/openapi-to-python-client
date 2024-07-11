@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.treatment import Treatment
+from igvf_client.models.treatment import Treatment
 
 class TestTreatment(unittest.TestCase):
     """Treatment unit test stubs"""

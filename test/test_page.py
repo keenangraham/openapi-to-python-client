@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.page import Page
+from igvf_client.models.page import Page
 
 class TestPage(unittest.TestCase):
     """Page unit test stubs"""
@@ -52,9 +52,9 @@ class TestPage(unittest.TestCase):
                 parent = '',
                 name = 'y',
                 title = '',
-                layout = openapi_client.models.page_layout.Page Layout(
+                layout = igvf_client.models.page_layout.Page Layout(
                     blocks = [
-                        openapi_client.models.page_layout_components.Page Layout Components(
+                        igvf_client.models.page_layout_components.Page Layout Components(
                             @id = '', 
                             @type = '', 
                             body = '', 

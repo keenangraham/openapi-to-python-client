@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.multiplexed_sample import MultiplexedSample
+from igvf_client.models.multiplexed_sample import MultiplexedSample
 
 # TODO update the JSON string below
 json = "{}"

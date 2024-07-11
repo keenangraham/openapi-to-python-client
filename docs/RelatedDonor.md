@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.related_donor import RelatedDonor
+from igvf_client.models.related_donor import RelatedDonor
 
 # TODO update the JSON string below
 json = "{}"

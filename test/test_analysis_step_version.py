@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.analysis_step_version import AnalysisStepVersion
+from igvf_client.models.analysis_step_version import AnalysisStepVersion
 
 class TestAnalysisStepVersion(unittest.TestCase):
     """AnalysisStepVersion unit test stubs"""

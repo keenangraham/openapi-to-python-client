@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.phenotypic_feature import PhenotypicFeature
+from igvf_client.models.phenotypic_feature import PhenotypicFeature
 
 class TestPhenotypicFeature(unittest.TestCase):
     """PhenotypicFeature unit test stubs"""

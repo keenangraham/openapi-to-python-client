@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.tabular_file import TabularFile
+from igvf_client.models.tabular_file import TabularFile
 
 class TestTabularFile(unittest.TestCase):
     """TabularFile unit test stubs"""
@@ -103,7 +103,7 @@ class TestTabularFile(unittest.TestCase):
                     ],
                 href = '',
                 s3_uri = '',
-                upload_credentials = openapi_client.models.upload_credentials.Upload Credentials()
+                upload_credentials = igvf_client.models.upload_credentials.Upload Credentials()
             )
         else:
             return TabularFile(

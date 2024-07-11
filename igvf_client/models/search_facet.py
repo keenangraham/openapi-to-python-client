@@ -17,18 +17,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from openapi_client.models.page_layout_components import PageLayoutComponents
+from igvf_client.models.search_facet_term_value import SearchFacetTermValue
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PageLayout(BaseModel):
+class SearchFacet(BaseModel):
     """
-    Hierarchical description of the page layout.
+    SearchFacet
     """ # noqa: E501
-    blocks: Optional[List[PageLayoutComponents]] = None
-    __properties: ClassVar[List[str]] = ["blocks"]
+    var_field: Optional[StrictStr] = Field(default=None, alias="field")
+    title: Optional[StrictStr] = None
+    terms: Optional[List[SearchFacetTermValue]] = None
+    __properties: ClassVar[List[str]] = ["field", "title", "terms"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +50,7 @@ class PageLayout(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PageLayout from a JSON string"""
+        """Create an instance of SearchFacet from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -69,18 +71,18 @@ class PageLayout(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in blocks (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in terms (list)
         _items = []
-        if self.blocks:
-            for _item in self.blocks:
+        if self.terms:
+            for _item in self.terms:
                 if _item:
                     _items.append(_item.to_dict())
-            _dict['blocks'] = _items
+            _dict['terms'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PageLayout from a dict"""
+        """Create an instance of SearchFacet from a dict"""
         if obj is None:
             return None
 
@@ -88,7 +90,9 @@ class PageLayout(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "blocks": [PageLayoutComponents.from_dict(_item) for _item in obj["blocks"]] if obj.get("blocks") is not None else None
+            "field": obj.get("field"),
+            "title": obj.get("title"),
+            "terms": [SearchFacetTermValue.from_dict(_item) for _item in obj["terms"]] if obj.get("terms") is not None else None
         })
         return _obj
 

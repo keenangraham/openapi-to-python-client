@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.igvf_api import IgvfApi
+from igvf_client.api.igvf_api import IgvfApi
 
 
 class TestIgvfApi(unittest.TestCase):
@@ -24,6 +24,13 @@ class TestIgvfApi(unittest.TestCase):
         self.api = IgvfApi()
 
     def tearDown(self) -> None:
+        pass
+
+    def test_get_by_id(self) -> None:
+        """Test case for get_by_id
+
+        Get item information
+        """
         pass
 
     def test_search(self) -> None:

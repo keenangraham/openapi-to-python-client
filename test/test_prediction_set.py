@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.prediction_set import PredictionSet
+from igvf_client.models.prediction_set import PredictionSet
 
 class TestPredictionSet(unittest.TestCase):
     """PredictionSet unit test stubs"""
@@ -39,7 +39,7 @@ class TestPredictionSet(unittest.TestCase):
                     ''
                     ],
                 small_scale_loci_list = [
-                    openapi_client.models.locus.Locus(
+                    igvf_client.models.locus.Locus(
                         assembly = 'GRCh38', 
                         chromosome = 'chrH', 
                         start = 1, 

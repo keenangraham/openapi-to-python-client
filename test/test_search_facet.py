@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.search_facet import SearchFacet
+from igvf_client.models.search_facet import SearchFacet
 
 class TestSearchFacet(unittest.TestCase):
     """SearchFacet unit test stubs"""
@@ -38,7 +38,7 @@ class TestSearchFacet(unittest.TestCase):
                 var_field = '',
                 title = '',
                 terms = [
-                    openapi_client.models.search_facet_term_value.SearchFacetTermValue(
+                    igvf_client.models.search_facet_term_value.SearchFacetTermValue(
                         key = '', 
                         doc_count = 56, )
                     ]

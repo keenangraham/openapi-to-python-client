@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.crispr_modification import CrisprModification
+from igvf_client.models.crispr_modification import CrisprModification
 
 # TODO update the JSON string below
 json = "{}"

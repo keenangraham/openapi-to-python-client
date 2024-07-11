@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.in_vitro_system import InVitroSystem
+from igvf_client.models.in_vitro_system import InVitroSystem
 
 class TestInVitroSystem(unittest.TestCase):
     """InVitroSystem unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.no_results_response_facets_inner_terms_inner import NoResultsResponseFacetsInnerTermsInner
+from igvf_client.models.no_results_response_facets_inner_terms_inner import NoResultsResponseFacetsInnerTermsInner
 
 class TestNoResultsResponseFacetsInnerTermsInner(unittest.TestCase):
     """NoResultsResponseFacetsInnerTermsInner unit test stubs"""

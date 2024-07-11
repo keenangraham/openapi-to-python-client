@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.curated_set import CuratedSet
+from igvf_client.models.curated_set import CuratedSet
 
 class TestCuratedSet(unittest.TestCase):
     """CuratedSet unit test stubs"""

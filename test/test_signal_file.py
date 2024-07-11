@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.signal_file import SignalFile
+from igvf_client.models.signal_file import SignalFile
 
 class TestSignalFile(unittest.TestCase):
     """SignalFile unit test stubs"""
@@ -107,7 +107,7 @@ class TestSignalFile(unittest.TestCase):
                     ],
                 href = '',
                 s3_uri = '',
-                upload_credentials = openapi_client.models.upload_credentials.Upload Credentials(),
+                upload_credentials = igvf_client.models.upload_credentials.Upload Credentials(),
                 content_summary = ''
             )
         else:

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.assay_term import AssayTerm
+from igvf_client.models.assay_term import AssayTerm
 
 class TestAssayTerm(unittest.TestCase):
     """AssayTerm unit test stubs"""

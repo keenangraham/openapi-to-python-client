@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.phenotype_term import PhenotypeTerm
+from igvf_client.models.phenotype_term import PhenotypeTerm
 
 class TestPhenotypeTerm(unittest.TestCase):
     """PhenotypeTerm unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.open_reading_frame import OpenReadingFrame
+from igvf_client.models.open_reading_frame import OpenReadingFrame
 
 class TestOpenReadingFrame(unittest.TestCase):
     """OpenReadingFrame unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.page_layout import PageLayout
+from igvf_client.models.page_layout import PageLayout
 
 class TestPageLayout(unittest.TestCase):
     """PageLayout unit test stubs"""
@@ -36,7 +36,7 @@ class TestPageLayout(unittest.TestCase):
         if include_optional:
             return PageLayout(
                 blocks = [
-                    openapi_client.models.page_layout_components.Page Layout Components(
+                    igvf_client.models.page_layout_components.Page Layout Components(
                         @id = '', 
                         @type = '', 
                         body = '', 

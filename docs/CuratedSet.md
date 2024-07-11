@@ -43,7 +43,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.curated_set import CuratedSet
+from igvf_client.models.curated_set import CuratedSet
 
 # TODO update the JSON string below
 json = "{}"

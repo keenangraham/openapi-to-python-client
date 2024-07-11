@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.related_donor import RelatedDonor
+from igvf_client.models.related_donor import RelatedDonor
 
 class TestRelatedDonor(unittest.TestCase):
     """RelatedDonor unit test stubs"""

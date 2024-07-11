@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.gene_location import GeneLocation
+from igvf_client.models.gene_location import GeneLocation
 
 class TestGeneLocation(unittest.TestCase):
     """GeneLocation unit test stubs"""

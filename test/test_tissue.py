@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.tissue import Tissue
+from igvf_client.models.tissue import Tissue
 
 class TestTissue(unittest.TestCase):
     """Tissue unit test stubs"""

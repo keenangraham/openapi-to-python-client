@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.access_key import AccessKey
+from igvf_client.models.access_key import AccessKey
 
 class TestAccessKey(unittest.TestCase):
     """AccessKey unit test stubs"""

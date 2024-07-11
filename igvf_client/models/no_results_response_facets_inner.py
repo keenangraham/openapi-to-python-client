@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from openapi_client.models.no_results_response_facets_inner_terms_inner import NoResultsResponseFacetsInnerTermsInner
+from igvf_client.models.no_results_response_facets_inner_terms_inner import NoResultsResponseFacetsInnerTermsInner
 from typing import Optional, Set
 from typing_extensions import Self
 

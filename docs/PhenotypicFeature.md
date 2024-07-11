@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.phenotypic_feature import PhenotypicFeature
+from igvf_client.models.phenotypic_feature import PhenotypicFeature
 
 # TODO update the JSON string below
 json = "{}"

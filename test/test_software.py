@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.software import Software
+from igvf_client.models.software import Software
 
 class TestSoftware(unittest.TestCase):
     """Software unit test stubs"""

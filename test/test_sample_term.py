@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.sample_term import SampleTerm
+from igvf_client.models.sample_term import SampleTerm
 
 class TestSampleTerm(unittest.TestCase):
     """SampleTerm unit test stubs"""

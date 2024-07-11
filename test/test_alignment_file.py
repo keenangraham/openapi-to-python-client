@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.alignment_file import AlignmentFile
+from igvf_client.models.alignment_file import AlignmentFile
 
 class TestAlignmentFile(unittest.TestCase):
     """AlignmentFile unit test stubs"""
@@ -107,7 +107,7 @@ class TestAlignmentFile(unittest.TestCase):
                     ],
                 href = '',
                 s3_uri = '',
-                upload_credentials = openapi_client.models.upload_credentials.Upload Credentials(),
+                upload_credentials = igvf_client.models.upload_credentials.Upload Credentials(),
                 content_summary = ''
             )
         else:

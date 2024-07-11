@@ -76,7 +76,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.primary_cell import PrimaryCell
+from igvf_client.models.primary_cell import PrimaryCell
 
 # TODO update the JSON string below
 json = "{}"

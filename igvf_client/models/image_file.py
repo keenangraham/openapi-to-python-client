@@ -18,21 +18,18 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.related_donor import RelatedDonor
+from igvf_client.models.content_type import ContentType
 from typing import Optional, Set
 from typing_extensions import Self
 
-class HumanDonor(BaseModel):
+class ImageFile(BaseModel):
     """
-    A human donor of any biosample, including cell lines. Submission of any sample originating from a human donor requires submission of information about the relevant donor. For example, submission of the donor of K562 is a prerequisite for submission of any K562 cell line samples.
+    A file containing image data.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    taxa: Optional[StrictStr] = Field(default=None, description="The species of the organism.")
-    publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
-    url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
@@ -41,7 +38,7 @@ class HumanDonor(BaseModel):
     collections: Optional[List[StrictStr]] = Field(default=None, description="Some samples are part of particular data collections.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     revoke_detail: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Explanation of why an object was transitioned to the revoked status.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='13', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -49,28 +46,30 @@ class HumanDonor(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    dbxrefs: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF donors.")
-    sex: Optional[StrictStr] = Field(default='unspecified', description="Sex of the donor.")
-    phenotypic_features: Optional[List[StrictStr]] = Field(default=None, description="A list of associated phenotypic features of the donor.")
-    virtual: Optional[StrictBool] = Field(default=False, description="Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for.")
-    related_donors: Optional[List[RelatedDonor]] = Field(default=None, description="Familial relations of this donor.")
-    ethnicities: Optional[List[StrictStr]] = Field(default=None, description="Ethnicity of the donor.")
-    human_donor_identifiers: Optional[List[StrictStr]] = Field(default=None, description="Identifiers of this human donor.")
+    analysis_step_version: Optional[StrictStr] = Field(default=None, description="The analysis step version of the file.")
+    content_md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The MD5sum of the uncompressed file.")
+    content_type: Optional[ContentType] = None
+    dbxrefs: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects.")
+    derived_from: Optional[List[StrictStr]] = Field(default=None, description="The files participating as inputs into software to produce this output file.")
+    file_format: Optional[StrictStr] = Field(default=None, description="The file format or extension of the file.")
+    file_format_specifications: Optional[List[StrictStr]] = Field(default=None, description="Document that further explains the file format.")
+    file_set: Optional[StrictStr] = Field(default=None, description="The file set that this file belongs to.")
+    file_size: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="File size specified in bytes.")
+    md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The md5sum of the file being transferred.")
+    submitted_file_name: Optional[StrictStr] = Field(default=None, description="Original name of the file.")
+    upload_status: Optional[StrictStr] = Field(default='pending', description="The upload/validation status of the file.")
+    validation_error_detail: Optional[StrictStr] = Field(default=None, description="Explanation of why the file failed the automated content checks.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the human donor.")
-    additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["release_timestamp", "taxa", "publication_identifiers", "url", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "sex", "phenotypic_features", "virtual", "related_donors", "ethnicities", "human_donor_identifiers", "@id", "@type", "summary"]
-
-    @field_validator('taxa')
-    def taxa_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['Homo sapiens']):
-            raise ValueError("must be one of enum values ('Homo sapiens')")
-        return value
+    summary: Optional[StrictStr] = Field(default=None, description="A summary of the image file.")
+    integrated_in: Optional[List[Any]] = Field(default=None, description="Construct library set(s) that this file was used for in insert design.")
+    input_file_for: Optional[List[Any]] = Field(default=None, description="The files which are derived from this file.")
+    gene_list_for: Optional[List[Any]] = Field(default=None, description="File Set(s) that this file is a gene list for.")
+    loci_list_for: Optional[List[Any]] = Field(default=None, description="File Set(s) that this file is a loci list for.")
+    href: Optional[StrictStr] = Field(default=None, description="The download path to obtain file.")
+    s3_uri: Optional[StrictStr] = Field(default=None, description="The S3 URI of public file object.")
+    upload_credentials: Optional[Dict[str, Any]] = Field(default=None, description="The upload credentials for S3 to submit the file content.")
+    __properties: ClassVar[List[str]] = ["release_timestamp", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "analysis_step_version", "content_md5sum", "content_type", "dbxrefs", "derived_from", "file_format", "file_format_specifications", "file_set", "file_size", "md5sum", "submitted_file_name", "upload_status", "validation_error_detail", "@id", "@type", "summary", "integrated_in", "input_file_for", "gene_list_for", "loci_list_for", "href", "s3_uri", "upload_credentials"]
 
     @field_validator('collections')
     def collections_validate_enum(cls, value):
@@ -143,25 +142,44 @@ class HumanDonor(BaseModel):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value
 
-    @field_validator('sex')
-    def sex_validate_enum(cls, value):
-        """Validates the enum"""
+    @field_validator('content_md5sum')
+    def content_md5sum_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
         if value is None:
             return value
 
-        if value not in set(['male', 'female', 'unspecified']):
-            raise ValueError("must be one of enum values ('male', 'female', 'unspecified')")
+        if not re.match(r"[a-f\d]{32}|[A-F\d]{32}", value):
+            raise ValueError(r"must validate the regular expression /[a-f\d]{32}|[A-F\d]{32}/")
         return value
 
-    @field_validator('ethnicities')
-    def ethnicities_validate_enum(cls, value):
+    @field_validator('file_format')
+    def file_format_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        for i in value:
-            if i not in set(['African American', 'African Caribbean', 'Arab', 'Asian', 'Black', 'Black African', 'Chinese', 'Colombian', 'Dai Chinese', 'Esan', 'Eskimo', 'European', 'Gambian', 'Han Chinese', 'Hispanic', 'Indian', 'Japanese', 'Kinh Vietnamese', 'Luhya', 'Maasai', 'Mende', 'Native Hawaiian', 'Pacific Islander', 'Puerto Rican', 'Yoruba']):
-                raise ValueError("each list item must be one of ('African American', 'African Caribbean', 'Arab', 'Asian', 'Black', 'Black African', 'Chinese', 'Colombian', 'Dai Chinese', 'Esan', 'Eskimo', 'European', 'Gambian', 'Han Chinese', 'Hispanic', 'Indian', 'Japanese', 'Kinh Vietnamese', 'Luhya', 'Maasai', 'Mende', 'Native Hawaiian', 'Pacific Islander', 'Puerto Rican', 'Yoruba')")
+        if value not in set(['jpg', 'png']):
+            raise ValueError("must be one of enum values ('jpg', 'png')")
+        return value
+
+    @field_validator('md5sum')
+    def md5sum_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"[a-f\d]{32}|[A-F\d]{32}", value):
+            raise ValueError(r"must validate the regular expression /[a-f\d]{32}|[A-F\d]{32}/")
+        return value
+
+    @field_validator('upload_status')
+    def upload_status_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['pending', 'file not found', 'invalidated', 'validated']):
+            raise ValueError("must be one of enum values ('pending', 'file not found', 'invalidated', 'validated')")
         return value
 
     model_config = ConfigDict(
@@ -182,7 +200,7 @@ class HumanDonor(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of HumanDonor from a JSON string"""
+        """Create an instance of ImageFile from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -194,10 +212,8 @@ class HumanDonor(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -205,23 +221,14 @@ class HumanDonor(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in related_donors (list)
-        _items = []
-        if self.related_donors:
-            for _item in self.related_donors:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['related_donors'] = _items
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
+        # override the default output from pydantic by calling `to_dict()` of content_type
+        if self.content_type:
+            _dict['content_type'] = self.content_type.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of HumanDonor from a dict"""
+        """Create an instance of ImageFile from a dict"""
         if obj is None:
             return None
 
@@ -230,9 +237,6 @@ class HumanDonor(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
-            "taxa": obj.get("taxa"),
-            "publication_identifiers": obj.get("publication_identifiers"),
-            "url": obj.get("url"),
             "documents": obj.get("documents"),
             "lab": obj.get("lab"),
             "award": obj.get("award"),
@@ -241,7 +245,7 @@ class HumanDonor(BaseModel):
             "collections": obj.get("collections"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
             "revoke_detail": obj.get("revoke_detail"),
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '13',
+            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '4',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
@@ -249,22 +253,30 @@ class HumanDonor(BaseModel):
             "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
+            "analysis_step_version": obj.get("analysis_step_version"),
+            "content_md5sum": obj.get("content_md5sum"),
+            "content_type": ContentType.from_dict(obj["content_type"]) if obj.get("content_type") is not None else None,
             "dbxrefs": obj.get("dbxrefs"),
-            "sex": obj.get("sex") if obj.get("sex") is not None else 'unspecified',
-            "phenotypic_features": obj.get("phenotypic_features"),
-            "virtual": obj.get("virtual") if obj.get("virtual") is not None else False,
-            "related_donors": [RelatedDonor.from_dict(_item) for _item in obj["related_donors"]] if obj.get("related_donors") is not None else None,
-            "ethnicities": obj.get("ethnicities"),
-            "human_donor_identifiers": obj.get("human_donor_identifiers"),
+            "derived_from": obj.get("derived_from"),
+            "file_format": obj.get("file_format"),
+            "file_format_specifications": obj.get("file_format_specifications"),
+            "file_set": obj.get("file_set"),
+            "file_size": obj.get("file_size"),
+            "md5sum": obj.get("md5sum"),
+            "submitted_file_name": obj.get("submitted_file_name"),
+            "upload_status": obj.get("upload_status") if obj.get("upload_status") is not None else 'pending',
+            "validation_error_detail": obj.get("validation_error_detail"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
-            "summary": obj.get("summary")
+            "summary": obj.get("summary"),
+            "integrated_in": obj.get("integrated_in"),
+            "input_file_for": obj.get("input_file_for"),
+            "gene_list_for": obj.get("gene_list_for"),
+            "loci_list_for": obj.get("loci_list_for"),
+            "href": obj.get("href"),
+            "s3_uri": obj.get("s3_uri"),
+            "upload_credentials": obj.get("upload_credentials")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

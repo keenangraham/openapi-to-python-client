@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.no_results_response_filters_inner import NoResultsResponseFiltersInner
+from igvf_client.models.no_results_response_filters_inner import NoResultsResponseFiltersInner
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.modification import Modification
+from igvf_client.models.modification import Modification
 
 class TestModification(unittest.TestCase):
     """Modification unit test stubs"""

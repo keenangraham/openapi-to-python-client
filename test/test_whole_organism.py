@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.whole_organism import WholeOrganism
+from igvf_client.models.whole_organism import WholeOrganism
 
 class TestWholeOrganism(unittest.TestCase):
     """WholeOrganism unit test stubs"""

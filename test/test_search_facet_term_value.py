@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.search_facet_term_value import SearchFacetTermValue
+from igvf_client.models.search_facet_term_value import SearchFacetTermValue
 
 class TestSearchFacetTermValue(unittest.TestCase):
     """SearchFacetTermValue unit test stubs"""

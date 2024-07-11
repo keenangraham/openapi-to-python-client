@@ -17,66 +17,66 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from openapi_client.models.access_key import AccessKey
-from openapi_client.models.alignment_file import AlignmentFile
-from openapi_client.models.analysis_set import AnalysisSet
-from openapi_client.models.analysis_step import AnalysisStep
-from openapi_client.models.analysis_step_version import AnalysisStepVersion
-from openapi_client.models.assay_term import AssayTerm
-from openapi_client.models.auxiliary_set import AuxiliarySet
-from openapi_client.models.award import Award
-from openapi_client.models.biomarker import Biomarker
-from openapi_client.models.configuration_file import ConfigurationFile
-from openapi_client.models.construct_library_set import ConstructLibrarySet
-from openapi_client.models.crispr_modification import CrisprModification
-from openapi_client.models.curated_set import CuratedSet
-from openapi_client.models.document import Document
-from openapi_client.models.gene import Gene
-from openapi_client.models.genome_browser_annotation_file import GenomeBrowserAnnotationFile
-from openapi_client.models.human_donor import HumanDonor
-from openapi_client.models.image import Image
-from openapi_client.models.image_file import ImageFile
-from openapi_client.models.in_vitro_system import InVitroSystem
-from openapi_client.models.institutional_certificate import InstitutionalCertificate
-from openapi_client.models.lab import Lab
-from openapi_client.models.matrix_file import MatrixFile
-from openapi_client.models.measurement_set import MeasurementSet
-from openapi_client.models.model_file import ModelFile
-from openapi_client.models.model_set import ModelSet
-from openapi_client.models.modification import Modification
-from openapi_client.models.multiplexed_sample import MultiplexedSample
-from openapi_client.models.open_reading_frame import OpenReadingFrame
-from openapi_client.models.page import Page
-from openapi_client.models.phenotype_term import PhenotypeTerm
-from openapi_client.models.phenotypic_feature import PhenotypicFeature
-from openapi_client.models.platform_term import PlatformTerm
-from openapi_client.models.prediction_set import PredictionSet
-from openapi_client.models.primary_cell import PrimaryCell
-from openapi_client.models.publication import Publication
-from openapi_client.models.reference_file import ReferenceFile
-from openapi_client.models.rodent_donor import RodentDonor
-from openapi_client.models.sample_term import SampleTerm
-from openapi_client.models.sequence_file import SequenceFile
-from openapi_client.models.signal_file import SignalFile
-from openapi_client.models.software import Software
-from openapi_client.models.software_version import SoftwareVersion
-from openapi_client.models.source import Source
-from openapi_client.models.tabular_file import TabularFile
-from openapi_client.models.technical_sample import TechnicalSample
-from openapi_client.models.tissue import Tissue
-from openapi_client.models.treatment import Treatment
-from openapi_client.models.user import User
-from openapi_client.models.whole_organism import WholeOrganism
-from openapi_client.models.workflow import Workflow
+from igvf_client.models.access_key import AccessKey
+from igvf_client.models.alignment_file import AlignmentFile
+from igvf_client.models.analysis_set import AnalysisSet
+from igvf_client.models.analysis_step import AnalysisStep
+from igvf_client.models.analysis_step_version import AnalysisStepVersion
+from igvf_client.models.assay_term import AssayTerm
+from igvf_client.models.auxiliary_set import AuxiliarySet
+from igvf_client.models.award import Award
+from igvf_client.models.biomarker import Biomarker
+from igvf_client.models.configuration_file import ConfigurationFile
+from igvf_client.models.construct_library_set import ConstructLibrarySet
+from igvf_client.models.crispr_modification import CrisprModification
+from igvf_client.models.curated_set import CuratedSet
+from igvf_client.models.document import Document
+from igvf_client.models.gene import Gene
+from igvf_client.models.genome_browser_annotation_file import GenomeBrowserAnnotationFile
+from igvf_client.models.human_donor import HumanDonor
+from igvf_client.models.image import Image
+from igvf_client.models.image_file import ImageFile
+from igvf_client.models.in_vitro_system import InVitroSystem
+from igvf_client.models.institutional_certificate import InstitutionalCertificate
+from igvf_client.models.lab import Lab
+from igvf_client.models.matrix_file import MatrixFile
+from igvf_client.models.measurement_set import MeasurementSet
+from igvf_client.models.model_file import ModelFile
+from igvf_client.models.model_set import ModelSet
+from igvf_client.models.modification import Modification
+from igvf_client.models.multiplexed_sample import MultiplexedSample
+from igvf_client.models.open_reading_frame import OpenReadingFrame
+from igvf_client.models.page import Page
+from igvf_client.models.phenotype_term import PhenotypeTerm
+from igvf_client.models.phenotypic_feature import PhenotypicFeature
+from igvf_client.models.platform_term import PlatformTerm
+from igvf_client.models.prediction_set import PredictionSet
+from igvf_client.models.primary_cell import PrimaryCell
+from igvf_client.models.publication import Publication
+from igvf_client.models.reference_file import ReferenceFile
+from igvf_client.models.rodent_donor import RodentDonor
+from igvf_client.models.sample_term import SampleTerm
+from igvf_client.models.sequence_file import SequenceFile
+from igvf_client.models.signal_file import SignalFile
+from igvf_client.models.software import Software
+from igvf_client.models.software_version import SoftwareVersion
+from igvf_client.models.source import Source
+from igvf_client.models.tabular_file import TabularFile
+from igvf_client.models.technical_sample import TechnicalSample
+from igvf_client.models.tissue import Tissue
+from igvf_client.models.treatment import Treatment
+from igvf_client.models.user import User
+from igvf_client.models.whole_organism import WholeOrganism
+from igvf_client.models.workflow import Workflow
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 import logging
-SEARCHRESULTITEM_ONE_OF_SCHEMAS = ["AccessKey", "AlignmentFile", "AnalysisSet", "AnalysisStep", "AnalysisStepVersion", "AssayTerm", "AuxiliarySet", "Award", "Biomarker", "ConfigurationFile", "ConstructLibrarySet", "CrisprModification", "CuratedSet", "Document", "Gene", "GenomeBrowserAnnotationFile", "HumanDonor", "Image", "ImageFile", "InVitroSystem", "InstitutionalCertificate", "Lab", "MatrixFile", "MeasurementSet", "ModelFile", "ModelSet", "Modification", "MultiplexedSample", "OpenReadingFrame", "Page", "PhenotypeTerm", "PhenotypicFeature", "PlatformTerm", "PredictionSet", "PrimaryCell", "Publication", "ReferenceFile", "RodentDonor", "SampleTerm", "SequenceFile", "SignalFile", "Software", "SoftwareVersion", "Source", "TabularFile", "TechnicalSample", "Tissue", "Treatment", "User", "WholeOrganism", "Workflow"]
+ITEM_ONE_OF_SCHEMAS = ["AccessKey", "AlignmentFile", "AnalysisSet", "AnalysisStep", "AnalysisStepVersion", "AssayTerm", "AuxiliarySet", "Award", "Biomarker", "ConfigurationFile", "ConstructLibrarySet", "CrisprModification", "CuratedSet", "Document", "Gene", "GenomeBrowserAnnotationFile", "HumanDonor", "Image", "ImageFile", "InVitroSystem", "InstitutionalCertificate", "Lab", "MatrixFile", "MeasurementSet", "ModelFile", "ModelSet", "Modification", "MultiplexedSample", "OpenReadingFrame", "Page", "PhenotypeTerm", "PhenotypicFeature", "PlatformTerm", "PredictionSet", "PrimaryCell", "Publication", "ReferenceFile", "RodentDonor", "SampleTerm", "SequenceFile", "SignalFile", "Software", "SoftwareVersion", "Source", "TabularFile", "TechnicalSample", "Tissue", "Treatment", "User", "WholeOrganism", "Workflow"]
 
-class SearchResultItem(BaseModel):
+class Item(BaseModel):
     """
-    SearchResultItem
+    Item
     """
     # data type: AccessKey
     oneof_schema_1_validator: Optional[AccessKey] = None
@@ -204,7 +204,7 @@ class SearchResultItem(BaseModel):
 
     @field_validator('actual_instance')
     def actual_instance_must_validate_oneof(cls, v):
-        instance = SearchResultItem.model_construct()
+        instance = Item.model_construct()
         error_messages = []
         match = 0
         # validate data type: AccessKey
@@ -464,10 +464,10 @@ class SearchResultItem(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in SearchResultItem with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in Item with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in SearchResultItem with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in Item with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -1056,10 +1056,10 @@ class SearchResultItem(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into SearchResultItem with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into Item with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into SearchResultItem with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into Item with oneOf schemas: AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, Modification, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Details: " + ", ".join(error_messages))
         else:
             return instance
 

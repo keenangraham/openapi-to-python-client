@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.platform_term import PlatformTerm
+from igvf_client.models.platform_term import PlatformTerm
 
 class TestPlatformTerm(unittest.TestCase):
     """PlatformTerm unit test stubs"""

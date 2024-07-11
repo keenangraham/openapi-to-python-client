@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.matrix_file import MatrixFile
+from igvf_client.models.matrix_file import MatrixFile
 
 class TestMatrixFile(unittest.TestCase):
     """MatrixFile unit test stubs"""
@@ -103,7 +103,7 @@ class TestMatrixFile(unittest.TestCase):
                     ],
                 href = '',
                 s3_uri = '',
-                upload_credentials = openapi_client.models.upload_credentials.Upload Credentials(),
+                upload_credentials = igvf_client.models.upload_credentials.Upload Credentials(),
                 content_summary = ''
             )
         else:

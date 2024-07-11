@@ -44,7 +44,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.treatment import Treatment
+from igvf_client.models.treatment import Treatment
 
 # TODO update the JSON string below
 json = "{}"

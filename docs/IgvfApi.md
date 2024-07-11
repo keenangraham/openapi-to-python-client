@@ -1,4 +1,4 @@
-# openapi_client.IgvfApi
+# igvf_client.IgvfApi
 
 All URIs are relative to *https://api.data.igvf.org*
 
@@ -20,14 +20,14 @@ Retrieve detailed information about a specific item using its @id or uuid.
 * Basic Authentication (basicAuth):
 
 ```python
-import openapi_client
-from openapi_client.models.item import Item
-from openapi_client.rest import ApiException
+import igvf_client
+from igvf_client.models.item import Item
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -37,15 +37,15 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = openapi_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.IgvfApi(api_client)
+    api_instance = igvf_client.IgvfApi(api_client)
     resource_id = 'resource_id_example' # str | The unique identifier for the resource (e.g., /sequence-files/IGVFFI1165AJSO/ or fffcd64e-af02-4675-8953-7352459ee06a) 
 
     try:
@@ -100,14 +100,14 @@ Search endpoint that accepts various query parameters to filter, sort, and pagin
 * Basic Authentication (basicAuth):
 
 ```python
-import openapi_client
-from openapi_client.models.search_results import SearchResults
-from openapi_client.rest import ApiException
+import igvf_client
+from igvf_client.models.search_results import SearchResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -117,15 +117,15 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = openapi_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.IgvfApi(api_client)
+    api_instance = igvf_client.IgvfApi(api_client)
     type = ['type_example'] # List[str] | Type of objects to return. Can be repeated for multiple types. (optional)
     var_field = ['var_field_example'] # List[str] | Fields to include in the response. Can be repeated for multiple fields. (optional)
     query = 'query_example' # str | Query string for searching. (optional)

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.workflow import Workflow
+from igvf_client.models.workflow import Workflow
 
 class TestWorkflow(unittest.TestCase):
     """Workflow unit test stubs"""

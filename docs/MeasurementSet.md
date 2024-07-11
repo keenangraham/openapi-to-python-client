@@ -50,7 +50,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.measurement_set import MeasurementSet
+from igvf_client.models.measurement_set import MeasurementSet
 
 # TODO update the JSON string below
 json = "{}"

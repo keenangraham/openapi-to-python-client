@@ -17,23 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from openapi_client.models.search_facet import SearchFacet
-from openapi_client.models.search_result_item import SearchResultItem
+from igvf_client.models.page_layout_components import PageLayoutComponents
 from typing import Optional, Set
 from typing_extensions import Self
 
-class SearchResults(BaseModel):
+class PageLayout(BaseModel):
     """
-    SearchResults
+    Hierarchical description of the page layout.
     """ # noqa: E501
-    graph: Optional[List[SearchResultItem]] = Field(default=None, alias="@graph")
-    id: Optional[StrictStr] = Field(default=None, alias="@id")
-    type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    total: Optional[StrictInt] = None
-    facets: Optional[List[SearchFacet]] = None
-    __properties: ClassVar[List[str]] = ["@graph", "@id", "@type", "total", "facets"]
+    blocks: Optional[List[PageLayoutComponents]] = None
+    __properties: ClassVar[List[str]] = ["blocks"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -53,7 +48,7 @@ class SearchResults(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of SearchResults from a JSON string"""
+        """Create an instance of PageLayout from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,25 +69,18 @@ class SearchResults(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in graph (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in blocks (list)
         _items = []
-        if self.graph:
-            for _item in self.graph:
+        if self.blocks:
+            for _item in self.blocks:
                 if _item:
                     _items.append(_item.to_dict())
-            _dict['@graph'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in facets (list)
-        _items = []
-        if self.facets:
-            for _item in self.facets:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['facets'] = _items
+            _dict['blocks'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of SearchResults from a dict"""
+        """Create an instance of PageLayout from a dict"""
         if obj is None:
             return None
 
@@ -100,11 +88,7 @@ class SearchResults(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "@graph": [SearchResultItem.from_dict(_item) for _item in obj["@graph"]] if obj.get("@graph") is not None else None,
-            "@id": obj.get("@id"),
-            "@type": obj.get("@type"),
-            "total": obj.get("total"),
-            "facets": [SearchFacet.from_dict(_item) for _item in obj["facets"]] if obj.get("facets") is not None else None
+            "blocks": [PageLayoutComponents.from_dict(_item) for _item in obj["blocks"]] if obj.get("blocks") is not None else None
         })
         return _obj
 

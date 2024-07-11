@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.institutional_certificate import InstitutionalCertificate
+from igvf_client.models.institutional_certificate import InstitutionalCertificate
 
 class TestInstitutionalCertificate(unittest.TestCase):
     """InstitutionalCertificate unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.page_layout_components import PageLayoutComponents
+from igvf_client.models.page_layout_components import PageLayoutComponents
 
 class TestPageLayoutComponents(unittest.TestCase):
     """PageLayoutComponents unit test stubs"""

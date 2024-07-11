@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.lab import Lab
+from igvf_client.models.lab import Lab
 
 class TestLab(unittest.TestCase):
     """Lab unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.biomarker import Biomarker
+from igvf_client.models.biomarker import Biomarker
 
 class TestBiomarker(unittest.TestCase):
     """Biomarker unit test stubs"""

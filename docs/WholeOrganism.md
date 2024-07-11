@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.whole_organism import WholeOrganism
+from igvf_client.models.whole_organism import WholeOrganism
 
 # TODO update the JSON string below
 json = "{}"

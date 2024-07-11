@@ -17,20 +17,23 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from openapi_client.models.search_facet_term_value import SearchFacetTermValue
+from igvf_client.models.search_facet import SearchFacet
+from igvf_client.models.search_result_item import SearchResultItem
 from typing import Optional, Set
 from typing_extensions import Self
 
-class SearchFacet(BaseModel):
+class SearchResults(BaseModel):
     """
-    SearchFacet
+    SearchResults
     """ # noqa: E501
-    var_field: Optional[StrictStr] = Field(default=None, alias="field")
-    title: Optional[StrictStr] = None
-    terms: Optional[List[SearchFacetTermValue]] = None
-    __properties: ClassVar[List[str]] = ["field", "title", "terms"]
+    graph: Optional[List[SearchResultItem]] = Field(default=None, alias="@graph")
+    id: Optional[StrictStr] = Field(default=None, alias="@id")
+    type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
+    total: Optional[StrictInt] = None
+    facets: Optional[List[SearchFacet]] = None
+    __properties: ClassVar[List[str]] = ["@graph", "@id", "@type", "total", "facets"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +53,7 @@ class SearchFacet(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of SearchFacet from a JSON string"""
+        """Create an instance of SearchResults from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,18 +74,25 @@ class SearchFacet(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in terms (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in graph (list)
         _items = []
-        if self.terms:
-            for _item in self.terms:
+        if self.graph:
+            for _item in self.graph:
                 if _item:
                     _items.append(_item.to_dict())
-            _dict['terms'] = _items
+            _dict['@graph'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in facets (list)
+        _items = []
+        if self.facets:
+            for _item in self.facets:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['facets'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of SearchFacet from a dict"""
+        """Create an instance of SearchResults from a dict"""
         if obj is None:
             return None
 
@@ -90,9 +100,11 @@ class SearchFacet(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "field": obj.get("field"),
-            "title": obj.get("title"),
-            "terms": [SearchFacetTermValue.from_dict(_item) for _item in obj["terms"]] if obj.get("terms") is not None else None
+            "@graph": [SearchResultItem.from_dict(_item) for _item in obj["@graph"]] if obj.get("@graph") is not None else None,
+            "@id": obj.get("@id"),
+            "@type": obj.get("@type"),
+            "total": obj.get("total"),
+            "facets": [SearchFacet.from_dict(_item) for _item in obj["facets"]] if obj.get("facets") is not None else None
         })
         return _obj
 

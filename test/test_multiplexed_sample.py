@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.multiplexed_sample import MultiplexedSample
+from igvf_client.models.multiplexed_sample import MultiplexedSample
 
 class TestMultiplexedSample(unittest.TestCase):
     """MultiplexedSample unit test stubs"""

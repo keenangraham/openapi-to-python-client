@@ -21,19 +21,19 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.gene_location import GeneLocation
+from igvf_client.models.page_layout import PageLayout
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Gene(BaseModel):
+class Page(BaseModel):
     """
-    A gene in the human or mouse genomes. The genes objects in IGVF are imported from GENCODE.
+    A page on the IGVF portal.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    transcriptome_annotation: Optional[StrictStr] = Field(default=None, description="The annotation and version of the reference resource.")
-    taxa: Optional[StrictStr] = Field(default=None, description="The species of the organism.")
+    lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
+    award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='9', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -41,40 +41,16 @@ class Gene(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    geneid: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix.")
-    symbol: Optional[StrictStr] = Field(default=None, description="Gene symbol approved by the official nomenclature.")
-    name: Optional[StrictStr] = Field(default=None, description="The full gene name preferably approved by the official nomenclature.")
-    synonyms: Optional[List[StrictStr]] = Field(default=None, description="Alternative symbols that have been used to refer to the gene.")
-    dbxrefs: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Unique identifiers from external resources.")
-    locations: Optional[List[GeneLocation]] = Field(default=None, description="Gene locations specified using 1-based, closed coordinates for different versions of reference genome assemblies.")
-    version_number: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Current ENSEMBL GeneID version number of the gene.")
+    parent: Optional[StrictStr] = Field(default=None, description="The parent page associated with this page.")
+    name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The name shown in this page's URL.")
+    title: Optional[StrictStr] = Field(default=None, description="The name shown in the browser's title bar and tabs.")
+    layout: Optional[PageLayout] = None
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
-    title: Optional[StrictStr] = None
-    geneid_with_version: Optional[StrictStr] = Field(default=None, description="The ENSEMBL GeneID concatenated with its version number.")
+    canonical_uri: Optional[StrictStr] = Field(default=None, description="The path of the page.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["release_timestamp", "transcriptome_annotation", "taxa", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "geneid", "symbol", "name", "synonyms", "dbxrefs", "locations", "version_number", "@id", "@type", "summary", "title", "geneid_with_version"]
-
-    @field_validator('transcriptome_annotation')
-    def transcriptome_annotation_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['GENCODE 40', 'GENCODE 41', 'GENCODE 42', 'GENCODE 43', 'GENCODE 44', 'GENCODE 45', 'GENCODE M30', 'GENCODE M31', 'GENCODE M32', 'GENCODE M33', 'GENCODE M34']):
-            raise ValueError("must be one of enum values ('GENCODE 40', 'GENCODE 41', 'GENCODE 42', 'GENCODE 43', 'GENCODE 44', 'GENCODE 45', 'GENCODE M30', 'GENCODE M31', 'GENCODE M32', 'GENCODE M33', 'GENCODE M34')")
-        return value
-
-    @field_validator('taxa')
-    def taxa_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['Homo sapiens', 'Mus musculus']):
-            raise ValueError("must be one of enum values ('Homo sapiens', 'Mus musculus')")
-        return value
+    __properties: ClassVar[List[str]] = ["release_timestamp", "lab", "award", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "parent", "name", "title", "layout", "@id", "@type", "summary", "canonical_uri"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -126,24 +102,14 @@ class Gene(BaseModel):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value
 
-    @field_validator('geneid')
-    def geneid_validate_regular_expression(cls, value):
+    @field_validator('name')
+    def name_validate_regular_expression(cls, value):
         """Validates the regular expression"""
         if value is None:
             return value
 
-        if not re.match(r"^ENS[A-Z]*G\d{11}(_PAR_Y)?$", value):
-            raise ValueError(r"must validate the regular expression /^ENS[A-Z]*G\d{11}(_PAR_Y)?$/")
-        return value
-
-    @field_validator('version_number')
-    def version_number_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r"^\d+?", value):
-            raise ValueError(r"must validate the regular expression /^\d+?/")
+        if not re.match(r"^[a-z0-9_-]+$", value):
+            raise ValueError(r"must validate the regular expression /^[a-z0-9_-]+$/")
         return value
 
     model_config = ConfigDict(
@@ -164,7 +130,7 @@ class Gene(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Gene from a JSON string"""
+        """Create an instance of Page from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -187,13 +153,9 @@ class Gene(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in locations (list)
-        _items = []
-        if self.locations:
-            for _item in self.locations:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['locations'] = _items
+        # override the default output from pydantic by calling `to_dict()` of layout
+        if self.layout:
+            _dict['layout'] = self.layout.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -203,7 +165,7 @@ class Gene(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Gene from a dict"""
+        """Create an instance of Page from a dict"""
         if obj is None:
             return None
 
@@ -212,10 +174,10 @@ class Gene(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
-            "transcriptome_annotation": obj.get("transcriptome_annotation"),
-            "taxa": obj.get("taxa"),
+            "lab": obj.get("lab"),
+            "award": obj.get("award"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '9',
+            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '4',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
@@ -223,18 +185,14 @@ class Gene(BaseModel):
             "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
-            "geneid": obj.get("geneid"),
-            "symbol": obj.get("symbol"),
+            "parent": obj.get("parent"),
             "name": obj.get("name"),
-            "synonyms": obj.get("synonyms"),
-            "dbxrefs": obj.get("dbxrefs"),
-            "locations": [GeneLocation.from_dict(_item) for _item in obj["locations"]] if obj.get("locations") is not None else None,
-            "version_number": obj.get("version_number"),
+            "title": obj.get("title"),
+            "layout": PageLayout.from_dict(obj["layout"]) if obj.get("layout") is not None else None,
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),
-            "title": obj.get("title"),
-            "geneid_with_version": obj.get("geneid_with_version")
+            "canonical_uri": obj.get("canonical_uri")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

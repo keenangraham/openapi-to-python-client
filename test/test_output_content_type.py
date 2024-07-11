@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.output_content_type import OutputContentType
+from igvf_client.models.output_content_type import OutputContentType
 
 class TestOutputContentType(unittest.TestCase):
     """OutputContentType unit test stubs"""

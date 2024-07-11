@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.award import Award
+from igvf_client.models.award import Award
 
 # TODO update the JSON string below
 json = "{}"

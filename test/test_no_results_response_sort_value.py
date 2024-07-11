@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.no_results_response_sort_value import NoResultsResponseSortValue
+from igvf_client.models.no_results_response_sort_value import NoResultsResponseSortValue
 
 class TestNoResultsResponseSortValue(unittest.TestCase):
     """NoResultsResponseSortValue unit test stubs"""

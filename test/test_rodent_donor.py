@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.rodent_donor import RodentDonor
+from igvf_client.models.rodent_donor import RodentDonor
 
 class TestRodentDonor(unittest.TestCase):
     """RodentDonor unit test stubs"""

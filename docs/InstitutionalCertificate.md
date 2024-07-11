@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.institutional_certificate import InstitutionalCertificate
+from igvf_client.models.institutional_certificate import InstitutionalCertificate
 
 # TODO update the JSON string below
 json = "{}"

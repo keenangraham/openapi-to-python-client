@@ -84,7 +84,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.in_vitro_system import InVitroSystem
+from igvf_client.models.in_vitro_system import InVitroSystem
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.sequence_file import SequenceFile
+from igvf_client.models.sequence_file import SequenceFile
 
 class TestSequenceFile(unittest.TestCase):
     """SequenceFile unit test stubs"""
@@ -111,7 +111,7 @@ class TestSequenceFile(unittest.TestCase):
                     ],
                 href = '',
                 s3_uri = '',
-                upload_credentials = openapi_client.models.upload_credentials.Upload Credentials(),
+                upload_credentials = igvf_client.models.upload_credentials.Upload Credentials(),
                 seqspecs = [
                     null
                     ]

@@ -19,12 +19,12 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr, field_validator
 from typing import Any, Dict, List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.item import Item
-from openapi_client.models.search_results import SearchResults
+from igvf_client.models.item import Item
+from igvf_client.models.search_results import SearchResults
 
-from openapi_client.api_client import ApiClient, RequestSerialized
-from openapi_client.api_response import ApiResponse
-from openapi_client.rest import RESTResponseType
+from igvf_client.api_client import ApiClient, RequestSerialized
+from igvf_client.api_response import ApiResponse
+from igvf_client.rest import RESTResponseType
 
 
 class IgvfApi:

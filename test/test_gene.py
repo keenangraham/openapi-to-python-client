@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.gene import Gene
+from igvf_client.models.gene import Gene
 
 class TestGene(unittest.TestCase):
     """Gene unit test stubs"""
@@ -59,7 +59,7 @@ class TestGene(unittest.TestCase):
                     'ENTREZ:9072888001528021798096225500850762068629339333975650685139102691291'
                     ],
                 locations = [
-                    openapi_client.models.gene_location.Gene Location(
+                    igvf_client.models.gene_location.Gene Location(
                         assembly = 'GRCh38', 
                         chromosome = 'chrC', 
                         start = 0, 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.no_results_response_facets_inner_terms_inner import NoResultsResponseFacetsInnerTermsInner
+from igvf_client.models.no_results_response_facets_inner_terms_inner import NoResultsResponseFacetsInnerTermsInner
 
 # TODO update the JSON string below
 json = "{}"
