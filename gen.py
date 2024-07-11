@@ -29,16 +29,6 @@ def generate_openapi_spec(schemas):
                                 "type": "string"
                             },
                             "description": "The unique identifier for the resource (e.g., /sequence-files/IGVFFI1165AJSO/ or fffcd64e-af02-4675-8953-7352459ee06a) "
-                        },
-                        {
-                            "name": "frame",
-                            "in": "query",
-                            "required": True,
-                            "schema": {
-                                "type": "string",
-                                "enum": ["object"]
-                            },
-                            "default": "object"
                         }
                     ],
                     "responses": {
