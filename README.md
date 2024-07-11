@@ -77,21 +77,15 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.IgvfApi(api_client)
-    type = ['type_example'] # List[str] | Type of objects to return. Can be repeated for multiple types. (optional)
-    var_field = ['var_field_example'] # List[str] | Fields to include in the response. Can be repeated for multiple fields. (optional)
-    query = 'query_example' # str | Query string for searching. (optional)
-    limit = 56 # int | Maximum number of results to return. Use 'all' for all results. (optional)
-    frame = 'frame_example' # str | Specifies the format of the returned objects. (optional)
-    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. (optional)
-    field_filters = None # object | Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
+    resource_id = 'resource_id_example' # str | The unique identifier for the resource (e.g., /sequence-files/IGVFFI1165AJSO/ or fffcd64e-af02-4675-8953-7352459ee06a) 
 
     try:
-        # Search for objects in the IGVF Project
-        api_response = api_instance.search(type=type, var_field=var_field, query=query, limit=limit, frame=frame, sort=sort, field_filters=field_filters)
-        print("The response of IgvfApi->search:\n")
+        # Get item information
+        api_response = api_instance.get_by_id(resource_id)
+        print("The response of IgvfApi->get_by_id:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling IgvfApi->search: %s\n" % e)
+        print("Exception when calling IgvfApi->get_by_id: %s\n" % e)
 
 ```
 
@@ -101,6 +95,7 @@ All URIs are relative to *https://api.data.igvf.org*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*IgvfApi* | [**get_by_id**](docs/IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
 *IgvfApi* | [**search**](docs/IgvfApi.md#search) | **GET** /search | Search for objects in the IGVF Project
 
 
@@ -134,6 +129,7 @@ Class | Method | HTTP request | Description
  - [InputContentType](docs/InputContentType.md)
  - [InputContentTypeAnyOf](docs/InputContentTypeAnyOf.md)
  - [InstitutionalCertificate](docs/InstitutionalCertificate.md)
+ - [Item](docs/Item.md)
  - [Lab](docs/Lab.md)
  - [Locus](docs/Locus.md)
  - [MatrixFile](docs/MatrixFile.md)

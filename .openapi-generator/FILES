@@ -32,6 +32,7 @@ docs/InVitroSystem.md
 docs/InputContentType.md
 docs/InputContentTypeAnyOf.md
 docs/InstitutionalCertificate.md
+docs/Item.md
 docs/Lab.md
 docs/Locus.md
 docs/MatrixFile.md
@@ -116,6 +117,7 @@ openapi_client/models/in_vitro_system.py
 openapi_client/models/input_content_type.py
 openapi_client/models/input_content_type_any_of.py
 openapi_client/models/institutional_certificate.py
+openapi_client/models/item.py
 openapi_client/models/lab.py
 openapi_client/models/locus.py
 openapi_client/models/matrix_file.py
@@ -171,4 +173,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_item.py
 tox.ini

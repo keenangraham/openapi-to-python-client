@@ -42,6 +42,7 @@ from openapi_client.models.in_vitro_system import InVitroSystem
 from openapi_client.models.input_content_type import InputContentType
 from openapi_client.models.input_content_type_any_of import InputContentTypeAnyOf
 from openapi_client.models.institutional_certificate import InstitutionalCertificate
+from openapi_client.models.item import Item
 from openapi_client.models.lab import Lab
 from openapi_client.models.locus import Locus
 from openapi_client.models.matrix_file import MatrixFile

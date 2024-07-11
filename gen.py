@@ -15,6 +15,61 @@ def generate_openapi_spec(schemas):
             }
         ],
         "paths": {
+            "/{resource_id}": {
+                "get": {
+                    "summary": "Get item information",
+                    "description": "Retrieve detailed information about a specific item using its @id or uuid.",
+                    "operationId": "get_by_id",
+                    "parameters": [
+                        {
+                            "name": "resource_id",
+                            "in": "path",
+                            "required": True,
+                            "schema": {
+                                "type": "string"
+                            },
+                            "description": "The unique identifier for the resource (e.g., /sequence-files/IGVFFI1165AJSO/ or fffcd64e-af02-4675-8953-7352459ee06a) "
+                        },
+                        {
+                            "name": "frame",
+                            "in": "query",
+                            "required": True,
+                            "schema": {
+                                "type": "string",
+                                "enum": ["object"]
+                            },
+                            "default": "object"
+                        }
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "Successful response",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "title": "Item",
+                                        "oneOf": [],
+                                        "discriminator": {
+                                            "propertyName": "@type",
+                                            "mapping": {}
+                                        },
+                                    }
+                                }
+                            }
+                        },
+                        "404": {
+                            "description": "Object not found",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "/search": {
                 "get": {
                     "summary": "Search for objects in the IGVF Project",
@@ -323,6 +378,9 @@ def generate_openapi_spec(schemas):
     # Add all schemas to components/schemas and refs to @graph items
     for schema_name, schema in schemas.items():
         openapi_spec["components"]["schemas"][schema_name] = schema
+        openapi_spec["paths"]["/{resource_id}"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["oneOf"].append(
+            {"$ref": f"#/components/schemas/{schema_name}"}
+        )
         openapi_spec["paths"]["/search"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["@graph"]["items"]["oneOf"].append(
             {"$ref": f"#/components/schemas/{schema_name}"}
         )
