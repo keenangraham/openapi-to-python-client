@@ -75,7 +75,64 @@ def generate_openapi_spec(schemas):
                     "summary": "Search for objects in the IGVF Project",
                     "description": "Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.",
                     "operationId": "search",
-                    "parameters": [],
+                    "parameters": [
+                         {
+                             "name": "type",
+                             "in": "query",
+                             "schema": {"type": "array", "items": {"type": "string"}},
+                             "style": "form",
+                             "explode": True,
+                             "description": "Type of objects to return. Can be repeated for multiple types."
+                         },
+                        {
+                            "name": "field",
+                            "in": "query",
+                            "schema": {"type": "array", "items": {"type": "string"}},
+                            "style": "form",
+                            "explode": True,
+                            "description": "Fields to include in the response. Can be repeated for multiple fields."
+                        },
+                        {
+                            "name": "query",
+                            "in": "query",
+                            "schema": {"type": "string"},
+                            "description": "Query string for searching."
+                        },
+                        {
+                            "name": "limit",
+                            "in": "query",
+                            "schema": {"type": "integer"},
+                            "description": "Maximum number of results to return. Use 'all' for all results."
+                        },
+                        {
+                            "name": "sort",
+                            "in": "query",
+                            "schema": {"type": "array", "items": {"type": "string"}},
+                            "style": "form",
+                            "explode": True,
+                            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields."
+                        },
+                        {
+                            "name": "frame",
+                            "in": "query",
+                            "required": True,
+                            "schema": {
+                                "type": "string",
+                                "enum": ["object"]
+                            },
+                            "description": "Constant value, do not set."
+                        },
+                        {
+                            "name": "field_filters",
+                            "in": "query",
+                            "schema": {
+                                "type": "object"
+                            },
+                            "description": "Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+                            "style": "form",
+                            "explode": True,
+                        }
+                    ],
                     "responses": {
                         "200": {
                             "description": "Successful response",
@@ -309,71 +366,6 @@ def generate_openapi_spec(schemas):
         'advancedQuery',
         'query',
     ]
-
-    # Define the parameters
-    parameters = [
-        {
-            "name": "type",
-            "in": "query",
-            "schema": {"type": "array", "items": {"type": "string"}},
-            "style": "form",
-            "explode": True,
-            "description": "Type of objects to return. Can be repeated for multiple types."
-        },
-        {
-            "name": "field",
-            "in": "query",
-            "schema": {"type": "array", "items": {"type": "string"}},
-            "style": "form",
-            "explode": True,
-            "description": "Fields to include in the response. Can be repeated for multiple fields."
-        },
-        {
-            "name": "query",
-            "in": "query",
-            "schema": {"type": "string"},
-            "description": "Query string for searching."
-        },
-        {
-            "name": "limit",
-            "in": "query",
-            "schema": {"type": "integer"},
-            "description": "Maximum number of results to return. Use 'all' for all results."
-        },
-        {
-            "name": "sort",
-            "in": "query",
-            "schema": {"type": "array", "items": {"type": "string"}},
-            "style": "form",
-            "explode": True,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields."
-        },
-        {
-            "name": "frame",
-            "in": "query",
-            "required": True,
-            "schema": {
-                "type": "string",
-                "enum": ["object"]
-            },
-            "description": "Constant value, do not set."
-        }
-    ]
-
-    # Add these parameters to the search endpoint
-    openapi_spec["paths"]["/search"]["get"]["parameters"].extend(parameters)
-
-    # Add a note about dynamic field filters
-    field_filter_note = {
-        "name": "field_filters",
-        "in": "query",
-        "schema": {"type": "object"},
-        "description": "Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
-        "style": "form",
-        "explode": True,
-    }
-    openapi_spec["paths"]["/search"]["get"]["parameters"].append(field_filter_note)
-
 
     search_description = openapi_spec["paths"]["/search"]["get"]["description"]
     search_description += f"\n\nReserved query parameters: {', '.join(RESERVED_KEYS)}"
