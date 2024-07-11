@@ -223,7 +223,7 @@
     },
     "/search": {
       "get": {
-        "summary": "Search for objects in the IGVF Project",
+        "summary": "Search for items in the IGVF Project",
         "description": "Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.",
         "operationId": "search",
         "parameters": [
@@ -538,10 +538,116 @@
           }
         }
       }
+    },
+    "/profiles/": {
+      "get": {
+        "summary": "Retrieve JSON schemas for all item types",
+        "description": "Returns JSON schemas of all the item types defined in IGVF",
+        "operationId": "get_schemas",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JSONSchema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/profiles/{item_type}": {
+      "get": {
+        "summary": "Retrieve JSON schemas for all item types",
+        "description": "Returns JSON schemas of all the item types defined in IGVF",
+        "operationId": "get_schema_for_item_type",
+        "parameters": [
+          {
+            "name": "item_type",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "AccessKey",
+                "AnalysisStep",
+                "AnalysisStepVersion",
+                "Award",
+                "Biomarker",
+                "Document",
+                "HumanDonor",
+                "RodentDonor",
+                "AlignmentFile",
+                "ConfigurationFile",
+                "GenomeBrowserAnnotationFile",
+                "ImageFile",
+                "MatrixFile",
+                "ModelFile",
+                "ReferenceFile",
+                "SequenceFile",
+                "SignalFile",
+                "TabularFile",
+                "AnalysisSet",
+                "AuxiliarySet",
+                "ConstructLibrarySet",
+                "CuratedSet",
+                "MeasurementSet",
+                "ModelSet",
+                "PredictionSet",
+                "Gene",
+                "Image",
+                "InstitutionalCertificate",
+                "Lab",
+                "CrisprModification",
+                "Modification",
+                "AssayTerm",
+                "PhenotypeTerm",
+                "PlatformTerm",
+                "SampleTerm",
+                "OpenReadingFrame",
+                "Page",
+                "PhenotypicFeature",
+                "Publication",
+                "InVitroSystem",
+                "MultiplexedSample",
+                "PrimaryCell",
+                "TechnicalSample",
+                "Tissue",
+                "WholeOrganism",
+                "Software",
+                "SoftwareVersion",
+                "Source",
+                "Treatment",
+                "User",
+                "Workflow"
+              ]
+            },
+            "description": "The name of the item type"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JSONSchema"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "JSONSchema": {
+        "type": "object",
+        "description": "A JSON Schema object"
+      },
       "NoResultsResponse": {
         "type": "object",
         "properties": {

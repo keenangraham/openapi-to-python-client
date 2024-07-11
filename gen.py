@@ -72,7 +72,7 @@ def generate_openapi_spec(schemas):
             },
             "/search": {
                 "get": {
-                    "summary": "Search for objects in the IGVF Project",
+                    "summary": "Search for items in the IGVF Project",
                     "description": "Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.",
                     "operationId": "search",
                     "parameters": [
@@ -198,10 +198,64 @@ def generate_openapi_spec(schemas):
                         }
                     }
                 }
+            },
+            "/profiles/": {
+                "get": {
+                    "summary": "Retrieve JSON schemas for all item types",
+                    "description": "Returns JSON schemas of all the item types defined in IGVF",
+                    'operationId': 'get_schemas',
+                    "responses": {
+                        "200": {
+                            "description": "Successful response",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/JSONSchema"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+             "/profiles/{item_type}": {
+                "get": {
+                    "summary": "Retrieve JSON schemas for all item types",
+                    "description": "Returns JSON schemas of all the item types defined in IGVF",
+                    'operationId': 'get_schema_for_item_type',
+                    'parameters': [
+                        {
+                            "name": "item_type",
+                            "in": "path",
+                            "required": True,
+                            "schema": {
+                                "type": "string",
+                                "enum": []
+                            },
+                            "description": "The name of the item type"
+                        }
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "Successful response",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/JSONSchema"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         "components": {
             "schemas": {
+                "JSONSchema": {
+                    "type": "object",
+                    "description": "A JSON Schema object"
+                },
                 "NoResultsResponse": {
                     "type": "object",
                     "properties": {
@@ -380,6 +434,7 @@ def generate_openapi_spec(schemas):
         openapi_spec["paths"]["/search"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["@graph"]["items"]["oneOf"].append(
             {"$ref": f"#/components/schemas/{schema_name}"}
         )
+        openapi_spec["paths"]["/profiles/{item_type}"]["get"]["parameters"][0]["schema"]["enum"].append(schema_name)
 
     # Add an example that demonstrates expanded parameters
     complex_example = {
