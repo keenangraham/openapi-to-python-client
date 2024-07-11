@@ -29,6 +29,16 @@ def generate_openapi_spec(schemas):
                                 "type": "string"
                             },
                             "description": "The unique identifier for the resource (e.g., /sequence-files/IGVFFI1165AJSO/ or fffcd64e-af02-4675-8953-7352459ee06a) "
+                        },
+                        {
+                            "name": "frame",
+                            "in": "query",
+                            "required": True,
+                            "schema": {
+                                "type": "string",
+                                "enum": ["object"]
+                            },
+                            "description": "Constant value, do not set."
                         }
                     ],
                     "responses": {
@@ -331,18 +341,22 @@ def generate_openapi_spec(schemas):
             "description": "Maximum number of results to return. Use 'all' for all results."
         },
         {
-            "name": "frame",
-            "in": "query",
-            "schema": {"type": "string", "enum": ["object", "embedded"]},
-            "description": "Specifies the format of the returned objects."
-        },
-        {
             "name": "sort",
             "in": "query",
             "schema": {"type": "array", "items": {"type": "string"}},
             "style": "form",
             "explode": True,
             "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields."
+        },
+        {
+            "name": "frame",
+            "in": "query",
+            "required": True,
+            "schema": {
+                "type": "string",
+                "enum": ["object"]
+            },
+            "description": "Constant value, do not set."
         }
     ]
 

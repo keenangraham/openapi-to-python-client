@@ -269,6 +269,8 @@ class IgvfApi:
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params['frame'] = 'object'
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -308,7 +310,6 @@ class IgvfApi:
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        frame: Annotated[Optional[StrictStr], Field(description="Specifies the format of the returned objects.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
@@ -336,8 +337,6 @@ class IgvfApi:
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: int
-        :param frame: Specifies the format of the returned objects.
-        :type frame: str
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
         :type sort: List[str]
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
@@ -369,7 +368,6 @@ class IgvfApi:
             var_field=var_field,
             query=query,
             limit=limit,
-            frame=frame,
             sort=sort,
             field_filters=field_filters,
             _request_auth=_request_auth,
@@ -400,7 +398,6 @@ class IgvfApi:
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        frame: Annotated[Optional[StrictStr], Field(description="Specifies the format of the returned objects.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
@@ -428,8 +425,6 @@ class IgvfApi:
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: int
-        :param frame: Specifies the format of the returned objects.
-        :type frame: str
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
         :type sort: List[str]
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
@@ -461,7 +456,6 @@ class IgvfApi:
             var_field=var_field,
             query=query,
             limit=limit,
-            frame=frame,
             sort=sort,
             field_filters=field_filters,
             _request_auth=_request_auth,
@@ -492,7 +486,6 @@ class IgvfApi:
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        frame: Annotated[Optional[StrictStr], Field(description="Specifies the format of the returned objects.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
@@ -520,8 +513,6 @@ class IgvfApi:
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: int
-        :param frame: Specifies the format of the returned objects.
-        :type frame: str
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
         :type sort: List[str]
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
@@ -553,7 +544,6 @@ class IgvfApi:
             var_field=var_field,
             query=query,
             limit=limit,
-            frame=frame,
             sort=sort,
             field_filters=field_filters,
             _request_auth=_request_auth,
@@ -579,7 +569,6 @@ class IgvfApi:
         var_field,
         query,
         limit,
-        frame,
         sort,
         field_filters,
         _request_auth,
@@ -621,10 +610,6 @@ class IgvfApi:
             
             _query_params.append(('limit', limit))
             
-        if frame is not None:
-            
-            _query_params.append(('frame', frame))
-            
         if sort is not None:
             
             _query_params.append(('sort', sort))
@@ -637,6 +622,8 @@ class IgvfApi:
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params['frame'] = 'object'
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
