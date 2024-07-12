@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictInt, StrictStr, field_validator
+from pydantic import Field, StrictStr, field_validator
 from typing import Any, Dict, List, Optional
 from typing_extensions import Annotated
 from igvf_client.models.item import Item
@@ -809,11 +809,11 @@ class IgvfApi:
     def search(
         self,
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
-        var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
+        var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -833,16 +833,16 @@ class IgvfApi:
 
         :param type: Type of objects to return. Can be repeated for multiple types.
         :type type: List[str]
-        :param var_field: Fields to include in the response. Can be repeated for multiple fields.
-        :type var_field: List[str]
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: int
-        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
-        :type sort: List[str]
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: str
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
+        :type sort: List[str]
+        :param var_field: Fields to include in the response. Can be repeated for multiple fields.
+        :type var_field: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -867,11 +867,11 @@ class IgvfApi:
 
         _param = self._search_serialize(
             type=type,
-            var_field=var_field,
             query=query,
+            field_filters=field_filters,
             limit=limit,
             sort=sort,
-            field_filters=field_filters,
+            var_field=var_field,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -897,11 +897,11 @@ class IgvfApi:
     def search_with_http_info(
         self,
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
-        var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
+        var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -921,16 +921,16 @@ class IgvfApi:
 
         :param type: Type of objects to return. Can be repeated for multiple types.
         :type type: List[str]
-        :param var_field: Fields to include in the response. Can be repeated for multiple fields.
-        :type var_field: List[str]
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: int
-        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
-        :type sort: List[str]
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: str
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
+        :type sort: List[str]
+        :param var_field: Fields to include in the response. Can be repeated for multiple fields.
+        :type var_field: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -955,11 +955,11 @@ class IgvfApi:
 
         _param = self._search_serialize(
             type=type,
-            var_field=var_field,
             query=query,
+            field_filters=field_filters,
             limit=limit,
             sort=sort,
-            field_filters=field_filters,
+            var_field=var_field,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -985,11 +985,11 @@ class IgvfApi:
     def search_without_preload_content(
         self,
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
-        var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
+        var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1009,16 +1009,16 @@ class IgvfApi:
 
         :param type: Type of objects to return. Can be repeated for multiple types.
         :type type: List[str]
-        :param var_field: Fields to include in the response. Can be repeated for multiple fields.
-        :type var_field: List[str]
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: int
-        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
-        :type sort: List[str]
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: str
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
+        :type sort: List[str]
+        :param var_field: Fields to include in the response. Can be repeated for multiple fields.
+        :type var_field: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1043,11 +1043,11 @@ class IgvfApi:
 
         _param = self._search_serialize(
             type=type,
-            var_field=var_field,
             query=query,
+            field_filters=field_filters,
             limit=limit,
             sort=sort,
-            field_filters=field_filters,
+            var_field=var_field,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1068,11 +1068,11 @@ class IgvfApi:
     def _search_serialize(
         self,
         type,
-        var_field,
         query,
+        field_filters,
         limit,
         sort,
-        field_filters,
+        var_field,
         _request_auth,
         _content_type,
         _headers,
@@ -1083,8 +1083,8 @@ class IgvfApi:
 
         _collection_formats: Dict[str, str] = {
             'type': 'multi',
-            'field': 'multi',
             'sort': 'multi',
+            'field': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -1100,13 +1100,13 @@ class IgvfApi:
             
             _query_params.append(('type', type))
             
-        if var_field is not None:
-            
-            _query_params.append(('field', var_field))
-            
         if query is not None:
             
             _query_params.append(('query', query))
+            
+        if field_filters is not None:
+            for k, v in field_filters.items():
+                _query_params.append((k, v))
             
         if limit is not None:
             
@@ -1116,16 +1116,14 @@ class IgvfApi:
             
             _query_params.append(('sort', sort))
             
-        if field_filters is not None:
-            for k, v in field_filters.items():
-                _query_params.append((k, v))
+        if var_field is not None:
+            
+            _query_params.append(('field', var_field))
             
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
-        # Set client side default value of Query Param "frame".
-        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(

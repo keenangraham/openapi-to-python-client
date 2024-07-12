@@ -241,19 +241,6 @@
             "description": "Type of objects to return. Can be repeated for multiple types."
           },
           {
-            "name": "field",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "style": "form",
-            "explode": true,
-            "description": "Fields to include in the response. Can be repeated for multiple fields."
-          },
-          {
             "name": "query",
             "in": "query",
             "schema": {
@@ -262,10 +249,20 @@
             "description": "Query string for searching."
           },
           {
+            "name": "field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
-              "type": "integer"
+              "type": "string"
             },
             "description": "Maximum number of results to return. Use 'all' for all results."
           },
@@ -283,26 +280,17 @@
             "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields."
           },
           {
-            "name": "frame",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "object"
-              ]
-            },
-            "description": "Constant value, do not set."
-          },
-          {
-            "name": "field_filters",
+            "name": "field",
             "in": "query",
             "schema": {
-              "type": "object"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
-            "description": "Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
-            "explode": true
+            "explode": true,
+            "description": "Fields to include in the response. Can be repeated for multiple fields."
           }
         ],
         "responses": {
