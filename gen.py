@@ -103,7 +103,7 @@ def generate_openapi_spec(schemas):
                         {
                             "name": "limit",
                             "in": "query",
-                            "schema": {"type": "string"},
+                            "schema": {'oneOf': [{"type": "string"}, {"type": "int"}]},
                             "description": "Maximum number of results to return. Use 'all' for all results."
                         },
                         {

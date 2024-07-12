@@ -811,7 +811,7 @@ class IgvfApi:
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         _request_timeout: Union[
@@ -838,7 +838,7 @@ class IgvfApi:
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: str
+        :type limit: SearchLimitParameter
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
         :type sort: List[str]
         :param var_field: Fields to include in the response. Can be repeated for multiple fields.
@@ -899,7 +899,7 @@ class IgvfApi:
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         _request_timeout: Union[
@@ -926,7 +926,7 @@ class IgvfApi:
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: str
+        :type limit: SearchLimitParameter
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
         :type sort: List[str]
         :param var_field: Fields to include in the response. Can be repeated for multiple fields.
@@ -987,7 +987,7 @@ class IgvfApi:
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.")] = None,
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         _request_timeout: Union[
@@ -1014,7 +1014,7 @@ class IgvfApi:
         :param field_filters: Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: str
+        :type limit: SearchLimitParameter
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields.
         :type sort: List[str]
         :param var_field: Fields to include in the response. Can be repeated for multiple fields.

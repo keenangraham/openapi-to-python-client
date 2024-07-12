@@ -284,7 +284,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     type = ['type_example'] # List[str] | Type of objects to return. Can be repeated for multiple types. (optional)
     query = 'query_example' # str | Query string for searching. (optional)
     field_filters = None # object | Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
-    limit = 'limit_example' # str | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. (optional)
     var_field = ['var_field_example'] # List[str] | Fields to include in the response. Can be repeated for multiple fields. (optional)
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
  **type** | [**List[str]**](List[str].md)| Type of objects to return. Can be repeated for multiple types. | [optional] 
  **query** | **str**| Query string for searching. | [optional] 
  **field_filters** | [**object**](object.md)| Any field from any object type can be used as a filter. Use &#39;!&#x3D;&#39; for negation, &#39;*&#39; as a wildcard, and &#39;lt:&#39;, &#39;lte:&#39;, &#39;gt:&#39;, &#39;gte:&#39; for range queries on numeric fields. | [optional] 
- **limit** | **str**| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. | [optional] 
  **var_field** | [**List[str]**](List[str].md)| Fields to include in the response. Can be repeated for multiple fields. | [optional] 
 
