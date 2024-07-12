@@ -20,6 +20,7 @@ from pydantic import Field, StrictInt, StrictStr, field_validator
 from typing import Any, Dict, List, Optional
 from typing_extensions import Annotated
 from igvf_client.models.item import Item
+from igvf_client.models.item_type import ItemType
 from igvf_client.models.search_results import SearchResults
 
 from igvf_client.api_client import ApiClient, RequestSerialized
@@ -306,7 +307,7 @@ class IgvfApi:
     @validate_call
     def get_schema_for_item_type(
         self,
-        item_type: Annotated[StrictStr, Field(description="The name of the item type")],
+        item_type: Annotated[ItemType, Field(description="The name of the item type")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -325,7 +326,7 @@ class IgvfApi:
         Returns JSON schemas of all the item types defined in IGVF
 
         :param item_type: The name of the item type (required)
-        :type item_type: str
+        :type item_type: ItemType
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -373,7 +374,7 @@ class IgvfApi:
     @validate_call
     def get_schema_for_item_type_with_http_info(
         self,
-        item_type: Annotated[StrictStr, Field(description="The name of the item type")],
+        item_type: Annotated[ItemType, Field(description="The name of the item type")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -392,7 +393,7 @@ class IgvfApi:
         Returns JSON schemas of all the item types defined in IGVF
 
         :param item_type: The name of the item type (required)
-        :type item_type: str
+        :type item_type: ItemType
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -440,7 +441,7 @@ class IgvfApi:
     @validate_call
     def get_schema_for_item_type_without_preload_content(
         self,
-        item_type: Annotated[StrictStr, Field(description="The name of the item type")],
+        item_type: Annotated[ItemType, Field(description="The name of the item type")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -459,7 +460,7 @@ class IgvfApi:
         Returns JSON schemas of all the item types defined in IGVF
 
         :param item_type: The name of the item type (required)
-        :type item_type: str
+        :type item_type: ItemType
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -523,7 +524,7 @@ class IgvfApi:
 
         # process the path parameters
         if item_type is not None:
-            _path_params['item_type'] = item_type
+            _path_params['item_type'] = item_type.value
         # process the query parameters
         # process the header parameters
         # process the form parameters

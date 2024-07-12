@@ -132,6 +132,7 @@ Class | Method | HTTP request | Description
  - [InputContentTypeAnyOf](docs/InputContentTypeAnyOf.md)
  - [InstitutionalCertificate](docs/InstitutionalCertificate.md)
  - [Item](docs/Item.md)
+ - [ItemType](docs/ItemType.md)
  - [Lab](docs/Lab.md)
  - [Locus](docs/Locus.md)
  - [MatrixFile](docs/MatrixFile.md)

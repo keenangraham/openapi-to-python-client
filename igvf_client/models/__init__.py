@@ -43,6 +43,7 @@ from igvf_client.models.input_content_type import InputContentType
 from igvf_client.models.input_content_type_any_of import InputContentTypeAnyOf
 from igvf_client.models.institutional_certificate import InstitutionalCertificate
 from igvf_client.models.item import Item
+from igvf_client.models.item_type import ItemType
 from igvf_client.models.lab import Lab
 from igvf_client.models.locus import Locus
 from igvf_client.models.matrix_file import MatrixFile

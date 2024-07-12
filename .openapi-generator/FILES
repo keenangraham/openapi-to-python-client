@@ -33,6 +33,7 @@ docs/InputContentType.md
 docs/InputContentTypeAnyOf.md
 docs/InstitutionalCertificate.md
 docs/Item.md
+docs/ItemType.md
 docs/Lab.md
 docs/Locus.md
 docs/MatrixFile.md
@@ -118,6 +119,7 @@ igvf_client/models/input_content_type.py
 igvf_client/models/input_content_type_any_of.py
 igvf_client/models/institutional_certificate.py
 igvf_client/models/item.py
+igvf_client/models/item_type.py
 igvf_client/models/lab.py
 igvf_client/models/locus.py
 igvf_client/models/matrix_file.py

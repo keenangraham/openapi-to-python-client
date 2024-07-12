@@ -229,8 +229,7 @@ def generate_openapi_spec(schemas):
                             "in": "path",
                             "required": True,
                             "schema": {
-                                "type": "string",
-                                "enum": []
+                                "$ref": "#/components/schemas/ItemType"
                             },
                             "description": "The name of the item type"
                         }
@@ -252,6 +251,10 @@ def generate_openapi_spec(schemas):
         },
         "components": {
             "schemas": {
+                "ItemType": {
+                    "type": "string",
+                    "enum": [],
+                },
                 "JSONSchema": {
                     "type": "object",
                     "description": "A JSON Schema object"
@@ -434,7 +437,7 @@ def generate_openapi_spec(schemas):
         openapi_spec["paths"]["/search"]["get"]["responses"]["200"]["content"]["application/json"]["schema"]["properties"]["@graph"]["items"]["oneOf"].append(
             {"$ref": f"#/components/schemas/{schema_name}"}
         )
-        openapi_spec["paths"]["/profiles/{item_type}"]["get"]["parameters"][0]["schema"]["enum"].append(schema_name)
+        openapi_spec["components"]["schemas"]["ItemType"]["enum"].append(schema_name)
 
     # Add an example that demonstrates expanded parameters
     complex_example = {

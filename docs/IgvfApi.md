@@ -103,6 +103,7 @@ Returns JSON schemas of all the item types defined in IGVF
 
 ```python
 import igvf_client
+from igvf_client.models.item_type import ItemType
 from igvf_client.rest import ApiException
 from pprint import pprint
 
@@ -127,7 +128,7 @@ configuration = igvf_client.Configuration(
 with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
-    item_type = 'item_type_example' # str | The name of the item type
+    item_type = igvf_client.ItemType() # ItemType | The name of the item type
 
     try:
         # Retrieve JSON schemas for all item types
@@ -145,7 +146,7 @@ with igvf_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **item_type** | **str**| The name of the item type | 
+ **item_type** | [**ItemType**](.md)| The name of the item type | 
 
 ### Return type
 
