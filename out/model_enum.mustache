@@ -16,9 +16,16 @@ class {{classname}}({{vendorExtensions.x-py-enum-type}}, Enum):
     allowed enum values
     """
 {{#allowableValues}}
+    {{^vendorExtensions.x-enum-varnames}}
     {{#enumVars}}
     {{{name}}} = {{{value}}}
     {{/enumVars}}
+    {{/vendorExtensions.x-enum-varnames}}
+    {{#vendorExtensions}}
+    {{#x-enum-varnames}}
+    {{.}} = '{{.}}'
+    {{/x-enum-varnames}}
+    {{/vendorExtensions}}
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

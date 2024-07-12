@@ -254,6 +254,7 @@ def generate_openapi_spec(schemas):
                 "ItemType": {
                     "type": "string",
                     "enum": [],
+                    "x-enum-varnames": []
                 },
                 "JSONSchema": {
                     "type": "object",
@@ -438,6 +439,7 @@ def generate_openapi_spec(schemas):
             {"$ref": f"#/components/schemas/{schema_name}"}
         )
         openapi_spec["components"]["schemas"]["ItemType"]["enum"].append(schema_name)
+        openapi_spec["components"]["schemas"]["ItemType"]["x-enum-varnames"].append(schema_name)
 
     # Add an example that demonstrates expanded parameters
     complex_example = {
