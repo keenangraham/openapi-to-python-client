@@ -15,13 +15,13 @@
 from __future__ import annotations
 import json
 import pprint
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
 from pydantic import StrictStr, Field
-from typing import Union, List, Set, Optional, Dict, Int
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 import logging
-SEARCHLIMITPARAMETER_ONE_OF_SCHEMAS = ["Int", "str"]
+SEARCHLIMITPARAMETER_ONE_OF_SCHEMAS = ["int", "str"]
 
 class SearchLimitParameter(BaseModel):
     """
@@ -29,10 +29,10 @@ class SearchLimitParameter(BaseModel):
     """
     # data type: str
     oneof_schema_1_validator: Optional[StrictStr] = None
-    # data type: Int
-    oneof_schema_2_validator: Optional[Int] = None
-    actual_instance: Optional[Union[Int, str]] = None
-    one_of_schemas: Set[str] = { "Int", "str" }
+    # data type: int
+    oneof_schema_2_validator: Optional[StrictInt] = None
+    actual_instance: Optional[Union[int, str]] = None
+    one_of_schemas: Set[str] = { "int", "str" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -61,17 +61,18 @@ class SearchLimitParameter(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # validate data type: Int
-        if not isinstance(v, Int):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `Int`")
-        else:
+        # validate data type: int
+        try:
+            instance.oneof_schema_2_validator = v
             match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in SearchLimitParameter with oneOf schemas: Int, str. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in SearchLimitParameter with oneOf schemas: int, str. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in SearchLimitParameter with oneOf schemas: Int, str. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in SearchLimitParameter with oneOf schemas: int, str. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -95,19 +96,22 @@ class SearchLimitParameter(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into Int
+        # deserialize data into int
         try:
-            instance.actual_instance = Int.from_json(json_str)
+            # validation
+            instance.oneof_schema_2_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.oneof_schema_2_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into SearchLimitParameter with oneOf schemas: Int, str. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into SearchLimitParameter with oneOf schemas: int, str. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into SearchLimitParameter with oneOf schemas: Int, str. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into SearchLimitParameter with oneOf schemas: int, str. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -121,7 +125,7 @@ class SearchLimitParameter(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], Int, str]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], int, str]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

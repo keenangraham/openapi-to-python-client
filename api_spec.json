@@ -267,7 +267,7 @@
                   "type": "string"
                 },
                 {
-                  "type": "int"
+                  "type": "integer"
                 }
               ]
             },
