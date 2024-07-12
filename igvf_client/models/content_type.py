@@ -140,4 +140,19 @@ class ContentType(BaseModel):
         """Returns the string representation of the actual instance"""
         return self.to_dict()
 
+    def __repr_str__(self, join_str: str) -> str:
+        return join_str.join(
+            repr(v) if a is None else f'{a}={v!r}'
+            for a, v in self.__repr_args__()
+            if (True if a is None else not (a.startswith('oneof') or a.startswith('one_of' or a == 'discriminator_value_class_map')))
+        )
+
+    def __getattr__(self, name):
+        try:
+            return super().__getattribute__(name)
+        except AttributeError as e:
+            if hasattr(self.actual_instance, name):
+                return getattr(self.actual_instance, name)
+            raise e
+
 
