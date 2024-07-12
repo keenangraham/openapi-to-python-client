@@ -23,7 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
 from igvf_client.models.locus import Locus
 from igvf_client.models.tile import Tile
-from typing import Optional, Set, Int
+from typing import Optional, Set
 from typing_extensions import Self
 
 class ConstructLibrarySet(BaseModel):

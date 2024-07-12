@@ -18,7 +18,7 @@ import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
 from pydantic import StrictStr, Field
-from typing import Union, List, Set, Optional, Dict
+from typing import Union, List, Set, Optional, Dict, Int
 from typing_extensions import Literal, Self
 import logging
 SEARCHLIMITPARAMETER_ONE_OF_SCHEMAS = ["Int", "str"]

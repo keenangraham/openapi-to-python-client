@@ -69,7 +69,7 @@ from igvf_client.models.user import User
 from igvf_client.models.whole_organism import WholeOrganism
 from igvf_client.models.workflow import Workflow
 from pydantic import StrictStr, Field
-from typing import Union, List, Set, Optional, Dict
+from typing import Union, List, Set, Optional, Dict, Int
 from typing_extensions import Literal, Self
 import logging
 ITEM_ONE_OF_SCHEMAS = ["AccessKey", "AlignmentFile", "AnalysisSet", "AnalysisStep", "AnalysisStepVersion", "AssayTerm", "AuxiliarySet", "Award", "Biomarker", "ConfigurationFile", "ConstructLibrarySet", "CrisprModification", "CuratedSet", "Document", "Gene", "GenomeBrowserAnnotationFile", "HumanDonor", "Image", "ImageFile", "InVitroSystem", "InstitutionalCertificate", "Lab", "MatrixFile", "MeasurementSet", "ModelFile", "ModelSet", "Modification", "MultiplexedSample", "OpenReadingFrame", "Page", "PhenotypeTerm", "PhenotypicFeature", "PlatformTerm", "PredictionSet", "PrimaryCell", "Publication", "ReferenceFile", "RodentDonor", "SampleTerm", "SequenceFile", "SignalFile", "Software", "SoftwareVersion", "Source", "TabularFile", "TechnicalSample", "Tissue", "Treatment", "User", "WholeOrganism", "Workflow"]

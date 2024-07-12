@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from igvf_client.models.no_results_response_facets_inner_terms_inner import NoResultsResponseFacetsInnerTermsInner
-from typing import Optional, Set, Int
+from typing import Optional, Set
 from typing_extensions import Self
 
 class NoResultsResponseFacetsInner(BaseModel):

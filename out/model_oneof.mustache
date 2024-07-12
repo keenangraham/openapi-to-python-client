@@ -8,7 +8,7 @@ import pprint
 {{{.}}}
 {{/vendorExtensions.x-py-model-imports}}
 from pydantic import StrictStr, Field
-from typing import Union, List, Set, Optional, Dict
+from typing import Union, List, Set, Optional, Dict, Int
 from typing_extensions import Literal, Self
 import logging
 {{#lambda.uppercase}}{{{classname}}}{{/lambda.uppercase}}_ONE_OF_SCHEMAS = [{{#oneOf}}"{{.}}"{{^-last}}, {{/-last}}{{/oneOf}}]

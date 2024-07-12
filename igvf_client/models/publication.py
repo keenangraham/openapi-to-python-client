@@ -22,7 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_v
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from igvf_client.models.attachment import Attachment
-from typing import Optional, Set, Int
+from typing import Optional, Set
 from typing_extensions import Self
 
 class Publication(BaseModel):

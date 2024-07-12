@@ -22,7 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from igvf_client.models.gene_location import GeneLocation
-from typing import Optional, Set, Int
+from typing import Optional, Set
 from typing_extensions import Self
 
 class Gene(BaseModel):

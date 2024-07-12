@@ -23,7 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from igvf_client.models.input_content_type import InputContentType
 from igvf_client.models.output_content_type import OutputContentType
-from typing import Optional, Set, Int
+from typing import Optional, Set
 from typing_extensions import Self
 
 class AnalysisStep(BaseModel):

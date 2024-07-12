@@ -22,7 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from igvf_client.models.related_donor import RelatedDonor
-from typing import Optional, Set, Int
+from typing import Optional, Set
 from typing_extensions import Self
 
 class HumanDonor(BaseModel):
