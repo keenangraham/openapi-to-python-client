@@ -33,10 +33,24 @@ class TestIgvfApi(unittest.TestCase):
         """
         pass
 
+    def test_get_schema_for_item_type(self) -> None:
+        """Test case for get_schema_for_item_type
+
+        Retrieve JSON schemas for all item types
+        """
+        pass
+
+    def test_get_schemas(self) -> None:
+        """Test case for get_schemas
+
+        Retrieve JSON schemas for all item types
+        """
+        pass
+
     def test_search(self) -> None:
         """Test case for search
 
-        Search for objects in the IGVF Project
+        Search for items in the IGVF Project
         """
         pass
 
