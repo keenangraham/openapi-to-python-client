@@ -1124,6 +1124,8 @@ class IgvfApi:
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(

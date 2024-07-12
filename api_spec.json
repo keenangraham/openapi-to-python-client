@@ -291,6 +291,18 @@
             "style": "form",
             "explode": true,
             "description": "Fields to include in the response. Can be repeated for multiple fields."
+          },
+          {
+            "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value, do not set."
           }
         ],
         "responses": {

@@ -122,6 +122,16 @@ def generate_openapi_spec(schemas):
                             "explode": True,
                             "description": "Fields to include in the response. Can be repeated for multiple fields."
                         },
+                        {
+                            "name": "frame",
+                            "in": "query",
+                            "required": True,
+                            "schema": {
+                                "type": "string",
+                                "enum": ["object"]
+                            },
+                            "description": "Constant value, do not set."
+                        }
                     ],
                     "responses": {
                         "200": {
