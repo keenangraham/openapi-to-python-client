@@ -165,6 +165,7 @@ Class | Method | HTTP request | Description
  - [SampleTerm](docs/SampleTerm.md)
  - [SearchFacet](docs/SearchFacet.md)
  - [SearchFacetTermValue](docs/SearchFacetTermValue.md)
+ - [SearchLimitParameter](docs/SearchLimitParameter.md)
  - [SearchResultItem](docs/SearchResultItem.md)
  - [SearchResults](docs/SearchResults.md)
  - [SequenceFile](docs/SequenceFile.md)

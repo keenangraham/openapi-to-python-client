@@ -262,7 +262,14 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "int"
+                }
+              ]
             },
             "description": "Maximum number of results to return. Use 'all' for all results."
           },
