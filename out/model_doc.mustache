@@ -2,6 +2,23 @@
 
 {{#description}}{{&description}}
 {{/description}}
+{{#isEnum}}
+
+## Enum Attributes
+{{#allowableValues}}
+    {{^vendorExtensions.x-enum-varnames}}
+    {{#enumVars}}
+    {{{name}}} = {{{value}}}
+    {{/enumVars}}
+    {{/vendorExtensions.x-enum-varnames}}
+    {{#vendorExtensions}}
+    {{#x-enum-varnames}}
+    {{.}} = '{{.}}'
+    {{/x-enum-varnames}}
+    {{/vendorExtensions}}
+{{/allowableValues}}
+{{/isEnum}}
+{{^isEnum}}
 
 ## Properties
 
@@ -10,7 +27,6 @@ Name | Type | Description | Notes
 {{#vars}}**{{name}}** | {{#isPrimitiveType}}**{{dataType}}**{{/isPrimitiveType}}{{^isPrimitiveType}}[**{{dataType}}**]({{complexType}}.md){{/isPrimitiveType}} | {{description}} | {{^required}}[optional] {{/required}}{{#isReadOnly}}[readonly] {{/isReadOnly}}{{#defaultValue}}[default to {{{.}}}]{{/defaultValue}}
 {{/vars}}
 
-{{^isEnum}}
 ## Example
 
 ```python
