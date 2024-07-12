@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from igvf_client.models.page_layout_components import PageLayoutComponents
-from typing import Optional, Set
+from typing import Optional, Set, Int
 from typing_extensions import Self
 
 class PageLayout(BaseModel):
