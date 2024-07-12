@@ -146,7 +146,7 @@ with igvf_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **item_type** | [**ItemType**](.md)| The name of the item type | 
+ **item_type** | [**ItemType**](ItemType.md)| The name of the item type | 
 
 ### Return type
 
@@ -304,12 +304,12 @@ with igvf_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | [**List[str]**](str.md)| Type of objects to return. Can be repeated for multiple types. | [optional] 
- **var_field** | [**List[str]**](str.md)| Fields to include in the response. Can be repeated for multiple fields. | [optional] 
+ **type** | [**List[str]**](List[str].md)| Type of objects to return. Can be repeated for multiple types. | [optional] 
+ **var_field** | [**List[str]**](List[str].md)| Fields to include in the response. Can be repeated for multiple fields. | [optional] 
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | **int**| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
- **sort** | [**List[str]**](str.md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. | [optional] 
- **field_filters** | [**object**](.md)| Any field from any object type can be used as a filter. Use &#39;!&#x3D;&#39; for negation, &#39;*&#39; as a wildcard, and &#39;lt:&#39;, &#39;lte:&#39;, &#39;gt:&#39;, &#39;gte:&#39; for range queries on numeric fields. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. | [optional] 
+ **field_filters** | [**object**](object.md)| Any field from any object type can be used as a filter. Use &#39;!&#x3D;&#39; for negation, &#39;*&#39; as a wildcard, and &#39;lt:&#39;, &#39;lte:&#39;, &#39;gt:&#39;, &#39;gte:&#39; for range queries on numeric fields. | [optional] 
 
 ### Return type
 
