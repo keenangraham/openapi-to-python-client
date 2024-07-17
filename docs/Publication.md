@@ -34,6 +34,12 @@ Name | Type | Description | Notes
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 
 **publication_year** | **int** | The year the publication was published. | [optional] 
+**samples** | **List[object]** | The samples associated with this publication. | [optional] 
+**donors** | **List[object]** | The donors associated with this publication. | [optional] 
+**file_sets** | **List[object]** | The file sets associated with this publication. | [optional] 
+**workflows** | **List[object]** | The workflows associated with this publication. | [optional] 
+**software** | **List[object]** | The software associated with this publication. | [optional] 
+**software_versions** | **List[object]** | The software versions associated with this publication. | [optional] 
 
 ## Example
 

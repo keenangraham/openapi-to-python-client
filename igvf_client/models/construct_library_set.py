@@ -28,13 +28,14 @@ from typing_extensions import Self
 
 class ConstructLibrarySet(BaseModel):
     """
-    A file set containing raw data files resulting from sequencing of the library delivered to the sample. For example, a guide RNA library.
+    Construct library set is a file set that hosts raw data files (e.g. FASTQs) resulting from sequencing of a library prior to its delivery into the samples being investigated. For example sequencing results of guide RNAs after cloning them but prior to their delivery to the actual samples under investigation. The results thus represent the sequencing output of the guides that are then introduced into cells, but may not always correspond to what exact guides ended up being delivered or expressed. Not all construct library sets will end up having FASTQs or any other files in them. For example if the lab chooses not to sequence their guide library prior to delivery, no FASTQs will be required in that case. Construct library sets should not be associated with any samples because they are designed to capture the library prior to its delivery and hence, has no relation to the ample that will get the plasmids eventually.
     """ # noqa: E501
     small_scale_loci_list: Optional[List[Locus]] = Field(default=None, description="A small scale (<=100) list of specific chromosomal region(s).")
     large_scale_loci_list: Optional[StrictStr] = Field(default=None, description="A large scale list (>100) of specific chromosomal regions.")
     small_scale_gene_list: Optional[List[StrictStr]] = Field(default=None, description="The specific, small scale list of (<=100) gene(s) this construct library was designed to target. This property differs from targeted_genes in Measurement Set, which describes genes targeted for binding sites or used for sorting by expression.")
     large_scale_gene_list: Optional[StrictStr] = Field(default=None, description="The large scale list of (>100 genes) this construct library was designed to target.")
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
     publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
     sources: Optional[List[StrictStr]] = Field(default=None, description="The originating lab(s) or vendor(s).")
@@ -81,7 +82,7 @@ class ConstructLibrarySet(BaseModel):
     input_file_set_for: Optional[List[Any]] = Field(default=None, description="The file sets that use this file set as an input.")
     applied_to_samples: Optional[List[Any]] = Field(default=None, description="The samples that link to this construct library set.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["small_scale_loci_list", "large_scale_loci_list", "small_scale_gene_list", "large_scale_gene_list", "release_timestamp", "publication_identifiers", "documents", "sources", "lot_id", "product_id", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "file_set_type", "scope", "selection_criteria", "integrated_content_files", "associated_phenotypes", "orf_list", "exon", "tile", "guide_type", "tiling_modality", "average_guide_coverage", "lower_bound_guide_coverage", "upper_bound_guide_coverage", "average_insert_size", "lower_bound_insert_size", "upper_bound_insert_size", "targeton", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "applied_to_samples"]
+    __properties: ClassVar[List[str]] = ["small_scale_loci_list", "large_scale_loci_list", "small_scale_gene_list", "large_scale_gene_list", "release_timestamp", "publications", "publication_identifiers", "documents", "sources", "lot_id", "product_id", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "file_set_type", "scope", "selection_criteria", "integrated_content_files", "associated_phenotypes", "orf_list", "exon", "tile", "guide_type", "tiling_modality", "average_guide_coverage", "lower_bound_guide_coverage", "upper_bound_guide_coverage", "average_insert_size", "lower_bound_insert_size", "upper_bound_insert_size", "targeton", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "applied_to_samples"]
 
     @field_validator('lot_id')
     def lot_id_validate_regular_expression(cls, value):
@@ -318,6 +319,7 @@ class ConstructLibrarySet(BaseModel):
             "small_scale_gene_list": obj.get("small_scale_gene_list"),
             "large_scale_gene_list": obj.get("large_scale_gene_list"),
             "release_timestamp": obj.get("release_timestamp"),
+            "publications": obj.get("publications"),
             "publication_identifiers": obj.get("publication_identifiers"),
             "documents": obj.get("documents"),
             "sources": obj.get("sources"),

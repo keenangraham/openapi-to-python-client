@@ -29,6 +29,7 @@ class TechnicalSample(BaseModel):
     A sample that is used as a medium to perform biological measurement without the intent to characterize the technical sample itself. For example, the solution in which RNA oligos binding experiments are performed.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
     publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
     sources: Optional[List[StrictStr]] = Field(default=None, description="The originating lab(s) or vendor(s).")
@@ -75,7 +76,7 @@ class TechnicalSample(BaseModel):
     origin_of: Optional[List[Any]] = Field(default=None, description="The samples which originate from this sample, such as through a process of cell differentiation.")
     institutional_certificates: Optional[List[Any]] = Field(default=None, description="The institutional certificates under which use of this sample is approved.")
     classifications: Optional[List[StrictStr]] = Field(default=None, description="The general category of this type of sample.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "url", "sources", "lot_id", "product_id", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "starting_amount", "starting_amount_units", "dbxrefs", "date_obtained", "sorted_from", "sorted_from_detail", "virtual", "construct_library_sets", "moi", "nucleic_acid_delivery", "time_post_library_delivery", "time_post_library_delivery_units", "protocols", "sample_material", "taxa", "sample_terms", "@id", "@type", "summary", "file_sets", "multiplexed_in", "sorted_fractions", "origin_of", "institutional_certificates", "classifications"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "publications", "publication_identifiers", "url", "sources", "lot_id", "product_id", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "starting_amount", "starting_amount_units", "dbxrefs", "date_obtained", "sorted_from", "sorted_from_detail", "virtual", "construct_library_sets", "moi", "nucleic_acid_delivery", "time_post_library_delivery", "time_post_library_delivery_units", "protocols", "sample_material", "taxa", "sample_terms", "@id", "@type", "summary", "file_sets", "multiplexed_in", "sorted_fractions", "origin_of", "institutional_certificates", "classifications"]
 
     @field_validator('lot_id')
     def lot_id_validate_regular_expression(cls, value):
@@ -270,6 +271,7 @@ class TechnicalSample(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
+            "publications": obj.get("publications"),
             "publication_identifiers": obj.get("publication_identifiers"),
             "url": obj.get("url"),
             "sources": obj.get("sources"),

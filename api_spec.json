@@ -137,7 +137,7 @@
                       "$ref": "#/components/schemas/CrisprModification"
                     },
                     {
-                      "$ref": "#/components/schemas/Modification"
+                      "$ref": "#/components/schemas/DegronModification"
                     },
                     {
                       "$ref": "#/components/schemas/AssayTerm"
@@ -417,7 +417,7 @@
                             "$ref": "#/components/schemas/CrisprModification"
                           },
                           {
-                            "$ref": "#/components/schemas/Modification"
+                            "$ref": "#/components/schemas/DegronModification"
                           },
                           {
                             "$ref": "#/components/schemas/AssayTerm"
@@ -631,7 +631,7 @@
           "InstitutionalCertificate",
           "Lab",
           "CrisprModification",
-          "Modification",
+          "DegronModification",
           "AssayTerm",
           "PhenotypeTerm",
           "PlatformTerm",
@@ -684,7 +684,7 @@
           "InstitutionalCertificate",
           "Lab",
           "CrisprModification",
-          "Modification",
+          "DegronModification",
           "AssayTerm",
           "PhenotypeTerm",
           "PlatformTerm",
@@ -2003,6 +2003,7 @@
               "experimental protocol",
               "file format specification",
               "image",
+              "model source data",
               "plate map",
               "plasmid map",
               "plasmid sequence",
@@ -2074,6 +2075,17 @@
             "enum": [
               "Homo sapiens"
             ]
+          },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
           },
           "publication_identifiers": {
             "title": "Publication Identifiers",
@@ -2395,6 +2407,17 @@
             "enum": [
               "Mus musculus"
             ]
+          },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
           },
           "publication_identifiers": {
             "title": "Publication Identifiers",
@@ -6499,6 +6522,17 @@
             "type": "string",
             "format": "date-time"
           },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
+          },
           "publication_identifiers": {
             "title": "Publication Identifiers",
             "description": "The publication identifiers that provide more information about the object.",
@@ -6751,7 +6785,7 @@
       },
       "AuxiliarySet": {
         "title": "Auxiliary Set",
-        "description": "A file set for auxiliary raw data files that were produced alongside raw data files from a measurement set. For example, in a CRISPR screen experiment the measurement set would capture the result of single-cell transcript sequencing and the auxiliary set the result of gRNA sequencing with the associated cellular barcodes.",
+        "description": "Auxiliary set is a file set that hosts raw data files (e.g. FASTQs) resulting from sequencing of nucleic acids of a sample that are a proxy to some vital information and necessary for the analysis of an associated measurement set. Auxiliary sets usually would not provide any information about the transcriptome or the genome of the sample in question. For example auxiliary sets would include the sequencing of barcodes that correspond to the elements introduced into cells, or sequencing of guide RNA coding sequences in the cells. The files hosted in the auxiliary sets are relevant for the analysis, but they by themselves are not assessing much of the biology of the sample being analyzed.",
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -6760,6 +6794,17 @@
             "description": "The date the object was released.",
             "type": "string",
             "format": "date-time"
+          },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
           },
           "publication_identifiers": {
             "title": "Publication Identifiers",
@@ -7027,7 +7072,7 @@
       },
       "ConstructLibrarySet": {
         "title": "Construct Library Set",
-        "description": "A file set containing raw data files resulting from sequencing of the library delivered to the sample. For example, a guide RNA library.",
+        "description": "Construct library set is a file set that hosts raw data files (e.g. FASTQs) resulting from sequencing of a library prior to its delivery into the samples being investigated. For example sequencing results of guide RNAs after cloning them but prior to their delivery to the actual samples under investigation. The results thus represent the sequencing output of the guides that are then introduced into cells, but may not always correspond to what exact guides ended up being delivered or expressed. Not all construct library sets will end up having FASTQs or any other files in them. For example if the lab chooses not to sequence their guide library prior to delivery, no FASTQs will be required in that case. Construct library sets should not be associated with any samples because they are designed to capture the library prior to its delivery and hence, has no relation to the ample that will get the plasmids eventually.",
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -7102,6 +7147,17 @@
             "description": "The date the object was released.",
             "type": "string",
             "format": "date-time"
+          },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
           },
           "publication_identifiers": {
             "title": "Publication Identifiers",
@@ -7523,6 +7579,17 @@
               "Mus musculus"
             ]
           },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
+          },
           "publication_identifiers": {
             "title": "Publication Identifiers",
             "description": "The publication identifiers that provide more information about the object.",
@@ -7797,7 +7864,7 @@
       },
       "MeasurementSet": {
         "title": "Measurement Set",
-        "description": "A file set for a distinct measurement, such as the sequencing of a genomic library generated by an experiment performed on a cell line. A measurement set contains the raw data files generated by the measurement.",
+        "description": "Measurement set is a file set that hosts raw data files (e.g. FASTQs) resulting from sequencing of a library prepared from the nucleic acids of the sample that is the main target of the assay. For example sequencing of accessible regions in the genome, or sequencing of the transcriptome of the sample. The assay can either be bulk or single cell type. The sample specific raw sequencing results will be captured in the measurement sets. The files in the measurement sets are specific to the sample being investigated. See auxiliary sets for files that are not a direct result of sequencing the sample under investigation.",
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -7806,6 +7873,17 @@
             "description": "The date the object was released.",
             "type": "string",
             "format": "date-time"
+          },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
           },
           "publication_identifiers": {
             "title": "Publication Identifiers",
@@ -8225,6 +8303,17 @@
             "type": "string",
             "format": "date-time"
           },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
+          },
           "publication_identifiers": {
             "title": "Publication Identifiers",
             "description": "The publication identifiers that provide more information about the object.",
@@ -8620,6 +8709,17 @@
             "description": "The date the object was released.",
             "type": "string",
             "format": "date-time"
+          },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
           },
           "publication_identifiers": {
             "title": "Publication Identifiers",
@@ -9681,6 +9781,36 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
+          "activated": {
+            "title": "Activated",
+            "description": "A boolean indicating whether the modification has been activated by a chemical agent.",
+            "type": "boolean"
+          },
+          "activating_agent_term_id": {
+            "title": "Activating Agent Term ID",
+            "description": "The CHEBI identifier for the activating agent of the modification.",
+            "type": "string",
+            "pattern": "^CHEBI:[0-9]{1,7}$"
+          },
+          "activating_agent_term_name": {
+            "title": "Activating Agent Term Name",
+            "description": "The CHEBI name for the activating agent of the modification.",
+            "type": "string"
+          },
+          "modality": {
+            "title": "Modality",
+            "description": "The purpose or intended effect of a modification.",
+            "type": "string",
+            "enum": [
+              "activation",
+              "base editing",
+              "cutting",
+              "interference",
+              "knockout",
+              "localizing",
+              "prime editing"
+            ]
+          },
           "cas": {
             "title": "Cas",
             "description": "The name of the CRISPR associated protein used in the modification.",
@@ -9700,14 +9830,17 @@
             "description": "The name of the molecule fused to a Cas protein.",
             "type": "string",
             "enum": [
+              "2xVP64",
+              "3xVP64",
               "ABE8e",
               "ABE8.20",
+              "ANTI-FLAG",
               "BE4",
               "BE4max",
               "eA3A",
               "eA3A-T31A",
               "eA3A-T44D-S45A",
-              "ANTI-FLAG",
+              "KOX1-KRAB",
               "M-MLV RT (PE2)",
               "p300",
               "TdCBE",
@@ -9716,23 +9849,7 @@
               "VPH",
               "VP64",
               "VP64-p65-Rta (VPR)",
-              "2xVP64",
-              "3xVP64",
               "ZIM3-KRAB"
-            ]
-          },
-          "modality": {
-            "title": "Modality",
-            "description": "The purpose or intended effect of a CRISPR modification.",
-            "type": "string",
-            "enum": [
-              "activation",
-              "base editing",
-              "cutting",
-              "interference",
-              "knockout",
-              "localizing",
-              "prime editing"
             ]
           },
           "tagged_protein": {
@@ -9750,22 +9867,6 @@
               "Campylobacter jejuni (Cj)",
               "Neisseria meningitidis (Nm)"
             ]
-          },
-          "activated": {
-            "title": "Activated",
-            "description": "A boolean indicating whether the modification has been activated by a chemical agent.",
-            "type": "boolean"
-          },
-          "activating_agent_term_id": {
-            "title": "Activating Agent Term ID",
-            "description": "The CHEBI identifier for the activating agent of the modification.",
-            "type": "string",
-            "pattern": "^CHEBI:[0-9]{1,7}$"
-          },
-          "activating_agent_term_name": {
-            "title": "Activating Agent Term Name",
-            "description": "The CHEBI name for the activating agent of the modification.",
-            "type": "string"
           },
           "@id": {
             "title": "ID",
@@ -9793,9 +9894,9 @@
           }
         }
       },
-      "Modification": {
-        "title": "Modification",
-        "description": "A genetic modification altering sample genomic material. For example, CRISPRi dCas9-KRAB modification.",
+      "DegronModification": {
+        "title": "Degron Modification",
+        "description": "A degron modification that can induce degradation of a protein.",
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -9866,7 +9967,7 @@
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
             "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "6"
+            "default": "1"
           },
           "uuid": {
             "title": "UUID",
@@ -9915,76 +10016,6 @@
             "type": "string",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
           },
-          "cas": {
-            "title": "Cas",
-            "description": "The name of the CRISPR associated protein used in the modification.",
-            "type": "string",
-            "enum": [
-              "Cas9",
-              "Cas12a",
-              "Cas13",
-              "dCas9",
-              "nCas9",
-              "SpG",
-              "SpRY"
-            ]
-          },
-          "fused_domain": {
-            "title": "Fused Domain",
-            "description": "The name of the molecule fused to a Cas protein.",
-            "type": "string",
-            "enum": [
-              "ABE8e",
-              "ABE8.20",
-              "BE4",
-              "BE4max",
-              "eA3A",
-              "eA3A-T31A",
-              "eA3A-T44D-S45A",
-              "ANTI-FLAG",
-              "M-MLV RT (PE2)",
-              "p300",
-              "TdCBE",
-              "TdCGBE",
-              "TdDE",
-              "VPH",
-              "VP64",
-              "VP64-p65-Rta (VPR)",
-              "2xVP64",
-              "3xVP64",
-              "ZIM3-KRAB"
-            ]
-          },
-          "modality": {
-            "title": "Modality",
-            "description": "The purpose or intended effect of a CRISPR modification.",
-            "type": "string",
-            "enum": [
-              "activation",
-              "base editing",
-              "cutting",
-              "interference",
-              "knockout",
-              "localizing",
-              "prime editing"
-            ]
-          },
-          "tagged_protein": {
-            "title": "Tagged Protein",
-            "description": "The tagged protein in modifications in which the Cas nuclease is fused to an antibody.",
-            "type": "string"
-          },
-          "cas_species": {
-            "title": "Cas species",
-            "description": "The originating species of the Cas nuclease.",
-            "type": "string",
-            "enum": [
-              "Streptococcus pyogenes (Sp)",
-              "Staphylococcus aureus (Sa)",
-              "Campylobacter jejuni (Cj)",
-              "Neisseria meningitidis (Nm)"
-            ]
-          },
           "activated": {
             "title": "Activated",
             "description": "A boolean indicating whether the modification has been activated by a chemical agent.",
@@ -10000,6 +10031,35 @@
             "title": "Activating Agent Term Name",
             "description": "The CHEBI name for the activating agent of the modification.",
             "type": "string"
+          },
+          "modality": {
+            "title": "Modality",
+            "description": "The purpose or intended effect of a modification.",
+            "type": "string",
+            "enum": [
+              "degradation"
+            ],
+            "default": "degradation"
+          },
+          "degron_system": {
+            "title": "Degron System",
+            "description": "The type of degron system implemented.",
+            "type": "string",
+            "enum": [
+              "AID",
+              "AlissAid",
+              "ssAID"
+            ]
+          },
+          "tagged_proteins": {
+            "title": "Tagged Proteins",
+            "description": "The tagged proteins which are targeted for degradation.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Gene",
+              "type": "string"
+            }
           },
           "@id": {
             "title": "ID",
@@ -11553,6 +11613,60 @@
             "title": "Publication Year",
             "type": "integer",
             "description": "The year the publication was published."
+          },
+          "samples": {
+            "title": "Samples",
+            "type": "array",
+            "description": "The samples associated with this publication.",
+            "uniqueItems": true,
+            "items": {
+              "title": "Sample"
+            }
+          },
+          "donors": {
+            "title": "Donors",
+            "type": "array",
+            "description": "The donors associated with this publication.",
+            "uniqueItems": true,
+            "items": {
+              "title": "Donor"
+            }
+          },
+          "file_sets": {
+            "title": "File Sets",
+            "type": "array",
+            "description": "The file sets associated with this publication.",
+            "uniqueItems": true,
+            "items": {
+              "title": "File Set"
+            }
+          },
+          "workflows": {
+            "title": "Workflows",
+            "type": "array",
+            "description": "The workflows associated with this publication.",
+            "uniqueItems": true,
+            "items": {
+              "title": "Workflow"
+            }
+          },
+          "software": {
+            "title": "Software",
+            "type": "array",
+            "description": "The software associated with this publication.",
+            "uniqueItems": true,
+            "items": {
+              "title": "Software"
+            }
+          },
+          "software_versions": {
+            "title": "Software Versions",
+            "type": "array",
+            "description": "The software versions associated with this publication.",
+            "uniqueItems": true,
+            "items": {
+              "title": "Software Version"
+            }
           }
         }
       },
@@ -11567,6 +11681,17 @@
             "description": "The date the object was released.",
             "type": "string",
             "format": "date-time"
+          },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
           },
           "publication_identifiers": {
             "title": "Publication Identifiers",
@@ -12215,6 +12340,17 @@
             "type": "string",
             "format": "date-time"
           },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
+          },
           "publication_identifiers": {
             "title": "Publication Identifiers",
             "description": "The publication identifiers that provide more information about the object.",
@@ -12651,6 +12787,17 @@
             "description": "The date the object was released.",
             "type": "string",
             "format": "date-time"
+          },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
           },
           "publication_identifiers": {
             "title": "Publication Identifiers",
@@ -13198,6 +13345,17 @@
             "type": "string",
             "format": "date-time"
           },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
+          },
           "publication_identifiers": {
             "title": "Publication Identifiers",
             "description": "The publication identifiers that provide more information about the object.",
@@ -13596,6 +13754,17 @@
             "description": "The date the object was released.",
             "type": "string",
             "format": "date-time"
+          },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
           },
           "publication_identifiers": {
             "title": "Publication Identifiers",
@@ -14193,6 +14362,17 @@
               "Mus musculus"
             ]
           },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
+          },
           "publication_identifiers": {
             "title": "Publication Identifiers",
             "description": "The publication identifiers that provide more information about the object.",
@@ -14728,6 +14908,17 @@
             "type": "string",
             "format": "date-time"
           },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
+          },
           "publication_identifiers": {
             "title": "Publication Identifiers",
             "description": "The publication identifiers that provide more information about the object.",
@@ -14908,6 +15099,17 @@
             "description": "The date the object was released.",
             "type": "string",
             "format": "date-time"
+          },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
           },
           "publication_identifiers": {
             "title": "Publication Identifiers",
@@ -15606,6 +15808,17 @@
             "description": "The date the object was released.",
             "type": "string",
             "format": "date-time"
+          },
+          "publications": {
+            "title": "Publications",
+            "description": "The publications associated with this object.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Publication",
+              "description": "A publication associated with this object.",
+              "type": "string"
+            }
           },
           "publication_identifiers": {
             "title": "Publication Identifiers",

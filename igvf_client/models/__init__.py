@@ -31,6 +31,7 @@ from igvf_client.models.content_type import ContentType
 from igvf_client.models.content_type1 import ContentType1
 from igvf_client.models.crispr_modification import CrisprModification
 from igvf_client.models.curated_set import CuratedSet
+from igvf_client.models.degron_modification import DegronModification
 from igvf_client.models.document import Document
 from igvf_client.models.gene import Gene
 from igvf_client.models.gene_location import GeneLocation
@@ -50,7 +51,6 @@ from igvf_client.models.matrix_file import MatrixFile
 from igvf_client.models.measurement_set import MeasurementSet
 from igvf_client.models.model_file import ModelFile
 from igvf_client.models.model_set import ModelSet
-from igvf_client.models.modification import Modification
 from igvf_client.models.multiplexed_sample import MultiplexedSample
 from igvf_client.models.no_results_response import NoResultsResponse
 from igvf_client.models.no_results_response_columns_value import NoResultsResponseColumnsValue

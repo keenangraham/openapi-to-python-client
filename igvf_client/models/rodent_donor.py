@@ -30,6 +30,7 @@ class RodentDonor(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     taxa: Optional[StrictStr] = Field(default=None, description="The species of the organism.")
+    publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
     publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     url: Optional[StrictStr] = Field(default=None, description="An external resource with additional information.")
     sources: Optional[List[StrictStr]] = Field(default=None, description="The originating lab(s) or vendor(s).")
@@ -63,7 +64,7 @@ class RodentDonor(BaseModel):
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the rodent donor.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "taxa", "publication_identifiers", "url", "sources", "lot_id", "product_id", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "sex", "phenotypic_features", "virtual", "strain_background", "strain", "genotype", "individual_rodent", "rodent_identifier", "@id", "@type", "summary"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "taxa", "publications", "publication_identifiers", "url", "sources", "lot_id", "product_id", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "sex", "phenotypic_features", "virtual", "strain_background", "strain", "genotype", "individual_rodent", "rodent_identifier", "@id", "@type", "summary"]
 
     @field_validator('taxa')
     def taxa_validate_enum(cls, value):
@@ -239,6 +240,7 @@ class RodentDonor(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "taxa": obj.get("taxa"),
+            "publications": obj.get("publications"),
             "publication_identifiers": obj.get("publication_identifiers"),
             "url": obj.get("url"),
             "sources": obj.get("sources"),

@@ -20,6 +20,7 @@ docs/ContentType.md
 docs/ContentType1.md
 docs/CrisprModification.md
 docs/CuratedSet.md
+docs/DegronModification.md
 docs/Document.md
 docs/Gene.md
 docs/GeneLocation.md
@@ -40,7 +41,6 @@ docs/MatrixFile.md
 docs/MeasurementSet.md
 docs/ModelFile.md
 docs/ModelSet.md
-docs/Modification.md
 docs/MultiplexedSample.md
 docs/NoResultsResponse.md
 docs/NoResultsResponseColumnsValue.md
@@ -108,6 +108,7 @@ igvf_client/models/content_type.py
 igvf_client/models/content_type1.py
 igvf_client/models/crispr_modification.py
 igvf_client/models/curated_set.py
+igvf_client/models/degron_modification.py
 igvf_client/models/document.py
 igvf_client/models/gene.py
 igvf_client/models/gene_location.py
@@ -127,7 +128,6 @@ igvf_client/models/matrix_file.py
 igvf_client/models/measurement_set.py
 igvf_client/models/model_file.py
 igvf_client/models/model_set.py
-igvf_client/models/modification.py
 igvf_client/models/multiplexed_sample.py
 igvf_client/models/no_results_response.py
 igvf_client/models/no_results_response_columns_value.py
@@ -177,4 +177,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_degron_modification.py
 tox.ini

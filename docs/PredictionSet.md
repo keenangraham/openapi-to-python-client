@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **small_scale_gene_list** | **List[str]** | The specific, small scale list of (&lt;&#x3D;100) gene(s) this prediction set targets. | [optional] 
 **large_scale_gene_list** | **str** | The large scale list of (&gt;100 genes) this this prediction set targets. | [optional] 
 **release_timestamp** | **datetime** | The date the object was released. | [optional] 
+**publications** | **List[str]** | The publications associated with this object. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
 **lab** | **str** | Lab associated with the submission. | [optional] 

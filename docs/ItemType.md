@@ -32,7 +32,7 @@
     InstitutionalCertificate = 'InstitutionalCertificate'
     Lab = 'Lab'
     CrisprModification = 'CrisprModification'
-    Modification = 'Modification'
+    DegronModification = 'DegronModification'
     AssayTerm = 'AssayTerm'
     PhenotypeTerm = 'PhenotypeTerm'
     PlatformTerm = 'PlatformTerm'

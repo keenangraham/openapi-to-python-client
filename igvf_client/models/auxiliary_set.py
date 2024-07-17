@@ -26,9 +26,10 @@ from typing_extensions import Self
 
 class AuxiliarySet(BaseModel):
     """
-    A file set for auxiliary raw data files that were produced alongside raw data files from a measurement set. For example, in a CRISPR screen experiment the measurement set would capture the result of single-cell transcript sequencing and the auxiliary set the result of gRNA sequencing with the associated cellular barcodes.
+    Auxiliary set is a file set that hosts raw data files (e.g. FASTQs) resulting from sequencing of nucleic acids of a sample that are a proxy to some vital information and necessary for the analysis of an associated measurement set. Auxiliary sets usually would not provide any information about the transcriptome or the genome of the sample in question. For example auxiliary sets would include the sequencing of barcodes that correspond to the elements introduced into cells, or sequencing of guide RNA coding sequences in the cells. The files hosted in the auxiliary sets are relevant for the analysis, but they by themselves are not assessing much of the biology of the sample being analyzed.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
     publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
@@ -60,7 +61,7 @@ class AuxiliarySet(BaseModel):
     submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
     input_file_set_for: Optional[List[Any]] = Field(default=None, description="The file sets that use this file set as an input.")
     measurement_sets: Optional[List[Any]] = Field(default=None, description="The measurement sets that link to this auxiliary set.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "url", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "library_construction_platform", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "measurement_sets"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "publications", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "url", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "library_construction_platform", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "measurement_sets"]
 
     @field_validator('collections')
     def collections_validate_enum(cls, value):
@@ -195,6 +196,7 @@ class AuxiliarySet(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
+            "publications": obj.get("publications"),
             "publication_identifiers": obj.get("publication_identifiers"),
             "documents": obj.get("documents"),
             "lab": obj.get("lab"),

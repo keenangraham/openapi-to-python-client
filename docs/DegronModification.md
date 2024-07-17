@@ -1,6 +1,6 @@
-# CrisprModification
+# DegronModification
 
-A CRISPR modification altering sample genomic material. For example, CRISPRi dCas9-KRAB modification.
+A degron modification that can induce degradation of a protein.
 
 ## Properties
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
 **lab** | **str** | Lab associated with the submission. | [optional] 
 **award** | **str** | Grant associated with the submission. | [optional] 
-**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '2']
+**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '1']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
@@ -25,11 +25,9 @@ Name | Type | Description | Notes
 **activated** | **bool** | A boolean indicating whether the modification has been activated by a chemical agent. | [optional] 
 **activating_agent_term_id** | **str** | The CHEBI identifier for the activating agent of the modification. | [optional] 
 **activating_agent_term_name** | **str** | The CHEBI name for the activating agent of the modification. | [optional] 
-**modality** | **str** | The purpose or intended effect of a modification. | [optional] 
-**cas** | **str** | The name of the CRISPR associated protein used in the modification. | [optional] 
-**fused_domain** | **str** | The name of the molecule fused to a Cas protein. | [optional] 
-**tagged_protein** | **str** | The tagged protein in modifications in which the Cas nuclease is fused to an antibody. | [optional] 
-**cas_species** | **str** | The originating species of the Cas nuclease. | [optional] 
+**modality** | **str** | The purpose or intended effect of a modification. | [optional] [default to 'degradation']
+**degron_system** | **str** | The type of degron system implemented. | [optional] 
+**tagged_proteins** | **List[str]** | The tagged proteins which are targeted for degradation. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
@@ -38,19 +36,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from igvf_client.models.crispr_modification import CrisprModification
+from igvf_client.models.degron_modification import DegronModification
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of CrisprModification from a JSON string
-crispr_modification_instance = CrisprModification.from_json(json)
+# create an instance of DegronModification from a JSON string
+degron_modification_instance = DegronModification.from_json(json)
 # print the JSON string representation of the object
-print(CrisprModification.to_json())
+print(DegronModification.to_json())
 
 # convert the object into a dict
-crispr_modification_dict = crispr_modification_instance.to_dict()
-# create an instance of CrisprModification from a dict
-crispr_modification_from_dict = CrisprModification.from_dict(crispr_modification_dict)
+degron_modification_dict = degron_modification_instance.to_dict()
+# create an instance of DegronModification from a dict
+degron_modification_from_dict = DegronModification.from_dict(degron_modification_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

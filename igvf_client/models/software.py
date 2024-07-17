@@ -29,6 +29,7 @@ class Software(BaseModel):
     A software used for computational  analysis. For example, Bowtie2 alignment software.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
     publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
@@ -49,7 +50,7 @@ class Software(BaseModel):
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
     versions: Optional[List[StrictStr]] = Field(default=None, description="A list of versions that have been released for this software.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "lab", "award", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "title", "source_url", "used_by", "@id", "@type", "summary", "versions"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "publications", "publication_identifiers", "lab", "award", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "title", "source_url", "used_by", "@id", "@type", "summary", "versions"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -184,6 +185,7 @@ class Software(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
+            "publications": obj.get("publications"),
             "publication_identifiers": obj.get("publication_identifiers"),
             "lab": obj.get("lab"),
             "award": obj.get("award"),

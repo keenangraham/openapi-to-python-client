@@ -18,23 +18,25 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from igvf_client.models.attachment import Attachment
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Document(BaseModel):
+class DegronModification(BaseModel):
     """
-    A document with additional information regarding another object submitted to the data portal. For example, a plasmid map document associated with a transduced cell line sample.
+    A degron modification that can induce degradation of a protein.
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    sources: Optional[List[StrictStr]] = Field(default=None, description="The originating lab(s) or vendor(s).")
+    lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
+    product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product or catalog identifier provided following deposition to addgene.org.")
+    documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
-    attachment: Optional[Attachment] = None
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='1', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -42,14 +44,37 @@ class Document(BaseModel):
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
-    document_type: Optional[StrictStr] = Field(default=None, description="The category that best describes the document.")
-    characterization_method: Optional[StrictStr] = Field(default=None, description="The method used for the characterization.")
-    urls: Optional[List[StrictStr]] = Field(default=None, description="External resources with additional information to the document.")
+    activated: Optional[StrictBool] = Field(default=None, description="A boolean indicating whether the modification has been activated by a chemical agent.")
+    activating_agent_term_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The CHEBI identifier for the activating agent of the modification.")
+    activating_agent_term_name: Optional[StrictStr] = Field(default=None, description="The CHEBI name for the activating agent of the modification.")
+    modality: Optional[StrictStr] = Field(default='degradation', description="The purpose or intended effect of a modification.")
+    degron_system: Optional[StrictStr] = Field(default=None, description="The type of degron system implemented.")
+    tagged_proteins: Optional[List[StrictStr]] = Field(default=None, description="The tagged proteins which are targeted for degradation.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
-    additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["release_timestamp", "status", "lab", "award", "attachment", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "document_type", "characterization_method", "urls", "@id", "@type", "summary"]
+    summary: Optional[StrictStr] = None
+    biosamples_modified: Optional[List[Any]] = Field(default=None, description="The biosamples which have been modified with this modification.")
+    __properties: ClassVar[List[str]] = ["release_timestamp", "sources", "lot_id", "product_id", "documents", "status", "lab", "award", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "activated", "activating_agent_term_id", "activating_agent_term_name", "modality", "degron_system", "tagged_proteins", "@id", "@type", "summary", "biosamples_modified"]
+
+    @field_validator('lot_id')
+    def lot_id_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(\S+(\s|\S)*\S+|\S)$", value):
+            raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
+        return value
+
+    @field_validator('product_id')
+    def product_id_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^addgene:\d{5,6}$", value):
+            raise ValueError(r"must validate the regular expression /^addgene:\d{5,6}$/")
+        return value
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -101,24 +126,34 @@ class Document(BaseModel):
             raise ValueError(r"must validate the regular expression /^(\S+(\s|\S)*\S+|\S)$/")
         return value
 
-    @field_validator('document_type')
-    def document_type_validate_enum(cls, value):
-        """Validates the enum"""
+    @field_validator('activating_agent_term_id')
+    def activating_agent_term_id_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
         if value is None:
             return value
 
-        if value not in set(['cell fate change protocol', 'characterization', 'computational protocol', 'experimental protocol', 'file format specification', 'image', 'model source data', 'plate map', 'plasmid map', 'plasmid sequence', 'standards']):
-            raise ValueError("must be one of enum values ('cell fate change protocol', 'characterization', 'computational protocol', 'experimental protocol', 'file format specification', 'image', 'model source data', 'plate map', 'plasmid map', 'plasmid sequence', 'standards')")
+        if not re.match(r"^CHEBI:[0-9]{1,7}$", value):
+            raise ValueError(r"must validate the regular expression /^CHEBI:[0-9]{1,7}$/")
         return value
 
-    @field_validator('characterization_method')
-    def characterization_method_validate_enum(cls, value):
+    @field_validator('modality')
+    def modality_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['FACS', 'immunoblot', 'immunofluorescence', 'immunoprecipitation', 'mass spectrometry', 'PCR', 'restriction digest', 'RT-qPCR', 'sequencing']):
-            raise ValueError("must be one of enum values ('FACS', 'immunoblot', 'immunofluorescence', 'immunoprecipitation', 'mass spectrometry', 'PCR', 'restriction digest', 'RT-qPCR', 'sequencing')")
+        if value not in set(['degradation']):
+            raise ValueError("must be one of enum values ('degradation')")
+        return value
+
+    @field_validator('degron_system')
+    def degron_system_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['AID', 'AlissAid', 'ssAID']):
+            raise ValueError("must be one of enum values ('AID', 'AlissAid', 'ssAID')")
         return value
 
     model_config = ConfigDict(
@@ -139,7 +174,7 @@ class Document(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Document from a JSON string"""
+        """Create an instance of DegronModification from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -151,10 +186,8 @@ class Document(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -162,19 +195,11 @@ class Document(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of attachment
-        if self.attachment:
-            _dict['attachment'] = self.attachment.to_dict()
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Document from a dict"""
+        """Create an instance of DegronModification from a dict"""
         if obj is None:
             return None
 
@@ -183,11 +208,14 @@ class Document(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
+            "sources": obj.get("sources"),
+            "lot_id": obj.get("lot_id"),
+            "product_id": obj.get("product_id"),
+            "documents": obj.get("documents"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
             "lab": obj.get("lab"),
             "award": obj.get("award"),
-            "attachment": Attachment.from_dict(obj["attachment"]) if obj.get("attachment") is not None else None,
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '4',
+            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '1',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
@@ -195,18 +223,17 @@ class Document(BaseModel):
             "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
-            "document_type": obj.get("document_type"),
-            "characterization_method": obj.get("characterization_method"),
-            "urls": obj.get("urls"),
+            "activated": obj.get("activated"),
+            "activating_agent_term_id": obj.get("activating_agent_term_id"),
+            "activating_agent_term_name": obj.get("activating_agent_term_name"),
+            "modality": obj.get("modality") if obj.get("modality") is not None else 'degradation',
+            "degron_system": obj.get("degron_system"),
+            "tagged_proteins": obj.get("tagged_proteins"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
-            "summary": obj.get("summary")
+            "summary": obj.get("summary"),
+            "biosamples_modified": obj.get("biosamples_modified")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

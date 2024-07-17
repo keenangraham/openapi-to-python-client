@@ -30,6 +30,7 @@ class CuratedSet(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
     taxa: Optional[StrictStr] = Field(default=None, description="The species of the organism.")
+    publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
     publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
@@ -61,7 +62,7 @@ class CuratedSet(BaseModel):
     input_file_set_for: Optional[List[Any]] = Field(default=None, description="The file sets that use this file set as an input.")
     assemblies: Optional[List[StrictStr]] = Field(default=None, description="The genome assemblies to which the referencing files in the file set are utilizing (e.g., GRCh38).")
     transcriptome_annotations: Optional[List[StrictStr]] = Field(default=None, description="The annotation versions of the reference resource.")
-    __properties: ClassVar[List[str]] = ["release_timestamp", "taxa", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "url", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "assemblies", "transcriptome_annotations"]
+    __properties: ClassVar[List[str]] = ["release_timestamp", "taxa", "publications", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "url", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "assemblies", "transcriptome_annotations"]
 
     @field_validator('taxa')
     def taxa_validate_enum(cls, value):
@@ -207,6 +208,7 @@ class CuratedSet(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "taxa": obj.get("taxa"),
+            "publications": obj.get("publications"),
             "publication_identifiers": obj.get("publication_identifiers"),
             "documents": obj.get("documents"),
             "lab": obj.get("lab"),
