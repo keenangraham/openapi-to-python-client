@@ -808,7 +808,7 @@ class IgvfApi:
     @validate_call
     def report(
         self,
-        type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
+        type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -829,9 +829,9 @@ class IgvfApi:
     ) -> str:
         """Generate a report based on search query
 
-        Like /search endpoint but returns a TSV file instead of JSON
+        Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).
 
-        :param type: Type of objects to return. Can be repeated for multiple types.
+        :param type: Type of objects to return. Can be repeated for multiple types. (required)
         :type type: List[str]
         :param query: Query string for searching.
         :type query: str
@@ -898,7 +898,7 @@ class IgvfApi:
     @validate_call
     def report_with_http_info(
         self,
-        type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
+        type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -919,9 +919,9 @@ class IgvfApi:
     ) -> ApiResponse[str]:
         """Generate a report based on search query
 
-        Like /search endpoint but returns a TSV file instead of JSON
+        Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).
 
-        :param type: Type of objects to return. Can be repeated for multiple types.
+        :param type: Type of objects to return. Can be repeated for multiple types. (required)
         :type type: List[str]
         :param query: Query string for searching.
         :type query: str
@@ -988,7 +988,7 @@ class IgvfApi:
     @validate_call
     def report_without_preload_content(
         self,
-        type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
+        type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -1009,9 +1009,9 @@ class IgvfApi:
     ) -> RESTResponseType:
         """Generate a report based on search query
 
-        Like /search endpoint but returns a TSV file instead of JSON
+        Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).
 
-        :param type: Type of objects to return. Can be repeated for multiple types.
+        :param type: Type of objects to return. Can be repeated for multiple types. (required)
         :type type: List[str]
         :param query: Query string for searching.
         :type query: str
@@ -1149,7 +1149,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/report',
+            resource_path='/multireport.tsv',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

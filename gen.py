@@ -248,10 +248,10 @@ def generate_openapi_spec(schemas):
                     }
                 }
             },
-            "/report": {
+            "/multireport.tsv": {
                 "get": {
                     "summary": "Generate a report based on search query",
-                    "description": "Like /search endpoint but returns a TSV file instead of JSON",
+                    "description": "Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).",
                     "operationId": "report",
                     "parameters": [
                         {
@@ -260,6 +260,7 @@ def generate_openapi_spec(schemas):
                             "schema": {"type": "array", "items": {"type": "string"}},
                             "style": "form",
                             "explode": True,
+                            "required": True,
                             "description": "Type of objects to return. Can be repeated for multiple types."
                         },
                         {
