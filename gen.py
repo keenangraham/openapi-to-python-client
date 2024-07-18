@@ -650,10 +650,15 @@ schemas = {
 for k in schemas.keys():
     if 'required' in schemas[k]:
         del schemas[k]['required']
+    # Normalize content_type, input_content_types, output_content_types so they don't generate multiple OpenAPI models.
     if 'content_type' in schemas[k]['properties']:
         schemas[k]['properties']['content_type'].pop('enum', None)
         schemas[k]['properties']['content_type'].pop('oneOf', None)
         schemas[k]['properties']['content_type'].pop('anyOf', None)
+    if 'input_content_types' in schemas[k]['properties']:
+        schemas[k]['properties']['input_content_types']['items'].pop('anyOf', None)
+    if 'output_content_types' in schemas[k]['properties']:
+        schemas[k]['properties']['output_content_types']['items'].pop('anyOf', None)
 
 
 #print(json.dumps(schemas, indent=4))

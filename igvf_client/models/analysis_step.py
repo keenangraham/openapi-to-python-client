@@ -21,8 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from igvf_client.models.input_content_type import InputContentType
-from igvf_client.models.output_content_type import OutputContentType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -47,8 +45,8 @@ class AnalysisStep(BaseModel):
     title: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The preferred viewable name of the analysis step, likely the same as the step label.")
     workflow: Optional[StrictStr] = Field(default=None, description="The computational workflow in which this analysis step belongs.")
     parents: Optional[List[StrictStr]] = Field(default=None, description="The precursor steps.")
-    input_content_types: Optional[List[InputContentType]] = Field(default=None, description="The content types used as input for the analysis step.")
-    output_content_types: Optional[List[OutputContentType]] = Field(default=None, description="The content types produced as output by the analysis step.")
+    input_content_types: Optional[List[StrictStr]] = Field(default=None, description="The content types used as input for the analysis step.")
+    output_content_types: Optional[List[StrictStr]] = Field(default=None, description="The content types produced as output by the analysis step.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
@@ -175,20 +173,6 @@ class AnalysisStep(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in input_content_types (list)
-        _items = []
-        if self.input_content_types:
-            for _item in self.input_content_types:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['input_content_types'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in output_content_types (list)
-        _items = []
-        if self.output_content_types:
-            for _item in self.output_content_types:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['output_content_types'] = _items
         return _dict
 
     @classmethod
@@ -218,8 +202,8 @@ class AnalysisStep(BaseModel):
             "title": obj.get("title"),
             "workflow": obj.get("workflow"),
             "parents": obj.get("parents"),
-            "input_content_types": [InputContentType.from_dict(_item) for _item in obj["input_content_types"]] if obj.get("input_content_types") is not None else None,
-            "output_content_types": [OutputContentType.from_dict(_item) for _item in obj["output_content_types"]] if obj.get("output_content_types") is not None else None,
+            "input_content_types": obj.get("input_content_types"),
+            "output_content_types": obj.get("output_content_types"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),

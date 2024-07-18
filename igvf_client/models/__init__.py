@@ -38,8 +38,6 @@ from igvf_client.models.human_donor import HumanDonor
 from igvf_client.models.image import Image
 from igvf_client.models.image_file import ImageFile
 from igvf_client.models.in_vitro_system import InVitroSystem
-from igvf_client.models.input_content_type import InputContentType
-from igvf_client.models.input_content_type_any_of import InputContentTypeAnyOf
 from igvf_client.models.institutional_certificate import InstitutionalCertificate
 from igvf_client.models.item import Item
 from igvf_client.models.item_type import ItemType
@@ -58,7 +56,6 @@ from igvf_client.models.no_results_response_facets_inner_terms_inner import NoRe
 from igvf_client.models.no_results_response_filters_inner import NoResultsResponseFiltersInner
 from igvf_client.models.no_results_response_sort_value import NoResultsResponseSortValue
 from igvf_client.models.open_reading_frame import OpenReadingFrame
-from igvf_client.models.output_content_type import OutputContentType
 from igvf_client.models.page import Page
 from igvf_client.models.page_layout import PageLayout
 from igvf_client.models.page_layout_components import PageLayoutComponents
