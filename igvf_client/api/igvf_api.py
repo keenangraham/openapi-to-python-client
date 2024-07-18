@@ -811,9 +811,8 @@ class IgvfApi:
         type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -827,7 +826,7 @@ class IgvfApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> str:
-        """Generate a report based on search query
+        """Generate a report based on search query. All results are returned.
 
         Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).
 
@@ -837,12 +836,10 @@ class IgvfApi:
         :type query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
-        :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
-        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
-        :type sort: List[str]
         :param var_field: Fields to include in the response. Can be repeated for multiple fields.
         :type var_field: List[str]
+        :param frame: Object with links, or object with some links embedded.
+        :type frame: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -869,9 +866,8 @@ class IgvfApi:
             type=type,
             query=query,
             field_filters=field_filters,
-            limit=limit,
-            sort=sort,
             var_field=var_field,
+            frame=frame,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -901,9 +897,8 @@ class IgvfApi:
         type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -917,7 +912,7 @@ class IgvfApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[str]:
-        """Generate a report based on search query
+        """Generate a report based on search query. All results are returned.
 
         Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).
 
@@ -927,12 +922,10 @@ class IgvfApi:
         :type query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
-        :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
-        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
-        :type sort: List[str]
         :param var_field: Fields to include in the response. Can be repeated for multiple fields.
         :type var_field: List[str]
+        :param frame: Object with links, or object with some links embedded.
+        :type frame: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -959,9 +952,8 @@ class IgvfApi:
             type=type,
             query=query,
             field_filters=field_filters,
-            limit=limit,
-            sort=sort,
             var_field=var_field,
+            frame=frame,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -991,9 +983,8 @@ class IgvfApi:
         type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1007,7 +998,7 @@ class IgvfApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Generate a report based on search query
+        """Generate a report based on search query. All results are returned.
 
         Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).
 
@@ -1017,12 +1008,10 @@ class IgvfApi:
         :type query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
-        :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
-        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
-        :type sort: List[str]
         :param var_field: Fields to include in the response. Can be repeated for multiple fields.
         :type var_field: List[str]
+        :param frame: Object with links, or object with some links embedded.
+        :type frame: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1049,9 +1038,8 @@ class IgvfApi:
             type=type,
             query=query,
             field_filters=field_filters,
-            limit=limit,
-            sort=sort,
             var_field=var_field,
+            frame=frame,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1076,9 +1064,8 @@ class IgvfApi:
         type,
         query,
         field_filters,
-        limit,
-        sort,
         var_field,
+        frame,
         _request_auth,
         _content_type,
         _headers,
@@ -1089,7 +1076,6 @@ class IgvfApi:
 
         _collection_formats: Dict[str, str] = {
             'type': 'multi',
-            'sort': 'multi',
             'field': 'multi',
         }
 
@@ -1114,24 +1100,18 @@ class IgvfApi:
             for k, v in field_filters.items():
                 _query_params.append((k, v))
             
-        if limit is not None:
-            
-            _query_params.append(('limit', limit))
-            
-        if sort is not None:
-            
-            _query_params.append(('sort', sort))
-            
         if var_field is not None:
             
             _query_params.append(('field', var_field))
+            
+        if frame is not None:
+            
+            _query_params.append(('frame', frame))
             
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
-        # Set client side default value of Query Param "frame".
-        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(

@@ -250,7 +250,7 @@ def generate_openapi_spec(schemas):
             },
             "/multireport.tsv": {
                 "get": {
-                    "summary": "Generate a report based on search query",
+                    "summary": "Generate a report based on search query. All results are returned.",
                     "description": "Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).",
                     "operationId": "report",
                     "parameters": [
@@ -280,20 +280,6 @@ def generate_openapi_spec(schemas):
                             "explode": True,
                         },
                         {
-                            "name": "limit",
-                            "in": "query",
-                            "schema": {'oneOf': [{"type": "string"}, {"type": "integer"}]},
-                            "description": "Maximum number of results to return. Use 'all' for all results."
-                        },
-                        {
-                            "name": "sort",
-                            "in": "query",
-                            "schema": {"type": "array", "items": {"type": "string"}},
-                            "style": "form",
-                            "explode": True,
-                            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
-                        },
-                        {
                             "name": "field",
                             "in": "query",
                             "schema": {"type": "array", "items": {"type": "string"}},
@@ -304,12 +290,11 @@ def generate_openapi_spec(schemas):
                         {
                             "name": "frame",
                             "in": "query",
-                            "required": True,
                             "schema": {
                                 "type": "string",
-                                "enum": ["object"]
+                                "enum": ["object", "embedded"]
                             },
-                            "description": "Constant value, do not set."
+                            "description": "Object with links, or object with some links embedded."
                         }
                     ],
                     "responses": {
