@@ -811,7 +811,7 @@ class IgvfApi:
         type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
-        var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
             None,
@@ -836,8 +836,8 @@ class IgvfApi:
         :type query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
-        :param var_field: Fields to include in the response. Can be repeated for multiple fields.
-        :type var_field: List[str]
+        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
+        :type include_fields: List[str]
         :param frame: Object with links, or object with some links embedded.
         :type frame: str
         :param _request_timeout: timeout setting for this request. If one
@@ -866,7 +866,7 @@ class IgvfApi:
             type=type,
             query=query,
             field_filters=field_filters,
-            var_field=var_field,
+            include_fields=include_fields,
             frame=frame,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -897,7 +897,7 @@ class IgvfApi:
         type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
-        var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
             None,
@@ -922,8 +922,8 @@ class IgvfApi:
         :type query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
-        :param var_field: Fields to include in the response. Can be repeated for multiple fields.
-        :type var_field: List[str]
+        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
+        :type include_fields: List[str]
         :param frame: Object with links, or object with some links embedded.
         :type frame: str
         :param _request_timeout: timeout setting for this request. If one
@@ -952,7 +952,7 @@ class IgvfApi:
             type=type,
             query=query,
             field_filters=field_filters,
-            var_field=var_field,
+            include_fields=include_fields,
             frame=frame,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -983,7 +983,7 @@ class IgvfApi:
         type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
-        var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
             None,
@@ -1008,8 +1008,8 @@ class IgvfApi:
         :type query: str
         :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
-        :param var_field: Fields to include in the response. Can be repeated for multiple fields.
-        :type var_field: List[str]
+        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
+        :type include_fields: List[str]
         :param frame: Object with links, or object with some links embedded.
         :type frame: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1038,7 +1038,7 @@ class IgvfApi:
             type=type,
             query=query,
             field_filters=field_filters,
-            var_field=var_field,
+            include_fields=include_fields,
             frame=frame,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1064,7 +1064,7 @@ class IgvfApi:
         type,
         query,
         field_filters,
-        var_field,
+        include_fields,
         frame,
         _request_auth,
         _content_type,
@@ -1100,9 +1100,9 @@ class IgvfApi:
             for k, v in field_filters.items():
                 _query_params.append((k, v))
             
-        if var_field is not None:
+        if include_fields is not None:
             
-            _query_params.append(('field', var_field))
+            _query_params.append(('field', include_fields))
             
         if frame is not None:
             
@@ -1153,7 +1153,7 @@ class IgvfApi:
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1181,8 +1181,8 @@ class IgvfApi:
         :type limit: SearchLimitParameter
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
-        :param var_field: Fields to include in the response. Can be repeated for multiple fields.
-        :type var_field: List[str]
+        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
+        :type include_fields: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1211,7 +1211,7 @@ class IgvfApi:
             field_filters=field_filters,
             limit=limit,
             sort=sort,
-            var_field=var_field,
+            include_fields=include_fields,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1241,7 +1241,7 @@ class IgvfApi:
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1269,8 +1269,8 @@ class IgvfApi:
         :type limit: SearchLimitParameter
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
-        :param var_field: Fields to include in the response. Can be repeated for multiple fields.
-        :type var_field: List[str]
+        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
+        :type include_fields: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1299,7 +1299,7 @@ class IgvfApi:
             field_filters=field_filters,
             limit=limit,
             sort=sort,
-            var_field=var_field,
+            include_fields=include_fields,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1329,7 +1329,7 @@ class IgvfApi:
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        var_field: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1357,8 +1357,8 @@ class IgvfApi:
         :type limit: SearchLimitParameter
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
-        :param var_field: Fields to include in the response. Can be repeated for multiple fields.
-        :type var_field: List[str]
+        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
+        :type include_fields: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1387,7 +1387,7 @@ class IgvfApi:
             field_filters=field_filters,
             limit=limit,
             sort=sort,
-            var_field=var_field,
+            include_fields=include_fields,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1412,7 +1412,7 @@ class IgvfApi:
         field_filters,
         limit,
         sort,
-        var_field,
+        include_fields,
         _request_auth,
         _content_type,
         _headers,
@@ -1456,9 +1456,9 @@ class IgvfApi:
             
             _query_params.append(('sort', sort))
             
-        if var_field is not None:
+        if include_fields is not None:
             
-            _query_params.append(('field', var_field))
+            _query_params.append(('field', include_fields))
             
         # process the header parameters
         # process the form parameters
