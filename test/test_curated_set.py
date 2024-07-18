@@ -37,6 +37,9 @@ class TestCuratedSet(unittest.TestCase):
             return CuratedSet(
                 release_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 taxa = 'Homo sapiens',
+                publications = [
+                    ''
+                    ],
                 publication_identifiers = [
                     'PMCID:PMC80728'
                     ],

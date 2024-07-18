@@ -153,16 +153,6 @@ class ModelFile(BaseModel):
             raise ValueError(r"must validate the regular expression /[a-f\d]{32}|[A-F\d]{32}/")
         return value
 
-    @field_validator('content_type')
-    def content_type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['edge weights', 'graph structure', 'position weight matrix']):
-            raise ValueError("must be one of enum values ('edge weights', 'graph structure', 'position weight matrix')")
-        return value
-
     @field_validator('file_format')
     def file_format_validate_enum(cls, value):
         """Validates the enum"""

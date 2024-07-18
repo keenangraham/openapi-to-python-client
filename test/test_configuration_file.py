@@ -62,7 +62,7 @@ class TestConfigurationFile(unittest.TestCase):
                 description = 'k',
                 analysis_step_version = '',
                 content_md5sum = 'F325375E030FCCBA00917317C5747731',
-                content_type = 'seqspec',
+                content_type = '',
                 dbxrefs = [
                     '/'
                     ],

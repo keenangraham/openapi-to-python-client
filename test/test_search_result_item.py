@@ -75,7 +75,7 @@ class TestSearchResultItem(unittest.TestCase):
                 name = 'k',
                 analysis_step = '',
                 software_versions = [
-                    ''
+                    null
                     ],
                 url = '',
                 start_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
@@ -113,6 +113,9 @@ class TestSearchResultItem(unittest.TestCase):
                     ''
                     ],
                 taxa = 'Homo sapiens',
+                publications = [
+                    ''
+                    ],
                 publication_identifiers = [
                     'PMCID:PMC80728'
                     ],
@@ -165,7 +168,7 @@ class TestSearchResultItem(unittest.TestCase):
                     ],
                 analysis_step_version = '',
                 content_md5sum = 'F325375E030FCCBA00917317C5747731',
-                content_type = 'barcode to element mapping',
+                content_type = '',
                 derived_from = [
                     ''
                     ],
@@ -227,7 +230,7 @@ class TestSearchResultItem(unittest.TestCase):
                     ''
                     ],
                 samples = [
-                    ''
+                    null
                     ],
                 donors = [
                     ''
@@ -351,16 +354,20 @@ class TestSearchResultItem(unittest.TestCase):
                     ''
                     ],
                 institute_label = '',
-                cas = 'Cas9',
-                fused_domain = 'ABE8e',
-                modality = 'activation',
-                tagged_protein = '',
-                cas_species = 'Streptococcus pyogenes (Sp)',
                 activated = True,
                 activating_agent_term_id = 'CHEBI:4807288',
                 activating_agent_term_name = '',
+                modality = 'degradation',
+                cas = 'Cas9',
+                fused_domain = '2xVP64',
+                tagged_protein = '',
+                cas_species = 'Streptococcus pyogenes (Sp)',
                 biosamples_modified = [
                     null
+                    ],
+                degron_system = 'AID',
+                tagged_proteins = [
+                    ''
                     ],
                 term_id = 'UBERON:80728',
                 term_name = 'WAa6w77ikCX*cKCmv|`K/V+w>\\uu!',
@@ -433,6 +440,13 @@ class TestSearchResultItem(unittest.TestCase):
                     'community'
                     ],
                 publication_year = 56,
+                file_sets = [
+                    null
+                    ],
+                workflows = [
+                    null
+                    ],
+                software = '',
                 lower_bound_age = 1.337,
                 upper_bound_age = 1.337,
                 age_units = 'minute',
@@ -483,9 +497,6 @@ class TestSearchResultItem(unittest.TestCase):
                 passage_number = 0,
                 targeted_sample_term = '',
                 growth_medium = 'DMEM with serum',
-                file_sets = [
-                    null
-                    ],
                 multiplexed_in = [
                     null
                     ],
@@ -525,7 +536,6 @@ class TestSearchResultItem(unittest.TestCase):
                 versions = [
                     ''
                     ],
-                software = '',
                 version = 'v/jUR,888001528021798096225500850762068629339333975650685139102691291732729478601482026509127275504.757701929816286488291663322877052191911664783785638755659868361524878442.528468720999697682157936442848967131',
                 download_id = '',
                 downloaded_url = '',
@@ -573,7 +583,7 @@ class TestSearchResultItem(unittest.TestCase):
                 lab = '',
                 award = '',
                 samples = [
-                    ''
+                    null
                     ],
                 donors = [
                     ''

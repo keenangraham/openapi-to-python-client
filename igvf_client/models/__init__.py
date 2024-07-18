@@ -27,8 +27,6 @@ from igvf_client.models.award import Award
 from igvf_client.models.biomarker import Biomarker
 from igvf_client.models.configuration_file import ConfigurationFile
 from igvf_client.models.construct_library_set import ConstructLibrarySet
-from igvf_client.models.content_type import ContentType
-from igvf_client.models.content_type1 import ContentType1
 from igvf_client.models.crispr_modification import CrisprModification
 from igvf_client.models.curated_set import CuratedSet
 from igvf_client.models.degron_modification import DegronModification

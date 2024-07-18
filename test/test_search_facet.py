@@ -38,9 +38,7 @@ class TestSearchFacet(unittest.TestCase):
                 var_field = '',
                 title = '',
                 terms = [
-                    igvf_client.models.search_facet_term_value.SearchFacetTermValue(
-                        key = '', 
-                        doc_count = 56, )
+                    igvf_client.models.search_facet_term_value.SearchFacetTermValue()
                     ]
             )
         else:

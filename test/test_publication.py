@@ -77,7 +77,25 @@ class TestPublication(unittest.TestCase):
                     ''
                     ],
                 summary = '',
-                publication_year = 56
+                publication_year = 56,
+                samples = [
+                    null
+                    ],
+                donors = [
+                    null
+                    ],
+                file_sets = [
+                    null
+                    ],
+                workflows = [
+                    null
+                    ],
+                software = [
+                    null
+                    ],
+                software_versions = [
+                    null
+                    ]
             )
         else:
             return Publication(

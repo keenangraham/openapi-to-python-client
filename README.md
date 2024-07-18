@@ -118,8 +118,6 @@ Class | Method | HTTP request | Description
  - [Biomarker](docs/Biomarker.md)
  - [ConfigurationFile](docs/ConfigurationFile.md)
  - [ConstructLibrarySet](docs/ConstructLibrarySet.md)
- - [ContentType](docs/ContentType.md)
- - [ContentType1](docs/ContentType1.md)
  - [CrisprModification](docs/CrisprModification.md)
  - [CuratedSet](docs/CuratedSet.md)
  - [DegronModification](docs/DegronModification.md)

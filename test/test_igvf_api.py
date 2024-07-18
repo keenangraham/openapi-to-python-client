@@ -26,6 +26,13 @@ class TestIgvfApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_download(self) -> None:
+        """Test case for download
+
+        Download file.
+        """
+        pass
+
     def test_get_by_id(self) -> None:
         """Test case for get_by_id
 
@@ -33,15 +40,22 @@ class TestIgvfApi(unittest.TestCase):
         """
         pass
 
-    def test_get_schema_for_item_type(self) -> None:
-        """Test case for get_schema_for_item_type
+    def test_report(self) -> None:
+        """Test case for report
+
+        Generate a report based on search query. All results are returned.
+        """
+        pass
+
+    def test_schema_for_item_type(self) -> None:
+        """Test case for schema_for_item_type
 
         Retrieve JSON schemas for all item types
         """
         pass
 
-    def test_get_schemas(self) -> None:
-        """Test case for get_schemas
+    def test_schemas(self) -> None:
+        """Test case for schemas
 
         Retrieve JSON schemas for all item types
         """

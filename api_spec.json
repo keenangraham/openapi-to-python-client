@@ -3025,11 +3025,7 @@
           "content_type": {
             "title": "Content Type",
             "description": "The type of content in the file.",
-            "type": "string",
-            "enum": [
-              "alignments",
-              "transcriptome alignments"
-            ]
+            "type": "string"
           },
           "dbxrefs": {
             "title": "External Resources",
@@ -3358,10 +3354,7 @@
           "content_type": {
             "title": "Content Type",
             "description": "The type of content in the file.",
-            "type": "string",
-            "enum": [
-              "seqspec"
-            ]
+            "type": "string"
           },
           "dbxrefs": {
             "title": "External Resources",
@@ -3728,10 +3721,7 @@
           "content_type": {
             "title": "Content Type",
             "description": "The type of content in the file.",
-            "type": "string",
-            "enum": [
-              "peaks"
-            ]
+            "type": "string"
           },
           "dbxrefs": {
             "title": "External Resources",
@@ -4046,22 +4036,7 @@
           "content_type": {
             "title": "Content Type",
             "description": "The type of content in the file.",
-            "type": "string",
-            "oneOf": [
-              {
-                "enum": [
-                  "detected tissue",
-                  "low resolution tissue",
-                  "high resolution tissue"
-                ]
-              },
-              {
-                "enum": [
-                  "fiducial alignment"
-                ],
-                "permission": "admin_only"
-              }
-            ]
+            "type": "string"
           },
           "dbxrefs": {
             "title": "External Resources",
@@ -4387,14 +4362,7 @@
           "content_type": {
             "title": "Content Type",
             "description": "The type of content in the file.",
-            "type": "string",
-            "enum": [
-              "contact matrix",
-              "sparse gene count matrix",
-              "sparse peak count matrix",
-              "sparse transcript count matrix",
-              "transcriptome annotations"
-            ]
+            "type": "string"
           },
           "dbxrefs": {
             "title": "External Resources",
@@ -4755,12 +4723,7 @@
           "content_type": {
             "title": "Content Type",
             "description": "The type of content in the file.",
-            "type": "string",
-            "enum": [
-              "edge weights",
-              "graph structure",
-              "position weight matrix"
-            ]
+            "type": "string"
           },
           "dbxrefs": {
             "title": "External Resources",
@@ -5132,72 +5095,7 @@
           "content_type": {
             "title": "Content Type",
             "description": "The type of content in the file.",
-            "type": "string",
-            "oneOf": [
-              {
-                "enum": [
-                  "biological_context",
-                  "complexes",
-                  "complexes_complexes",
-                  "complexes_proteins",
-                  "complexes_terms",
-                  "diseases_genes",
-                  "drugs",
-                  "elements_genes",
-                  "elements reference",
-                  "exclusion list",
-                  "genes",
-                  "genes_genes",
-                  "genes_pathways",
-                  "genes_terms",
-                  "genes_transcripts",
-                  "genome reference",
-                  "go_terms_proteins",
-                  "inclusion list",
-                  "motifs",
-                  "motifs_proteins",
-                  "ontology_terms",
-                  "ontology_terms_ontology_terms",
-                  "pathways",
-                  "pathways_pathways",
-                  "proteins",
-                  "proteins_proteins",
-                  "regulatory_regions",
-                  "regulatory_regions_genes",
-                  "regulatory_regions_genes_biosamples",
-                  "regulatory_regions_genes_biosamples_donors",
-                  "regulatory_regions_genes_biosamples_treatments_chebi",
-                  "regulatory_regions_genes_biosamples_treatments_proteins",
-                  "regulatory_regions_regulatory_regions",
-                  "spike-ins",
-                  "studies",
-                  "studies_variants",
-                  "studies_variants_phenotypes",
-                  "transcriptome reference",
-                  "transcripts",
-                  "transcripts_proteins",
-                  "variants",
-                  "variants_drugs",
-                  "variants_drugs_genes",
-                  "variants_genes",
-                  "variants_genes_terms",
-                  "variants_proteins",
-                  "variants_proteins_terms",
-                  "variants_proteins_biosamples",
-                  "variants_proteins_phenotypes",
-                  "variants_regulatory_regions",
-                  "variants_variants"
-                ]
-              },
-              {
-                "enum": [
-                  "guide RNA sequences",
-                  "sequence barcodes",
-                  "vector sequences"
-                ],
-                "permission": "admin_only"
-              }
-            ]
+            "type": "string"
           },
           "dbxrefs": {
             "title": "External Resources",
@@ -5563,12 +5461,7 @@
           "content_type": {
             "title": "Content Type",
             "description": "The type of content in the file.",
-            "type": "string",
-            "enum": [
-              "Nanopore reads",
-              "PacBio subreads",
-              "reads"
-            ]
+            "type": "string"
           },
           "dbxrefs": {
             "title": "External Resources",
@@ -6038,17 +5931,7 @@
           "content_type": {
             "title": "Content Type",
             "description": "The type of content in the file.",
-            "type": "string",
-            "enum": [
-              "signal",
-              "signal of all reads",
-              "signal of unique reads",
-              "signal p-value",
-              "raw signal",
-              "read-depth signal",
-              "control signal",
-              "fold change over control"
-            ]
+            "type": "string"
           },
           "dbxrefs": {
             "title": "External Resources",
@@ -6446,27 +6329,7 @@
           "content_type": {
             "title": "Content Type",
             "description": "The type of content in the file.",
-            "type": "string",
-            "enum": [
-              "barcode to element mapping",
-              "barcode to sample mapping",
-              "differential gene expression quantifications",
-              "differential transcript expression quantifications",
-              "editing templates",
-              "element quantifications",
-              "elements reference",
-              "fold change over control",
-              "guide quantifications",
-              "guide RNA sequences",
-              "MPRA sequence designs",
-              "peaks",
-              "protein to protein interaction score",
-              "sample sort parameters",
-              "sequence barcodes",
-              "variants",
-              "variant effects",
-              "variant to element mapping"
-            ]
+            "type": "string"
           },
           "dbxrefs": {
             "title": "External Resources",

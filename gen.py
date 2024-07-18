@@ -650,6 +650,10 @@ schemas = {
 for k in schemas.keys():
     if 'required' in schemas[k]:
         del schemas[k]['required']
+    if 'content_type' in schemas[k]['properties']:
+        schemas[k]['properties']['content_type'].pop('enum', None)
+        schemas[k]['properties']['content_type'].pop('oneOf', None)
+        schemas[k]['properties']['content_type'].pop('anyOf', None)
 
 
 #print(json.dumps(schemas, indent=4))

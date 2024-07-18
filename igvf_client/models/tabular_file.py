@@ -186,16 +186,6 @@ class TabularFile(BaseModel):
             raise ValueError(r"must validate the regular expression /[a-f\d]{32}|[A-F\d]{32}/")
         return value
 
-    @field_validator('content_type')
-    def content_type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['barcode to element mapping', 'barcode to sample mapping', 'differential gene expression quantifications', 'differential transcript expression quantifications', 'editing templates', 'element quantifications', 'elements reference', 'fold change over control', 'guide quantifications', 'guide RNA sequences', 'MPRA sequence designs', 'peaks', 'protein to protein interaction score', 'sample sort parameters', 'sequence barcodes', 'variants', 'variant effects', 'variant to element mapping']):
-            raise ValueError("must be one of enum values ('barcode to element mapping', 'barcode to sample mapping', 'differential gene expression quantifications', 'differential transcript expression quantifications', 'editing templates', 'element quantifications', 'elements reference', 'fold change over control', 'guide quantifications', 'guide RNA sequences', 'MPRA sequence designs', 'peaks', 'protein to protein interaction score', 'sample sort parameters', 'sequence barcodes', 'variants', 'variant effects', 'variant to element mapping')")
-        return value
-
     @field_validator('file_format')
     def file_format_validate_enum(cls, value):
         """Validates the enum"""

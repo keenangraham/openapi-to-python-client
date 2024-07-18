@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **description** | **str** | A plain text description of the object. | [optional] 
 **analysis_step_version** | **str** | The analysis step version of the file. | [optional] 
 **content_md5sum** | **str** | The MD5sum of the uncompressed file. | [optional] 
-**content_type** | [**ContentType1**](ContentType1.md) |  | [optional] 
+**content_type** | **str** | The type of content in the file. | [optional] 
 **dbxrefs** | **List[str]** | Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects. | [optional] 
 **derived_from** | **List[str]** | The files participating as inputs into software to produce this output file. | [optional] 
 **file_format** | **str** | The file format or extension of the file. | [optional] 

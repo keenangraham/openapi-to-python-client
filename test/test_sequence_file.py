@@ -64,7 +64,7 @@ class TestSequenceFile(unittest.TestCase):
                 description = 'k',
                 analysis_step_version = '',
                 content_md5sum = 'F325375E030FCCBA00917317C5747731',
-                content_type = 'Nanopore reads',
+                content_type = '',
                 dbxrefs = [
                     'SRA:SRX80728'
                     ],

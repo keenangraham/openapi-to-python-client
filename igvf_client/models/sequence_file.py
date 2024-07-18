@@ -165,16 +165,6 @@ class SequenceFile(BaseModel):
             raise ValueError(r"must validate the regular expression /[a-f\d]{32}|[A-F\d]{32}/")
         return value
 
-    @field_validator('content_type')
-    def content_type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['Nanopore reads', 'PacBio subreads', 'reads']):
-            raise ValueError("must be one of enum values ('Nanopore reads', 'PacBio subreads', 'reads')")
-        return value
-
     @field_validator('file_format')
     def file_format_validate_enum(cls, value):
         """Validates the enum"""

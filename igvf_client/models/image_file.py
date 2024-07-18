@@ -21,7 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from igvf_client.models.content_type import ContentType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -48,7 +47,7 @@ class ImageFile(BaseModel):
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     analysis_step_version: Optional[StrictStr] = Field(default=None, description="The analysis step version of the file.")
     content_md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The MD5sum of the uncompressed file.")
-    content_type: Optional[ContentType] = None
+    content_type: Optional[StrictStr] = Field(default=None, description="The type of content in the file.")
     dbxrefs: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file objects.")
     derived_from: Optional[List[StrictStr]] = Field(default=None, description="The files participating as inputs into software to produce this output file.")
     file_format: Optional[StrictStr] = Field(default=None, description="The file format or extension of the file.")
@@ -221,9 +220,6 @@ class ImageFile(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of content_type
-        if self.content_type:
-            _dict['content_type'] = self.content_type.to_dict()
         return _dict
 
     @classmethod
@@ -255,7 +251,7 @@ class ImageFile(BaseModel):
             "description": obj.get("description"),
             "analysis_step_version": obj.get("analysis_step_version"),
             "content_md5sum": obj.get("content_md5sum"),
-            "content_type": ContentType.from_dict(obj["content_type"]) if obj.get("content_type") is not None else None,
+            "content_type": obj.get("content_type"),
             "dbxrefs": obj.get("dbxrefs"),
             "derived_from": obj.get("derived_from"),
             "file_format": obj.get("file_format"),

@@ -36,6 +36,9 @@ class TestWorkflow(unittest.TestCase):
         if include_optional:
             return Workflow(
                 release_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                publications = [
+                    ''
+                    ],
                 publication_identifiers = [
                     'PMCID:PMC80728'
                     ],
