@@ -112,7 +112,7 @@ def generate_openapi_spec(schemas):
                             "schema": {"type": "array", "items": {"type": "string"}},
                             "style": "form",
                             "explode": True,
-                            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields."
+                            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
                         },
                         {
                             "name": "field",
@@ -248,19 +248,18 @@ def generate_openapi_spec(schemas):
                     }
                 }
             },
-            {
-                "/report": {
-                    "get": {
-                        "summary": "Generate a report based on search query",
-                        "description": "Like /search endpoint but returns a TSV file instead of JSON",
-                        "parameters": [
-                             {
-                             "name": "type",
-                             "in": "query",
-                             "schema": {"type": "array", "items": {"type": "string"}},
-                             "style": "form",
-                             "explode": True,
-                             "description": "Type of objects to return. Can be repeated for multiple types."
+            "/report": {
+                "get": {
+                    "summary": "Generate a report based on search query",
+                    "description": "Like /search endpoint but returns a TSV file instead of JSON",
+                    "parameters": [
+                        {
+                            "name": "type",
+                            "in": "query",
+                            "schema": {"type": "array", "items": {"type": "string"}},
+                            "style": "form",
+                            "explode": True,
+                            "description": "Type of objects to return. Can be repeated for multiple types."
                         },
                         {
                             "name": "query",
@@ -290,7 +289,7 @@ def generate_openapi_spec(schemas):
                             "schema": {"type": "array", "items": {"type": "string"}},
                             "style": "form",
                             "explode": True,
-                            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields."
+                            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
                         },
                         {
                             "name": "field",
@@ -310,39 +309,38 @@ def generate_openapi_spec(schemas):
                             },
                             "description": "Constant value, do not set."
                         }
-                        ],
-                        "responses": {
-                            "200": {
-                                "description": "Successful response",
-                                "content": {
-                                    "text/tab-separated-values": {
-                                        "schema": {
-                                            "type": "string"
-                                        },
-                                        "example": "Column1\tColumn2\tColumn3\nValue1\tValue2\tValue3"
-                                    }
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "Successful response",
+                            "content": {
+                                "text/tab-separated-values": {
+                                    "schema": {
+                                        "type": "string"
+                                    },
+                                    "example": "Column1\tColumn2\tColumn3\nValue1\tValue2\tValue3"
                                 }
-                            },
-                            "400": {
-                                "description": "Bad request"
-                            },
-                            "404": {
-                                "description": "No results found",
-                                "content": {
-                                    "application/json": {
-                                        "schema": {
-                                            "$ref": "#/components/schemas/NoResultsResponse"
-                                        }
-                                    }
-                                }
-                            },
-                            "500": {
-                                "description": "Internal server error"
                             }
+                        },
+                        "400": {
+                            "description": "Bad request"
+                        },
+                        "404": {
+                            "description": "No results found",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/NoResultsResponse"
+                                    }
+                                }
+                            }
+                        },
+                        "500": {
+                            "description": "Internal server error"
                         }
                     }
                 }
-            }            
+            }
         },
         "components": {
             "schemas": {
