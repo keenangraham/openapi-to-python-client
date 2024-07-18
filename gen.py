@@ -323,6 +323,43 @@ def generate_openapi_spec(schemas):
                         }
                     }
                 }
+            },
+            "/{file_id}/@@download": {
+                "get": {
+                    "summary": "Download file.",
+                    "description": "Returns underlying file associated with file metadata",
+                    "operationId": "download",
+                    "parameters": [
+                        {
+                            "in": "path",
+                            "name": "file_id",
+                            "schema": {
+                                "type": "string"
+                            },
+                            "required": True,
+                            "description": "The unique identifier for the file to download, i.e. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03)."
+                        }
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "Successful response",
+                            "content": {
+                                "application/octet-stream": {
+                                    "schema": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        },
+                        "404": {
+                            "description": "Item not found"
+                        },
+                        "500": {
+                            "description": "Internal server error"
+                        }
+                    }
+                }
             }
         },
         "components": {

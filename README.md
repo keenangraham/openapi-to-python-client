@@ -77,15 +77,15 @@ configuration = igvf_client.Configuration(
 with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
-    resource_id = 'resource_id_example' # str | The unique identifier for the resource (e.g., /sequence-files/IGVFFI1165AJSO/ or fffcd64e-af02-4675-8953-7352459ee06a) 
+    file_id = 'file_id_example' # str | The unique identifier for the file to download, i.e. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03).
 
     try:
-        # Get item information
-        api_response = api_instance.get_by_id(resource_id)
-        print("The response of IgvfApi->get_by_id:\n")
+        # Download file.
+        api_response = api_instance.download(file_id)
+        print("The response of IgvfApi->download:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling IgvfApi->get_by_id: %s\n" % e)
+        print("Exception when calling IgvfApi->download: %s\n" % e)
 
 ```
 
@@ -95,10 +95,11 @@ All URIs are relative to *https://api.data.igvf.org*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*IgvfApi* | [**download**](docs/IgvfApi.md#download) | **GET** /{file_id}/@@download | Download file.
 *IgvfApi* | [**get_by_id**](docs/IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
-*IgvfApi* | [**get_schema_for_item_type**](docs/IgvfApi.md#get_schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schemas for all item types
-*IgvfApi* | [**get_schemas**](docs/IgvfApi.md#get_schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
 *IgvfApi* | [**report**](docs/IgvfApi.md#report) | **GET** /multireport.tsv | Generate a report based on search query. All results are returned.
+*IgvfApi* | [**schema_for_item_type**](docs/IgvfApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schemas for all item types
+*IgvfApi* | [**schemas**](docs/IgvfApi.md#schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
 *IgvfApi* | [**search**](docs/IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project
 
 

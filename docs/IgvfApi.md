@@ -4,12 +4,93 @@ All URIs are relative to *https://api.data.igvf.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**download**](IgvfApi.md#download) | **GET** /{file_id}/@@download | Download file.
 [**get_by_id**](IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
-[**get_schema_for_item_type**](IgvfApi.md#get_schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schemas for all item types
-[**get_schemas**](IgvfApi.md#get_schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
 [**report**](IgvfApi.md#report) | **GET** /multireport.tsv | Generate a report based on search query. All results are returned.
+[**schema_for_item_type**](IgvfApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schemas for all item types
+[**schemas**](IgvfApi.md#schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
 [**search**](IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project
 
+
+# **download**
+> bytearray download(file_id)
+
+Download file.
+
+Returns underlying file associated with file metadata
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import igvf_client
+from igvf_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.data.igvf.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = igvf_client.Configuration(
+    host = "https://api.data.igvf.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = igvf_client.Configuration(
+    access_key = os.environ["IGVF_ACCESS_KEY"],
+    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
+)
+
+# Enter a context with an instance of the API client
+with igvf_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = igvf_client.IgvfApi(api_client)
+    file_id = 'file_id_example' # str | The unique identifier for the file to download, i.e. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03).
+
+    try:
+        # Download file.
+        api_response = api_instance.download(file_id)
+        print("The response of IgvfApi->download:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IgvfApi->download: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file_id** | **str**| The unique identifier for the file to download, i.e. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03). | 
+
+### Return type
+
+**bytearray**
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+**404** | Item not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_by_id**
 > Item get_by_id(resource_id)
@@ -88,159 +169,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful response |  -  |
 **404** | Object not found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_schema_for_item_type**
-> object get_schema_for_item_type(item_type)
-
-Retrieve JSON schemas for all item types
-
-Returns JSON schemas of all the item types defined in IGVF
-
-### Example
-
-* Basic Authentication (basicAuth):
-
-```python
-import igvf_client
-from igvf_client.models.item_type import ItemType
-from igvf_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-with igvf_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = igvf_client.IgvfApi(api_client)
-    item_type = igvf_client.ItemType() # ItemType | The name of the item type
-
-    try:
-        # Retrieve JSON schemas for all item types
-        api_response = api_instance.get_schema_for_item_type(item_type)
-        print("The response of IgvfApi->get_schema_for_item_type:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling IgvfApi->get_schema_for_item_type: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **item_type** | [**ItemType**](ItemType.md)| The name of the item type | 
-
-### Return type
-
-**object**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_schemas**
-> object get_schemas()
-
-Retrieve JSON schemas for all item types
-
-Returns JSON schemas of all the item types defined in IGVF
-
-### Example
-
-* Basic Authentication (basicAuth):
-
-```python
-import igvf_client
-from igvf_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-with igvf_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = igvf_client.IgvfApi(api_client)
-
-    try:
-        # Retrieve JSON schemas for all item types
-        api_response = api_instance.get_schemas()
-        print("The response of IgvfApi->get_schemas:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling IgvfApi->get_schemas: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**object**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -330,6 +258,159 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **404** | No results found |  -  |
 **500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **schema_for_item_type**
+> object schema_for_item_type(item_type)
+
+Retrieve JSON schemas for all item types
+
+Returns JSON schemas of all the item types defined in IGVF
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import igvf_client
+from igvf_client.models.item_type import ItemType
+from igvf_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.data.igvf.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = igvf_client.Configuration(
+    host = "https://api.data.igvf.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = igvf_client.Configuration(
+    access_key = os.environ["IGVF_ACCESS_KEY"],
+    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
+)
+
+# Enter a context with an instance of the API client
+with igvf_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = igvf_client.IgvfApi(api_client)
+    item_type = igvf_client.ItemType() # ItemType | The name of the item type
+
+    try:
+        # Retrieve JSON schemas for all item types
+        api_response = api_instance.schema_for_item_type(item_type)
+        print("The response of IgvfApi->schema_for_item_type:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IgvfApi->schema_for_item_type: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **item_type** | [**ItemType**](ItemType.md)| The name of the item type | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **schemas**
+> object schemas()
+
+Retrieve JSON schemas for all item types
+
+Returns JSON schemas of all the item types defined in IGVF
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import igvf_client
+from igvf_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.data.igvf.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = igvf_client.Configuration(
+    host = "https://api.data.igvf.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = igvf_client.Configuration(
+    access_key = os.environ["IGVF_ACCESS_KEY"],
+    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
+)
+
+# Enter a context with an instance of the API client
+with igvf_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = igvf_client.IgvfApi(api_client)
+
+    try:
+        # Retrieve JSON schemas for all item types
+        api_response = api_instance.schemas()
+        print("The response of IgvfApi->schemas:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IgvfApi->schemas: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**object**
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
