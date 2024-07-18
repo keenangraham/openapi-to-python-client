@@ -252,6 +252,7 @@ def generate_openapi_spec(schemas):
                 "get": {
                     "summary": "Generate a report based on search query",
                     "description": "Like /search endpoint but returns a TSV file instead of JSON",
+                    "operationId": "report",
                     "parameters": [
                         {
                             "name": "type",

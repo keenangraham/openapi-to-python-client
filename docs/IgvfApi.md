@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**get_by_id**](IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
 [**get_schema_for_item_type**](IgvfApi.md#get_schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schemas for all item types
 [**get_schemas**](IgvfApi.md#get_schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
-[**report_get**](IgvfApi.md#report_get) | **GET** /report | Generate a report based on search query
+[**report**](IgvfApi.md#report) | **GET** /report | Generate a report based on search query
 [**search**](IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project
 
 
@@ -244,8 +244,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **report_get**
-> str report_get(type=type, query=query, field_filters=field_filters, limit=limit, sort=sort, var_field=var_field)
+# **report**
+> str report(type=type, query=query, field_filters=field_filters, limit=limit, sort=sort, var_field=var_field)
 
 Generate a report based on search query
 
@@ -290,11 +290,11 @@ with igvf_client.ApiClient(configuration) as api_client:
 
     try:
         # Generate a report based on search query
-        api_response = api_instance.report_get(type=type, query=query, field_filters=field_filters, limit=limit, sort=sort, var_field=var_field)
-        print("The response of IgvfApi->report_get:\n")
+        api_response = api_instance.report(type=type, query=query, field_filters=field_filters, limit=limit, sort=sort, var_field=var_field)
+        print("The response of IgvfApi->report:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling IgvfApi->report_get: %s\n" % e)
+        print("Exception when calling IgvfApi->report: %s\n" % e)
 ```
 
 

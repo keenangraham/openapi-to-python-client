@@ -806,7 +806,7 @@ class IgvfApi:
 
 
     @validate_call
-    def report_get(
+    def report(
         self,
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
@@ -865,7 +865,7 @@ class IgvfApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._report_get_serialize(
+        _param = self._report_serialize(
             type=type,
             query=query,
             field_filters=field_filters,
@@ -896,7 +896,7 @@ class IgvfApi:
 
 
     @validate_call
-    def report_get_with_http_info(
+    def report_with_http_info(
         self,
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
@@ -955,7 +955,7 @@ class IgvfApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._report_get_serialize(
+        _param = self._report_serialize(
             type=type,
             query=query,
             field_filters=field_filters,
@@ -986,7 +986,7 @@ class IgvfApi:
 
 
     @validate_call
-    def report_get_without_preload_content(
+    def report_without_preload_content(
         self,
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
@@ -1045,7 +1045,7 @@ class IgvfApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._report_get_serialize(
+        _param = self._report_serialize(
             type=type,
             query=query,
             field_filters=field_filters,
@@ -1071,7 +1071,7 @@ class IgvfApi:
         return response_data.response
 
 
-    def _report_get_serialize(
+    def _report_serialize(
         self,
         type,
         query,
