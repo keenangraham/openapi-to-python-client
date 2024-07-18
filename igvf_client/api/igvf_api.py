@@ -349,7 +349,7 @@ class IgvfApi:
     @validate_call
     def download(
         self,
-        file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, i.e. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03).")],
+        file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`).")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -367,7 +367,7 @@ class IgvfApi:
 
         Returns underlying file associated with file metadata
 
-        :param file_id: The unique identifier for the file to download, i.e. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03). (required)
+        :param file_id: The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`). (required)
         :type file_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -418,7 +418,7 @@ class IgvfApi:
     @validate_call
     def download_with_http_info(
         self,
-        file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, i.e. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03).")],
+        file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`).")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -436,7 +436,7 @@ class IgvfApi:
 
         Returns underlying file associated with file metadata
 
-        :param file_id: The unique identifier for the file to download, i.e. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03). (required)
+        :param file_id: The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`). (required)
         :type file_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -487,7 +487,7 @@ class IgvfApi:
     @validate_call
     def download_without_preload_content(
         self,
-        file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, i.e. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03).")],
+        file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`).")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -505,7 +505,7 @@ class IgvfApi:
 
         Returns underlying file associated with file metadata
 
-        :param file_id: The unique identifier for the file to download, i.e. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03). (required)
+        :param file_id: The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`). (required)
         :type file_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -613,7 +613,7 @@ class IgvfApi:
     @validate_call
     def get_by_id(
         self,
-        resource_id: Annotated[StrictStr, Field(description="The unique identifier for the resource (e.g., /sequence-files/IGVFFI1165AJSO/ or fffcd64e-af02-4675-8953-7352459ee06a) ")],
+        resource_id: Annotated[StrictStr, Field(description="The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`), or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`).")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -631,7 +631,7 @@ class IgvfApi:
 
         Retrieve detailed information about a specific item using its @id or uuid.
 
-        :param resource_id: The unique identifier for the resource (e.g., /sequence-files/IGVFFI1165AJSO/ or fffcd64e-af02-4675-8953-7352459ee06a)  (required)
+        :param resource_id: The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`), or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`). (required)
         :type resource_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -681,7 +681,7 @@ class IgvfApi:
     @validate_call
     def get_by_id_with_http_info(
         self,
-        resource_id: Annotated[StrictStr, Field(description="The unique identifier for the resource (e.g., /sequence-files/IGVFFI1165AJSO/ or fffcd64e-af02-4675-8953-7352459ee06a) ")],
+        resource_id: Annotated[StrictStr, Field(description="The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`), or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`).")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -699,7 +699,7 @@ class IgvfApi:
 
         Retrieve detailed information about a specific item using its @id or uuid.
 
-        :param resource_id: The unique identifier for the resource (e.g., /sequence-files/IGVFFI1165AJSO/ or fffcd64e-af02-4675-8953-7352459ee06a)  (required)
+        :param resource_id: The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`), or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`). (required)
         :type resource_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -749,7 +749,7 @@ class IgvfApi:
     @validate_call
     def get_by_id_without_preload_content(
         self,
-        resource_id: Annotated[StrictStr, Field(description="The unique identifier for the resource (e.g., /sequence-files/IGVFFI1165AJSO/ or fffcd64e-af02-4675-8953-7352459ee06a) ")],
+        resource_id: Annotated[StrictStr, Field(description="The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`), or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`).")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -767,7 +767,7 @@ class IgvfApi:
 
         Retrieve detailed information about a specific item using its @id or uuid.
 
-        :param resource_id: The unique identifier for the resource (e.g., /sequence-files/IGVFFI1165AJSO/ or fffcd64e-af02-4675-8953-7352459ee06a)  (required)
+        :param resource_id: The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`), or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`). (required)
         :type resource_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

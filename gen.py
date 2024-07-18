@@ -28,7 +28,7 @@ def generate_openapi_spec(schemas):
                             "schema": {
                                 "type": "string"
                             },
-                            "description": "The unique identifier for the resource (e.g., /sequence-files/IGVFFI1165AJSO/ or fffcd64e-af02-4675-8953-7352459ee06a) "
+                            "description": "The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`), or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`)."
                         },
                         {
                             "name": "frame",
@@ -344,7 +344,7 @@ def generate_openapi_spec(schemas):
                                 "type": "string"
                             },
                             "required": True,
-                            "description": "The unique identifier for the file to download, i.e. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03)."
+                            "description": "The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`)."
                         }
                     ],
                     "responses": {
