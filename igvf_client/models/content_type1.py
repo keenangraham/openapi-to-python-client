@@ -144,7 +144,7 @@ class ContentType1(BaseModel):
         return join_str.join(
             repr(v) if a is None else f'{a}={v!r}'
             for a, v in self.__repr_args__()
-            if (True if a is None else not (a.startswith('oneof') or a.startswith('one_of' or a == 'discriminator_value_class_map')))
+            if (True if a is None else not (a.startswith('oneof') or a.startswith('one_of') or a.startswith('discriminator_value')))
         )
 
     def __getattr__(self, name):

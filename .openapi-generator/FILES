@@ -177,5 +177,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_degron_modification.py
 tox.ini

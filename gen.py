@@ -96,7 +96,7 @@ def generate_openapi_spec(schemas):
                             "schema": {
                                 "type": "object"
                             },
-                            "description": "Any field from any object type can be used as a filter. Use '!=' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+                            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
                             "style": "form",
                             "explode": True,
                         },
@@ -218,7 +218,7 @@ def generate_openapi_spec(schemas):
                     }
                 }
             },
-             "/profiles/{item_type}": {
+            "/profiles/{item_type}": {
                 "get": {
                     "summary": "Retrieve JSON schemas for all item types",
                     "description": "Returns JSON schemas of all the item types defined in IGVF",
@@ -247,7 +247,102 @@ def generate_openapi_spec(schemas):
                         }
                     }
                 }
-            }
+            },
+            {
+                "/report": {
+                    "get": {
+                        "summary": "Generate a report based on search query",
+                        "description": "Like /search endpoint but returns a TSV file instead of JSON",
+                        "parameters": [
+                             {
+                             "name": "type",
+                             "in": "query",
+                             "schema": {"type": "array", "items": {"type": "string"}},
+                             "style": "form",
+                             "explode": True,
+                             "description": "Type of objects to return. Can be repeated for multiple types."
+                        },
+                        {
+                            "name": "query",
+                            "in": "query",
+                            "schema": {"type": "string"},
+                            "description": "Query string for searching."
+                        },
+                        {
+                            "name": "field_filters",
+                            "in": "query",
+                            "schema": {
+                                "type": "object"
+                            },
+                            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+                            "style": "form",
+                            "explode": True,
+                        },
+                        {
+                            "name": "limit",
+                            "in": "query",
+                            "schema": {'oneOf': [{"type": "string"}, {"type": "integer"}]},
+                            "description": "Maximum number of results to return. Use 'all' for all results."
+                        },
+                        {
+                            "name": "sort",
+                            "in": "query",
+                            "schema": {"type": "array", "items": {"type": "string"}},
+                            "style": "form",
+                            "explode": True,
+                            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields."
+                        },
+                        {
+                            "name": "field",
+                            "in": "query",
+                            "schema": {"type": "array", "items": {"type": "string"}},
+                            "style": "form",
+                            "explode": True,
+                            "description": "Fields to include in the response. Can be repeated for multiple fields."
+                        },
+                        {
+                            "name": "frame",
+                            "in": "query",
+                            "required": True,
+                            "schema": {
+                                "type": "string",
+                                "enum": ["object"]
+                            },
+                            "description": "Constant value, do not set."
+                        }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Successful response",
+                                "content": {
+                                    "text/tab-separated-values": {
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "example": "Column1\tColumn2\tColumn3\nValue1\tValue2\tValue3"
+                                    }
+                                }
+                            },
+                            "400": {
+                                "description": "Bad request"
+                            },
+                            "404": {
+                                "description": "No results found",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/NoResultsResponse"
+                                        }
+                                    }
+                                }
+                            },
+                            "500": {
+                                "description": "Internal server error"
+                            }
+                        }
+                    }
+                }
+            }            
         },
         "components": {
             "schemas": {
