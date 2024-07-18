@@ -65,7 +65,6 @@ docs/RelatedDonor.md
 docs/RodentDonor.md
 docs/SampleTerm.md
 docs/SearchFacet.md
-docs/SearchFacetTermValue.md
 docs/SearchLimitParameter.md
 docs/SearchResultItem.md
 docs/SearchResults.md
@@ -152,7 +151,6 @@ igvf_client/models/related_donor.py
 igvf_client/models/rodent_donor.py
 igvf_client/models/sample_term.py
 igvf_client/models/search_facet.py
-igvf_client/models/search_facet_term_value.py
 igvf_client/models/search_limit_parameter.py
 igvf_client/models/search_result_item.py
 igvf_client/models/search_results.py

@@ -19,7 +19,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from igvf_client.models.search_facet_term_value import SearchFacetTermValue
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +28,7 @@ class SearchFacet(BaseModel):
     """ # noqa: E501
     var_field: Optional[StrictStr] = Field(default=None, alias="field")
     title: Optional[StrictStr] = None
-    terms: Optional[List[SearchFacetTermValue]] = None
+    terms: Optional[List[Dict[str, Any]]] = None
     __properties: ClassVar[List[str]] = ["field", "title", "terms"]
 
     model_config = ConfigDict(
@@ -71,13 +70,6 @@ class SearchFacet(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in terms (list)
-        _items = []
-        if self.terms:
-            for _item in self.terms:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['terms'] = _items
         return _dict
 
     @classmethod
@@ -92,7 +84,7 @@ class SearchFacet(BaseModel):
         _obj = cls.model_validate({
             "field": obj.get("field"),
             "title": obj.get("title"),
-            "terms": [SearchFacetTermValue.from_dict(_item) for _item in obj["terms"]] if obj.get("terms") is not None else None
+            "terms": obj.get("terms")
         })
         return _obj
 

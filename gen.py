@@ -172,10 +172,6 @@ def generate_openapi_spec(schemas):
                                                             "items": {
                                                                 "title": "SearchFacetTermValue",
                                                                 "type": "object",
-                                                                "properties": {
-                                                                    "key": {"type": "string"},
-                                                                    "doc_count": {"type": "integer"}
-                                                                }
                                                             }
                                                         }
                                                     }
@@ -203,7 +199,7 @@ def generate_openapi_spec(schemas):
                 "get": {
                     "summary": "Retrieve JSON schemas for all item types",
                     "description": "Returns JSON schemas of all the item types defined in IGVF",
-                    'operationId': 'get_schemas',
+                    'operationId': 'schemas',
                     "responses": {
                         "200": {
                             "description": "Successful response",
@@ -222,7 +218,7 @@ def generate_openapi_spec(schemas):
                 "get": {
                     "summary": "Retrieve JSON schemas for all item types",
                     "description": "Returns JSON schemas of all the item types defined in IGVF",
-                    'operationId': 'get_schema_for_item_type',
+                    'operationId': 'schema_for_item_type',
                     'parameters': [
                         {
                             "name": "item_type",

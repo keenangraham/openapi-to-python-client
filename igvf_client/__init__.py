@@ -92,7 +92,6 @@ from igvf_client.models.related_donor import RelatedDonor
 from igvf_client.models.rodent_donor import RodentDonor
 from igvf_client.models.sample_term import SampleTerm
 from igvf_client.models.search_facet import SearchFacet
-from igvf_client.models.search_facet_term_value import SearchFacetTermValue
 from igvf_client.models.search_limit_parameter import SearchLimitParameter
 from igvf_client.models.search_result_item import SearchResultItem
 from igvf_client.models.search_results import SearchResults

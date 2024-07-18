@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **var_field** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
-**terms** | [**List[SearchFacetTermValue]**](SearchFacetTermValue.md) |  | [optional] 
+**terms** | **List[object]** |  | [optional] 
 
 ## Example
 

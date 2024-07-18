@@ -165,7 +165,6 @@ Class | Method | HTTP request | Description
  - [RodentDonor](docs/RodentDonor.md)
  - [SampleTerm](docs/SampleTerm.md)
  - [SearchFacet](docs/SearchFacet.md)
- - [SearchFacetTermValue](docs/SearchFacetTermValue.md)
  - [SearchLimitParameter](docs/SearchLimitParameter.md)
  - [SearchResultItem](docs/SearchResultItem.md)
  - [SearchResults](docs/SearchResults.md)

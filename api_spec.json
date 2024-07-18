@@ -514,15 +514,7 @@
                             "type": "array",
                             "items": {
                               "title": "SearchFacetTermValue",
-                              "type": "object",
-                              "properties": {
-                                "key": {
-                                  "type": "string"
-                                },
-                                "doc_count": {
-                                  "type": "integer"
-                                }
-                              }
+                              "type": "object"
                             }
                           }
                         }
