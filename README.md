@@ -77,15 +77,17 @@ configuration = igvf_client.Configuration(
 with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
-    file_id = 'file_id_example' # str | The unique identifier for the file to download, i.e. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03).
+    type = ['type_example'] # List[str] | Type of objects to return. Can be repeated for multiple types.
+    query = 'query_example' # str | Query string for searching. (optional)
+    field_filters = None # object | Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
 
     try:
-        # Download file.
-        api_response = api_instance.download(file_id)
-        print("The response of IgvfApi->download:\n")
+        # List files to download based on search query. All results are returned.
+        api_response = api_instance.batch_download(type, query=query, field_filters=field_filters)
+        print("The response of IgvfApi->batch_download:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling IgvfApi->download: %s\n" % e)
+        print("Exception when calling IgvfApi->batch_download: %s\n" % e)
 
 ```
 
@@ -95,6 +97,7 @@ All URIs are relative to *https://api.data.igvf.org*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*IgvfApi* | [**batch_download**](docs/IgvfApi.md#batch_download) | **GET** /batch-download | List files to download based on search query. All results are returned.
 *IgvfApi* | [**download**](docs/IgvfApi.md#download) | **GET** /{file_id}/@@download | Download file.
 *IgvfApi* | [**get_by_id**](docs/IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
 *IgvfApi* | [**report**](docs/IgvfApi.md#report) | **GET** /multireport.tsv | Generate a report based on search query. All results are returned.

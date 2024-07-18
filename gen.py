@@ -306,14 +306,21 @@ def generate_openapi_spec(schemas):
                             }
                         },
                         "400": {
-                            "description": "Bad request"
+                            "description": "Bad request",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                    }
+                                }
+                            }
                         },
                         "404": {
                             "description": "No results found",
                             "content": {
                                 "application/json": {
                                     "schema": {
-                                        "$ref": "#/components/schemas/NoResultsResponse"
+                                        "type": "object",
                                     }
                                 }
                             }
@@ -354,6 +361,76 @@ def generate_openapi_spec(schemas):
                         },
                         "404": {
                             "description": "Item not found"
+                        },
+                        "500": {
+                            "description": "Internal server error"
+                        }
+                    }
+                }
+            },
+            "/batch-download": {
+                "get": {
+                    "summary": "List files to download based on search query. All results are returned.",
+                    "description": "Generates TSV of files contained in FileSets in search results.",
+                    "operationId": "batch_download",
+                    "parameters": [
+                        {
+                            "name": "type",
+                            "in": "query",
+                            "schema": {"type": "array", "items": {"type": "string"}},
+                            "style": "form",
+                            "explode": True,
+                            "required": True,
+                            "description": "Type of objects to return. Can be repeated for multiple types."
+                        },
+                        {
+                            "name": "query",
+                            "in": "query",
+                            "schema": {"type": "string"},
+                            "description": "Query string for searching."
+                        },
+                        {
+                            "name": "field_filters",
+                            "in": "query",
+                            "schema": {
+                                "type": "object"
+                            },
+                            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+                            "style": "form",
+                            "explode": True,
+                        },
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "Successful response",
+                            "content": {
+                                "text/tab-separated-values": {
+                                    "schema": {
+                                        "type": "string"
+                                    },
+                                    "example": "@id\thref\nhref1\thref2"
+                                }
+                            }
+                        },
+                        "400": {
+                            "description": "Bad request",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                    }
+                                }
+                            }
+                        },
+                        "404": {
+                            "description": "No results found",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                    }
+                                }
+                            }
                         },
                         "500": {
                             "description": "Internal server error"
