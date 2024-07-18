@@ -216,7 +216,7 @@ def generate_openapi_spec(schemas):
             },
             "/profiles/{item_type}": {
                 "get": {
-                    "summary": "Retrieve JSON schemas for all item types",
+                    "summary": "Retrieve JSON schema for item type",
                     "description": "Returns JSON schemas of all the item types defined in IGVF",
                     'operationId': 'schema_for_item_type',
                     'parameters': [

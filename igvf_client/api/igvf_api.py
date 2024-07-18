@@ -1230,7 +1230,7 @@ class IgvfApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> object:
-        """Retrieve JSON schemas for all item types
+        """Retrieve JSON schema for item type
 
         Returns JSON schemas of all the item types defined in IGVF
 
@@ -1297,7 +1297,7 @@ class IgvfApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[object]:
-        """Retrieve JSON schemas for all item types
+        """Retrieve JSON schema for item type
 
         Returns JSON schemas of all the item types defined in IGVF
 
@@ -1364,7 +1364,7 @@ class IgvfApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Retrieve JSON schemas for all item types
+        """Retrieve JSON schema for item type
 
         Returns JSON schemas of all the item types defined in IGVF
 

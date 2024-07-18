@@ -101,7 +101,7 @@ Class | Method | HTTP request | Description
 *IgvfApi* | [**download**](docs/IgvfApi.md#download) | **GET** /{file_id}/@@download | Download file.
 *IgvfApi* | [**get_by_id**](docs/IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
 *IgvfApi* | [**report**](docs/IgvfApi.md#report) | **GET** /multireport.tsv | Generate a report based on search query. All results are returned.
-*IgvfApi* | [**schema_for_item_type**](docs/IgvfApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schemas for all item types
+*IgvfApi* | [**schema_for_item_type**](docs/IgvfApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schema for item type
 *IgvfApi* | [**schemas**](docs/IgvfApi.md#schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
 *IgvfApi* | [**search**](docs/IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project
 

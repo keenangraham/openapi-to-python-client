@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**download**](IgvfApi.md#download) | **GET** /{file_id}/@@download | Download file.
 [**get_by_id**](IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
 [**report**](IgvfApi.md#report) | **GET** /multireport.tsv | Generate a report based on search query. All results are returned.
-[**schema_for_item_type**](IgvfApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schemas for all item types
+[**schema_for_item_type**](IgvfApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schema for item type
 [**schemas**](IgvfApi.md#schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
 [**search**](IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 # **schema_for_item_type**
 > object schema_for_item_type(item_type)
 
-Retrieve JSON schemas for all item types
+Retrieve JSON schema for item type
 
 Returns JSON schemas of all the item types defined in IGVF
 
@@ -388,7 +388,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     item_type = igvf_client.ItemType() # ItemType | The name of the item type
 
     try:
-        # Retrieve JSON schemas for all item types
+        # Retrieve JSON schema for item type
         api_response = api_instance.schema_for_item_type(item_type)
         print("The response of IgvfApi->schema_for_item_type:\n")
         pprint(api_response)
