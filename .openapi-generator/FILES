@@ -17,6 +17,8 @@ docs/AssayTerm.md
 docs/AssayTermResults.md
 docs/Attachment.md
 docs/Attachment1.md
+docs/Attachment2.md
+docs/Attachment3.md
 docs/AuxiliarySet.md
 docs/AuxiliarySetResults.md
 docs/Award.md
@@ -37,6 +39,7 @@ docs/Document.md
 docs/DocumentResults.md
 docs/Gene.md
 docs/GeneLocation.md
+docs/GeneLocation1.md
 docs/GeneResults.md
 docs/GenomeBrowserAnnotationFile.md
 docs/GenomeBrowserAnnotationFileResults.md
@@ -56,6 +59,7 @@ docs/ItemType.md
 docs/Lab.md
 docs/LabResults.md
 docs/Locus.md
+docs/Locus1.md
 docs/MatrixFile.md
 docs/MatrixFileResults.md
 docs/MeasurementSet.md
@@ -77,7 +81,9 @@ docs/OpenReadingFrame.md
 docs/OpenReadingFrameResults.md
 docs/Page.md
 docs/PageLayout.md
+docs/PageLayout1.md
 docs/PageLayoutComponents.md
+docs/PageLayoutComponents1.md
 docs/PageResults.md
 docs/PhenotypeTerm.md
 docs/PhenotypeTermResults.md
@@ -94,6 +100,7 @@ docs/PublicationResults.md
 docs/ReferenceFile.md
 docs/ReferenceFileResults.md
 docs/RelatedDonor.md
+docs/RelatedDonor1.md
 docs/RodentDonor.md
 docs/RodentDonorResults.md
 docs/SampleTerm.md
@@ -117,6 +124,7 @@ docs/TabularFileResults.md
 docs/TechnicalSample.md
 docs/TechnicalSampleResults.md
 docs/Tile.md
+docs/Tile1.md
 docs/Tissue.md
 docs/TissueResults.md
 docs/Treatment.md
@@ -150,6 +158,8 @@ igvf_client/models/assay_term.py
 igvf_client/models/assay_term_results.py
 igvf_client/models/attachment.py
 igvf_client/models/attachment1.py
+igvf_client/models/attachment2.py
+igvf_client/models/attachment3.py
 igvf_client/models/auxiliary_set.py
 igvf_client/models/auxiliary_set_results.py
 igvf_client/models/award.py
@@ -170,6 +180,7 @@ igvf_client/models/document.py
 igvf_client/models/document_results.py
 igvf_client/models/gene.py
 igvf_client/models/gene_location.py
+igvf_client/models/gene_location1.py
 igvf_client/models/gene_results.py
 igvf_client/models/genome_browser_annotation_file.py
 igvf_client/models/genome_browser_annotation_file_results.py
@@ -188,6 +199,7 @@ igvf_client/models/item_type.py
 igvf_client/models/lab.py
 igvf_client/models/lab_results.py
 igvf_client/models/locus.py
+igvf_client/models/locus1.py
 igvf_client/models/matrix_file.py
 igvf_client/models/matrix_file_results.py
 igvf_client/models/measurement_set.py
@@ -209,7 +221,9 @@ igvf_client/models/open_reading_frame.py
 igvf_client/models/open_reading_frame_results.py
 igvf_client/models/page.py
 igvf_client/models/page_layout.py
+igvf_client/models/page_layout1.py
 igvf_client/models/page_layout_components.py
+igvf_client/models/page_layout_components1.py
 igvf_client/models/page_results.py
 igvf_client/models/phenotype_term.py
 igvf_client/models/phenotype_term_results.py
@@ -226,6 +240,7 @@ igvf_client/models/publication_results.py
 igvf_client/models/reference_file.py
 igvf_client/models/reference_file_results.py
 igvf_client/models/related_donor.py
+igvf_client/models/related_donor1.py
 igvf_client/models/rodent_donor.py
 igvf_client/models/rodent_donor_results.py
 igvf_client/models/sample_term.py
@@ -249,6 +264,7 @@ igvf_client/models/tabular_file_results.py
 igvf_client/models/technical_sample.py
 igvf_client/models/technical_sample_results.py
 igvf_client/models/tile.py
+igvf_client/models/tile1.py
 igvf_client/models/tissue.py
 igvf_client/models/tissue_results.py
 igvf_client/models/treatment.py
@@ -267,4 +283,12 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_attachment2.py
+test/test_attachment3.py
+test/test_gene_location1.py
+test/test_locus1.py
+test/test_page_layout1.py
+test/test_page_layout_components1.py
+test/test_related_donor1.py
+test/test_tile1.py
 tox.ini

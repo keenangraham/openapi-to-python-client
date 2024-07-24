@@ -19,16 +19,15 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from igvf_client.models.page_layout_components import PageLayoutComponents
+from igvf_client.models.page_layout_components1 import PageLayoutComponents1
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PageLayout(BaseModel):
+class PageLayout1(BaseModel):
     """
     Hierarchical description of the page layout.
     """ # noqa: E501
-    blocks: Optional[List[PageLayoutComponents]] = None
-    additional_properties: Dict[str, Any] = {}
+    blocks: Optional[List[PageLayoutComponents1]] = None
     __properties: ClassVar[List[str]] = ["blocks"]
 
     model_config = ConfigDict(
@@ -49,7 +48,7 @@ class PageLayout(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PageLayout from a JSON string"""
+        """Create an instance of PageLayout1 from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -61,10 +60,8 @@ class PageLayout(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -79,16 +76,11 @@ class PageLayout(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['blocks'] = _items
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PageLayout from a dict"""
+        """Create an instance of PageLayout1 from a dict"""
         if obj is None:
             return None
 
@@ -96,13 +88,8 @@ class PageLayout(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "blocks": [PageLayoutComponents.from_dict(_item) for _item in obj["blocks"]] if obj.get("blocks") is not None else None
+            "blocks": [PageLayoutComponents1.from_dict(_item) for _item in obj["blocks"]] if obj.get("blocks") is not None else None
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

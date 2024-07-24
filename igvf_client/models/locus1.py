@@ -23,15 +23,14 @@ from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Locus(BaseModel):
+class Locus1(BaseModel):
     """
-    Locus
+    Locus1
     """ # noqa: E501
     assembly: StrictStr = Field(description="The genome assembly to which coordinates relate (e.g., GRCh38).")
     chromosome: Annotated[str, Field(strict=True)] = Field(description="The number (or letter) designation for the chromosome, e.g. chr1 or chrX")
     start: Annotated[int, Field(strict=True, ge=1)] = Field(description="The 1-based, closed (inclusive) starting coordinate.")
     end: Annotated[int, Field(strict=True, ge=1)] = Field(description="The 1-based, closed (inclusive) ending coordinate.")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["assembly", "chromosome", "start", "end"]
 
     @field_validator('assembly')
@@ -66,7 +65,7 @@ class Locus(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Locus from a JSON string"""
+        """Create an instance of Locus1 from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -78,10 +77,8 @@ class Locus(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -89,16 +86,11 @@ class Locus(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Locus from a dict"""
+        """Create an instance of Locus1 from a dict"""
         if obj is None:
             return None
 
@@ -111,11 +103,6 @@ class Locus(BaseModel):
             "start": obj.get("start"),
             "end": obj.get("end")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

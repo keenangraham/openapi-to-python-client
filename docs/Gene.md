@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **name** | **str** | The full gene name preferably approved by the official nomenclature. | [optional] 
 **synonyms** | **List[str]** | Alternative symbols that have been used to refer to the gene. | [optional] 
 **dbxrefs** | **List[str]** | Unique identifiers from external resources. | [optional] 
-**locations** | [**List[GeneLocation]**](GeneLocation.md) | Gene locations specified using 1-based, closed coordinates for different versions of reference genome assemblies. | [optional] 
+**locations** | [**List[GeneLocation1]**](GeneLocation1.md) | Gene locations specified using 1-based, closed coordinates for different versions of reference genome assemblies. | [optional] 
 **version_number** | **str** | Current ENSEMBL GeneID version number of the gene. | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 

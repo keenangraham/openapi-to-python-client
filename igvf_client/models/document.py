@@ -21,7 +21,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from igvf_client.models.attachment import Attachment
+from igvf_client.models.attachment2 import Attachment2
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,7 +33,7 @@ class Document(BaseModel):
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
-    attachment: Optional[Attachment] = None
+    attachment: Optional[Attachment2] = None
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
@@ -186,7 +186,7 @@ class Document(BaseModel):
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
             "lab": obj.get("lab"),
             "award": obj.get("award"),
-            "attachment": Attachment.from_dict(obj["attachment"]) if obj.get("attachment") is not None else None,
+            "attachment": Attachment2.from_dict(obj["attachment"]) if obj.get("attachment") is not None else None,
             "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '4',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),

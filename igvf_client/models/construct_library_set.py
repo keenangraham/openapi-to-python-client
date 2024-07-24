@@ -21,8 +21,8 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
-from igvf_client.models.locus import Locus
-from igvf_client.models.tile import Tile
+from igvf_client.models.locus1 import Locus1
+from igvf_client.models.tile1 import Tile1
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +30,7 @@ class ConstructLibrarySet(BaseModel):
     """
     Construct library set is a file set that hosts raw data files (e.g. FASTQs) resulting from sequencing of a library prior to its delivery into the samples being investigated. For example sequencing results of guide RNAs after cloning them but prior to their delivery to the actual samples under investigation. The results thus represent the sequencing output of the guides that are then introduced into cells, but may not always correspond to what exact guides ended up being delivered or expressed. Not all construct library sets will end up having FASTQs or any other files in them. For example if the lab chooses not to sequence their guide library prior to delivery, no FASTQs will be required in that case. Construct library sets should not be associated with any samples because they are designed to capture the library prior to its delivery and hence, has no relation to the ample that will get the plasmids eventually.
     """ # noqa: E501
-    small_scale_loci_list: Optional[List[Locus]] = Field(default=None, description="A small scale (<=100) list of specific chromosomal region(s).")
+    small_scale_loci_list: Optional[List[Locus1]] = Field(default=None, description="A small scale (<=100) list of specific chromosomal region(s).")
     large_scale_loci_list: Optional[StrictStr] = Field(default=None, description="A large scale list (>100) of specific chromosomal regions.")
     small_scale_gene_list: Optional[List[StrictStr]] = Field(default=None, description="The specific, small scale list of (<=100) gene(s) this construct library was designed to target. This property differs from targeted_genes in Measurement Set, which describes genes targeted for binding sites or used for sorting by expression.")
     large_scale_gene_list: Optional[StrictStr] = Field(default=None, description="The large scale list of (>100 genes) this construct library was designed to target.")
@@ -63,7 +63,7 @@ class ConstructLibrarySet(BaseModel):
     associated_phenotypes: Optional[List[StrictStr]] = Field(default=None, description="Ontological terms for diseases or phenotypes associated with the sequence material cloned in this construct library.")
     orf_list: Optional[List[StrictStr]] = Field(default=None, description="List of Open Reading Frame this construct library was designed to target.")
     exon: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="An identifier in plain text for the specific exon in an expression vector library. The associated gene must be listed in the small_scale_gene_list property.")
-    tile: Optional[Tile] = None
+    tile: Optional[Tile1] = None
     guide_type: Optional[StrictStr] = Field(default=None, description="The design of guides used in a CRISPR library, paired-guide (pgRNA) or single-guide (sgRNA).")
     tiling_modality: Optional[StrictStr] = Field(default=None, description="The tiling modality of guides across elements or loci in a CRISPR library.")
     average_guide_coverage: Optional[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]] = Field(default=None, description="The average number of guides targeting each element of interest in the library.")
@@ -314,7 +314,7 @@ class ConstructLibrarySet(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "small_scale_loci_list": [Locus.from_dict(_item) for _item in obj["small_scale_loci_list"]] if obj.get("small_scale_loci_list") is not None else None,
+            "small_scale_loci_list": [Locus1.from_dict(_item) for _item in obj["small_scale_loci_list"]] if obj.get("small_scale_loci_list") is not None else None,
             "large_scale_loci_list": obj.get("large_scale_loci_list"),
             "small_scale_gene_list": obj.get("small_scale_gene_list"),
             "large_scale_gene_list": obj.get("large_scale_gene_list"),
@@ -347,7 +347,7 @@ class ConstructLibrarySet(BaseModel):
             "associated_phenotypes": obj.get("associated_phenotypes"),
             "orf_list": obj.get("orf_list"),
             "exon": obj.get("exon"),
-            "tile": Tile.from_dict(obj["tile"]) if obj.get("tile") is not None else None,
+            "tile": Tile1.from_dict(obj["tile"]) if obj.get("tile") is not None else None,
             "guide_type": obj.get("guide_type"),
             "tiling_modality": obj.get("tiling_modality"),
             "average_guide_coverage": obj.get("average_guide_coverage"),

@@ -802,6 +802,21 @@ def fill_in_collection_template(schema_name, schema):
             }
         }
     }
+    for prop, prop_schema in schema["properties"].items():
+        exclude = ['default', 'uniqueItems']
+        filtered_prop_schema = {k: v for k, v in prop_schema.items() if k not in exclude}
+        if prop == '@type':
+            continue
+        collection_template[f"/{collection_name}/@@listing"]["get"]["parameters"].append(
+            {
+                "name": f"{prop}",
+                "in": "query",
+                "schema": filtered_prop_schema,
+                "description": f"Filter by {prop}",
+                "style": "form",
+                "explode": True,
+            }
+        )
     return collection_template
 
 

@@ -45,6 +45,8 @@ from igvf_client.models.assay_term import AssayTerm
 from igvf_client.models.assay_term_results import AssayTermResults
 from igvf_client.models.attachment import Attachment
 from igvf_client.models.attachment1 import Attachment1
+from igvf_client.models.attachment2 import Attachment2
+from igvf_client.models.attachment3 import Attachment3
 from igvf_client.models.auxiliary_set import AuxiliarySet
 from igvf_client.models.auxiliary_set_results import AuxiliarySetResults
 from igvf_client.models.award import Award
@@ -65,6 +67,7 @@ from igvf_client.models.document import Document
 from igvf_client.models.document_results import DocumentResults
 from igvf_client.models.gene import Gene
 from igvf_client.models.gene_location import GeneLocation
+from igvf_client.models.gene_location1 import GeneLocation1
 from igvf_client.models.gene_results import GeneResults
 from igvf_client.models.genome_browser_annotation_file import GenomeBrowserAnnotationFile
 from igvf_client.models.genome_browser_annotation_file_results import GenomeBrowserAnnotationFileResults
@@ -83,6 +86,7 @@ from igvf_client.models.item_type import ItemType
 from igvf_client.models.lab import Lab
 from igvf_client.models.lab_results import LabResults
 from igvf_client.models.locus import Locus
+from igvf_client.models.locus1 import Locus1
 from igvf_client.models.matrix_file import MatrixFile
 from igvf_client.models.matrix_file_results import MatrixFileResults
 from igvf_client.models.measurement_set import MeasurementSet
@@ -104,7 +108,9 @@ from igvf_client.models.open_reading_frame import OpenReadingFrame
 from igvf_client.models.open_reading_frame_results import OpenReadingFrameResults
 from igvf_client.models.page import Page
 from igvf_client.models.page_layout import PageLayout
+from igvf_client.models.page_layout1 import PageLayout1
 from igvf_client.models.page_layout_components import PageLayoutComponents
+from igvf_client.models.page_layout_components1 import PageLayoutComponents1
 from igvf_client.models.page_results import PageResults
 from igvf_client.models.phenotype_term import PhenotypeTerm
 from igvf_client.models.phenotype_term_results import PhenotypeTermResults
@@ -121,6 +127,7 @@ from igvf_client.models.publication_results import PublicationResults
 from igvf_client.models.reference_file import ReferenceFile
 from igvf_client.models.reference_file_results import ReferenceFileResults
 from igvf_client.models.related_donor import RelatedDonor
+from igvf_client.models.related_donor1 import RelatedDonor1
 from igvf_client.models.rodent_donor import RodentDonor
 from igvf_client.models.rodent_donor_results import RodentDonorResults
 from igvf_client.models.sample_term import SampleTerm
@@ -144,6 +151,7 @@ from igvf_client.models.tabular_file_results import TabularFileResults
 from igvf_client.models.technical_sample import TechnicalSample
 from igvf_client.models.technical_sample_results import TechnicalSampleResults
 from igvf_client.models.tile import Tile
+from igvf_client.models.tile1 import Tile1
 from igvf_client.models.tissue import Tissue
 from igvf_client.models.tissue_results import TissueResults
 from igvf_client.models.treatment import Treatment

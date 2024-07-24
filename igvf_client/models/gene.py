@@ -21,7 +21,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from igvf_client.models.gene_location import GeneLocation
+from igvf_client.models.gene_location1 import GeneLocation1
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -46,7 +46,7 @@ class Gene(BaseModel):
     name: Optional[StrictStr] = Field(default=None, description="The full gene name preferably approved by the official nomenclature.")
     synonyms: Optional[List[StrictStr]] = Field(default=None, description="Alternative symbols that have been used to refer to the gene.")
     dbxrefs: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Unique identifiers from external resources.")
-    locations: Optional[List[GeneLocation]] = Field(default=None, description="Gene locations specified using 1-based, closed coordinates for different versions of reference genome assemblies.")
+    locations: Optional[List[GeneLocation1]] = Field(default=None, description="Gene locations specified using 1-based, closed coordinates for different versions of reference genome assemblies.")
     version_number: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Current ENSEMBL GeneID version number of the gene.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
@@ -228,7 +228,7 @@ class Gene(BaseModel):
             "name": obj.get("name"),
             "synonyms": obj.get("synonyms"),
             "dbxrefs": obj.get("dbxrefs"),
-            "locations": [GeneLocation.from_dict(_item) for _item in obj["locations"]] if obj.get("locations") is not None else None,
+            "locations": [GeneLocation1.from_dict(_item) for _item in obj["locations"]] if obj.get("locations") is not None else None,
             "version_number": obj.get("version_number"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),

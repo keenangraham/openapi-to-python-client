@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
 **lab** | **str** | Lab associated with the submission. | [optional] 
 **award** | **str** | Grant associated with the submission. | [optional] 
-**attachment** | [**Attachment**](Attachment.md) |  | [optional] 
+**attachment** | [**Attachment2**](Attachment2.md) |  | [optional] 
 **schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '4']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 

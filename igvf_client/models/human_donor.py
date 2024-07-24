@@ -21,7 +21,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from igvf_client.models.related_donor import RelatedDonor
+from igvf_client.models.related_donor1 import RelatedDonor1
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -54,7 +54,7 @@ class HumanDonor(BaseModel):
     sex: Optional[StrictStr] = Field(default='unspecified', description="Sex of the donor.")
     phenotypic_features: Optional[List[StrictStr]] = Field(default=None, description="A list of associated phenotypic features of the donor.")
     virtual: Optional[StrictBool] = Field(default=False, description="Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for.")
-    related_donors: Optional[List[RelatedDonor]] = Field(default=None, description="Familial relations of this donor.")
+    related_donors: Optional[List[RelatedDonor1]] = Field(default=None, description="Familial relations of this donor.")
     ethnicities: Optional[List[StrictStr]] = Field(default=None, description="Ethnicity of the donor.")
     human_donor_identifiers: Optional[List[StrictStr]] = Field(default=None, description="Identifiers of this human donor.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
@@ -255,7 +255,7 @@ class HumanDonor(BaseModel):
             "sex": obj.get("sex") if obj.get("sex") is not None else 'unspecified',
             "phenotypic_features": obj.get("phenotypic_features"),
             "virtual": obj.get("virtual") if obj.get("virtual") is not None else False,
-            "related_donors": [RelatedDonor.from_dict(_item) for _item in obj["related_donors"]] if obj.get("related_donors") is not None else None,
+            "related_donors": [RelatedDonor1.from_dict(_item) for _item in obj["related_donors"]] if obj.get("related_donors") is not None else None,
             "ethnicities": obj.get("ethnicities"),
             "human_donor_identifiers": obj.get("human_donor_identifiers"),
             "@id": obj.get("@id"),
