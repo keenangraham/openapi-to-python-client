@@ -650,8 +650,11 @@ def generate_openapi_spec(schemas):
             "frame": "object"
         }
     }
-  #  openapi_spec["paths"]["/search"]["get"]["examples"] = [complex_example]
-
+    # openapi_spec["paths"]["/search"]["get"]["examples"] = [complex_example]
+    for schema_name, schema in schemas.items():
+        collection_template = fill_in_collection_template(schema_name, schema)
+        openapi_spec["paths"].update(collection_template)
+   
     return openapi_spec
 
 res = requests.get('https://api.data.igvf.org/profiles').json()
@@ -663,6 +666,144 @@ schemas = {
     k, v in res.items()
     if not k.startswith('_') and not k.startswith('@')
 }
+
+
+def get_schema_names_to_collection_names(schema_keys):
+    d = requests.get('https://api.data.igvf.org/collection-titles').json()
+    del d['@type']
+    rs = {v: k for k, v in d.items() if k in schema_keys}
+    collection_names = {}
+    for k, v in d.items():
+        if v not in rs:
+            continue
+        if k in schema_keys:
+            continue
+        if k.istitle():
+            continue
+        if '_' in k:
+            continue
+        if f'{k}s' in d:
+            continue
+        collection_names[rs[v]] = k
+    return collection_names
+
+
+schema_names_to_collection_names = get_schema_names_to_collection_names(schemas.keys())
+
+
+def fill_in_collection_template(schema_name, schema):
+    collection_name = schema_names_to_collection_names[schema_name]
+    collection_template = {
+        f"/{collection_name}": {
+            "get": {
+                "summary": f"List items in the {schema_name} collection.",
+                "description": f"Collection endpoint that accepts various query parameters to filter, sort, and paginate {schema_name} items. Supports filtering on fields within {schema_name} items.",
+                "operationId": f"{collection_name.replace('-', '_')}",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "schema": {"type": "string"},
+                        "description": "Query string for searching."
+                    },
+                    {
+                        "name": "frame",
+                        "in": "query",
+                        "required": True,
+                        "schema": {
+                            "type": "string",
+                            "enum": ["object"]
+                        },
+                        "description": "Constant value, do not set."
+                    },
+                    {
+                       "name": "limit",
+                        "in": "query",
+                        "schema": {'oneOf': [{"type": "string"}, {"type": "integer"}]},
+                        "description": "Maximum number of results to return. Use 'all' for all results."
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "schema": {"type": "array", "items": {"type": "string"}},
+                        "style": "form",
+                        "explode": True,
+                        "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+                    },
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "title": f"{schema_name}Results",
+                                    "properties": {
+                                        "@graph": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": f"#/components/schemas/{schema_name}"
+                                            }
+                                        },
+                                        "@id": {"type": "string"},
+                                        "@type": {
+                                            "type": "array",
+                                            "items": {"type": "string"}
+                                        },
+                                        "total": {"type": "integer"},
+                                        "facets": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "title": "SearchFacet",
+                                                "properties": {
+                                                    "field": {"type": "string"},
+                                                    "title": {"type": "string"},
+                                                    "terms": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "title": "SearchFacetTermValue",
+                                                            "type": "object",
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "No results found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
+    }
+    return collection_template
+
 
 
 def clean_schema(schema):
