@@ -4,68 +4,68 @@ All URIs are relative to *https://api.data.igvf.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**access_keys**](IgvfApi.md#access_keys) | **GET** /access-keys | List items in the AccessKey collection.
-[**alignment_files**](IgvfApi.md#alignment_files) | **GET** /alignment-files | List items in the AlignmentFile collection.
-[**analysis_sets**](IgvfApi.md#analysis_sets) | **GET** /analysis-sets | List items in the AnalysisSet collection.
-[**analysis_step_versions**](IgvfApi.md#analysis_step_versions) | **GET** /analysis-step-versions | List items in the AnalysisStepVersion collection.
-[**analysis_steps**](IgvfApi.md#analysis_steps) | **GET** /analysis-steps | List items in the AnalysisStep collection.
-[**assay_terms**](IgvfApi.md#assay_terms) | **GET** /assay-terms | List items in the AssayTerm collection.
-[**auxiliary_sets**](IgvfApi.md#auxiliary_sets) | **GET** /auxiliary-sets | List items in the AuxiliarySet collection.
-[**awards**](IgvfApi.md#awards) | **GET** /awards | List items in the Award collection.
+[**access_keys**](IgvfApi.md#access_keys) | **GET** /access-keys/@@listing | List items in the AccessKey collection.
+[**alignment_files**](IgvfApi.md#alignment_files) | **GET** /alignment-files/@@listing | List items in the AlignmentFile collection.
+[**analysis_sets**](IgvfApi.md#analysis_sets) | **GET** /analysis-sets/@@listing | List items in the AnalysisSet collection.
+[**analysis_step_versions**](IgvfApi.md#analysis_step_versions) | **GET** /analysis-step-versions/@@listing | List items in the AnalysisStepVersion collection.
+[**analysis_steps**](IgvfApi.md#analysis_steps) | **GET** /analysis-steps/@@listing | List items in the AnalysisStep collection.
+[**assay_terms**](IgvfApi.md#assay_terms) | **GET** /assay-terms/@@listing | List items in the AssayTerm collection.
+[**auxiliary_sets**](IgvfApi.md#auxiliary_sets) | **GET** /auxiliary-sets/@@listing | List items in the AuxiliarySet collection.
+[**awards**](IgvfApi.md#awards) | **GET** /awards/@@listing | List items in the Award collection.
 [**batch_download**](IgvfApi.md#batch_download) | **GET** /batch-download | List files to download based on search query. All results are returned.
-[**biomarkers**](IgvfApi.md#biomarkers) | **GET** /biomarkers | List items in the Biomarker collection.
-[**configuration_files**](IgvfApi.md#configuration_files) | **GET** /configuration-files | List items in the ConfigurationFile collection.
-[**construct_library_sets**](IgvfApi.md#construct_library_sets) | **GET** /construct-library-sets | List items in the ConstructLibrarySet collection.
-[**crispr_modifications**](IgvfApi.md#crispr_modifications) | **GET** /crispr-modifications | List items in the CrisprModification collection.
-[**curated_sets**](IgvfApi.md#curated_sets) | **GET** /curated-sets | List items in the CuratedSet collection.
-[**degron_modifications**](IgvfApi.md#degron_modifications) | **GET** /degron-modifications | List items in the DegronModification collection.
-[**documents**](IgvfApi.md#documents) | **GET** /documents | List items in the Document collection.
+[**biomarkers**](IgvfApi.md#biomarkers) | **GET** /biomarkers/@@listing | List items in the Biomarker collection.
+[**configuration_files**](IgvfApi.md#configuration_files) | **GET** /configuration-files/@@listing | List items in the ConfigurationFile collection.
+[**construct_library_sets**](IgvfApi.md#construct_library_sets) | **GET** /construct-library-sets/@@listing | List items in the ConstructLibrarySet collection.
+[**crispr_modifications**](IgvfApi.md#crispr_modifications) | **GET** /crispr-modifications/@@listing | List items in the CrisprModification collection.
+[**curated_sets**](IgvfApi.md#curated_sets) | **GET** /curated-sets/@@listing | List items in the CuratedSet collection.
+[**degron_modifications**](IgvfApi.md#degron_modifications) | **GET** /degron-modifications/@@listing | List items in the DegronModification collection.
+[**documents**](IgvfApi.md#documents) | **GET** /documents/@@listing | List items in the Document collection.
 [**download**](IgvfApi.md#download) | **GET** /{file_id}/@@download | Download file.
-[**genes**](IgvfApi.md#genes) | **GET** /genes | List items in the Gene collection.
-[**genome_browser_annotation_files**](IgvfApi.md#genome_browser_annotation_files) | **GET** /genome-browser-annotation-files | List items in the GenomeBrowserAnnotationFile collection.
+[**genes**](IgvfApi.md#genes) | **GET** /genes/@@listing | List items in the Gene collection.
+[**genome_browser_annotation_files**](IgvfApi.md#genome_browser_annotation_files) | **GET** /genome-browser-annotation-files/@@listing | List items in the GenomeBrowserAnnotationFile collection.
 [**get_by_id**](IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
-[**human_donors**](IgvfApi.md#human_donors) | **GET** /human-donors | List items in the HumanDonor collection.
-[**image_files**](IgvfApi.md#image_files) | **GET** /image-files | List items in the ImageFile collection.
-[**images**](IgvfApi.md#images) | **GET** /images | List items in the Image collection.
-[**in_vitro_systems**](IgvfApi.md#in_vitro_systems) | **GET** /in-vitro-systems | List items in the InVitroSystem collection.
-[**institutional_certificates**](IgvfApi.md#institutional_certificates) | **GET** /institutional-certificates | List items in the InstitutionalCertificate collection.
-[**labs**](IgvfApi.md#labs) | **GET** /labs | List items in the Lab collection.
-[**matrix_files**](IgvfApi.md#matrix_files) | **GET** /matrix-files | List items in the MatrixFile collection.
-[**measurement_sets**](IgvfApi.md#measurement_sets) | **GET** /measurement-sets | List items in the MeasurementSet collection.
-[**model_files**](IgvfApi.md#model_files) | **GET** /model-files | List items in the ModelFile collection.
-[**model_sets**](IgvfApi.md#model_sets) | **GET** /model-sets | List items in the ModelSet collection.
-[**multiplexed_samples**](IgvfApi.md#multiplexed_samples) | **GET** /multiplexed-samples | List items in the MultiplexedSample collection.
-[**open_reading_frames**](IgvfApi.md#open_reading_frames) | **GET** /open-reading-frames | List items in the OpenReadingFrame collection.
-[**pages**](IgvfApi.md#pages) | **GET** /pages | List items in the Page collection.
-[**phenotype_terms**](IgvfApi.md#phenotype_terms) | **GET** /phenotype-terms | List items in the PhenotypeTerm collection.
-[**phenotypic_features**](IgvfApi.md#phenotypic_features) | **GET** /phenotypic-features | List items in the PhenotypicFeature collection.
-[**platform_terms**](IgvfApi.md#platform_terms) | **GET** /platform-terms | List items in the PlatformTerm collection.
-[**prediction_sets**](IgvfApi.md#prediction_sets) | **GET** /prediction-sets | List items in the PredictionSet collection.
-[**primary_cells**](IgvfApi.md#primary_cells) | **GET** /primary-cells | List items in the PrimaryCell collection.
-[**publications**](IgvfApi.md#publications) | **GET** /publications | List items in the Publication collection.
-[**reference_files**](IgvfApi.md#reference_files) | **GET** /reference-files | List items in the ReferenceFile collection.
+[**human_donors**](IgvfApi.md#human_donors) | **GET** /human-donors/@@listing | List items in the HumanDonor collection.
+[**image_files**](IgvfApi.md#image_files) | **GET** /image-files/@@listing | List items in the ImageFile collection.
+[**images**](IgvfApi.md#images) | **GET** /images/@@listing | List items in the Image collection.
+[**in_vitro_systems**](IgvfApi.md#in_vitro_systems) | **GET** /in-vitro-systems/@@listing | List items in the InVitroSystem collection.
+[**institutional_certificates**](IgvfApi.md#institutional_certificates) | **GET** /institutional-certificates/@@listing | List items in the InstitutionalCertificate collection.
+[**labs**](IgvfApi.md#labs) | **GET** /labs/@@listing | List items in the Lab collection.
+[**matrix_files**](IgvfApi.md#matrix_files) | **GET** /matrix-files/@@listing | List items in the MatrixFile collection.
+[**measurement_sets**](IgvfApi.md#measurement_sets) | **GET** /measurement-sets/@@listing | List items in the MeasurementSet collection.
+[**model_files**](IgvfApi.md#model_files) | **GET** /model-files/@@listing | List items in the ModelFile collection.
+[**model_sets**](IgvfApi.md#model_sets) | **GET** /model-sets/@@listing | List items in the ModelSet collection.
+[**multiplexed_samples**](IgvfApi.md#multiplexed_samples) | **GET** /multiplexed-samples/@@listing | List items in the MultiplexedSample collection.
+[**open_reading_frames**](IgvfApi.md#open_reading_frames) | **GET** /open-reading-frames/@@listing | List items in the OpenReadingFrame collection.
+[**pages**](IgvfApi.md#pages) | **GET** /pages/@@listing | List items in the Page collection.
+[**phenotype_terms**](IgvfApi.md#phenotype_terms) | **GET** /phenotype-terms/@@listing | List items in the PhenotypeTerm collection.
+[**phenotypic_features**](IgvfApi.md#phenotypic_features) | **GET** /phenotypic-features/@@listing | List items in the PhenotypicFeature collection.
+[**platform_terms**](IgvfApi.md#platform_terms) | **GET** /platform-terms/@@listing | List items in the PlatformTerm collection.
+[**prediction_sets**](IgvfApi.md#prediction_sets) | **GET** /prediction-sets/@@listing | List items in the PredictionSet collection.
+[**primary_cells**](IgvfApi.md#primary_cells) | **GET** /primary-cells/@@listing | List items in the PrimaryCell collection.
+[**publications**](IgvfApi.md#publications) | **GET** /publications/@@listing | List items in the Publication collection.
+[**reference_files**](IgvfApi.md#reference_files) | **GET** /reference-files/@@listing | List items in the ReferenceFile collection.
 [**report**](IgvfApi.md#report) | **GET** /multireport.tsv | Generate a report based on search query. All results are returned.
-[**rodent_donors**](IgvfApi.md#rodent_donors) | **GET** /rodent-donors | List items in the RodentDonor collection.
-[**sample_terms**](IgvfApi.md#sample_terms) | **GET** /sample-terms | List items in the SampleTerm collection.
+[**rodent_donors**](IgvfApi.md#rodent_donors) | **GET** /rodent-donors/@@listing | List items in the RodentDonor collection.
+[**sample_terms**](IgvfApi.md#sample_terms) | **GET** /sample-terms/@@listing | List items in the SampleTerm collection.
 [**schema_for_item_type**](IgvfApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schema for item type
 [**schemas**](IgvfApi.md#schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
 [**search**](IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project
-[**sequence_files**](IgvfApi.md#sequence_files) | **GET** /sequence-files | List items in the SequenceFile collection.
-[**signal_files**](IgvfApi.md#signal_files) | **GET** /signal-files | List items in the SignalFile collection.
-[**software**](IgvfApi.md#software) | **GET** /software | List items in the Software collection.
-[**software_versions**](IgvfApi.md#software_versions) | **GET** /software-versions | List items in the SoftwareVersion collection.
-[**sources**](IgvfApi.md#sources) | **GET** /sources | List items in the Source collection.
-[**tabular_files**](IgvfApi.md#tabular_files) | **GET** /tabular-files | List items in the TabularFile collection.
-[**technical_samples**](IgvfApi.md#technical_samples) | **GET** /technical-samples | List items in the TechnicalSample collection.
-[**tissues**](IgvfApi.md#tissues) | **GET** /tissues | List items in the Tissue collection.
-[**treatments**](IgvfApi.md#treatments) | **GET** /treatments | List items in the Treatment collection.
-[**users**](IgvfApi.md#users) | **GET** /users | List items in the User collection.
-[**whole_organisms**](IgvfApi.md#whole_organisms) | **GET** /whole-organisms | List items in the WholeOrganism collection.
-[**workflows**](IgvfApi.md#workflows) | **GET** /workflows | List items in the Workflow collection.
+[**sequence_files**](IgvfApi.md#sequence_files) | **GET** /sequence-files/@@listing | List items in the SequenceFile collection.
+[**signal_files**](IgvfApi.md#signal_files) | **GET** /signal-files/@@listing | List items in the SignalFile collection.
+[**software**](IgvfApi.md#software) | **GET** /software/@@listing | List items in the Software collection.
+[**software_versions**](IgvfApi.md#software_versions) | **GET** /software-versions/@@listing | List items in the SoftwareVersion collection.
+[**sources**](IgvfApi.md#sources) | **GET** /sources/@@listing | List items in the Source collection.
+[**tabular_files**](IgvfApi.md#tabular_files) | **GET** /tabular-files/@@listing | List items in the TabularFile collection.
+[**technical_samples**](IgvfApi.md#technical_samples) | **GET** /technical-samples/@@listing | List items in the TechnicalSample collection.
+[**tissues**](IgvfApi.md#tissues) | **GET** /tissues/@@listing | List items in the Tissue collection.
+[**treatments**](IgvfApi.md#treatments) | **GET** /treatments/@@listing | List items in the Treatment collection.
+[**users**](IgvfApi.md#users) | **GET** /users/@@listing | List items in the User collection.
+[**whole_organisms**](IgvfApi.md#whole_organisms) | **GET** /whole-organisms/@@listing | List items in the WholeOrganism collection.
+[**workflows**](IgvfApi.md#workflows) | **GET** /workflows/@@listing | List items in the Workflow collection.
 
 
 # **access_keys**
-> AccessKeyResults access_keys(query=query)
+> AccessKeyResults access_keys(query=query, limit=limit, sort=sort)
 
 List items in the AccessKey collection.
 
@@ -103,10 +103,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the AccessKey collection.
-        api_response = api_instance.access_keys(query=query)
+        api_response = api_instance.access_keys(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->access_keys:\n")
         pprint(api_response)
     except Exception as e:
@@ -121,6 +123,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -147,7 +151,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **alignment_files**
-> AlignmentFileResults alignment_files(query=query)
+> AlignmentFileResults alignment_files(query=query, limit=limit, sort=sort)
 
 List items in the AlignmentFile collection.
 
@@ -185,10 +189,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the AlignmentFile collection.
-        api_response = api_instance.alignment_files(query=query)
+        api_response = api_instance.alignment_files(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->alignment_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -203,6 +209,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -229,7 +237,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **analysis_sets**
-> AnalysisSetResults analysis_sets(query=query)
+> AnalysisSetResults analysis_sets(query=query, limit=limit, sort=sort)
 
 List items in the AnalysisSet collection.
 
@@ -267,10 +275,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the AnalysisSet collection.
-        api_response = api_instance.analysis_sets(query=query)
+        api_response = api_instance.analysis_sets(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->analysis_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -285,6 +295,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -311,7 +323,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **analysis_step_versions**
-> AnalysisStepVersionResults analysis_step_versions(query=query)
+> AnalysisStepVersionResults analysis_step_versions(query=query, limit=limit, sort=sort)
 
 List items in the AnalysisStepVersion collection.
 
@@ -349,10 +361,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the AnalysisStepVersion collection.
-        api_response = api_instance.analysis_step_versions(query=query)
+        api_response = api_instance.analysis_step_versions(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->analysis_step_versions:\n")
         pprint(api_response)
     except Exception as e:
@@ -367,6 +381,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -393,7 +409,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **analysis_steps**
-> AnalysisStepResults analysis_steps(query=query)
+> AnalysisStepResults analysis_steps(query=query, limit=limit, sort=sort)
 
 List items in the AnalysisStep collection.
 
@@ -431,10 +447,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the AnalysisStep collection.
-        api_response = api_instance.analysis_steps(query=query)
+        api_response = api_instance.analysis_steps(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->analysis_steps:\n")
         pprint(api_response)
     except Exception as e:
@@ -449,6 +467,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -475,7 +495,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assay_terms**
-> AssayTermResults assay_terms(query=query)
+> AssayTermResults assay_terms(query=query, limit=limit, sort=sort)
 
 List items in the AssayTerm collection.
 
@@ -513,10 +533,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the AssayTerm collection.
-        api_response = api_instance.assay_terms(query=query)
+        api_response = api_instance.assay_terms(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->assay_terms:\n")
         pprint(api_response)
     except Exception as e:
@@ -531,6 +553,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -557,7 +581,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **auxiliary_sets**
-> AuxiliarySetResults auxiliary_sets(query=query)
+> AuxiliarySetResults auxiliary_sets(query=query, limit=limit, sort=sort)
 
 List items in the AuxiliarySet collection.
 
@@ -595,10 +619,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the AuxiliarySet collection.
-        api_response = api_instance.auxiliary_sets(query=query)
+        api_response = api_instance.auxiliary_sets(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->auxiliary_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -613,6 +639,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -639,7 +667,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **awards**
-> AwardResults awards(query=query)
+> AwardResults awards(query=query, limit=limit, sort=sort)
 
 List items in the Award collection.
 
@@ -677,10 +705,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the Award collection.
-        api_response = api_instance.awards(query=query)
+        api_response = api_instance.awards(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->awards:\n")
         pprint(api_response)
     except Exception as e:
@@ -695,6 +725,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -806,7 +838,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **biomarkers**
-> BiomarkerResults biomarkers(query=query)
+> BiomarkerResults biomarkers(query=query, limit=limit, sort=sort)
 
 List items in the Biomarker collection.
 
@@ -844,10 +876,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the Biomarker collection.
-        api_response = api_instance.biomarkers(query=query)
+        api_response = api_instance.biomarkers(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->biomarkers:\n")
         pprint(api_response)
     except Exception as e:
@@ -862,6 +896,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -888,7 +924,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **configuration_files**
-> ConfigurationFileResults configuration_files(query=query)
+> ConfigurationFileResults configuration_files(query=query, limit=limit, sort=sort)
 
 List items in the ConfigurationFile collection.
 
@@ -926,10 +962,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the ConfigurationFile collection.
-        api_response = api_instance.configuration_files(query=query)
+        api_response = api_instance.configuration_files(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->configuration_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -944,6 +982,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -970,7 +1010,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **construct_library_sets**
-> ConstructLibrarySetResults construct_library_sets(query=query)
+> ConstructLibrarySetResults construct_library_sets(query=query, limit=limit, sort=sort)
 
 List items in the ConstructLibrarySet collection.
 
@@ -1008,10 +1048,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the ConstructLibrarySet collection.
-        api_response = api_instance.construct_library_sets(query=query)
+        api_response = api_instance.construct_library_sets(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->construct_library_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -1026,6 +1068,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -1052,7 +1096,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **crispr_modifications**
-> CrisprModificationResults crispr_modifications(query=query)
+> CrisprModificationResults crispr_modifications(query=query, limit=limit, sort=sort)
 
 List items in the CrisprModification collection.
 
@@ -1090,10 +1134,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the CrisprModification collection.
-        api_response = api_instance.crispr_modifications(query=query)
+        api_response = api_instance.crispr_modifications(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->crispr_modifications:\n")
         pprint(api_response)
     except Exception as e:
@@ -1108,6 +1154,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -1134,7 +1182,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **curated_sets**
-> CuratedSetResults curated_sets(query=query)
+> CuratedSetResults curated_sets(query=query, limit=limit, sort=sort)
 
 List items in the CuratedSet collection.
 
@@ -1172,10 +1220,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the CuratedSet collection.
-        api_response = api_instance.curated_sets(query=query)
+        api_response = api_instance.curated_sets(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->curated_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -1190,6 +1240,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -1216,7 +1268,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **degron_modifications**
-> DegronModificationResults degron_modifications(query=query)
+> DegronModificationResults degron_modifications(query=query, limit=limit, sort=sort)
 
 List items in the DegronModification collection.
 
@@ -1254,10 +1306,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the DegronModification collection.
-        api_response = api_instance.degron_modifications(query=query)
+        api_response = api_instance.degron_modifications(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->degron_modifications:\n")
         pprint(api_response)
     except Exception as e:
@@ -1272,6 +1326,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -1298,7 +1354,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **documents**
-> DocumentResults documents(query=query)
+> DocumentResults documents(query=query, limit=limit, sort=sort)
 
 List items in the Document collection.
 
@@ -1336,10 +1392,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the Document collection.
-        api_response = api_instance.documents(query=query)
+        api_response = api_instance.documents(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->documents:\n")
         pprint(api_response)
     except Exception as e:
@@ -1354,6 +1412,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -1460,7 +1520,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **genes**
-> GeneResults genes(query=query)
+> GeneResults genes(query=query, limit=limit, sort=sort)
 
 List items in the Gene collection.
 
@@ -1498,10 +1558,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the Gene collection.
-        api_response = api_instance.genes(query=query)
+        api_response = api_instance.genes(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->genes:\n")
         pprint(api_response)
     except Exception as e:
@@ -1516,6 +1578,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -1542,7 +1606,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **genome_browser_annotation_files**
-> GenomeBrowserAnnotationFileResults genome_browser_annotation_files(query=query)
+> GenomeBrowserAnnotationFileResults genome_browser_annotation_files(query=query, limit=limit, sort=sort)
 
 List items in the GenomeBrowserAnnotationFile collection.
 
@@ -1580,10 +1644,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the GenomeBrowserAnnotationFile collection.
-        api_response = api_instance.genome_browser_annotation_files(query=query)
+        api_response = api_instance.genome_browser_annotation_files(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->genome_browser_annotation_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -1598,6 +1664,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -1704,7 +1772,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **human_donors**
-> HumanDonorResults human_donors(query=query)
+> HumanDonorResults human_donors(query=query, limit=limit, sort=sort)
 
 List items in the HumanDonor collection.
 
@@ -1742,10 +1810,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the HumanDonor collection.
-        api_response = api_instance.human_donors(query=query)
+        api_response = api_instance.human_donors(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->human_donors:\n")
         pprint(api_response)
     except Exception as e:
@@ -1760,6 +1830,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -1786,7 +1858,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **image_files**
-> ImageFileResults image_files(query=query)
+> ImageFileResults image_files(query=query, limit=limit, sort=sort)
 
 List items in the ImageFile collection.
 
@@ -1824,10 +1896,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the ImageFile collection.
-        api_response = api_instance.image_files(query=query)
+        api_response = api_instance.image_files(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->image_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -1842,6 +1916,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -1868,7 +1944,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **images**
-> ImageResults images(query=query)
+> ImageResults images(query=query, limit=limit, sort=sort)
 
 List items in the Image collection.
 
@@ -1906,10 +1982,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the Image collection.
-        api_response = api_instance.images(query=query)
+        api_response = api_instance.images(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->images:\n")
         pprint(api_response)
     except Exception as e:
@@ -1924,6 +2002,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -1950,7 +2030,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **in_vitro_systems**
-> InVitroSystemResults in_vitro_systems(query=query)
+> InVitroSystemResults in_vitro_systems(query=query, limit=limit, sort=sort)
 
 List items in the InVitroSystem collection.
 
@@ -1988,10 +2068,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the InVitroSystem collection.
-        api_response = api_instance.in_vitro_systems(query=query)
+        api_response = api_instance.in_vitro_systems(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->in_vitro_systems:\n")
         pprint(api_response)
     except Exception as e:
@@ -2006,6 +2088,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -2032,7 +2116,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **institutional_certificates**
-> InstitutionalCertificateResults institutional_certificates(query=query)
+> InstitutionalCertificateResults institutional_certificates(query=query, limit=limit, sort=sort)
 
 List items in the InstitutionalCertificate collection.
 
@@ -2070,10 +2154,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the InstitutionalCertificate collection.
-        api_response = api_instance.institutional_certificates(query=query)
+        api_response = api_instance.institutional_certificates(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->institutional_certificates:\n")
         pprint(api_response)
     except Exception as e:
@@ -2088,6 +2174,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -2114,7 +2202,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **labs**
-> LabResults labs(query=query)
+> LabResults labs(query=query, limit=limit, sort=sort)
 
 List items in the Lab collection.
 
@@ -2152,10 +2240,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the Lab collection.
-        api_response = api_instance.labs(query=query)
+        api_response = api_instance.labs(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->labs:\n")
         pprint(api_response)
     except Exception as e:
@@ -2170,6 +2260,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -2196,7 +2288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **matrix_files**
-> MatrixFileResults matrix_files(query=query)
+> MatrixFileResults matrix_files(query=query, limit=limit, sort=sort)
 
 List items in the MatrixFile collection.
 
@@ -2234,10 +2326,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the MatrixFile collection.
-        api_response = api_instance.matrix_files(query=query)
+        api_response = api_instance.matrix_files(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->matrix_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -2252,6 +2346,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -2278,7 +2374,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **measurement_sets**
-> MeasurementSetResults measurement_sets(query=query)
+> MeasurementSetResults measurement_sets(query=query, limit=limit, sort=sort)
 
 List items in the MeasurementSet collection.
 
@@ -2316,10 +2412,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the MeasurementSet collection.
-        api_response = api_instance.measurement_sets(query=query)
+        api_response = api_instance.measurement_sets(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->measurement_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -2334,6 +2432,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -2360,7 +2460,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **model_files**
-> ModelFileResults model_files(query=query)
+> ModelFileResults model_files(query=query, limit=limit, sort=sort)
 
 List items in the ModelFile collection.
 
@@ -2398,10 +2498,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the ModelFile collection.
-        api_response = api_instance.model_files(query=query)
+        api_response = api_instance.model_files(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->model_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -2416,6 +2518,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -2442,7 +2546,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **model_sets**
-> ModelSetResults model_sets(query=query)
+> ModelSetResults model_sets(query=query, limit=limit, sort=sort)
 
 List items in the ModelSet collection.
 
@@ -2480,10 +2584,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the ModelSet collection.
-        api_response = api_instance.model_sets(query=query)
+        api_response = api_instance.model_sets(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->model_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -2498,6 +2604,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -2524,7 +2632,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **multiplexed_samples**
-> MultiplexedSampleResults multiplexed_samples(query=query)
+> MultiplexedSampleResults multiplexed_samples(query=query, limit=limit, sort=sort)
 
 List items in the MultiplexedSample collection.
 
@@ -2562,10 +2670,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the MultiplexedSample collection.
-        api_response = api_instance.multiplexed_samples(query=query)
+        api_response = api_instance.multiplexed_samples(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->multiplexed_samples:\n")
         pprint(api_response)
     except Exception as e:
@@ -2580,6 +2690,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -2606,7 +2718,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **open_reading_frames**
-> OpenReadingFrameResults open_reading_frames(query=query)
+> OpenReadingFrameResults open_reading_frames(query=query, limit=limit, sort=sort)
 
 List items in the OpenReadingFrame collection.
 
@@ -2644,10 +2756,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the OpenReadingFrame collection.
-        api_response = api_instance.open_reading_frames(query=query)
+        api_response = api_instance.open_reading_frames(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->open_reading_frames:\n")
         pprint(api_response)
     except Exception as e:
@@ -2662,6 +2776,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -2688,7 +2804,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pages**
-> PageResults pages(query=query)
+> PageResults pages(query=query, limit=limit, sort=sort)
 
 List items in the Page collection.
 
@@ -2726,10 +2842,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the Page collection.
-        api_response = api_instance.pages(query=query)
+        api_response = api_instance.pages(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->pages:\n")
         pprint(api_response)
     except Exception as e:
@@ -2744,6 +2862,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -2770,7 +2890,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **phenotype_terms**
-> PhenotypeTermResults phenotype_terms(query=query)
+> PhenotypeTermResults phenotype_terms(query=query, limit=limit, sort=sort)
 
 List items in the PhenotypeTerm collection.
 
@@ -2808,10 +2928,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the PhenotypeTerm collection.
-        api_response = api_instance.phenotype_terms(query=query)
+        api_response = api_instance.phenotype_terms(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->phenotype_terms:\n")
         pprint(api_response)
     except Exception as e:
@@ -2826,6 +2948,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -2852,7 +2976,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **phenotypic_features**
-> PhenotypicFeatureResults phenotypic_features(query=query)
+> PhenotypicFeatureResults phenotypic_features(query=query, limit=limit, sort=sort)
 
 List items in the PhenotypicFeature collection.
 
@@ -2890,10 +3014,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the PhenotypicFeature collection.
-        api_response = api_instance.phenotypic_features(query=query)
+        api_response = api_instance.phenotypic_features(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->phenotypic_features:\n")
         pprint(api_response)
     except Exception as e:
@@ -2908,6 +3034,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -2934,7 +3062,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **platform_terms**
-> PlatformTermResults platform_terms(query=query)
+> PlatformTermResults platform_terms(query=query, limit=limit, sort=sort)
 
 List items in the PlatformTerm collection.
 
@@ -2972,10 +3100,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the PlatformTerm collection.
-        api_response = api_instance.platform_terms(query=query)
+        api_response = api_instance.platform_terms(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->platform_terms:\n")
         pprint(api_response)
     except Exception as e:
@@ -2990,6 +3120,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -3016,7 +3148,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **prediction_sets**
-> PredictionSetResults prediction_sets(query=query)
+> PredictionSetResults prediction_sets(query=query, limit=limit, sort=sort)
 
 List items in the PredictionSet collection.
 
@@ -3054,10 +3186,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the PredictionSet collection.
-        api_response = api_instance.prediction_sets(query=query)
+        api_response = api_instance.prediction_sets(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->prediction_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -3072,6 +3206,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -3098,7 +3234,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **primary_cells**
-> PrimaryCellResults primary_cells(query=query)
+> PrimaryCellResults primary_cells(query=query, limit=limit, sort=sort)
 
 List items in the PrimaryCell collection.
 
@@ -3136,10 +3272,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the PrimaryCell collection.
-        api_response = api_instance.primary_cells(query=query)
+        api_response = api_instance.primary_cells(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->primary_cells:\n")
         pprint(api_response)
     except Exception as e:
@@ -3154,6 +3292,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -3180,7 +3320,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **publications**
-> PublicationResults publications(query=query)
+> PublicationResults publications(query=query, limit=limit, sort=sort)
 
 List items in the Publication collection.
 
@@ -3218,10 +3358,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the Publication collection.
-        api_response = api_instance.publications(query=query)
+        api_response = api_instance.publications(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->publications:\n")
         pprint(api_response)
     except Exception as e:
@@ -3236,6 +3378,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -3262,7 +3406,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reference_files**
-> ReferenceFileResults reference_files(query=query)
+> ReferenceFileResults reference_files(query=query, limit=limit, sort=sort)
 
 List items in the ReferenceFile collection.
 
@@ -3300,10 +3444,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the ReferenceFile collection.
-        api_response = api_instance.reference_files(query=query)
+        api_response = api_instance.reference_files(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->reference_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -3318,6 +3464,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -3433,7 +3581,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **rodent_donors**
-> RodentDonorResults rodent_donors(query=query)
+> RodentDonorResults rodent_donors(query=query, limit=limit, sort=sort)
 
 List items in the RodentDonor collection.
 
@@ -3471,10 +3619,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the RodentDonor collection.
-        api_response = api_instance.rodent_donors(query=query)
+        api_response = api_instance.rodent_donors(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->rodent_donors:\n")
         pprint(api_response)
     except Exception as e:
@@ -3489,6 +3639,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -3515,7 +3667,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sample_terms**
-> SampleTermResults sample_terms(query=query)
+> SampleTermResults sample_terms(query=query, limit=limit, sort=sort)
 
 List items in the SampleTerm collection.
 
@@ -3553,10 +3705,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the SampleTerm collection.
-        api_response = api_instance.sample_terms(query=query)
+        api_response = api_instance.sample_terms(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->sample_terms:\n")
         pprint(api_response)
     except Exception as e:
@@ -3571,6 +3725,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -3840,7 +3996,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sequence_files**
-> SequenceFileResults sequence_files(query=query)
+> SequenceFileResults sequence_files(query=query, limit=limit, sort=sort)
 
 List items in the SequenceFile collection.
 
@@ -3878,10 +4034,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the SequenceFile collection.
-        api_response = api_instance.sequence_files(query=query)
+        api_response = api_instance.sequence_files(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->sequence_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -3896,6 +4054,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -3922,7 +4082,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **signal_files**
-> SignalFileResults signal_files(query=query)
+> SignalFileResults signal_files(query=query, limit=limit, sort=sort)
 
 List items in the SignalFile collection.
 
@@ -3960,10 +4120,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the SignalFile collection.
-        api_response = api_instance.signal_files(query=query)
+        api_response = api_instance.signal_files(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->signal_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -3978,6 +4140,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -4004,7 +4168,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **software**
-> SoftwareResults software(query=query)
+> SoftwareResults software(query=query, limit=limit, sort=sort)
 
 List items in the Software collection.
 
@@ -4042,10 +4206,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the Software collection.
-        api_response = api_instance.software(query=query)
+        api_response = api_instance.software(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->software:\n")
         pprint(api_response)
     except Exception as e:
@@ -4060,6 +4226,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -4086,7 +4254,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **software_versions**
-> SoftwareVersionResults software_versions(query=query)
+> SoftwareVersionResults software_versions(query=query, limit=limit, sort=sort)
 
 List items in the SoftwareVersion collection.
 
@@ -4124,10 +4292,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the SoftwareVersion collection.
-        api_response = api_instance.software_versions(query=query)
+        api_response = api_instance.software_versions(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->software_versions:\n")
         pprint(api_response)
     except Exception as e:
@@ -4142,6 +4312,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -4168,7 +4340,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources**
-> SourceResults sources(query=query)
+> SourceResults sources(query=query, limit=limit, sort=sort)
 
 List items in the Source collection.
 
@@ -4206,10 +4378,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the Source collection.
-        api_response = api_instance.sources(query=query)
+        api_response = api_instance.sources(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->sources:\n")
         pprint(api_response)
     except Exception as e:
@@ -4224,6 +4398,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -4250,7 +4426,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tabular_files**
-> TabularFileResults tabular_files(query=query)
+> TabularFileResults tabular_files(query=query, limit=limit, sort=sort)
 
 List items in the TabularFile collection.
 
@@ -4288,10 +4464,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the TabularFile collection.
-        api_response = api_instance.tabular_files(query=query)
+        api_response = api_instance.tabular_files(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->tabular_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -4306,6 +4484,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -4332,7 +4512,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **technical_samples**
-> TechnicalSampleResults technical_samples(query=query)
+> TechnicalSampleResults technical_samples(query=query, limit=limit, sort=sort)
 
 List items in the TechnicalSample collection.
 
@@ -4370,10 +4550,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the TechnicalSample collection.
-        api_response = api_instance.technical_samples(query=query)
+        api_response = api_instance.technical_samples(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->technical_samples:\n")
         pprint(api_response)
     except Exception as e:
@@ -4388,6 +4570,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -4414,7 +4598,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tissues**
-> TissueResults tissues(query=query)
+> TissueResults tissues(query=query, limit=limit, sort=sort)
 
 List items in the Tissue collection.
 
@@ -4452,10 +4636,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the Tissue collection.
-        api_response = api_instance.tissues(query=query)
+        api_response = api_instance.tissues(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->tissues:\n")
         pprint(api_response)
     except Exception as e:
@@ -4470,6 +4656,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -4496,7 +4684,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **treatments**
-> TreatmentResults treatments(query=query)
+> TreatmentResults treatments(query=query, limit=limit, sort=sort)
 
 List items in the Treatment collection.
 
@@ -4534,10 +4722,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the Treatment collection.
-        api_response = api_instance.treatments(query=query)
+        api_response = api_instance.treatments(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->treatments:\n")
         pprint(api_response)
     except Exception as e:
@@ -4552,6 +4742,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -4578,7 +4770,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **users**
-> UserResults users(query=query)
+> UserResults users(query=query, limit=limit, sort=sort)
 
 List items in the User collection.
 
@@ -4616,10 +4808,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the User collection.
-        api_response = api_instance.users(query=query)
+        api_response = api_instance.users(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->users:\n")
         pprint(api_response)
     except Exception as e:
@@ -4634,6 +4828,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -4660,7 +4856,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **whole_organisms**
-> WholeOrganismResults whole_organisms(query=query)
+> WholeOrganismResults whole_organisms(query=query, limit=limit, sort=sort)
 
 List items in the WholeOrganism collection.
 
@@ -4698,10 +4894,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the WholeOrganism collection.
-        api_response = api_instance.whole_organisms(query=query)
+        api_response = api_instance.whole_organisms(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->whole_organisms:\n")
         pprint(api_response)
     except Exception as e:
@@ -4716,6 +4914,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 
@@ -4742,7 +4942,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **workflows**
-> WorkflowResults workflows(query=query)
+> WorkflowResults workflows(query=query, limit=limit, sort=sort)
 
 List items in the Workflow collection.
 
@@ -4780,10 +4980,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
 
     try:
         # List items in the Workflow collection.
-        api_response = api_instance.workflows(query=query)
+        api_response = api_instance.workflows(query=query, limit=limit, sort=sort)
         print("The response of IgvfApi->workflows:\n")
         pprint(api_response)
     except Exception as e:
@@ -4798,6 +5000,8 @@ with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
+ **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
 
 ### Return type
 

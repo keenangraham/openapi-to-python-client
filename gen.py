@@ -694,7 +694,7 @@ schema_names_to_collection_names = get_schema_names_to_collection_names(schemas.
 def fill_in_collection_template(schema_name, schema):
     collection_name = schema_names_to_collection_names[schema_name]
     collection_template = {
-        f"/{collection_name}": {
+        f"/{collection_name}/@@listing": {
             "get": {
                 "summary": f"List items in the {schema_name} collection.",
                 "description": f"Collection endpoint that accepts various query parameters to filter, sort, and paginate {schema_name} items. Supports filtering on fields within {schema_name} items.",

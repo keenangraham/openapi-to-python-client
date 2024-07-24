@@ -96,6 +96,8 @@ class IgvfApi:
     def access_keys(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -115,6 +117,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -139,6 +145,8 @@ class IgvfApi:
 
         _param = self._access_keys_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -166,6 +174,8 @@ class IgvfApi:
     def access_keys_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -185,6 +195,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -209,6 +223,8 @@ class IgvfApi:
 
         _param = self._access_keys_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -236,6 +252,8 @@ class IgvfApi:
     def access_keys_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -255,6 +273,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -279,6 +301,8 @@ class IgvfApi:
 
         _param = self._access_keys_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -301,6 +325,8 @@ class IgvfApi:
     def _access_keys_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -310,6 +336,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -325,10 +352,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -345,7 +382,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/access-keys',
+            resource_path='/access-keys/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -365,6 +402,8 @@ class IgvfApi:
     def alignment_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -384,6 +423,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -408,6 +451,8 @@ class IgvfApi:
 
         _param = self._alignment_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -435,6 +480,8 @@ class IgvfApi:
     def alignment_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -454,6 +501,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -478,6 +529,8 @@ class IgvfApi:
 
         _param = self._alignment_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -505,6 +558,8 @@ class IgvfApi:
     def alignment_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -524,6 +579,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -548,6 +607,8 @@ class IgvfApi:
 
         _param = self._alignment_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -570,6 +631,8 @@ class IgvfApi:
     def _alignment_files_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -579,6 +642,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -594,10 +658,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -614,7 +688,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/alignment-files',
+            resource_path='/alignment-files/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -634,6 +708,8 @@ class IgvfApi:
     def analysis_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -653,6 +729,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -677,6 +757,8 @@ class IgvfApi:
 
         _param = self._analysis_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -704,6 +786,8 @@ class IgvfApi:
     def analysis_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -723,6 +807,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -747,6 +835,8 @@ class IgvfApi:
 
         _param = self._analysis_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -774,6 +864,8 @@ class IgvfApi:
     def analysis_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -793,6 +885,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -817,6 +913,8 @@ class IgvfApi:
 
         _param = self._analysis_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -839,6 +937,8 @@ class IgvfApi:
     def _analysis_sets_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -848,6 +948,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -863,10 +964,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -883,7 +994,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/analysis-sets',
+            resource_path='/analysis-sets/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -903,6 +1014,8 @@ class IgvfApi:
     def analysis_step_versions(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -922,6 +1035,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -946,6 +1063,8 @@ class IgvfApi:
 
         _param = self._analysis_step_versions_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -973,6 +1092,8 @@ class IgvfApi:
     def analysis_step_versions_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -992,6 +1113,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1016,6 +1141,8 @@ class IgvfApi:
 
         _param = self._analysis_step_versions_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1043,6 +1170,8 @@ class IgvfApi:
     def analysis_step_versions_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1062,6 +1191,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1086,6 +1219,8 @@ class IgvfApi:
 
         _param = self._analysis_step_versions_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1108,6 +1243,8 @@ class IgvfApi:
     def _analysis_step_versions_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -1117,6 +1254,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -1132,10 +1270,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -1152,7 +1300,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/analysis-step-versions',
+            resource_path='/analysis-step-versions/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1172,6 +1320,8 @@ class IgvfApi:
     def analysis_steps(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1191,6 +1341,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1215,6 +1369,8 @@ class IgvfApi:
 
         _param = self._analysis_steps_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1242,6 +1398,8 @@ class IgvfApi:
     def analysis_steps_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1261,6 +1419,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1285,6 +1447,8 @@ class IgvfApi:
 
         _param = self._analysis_steps_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1312,6 +1476,8 @@ class IgvfApi:
     def analysis_steps_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1331,6 +1497,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1355,6 +1525,8 @@ class IgvfApi:
 
         _param = self._analysis_steps_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1377,6 +1549,8 @@ class IgvfApi:
     def _analysis_steps_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -1386,6 +1560,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -1401,10 +1576,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -1421,7 +1606,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/analysis-steps',
+            resource_path='/analysis-steps/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1441,6 +1626,8 @@ class IgvfApi:
     def assay_terms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1460,6 +1647,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1484,6 +1675,8 @@ class IgvfApi:
 
         _param = self._assay_terms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1511,6 +1704,8 @@ class IgvfApi:
     def assay_terms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1530,6 +1725,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1554,6 +1753,8 @@ class IgvfApi:
 
         _param = self._assay_terms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1581,6 +1782,8 @@ class IgvfApi:
     def assay_terms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1600,6 +1803,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1624,6 +1831,8 @@ class IgvfApi:
 
         _param = self._assay_terms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1646,6 +1855,8 @@ class IgvfApi:
     def _assay_terms_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -1655,6 +1866,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -1670,10 +1882,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -1690,7 +1912,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/assay-terms',
+            resource_path='/assay-terms/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1710,6 +1932,8 @@ class IgvfApi:
     def auxiliary_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1729,6 +1953,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1753,6 +1981,8 @@ class IgvfApi:
 
         _param = self._auxiliary_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1780,6 +2010,8 @@ class IgvfApi:
     def auxiliary_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1799,6 +2031,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1823,6 +2059,8 @@ class IgvfApi:
 
         _param = self._auxiliary_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1850,6 +2088,8 @@ class IgvfApi:
     def auxiliary_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1869,6 +2109,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1893,6 +2137,8 @@ class IgvfApi:
 
         _param = self._auxiliary_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1915,6 +2161,8 @@ class IgvfApi:
     def _auxiliary_sets_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -1924,6 +2172,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -1939,10 +2188,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -1959,7 +2218,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/auxiliary-sets',
+            resource_path='/auxiliary-sets/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1979,6 +2238,8 @@ class IgvfApi:
     def awards(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1998,6 +2259,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2022,6 +2287,8 @@ class IgvfApi:
 
         _param = self._awards_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2049,6 +2316,8 @@ class IgvfApi:
     def awards_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2068,6 +2337,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2092,6 +2365,8 @@ class IgvfApi:
 
         _param = self._awards_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2119,6 +2394,8 @@ class IgvfApi:
     def awards_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2138,6 +2415,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2162,6 +2443,8 @@ class IgvfApi:
 
         _param = self._awards_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2184,6 +2467,8 @@ class IgvfApi:
     def _awards_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -2193,6 +2478,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -2208,10 +2494,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -2228,7 +2524,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/awards',
+            resource_path='/awards/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2553,6 +2849,8 @@ class IgvfApi:
     def biomarkers(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2572,6 +2870,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2596,6 +2898,8 @@ class IgvfApi:
 
         _param = self._biomarkers_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2623,6 +2927,8 @@ class IgvfApi:
     def biomarkers_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2642,6 +2948,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2666,6 +2976,8 @@ class IgvfApi:
 
         _param = self._biomarkers_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2693,6 +3005,8 @@ class IgvfApi:
     def biomarkers_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2712,6 +3026,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2736,6 +3054,8 @@ class IgvfApi:
 
         _param = self._biomarkers_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2758,6 +3078,8 @@ class IgvfApi:
     def _biomarkers_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -2767,6 +3089,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -2782,10 +3105,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -2802,7 +3135,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/biomarkers',
+            resource_path='/biomarkers/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2822,6 +3155,8 @@ class IgvfApi:
     def configuration_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2841,6 +3176,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2865,6 +3204,8 @@ class IgvfApi:
 
         _param = self._configuration_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2892,6 +3233,8 @@ class IgvfApi:
     def configuration_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2911,6 +3254,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2935,6 +3282,8 @@ class IgvfApi:
 
         _param = self._configuration_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2962,6 +3311,8 @@ class IgvfApi:
     def configuration_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2981,6 +3332,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3005,6 +3360,8 @@ class IgvfApi:
 
         _param = self._configuration_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3027,6 +3384,8 @@ class IgvfApi:
     def _configuration_files_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -3036,6 +3395,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -3051,10 +3411,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -3071,7 +3441,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/configuration-files',
+            resource_path='/configuration-files/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -3091,6 +3461,8 @@ class IgvfApi:
     def construct_library_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3110,6 +3482,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3134,6 +3510,8 @@ class IgvfApi:
 
         _param = self._construct_library_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3161,6 +3539,8 @@ class IgvfApi:
     def construct_library_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3180,6 +3560,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3204,6 +3588,8 @@ class IgvfApi:
 
         _param = self._construct_library_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3231,6 +3617,8 @@ class IgvfApi:
     def construct_library_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3250,6 +3638,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3274,6 +3666,8 @@ class IgvfApi:
 
         _param = self._construct_library_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3296,6 +3690,8 @@ class IgvfApi:
     def _construct_library_sets_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -3305,6 +3701,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -3320,10 +3717,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -3340,7 +3747,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/construct-library-sets',
+            resource_path='/construct-library-sets/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -3360,6 +3767,8 @@ class IgvfApi:
     def crispr_modifications(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3379,6 +3788,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3403,6 +3816,8 @@ class IgvfApi:
 
         _param = self._crispr_modifications_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3430,6 +3845,8 @@ class IgvfApi:
     def crispr_modifications_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3449,6 +3866,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3473,6 +3894,8 @@ class IgvfApi:
 
         _param = self._crispr_modifications_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3500,6 +3923,8 @@ class IgvfApi:
     def crispr_modifications_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3519,6 +3944,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3543,6 +3972,8 @@ class IgvfApi:
 
         _param = self._crispr_modifications_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3565,6 +3996,8 @@ class IgvfApi:
     def _crispr_modifications_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -3574,6 +4007,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -3589,10 +4023,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -3609,7 +4053,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/crispr-modifications',
+            resource_path='/crispr-modifications/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -3629,6 +4073,8 @@ class IgvfApi:
     def curated_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3648,6 +4094,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3672,6 +4122,8 @@ class IgvfApi:
 
         _param = self._curated_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3699,6 +4151,8 @@ class IgvfApi:
     def curated_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3718,6 +4172,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3742,6 +4200,8 @@ class IgvfApi:
 
         _param = self._curated_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3769,6 +4229,8 @@ class IgvfApi:
     def curated_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3788,6 +4250,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3812,6 +4278,8 @@ class IgvfApi:
 
         _param = self._curated_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3834,6 +4302,8 @@ class IgvfApi:
     def _curated_sets_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -3843,6 +4313,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -3858,10 +4329,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -3878,7 +4359,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/curated-sets',
+            resource_path='/curated-sets/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -3898,6 +4379,8 @@ class IgvfApi:
     def degron_modifications(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3917,6 +4400,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3941,6 +4428,8 @@ class IgvfApi:
 
         _param = self._degron_modifications_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3968,6 +4457,8 @@ class IgvfApi:
     def degron_modifications_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3987,6 +4478,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4011,6 +4506,8 @@ class IgvfApi:
 
         _param = self._degron_modifications_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4038,6 +4535,8 @@ class IgvfApi:
     def degron_modifications_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4057,6 +4556,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4081,6 +4584,8 @@ class IgvfApi:
 
         _param = self._degron_modifications_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4103,6 +4608,8 @@ class IgvfApi:
     def _degron_modifications_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -4112,6 +4619,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -4127,10 +4635,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -4147,7 +4665,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/degron-modifications',
+            resource_path='/degron-modifications/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -4167,6 +4685,8 @@ class IgvfApi:
     def documents(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4186,6 +4706,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4210,6 +4734,8 @@ class IgvfApi:
 
         _param = self._documents_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4237,6 +4763,8 @@ class IgvfApi:
     def documents_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4256,6 +4784,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4280,6 +4812,8 @@ class IgvfApi:
 
         _param = self._documents_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4307,6 +4841,8 @@ class IgvfApi:
     def documents_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4326,6 +4862,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4350,6 +4890,8 @@ class IgvfApi:
 
         _param = self._documents_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4372,6 +4914,8 @@ class IgvfApi:
     def _documents_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -4381,6 +4925,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -4396,10 +4941,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -4416,7 +4971,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/documents',
+            resource_path='/documents/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -4700,6 +5255,8 @@ class IgvfApi:
     def genes(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4719,6 +5276,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4743,6 +5304,8 @@ class IgvfApi:
 
         _param = self._genes_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4770,6 +5333,8 @@ class IgvfApi:
     def genes_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4789,6 +5354,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4813,6 +5382,8 @@ class IgvfApi:
 
         _param = self._genes_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4840,6 +5411,8 @@ class IgvfApi:
     def genes_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4859,6 +5432,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4883,6 +5460,8 @@ class IgvfApi:
 
         _param = self._genes_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4905,6 +5484,8 @@ class IgvfApi:
     def _genes_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -4914,6 +5495,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -4929,10 +5511,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -4949,7 +5541,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/genes',
+            resource_path='/genes/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -4969,6 +5561,8 @@ class IgvfApi:
     def genome_browser_annotation_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4988,6 +5582,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5012,6 +5610,8 @@ class IgvfApi:
 
         _param = self._genome_browser_annotation_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5039,6 +5639,8 @@ class IgvfApi:
     def genome_browser_annotation_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5058,6 +5660,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5082,6 +5688,8 @@ class IgvfApi:
 
         _param = self._genome_browser_annotation_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5109,6 +5717,8 @@ class IgvfApi:
     def genome_browser_annotation_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5128,6 +5738,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5152,6 +5766,8 @@ class IgvfApi:
 
         _param = self._genome_browser_annotation_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5174,6 +5790,8 @@ class IgvfApi:
     def _genome_browser_annotation_files_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -5183,6 +5801,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -5198,10 +5817,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -5218,7 +5847,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/genome-browser-annotation-files',
+            resource_path='/genome-browser-annotation-files/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -5501,6 +6130,8 @@ class IgvfApi:
     def human_donors(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5520,6 +6151,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5544,6 +6179,8 @@ class IgvfApi:
 
         _param = self._human_donors_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5571,6 +6208,8 @@ class IgvfApi:
     def human_donors_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5590,6 +6229,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5614,6 +6257,8 @@ class IgvfApi:
 
         _param = self._human_donors_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5641,6 +6286,8 @@ class IgvfApi:
     def human_donors_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5660,6 +6307,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5684,6 +6335,8 @@ class IgvfApi:
 
         _param = self._human_donors_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5706,6 +6359,8 @@ class IgvfApi:
     def _human_donors_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -5715,6 +6370,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -5730,10 +6386,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -5750,7 +6416,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/human-donors',
+            resource_path='/human-donors/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -5770,6 +6436,8 @@ class IgvfApi:
     def image_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5789,6 +6457,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5813,6 +6485,8 @@ class IgvfApi:
 
         _param = self._image_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5840,6 +6514,8 @@ class IgvfApi:
     def image_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5859,6 +6535,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5883,6 +6563,8 @@ class IgvfApi:
 
         _param = self._image_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5910,6 +6592,8 @@ class IgvfApi:
     def image_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5929,6 +6613,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5953,6 +6641,8 @@ class IgvfApi:
 
         _param = self._image_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5975,6 +6665,8 @@ class IgvfApi:
     def _image_files_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -5984,6 +6676,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -5999,10 +6692,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -6019,7 +6722,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/image-files',
+            resource_path='/image-files/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -6039,6 +6742,8 @@ class IgvfApi:
     def images(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6058,6 +6763,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6082,6 +6791,8 @@ class IgvfApi:
 
         _param = self._images_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6109,6 +6820,8 @@ class IgvfApi:
     def images_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6128,6 +6841,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6152,6 +6869,8 @@ class IgvfApi:
 
         _param = self._images_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6179,6 +6898,8 @@ class IgvfApi:
     def images_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6198,6 +6919,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6222,6 +6947,8 @@ class IgvfApi:
 
         _param = self._images_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6244,6 +6971,8 @@ class IgvfApi:
     def _images_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -6253,6 +6982,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -6268,10 +6998,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -6288,7 +7028,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/images',
+            resource_path='/images/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -6308,6 +7048,8 @@ class IgvfApi:
     def in_vitro_systems(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6327,6 +7069,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6351,6 +7097,8 @@ class IgvfApi:
 
         _param = self._in_vitro_systems_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6378,6 +7126,8 @@ class IgvfApi:
     def in_vitro_systems_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6397,6 +7147,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6421,6 +7175,8 @@ class IgvfApi:
 
         _param = self._in_vitro_systems_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6448,6 +7204,8 @@ class IgvfApi:
     def in_vitro_systems_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6467,6 +7225,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6491,6 +7253,8 @@ class IgvfApi:
 
         _param = self._in_vitro_systems_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6513,6 +7277,8 @@ class IgvfApi:
     def _in_vitro_systems_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -6522,6 +7288,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -6537,10 +7304,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -6557,7 +7334,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/in-vitro-systems',
+            resource_path='/in-vitro-systems/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -6577,6 +7354,8 @@ class IgvfApi:
     def institutional_certificates(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6596,6 +7375,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6620,6 +7403,8 @@ class IgvfApi:
 
         _param = self._institutional_certificates_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6647,6 +7432,8 @@ class IgvfApi:
     def institutional_certificates_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6666,6 +7453,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6690,6 +7481,8 @@ class IgvfApi:
 
         _param = self._institutional_certificates_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6717,6 +7510,8 @@ class IgvfApi:
     def institutional_certificates_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6736,6 +7531,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6760,6 +7559,8 @@ class IgvfApi:
 
         _param = self._institutional_certificates_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6782,6 +7583,8 @@ class IgvfApi:
     def _institutional_certificates_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -6791,6 +7594,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -6806,10 +7610,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -6826,7 +7640,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/institutional-certificates',
+            resource_path='/institutional-certificates/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -6846,6 +7660,8 @@ class IgvfApi:
     def labs(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6865,6 +7681,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6889,6 +7709,8 @@ class IgvfApi:
 
         _param = self._labs_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6916,6 +7738,8 @@ class IgvfApi:
     def labs_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6935,6 +7759,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6959,6 +7787,8 @@ class IgvfApi:
 
         _param = self._labs_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6986,6 +7816,8 @@ class IgvfApi:
     def labs_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7005,6 +7837,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7029,6 +7865,8 @@ class IgvfApi:
 
         _param = self._labs_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7051,6 +7889,8 @@ class IgvfApi:
     def _labs_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -7060,6 +7900,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -7075,10 +7916,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -7095,7 +7946,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/labs',
+            resource_path='/labs/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -7115,6 +7966,8 @@ class IgvfApi:
     def matrix_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7134,6 +7987,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7158,6 +8015,8 @@ class IgvfApi:
 
         _param = self._matrix_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7185,6 +8044,8 @@ class IgvfApi:
     def matrix_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7204,6 +8065,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7228,6 +8093,8 @@ class IgvfApi:
 
         _param = self._matrix_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7255,6 +8122,8 @@ class IgvfApi:
     def matrix_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7274,6 +8143,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7298,6 +8171,8 @@ class IgvfApi:
 
         _param = self._matrix_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7320,6 +8195,8 @@ class IgvfApi:
     def _matrix_files_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -7329,6 +8206,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -7344,10 +8222,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -7364,7 +8252,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/matrix-files',
+            resource_path='/matrix-files/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -7384,6 +8272,8 @@ class IgvfApi:
     def measurement_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7403,6 +8293,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7427,6 +8321,8 @@ class IgvfApi:
 
         _param = self._measurement_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7454,6 +8350,8 @@ class IgvfApi:
     def measurement_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7473,6 +8371,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7497,6 +8399,8 @@ class IgvfApi:
 
         _param = self._measurement_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7524,6 +8428,8 @@ class IgvfApi:
     def measurement_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7543,6 +8449,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7567,6 +8477,8 @@ class IgvfApi:
 
         _param = self._measurement_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7589,6 +8501,8 @@ class IgvfApi:
     def _measurement_sets_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -7598,6 +8512,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -7613,10 +8528,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -7633,7 +8558,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/measurement-sets',
+            resource_path='/measurement-sets/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -7653,6 +8578,8 @@ class IgvfApi:
     def model_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7672,6 +8599,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7696,6 +8627,8 @@ class IgvfApi:
 
         _param = self._model_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7723,6 +8656,8 @@ class IgvfApi:
     def model_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7742,6 +8677,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7766,6 +8705,8 @@ class IgvfApi:
 
         _param = self._model_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7793,6 +8734,8 @@ class IgvfApi:
     def model_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7812,6 +8755,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7836,6 +8783,8 @@ class IgvfApi:
 
         _param = self._model_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7858,6 +8807,8 @@ class IgvfApi:
     def _model_files_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -7867,6 +8818,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -7882,10 +8834,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -7902,7 +8864,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/model-files',
+            resource_path='/model-files/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -7922,6 +8884,8 @@ class IgvfApi:
     def model_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7941,6 +8905,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7965,6 +8933,8 @@ class IgvfApi:
 
         _param = self._model_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7992,6 +8962,8 @@ class IgvfApi:
     def model_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8011,6 +8983,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8035,6 +9011,8 @@ class IgvfApi:
 
         _param = self._model_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8062,6 +9040,8 @@ class IgvfApi:
     def model_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8081,6 +9061,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8105,6 +9089,8 @@ class IgvfApi:
 
         _param = self._model_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8127,6 +9113,8 @@ class IgvfApi:
     def _model_sets_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -8136,6 +9124,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -8151,10 +9140,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -8171,7 +9170,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/model-sets',
+            resource_path='/model-sets/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -8191,6 +9190,8 @@ class IgvfApi:
     def multiplexed_samples(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8210,6 +9211,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8234,6 +9239,8 @@ class IgvfApi:
 
         _param = self._multiplexed_samples_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8261,6 +9268,8 @@ class IgvfApi:
     def multiplexed_samples_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8280,6 +9289,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8304,6 +9317,8 @@ class IgvfApi:
 
         _param = self._multiplexed_samples_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8331,6 +9346,8 @@ class IgvfApi:
     def multiplexed_samples_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8350,6 +9367,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8374,6 +9395,8 @@ class IgvfApi:
 
         _param = self._multiplexed_samples_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8396,6 +9419,8 @@ class IgvfApi:
     def _multiplexed_samples_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -8405,6 +9430,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -8420,10 +9446,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -8440,7 +9476,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/multiplexed-samples',
+            resource_path='/multiplexed-samples/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -8460,6 +9496,8 @@ class IgvfApi:
     def open_reading_frames(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8479,6 +9517,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8503,6 +9545,8 @@ class IgvfApi:
 
         _param = self._open_reading_frames_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8530,6 +9574,8 @@ class IgvfApi:
     def open_reading_frames_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8549,6 +9595,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8573,6 +9623,8 @@ class IgvfApi:
 
         _param = self._open_reading_frames_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8600,6 +9652,8 @@ class IgvfApi:
     def open_reading_frames_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8619,6 +9673,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8643,6 +9701,8 @@ class IgvfApi:
 
         _param = self._open_reading_frames_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8665,6 +9725,8 @@ class IgvfApi:
     def _open_reading_frames_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -8674,6 +9736,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -8689,10 +9752,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -8709,7 +9782,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/open-reading-frames',
+            resource_path='/open-reading-frames/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -8729,6 +9802,8 @@ class IgvfApi:
     def pages(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8748,6 +9823,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8772,6 +9851,8 @@ class IgvfApi:
 
         _param = self._pages_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8799,6 +9880,8 @@ class IgvfApi:
     def pages_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8818,6 +9901,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8842,6 +9929,8 @@ class IgvfApi:
 
         _param = self._pages_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8869,6 +9958,8 @@ class IgvfApi:
     def pages_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8888,6 +9979,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8912,6 +10007,8 @@ class IgvfApi:
 
         _param = self._pages_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8934,6 +10031,8 @@ class IgvfApi:
     def _pages_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -8943,6 +10042,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -8958,10 +10058,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -8978,7 +10088,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/pages',
+            resource_path='/pages/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -8998,6 +10108,8 @@ class IgvfApi:
     def phenotype_terms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9017,6 +10129,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9041,6 +10157,8 @@ class IgvfApi:
 
         _param = self._phenotype_terms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9068,6 +10186,8 @@ class IgvfApi:
     def phenotype_terms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9087,6 +10207,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9111,6 +10235,8 @@ class IgvfApi:
 
         _param = self._phenotype_terms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9138,6 +10264,8 @@ class IgvfApi:
     def phenotype_terms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9157,6 +10285,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9181,6 +10313,8 @@ class IgvfApi:
 
         _param = self._phenotype_terms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9203,6 +10337,8 @@ class IgvfApi:
     def _phenotype_terms_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -9212,6 +10348,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -9227,10 +10364,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -9247,7 +10394,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/phenotype-terms',
+            resource_path='/phenotype-terms/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -9267,6 +10414,8 @@ class IgvfApi:
     def phenotypic_features(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9286,6 +10435,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9310,6 +10463,8 @@ class IgvfApi:
 
         _param = self._phenotypic_features_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9337,6 +10492,8 @@ class IgvfApi:
     def phenotypic_features_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9356,6 +10513,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9380,6 +10541,8 @@ class IgvfApi:
 
         _param = self._phenotypic_features_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9407,6 +10570,8 @@ class IgvfApi:
     def phenotypic_features_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9426,6 +10591,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9450,6 +10619,8 @@ class IgvfApi:
 
         _param = self._phenotypic_features_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9472,6 +10643,8 @@ class IgvfApi:
     def _phenotypic_features_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -9481,6 +10654,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -9496,10 +10670,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -9516,7 +10700,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/phenotypic-features',
+            resource_path='/phenotypic-features/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -9536,6 +10720,8 @@ class IgvfApi:
     def platform_terms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9555,6 +10741,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9579,6 +10769,8 @@ class IgvfApi:
 
         _param = self._platform_terms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9606,6 +10798,8 @@ class IgvfApi:
     def platform_terms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9625,6 +10819,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9649,6 +10847,8 @@ class IgvfApi:
 
         _param = self._platform_terms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9676,6 +10876,8 @@ class IgvfApi:
     def platform_terms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9695,6 +10897,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9719,6 +10925,8 @@ class IgvfApi:
 
         _param = self._platform_terms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9741,6 +10949,8 @@ class IgvfApi:
     def _platform_terms_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -9750,6 +10960,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -9765,10 +10976,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -9785,7 +11006,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/platform-terms',
+            resource_path='/platform-terms/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -9805,6 +11026,8 @@ class IgvfApi:
     def prediction_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9824,6 +11047,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9848,6 +11075,8 @@ class IgvfApi:
 
         _param = self._prediction_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9875,6 +11104,8 @@ class IgvfApi:
     def prediction_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9894,6 +11125,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9918,6 +11153,8 @@ class IgvfApi:
 
         _param = self._prediction_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9945,6 +11182,8 @@ class IgvfApi:
     def prediction_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9964,6 +11203,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9988,6 +11231,8 @@ class IgvfApi:
 
         _param = self._prediction_sets_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10010,6 +11255,8 @@ class IgvfApi:
     def _prediction_sets_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -10019,6 +11266,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -10034,10 +11282,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -10054,7 +11312,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/prediction-sets',
+            resource_path='/prediction-sets/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -10074,6 +11332,8 @@ class IgvfApi:
     def primary_cells(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10093,6 +11353,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10117,6 +11381,8 @@ class IgvfApi:
 
         _param = self._primary_cells_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10144,6 +11410,8 @@ class IgvfApi:
     def primary_cells_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10163,6 +11431,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10187,6 +11459,8 @@ class IgvfApi:
 
         _param = self._primary_cells_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10214,6 +11488,8 @@ class IgvfApi:
     def primary_cells_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10233,6 +11509,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10257,6 +11537,8 @@ class IgvfApi:
 
         _param = self._primary_cells_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10279,6 +11561,8 @@ class IgvfApi:
     def _primary_cells_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -10288,6 +11572,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -10303,10 +11588,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -10323,7 +11618,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/primary-cells',
+            resource_path='/primary-cells/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -10343,6 +11638,8 @@ class IgvfApi:
     def publications(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10362,6 +11659,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10386,6 +11687,8 @@ class IgvfApi:
 
         _param = self._publications_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10413,6 +11716,8 @@ class IgvfApi:
     def publications_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10432,6 +11737,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10456,6 +11765,8 @@ class IgvfApi:
 
         _param = self._publications_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10483,6 +11794,8 @@ class IgvfApi:
     def publications_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10502,6 +11815,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10526,6 +11843,8 @@ class IgvfApi:
 
         _param = self._publications_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10548,6 +11867,8 @@ class IgvfApi:
     def _publications_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -10557,6 +11878,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -10572,10 +11894,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -10592,7 +11924,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/publications',
+            resource_path='/publications/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -10612,6 +11944,8 @@ class IgvfApi:
     def reference_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10631,6 +11965,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10655,6 +11993,8 @@ class IgvfApi:
 
         _param = self._reference_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10682,6 +12022,8 @@ class IgvfApi:
     def reference_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10701,6 +12043,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10725,6 +12071,8 @@ class IgvfApi:
 
         _param = self._reference_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10752,6 +12100,8 @@ class IgvfApi:
     def reference_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10771,6 +12121,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10795,6 +12149,8 @@ class IgvfApi:
 
         _param = self._reference_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10817,6 +12173,8 @@ class IgvfApi:
     def _reference_files_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -10826,6 +12184,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -10841,10 +12200,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -10861,7 +12230,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/reference-files',
+            resource_path='/reference-files/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -11221,6 +12590,8 @@ class IgvfApi:
     def rodent_donors(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11240,6 +12611,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11264,6 +12639,8 @@ class IgvfApi:
 
         _param = self._rodent_donors_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11291,6 +12668,8 @@ class IgvfApi:
     def rodent_donors_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11310,6 +12689,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11334,6 +12717,8 @@ class IgvfApi:
 
         _param = self._rodent_donors_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11361,6 +12746,8 @@ class IgvfApi:
     def rodent_donors_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11380,6 +12767,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11404,6 +12795,8 @@ class IgvfApi:
 
         _param = self._rodent_donors_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11426,6 +12819,8 @@ class IgvfApi:
     def _rodent_donors_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -11435,6 +12830,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -11450,10 +12846,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -11470,7 +12876,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/rodent-donors',
+            resource_path='/rodent-donors/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -11490,6 +12896,8 @@ class IgvfApi:
     def sample_terms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11509,6 +12917,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11533,6 +12945,8 @@ class IgvfApi:
 
         _param = self._sample_terms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11560,6 +12974,8 @@ class IgvfApi:
     def sample_terms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11579,6 +12995,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11603,6 +13023,8 @@ class IgvfApi:
 
         _param = self._sample_terms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11630,6 +13052,8 @@ class IgvfApi:
     def sample_terms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11649,6 +13073,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11673,6 +13101,8 @@ class IgvfApi:
 
         _param = self._sample_terms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11695,6 +13125,8 @@ class IgvfApi:
     def _sample_terms_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -11704,6 +13136,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -11719,10 +13152,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -11739,7 +13182,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/sample-terms',
+            resource_path='/sample-terms/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -12613,6 +14056,8 @@ class IgvfApi:
     def sequence_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12632,6 +14077,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12656,6 +14105,8 @@ class IgvfApi:
 
         _param = self._sequence_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12683,6 +14134,8 @@ class IgvfApi:
     def sequence_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12702,6 +14155,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12726,6 +14183,8 @@ class IgvfApi:
 
         _param = self._sequence_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12753,6 +14212,8 @@ class IgvfApi:
     def sequence_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12772,6 +14233,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12796,6 +14261,8 @@ class IgvfApi:
 
         _param = self._sequence_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12818,6 +14285,8 @@ class IgvfApi:
     def _sequence_files_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -12827,6 +14296,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -12842,10 +14312,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -12862,7 +14342,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/sequence-files',
+            resource_path='/sequence-files/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -12882,6 +14362,8 @@ class IgvfApi:
     def signal_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12901,6 +14383,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12925,6 +14411,8 @@ class IgvfApi:
 
         _param = self._signal_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12952,6 +14440,8 @@ class IgvfApi:
     def signal_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12971,6 +14461,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12995,6 +14489,8 @@ class IgvfApi:
 
         _param = self._signal_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13022,6 +14518,8 @@ class IgvfApi:
     def signal_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13041,6 +14539,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13065,6 +14567,8 @@ class IgvfApi:
 
         _param = self._signal_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13087,6 +14591,8 @@ class IgvfApi:
     def _signal_files_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -13096,6 +14602,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -13111,10 +14618,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -13131,7 +14648,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/signal-files',
+            resource_path='/signal-files/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -13151,6 +14668,8 @@ class IgvfApi:
     def software(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13170,6 +14689,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13194,6 +14717,8 @@ class IgvfApi:
 
         _param = self._software_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13221,6 +14746,8 @@ class IgvfApi:
     def software_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13240,6 +14767,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13264,6 +14795,8 @@ class IgvfApi:
 
         _param = self._software_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13291,6 +14824,8 @@ class IgvfApi:
     def software_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13310,6 +14845,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13334,6 +14873,8 @@ class IgvfApi:
 
         _param = self._software_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13356,6 +14897,8 @@ class IgvfApi:
     def _software_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -13365,6 +14908,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -13380,10 +14924,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -13400,7 +14954,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/software',
+            resource_path='/software/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -13420,6 +14974,8 @@ class IgvfApi:
     def software_versions(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13439,6 +14995,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13463,6 +15023,8 @@ class IgvfApi:
 
         _param = self._software_versions_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13490,6 +15052,8 @@ class IgvfApi:
     def software_versions_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13509,6 +15073,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13533,6 +15101,8 @@ class IgvfApi:
 
         _param = self._software_versions_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13560,6 +15130,8 @@ class IgvfApi:
     def software_versions_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13579,6 +15151,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13603,6 +15179,8 @@ class IgvfApi:
 
         _param = self._software_versions_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13625,6 +15203,8 @@ class IgvfApi:
     def _software_versions_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -13634,6 +15214,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -13649,10 +15230,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -13669,7 +15260,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/software-versions',
+            resource_path='/software-versions/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -13689,6 +15280,8 @@ class IgvfApi:
     def sources(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13708,6 +15301,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13732,6 +15329,8 @@ class IgvfApi:
 
         _param = self._sources_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13759,6 +15358,8 @@ class IgvfApi:
     def sources_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13778,6 +15379,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13802,6 +15407,8 @@ class IgvfApi:
 
         _param = self._sources_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13829,6 +15436,8 @@ class IgvfApi:
     def sources_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13848,6 +15457,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13872,6 +15485,8 @@ class IgvfApi:
 
         _param = self._sources_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13894,6 +15509,8 @@ class IgvfApi:
     def _sources_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -13903,6 +15520,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -13918,10 +15536,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -13938,7 +15566,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/sources',
+            resource_path='/sources/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -13958,6 +15586,8 @@ class IgvfApi:
     def tabular_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13977,6 +15607,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14001,6 +15635,8 @@ class IgvfApi:
 
         _param = self._tabular_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14028,6 +15664,8 @@ class IgvfApi:
     def tabular_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14047,6 +15685,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14071,6 +15713,8 @@ class IgvfApi:
 
         _param = self._tabular_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14098,6 +15742,8 @@ class IgvfApi:
     def tabular_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14117,6 +15763,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14141,6 +15791,8 @@ class IgvfApi:
 
         _param = self._tabular_files_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14163,6 +15815,8 @@ class IgvfApi:
     def _tabular_files_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -14172,6 +15826,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -14187,10 +15842,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -14207,7 +15872,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/tabular-files',
+            resource_path='/tabular-files/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -14227,6 +15892,8 @@ class IgvfApi:
     def technical_samples(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14246,6 +15913,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14270,6 +15941,8 @@ class IgvfApi:
 
         _param = self._technical_samples_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14297,6 +15970,8 @@ class IgvfApi:
     def technical_samples_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14316,6 +15991,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14340,6 +16019,8 @@ class IgvfApi:
 
         _param = self._technical_samples_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14367,6 +16048,8 @@ class IgvfApi:
     def technical_samples_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14386,6 +16069,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14410,6 +16097,8 @@ class IgvfApi:
 
         _param = self._technical_samples_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14432,6 +16121,8 @@ class IgvfApi:
     def _technical_samples_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -14441,6 +16132,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -14456,10 +16148,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -14476,7 +16178,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/technical-samples',
+            resource_path='/technical-samples/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -14496,6 +16198,8 @@ class IgvfApi:
     def tissues(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14515,6 +16219,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14539,6 +16247,8 @@ class IgvfApi:
 
         _param = self._tissues_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14566,6 +16276,8 @@ class IgvfApi:
     def tissues_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14585,6 +16297,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14609,6 +16325,8 @@ class IgvfApi:
 
         _param = self._tissues_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14636,6 +16354,8 @@ class IgvfApi:
     def tissues_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14655,6 +16375,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14679,6 +16403,8 @@ class IgvfApi:
 
         _param = self._tissues_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14701,6 +16427,8 @@ class IgvfApi:
     def _tissues_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -14710,6 +16438,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -14725,10 +16454,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -14745,7 +16484,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/tissues',
+            resource_path='/tissues/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -14765,6 +16504,8 @@ class IgvfApi:
     def treatments(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14784,6 +16525,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14808,6 +16553,8 @@ class IgvfApi:
 
         _param = self._treatments_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14835,6 +16582,8 @@ class IgvfApi:
     def treatments_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14854,6 +16603,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14878,6 +16631,8 @@ class IgvfApi:
 
         _param = self._treatments_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14905,6 +16660,8 @@ class IgvfApi:
     def treatments_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14924,6 +16681,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14948,6 +16709,8 @@ class IgvfApi:
 
         _param = self._treatments_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14970,6 +16733,8 @@ class IgvfApi:
     def _treatments_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -14979,6 +16744,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -14994,10 +16760,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -15014,7 +16790,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/treatments',
+            resource_path='/treatments/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -15034,6 +16810,8 @@ class IgvfApi:
     def users(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15053,6 +16831,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15077,6 +16859,8 @@ class IgvfApi:
 
         _param = self._users_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15104,6 +16888,8 @@ class IgvfApi:
     def users_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15123,6 +16909,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15147,6 +16937,8 @@ class IgvfApi:
 
         _param = self._users_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15174,6 +16966,8 @@ class IgvfApi:
     def users_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15193,6 +16987,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15217,6 +17015,8 @@ class IgvfApi:
 
         _param = self._users_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15239,6 +17039,8 @@ class IgvfApi:
     def _users_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -15248,6 +17050,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -15263,10 +17066,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -15283,7 +17096,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/users',
+            resource_path='/users/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -15303,6 +17116,8 @@ class IgvfApi:
     def whole_organisms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15322,6 +17137,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15346,6 +17165,8 @@ class IgvfApi:
 
         _param = self._whole_organisms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15373,6 +17194,8 @@ class IgvfApi:
     def whole_organisms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15392,6 +17215,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15416,6 +17243,8 @@ class IgvfApi:
 
         _param = self._whole_organisms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15443,6 +17272,8 @@ class IgvfApi:
     def whole_organisms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15462,6 +17293,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15486,6 +17321,8 @@ class IgvfApi:
 
         _param = self._whole_organisms_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15508,6 +17345,8 @@ class IgvfApi:
     def _whole_organisms_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -15517,6 +17356,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -15532,10 +17372,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -15552,7 +17402,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/whole-organisms',
+            resource_path='/whole-organisms/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -15572,6 +17422,8 @@ class IgvfApi:
     def workflows(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15591,6 +17443,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15615,6 +17471,8 @@ class IgvfApi:
 
         _param = self._workflows_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15642,6 +17500,8 @@ class IgvfApi:
     def workflows_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15661,6 +17521,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15685,6 +17549,8 @@ class IgvfApi:
 
         _param = self._workflows_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15712,6 +17578,8 @@ class IgvfApi:
     def workflows_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15731,6 +17599,10 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
+        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :type limit: SearchLimitParameter
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :type sort: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15755,6 +17627,8 @@ class IgvfApi:
 
         _param = self._workflows_serialize(
             query=query,
+            limit=limit,
+            sort=sort,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15777,6 +17651,8 @@ class IgvfApi:
     def _workflows_serialize(
         self,
         query,
+        limit,
+        sort,
         _request_auth,
         _content_type,
         _headers,
@@ -15786,6 +17662,7 @@ class IgvfApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'sort': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -15801,10 +17678,20 @@ class IgvfApi:
             
             _query_params.append(('query', query))
             
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+        # Set client side default value of Query Param "frame".
+        _query_params.append(('frame', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -15821,7 +17708,7 @@ class IgvfApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/workflows',
+            resource_path='/workflows/@@listing',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
