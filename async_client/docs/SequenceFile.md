@@ -64,7 +64,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from async_igvf_client.models.sequence_file import SequenceFile
+from igvf_client.models.sequence_file import SequenceFile
 
 # TODO update the JSON string below
 json = "{}"

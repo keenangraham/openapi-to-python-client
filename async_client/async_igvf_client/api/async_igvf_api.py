@@ -97,7 +97,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def access_keys(
+    def access_keys(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -219,11 +219,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -231,7 +231,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def access_keys_with_http_info(
+    def access_keys_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -353,11 +353,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -365,7 +365,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def access_keys_without_preload_content(
+    def access_keys_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -487,7 +487,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -651,7 +651,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def alignment_files(
+    def alignment_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -905,11 +905,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -917,7 +917,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def alignment_files_with_http_info(
+    def alignment_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -1171,11 +1171,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1183,7 +1183,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def alignment_files_without_preload_content(
+    def alignment_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -1437,7 +1437,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1786,7 +1786,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def analysis_sets(
+    def analysis_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -1976,11 +1976,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1988,7 +1988,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def analysis_sets_with_http_info(
+    def analysis_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -2178,11 +2178,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2190,7 +2190,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def analysis_sets_without_preload_content(
+    def analysis_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -2380,7 +2380,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2660,7 +2660,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def analysis_step_versions(
+    def analysis_step_versions(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -2790,11 +2790,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2802,7 +2802,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def analysis_step_versions_with_http_info(
+    def analysis_step_versions_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -2932,11 +2932,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2944,7 +2944,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def analysis_step_versions_without_preload_content(
+    def analysis_step_versions_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -3074,7 +3074,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3258,7 +3258,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def analysis_steps(
+    def analysis_steps(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -3412,11 +3412,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3424,7 +3424,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def analysis_steps_with_http_info(
+    def analysis_steps_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -3578,11 +3578,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3590,7 +3590,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def analysis_steps_without_preload_content(
+    def analysis_steps_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -3744,7 +3744,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3961,7 +3961,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def assay_terms(
+    def assay_terms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -4123,11 +4123,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4135,7 +4135,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def assay_terms_with_http_info(
+    def assay_terms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -4297,11 +4297,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4309,7 +4309,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def assay_terms_without_preload_content(
+    def assay_terms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -4471,7 +4471,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4702,7 +4702,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def auxiliary_sets(
+    def auxiliary_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -4896,11 +4896,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4908,7 +4908,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def auxiliary_sets_with_http_info(
+    def auxiliary_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -5102,11 +5102,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5114,7 +5114,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def auxiliary_sets_without_preload_content(
+    def auxiliary_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -5308,7 +5308,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5592,7 +5592,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def awards(
+    def awards(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -5742,11 +5742,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5754,7 +5754,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def awards_with_http_info(
+    def awards_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -5904,11 +5904,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5916,7 +5916,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def awards_without_preload_content(
+    def awards_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -6066,7 +6066,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6284,7 +6284,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def batch_download(
+    def batch_download(
         self,
         type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
@@ -6350,11 +6350,11 @@ class AsyncIgvfApi:
             '404': "object",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6362,7 +6362,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def batch_download_with_http_info(
+    def batch_download_with_http_info(
         self,
         type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
@@ -6428,11 +6428,11 @@ class AsyncIgvfApi:
             '404': "object",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6440,7 +6440,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def batch_download_without_preload_content(
+    def batch_download_without_preload_content(
         self,
         type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
@@ -6506,7 +6506,7 @@ class AsyncIgvfApi:
             '404': "object",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6589,7 +6589,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def biomarkers(
+    def biomarkers(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -6739,11 +6739,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6751,7 +6751,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def biomarkers_with_http_info(
+    def biomarkers_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -6901,11 +6901,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6913,7 +6913,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def biomarkers_without_preload_content(
+    def biomarkers_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -7063,7 +7063,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7273,7 +7273,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def configuration_files(
+    def configuration_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -7499,11 +7499,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7511,7 +7511,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def configuration_files_with_http_info(
+    def configuration_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -7737,11 +7737,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7749,7 +7749,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def configuration_files_without_preload_content(
+    def configuration_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -7975,7 +7975,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8289,7 +8289,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def construct_library_sets(
+    def construct_library_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -8555,11 +8555,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8567,7 +8567,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def construct_library_sets_with_http_info(
+    def construct_library_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -8833,11 +8833,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8845,7 +8845,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def construct_library_sets_without_preload_content(
+    def construct_library_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -9111,7 +9111,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -9489,7 +9489,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def crispr_modifications(
+    def crispr_modifications(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -9663,11 +9663,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9675,7 +9675,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def crispr_modifications_with_http_info(
+    def crispr_modifications_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -9849,11 +9849,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9861,7 +9861,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def crispr_modifications_without_preload_content(
+    def crispr_modifications_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -10035,7 +10035,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -10276,7 +10276,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def curated_sets(
+    def curated_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -10474,11 +10474,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10486,7 +10486,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def curated_sets_with_http_info(
+    def curated_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -10684,11 +10684,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10696,7 +10696,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def curated_sets_without_preload_content(
+    def curated_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -10894,7 +10894,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11184,7 +11184,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def degron_modifications(
+    def degron_modifications(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -11350,11 +11350,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11362,7 +11362,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def degron_modifications_with_http_info(
+    def degron_modifications_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -11528,11 +11528,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11540,7 +11540,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def degron_modifications_without_preload_content(
+    def degron_modifications_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -11706,7 +11706,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11938,7 +11938,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def documents(
+    def documents(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -12076,11 +12076,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12088,7 +12088,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def documents_with_http_info(
+    def documents_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -12226,11 +12226,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12238,7 +12238,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def documents_without_preload_content(
+    def documents_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -12376,7 +12376,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12570,7 +12570,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def download(
+    def download(
         self,
         file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`).")],
         _request_timeout: Union[
@@ -12627,11 +12627,11 @@ class AsyncIgvfApi:
             '404': None,
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12639,7 +12639,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def download_with_http_info(
+    def download_with_http_info(
         self,
         file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`).")],
         _request_timeout: Union[
@@ -12696,11 +12696,11 @@ class AsyncIgvfApi:
             '404': None,
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12708,7 +12708,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def download_without_preload_content(
+    def download_without_preload_content(
         self,
         file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`).")],
         _request_timeout: Union[
@@ -12765,7 +12765,7 @@ class AsyncIgvfApi:
             '404': None,
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12834,7 +12834,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def genes(
+    def genes(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -12992,11 +12992,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13004,7 +13004,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def genes_with_http_info(
+    def genes_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -13162,11 +13162,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13174,7 +13174,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def genes_without_preload_content(
+    def genes_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -13332,7 +13332,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -13553,7 +13553,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def genome_browser_annotation_files(
+    def genome_browser_annotation_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -13787,11 +13787,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13799,7 +13799,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def genome_browser_annotation_files_with_http_info(
+    def genome_browser_annotation_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -14033,11 +14033,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14045,7 +14045,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def genome_browser_annotation_files_without_preload_content(
+    def genome_browser_annotation_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -14279,7 +14279,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14602,7 +14602,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def get_by_id(
+    def get_by_id(
         self,
         resource_id: Annotated[StrictStr, Field(description="The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`) or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`).")],
         _request_timeout: Union[
@@ -14658,11 +14658,11 @@ class AsyncIgvfApi:
             '200': "Item",
             '404': "object",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14670,7 +14670,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def get_by_id_with_http_info(
+    def get_by_id_with_http_info(
         self,
         resource_id: Annotated[StrictStr, Field(description="The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`) or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`).")],
         _request_timeout: Union[
@@ -14726,11 +14726,11 @@ class AsyncIgvfApi:
             '200': "Item",
             '404': "object",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14738,7 +14738,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def get_by_id_without_preload_content(
+    def get_by_id_without_preload_content(
         self,
         resource_id: Annotated[StrictStr, Field(description="The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`) or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`).")],
         _request_timeout: Union[
@@ -14794,7 +14794,7 @@ class AsyncIgvfApi:
             '200': "Item",
             '404': "object",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14865,7 +14865,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def human_donors(
+    def human_donors(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -15051,11 +15051,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15063,7 +15063,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def human_donors_with_http_info(
+    def human_donors_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -15249,11 +15249,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15261,7 +15261,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def human_donors_without_preload_content(
+    def human_donors_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -15447,7 +15447,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -15710,7 +15710,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def image_files(
+    def image_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -15932,11 +15932,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15944,7 +15944,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def image_files_with_http_info(
+    def image_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -16166,11 +16166,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16178,7 +16178,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def image_files_without_preload_content(
+    def image_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -16400,7 +16400,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -16708,7 +16708,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def images(
+    def images(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -16838,11 +16838,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16850,7 +16850,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def images_with_http_info(
+    def images_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -16980,11 +16980,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16992,7 +16992,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def images_without_preload_content(
+    def images_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -17122,7 +17122,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -17305,7 +17305,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def in_vitro_systems(
+    def in_vitro_systems(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -17667,11 +17667,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17679,7 +17679,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def in_vitro_systems_with_http_info(
+    def in_vitro_systems_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -18041,11 +18041,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18053,7 +18053,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def in_vitro_systems_without_preload_content(
+    def in_vitro_systems_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -18415,7 +18415,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -18923,7 +18923,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def institutional_certificates(
+    def institutional_certificates(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -19069,11 +19069,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -19081,7 +19081,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def institutional_certificates_with_http_info(
+    def institutional_certificates_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -19227,11 +19227,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -19239,7 +19239,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def institutional_certificates_without_preload_content(
+    def institutional_certificates_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -19385,7 +19385,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -19591,7 +19591,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def labs(
+    def labs(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -19725,11 +19725,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -19737,7 +19737,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def labs_with_http_info(
+    def labs_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -19871,11 +19871,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -19883,7 +19883,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def labs_without_preload_content(
+    def labs_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -20017,7 +20017,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -20197,7 +20197,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def matrix_files(
+    def matrix_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -20435,11 +20435,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -20447,7 +20447,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def matrix_files_with_http_info(
+    def matrix_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -20685,11 +20685,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -20697,7 +20697,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def matrix_files_without_preload_content(
+    def matrix_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -20935,7 +20935,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -21264,7 +21264,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def measurement_sets(
+    def measurement_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -21490,11 +21490,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -21502,7 +21502,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def measurement_sets_with_http_info(
+    def measurement_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -21728,11 +21728,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -21740,7 +21740,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def measurement_sets_without_preload_content(
+    def measurement_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -21966,7 +21966,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -22295,7 +22295,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def model_files(
+    def model_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -22525,11 +22525,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -22537,7 +22537,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def model_files_with_http_info(
+    def model_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -22767,11 +22767,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -22779,7 +22779,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def model_files_without_preload_content(
+    def model_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -23009,7 +23009,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -23327,7 +23327,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def model_sets(
+    def model_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -23537,11 +23537,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -23549,7 +23549,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def model_sets_with_http_info(
+    def model_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -23759,11 +23759,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -23771,7 +23771,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def model_sets_without_preload_content(
+    def model_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -23981,7 +23981,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -24286,7 +24286,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def multiplexed_samples(
+    def multiplexed_samples(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -24556,11 +24556,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -24568,7 +24568,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def multiplexed_samples_with_http_info(
+    def multiplexed_samples_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -24838,11 +24838,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -24850,7 +24850,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def multiplexed_samples_without_preload_content(
+    def multiplexed_samples_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -25120,7 +25120,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -25509,7 +25509,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def open_reading_frames(
+    def open_reading_frames(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -25659,11 +25659,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -25671,7 +25671,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def open_reading_frames_with_http_info(
+    def open_reading_frames_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -25821,11 +25821,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -25833,7 +25833,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def open_reading_frames_without_preload_content(
+    def open_reading_frames_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -25983,7 +25983,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -26193,7 +26193,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def pages(
+    def pages(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -26335,11 +26335,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -26347,7 +26347,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def pages_with_http_info(
+    def pages_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -26489,11 +26489,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -26501,7 +26501,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def pages_without_preload_content(
+    def pages_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -26643,7 +26643,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -26841,7 +26841,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def phenotype_terms(
+    def phenotype_terms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -26987,11 +26987,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -26999,7 +26999,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def phenotype_terms_with_http_info(
+    def phenotype_terms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -27145,11 +27145,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -27157,7 +27157,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def phenotype_terms_without_preload_content(
+    def phenotype_terms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -27303,7 +27303,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -27510,7 +27510,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def phenotypic_features(
+    def phenotypic_features(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -27648,11 +27648,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -27660,7 +27660,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def phenotypic_features_with_http_info(
+    def phenotypic_features_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -27798,11 +27798,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -27810,7 +27810,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def phenotypic_features_without_preload_content(
+    def phenotypic_features_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -27948,7 +27948,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -28150,7 +28150,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def platform_terms(
+    def platform_terms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -28304,11 +28304,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -28316,7 +28316,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def platform_terms_with_http_info(
+    def platform_terms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -28470,11 +28470,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -28482,7 +28482,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def platform_terms_without_preload_content(
+    def platform_terms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -28636,7 +28636,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -28854,7 +28854,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def prediction_sets(
+    def prediction_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -29064,11 +29064,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -29076,7 +29076,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def prediction_sets_with_http_info(
+    def prediction_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -29286,11 +29286,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -29298,7 +29298,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def prediction_sets_without_preload_content(
+    def prediction_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -29508,7 +29508,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -29814,7 +29814,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def primary_cells(
+    def primary_cells(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -30144,11 +30144,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -30156,7 +30156,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def primary_cells_with_http_info(
+    def primary_cells_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -30486,11 +30486,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -30498,7 +30498,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def primary_cells_without_preload_content(
+    def primary_cells_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -30828,7 +30828,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -31294,7 +31294,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def publications(
+    def publications(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -31492,11 +31492,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -31504,7 +31504,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def publications_with_http_info(
+    def publications_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -31702,11 +31702,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -31714,7 +31714,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def publications_without_preload_content(
+    def publications_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -31912,7 +31912,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -32206,7 +32206,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def reference_files(
+    def reference_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -32464,11 +32464,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -32476,7 +32476,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def reference_files_with_http_info(
+    def reference_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -32734,11 +32734,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -32746,7 +32746,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def reference_files_without_preload_content(
+    def reference_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -33004,7 +33004,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -33358,7 +33358,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def report(
+    def report(
         self,
         type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
@@ -33432,11 +33432,11 @@ class AsyncIgvfApi:
             '404': "object",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -33444,7 +33444,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def report_with_http_info(
+    def report_with_http_info(
         self,
         type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
@@ -33518,11 +33518,11 @@ class AsyncIgvfApi:
             '404': "object",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -33530,7 +33530,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def report_without_preload_content(
+    def report_without_preload_content(
         self,
         type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
@@ -33604,7 +33604,7 @@ class AsyncIgvfApi:
             '404': "object",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -33698,7 +33698,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def rodent_donors(
+    def rodent_donors(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -33904,11 +33904,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -33916,7 +33916,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def rodent_donors_with_http_info(
+    def rodent_donors_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -34122,11 +34122,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -34134,7 +34134,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def rodent_donors_without_preload_content(
+    def rodent_donors_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -34340,7 +34340,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -34626,7 +34626,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def sample_terms(
+    def sample_terms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -34792,11 +34792,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -34804,7 +34804,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def sample_terms_with_http_info(
+    def sample_terms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -34970,11 +34970,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -34982,7 +34982,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def sample_terms_without_preload_content(
+    def sample_terms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -35148,7 +35148,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -35385,7 +35385,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def schema_for_item_type(
+    def schema_for_item_type(
         self,
         item_type: Annotated[ItemType, Field(description="The name of the item type")],
         _request_timeout: Union[
@@ -35440,11 +35440,11 @@ class AsyncIgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -35452,7 +35452,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def schema_for_item_type_with_http_info(
+    def schema_for_item_type_with_http_info(
         self,
         item_type: Annotated[ItemType, Field(description="The name of the item type")],
         _request_timeout: Union[
@@ -35507,11 +35507,11 @@ class AsyncIgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -35519,7 +35519,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def schema_for_item_type_without_preload_content(
+    def schema_for_item_type_without_preload_content(
         self,
         item_type: Annotated[ItemType, Field(description="The name of the item type")],
         _request_timeout: Union[
@@ -35574,7 +35574,7 @@ class AsyncIgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -35643,7 +35643,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def schemas(
+    def schemas(
         self,
         _request_timeout: Union[
             None,
@@ -35694,11 +35694,11 @@ class AsyncIgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -35706,7 +35706,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def schemas_with_http_info(
+    def schemas_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -35757,11 +35757,11 @@ class AsyncIgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -35769,7 +35769,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def schemas_without_preload_content(
+    def schemas_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -35820,7 +35820,7 @@ class AsyncIgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -35886,7 +35886,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def search(
+    def search(
         self,
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
@@ -35962,11 +35962,11 @@ class AsyncIgvfApi:
             '200': "SearchResults",
             '404': "NoResultsResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -35974,7 +35974,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def search_with_http_info(
+    def search_with_http_info(
         self,
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
@@ -36050,11 +36050,11 @@ class AsyncIgvfApi:
             '200': "SearchResults",
             '404': "NoResultsResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -36062,7 +36062,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def search_without_preload_content(
+    def search_without_preload_content(
         self,
         type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
@@ -36138,7 +36138,7 @@ class AsyncIgvfApi:
             '200': "SearchResults",
             '404': "NoResultsResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -36239,7 +36239,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def sequence_files(
+    def sequence_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -36517,11 +36517,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -36529,7 +36529,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def sequence_files_with_http_info(
+    def sequence_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -36807,11 +36807,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -36819,7 +36819,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def sequence_files_without_preload_content(
+    def sequence_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -37097,7 +37097,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -37476,7 +37476,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def signal_files(
+    def signal_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -37730,11 +37730,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -37742,7 +37742,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def signal_files_with_http_info(
+    def signal_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -37996,11 +37996,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -38008,7 +38008,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def signal_files_without_preload_content(
+    def signal_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -38262,7 +38262,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -38611,7 +38611,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def software(
+    def software(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -38761,11 +38761,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -38773,7 +38773,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def software_with_http_info(
+    def software_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -38923,11 +38923,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -38935,7 +38935,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def software_without_preload_content(
+    def software_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -39085,7 +39085,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -39297,7 +39297,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def software_versions(
+    def software_versions(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -39447,11 +39447,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -39459,7 +39459,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def software_versions_with_http_info(
+    def software_versions_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -39609,11 +39609,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -39621,7 +39621,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def software_versions_without_preload_content(
+    def software_versions_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -39771,7 +39771,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -39981,7 +39981,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def sources(
+    def sources(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -40107,11 +40107,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -40119,7 +40119,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def sources_with_http_info(
+    def sources_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -40245,11 +40245,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -40257,7 +40257,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def sources_without_preload_content(
+    def sources_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -40383,7 +40383,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -40561,7 +40561,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def tabular_files(
+    def tabular_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -40803,11 +40803,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -40815,7 +40815,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def tabular_files_with_http_info(
+    def tabular_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -41057,11 +41057,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -41069,7 +41069,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def tabular_files_without_preload_content(
+    def tabular_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -41311,7 +41311,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -41644,7 +41644,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def technical_samples(
+    def technical_samples(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -41898,11 +41898,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -41910,7 +41910,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def technical_samples_with_http_info(
+    def technical_samples_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -42164,11 +42164,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -42176,7 +42176,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def technical_samples_without_preload_content(
+    def technical_samples_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -42430,7 +42430,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -42793,7 +42793,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def tissues(
+    def tissues(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -43135,11 +43135,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -43147,7 +43147,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def tissues_with_http_info(
+    def tissues_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -43489,11 +43489,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -43501,7 +43501,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def tissues_without_preload_content(
+    def tissues_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -43843,7 +43843,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -44324,7 +44324,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def treatments(
+    def treatments(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -44522,11 +44522,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -44534,7 +44534,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def treatments_with_http_info(
+    def treatments_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -44732,11 +44732,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -44744,7 +44744,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def treatments_without_preload_content(
+    def treatments_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -44942,7 +44942,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -45213,7 +45213,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def users(
+    def users(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -45359,11 +45359,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -45371,7 +45371,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def users_with_http_info(
+    def users_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -45517,11 +45517,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -45529,7 +45529,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def users_without_preload_content(
+    def users_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -45675,7 +45675,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -45872,7 +45872,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def whole_organisms(
+    def whole_organisms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -46198,11 +46198,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -46210,7 +46210,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def whole_organisms_with_http_info(
+    def whole_organisms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -46536,11 +46536,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -46548,7 +46548,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def whole_organisms_without_preload_content(
+    def whole_organisms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -46874,7 +46874,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -47335,7 +47335,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def workflows(
+    def workflows(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -47509,11 +47509,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -47521,7 +47521,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def workflows_with_http_info(
+    def workflows_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -47695,11 +47695,11 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -47707,7 +47707,7 @@ class AsyncIgvfApi:
 
 
     @validate_call
-    async def workflows_without_preload_content(
+    def workflows_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
@@ -47881,7 +47881,7 @@ class AsyncIgvfApi:
             '404': "NoResultsResponse",
             '500': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

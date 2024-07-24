@@ -77,7 +77,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from async_igvf_client.models.primary_cell import PrimaryCell
+from igvf_client.models.primary_cell import PrimaryCell
 
 # TODO update the JSON string below
 json = "{}"

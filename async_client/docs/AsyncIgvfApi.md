@@ -1,4 +1,4 @@
-# async_igvf_client.AsyncIgvfApi
+# igvf_client.AsyncIgvfApi
 
 All URIs are relative to *https://api.data.igvf.org*
 
@@ -76,14 +76,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.access_key_results import AccessKeyResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.access_key_results import AccessKeyResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -93,17 +93,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
@@ -190,14 +190,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.alignment_file_results import AlignmentFileResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.alignment_file_results import AlignmentFileResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -207,17 +207,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     controlled_access = True # bool | Filter by controlled_access (optional)
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
@@ -370,14 +370,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.analysis_set_results import AnalysisSetResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.analysis_set_results import AnalysisSetResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -387,17 +387,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     input_file_sets = ['input_file_sets_example'] # List[str] | Filter by input_file_sets (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
@@ -518,14 +518,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.analysis_step_version_results import AnalysisStepVersionResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.analysis_step_version_results import AnalysisStepVersionResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -535,17 +535,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -636,14 +636,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.analysis_step_results import AnalysisStepResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.analysis_step_results import AnalysisStepResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -653,17 +653,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -766,14 +766,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.assay_term_results import AssayTermResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.assay_term_results import AssayTermResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -783,17 +783,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -900,14 +900,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.auxiliary_set_results import AuxiliarySetResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.auxiliary_set_results import AuxiliarySetResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -917,17 +917,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -1050,14 +1050,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.award_results import AwardResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.award_results import AwardResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -1067,17 +1067,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     status = 'status_example' # str | Filter by status (optional)
     url = 'url_example' # str | Filter by url (optional)
@@ -1178,13 +1178,13 @@ Generates TSV of files contained in FileSets in search results.
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -1194,15 +1194,15 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     type = ['type_example'] # List[str] | Type of objects to return. Can be repeated for multiple types.
     query = 'query_example' # str | Query string for searching. (optional)
     field_filters = None # object | Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
@@ -1263,14 +1263,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.biomarker_results import BiomarkerResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.biomarker_results import BiomarkerResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -1280,17 +1280,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -1391,14 +1391,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.configuration_file_results import ConfigurationFileResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.configuration_file_results import ConfigurationFileResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -1408,17 +1408,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -1557,15 +1557,15 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.construct_library_set_results import ConstructLibrarySetResults
-from async_igvf_client.models.locus import Locus
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.construct_library_set_results import ConstructLibrarySetResults
+from igvf_client.models.locus import Locus
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -1575,19 +1575,19 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    small_scale_loci_list = [async_igvf_client.Locus()] # List[Locus] | Filter by small_scale_loci_list (optional)
+    small_scale_loci_list = [igvf_client.Locus()] # List[Locus] | Filter by small_scale_loci_list (optional)
     large_scale_loci_list = 'large_scale_loci_list_example' # str | Filter by large_scale_loci_list (optional)
     small_scale_gene_list = ['small_scale_gene_list_example'] # List[str] | Filter by small_scale_gene_list (optional)
     large_scale_gene_list = 'large_scale_gene_list_example' # str | Filter by large_scale_gene_list (optional)
@@ -1620,7 +1620,7 @@ async with async_igvf_client.ApiClient(configuration) as api_client:
     associated_phenotypes = ['associated_phenotypes_example'] # List[str] | Filter by associated_phenotypes (optional)
     orf_list = ['orf_list_example'] # List[str] | Filter by orf_list (optional)
     exon = 'exon_example' # str | Filter by exon (optional)
-    tile = {'key': async_igvf_client.Tile()} # Tile | Filter by tile (optional)
+    tile = {'key': igvf_client.Tile()} # Tile | Filter by tile (optional)
     guide_type = 'guide_type_example' # str | Filter by guide_type (optional)
     tiling_modality = 'tiling_modality_example' # str | Filter by tiling_modality (optional)
     average_guide_coverage = 3.4 # float | Filter by average_guide_coverage (optional)
@@ -1744,14 +1744,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.crispr_modification_results import CrisprModificationResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.crispr_modification_results import CrisprModificationResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -1761,17 +1761,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
@@ -1884,14 +1884,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.curated_set_results import CuratedSetResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.curated_set_results import CuratedSetResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -1901,17 +1901,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
@@ -2036,14 +2036,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.degron_modification_results import DegronModificationResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.degron_modification_results import DegronModificationResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -2053,17 +2053,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
@@ -2172,14 +2172,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.document_results import DocumentResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.document_results import DocumentResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -2189,23 +2189,23 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
     lab = 'lab_example' # str | Filter by lab (optional)
     award = 'award_example' # str | Filter by award (optional)
-    attachment = {'key': async_igvf_client.Attachment()} # Attachment | Filter by attachment (optional)
+    attachment = {'key': igvf_client.Attachment()} # Attachment | Filter by attachment (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
@@ -2294,13 +2294,13 @@ Returns underlying file associated with file metadata
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -2310,15 +2310,15 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     file_id = 'file_id_example' # str | The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`).
 
     try:
@@ -2374,15 +2374,15 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.gene_location import GeneLocation
-from async_igvf_client.models.gene_results import GeneResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.gene_location import GeneLocation
+from igvf_client.models.gene_results import GeneResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -2392,17 +2392,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
@@ -2421,7 +2421,7 @@ async with async_igvf_client.ApiClient(configuration) as api_client:
     name = 'name_example' # str | Filter by name (optional)
     synonyms = ['synonyms_example'] # List[str] | Filter by synonyms (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    locations = [async_igvf_client.GeneLocation()] # List[GeneLocation] | Filter by locations (optional)
+    locations = [igvf_client.GeneLocation()] # List[GeneLocation] | Filter by locations (optional)
     version_number = 'version_number_example' # str | Filter by version_number (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
@@ -2507,14 +2507,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.genome_browser_annotation_file_results import GenomeBrowserAnnotationFileResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.genome_browser_annotation_file_results import GenomeBrowserAnnotationFileResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -2524,17 +2524,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     assembly = 'assembly_example' # str | Filter by assembly (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
@@ -2677,14 +2677,14 @@ Retrieve detailed information about a specific item using its @id or uuid.
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.item import Item
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.item import Item
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -2694,15 +2694,15 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     resource_id = 'resource_id_example' # str | The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`) or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`).
 
     try:
@@ -2757,15 +2757,15 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.human_donor_results import HumanDonorResults
-from async_igvf_client.models.related_donor import RelatedDonor
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.human_donor_results import HumanDonorResults
+from igvf_client.models.related_donor import RelatedDonor
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -2775,17 +2775,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
@@ -2812,7 +2812,7 @@ async with async_igvf_client.ApiClient(configuration) as api_client:
     sex = 'sex_example' # str | Filter by sex (optional)
     phenotypic_features = ['phenotypic_features_example'] # List[str] | Filter by phenotypic_features (optional)
     virtual = True # bool | Filter by virtual (optional)
-    related_donors = [async_igvf_client.RelatedDonor()] # List[RelatedDonor] | Filter by related_donors (optional)
+    related_donors = [igvf_client.RelatedDonor()] # List[RelatedDonor] | Filter by related_donors (optional)
     ethnicities = ['ethnicities_example'] # List[str] | Filter by ethnicities (optional)
     human_donor_identifiers = ['human_donor_identifiers_example'] # List[str] | Filter by human_donor_identifiers (optional)
     id = 'id_example' # str | Filter by @id (optional)
@@ -2904,14 +2904,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.image_file_results import ImageFileResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.image_file_results import ImageFileResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -2921,17 +2921,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -3068,14 +3068,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.image_results import ImageResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.image_results import ImageResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -3085,21 +3085,21 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
-    attachment = {'key': async_igvf_client.Attachment1()} # Attachment1 | Filter by attachment (optional)
+    attachment = {'key': igvf_client.Attachment1()} # Attachment1 | Filter by attachment (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
@@ -3186,14 +3186,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.in_vitro_system_results import InVitroSystemResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.in_vitro_system_results import InVitroSystemResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -3203,17 +3203,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -3420,14 +3420,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.institutional_certificate_results import InstitutionalCertificateResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.institutional_certificate_results import InstitutionalCertificateResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -3437,17 +3437,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -3546,14 +3546,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.lab_results import LabResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.lab_results import LabResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -3563,17 +3563,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     status = 'status_example' # str | Filter by status (optional)
     url = 'url_example' # str | Filter by url (optional)
@@ -3666,14 +3666,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.matrix_file_results import MatrixFileResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.matrix_file_results import MatrixFileResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -3683,17 +3683,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     reference_files = ['reference_files_example'] # List[str] | Filter by reference_files (optional)
@@ -3838,14 +3838,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.measurement_set_results import MeasurementSetResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.measurement_set_results import MeasurementSetResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -3855,17 +3855,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -4004,14 +4004,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.model_file_results import ModelFileResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.model_file_results import ModelFileResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -4021,17 +4021,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     controlled_access = True # bool | Filter by controlled_access (optional)
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
@@ -4172,14 +4172,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.model_set_results import ModelSetResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.model_set_results import ModelSetResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -4189,17 +4189,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     input_file_sets = ['input_file_sets_example'] # List[str] | Filter by input_file_sets (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
@@ -4330,14 +4330,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.multiplexed_sample_results import MultiplexedSampleResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.multiplexed_sample_results import MultiplexedSampleResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -4347,17 +4347,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -4518,14 +4518,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.open_reading_frame_results import OpenReadingFrameResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.open_reading_frame_results import OpenReadingFrameResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -4535,17 +4535,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -4646,14 +4646,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.page_results import PageResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.page_results import PageResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -4663,17 +4663,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     lab = 'lab_example' # str | Filter by lab (optional)
@@ -4690,7 +4690,7 @@ async with async_igvf_client.ApiClient(configuration) as api_client:
     parent = 'parent_example' # str | Filter by parent (optional)
     name = 'name_example' # str | Filter by name (optional)
     title = 'title_example' # str | Filter by title (optional)
-    layout = {'key': async_igvf_client.PageLayout()} # PageLayout | Filter by layout (optional)
+    layout = {'key': igvf_client.PageLayout()} # PageLayout | Filter by layout (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
     canonical_uri = 'canonical_uri_example' # str | Filter by canonical_uri (optional)
@@ -4770,14 +4770,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.phenotype_term_results import PhenotypeTermResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.phenotype_term_results import PhenotypeTermResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -4787,17 +4787,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -4896,14 +4896,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.phenotypic_feature_results import PhenotypicFeatureResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.phenotypic_feature_results import PhenotypicFeatureResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -4913,17 +4913,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -5018,14 +5018,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.platform_term_results import PlatformTermResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.platform_term_results import PlatformTermResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -5035,17 +5035,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -5148,15 +5148,15 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.locus import Locus
-from async_igvf_client.models.prediction_set_results import PredictionSetResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.locus import Locus
+from igvf_client.models.prediction_set_results import PredictionSetResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -5166,20 +5166,20 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     input_file_sets = ['input_file_sets_example'] # List[str] | Filter by input_file_sets (optional)
-    small_scale_loci_list = [async_igvf_client.Locus()] # List[Locus] | Filter by small_scale_loci_list (optional)
+    small_scale_loci_list = [igvf_client.Locus()] # List[Locus] | Filter by small_scale_loci_list (optional)
     large_scale_loci_list = 'large_scale_loci_list_example' # str | Filter by large_scale_loci_list (optional)
     small_scale_gene_list = ['small_scale_gene_list_example'] # List[str] | Filter by small_scale_gene_list (optional)
     large_scale_gene_list = 'large_scale_gene_list_example' # str | Filter by large_scale_gene_list (optional)
@@ -5307,14 +5307,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.primary_cell_results import PrimaryCellResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.primary_cell_results import PrimaryCellResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -5324,17 +5324,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -5525,14 +5525,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.publication_results import PublicationResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.publication_results import PublicationResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -5542,24 +5542,24 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     status = 'status_example' # str | Filter by status (optional)
     lab = 'lab_example' # str | Filter by lab (optional)
     award = 'award_example' # str | Filter by award (optional)
-    attachment = {'key': async_igvf_client.Attachment()} # Attachment | Filter by attachment (optional)
+    attachment = {'key': igvf_client.Attachment()} # Attachment | Filter by attachment (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
@@ -5677,14 +5677,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.reference_file_results import ReferenceFileResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.reference_file_results import ReferenceFileResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -5694,17 +5694,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     controlled_access = True # bool | Filter by controlled_access (optional)
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
@@ -5859,13 +5859,13 @@ Like /search endpoint but returns a TSV file instead of JSON. Must specify item 
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -5875,15 +5875,15 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     type = ['type_example'] # List[str] | Type of objects to return. Can be repeated for multiple types.
     query = 'query_example' # str | Query string for searching. (optional)
     field_filters = None # object | Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
@@ -5948,14 +5948,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.rodent_donor_results import RodentDonorResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.rodent_donor_results import RodentDonorResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -5965,17 +5965,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
@@ -6104,14 +6104,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.sample_term_results import SampleTermResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.sample_term_results import SampleTermResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -6121,17 +6121,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -6240,14 +6240,14 @@ Returns JSON schemas of all the item types defined in IGVF
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.item_type import ItemType
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.item_type import ItemType
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -6257,16 +6257,16 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
-    item_type = async_igvf_client.ItemType() # ItemType | The name of the item type
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
+    item_type = igvf_client.ItemType() # ItemType | The name of the item type
 
     try:
         # Retrieve JSON schema for item type
@@ -6319,13 +6319,13 @@ Returns JSON schemas of all the item types defined in IGVF
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -6335,15 +6335,15 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
 
     try:
         # Retrieve JSON schemas for all item types
@@ -6393,14 +6393,14 @@ Search endpoint that accepts various query parameters to filter, sort, and pagin
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.search_results import SearchResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.search_results import SearchResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -6410,19 +6410,19 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     type = ['type_example'] # List[str] | Type of objects to return. Can be repeated for multiple types. (optional)
     query = 'query_example' # str | Query string for searching. (optional)
     field_filters = None # object | Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     include_fields = ['include_fields_example'] # List[str] | Fields to include in the response. Can be repeated for multiple fields. (optional)
 
@@ -6483,14 +6483,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.sequence_file_results import SequenceFileResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.sequence_file_results import SequenceFileResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -6500,17 +6500,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     controlled_access = True # bool | Filter by controlled_access (optional)
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
@@ -6675,14 +6675,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.signal_file_results import SignalFileResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.signal_file_results import SignalFileResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -6692,17 +6692,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
     assembly = 'assembly_example' # str | Filter by assembly (optional)
@@ -6855,14 +6855,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.software_results import SoftwareResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.software_results import SoftwareResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -6872,17 +6872,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -6983,14 +6983,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.software_version_results import SoftwareVersionResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.software_version_results import SoftwareVersionResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -7000,17 +7000,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -7111,14 +7111,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.source_results import SourceResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.source_results import SourceResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -7128,17 +7128,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -7227,14 +7227,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.tabular_file_results import TabularFileResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.tabular_file_results import TabularFileResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -7244,17 +7244,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     controlled_access = True # bool | Filter by controlled_access (optional)
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
@@ -7401,14 +7401,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.technical_sample_results import TechnicalSampleResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.technical_sample_results import TechnicalSampleResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -7418,17 +7418,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -7581,14 +7581,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.tissue_results import TissueResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.tissue_results import TissueResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -7598,17 +7598,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -7805,14 +7805,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.treatment_results import TreatmentResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.treatment_results import TreatmentResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -7822,17 +7822,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     lab = 'lab_example' # str | Filter by lab (optional)
@@ -7957,14 +7957,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.user_results import UserResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.user_results import UserResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -7974,17 +7974,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     status = 'status_example' # str | Filter by status (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
@@ -8083,14 +8083,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.whole_organism_results import WholeOrganismResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.whole_organism_results import WholeOrganismResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -8100,17 +8100,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
@@ -8299,14 +8299,14 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import async_igvf_client
-from async_igvf_client.models.workflow_results import WorkflowResults
-from async_igvf_client.rest import ApiException
+import igvf_client
+from igvf_client.models.workflow_results import WorkflowResults
+from igvf_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.data.igvf.org
 # See configuration.py for a list of all supported configuration parameters.
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     host = "https://api.data.igvf.org"
 )
 
@@ -8316,17 +8316,17 @@ configuration = async_igvf_client.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = async_igvf_client.Configuration(
+configuration = igvf_client.Configuration(
     access_key = os.environ["IGVF_ACCESS_KEY"],
     secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
 )
 
 # Enter a context with an instance of the API client
-async with async_igvf_client.ApiClient(configuration) as api_client:
+async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = async_igvf_client.AsyncIgvfApi(api_client)
+    api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = async_igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)

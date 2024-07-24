@@ -43,7 +43,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from async_igvf_client.models.auxiliary_set import AuxiliarySet
+from igvf_client.models.auxiliary_set import AuxiliarySet
 
 # TODO update the JSON string below
 json = "{}"

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from async_igvf_client.models.search_limit_parameter import SearchLimitParameter
+from igvf_client.models.search_limit_parameter import SearchLimitParameter
 
 # TODO update the JSON string below
 json = "{}"

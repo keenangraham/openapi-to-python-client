@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from async_igvf_client.models.page_layout1 import PageLayout1
+from igvf_client.models.page_layout1 import PageLayout1
 
 # TODO update the JSON string below
 json = "{}"

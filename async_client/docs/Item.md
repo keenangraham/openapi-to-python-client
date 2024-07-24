@@ -322,7 +322,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from async_igvf_client.models.item import Item
+from igvf_client.models.item import Item
 
 # TODO update the JSON string below
 json = "{}"
