@@ -187,7 +187,7 @@ def generate_openapi_spec(schemas):
                             "content": {
                                 "application/json": {
                                     "schema": {
-                                        "$ref": "#/components/schemas/NoResultsResponse"
+                                        "type": "object"
                                     }
                                 }
                             }

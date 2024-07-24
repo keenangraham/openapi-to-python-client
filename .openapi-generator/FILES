@@ -283,12 +283,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_attachment2.py
-test/test_attachment3.py
-test/test_gene_location1.py
-test/test_locus1.py
-test/test_page_layout1.py
-test/test_page_layout_components1.py
-test/test_related_donor1.py
-test/test_tile1.py
 tox.ini

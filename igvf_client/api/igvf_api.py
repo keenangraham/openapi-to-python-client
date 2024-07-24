@@ -35960,7 +35960,7 @@ class IgvfApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SearchResults",
-            '404': "NoResultsResponse",
+            '404': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -36048,7 +36048,7 @@ class IgvfApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SearchResults",
-            '404': "NoResultsResponse",
+            '404': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -36136,7 +36136,7 @@ class IgvfApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SearchResults",
-            '404': "NoResultsResponse",
+            '404': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
