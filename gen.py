@@ -187,7 +187,7 @@ def generate_openapi_spec(schemas):
                             "content": {
                                 "application/json": {
                                     "schema": {
-                                        "type": "object"
+                                        "$ref": "#/components/schemas/NoResultsResponse"
                                     }
                                 }
                             }
@@ -790,7 +790,7 @@ def fill_in_collection_template(schema_name, schema):
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
+                                    "$ref": "#/components/schemas/NoResultsResponse"
                                 }
                             }
                         }

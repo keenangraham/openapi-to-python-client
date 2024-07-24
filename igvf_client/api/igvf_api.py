@@ -216,7 +216,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AccessKeyResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -350,7 +350,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AccessKeyResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -484,7 +484,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AccessKeyResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -902,7 +902,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AlignmentFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1168,7 +1168,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AlignmentFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1434,7 +1434,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AlignmentFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1973,7 +1973,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnalysisSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2175,7 +2175,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnalysisSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2377,7 +2377,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnalysisSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2787,7 +2787,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnalysisStepVersionResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2929,7 +2929,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnalysisStepVersionResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -3071,7 +3071,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnalysisStepVersionResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -3409,7 +3409,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnalysisStepResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -3575,7 +3575,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnalysisStepResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -3741,7 +3741,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnalysisStepResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -4120,7 +4120,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AssayTermResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -4294,7 +4294,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AssayTermResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -4468,7 +4468,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AssayTermResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -4893,7 +4893,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuxiliarySetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -5099,7 +5099,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuxiliarySetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -5305,7 +5305,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuxiliarySetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -5739,7 +5739,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AwardResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -5901,7 +5901,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AwardResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -6063,7 +6063,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AwardResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -6736,7 +6736,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BiomarkerResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -6898,7 +6898,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BiomarkerResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -7060,7 +7060,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BiomarkerResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -7496,7 +7496,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ConfigurationFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -7734,7 +7734,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ConfigurationFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -7972,7 +7972,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ConfigurationFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -8552,7 +8552,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ConstructLibrarySetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -8830,7 +8830,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ConstructLibrarySetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -9108,7 +9108,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ConstructLibrarySetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -9660,7 +9660,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CrisprModificationResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -9846,7 +9846,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CrisprModificationResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -10032,7 +10032,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CrisprModificationResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -10471,7 +10471,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CuratedSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -10681,7 +10681,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CuratedSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -10891,7 +10891,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CuratedSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -11347,7 +11347,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DegronModificationResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -11525,7 +11525,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DegronModificationResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -11703,7 +11703,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DegronModificationResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -12073,7 +12073,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -12223,7 +12223,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -12373,7 +12373,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -12989,7 +12989,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GeneResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -13159,7 +13159,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GeneResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -13329,7 +13329,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GeneResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -13784,7 +13784,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GenomeBrowserAnnotationFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -14030,7 +14030,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GenomeBrowserAnnotationFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -14276,7 +14276,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GenomeBrowserAnnotationFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -15048,7 +15048,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "HumanDonorResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -15246,7 +15246,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "HumanDonorResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -15444,7 +15444,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "HumanDonorResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -15929,7 +15929,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImageFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -16163,7 +16163,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImageFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -16397,7 +16397,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImageFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -16835,7 +16835,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImageResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -16977,7 +16977,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImageResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -17119,7 +17119,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImageResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -17664,7 +17664,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "InVitroSystemResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -18038,7 +18038,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "InVitroSystemResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -18412,7 +18412,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "InVitroSystemResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -19066,7 +19066,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "InstitutionalCertificateResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -19224,7 +19224,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "InstitutionalCertificateResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -19382,7 +19382,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "InstitutionalCertificateResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -19722,7 +19722,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "LabResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -19868,7 +19868,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "LabResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -20014,7 +20014,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "LabResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -20432,7 +20432,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "MatrixFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -20682,7 +20682,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "MatrixFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -20932,7 +20932,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "MatrixFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -21487,7 +21487,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "MeasurementSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -21725,7 +21725,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "MeasurementSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -21963,7 +21963,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "MeasurementSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -22522,7 +22522,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -22764,7 +22764,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -23006,7 +23006,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -23534,7 +23534,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -23756,7 +23756,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -23978,7 +23978,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -24553,7 +24553,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "MultiplexedSampleResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -24835,7 +24835,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "MultiplexedSampleResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -25117,7 +25117,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "MultiplexedSampleResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -25656,7 +25656,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "OpenReadingFrameResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -25818,7 +25818,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "OpenReadingFrameResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -25980,7 +25980,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "OpenReadingFrameResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -26332,7 +26332,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PageResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -26486,7 +26486,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PageResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -26640,7 +26640,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PageResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -26984,7 +26984,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PhenotypeTermResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -27142,7 +27142,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PhenotypeTermResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -27300,7 +27300,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PhenotypeTermResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -27645,7 +27645,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PhenotypicFeatureResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -27795,7 +27795,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PhenotypicFeatureResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -27945,7 +27945,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PhenotypicFeatureResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -28301,7 +28301,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PlatformTermResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -28467,7 +28467,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PlatformTermResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -28633,7 +28633,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PlatformTermResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -29061,7 +29061,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PredictionSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -29283,7 +29283,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PredictionSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -29505,7 +29505,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PredictionSetResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -30141,7 +30141,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PrimaryCellResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -30483,7 +30483,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PrimaryCellResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -30825,7 +30825,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PrimaryCellResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -31489,7 +31489,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PublicationResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -31699,7 +31699,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PublicationResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -31909,7 +31909,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PublicationResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -32461,7 +32461,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ReferenceFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -32731,7 +32731,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ReferenceFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -33001,7 +33001,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ReferenceFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -33901,7 +33901,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RodentDonorResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -34119,7 +34119,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RodentDonorResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -34337,7 +34337,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RodentDonorResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -34789,7 +34789,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SampleTermResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -34967,7 +34967,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SampleTermResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -35145,7 +35145,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SampleTermResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -35960,7 +35960,7 @@ class IgvfApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SearchResults",
-            '404': "object",
+            '404': "NoResultsResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -36048,7 +36048,7 @@ class IgvfApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SearchResults",
-            '404': "object",
+            '404': "NoResultsResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -36136,7 +36136,7 @@ class IgvfApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SearchResults",
-            '404': "object",
+            '404': "NoResultsResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -36514,7 +36514,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SequenceFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -36804,7 +36804,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SequenceFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -37094,7 +37094,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SequenceFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -37727,7 +37727,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SignalFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -37993,7 +37993,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SignalFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -38259,7 +38259,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SignalFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -38758,7 +38758,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SoftwareResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -38920,7 +38920,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SoftwareResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -39082,7 +39082,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SoftwareResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -39444,7 +39444,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SoftwareVersionResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -39606,7 +39606,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SoftwareVersionResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -39768,7 +39768,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SoftwareVersionResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -40104,7 +40104,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SourceResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -40242,7 +40242,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SourceResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -40380,7 +40380,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SourceResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -40800,7 +40800,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TabularFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -41054,7 +41054,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TabularFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -41308,7 +41308,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TabularFileResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -41895,7 +41895,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TechnicalSampleResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -42161,7 +42161,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TechnicalSampleResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -42427,7 +42427,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TechnicalSampleResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -43132,7 +43132,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TissueResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -43486,7 +43486,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TissueResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -43840,7 +43840,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TissueResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -44519,7 +44519,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TreatmentResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -44729,7 +44729,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TreatmentResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -44939,7 +44939,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TreatmentResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -45356,7 +45356,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -45514,7 +45514,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -45672,7 +45672,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -46195,7 +46195,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WholeOrganismResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -46533,7 +46533,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WholeOrganismResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -46871,7 +46871,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WholeOrganismResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -47506,7 +47506,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkflowResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -47692,7 +47692,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkflowResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -47878,7 +47878,7 @@ class IgvfApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkflowResults",
             '400': "object",
-            '404': "object",
+            '404': "NoResultsResponse",
             '500': None,
         }
         response_data = self.api_client.call_api(
