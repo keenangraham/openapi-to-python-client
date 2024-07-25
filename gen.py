@@ -114,8 +114,11 @@ def generate_openapi_spec(schemas):
                         {
                             "name": "limit",
                             "in": "query",
-                            "schema": {'oneOf': [{"type": "string"}, {"type": "integer"}]},
-                            "description": "Maximum number of results to return. Use 'all' for all results."
+                            "schema": {
+                                "$ref": "#/components/schemas/Limit",
+                            },
+                            "description": "Maximum number of results to return. Use 'all' for all results.",
+                            "example": 100,
                         },
                         {
                             "name": "sort",
@@ -461,6 +464,13 @@ def generate_openapi_spec(schemas):
                     "type": "object",
                     "description": "A JSON Schema object"
                 },
+                "Limit": {
+                    "oneOf": [
+                        {"type": "string"},
+                        {"type": "integer"}
+                    ],
+                    "default": 25
+                },
                 "NoResultsResponse": {
                     "type": "object",
                     "properties": {
@@ -728,10 +738,16 @@ def fill_in_collection_template(schema_name, schema):
                         "description": "Constant value. Do not set."
                     },
                     {
-                       "name": "limit",
+                        "name": "limit",
                         "in": "query",
-                        "schema": {'oneOf': [{"type": "string"}, {"type": "integer"}]},
-                        "description": "Maximum number of results to return. Use 'all' for all results."
+                        "schema": {
+                            "$ref": "#/components/schemas/Limit",
+                        },
+                        "description": "Maximum number of results to return. Use 'all' for all results.",
+                        "examples": {
+                            "number": {"value": 100},
+                            "all": {"value": "all"}
+                        }
                     },
                     {
                         "name": "sort",

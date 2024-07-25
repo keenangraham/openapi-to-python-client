@@ -273,16 +273,10 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "example": 100
           },
           {
             "name": "sort",
@@ -844,16 +838,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -1161,16 +1156,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -1604,16 +1600,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -1954,16 +1951,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -2385,16 +2383,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -2808,16 +2807,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -3255,16 +3255,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -3902,16 +3903,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -4556,16 +4558,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -5367,16 +5370,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -6076,16 +6080,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -6834,16 +6839,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -7528,16 +7534,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -8296,16 +8303,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -9016,16 +9024,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -9867,16 +9876,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -10785,16 +10795,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -11602,16 +11613,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -12388,16 +12400,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -12993,16 +13006,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -13609,16 +13623,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -14548,16 +14563,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -15187,16 +15203,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -15971,16 +15988,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -16666,16 +16684,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -17380,16 +17399,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -17882,16 +17902,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -18267,16 +18288,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -18689,16 +18711,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -19051,16 +19074,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -19589,16 +19613,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -20069,16 +20094,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -20585,16 +20611,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -20996,16 +21023,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -21480,16 +21508,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -21969,16 +21998,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -22393,16 +22423,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -22808,16 +22839,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -23191,16 +23223,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -23823,16 +23856,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -25060,16 +25094,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -25959,16 +25994,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -27070,16 +27106,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -27908,16 +27945,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -29067,16 +29105,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -30166,16 +30205,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -30598,16 +30638,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -31017,16 +31058,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -31353,16 +31395,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -31962,16 +32005,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -32390,16 +32434,17 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results."
+            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "examples": {
+              "number": {
+                "value": 100
+              },
+              "all": {
+                "value": "all"
+              }
+            }
           },
           {
             "name": "sort",
@@ -33006,6 +33051,17 @@
       "JSONSchema": {
         "type": "object",
         "description": "A JSON Schema object"
+      },
+      "Limit": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer"
+          }
+        ],
+        "default": 25
       },
       "NoResultsResponse": {
         "type": "object",
