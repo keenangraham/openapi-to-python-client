@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
 **revoke_detail** | **str** | Explanation of why an object was transitioned to the revoked status. | [optional] 
-**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '21']
+**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '22']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 

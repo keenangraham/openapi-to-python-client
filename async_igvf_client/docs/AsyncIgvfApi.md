@@ -2703,7 +2703,7 @@ configuration = igvf_client.Configuration(
 async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
-    resource_id = 'resource_id_example' # str | The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`) or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`).
+    resource_id = '/sequence-files/IGVFFI1165AJSO/' # str | The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`) or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`).
 
     try:
         # Get item information
@@ -4161,7 +4161,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **model_sets**
-> ModelSetResults model_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, model_name=model_name, model_version=model_version, prediction_objects=prediction_objects, model_zoo_location=model_zoo_location, software_version=software_version, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for)
+> ModelSetResults model_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, model_name=model_name, model_version=model_version, prediction_objects=prediction_objects, model_zoo_location=model_zoo_location, software_version=software_version, assessed_genes=assessed_genes, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for)
 
 List items in the ModelSet collection.
 
@@ -4231,6 +4231,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     prediction_objects = ['prediction_objects_example'] # List[str] | Filter by prediction_objects (optional)
     model_zoo_location = 'model_zoo_location_example' # str | Filter by model_zoo_location (optional)
     software_version = 'software_version_example' # str | Filter by software_version (optional)
+    assessed_genes = ['assessed_genes_example'] # List[str] | Filter by assessed_genes (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
     files = None # List[object] | Filter by files (optional)
@@ -4240,7 +4241,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 
     try:
         # List items in the ModelSet collection.
-        api_response = await api_instance.model_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, model_name=model_name, model_version=model_version, prediction_objects=prediction_objects, model_zoo_location=model_zoo_location, software_version=software_version, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for)
+        api_response = await api_instance.model_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, model_name=model_name, model_version=model_version, prediction_objects=prediction_objects, model_zoo_location=model_zoo_location, software_version=software_version, assessed_genes=assessed_genes, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for)
         print("The response of AsyncIgvfApi->model_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -4287,6 +4288,7 @@ Name | Type | Description  | Notes
  **prediction_objects** | [**List[str]**](List[str].md)| Filter by prediction_objects | [optional] 
  **model_zoo_location** | **str**| Filter by model_zoo_location | [optional] 
  **software_version** | **str**| Filter by software_version | [optional] 
+ **assessed_genes** | [**List[str]**](List[str].md)| Filter by assessed_genes | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
  **files** | [**List[object]**](List[object].md)| Filter by files | [optional] 

@@ -23362,6 +23362,7 @@ class AsyncIgvfApi:
         prediction_objects: Annotated[Optional[List[StrictStr]], Field(description="Filter by prediction_objects")] = None,
         model_zoo_location: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by model_zoo_location")] = None,
         software_version: Annotated[Optional[StrictStr], Field(description="Filter by software_version")] = None,
+        assessed_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by assessed_genes")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
         files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
@@ -23451,6 +23452,8 @@ class AsyncIgvfApi:
         :type model_zoo_location: str
         :param software_version: Filter by software_version
         :type software_version: str
+        :param assessed_genes: Filter by assessed_genes
+        :type assessed_genes: List[str]
         :param id: Filter by @id
         :type id: str
         :param summary: Filter by summary
@@ -23519,6 +23522,7 @@ class AsyncIgvfApi:
             prediction_objects=prediction_objects,
             model_zoo_location=model_zoo_location,
             software_version=software_version,
+            assessed_genes=assessed_genes,
             id=id,
             summary=summary,
             files=files,
@@ -23584,6 +23588,7 @@ class AsyncIgvfApi:
         prediction_objects: Annotated[Optional[List[StrictStr]], Field(description="Filter by prediction_objects")] = None,
         model_zoo_location: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by model_zoo_location")] = None,
         software_version: Annotated[Optional[StrictStr], Field(description="Filter by software_version")] = None,
+        assessed_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by assessed_genes")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
         files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
@@ -23673,6 +23678,8 @@ class AsyncIgvfApi:
         :type model_zoo_location: str
         :param software_version: Filter by software_version
         :type software_version: str
+        :param assessed_genes: Filter by assessed_genes
+        :type assessed_genes: List[str]
         :param id: Filter by @id
         :type id: str
         :param summary: Filter by summary
@@ -23741,6 +23748,7 @@ class AsyncIgvfApi:
             prediction_objects=prediction_objects,
             model_zoo_location=model_zoo_location,
             software_version=software_version,
+            assessed_genes=assessed_genes,
             id=id,
             summary=summary,
             files=files,
@@ -23806,6 +23814,7 @@ class AsyncIgvfApi:
         prediction_objects: Annotated[Optional[List[StrictStr]], Field(description="Filter by prediction_objects")] = None,
         model_zoo_location: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by model_zoo_location")] = None,
         software_version: Annotated[Optional[StrictStr], Field(description="Filter by software_version")] = None,
+        assessed_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by assessed_genes")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
         files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
@@ -23895,6 +23904,8 @@ class AsyncIgvfApi:
         :type model_zoo_location: str
         :param software_version: Filter by software_version
         :type software_version: str
+        :param assessed_genes: Filter by assessed_genes
+        :type assessed_genes: List[str]
         :param id: Filter by @id
         :type id: str
         :param summary: Filter by summary
@@ -23963,6 +23974,7 @@ class AsyncIgvfApi:
             prediction_objects=prediction_objects,
             model_zoo_location=model_zoo_location,
             software_version=software_version,
+            assessed_genes=assessed_genes,
             id=id,
             summary=summary,
             files=files,
@@ -24023,6 +24035,7 @@ class AsyncIgvfApi:
         prediction_objects,
         model_zoo_location,
         software_version,
+        assessed_genes,
         id,
         summary,
         files,
@@ -24050,6 +24063,7 @@ class AsyncIgvfApi:
             'samples': 'multi',
             'donors': 'multi',
             'prediction_objects': 'multi',
+            'assessed_genes': 'multi',
             'files': 'multi',
             'control_for': 'multi',
             'input_file_set_for': 'multi',
@@ -24213,6 +24227,10 @@ class AsyncIgvfApi:
         if software_version is not None:
             
             _query_params.append(('software_version', software_version))
+            
+        if assessed_genes is not None:
+            
+            _query_params.append(('assessed_genes', assessed_genes))
             
         if id is not None:
             

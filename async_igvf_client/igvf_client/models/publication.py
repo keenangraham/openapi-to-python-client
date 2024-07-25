@@ -55,7 +55,7 @@ class Publication(BaseModel):
     published_by: Optional[List[StrictStr]] = Field(default=None, description="The affiliation of the lab with a larger organization, such as IGVF.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
-    summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
+    summary: Optional[StrictStr] = Field(default=None, description="A summary of the publication.")
     publication_year: Optional[StrictInt] = Field(default=None, description="The year the publication was published.")
     samples: Optional[List[Any]] = Field(default=None, description="The samples associated with this publication.")
     donors: Optional[List[Any]] = Field(default=None, description="The donors associated with this publication.")
