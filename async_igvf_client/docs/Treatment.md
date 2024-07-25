@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
-**biosamples_treated** | **List[object]** | The samples which have been treated using this treatment. | [optional] 
+**biosamples_treated** | **List[str]** | The samples which have been treated using this treatment. | [optional] 
 
 ## Example
 

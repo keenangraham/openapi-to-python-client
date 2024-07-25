@@ -55,7 +55,7 @@ class Workflow(BaseModel):
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
-    analysis_steps: Optional[List[Any]] = Field(default=None, description="The analysis steps which are part of this workflow.")
+    analysis_steps: Optional[List[StrictStr]] = Field(default=None, description="The analysis steps which are part of this workflow.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "publications", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "name", "source_url", "workflow_repositories", "standards_page", "workflow_version", "@id", "@type", "summary", "analysis_steps"]
 
     @field_validator('collections')

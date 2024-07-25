@@ -48,11 +48,11 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of this sample. | [optional] 
-**file_sets** | **List[object]** | The file sets linked to this sample. | [optional] 
-**multiplexed_in** | **List[object]** | The multiplexed samples in which this sample is included. | [optional] 
-**sorted_fractions** | **List[object]** | The fractions into which this sample has been sorted. | [optional] 
-**origin_of** | **List[object]** | The samples which originate from this sample, such as through a process of cell differentiation. | [optional] 
-**institutional_certificates** | **List[object]** | The institutional certificates under which use of this sample is approved. | [optional] 
+**file_sets** | **List[str]** | The file sets linked to this sample. | [optional] 
+**multiplexed_in** | **List[str]** | The multiplexed samples in which this sample is included. | [optional] 
+**sorted_fractions** | **List[str]** | The fractions into which this sample has been sorted. | [optional] 
+**origin_of** | **List[str]** | The samples which originate from this sample, such as through a process of cell differentiation. | [optional] 
+**institutional_certificates** | **List[str]** | The institutional certificates under which use of this sample is approved. | [optional] 
 **classifications** | **List[str]** | The general category of this type of sample. | [optional] 
 
 ## Example

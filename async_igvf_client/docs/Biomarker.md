@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 
 **name_quantification** | **str** | A concatenation of the name and quantification of the biomarker. | [optional] 
-**biomarker_for** | **List[object]** | The samples which have been confirmed to have this biomarker. | [optional] 
+**biomarker_for** | **List[str]** | The samples which have been confirmed to have this biomarker. | [optional] 
 
 ## Example
 
