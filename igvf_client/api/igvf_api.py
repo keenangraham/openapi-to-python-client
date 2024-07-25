@@ -33378,7 +33378,7 @@ class IgvfApi:
     @validate_call
     def report(
         self,
-        type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
+        type: Annotated[List[StrictStr], Field(description="Type of items to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
@@ -33400,7 +33400,7 @@ class IgvfApi:
 
         Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).
 
-        :param type: Type of objects to return. Can be repeated for multiple types. (required)
+        :param type: Type of items to return. Can be repeated for multiple types. (required)
         :type type: List[str]
         :param query: Query string for searching.
         :type query: str
@@ -33464,7 +33464,7 @@ class IgvfApi:
     @validate_call
     def report_with_http_info(
         self,
-        type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
+        type: Annotated[List[StrictStr], Field(description="Type of items to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
@@ -33486,7 +33486,7 @@ class IgvfApi:
 
         Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).
 
-        :param type: Type of objects to return. Can be repeated for multiple types. (required)
+        :param type: Type of items to return. Can be repeated for multiple types. (required)
         :type type: List[str]
         :param query: Query string for searching.
         :type query: str
@@ -33550,7 +33550,7 @@ class IgvfApi:
     @validate_call
     def report_without_preload_content(
         self,
-        type: Annotated[List[StrictStr], Field(description="Type of objects to return. Can be repeated for multiple types.")],
+        type: Annotated[List[StrictStr], Field(description="Type of items to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
@@ -33572,7 +33572,7 @@ class IgvfApi:
 
         Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).
 
-        :param type: Type of objects to return. Can be repeated for multiple types. (required)
+        :param type: Type of items to return. Can be repeated for multiple types. (required)
         :type type: List[str]
         :param query: Query string for searching.
         :type query: str

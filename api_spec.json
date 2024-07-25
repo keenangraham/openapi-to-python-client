@@ -610,7 +610,7 @@
             "style": "form",
             "explode": true,
             "required": true,
-            "description": "Type of objects to return. Can be repeated for multiple types."
+            "description": "Type of items to return. Can be repeated for multiple types."
           },
           {
             "name": "query",

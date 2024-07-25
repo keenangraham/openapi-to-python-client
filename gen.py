@@ -271,7 +271,7 @@ def generate_openapi_spec(schemas):
                             "style": "form",
                             "explode": True,
                             "required": True,
-                            "description": "Type of objects to return. Can be repeated for multiple types."
+                            "description": "Type of items to return. Can be repeated for multiple types."
                         },
                         {
                             "name": "query",
@@ -862,7 +862,6 @@ def clean_schema(schema):
         ]
         cleaned = {}
         for key, value in schema.items():
-#           print(key, value)
             if key in valid_attrs:
                 if key == "properties":
                     cleaned[key] = {k: clean_schema(v) for k, v in value.items()}

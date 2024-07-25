@@ -5886,7 +5886,7 @@ configuration = igvf_client.Configuration(
 with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.IgvfApi(api_client)
-    type = ['type_example'] # List[str] | Type of objects to return. Can be repeated for multiple types.
+    type = ['type_example'] # List[str] | Type of items to return. Can be repeated for multiple types.
     query = 'query_example' # str | Query string for searching. (optional)
     field_filters = None # object | Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
     include_fields = ['include_fields_example'] # List[str] | Fields to include in the response. Can be repeated for multiple fields. (optional)
@@ -5908,7 +5908,7 @@ with igvf_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | [**List[str]**](List[str].md)| Type of objects to return. Can be repeated for multiple types. | 
+ **type** | [**List[str]**](List[str].md)| Type of items to return. Can be repeated for multiple types. | 
  **query** | **str**| Query string for searching. | [optional] 
  **field_filters** | [**object**](object.md)| Any field from any object type can be used as a filter. Use &#39;!&#39; for negation, &#39;*&#39; as a wildcard, and &#39;lt:&#39;, &#39;lte:&#39;, &#39;gt:&#39;, &#39;gte:&#39; for range queries on numeric fields. | [optional] 
  **include_fields** | [**List[str]**](List[str].md)| Fields to include in the response. Can be repeated for multiple fields. | [optional] 
