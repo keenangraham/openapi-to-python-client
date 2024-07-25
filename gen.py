@@ -725,7 +725,8 @@ def fill_in_collection_template(schema_name, schema):
                         "name": "query",
                         "in": "query",
                         "schema": {"type": "string"},
-                        "description": "Query string for searching."
+                        "description": "Query string for searching.",
+                        "example": "variant flowfish jurkat"
                     },
                     {
                         "name": "frame",

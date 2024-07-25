@@ -77,7 +77,7 @@ configuration = igvf_client.Configuration(
 async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
-    query = 'query_example' # str | Query string for searching. (optional)
+    query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)

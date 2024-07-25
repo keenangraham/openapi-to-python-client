@@ -820,7 +820,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -1146,7 +1147,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -1598,7 +1600,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -1957,7 +1960,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -2397,7 +2401,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -2829,7 +2834,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -3285,7 +3291,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -3941,7 +3948,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -4604,7 +4612,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -5424,7 +5433,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -6142,7 +6152,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -6909,7 +6920,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -7612,7 +7624,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -8389,7 +8402,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -9118,7 +9132,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -9978,7 +9993,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -10905,7 +10921,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -11731,7 +11748,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -12526,7 +12544,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -13140,7 +13159,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -13765,7 +13785,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -14713,7 +14734,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -15361,7 +15383,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -16154,7 +16177,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -16858,7 +16882,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -17581,7 +17606,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -18092,7 +18118,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -18486,7 +18513,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -18917,7 +18945,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -19288,7 +19317,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -19835,7 +19865,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -20324,7 +20355,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -20849,7 +20881,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -21269,7 +21302,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -21762,7 +21796,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -22260,7 +22295,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -22693,7 +22729,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -23117,7 +23154,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -23509,7 +23547,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -24150,7 +24189,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -25396,7 +25436,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -26304,7 +26345,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -27424,7 +27466,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -28271,7 +28314,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -29439,7 +29483,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -30547,7 +30592,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -30988,7 +31034,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -31416,7 +31463,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -31761,7 +31809,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -32379,7 +32428,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
@@ -32816,7 +32866,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query string for searching."
+            "description": "Query string for searching.",
+            "example": "variant flowfish jurkat"
           },
           {
             "name": "frame",
