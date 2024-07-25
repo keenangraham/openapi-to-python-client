@@ -172,6 +172,7 @@ Name | Type | Description | Notes
 **prediction_objects** | **List[str]** | The objects this predictive model set is targeting. | [optional] 
 **model_zoo_location** | **str** | The link to the model on the Kipoi repository. | [optional] 
 **software_version** | **str** | Version of software used for the derivation of this model set. | [optional] 
+**assessed_genes** | **List[str]** | A list of genes assessed in this model set. | [optional] 
 **geneid** | **str** | ENSEMBL GeneID of official nomenclature approved gene. The GeneID does not include the current version number suffix. | [optional] 
 **symbol** | **str** | Gene symbol approved by the official nomenclature. | [optional] 
 **locations** | [**List[GeneLocation1]**](GeneLocation1.md) | Gene locations specified using 1-based, closed coordinates for different versions of reference genome assemblies. | [optional] 

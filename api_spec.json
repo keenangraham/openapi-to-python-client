@@ -23,7 +23,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`) or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`)."
+            "description": "The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`) or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`).",
+            "example": "/sequence-files/IGVFFI1165AJSO/"
           },
           {
             "name": "frame",
@@ -3127,7 +3128,7 @@
             "schema": {
               "title": "Summary",
               "type": "string",
-              "description": "A summary of the object."
+              "description": "A summary of the document."
             },
             "description": "Filter by summary",
             "style": "form",
@@ -15613,6 +15614,7 @@
                 "CRISPR FlowFISH",
                 "DOGMA-seq",
                 "Histone ChIP-seq",
+                "Hi-C",
                 "lentiMPRA",
                 "MERFISH",
                 "MIAA",
@@ -16447,6 +16449,22 @@
             "explode": true
           },
           {
+            "name": "assessed_genes",
+            "in": "query",
+            "schema": {
+              "title": "Assessed Genes",
+              "description": "A list of genes assessed in this model set.",
+              "type": "array",
+              "items": {
+                "title": "Gene",
+                "type": "string"
+              }
+            },
+            "description": "Filter by assessed_genes",
+            "style": "form",
+            "explode": true
+          },
+          {
             "name": "@id",
             "in": "query",
             "schema": {
@@ -17177,7 +17195,7 @@
             "schema": {
               "title": "Summary",
               "type": "string",
-              "description": "A summary of the object."
+              "description": "A summary of the prediction set."
             },
             "description": "Filter by summary",
             "style": "form",
@@ -20285,6 +20303,7 @@
                   "CRISPR FlowFISH",
                   "DOGMA-seq",
                   "Histone ChIP-seq",
+                  "Hi-C",
                   "lentiMPRA",
                   "MERFISH",
                   "MIAA",
@@ -23575,7 +23594,7 @@
             "schema": {
               "title": "Summary",
               "type": "string",
-              "description": "A summary of the object."
+              "description": "A summary of the publication."
             },
             "description": "Filter by summary",
             "style": "form",
@@ -34043,7 +34062,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the document."
           }
         }
       },
@@ -34536,7 +34555,7 @@
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
             "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "12"
+            "default": "13"
           },
           "uuid": {
             "title": "UUID",
@@ -39963,6 +39982,7 @@
               "CRISPR FlowFISH",
               "DOGMA-seq",
               "Histone ChIP-seq",
+              "Hi-C",
               "lentiMPRA",
               "MERFISH",
               "MIAA",
@@ -40406,6 +40426,16 @@
             "description": "Version of software used for the derivation of this model set.",
             "type": "string"
           },
+          "assessed_genes": {
+            "title": "Assessed Genes",
+            "description": "A list of genes assessed in this model set.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Gene",
+              "type": "string"
+            }
+          },
           "@id": {
             "title": "ID",
             "type": "string"
@@ -40797,7 +40827,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the prediction set."
           },
           "files": {
             "title": "Files",
@@ -41586,7 +41616,7 @@
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
             "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "2"
+            "default": "3"
           },
           "uuid": {
             "title": "UUID",
@@ -42072,6 +42102,7 @@
                 "CRISPR FlowFISH",
                 "DOGMA-seq",
                 "Histone ChIP-seq",
+                "Hi-C",
                 "lentiMPRA",
                 "MERFISH",
                 "MIAA",
@@ -43461,7 +43492,7 @@
           "summary": {
             "title": "Summary",
             "type": "string",
-            "description": "A summary of the object."
+            "description": "A summary of the publication."
           },
           "publication_year": {
             "title": "Publication Year",
@@ -43682,7 +43713,7 @@
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
             "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "21"
+            "default": "22"
           },
           "uuid": {
             "title": "UUID",
@@ -44788,7 +44819,7 @@
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
             "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "19"
+            "default": "20"
           },
           "uuid": {
             "title": "UUID",
@@ -45336,7 +45367,7 @@
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
             "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "12"
+            "default": "13"
           },
           "uuid": {
             "title": "UUID",
@@ -45755,7 +45786,7 @@
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
             "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "19"
+            "default": "20"
           },
           "uuid": {
             "title": "UUID",
@@ -46353,7 +46384,7 @@
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
             "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "22"
+            "default": "23"
           },
           "uuid": {
             "title": "UUID",
@@ -47286,7 +47317,7 @@
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
             "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "7"
+            "default": "8"
           },
           "uuid": {
             "title": "UUID",

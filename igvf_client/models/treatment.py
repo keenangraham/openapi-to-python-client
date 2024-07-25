@@ -36,7 +36,7 @@ class Treatment(BaseModel):
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product identifier provided by the originating lab or vendor.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that describe the treatment protocol details.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='7', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='8', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -263,7 +263,7 @@ class Treatment(BaseModel):
             "product_id": obj.get("product_id"),
             "documents": obj.get("documents"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '7',
+            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '8',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),

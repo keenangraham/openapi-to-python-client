@@ -28,7 +28,8 @@ def generate_openapi_spec(schemas):
                             "schema": {
                                 "type": "string"
                             },
-                            "description": "The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`) or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`)."
+                            "description": "The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`) or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`).",
+                            "example": "/sequence-files/IGVFFI1165AJSO/"
                         },
                         {
                             "name": "frame",

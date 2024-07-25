@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **published_by** | **List[str]** | The affiliation of the lab with a larger organization, such as IGVF. | [optional] [default to [IGVF]]
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
-**summary** | **str** | A summary of the object. | [optional] 
+**summary** | **str** | A summary of the publication. | [optional] 
 **publication_year** | **int** | The year the publication was published. | [optional] 
 **samples** | **List[object]** | The samples associated with this publication. | [optional] 
 **donors** | **List[object]** | The donors associated with this publication. | [optional] 

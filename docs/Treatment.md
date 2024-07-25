@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **product_id** | **str** | The product identifier provided by the originating lab or vendor. | [optional] 
 **documents** | **List[str]** | Documents that describe the treatment protocol details. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
-**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '7']
+**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '8']
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 

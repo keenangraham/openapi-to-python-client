@@ -44,7 +44,7 @@ class PrimaryCell(BaseModel):
     collections: Optional[List[StrictStr]] = Field(default=None, description="Some samples are part of particular data collections.")
     status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
     revoke_detail: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Explanation of why an object was transitioned to the revoked status.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='19', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='20', description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -335,7 +335,7 @@ class PrimaryCell(BaseModel):
             "collections": obj.get("collections"),
             "status": obj.get("status") if obj.get("status") is not None else 'in progress',
             "revoke_detail": obj.get("revoke_detail"),
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '19',
+            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '20',
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
