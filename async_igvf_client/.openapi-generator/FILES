@@ -58,6 +58,7 @@ docs/Item.md
 docs/ItemType.md
 docs/Lab.md
 docs/LabResults.md
+docs/Limit.md
 docs/Locus.md
 docs/Locus1.md
 docs/MatrixFile.md
@@ -106,7 +107,6 @@ docs/RodentDonorResults.md
 docs/SampleTerm.md
 docs/SampleTermResults.md
 docs/SearchFacet.md
-docs/SearchLimitParameter.md
 docs/SearchResultItem.md
 docs/SearchResults.md
 docs/SequenceFile.md
@@ -198,6 +198,7 @@ igvf_client/models/item.py
 igvf_client/models/item_type.py
 igvf_client/models/lab.py
 igvf_client/models/lab_results.py
+igvf_client/models/limit.py
 igvf_client/models/locus.py
 igvf_client/models/locus1.py
 igvf_client/models/matrix_file.py
@@ -246,7 +247,6 @@ igvf_client/models/rodent_donor_results.py
 igvf_client/models/sample_term.py
 igvf_client/models/sample_term_results.py
 igvf_client/models/search_facet.py
-igvf_client/models/search_limit_parameter.py
 igvf_client/models/search_result_item.py
 igvf_client/models/search_results.py
 igvf_client/models/sequence_file.py
@@ -283,4 +283,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_limit.py
 tox.ini

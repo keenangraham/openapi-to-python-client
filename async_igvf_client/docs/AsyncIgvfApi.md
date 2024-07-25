@@ -103,7 +103,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
@@ -137,7 +137,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
  **uuid** | **str**| Filter by uuid | [optional] 
@@ -217,7 +217,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     controlled_access = True # bool | Filter by controlled_access (optional)
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
@@ -284,7 +284,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **controlled_access** | **bool**| Filter by controlled_access | [optional] 
  **anvil_url** | **str**| Filter by anvil_url | [optional] 
@@ -397,7 +397,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     input_file_sets = ['input_file_sets_example'] # List[str] | Filter by input_file_sets (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
@@ -448,7 +448,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **input_file_sets** | [**List[str]**](List[str].md)| Filter by input_file_sets | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
@@ -545,7 +545,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -581,7 +581,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -663,7 +663,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -705,7 +705,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -793,7 +793,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -837,7 +837,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -927,7 +927,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -979,7 +979,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
@@ -1077,7 +1077,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     status = 'status_example' # str | Filter by status (optional)
     url = 'url_example' # str | Filter by url (optional)
@@ -1118,7 +1118,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **url** | **str**| Filter by url | [optional] 
@@ -1290,7 +1290,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -1331,7 +1331,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -1418,7 +1418,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -1478,7 +1478,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
@@ -1585,7 +1585,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     small_scale_loci_list = [igvf_client.Locus()] # List[Locus] | Filter by small_scale_loci_list (optional)
     large_scale_loci_list = 'large_scale_loci_list_example' # str | Filter by large_scale_loci_list (optional)
@@ -1655,7 +1655,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **small_scale_loci_list** | [**List[Locus]**](List[Locus].md)| Filter by small_scale_loci_list | [optional] 
  **large_scale_loci_list** | **str**| Filter by large_scale_loci_list | [optional] 
@@ -1771,7 +1771,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
@@ -1818,7 +1818,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
@@ -1911,7 +1911,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
@@ -1964,7 +1964,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **taxa** | **str**| Filter by taxa | [optional] 
@@ -2063,7 +2063,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
@@ -2108,7 +2108,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
@@ -2199,7 +2199,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -2237,7 +2237,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -2402,7 +2402,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
@@ -2445,7 +2445,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **transcriptome_annotation** | **str**| Filter by transcriptome_annotation | [optional] 
@@ -2534,7 +2534,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     assembly = 'assembly_example' # str | Filter by assembly (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
@@ -2596,7 +2596,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **assembly** | **str**| Filter by assembly | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
@@ -2785,7 +2785,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
@@ -2835,7 +2835,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **taxa** | **str**| Filter by taxa | [optional] 
@@ -2931,7 +2931,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -2990,7 +2990,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
@@ -3095,7 +3095,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -3131,7 +3131,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -3213,7 +3213,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -3307,7 +3307,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
@@ -3447,7 +3447,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -3487,7 +3487,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -3573,7 +3573,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     status = 'status_example' # str | Filter by status (optional)
     url = 'url_example' # str | Filter by url (optional)
@@ -3610,7 +3610,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **url** | **str**| Filter by url | [optional] 
@@ -3693,7 +3693,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     reference_files = ['reference_files_example'] # List[str] | Filter by reference_files (optional)
@@ -3756,7 +3756,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **reference_files** | [**List[str]**](List[str].md)| Filter by reference_files | [optional] 
@@ -3865,7 +3865,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -3925,7 +3925,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
@@ -4031,7 +4031,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     controlled_access = True # bool | Filter by controlled_access (optional)
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
@@ -4092,7 +4092,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **controlled_access** | **bool**| Filter by controlled_access | [optional] 
  **anvil_url** | **str**| Filter by anvil_url | [optional] 
@@ -4199,7 +4199,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     input_file_sets = ['input_file_sets_example'] # List[str] | Filter by input_file_sets (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
@@ -4256,7 +4256,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **input_file_sets** | [**List[str]**](List[str].md)| Filter by input_file_sets | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
@@ -4359,7 +4359,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -4430,7 +4430,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
@@ -4547,7 +4547,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -4588,7 +4588,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -4675,7 +4675,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     lab = 'lab_example' # str | Filter by lab (optional)
@@ -4714,7 +4714,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **lab** | **str**| Filter by lab | [optional] 
@@ -4799,7 +4799,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -4839,7 +4839,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -4925,7 +4925,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -4963,7 +4963,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -5047,7 +5047,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -5089,7 +5089,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -5178,7 +5178,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     input_file_sets = ['input_file_sets_example'] # List[str] | Filter by input_file_sets (optional)
     small_scale_loci_list = [igvf_client.Locus()] # List[Locus] | Filter by small_scale_loci_list (optional)
@@ -5234,7 +5234,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **input_file_sets** | [**List[str]**](List[str].md)| Filter by input_file_sets | [optional] 
  **small_scale_loci_list** | [**List[Locus]**](List[Locus].md)| Filter by small_scale_loci_list | [optional] 
@@ -5336,7 +5336,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -5422,7 +5422,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
@@ -5554,7 +5554,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
@@ -5607,7 +5607,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
@@ -5706,7 +5706,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     controlled_access = True # bool | Filter by controlled_access (optional)
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
@@ -5774,7 +5774,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **controlled_access** | **bool**| Filter by controlled_access | [optional] 
  **anvil_url** | **str**| Filter by anvil_url | [optional] 
@@ -5977,7 +5977,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
@@ -6032,7 +6032,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **taxa** | **str**| Filter by taxa | [optional] 
@@ -6133,7 +6133,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -6178,7 +6178,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -6424,7 +6424,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     type = ['type_example'] # List[str] | Type of objects to return. Can be repeated for multiple types. (optional)
     query = 'query_example' # str | Query string for searching. (optional)
     field_filters = None # object | Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     include_fields = ['include_fields_example'] # List[str] | Fields to include in the response. Can be repeated for multiple fields. (optional)
 
@@ -6447,7 +6447,7 @@ Name | Type | Description  | Notes
  **type** | [**List[str]**](List[str].md)| Type of objects to return. Can be repeated for multiple types. | [optional] 
  **query** | **str**| Query string for searching. | [optional] 
  **field_filters** | [**object**](object.md)| Any field from any object type can be used as a filter. Use &#39;!&#39; for negation, &#39;*&#39; as a wildcard, and &#39;lt:&#39;, &#39;lte:&#39;, &#39;gt:&#39;, &#39;gte:&#39; for range queries on numeric fields. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **include_fields** | [**List[str]**](List[str].md)| Fields to include in the response. Can be repeated for multiple fields. | [optional] 
 
@@ -6512,7 +6512,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     controlled_access = True # bool | Filter by controlled_access (optional)
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
@@ -6585,7 +6585,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **controlled_access** | **bool**| Filter by controlled_access | [optional] 
  **anvil_url** | **str**| Filter by anvil_url | [optional] 
@@ -6704,7 +6704,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
     assembly = 'assembly_example' # str | Filter by assembly (optional)
@@ -6771,7 +6771,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **transcriptome_annotation** | **str**| Filter by transcriptome_annotation | [optional] 
  **assembly** | **str**| Filter by assembly | [optional] 
@@ -6884,7 +6884,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -6925,7 +6925,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
@@ -7012,7 +7012,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -7053,7 +7053,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
@@ -7140,7 +7140,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -7175,7 +7175,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -7256,7 +7256,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     controlled_access = True # bool | Filter by controlled_access (optional)
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
@@ -7320,7 +7320,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **controlled_access** | **bool**| Filter by controlled_access | [optional] 
  **anvil_url** | **str**| Filter by anvil_url | [optional] 
@@ -7430,7 +7430,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -7497,7 +7497,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
@@ -7610,7 +7610,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -7699,7 +7699,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
@@ -7834,7 +7834,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     lab = 'lab_example' # str | Filter by lab (optional)
@@ -7887,7 +7887,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **lab** | **str**| Filter by lab | [optional] 
@@ -7986,7 +7986,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     status = 'status_example' # str | Filter by status (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
@@ -8026,7 +8026,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
@@ -8112,7 +8112,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
@@ -8197,7 +8197,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **taxa** | **str**| Filter by taxa | [optional] 
@@ -8328,7 +8328,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = igvf_client.AsyncIgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
-    limit = igvf_client.SearchLimitParameter() # SearchLimitParameter | Maximum number of results to return. Use 'all' for all results. (optional)
+    limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
@@ -8375,7 +8375,7 @@ async with igvf_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
- **limit** | [**SearchLimitParameter**](SearchLimitParameter.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
+ **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 

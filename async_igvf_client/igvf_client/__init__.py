@@ -85,6 +85,7 @@ from igvf_client.models.item import Item
 from igvf_client.models.item_type import ItemType
 from igvf_client.models.lab import Lab
 from igvf_client.models.lab_results import LabResults
+from igvf_client.models.limit import Limit
 from igvf_client.models.locus import Locus
 from igvf_client.models.locus1 import Locus1
 from igvf_client.models.matrix_file import MatrixFile
@@ -133,7 +134,6 @@ from igvf_client.models.rodent_donor_results import RodentDonorResults
 from igvf_client.models.sample_term import SampleTerm
 from igvf_client.models.sample_term_results import SampleTermResults
 from igvf_client.models.search_facet import SearchFacet
-from igvf_client.models.search_limit_parameter import SearchLimitParameter
 from igvf_client.models.search_result_item import SearchResultItem
 from igvf_client.models.search_results import SearchResults
 from igvf_client.models.sequence_file import SequenceFile

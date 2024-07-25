@@ -136,7 +136,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param schema_version: Filter by schema_version
@@ -270,7 +270,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param schema_version: Filter by schema_version
@@ -404,7 +404,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param schema_version: Filter by schema_version
@@ -723,7 +723,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -989,7 +989,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -1255,7 +1255,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -1842,7 +1842,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param input_file_sets: Filter by input_file_sets
@@ -2044,7 +2044,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param input_file_sets: Filter by input_file_sets
@@ -2246,7 +2246,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param input_file_sets: Filter by input_file_sets
@@ -2701,7 +2701,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -2843,7 +2843,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -2985,7 +2985,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -3305,7 +3305,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -3471,7 +3471,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -3637,7 +3637,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -4010,7 +4010,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -4184,7 +4184,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -4358,7 +4358,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -4759,7 +4759,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -4965,7 +4965,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -5171,7 +5171,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -5638,7 +5638,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param status: Filter by status
@@ -5800,7 +5800,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param status: Filter by status
@@ -5962,7 +5962,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param status: Filter by status
@@ -6635,7 +6635,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -6797,7 +6797,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -6959,7 +6959,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -7338,7 +7338,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -7576,7 +7576,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -7814,7 +7814,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -8364,7 +8364,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param small_scale_loci_list: Filter by small_scale_loci_list
@@ -8642,7 +8642,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param small_scale_loci_list: Filter by small_scale_loci_list
@@ -8920,7 +8920,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param small_scale_loci_list: Filter by small_scale_loci_list
@@ -9541,7 +9541,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -9727,7 +9727,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -9913,7 +9913,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -10334,7 +10334,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -10544,7 +10544,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -10754,7 +10754,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -11234,7 +11234,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -11412,7 +11412,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -11590,7 +11590,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -11981,7 +11981,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -12131,7 +12131,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -12281,7 +12281,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -12882,7 +12882,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -13052,7 +13052,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -13222,7 +13222,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -13620,7 +13620,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param assembly: Filter by assembly
@@ -13866,7 +13866,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param assembly: Filter by assembly
@@ -14112,7 +14112,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param assembly: Filter by assembly
@@ -14920,7 +14920,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -15118,7 +15118,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -15316,7 +15316,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -15774,7 +15774,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -16008,7 +16008,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -16242,7 +16242,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -16749,7 +16749,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -16891,7 +16891,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -17033,7 +17033,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -17404,7 +17404,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -17778,7 +17778,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -18152,7 +18152,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -18968,7 +18968,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -19126,7 +19126,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -19284,7 +19284,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -19633,7 +19633,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param status: Filter by status
@@ -19779,7 +19779,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param status: Filter by status
@@ -19925,7 +19925,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param status: Filter by status
@@ -20265,7 +20265,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -20515,7 +20515,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -20765,7 +20765,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -21329,7 +21329,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -21567,7 +21567,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -21805,7 +21805,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -22361,7 +22361,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -22603,7 +22603,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -22845,7 +22845,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -23389,7 +23389,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param input_file_sets: Filter by input_file_sets
@@ -23615,7 +23615,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param input_file_sets: Filter by input_file_sets
@@ -23841,7 +23841,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param input_file_sets: Filter by input_file_sets
@@ -24380,7 +24380,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -24662,7 +24662,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -24944,7 +24944,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -25573,7 +25573,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -25735,7 +25735,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -25897,7 +25897,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -26255,7 +26255,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -26409,7 +26409,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -26563,7 +26563,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -26904,7 +26904,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -27062,7 +27062,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -27220,7 +27220,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -27571,7 +27571,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -27721,7 +27721,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -27871,7 +27871,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -28215,7 +28215,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -28381,7 +28381,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -28547,7 +28547,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -28933,7 +28933,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param input_file_sets: Filter by input_file_sets
@@ -29155,7 +29155,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param input_file_sets: Filter by input_file_sets
@@ -29377,7 +29377,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param input_file_sets: Filter by input_file_sets
@@ -29923,7 +29923,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -30265,7 +30265,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -30607,7 +30607,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -31370,7 +31370,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -31580,7 +31580,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -31790,7 +31790,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -32297,7 +32297,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -32567,7 +32567,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -32837,7 +32837,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -33776,7 +33776,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -33994,7 +33994,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -34212,7 +34212,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -34694,7 +34694,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -34872,7 +34872,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -35050,7 +35050,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -35936,7 +35936,7 @@ class AsyncIgvfApi:
         :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
@@ -36024,7 +36024,7 @@ class AsyncIgvfApi:
         :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
@@ -36112,7 +36112,7 @@ class AsyncIgvfApi:
         :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
         :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
@@ -36335,7 +36335,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -36625,7 +36625,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -36915,7 +36915,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -37566,7 +37566,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
@@ -37832,7 +37832,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
@@ -38098,7 +38098,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
@@ -38675,7 +38675,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -38837,7 +38837,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -38999,7 +38999,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -39361,7 +39361,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -39523,7 +39523,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -39685,7 +39685,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -40039,7 +40039,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -40177,7 +40177,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -40315,7 +40315,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -40648,7 +40648,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -40902,7 +40902,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -41156,7 +41156,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param controlled_access: Filter by controlled_access
@@ -41734,7 +41734,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -42000,7 +42000,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -42266,7 +42266,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -42905,7 +42905,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -43259,7 +43259,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -43613,7 +43613,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -44400,7 +44400,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -44610,7 +44610,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -44820,7 +44820,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -45276,7 +45276,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param status: Filter by status
@@ -45434,7 +45434,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param status: Filter by status
@@ -45592,7 +45592,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param status: Filter by status
@@ -45980,7 +45980,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -46318,7 +46318,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -46656,7 +46656,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -47405,7 +47405,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -47591,7 +47591,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
@@ -47777,7 +47777,7 @@ class AsyncIgvfApi:
         :param query: Query string for searching.
         :type query: str
         :param limit: Maximum number of results to return. Use 'all' for all results.
-        :type limit: SearchLimitParameter
+        :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
