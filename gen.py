@@ -29,7 +29,17 @@ def generate_openapi_spec(schemas):
                                 "type": "string"
                             },
                             "description": "The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`) or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`).",
-                            "example": "/sequence-files/IGVFFI1165AJSO/"
+                            "examples": {
+                                "@id": {
+                                    "value": "/sequence-files/IGVFFI1165AJSO/"
+                                },
+                                "uuid": {
+                                    "value": "fffcd64e-af02-4675-8953-7352459ee06a"
+                                },
+                                "accession": {
+                                    "value": "IGVFFI1165AJSO"
+                                }
+                            }
                         },
                         {
                             "name": "frame",
@@ -39,7 +49,7 @@ def generate_openapi_spec(schemas):
                                 "type": "string",
                                 "enum": ["object"]
                             },
-                            "description": "Constant value, do not set."
+                            "description": "Constant value. Do not set."
                         }
                     ],
                     "responses": {
@@ -131,7 +141,7 @@ def generate_openapi_spec(schemas):
                                 "type": "string",
                                 "enum": ["object"]
                             },
-                            "description": "Constant value, do not set."
+                            "description": "Constant value. Do not set."
                         }
                     ],
                     "responses": {
@@ -715,7 +725,7 @@ def fill_in_collection_template(schema_name, schema):
                             "type": "string",
                             "enum": ["object"]
                         },
-                        "description": "Constant value, do not set."
+                        "description": "Constant value. Do not set."
                     },
                     {
                        "name": "limit",
