@@ -755,7 +755,8 @@ def fill_in_collection_template(schema_name, schema):
                         "schema": {"type": "array", "items": {"type": "string"}},
                         "style": "form",
                         "explode": True,
-                        "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+                        "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+                        "examples": {"file_size": {"value": "-file_size"}, "lab": {"value": "lab.title"}}
                     },
                 ],
                 "responses": {

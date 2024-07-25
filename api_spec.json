@@ -861,7 +861,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "schema_version",
@@ -1179,7 +1187,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -1623,7 +1639,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -1974,7 +1998,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "status",
@@ -2406,7 +2438,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -2830,7 +2870,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -3278,7 +3326,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -3926,7 +3982,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -4581,7 +4645,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "controlled_access",
@@ -5393,7 +5465,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -6103,7 +6183,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "assembly",
@@ -6862,7 +6950,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -7557,7 +7653,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -8326,7 +8430,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "controlled_access",
@@ -9047,7 +9159,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "controlled_access",
@@ -9899,7 +10019,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "controlled_access",
@@ -10818,7 +10946,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "transcriptome_annotation",
@@ -11636,7 +11772,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "controlled_access",
@@ -12423,7 +12567,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "input_file_sets",
@@ -13029,7 +13181,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -13646,7 +13806,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "small_scale_loci_list",
@@ -14586,7 +14754,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -15226,7 +15402,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -16011,7 +16195,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "input_file_sets",
@@ -16707,7 +16899,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "input_file_sets",
@@ -17422,7 +17622,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -17925,7 +18133,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -18311,7 +18527,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -18734,7 +18958,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "status",
@@ -19097,7 +19329,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -19636,7 +19876,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -20117,7 +20365,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -20634,7 +20890,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -21046,7 +21310,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -21531,7 +21803,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -22021,7 +22301,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -22446,7 +22734,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -22862,7 +23158,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -23246,7 +23550,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -23879,7 +24191,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -25117,7 +25437,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -26017,7 +26345,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -27129,7 +27465,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -27968,7 +28312,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -29128,7 +29480,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -30228,7 +30588,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -30661,7 +31029,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -31081,7 +31457,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -31418,7 +31802,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",
@@ -32028,7 +32420,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "status",
@@ -32457,7 +32857,15 @@
             },
             "style": "form",
             "explode": true,
-            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.",
+            "examples": {
+              "file_size": {
+                "value": "-file_size"
+              },
+              "lab": {
+                "value": "lab.title"
+              }
+            }
           },
           {
             "name": "release_timestamp",

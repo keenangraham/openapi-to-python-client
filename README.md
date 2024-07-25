@@ -79,7 +79,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     api_instance = igvf_client.IgvfApi(api_client)
     query = 'query_example' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
-    sort = ['sort_example'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
+    sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
