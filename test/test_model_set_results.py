@@ -89,6 +89,9 @@ class TestModelSetResults(unittest.TestCase):
                             ], 
                         model_zoo_location = 'https://kipoi.org/models/%?x!u', 
                         software_version = '', 
+                        assessed_genes = [
+                            ''
+                            ], 
                         @id = '', 
                         @type = [
                             ''

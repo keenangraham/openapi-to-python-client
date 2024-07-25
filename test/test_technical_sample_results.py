@@ -64,7 +64,7 @@ class TestTechnicalSampleResults(unittest.TestCase):
                             ], 
                         status = 'in progress', 
                         revoke_detail = 'k', 
-                        schema_version = '12', 
+                        schema_version = '13', 
                         uuid = '', 
                         notes = 'k', 
                         aliases = [

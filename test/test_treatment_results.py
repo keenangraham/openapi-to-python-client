@@ -49,7 +49,7 @@ class TestTreatmentResults(unittest.TestCase):
                             ''
                             ], 
                         status = 'in progress', 
-                        schema_version = '7', 
+                        schema_version = '8', 
                         uuid = '', 
                         notes = 'k', 
                         aliases = [

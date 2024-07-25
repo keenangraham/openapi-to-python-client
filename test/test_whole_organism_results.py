@@ -65,7 +65,7 @@ class TestWholeOrganismResults(unittest.TestCase):
                             ], 
                         status = 'in progress', 
                         revoke_detail = 'k', 
-                        schema_version = '22', 
+                        schema_version = '23', 
                         uuid = '', 
                         notes = 'k', 
                         aliases = [

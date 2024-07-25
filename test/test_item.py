@@ -330,6 +330,9 @@ class TestItem(unittest.TestCase):
                     ],
                 model_zoo_location = 'https://kipoi.org/models/%?x!u',
                 software_version = '',
+                assessed_genes = [
+                    ''
+                    ],
                 geneid = 'ENSEIOTGSWWMEJTCMOSLLNYULG62255008507',
                 symbol = '',
                 locations = [

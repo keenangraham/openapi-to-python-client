@@ -63,7 +63,7 @@ class TestInVitroSystem(unittest.TestCase):
                     ],
                 status = 'in progress',
                 revoke_detail = 'k',
-                schema_version = '21',
+                schema_version = '22',
                 uuid = '',
                 notes = 'k',
                 aliases = [

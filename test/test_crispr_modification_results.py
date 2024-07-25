@@ -49,7 +49,7 @@ class TestCrisprModificationResults(unittest.TestCase):
                         status = 'in progress', 
                         lab = '', 
                         award = '', 
-                        schema_version = '2', 
+                        schema_version = '3', 
                         uuid = '', 
                         notes = 'k', 
                         aliases = [
