@@ -2734,7 +2734,8 @@
               "description": "The samples which have been confirmed to have this biomarker.",
               "type": "array",
               "items": {
-                "title": "Biomarker For"
+                "title": "Biomarker For",
+                "type": "string"
               }
             },
             "description": "Filter by biomarker_for",
@@ -5240,7 +5241,8 @@
               "description": "Construct library set(s) that this file was used for in insert design.",
               "type": "array",
               "items": {
-                "title": "Integrated In"
+                "title": "Integrated In",
+                "type": "string"
               }
             },
             "description": "Filter by integrated_in",
@@ -5255,7 +5257,8 @@
               "description": "The files which are derived from this file.",
               "type": "array",
               "items": {
-                "title": "Input File For"
+                "title": "Input File For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_for",
@@ -5270,7 +5273,8 @@
               "description": "File Set(s) that this file is a gene list for.",
               "type": "array",
               "items": {
-                "title": "Gene List For"
+                "title": "Gene List For",
+                "type": "string"
               }
             },
             "description": "Filter by gene_list_for",
@@ -5285,7 +5289,8 @@
               "description": "File Set(s) that this file is a loci list for.",
               "type": "array",
               "items": {
-                "title": "Loci List For"
+                "title": "Loci List For",
+                "type": "string"
               }
             },
             "description": "Filter by loci_list_for",
@@ -5971,7 +5976,8 @@
               "description": "Construct library set(s) that this file was used for in insert design.",
               "type": "array",
               "items": {
-                "title": "Integrated In"
+                "title": "Integrated In",
+                "type": "string"
               }
             },
             "description": "Filter by integrated_in",
@@ -5986,7 +5992,8 @@
               "description": "The files which are derived from this file.",
               "type": "array",
               "items": {
-                "title": "Input File For"
+                "title": "Input File For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_for",
@@ -6001,7 +6008,8 @@
               "description": "File Set(s) that this file is a gene list for.",
               "type": "array",
               "items": {
-                "title": "Gene List For"
+                "title": "Gene List For",
+                "type": "string"
               }
             },
             "description": "Filter by gene_list_for",
@@ -6016,7 +6024,8 @@
               "description": "File Set(s) that this file is a loci list for.",
               "type": "array",
               "items": {
-                "title": "Loci List For"
+                "title": "Loci List For",
+                "type": "string"
               }
             },
             "description": "Filter by loci_list_for",
@@ -6739,7 +6748,8 @@
               "description": "Construct library set(s) that this file was used for in insert design.",
               "type": "array",
               "items": {
-                "title": "Integrated In"
+                "title": "Integrated In",
+                "type": "string"
               }
             },
             "description": "Filter by integrated_in",
@@ -6754,7 +6764,8 @@
               "description": "The files which are derived from this file.",
               "type": "array",
               "items": {
-                "title": "Input File For"
+                "title": "Input File For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_for",
@@ -6769,7 +6780,8 @@
               "description": "File Set(s) that this file is a gene list for.",
               "type": "array",
               "items": {
-                "title": "Gene List For"
+                "title": "Gene List For",
+                "type": "string"
               }
             },
             "description": "Filter by gene_list_for",
@@ -6784,7 +6796,8 @@
               "description": "File Set(s) that this file is a loci list for.",
               "type": "array",
               "items": {
-                "title": "Loci List For"
+                "title": "Loci List For",
+                "type": "string"
               }
             },
             "description": "Filter by loci_list_for",
@@ -7443,7 +7456,8 @@
               "description": "Construct library set(s) that this file was used for in insert design.",
               "type": "array",
               "items": {
-                "title": "Integrated In"
+                "title": "Integrated In",
+                "type": "string"
               }
             },
             "description": "Filter by integrated_in",
@@ -7458,7 +7472,8 @@
               "description": "The files which are derived from this file.",
               "type": "array",
               "items": {
-                "title": "Input File For"
+                "title": "Input File For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_for",
@@ -7473,7 +7488,8 @@
               "description": "File Set(s) that this file is a gene list for.",
               "type": "array",
               "items": {
-                "title": "Gene List For"
+                "title": "Gene List For",
+                "type": "string"
               }
             },
             "description": "Filter by gene_list_for",
@@ -7488,7 +7504,8 @@
               "description": "File Set(s) that this file is a loci list for.",
               "type": "array",
               "items": {
-                "title": "Loci List For"
+                "title": "Loci List For",
+                "type": "string"
               }
             },
             "description": "Filter by loci_list_for",
@@ -8209,7 +8226,8 @@
               "description": "Construct library set(s) that this file was used for in insert design.",
               "type": "array",
               "items": {
-                "title": "Integrated In"
+                "title": "Integrated In",
+                "type": "string"
               }
             },
             "description": "Filter by integrated_in",
@@ -8224,7 +8242,8 @@
               "description": "The files which are derived from this file.",
               "type": "array",
               "items": {
-                "title": "Input File For"
+                "title": "Input File For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_for",
@@ -8239,7 +8258,8 @@
               "description": "File Set(s) that this file is a gene list for.",
               "type": "array",
               "items": {
-                "title": "Gene List For"
+                "title": "Gene List For",
+                "type": "string"
               }
             },
             "description": "Filter by gene_list_for",
@@ -8254,7 +8274,8 @@
               "description": "File Set(s) that this file is a loci list for.",
               "type": "array",
               "items": {
-                "title": "Loci List For"
+                "title": "Loci List For",
+                "type": "string"
               }
             },
             "description": "Filter by loci_list_for",
@@ -8951,7 +8972,8 @@
               "description": "Construct library set(s) that this file was used for in insert design.",
               "type": "array",
               "items": {
-                "title": "Integrated In"
+                "title": "Integrated In",
+                "type": "string"
               }
             },
             "description": "Filter by integrated_in",
@@ -8966,7 +8988,8 @@
               "description": "The files which are derived from this file.",
               "type": "array",
               "items": {
-                "title": "Input File For"
+                "title": "Input File For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_for",
@@ -8981,7 +9004,8 @@
               "description": "File Set(s) that this file is a gene list for.",
               "type": "array",
               "items": {
-                "title": "Gene List For"
+                "title": "Gene List For",
+                "type": "string"
               }
             },
             "description": "Filter by gene_list_for",
@@ -8996,7 +9020,8 @@
               "description": "File Set(s) that this file is a loci list for.",
               "type": "array",
               "items": {
-                "title": "Loci List For"
+                "title": "Loci List For",
+                "type": "string"
               }
             },
             "description": "Filter by loci_list_for",
@@ -9812,7 +9837,8 @@
               "description": "Construct library set(s) that this file was used for in insert design.",
               "type": "array",
               "items": {
-                "title": "Integrated In"
+                "title": "Integrated In",
+                "type": "string"
               }
             },
             "description": "Filter by integrated_in",
@@ -9827,7 +9853,8 @@
               "description": "The files which are derived from this file.",
               "type": "array",
               "items": {
-                "title": "Input File For"
+                "title": "Input File For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_for",
@@ -9842,7 +9869,8 @@
               "description": "File Set(s) that this file is a gene list for.",
               "type": "array",
               "items": {
-                "title": "Gene List For"
+                "title": "Gene List For",
+                "type": "string"
               }
             },
             "description": "Filter by gene_list_for",
@@ -9857,7 +9885,8 @@
               "description": "File Set(s) that this file is a loci list for.",
               "type": "array",
               "items": {
-                "title": "Loci List For"
+                "title": "Loci List For",
+                "type": "string"
               }
             },
             "description": "Filter by loci_list_for",
@@ -10725,7 +10754,8 @@
               "description": "Construct library set(s) that this file was used for in insert design.",
               "type": "array",
               "items": {
-                "title": "Integrated In"
+                "title": "Integrated In",
+                "type": "string"
               }
             },
             "description": "Filter by integrated_in",
@@ -10740,7 +10770,8 @@
               "description": "The files which are derived from this file.",
               "type": "array",
               "items": {
-                "title": "Input File For"
+                "title": "Input File For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_for",
@@ -10755,7 +10786,8 @@
               "description": "File Set(s) that this file is a gene list for.",
               "type": "array",
               "items": {
-                "title": "Gene List For"
+                "title": "Gene List For",
+                "type": "string"
               }
             },
             "description": "Filter by gene_list_for",
@@ -10770,7 +10802,8 @@
               "description": "File Set(s) that this file is a loci list for.",
               "type": "array",
               "items": {
-                "title": "Loci List For"
+                "title": "Loci List For",
+                "type": "string"
               }
             },
             "description": "Filter by loci_list_for",
@@ -10821,7 +10854,8 @@
               "description": "Link(s) to the associated seqspec YAML configuration file(s).",
               "type": "array",
               "items": {
-                "title": "Seqspecs"
+                "title": "Seqspecs",
+                "type": "string"
               }
             },
             "description": "Filter by seqspecs",
@@ -11555,7 +11589,8 @@
               "description": "Construct library set(s) that this file was used for in insert design.",
               "type": "array",
               "items": {
-                "title": "Integrated In"
+                "title": "Integrated In",
+                "type": "string"
               }
             },
             "description": "Filter by integrated_in",
@@ -11570,7 +11605,8 @@
               "description": "The files which are derived from this file.",
               "type": "array",
               "items": {
-                "title": "Input File For"
+                "title": "Input File For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_for",
@@ -11585,7 +11621,8 @@
               "description": "File Set(s) that this file is a gene list for.",
               "type": "array",
               "items": {
-                "title": "Gene List For"
+                "title": "Gene List For",
+                "type": "string"
               }
             },
             "description": "Filter by gene_list_for",
@@ -11600,7 +11637,8 @@
               "description": "File Set(s) that this file is a loci list for.",
               "type": "array",
               "items": {
-                "title": "Loci List For"
+                "title": "Loci List For",
+                "type": "string"
               }
             },
             "description": "Filter by loci_list_for",
@@ -12363,7 +12401,8 @@
               "description": "Construct library set(s) that this file was used for in insert design.",
               "type": "array",
               "items": {
-                "title": "Integrated In"
+                "title": "Integrated In",
+                "type": "string"
               }
             },
             "description": "Filter by integrated_in",
@@ -12378,7 +12417,8 @@
               "description": "The files which are derived from this file.",
               "type": "array",
               "items": {
-                "title": "Input File For"
+                "title": "Input File For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_for",
@@ -12393,7 +12433,8 @@
               "description": "File Set(s) that this file is a gene list for.",
               "type": "array",
               "items": {
-                "title": "Gene List For"
+                "title": "Gene List For",
+                "type": "string"
               }
             },
             "description": "Filter by gene_list_for",
@@ -12408,7 +12449,8 @@
               "description": "File Set(s) that this file is a loci list for.",
               "type": "array",
               "items": {
-                "title": "Loci List For"
+                "title": "Loci List For",
+                "type": "string"
               }
             },
             "description": "Filter by loci_list_for",
@@ -12999,7 +13041,8 @@
               "type": "array",
               "description": "The files associated with this file set.",
               "items": {
-                "title": "File"
+                "title": "File",
+                "type": "string"
               }
             },
             "description": "Filter by files",
@@ -13014,7 +13057,8 @@
               "type": "array",
               "description": "The file sets for which this file set is a control.",
               "items": {
-                "title": "File Set Controlled By This File Set"
+                "title": "File Set Controlled By This File Set",
+                "type": "string"
               }
             },
             "description": "Filter by control_for",
@@ -13042,7 +13086,8 @@
               "description": "The file sets that use this file set as an input.",
               "type": "array",
               "items": {
-                "title": "Input File Set For"
+                "title": "Input File Set For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_set_for",
@@ -13627,7 +13672,8 @@
               "type": "array",
               "description": "The files associated with this file set.",
               "items": {
-                "title": "File"
+                "title": "File",
+                "type": "string"
               }
             },
             "description": "Filter by files",
@@ -13642,7 +13688,8 @@
               "type": "array",
               "description": "The file sets for which this file set is a control.",
               "items": {
-                "title": "File Set Controlled By This File Set"
+                "title": "File Set Controlled By This File Set",
+                "type": "string"
               }
             },
             "description": "Filter by control_for",
@@ -13670,7 +13717,8 @@
               "description": "The file sets that use this file set as an input.",
               "type": "array",
               "items": {
-                "title": "Input File Set For"
+                "title": "Input File Set For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_set_for",
@@ -13685,7 +13733,8 @@
               "description": "The measurement sets that link to this auxiliary set.",
               "type": "array",
               "items": {
-                "title": "Measurement Set"
+                "title": "Measurement Set",
+                "type": "string"
               }
             },
             "description": "Filter by measurement_sets",
@@ -14576,7 +14625,8 @@
               "type": "array",
               "description": "The files associated with this file set.",
               "items": {
-                "title": "File"
+                "title": "File",
+                "type": "string"
               }
             },
             "description": "Filter by files",
@@ -14591,7 +14641,8 @@
               "type": "array",
               "description": "The file sets for which this file set is a control.",
               "items": {
-                "title": "File Set Controlled By This File Set"
+                "title": "File Set Controlled By This File Set",
+                "type": "string"
               }
             },
             "description": "Filter by control_for",
@@ -14619,7 +14670,8 @@
               "description": "The file sets that use this file set as an input.",
               "type": "array",
               "items": {
-                "title": "Input File Set For"
+                "title": "Input File Set For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_set_for",
@@ -14634,7 +14686,8 @@
               "description": "The samples that link to this construct library set.",
               "type": "array",
               "items": {
-                "title": "Applied to Sample"
+                "title": "Applied to Sample",
+                "type": "string"
               }
             },
             "description": "Filter by applied_to_samples",
@@ -15208,7 +15261,8 @@
               "type": "array",
               "description": "The files associated with this file set.",
               "items": {
-                "title": "File"
+                "title": "File",
+                "type": "string"
               }
             },
             "description": "Filter by files",
@@ -15223,7 +15277,8 @@
               "type": "array",
               "description": "The file sets for which this file set is a control.",
               "items": {
-                "title": "File Set Controlled By This File Set"
+                "title": "File Set Controlled By This File Set",
+                "type": "string"
               }
             },
             "description": "Filter by control_for",
@@ -15251,7 +15306,8 @@
               "description": "The file sets that use this file set as an input.",
               "type": "array",
               "items": {
-                "title": "Input File Set For"
+                "title": "Input File Set For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_set_for",
@@ -16017,7 +16073,8 @@
               "type": "array",
               "description": "The files associated with this file set.",
               "items": {
-                "title": "File"
+                "title": "File",
+                "type": "string"
               }
             },
             "description": "Filter by files",
@@ -16032,7 +16089,8 @@
               "type": "array",
               "description": "The file sets for which this file set is a control.",
               "items": {
-                "title": "File Set Controlled By This File Set"
+                "title": "File Set Controlled By This File Set",
+                "type": "string"
               }
             },
             "description": "Filter by control_for",
@@ -16060,7 +16118,8 @@
               "description": "The file sets that use this file set as an input.",
               "type": "array",
               "items": {
-                "title": "Input File Set For"
+                "title": "Input File Set For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_set_for",
@@ -16739,7 +16798,8 @@
               "type": "array",
               "description": "The files associated with this file set.",
               "items": {
-                "title": "File"
+                "title": "File",
+                "type": "string"
               }
             },
             "description": "Filter by files",
@@ -16754,7 +16814,8 @@
               "type": "array",
               "description": "The file sets for which this file set is a control.",
               "items": {
-                "title": "File Set Controlled By This File Set"
+                "title": "File Set Controlled By This File Set",
+                "type": "string"
               }
             },
             "description": "Filter by control_for",
@@ -16782,7 +16843,8 @@
               "description": "The file sets that use this file set as an input.",
               "type": "array",
               "items": {
-                "title": "Input File Set For"
+                "title": "Input File Set For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_set_for",
@@ -17463,7 +17525,8 @@
               "type": "array",
               "description": "The files associated with this file set.",
               "items": {
-                "title": "File"
+                "title": "File",
+                "type": "string"
               }
             },
             "description": "Filter by files",
@@ -17478,7 +17541,8 @@
               "type": "array",
               "description": "The file sets for which this file set is a control.",
               "items": {
-                "title": "File Set Controlled By This File Set"
+                "title": "File Set Controlled By This File Set",
+                "type": "string"
               }
             },
             "description": "Filter by control_for",
@@ -17506,7 +17570,8 @@
               "description": "The file sets that use this file set as an input.",
               "type": "array",
               "items": {
-                "title": "Input File Set For"
+                "title": "Input File Set For",
+                "type": "string"
               }
             },
             "description": "Filter by input_file_set_for",
@@ -19765,7 +19830,8 @@
               "description": "The biosamples which have been modified with this modification.",
               "type": "array",
               "items": {
-                "title": "Biosamples Modified"
+                "title": "Biosamples Modified",
+                "type": "string"
               }
             },
             "description": "Filter by biosamples_modified",
@@ -20255,7 +20321,8 @@
               "description": "The biosamples which have been modified with this modification.",
               "type": "array",
               "items": {
-                "title": "Biosamples Modified"
+                "title": "Biosamples Modified",
+                "type": "string"
               }
             },
             "description": "Filter by biosamples_modified",
@@ -24014,7 +24081,8 @@
               "type": "array",
               "description": "The samples associated with this publication.",
               "items": {
-                "title": "Sample"
+                "title": "Sample",
+                "type": "string"
               }
             },
             "description": "Filter by samples",
@@ -24029,7 +24097,8 @@
               "type": "array",
               "description": "The donors associated with this publication.",
               "items": {
-                "title": "Donor"
+                "title": "Donor",
+                "type": "string"
               }
             },
             "description": "Filter by donors",
@@ -24044,7 +24113,8 @@
               "type": "array",
               "description": "The file sets associated with this publication.",
               "items": {
-                "title": "File Set"
+                "title": "File Set",
+                "type": "string"
               }
             },
             "description": "Filter by file_sets",
@@ -24059,7 +24129,8 @@
               "type": "array",
               "description": "The workflows associated with this publication.",
               "items": {
-                "title": "Workflow"
+                "title": "Workflow",
+                "type": "string"
               }
             },
             "description": "Filter by workflows",
@@ -24074,7 +24145,8 @@
               "type": "array",
               "description": "The software associated with this publication.",
               "items": {
-                "title": "Software"
+                "title": "Software",
+                "type": "string"
               }
             },
             "description": "Filter by software",
@@ -24089,7 +24161,8 @@
               "type": "array",
               "description": "The software versions associated with this publication.",
               "items": {
-                "title": "Software Version"
+                "title": "Software Version",
+                "type": "string"
               }
             },
             "description": "Filter by software_versions",
@@ -25177,7 +25250,8 @@
               "type": "array",
               "description": "The file sets linked to this sample.",
               "items": {
-                "title": "File Set"
+                "title": "File Set",
+                "type": "string"
               }
             },
             "description": "Filter by file_sets",
@@ -25192,7 +25266,8 @@
               "type": "array",
               "description": "The multiplexed samples in which this sample is included.",
               "items": {
-                "title": "Multiplexed In"
+                "title": "Multiplexed In",
+                "type": "string"
               }
             },
             "description": "Filter by multiplexed_in",
@@ -25207,7 +25282,8 @@
               "type": "array",
               "description": "The fractions into which this sample has been sorted.",
               "items": {
-                "title": "Sorted Fraction Sample"
+                "title": "Sorted Fraction Sample",
+                "type": "string"
               }
             },
             "description": "Filter by sorted_fractions",
@@ -25222,7 +25298,8 @@
               "type": "array",
               "description": "The samples which originate from this sample, such as through a process of cell differentiation.",
               "items": {
-                "title": "Originated Sample"
+                "title": "Originated Sample",
+                "type": "string"
               }
             },
             "description": "Filter by origin_of",
@@ -25237,7 +25314,8 @@
               "type": "array",
               "description": "The institutional certificates under which use of this sample is approved.",
               "items": {
-                "title": "Institutional Certificate"
+                "title": "Institutional Certificate",
+                "type": "string"
               }
             },
             "description": "Filter by institutional_certificates",
@@ -25306,7 +25384,8 @@
               "type": "array",
               "description": "The parts into which this sample has been divided.",
               "items": {
-                "title": "Biosample Part"
+                "title": "Biosample Part",
+                "type": "string"
               }
             },
             "description": "Filter by parts",
@@ -25321,7 +25400,8 @@
               "type": "array",
               "description": "The pooled samples in which this sample is included.",
               "items": {
-                "title": "Biosample Pooled In"
+                "title": "Biosample Pooled In",
+                "type": "string"
               }
             },
             "description": "Filter by pooled_in",
@@ -25336,7 +25416,8 @@
               "type": "array",
               "description": "The parts into which this sample has been demultiplexed.",
               "items": {
-                "title": "Demultiplexed To"
+                "title": "Demultiplexed To",
+                "type": "string"
               }
             },
             "description": "Filter by demultiplexed_to",
@@ -26057,7 +26138,8 @@
               "type": "array",
               "description": "The file sets linked to this sample.",
               "items": {
-                "title": "File Set"
+                "title": "File Set",
+                "type": "string"
               }
             },
             "description": "Filter by file_sets",
@@ -26072,7 +26154,8 @@
               "type": "array",
               "description": "The multiplexed samples in which this sample is included.",
               "items": {
-                "title": "Multiplexed In"
+                "title": "Multiplexed In",
+                "type": "string"
               }
             },
             "description": "Filter by multiplexed_in",
@@ -26087,7 +26170,8 @@
               "type": "array",
               "description": "The fractions into which this sample has been sorted.",
               "items": {
-                "title": "Sorted Fraction Sample"
+                "title": "Sorted Fraction Sample",
+                "type": "string"
               }
             },
             "description": "Filter by sorted_fractions",
@@ -26102,7 +26186,8 @@
               "type": "array",
               "description": "The samples which originate from this sample, such as through a process of cell differentiation.",
               "items": {
-                "title": "Originated Sample"
+                "title": "Originated Sample",
+                "type": "string"
               }
             },
             "description": "Filter by origin_of",
@@ -26117,7 +26202,8 @@
               "type": "array",
               "description": "The institutional certificates under which use of this sample is approved.",
               "items": {
-                "title": "Institutional Certificate"
+                "title": "Institutional Certificate",
+                "type": "string"
               }
             },
             "description": "Filter by institutional_certificates",
@@ -27206,7 +27292,8 @@
               "type": "array",
               "description": "The file sets linked to this sample.",
               "items": {
-                "title": "File Set"
+                "title": "File Set",
+                "type": "string"
               }
             },
             "description": "Filter by file_sets",
@@ -27221,7 +27308,8 @@
               "type": "array",
               "description": "The multiplexed samples in which this sample is included.",
               "items": {
-                "title": "Multiplexed In"
+                "title": "Multiplexed In",
+                "type": "string"
               }
             },
             "description": "Filter by multiplexed_in",
@@ -27236,7 +27324,8 @@
               "type": "array",
               "description": "The fractions into which this sample has been sorted.",
               "items": {
-                "title": "Sorted Fraction Sample"
+                "title": "Sorted Fraction Sample",
+                "type": "string"
               }
             },
             "description": "Filter by sorted_fractions",
@@ -27251,7 +27340,8 @@
               "type": "array",
               "description": "The samples which originate from this sample, such as through a process of cell differentiation.",
               "items": {
-                "title": "Originated Sample"
+                "title": "Originated Sample",
+                "type": "string"
               }
             },
             "description": "Filter by origin_of",
@@ -27266,7 +27356,8 @@
               "type": "array",
               "description": "The institutional certificates under which use of this sample is approved.",
               "items": {
-                "title": "Institutional Certificate"
+                "title": "Institutional Certificate",
+                "type": "string"
               }
             },
             "description": "Filter by institutional_certificates",
@@ -27335,7 +27426,8 @@
               "type": "array",
               "description": "The parts into which this sample has been divided.",
               "items": {
-                "title": "Biosample Part"
+                "title": "Biosample Part",
+                "type": "string"
               }
             },
             "description": "Filter by parts",
@@ -27350,7 +27442,8 @@
               "type": "array",
               "description": "The pooled samples in which this sample is included.",
               "items": {
-                "title": "Biosample Pooled In"
+                "title": "Biosample Pooled In",
+                "type": "string"
               }
             },
             "description": "Filter by pooled_in",
@@ -28138,7 +28231,8 @@
               "type": "array",
               "description": "The file sets linked to this sample.",
               "items": {
-                "title": "File Set"
+                "title": "File Set",
+                "type": "string"
               }
             },
             "description": "Filter by file_sets",
@@ -28153,7 +28247,8 @@
               "type": "array",
               "description": "The multiplexed samples in which this sample is included.",
               "items": {
-                "title": "Multiplexed In"
+                "title": "Multiplexed In",
+                "type": "string"
               }
             },
             "description": "Filter by multiplexed_in",
@@ -28168,7 +28263,8 @@
               "type": "array",
               "description": "The fractions into which this sample has been sorted.",
               "items": {
-                "title": "Sorted Fraction Sample"
+                "title": "Sorted Fraction Sample",
+                "type": "string"
               }
             },
             "description": "Filter by sorted_fractions",
@@ -28183,7 +28279,8 @@
               "type": "array",
               "description": "The samples which originate from this sample, such as through a process of cell differentiation.",
               "items": {
-                "title": "Originated Sample"
+                "title": "Originated Sample",
+                "type": "string"
               }
             },
             "description": "Filter by origin_of",
@@ -28198,7 +28295,8 @@
               "type": "array",
               "description": "The institutional certificates under which use of this sample is approved.",
               "items": {
-                "title": "Institutional Certificate"
+                "title": "Institutional Certificate",
+                "type": "string"
               }
             },
             "description": "Filter by institutional_certificates",
@@ -29223,7 +29321,8 @@
               "type": "array",
               "description": "The file sets linked to this sample.",
               "items": {
-                "title": "File Set"
+                "title": "File Set",
+                "type": "string"
               }
             },
             "description": "Filter by file_sets",
@@ -29238,7 +29337,8 @@
               "type": "array",
               "description": "The multiplexed samples in which this sample is included.",
               "items": {
-                "title": "Multiplexed In"
+                "title": "Multiplexed In",
+                "type": "string"
               }
             },
             "description": "Filter by multiplexed_in",
@@ -29253,7 +29353,8 @@
               "type": "array",
               "description": "The fractions into which this sample has been sorted.",
               "items": {
-                "title": "Sorted Fraction Sample"
+                "title": "Sorted Fraction Sample",
+                "type": "string"
               }
             },
             "description": "Filter by sorted_fractions",
@@ -29268,7 +29369,8 @@
               "type": "array",
               "description": "The samples which originate from this sample, such as through a process of cell differentiation.",
               "items": {
-                "title": "Originated Sample"
+                "title": "Originated Sample",
+                "type": "string"
               }
             },
             "description": "Filter by origin_of",
@@ -29283,7 +29385,8 @@
               "type": "array",
               "description": "The institutional certificates under which use of this sample is approved.",
               "items": {
-                "title": "Institutional Certificate"
+                "title": "Institutional Certificate",
+                "type": "string"
               }
             },
             "description": "Filter by institutional_certificates",
@@ -29352,7 +29455,8 @@
               "type": "array",
               "description": "The parts into which this sample has been divided.",
               "items": {
-                "title": "Biosample Part"
+                "title": "Biosample Part",
+                "type": "string"
               }
             },
             "description": "Filter by parts",
@@ -29367,7 +29471,8 @@
               "type": "array",
               "description": "The pooled samples in which this sample is included.",
               "items": {
-                "title": "Biosample Pooled In"
+                "title": "Biosample Pooled In",
+                "type": "string"
               }
             },
             "description": "Filter by pooled_in",
@@ -30332,7 +30437,8 @@
               "type": "array",
               "description": "The file sets linked to this sample.",
               "items": {
-                "title": "File Set"
+                "title": "File Set",
+                "type": "string"
               }
             },
             "description": "Filter by file_sets",
@@ -30347,7 +30453,8 @@
               "type": "array",
               "description": "The multiplexed samples in which this sample is included.",
               "items": {
-                "title": "Multiplexed In"
+                "title": "Multiplexed In",
+                "type": "string"
               }
             },
             "description": "Filter by multiplexed_in",
@@ -30362,7 +30469,8 @@
               "type": "array",
               "description": "The fractions into which this sample has been sorted.",
               "items": {
-                "title": "Sorted Fraction Sample"
+                "title": "Sorted Fraction Sample",
+                "type": "string"
               }
             },
             "description": "Filter by sorted_fractions",
@@ -30377,7 +30485,8 @@
               "type": "array",
               "description": "The samples which originate from this sample, such as through a process of cell differentiation.",
               "items": {
-                "title": "Originated Sample"
+                "title": "Originated Sample",
+                "type": "string"
               }
             },
             "description": "Filter by origin_of",
@@ -30392,7 +30501,8 @@
               "type": "array",
               "description": "The institutional certificates under which use of this sample is approved.",
               "items": {
-                "title": "Institutional Certificate"
+                "title": "Institutional Certificate",
+                "type": "string"
               }
             },
             "description": "Filter by institutional_certificates",
@@ -30461,7 +30571,8 @@
               "type": "array",
               "description": "The parts into which this sample has been divided.",
               "items": {
-                "title": "Biosample Part"
+                "title": "Biosample Part",
+                "type": "string"
               }
             },
             "description": "Filter by parts",
@@ -30476,7 +30587,8 @@
               "type": "array",
               "description": "The pooled samples in which this sample is included.",
               "items": {
-                "title": "Biosample Pooled In"
+                "title": "Biosample Pooled In",
+                "type": "string"
               }
             },
             "description": "Filter by pooled_in",
@@ -32328,7 +32440,8 @@
               "description": "The samples which have been treated using this treatment.",
               "type": "array",
               "items": {
-                "title": "Biosamples Treated"
+                "title": "Biosamples Treated",
+                "type": "string"
               }
             },
             "description": "Filter by biosamples_treated",
@@ -33307,7 +33420,8 @@
               "type": "array",
               "description": "The analysis steps which are part of this workflow.",
               "items": {
-                "title": "Analysis Step"
+                "title": "Analysis Step",
+                "type": "string"
               }
             },
             "description": "Filter by analysis_steps",
@@ -34381,7 +34495,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Biomarker For"
+              "title": "Biomarker For",
+              "type": "string"
             }
           }
         }
@@ -35551,7 +35666,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Integrated In"
+              "title": "Integrated In",
+              "type": "string"
             }
           },
           "input_file_for": {
@@ -35560,7 +35676,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File For"
+              "title": "Input File For",
+              "type": "string"
             }
           },
           "gene_list_for": {
@@ -35569,7 +35686,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Gene List For"
+              "title": "Gene List For",
+              "type": "string"
             }
           },
           "loci_list_for": {
@@ -35578,7 +35696,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Loci List For"
+              "title": "Loci List For",
+              "type": "string"
             }
           },
           "href": {
@@ -35880,7 +35999,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Integrated In"
+              "title": "Integrated In",
+              "type": "string"
             }
           },
           "input_file_for": {
@@ -35889,7 +36009,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File For"
+              "title": "Input File For",
+              "type": "string"
             }
           },
           "gene_list_for": {
@@ -35898,7 +36019,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Gene List For"
+              "title": "Gene List For",
+              "type": "string"
             }
           },
           "loci_list_for": {
@@ -35907,7 +36029,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Loci List For"
+              "title": "Loci List For",
+              "type": "string"
             }
           },
           "href": {
@@ -36238,7 +36361,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Integrated In"
+              "title": "Integrated In",
+              "type": "string"
             }
           },
           "input_file_for": {
@@ -36247,7 +36371,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File For"
+              "title": "Input File For",
+              "type": "string"
             }
           },
           "gene_list_for": {
@@ -36256,7 +36381,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Gene List For"
+              "title": "Gene List For",
+              "type": "string"
             }
           },
           "loci_list_for": {
@@ -36265,7 +36391,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Loci List For"
+              "title": "Loci List For",
+              "type": "string"
             }
           },
           "href": {
@@ -36553,7 +36680,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Integrated In"
+              "title": "Integrated In",
+              "type": "string"
             }
           },
           "input_file_for": {
@@ -36562,7 +36690,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File For"
+              "title": "Input File For",
+              "type": "string"
             }
           },
           "gene_list_for": {
@@ -36571,7 +36700,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Gene List For"
+              "title": "Gene List For",
+              "type": "string"
             }
           },
           "loci_list_for": {
@@ -36580,7 +36710,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Loci List For"
+              "title": "Loci List For",
+              "type": "string"
             }
           },
           "href": {
@@ -36910,7 +37041,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Integrated In"
+              "title": "Integrated In",
+              "type": "string"
             }
           },
           "input_file_for": {
@@ -36919,7 +37051,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File For"
+              "title": "Input File For",
+              "type": "string"
             }
           },
           "gene_list_for": {
@@ -36928,7 +37061,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Gene List For"
+              "title": "Gene List For",
+              "type": "string"
             }
           },
           "loci_list_for": {
@@ -36937,7 +37071,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Loci List For"
+              "title": "Loci List For",
+              "type": "string"
             }
           },
           "href": {
@@ -37242,7 +37377,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Integrated In"
+              "title": "Integrated In",
+              "type": "string"
             }
           },
           "input_file_for": {
@@ -37251,7 +37387,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File For"
+              "title": "Input File For",
+              "type": "string"
             }
           },
           "gene_list_for": {
@@ -37260,7 +37397,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Gene List For"
+              "title": "Gene List For",
+              "type": "string"
             }
           },
           "loci_list_for": {
@@ -37269,7 +37407,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Loci List For"
+              "title": "Loci List For",
+              "type": "string"
             }
           },
           "href": {
@@ -37653,7 +37792,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Integrated In"
+              "title": "Integrated In",
+              "type": "string"
             }
           },
           "input_file_for": {
@@ -37662,7 +37802,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File For"
+              "title": "Input File For",
+              "type": "string"
             }
           },
           "gene_list_for": {
@@ -37671,7 +37812,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Gene List For"
+              "title": "Gene List For",
+              "type": "string"
             }
           },
           "loci_list_for": {
@@ -37680,7 +37822,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Loci List For"
+              "title": "Loci List For",
+              "type": "string"
             }
           },
           "href": {
@@ -38086,7 +38229,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Integrated In"
+              "title": "Integrated In",
+              "type": "string"
             }
           },
           "input_file_for": {
@@ -38095,7 +38239,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File For"
+              "title": "Input File For",
+              "type": "string"
             }
           },
           "gene_list_for": {
@@ -38104,7 +38249,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Gene List For"
+              "title": "Gene List For",
+              "type": "string"
             }
           },
           "loci_list_for": {
@@ -38113,7 +38259,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Loci List For"
+              "title": "Loci List For",
+              "type": "string"
             }
           },
           "href": {
@@ -38137,7 +38284,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Seqspecs"
+              "title": "Seqspecs",
+              "type": "string"
             }
           }
         }
@@ -38473,7 +38621,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Integrated In"
+              "title": "Integrated In",
+              "type": "string"
             }
           },
           "input_file_for": {
@@ -38482,7 +38631,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File For"
+              "title": "Input File For",
+              "type": "string"
             }
           },
           "gene_list_for": {
@@ -38491,7 +38641,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Gene List For"
+              "title": "Gene List For",
+              "type": "string"
             }
           },
           "loci_list_for": {
@@ -38500,7 +38651,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Loci List For"
+              "title": "Loci List For",
+              "type": "string"
             }
           },
           "href": {
@@ -38850,7 +39002,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Integrated In"
+              "title": "Integrated In",
+              "type": "string"
             }
           },
           "input_file_for": {
@@ -38859,7 +39012,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File For"
+              "title": "Input File For",
+              "type": "string"
             }
           },
           "gene_list_for": {
@@ -38868,7 +39022,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Gene List For"
+              "title": "Gene List For",
+              "type": "string"
             }
           },
           "loci_list_for": {
@@ -38877,7 +39032,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Loci List For"
+              "title": "Loci List For",
+              "type": "string"
             }
           },
           "href": {
@@ -39141,7 +39297,8 @@
             "description": "The files associated with this file set.",
             "uniqueItems": true,
             "items": {
-              "title": "File"
+              "title": "File",
+              "type": "string"
             }
           },
           "control_for": {
@@ -39150,7 +39307,8 @@
             "description": "The file sets for which this file set is a control.",
             "uniqueItems": true,
             "items": {
-              "title": "File Set Controlled By This File Set"
+              "title": "File Set Controlled By This File Set",
+              "type": "string"
             }
           },
           "submitted_files_timestamp": {
@@ -39165,7 +39323,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File Set For"
+              "title": "Input File Set For",
+              "type": "string"
             }
           },
           "assay_titles": {
@@ -39430,7 +39589,8 @@
             "description": "The files associated with this file set.",
             "uniqueItems": true,
             "items": {
-              "title": "File"
+              "title": "File",
+              "type": "string"
             }
           },
           "control_for": {
@@ -39439,7 +39599,8 @@
             "description": "The file sets for which this file set is a control.",
             "uniqueItems": true,
             "items": {
-              "title": "File Set Controlled By This File Set"
+              "title": "File Set Controlled By This File Set",
+              "type": "string"
             }
           },
           "submitted_files_timestamp": {
@@ -39454,7 +39615,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File Set For"
+              "title": "Input File Set For",
+              "type": "string"
             }
           },
           "measurement_sets": {
@@ -39463,7 +39625,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Measurement Set"
+              "title": "Measurement Set",
+              "type": "string"
             }
           }
         }
@@ -39918,7 +40081,8 @@
             "description": "The files associated with this file set.",
             "uniqueItems": true,
             "items": {
-              "title": "File"
+              "title": "File",
+              "type": "string"
             }
           },
           "control_for": {
@@ -39927,7 +40091,8 @@
             "description": "The file sets for which this file set is a control.",
             "uniqueItems": true,
             "items": {
-              "title": "File Set Controlled By This File Set"
+              "title": "File Set Controlled By This File Set",
+              "type": "string"
             }
           },
           "submitted_files_timestamp": {
@@ -39942,7 +40107,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File Set For"
+              "title": "Input File Set For",
+              "type": "string"
             }
           },
           "applied_to_samples": {
@@ -39951,7 +40117,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Applied to Sample"
+              "title": "Applied to Sample",
+              "type": "string"
             }
           }
         }
@@ -40211,7 +40378,8 @@
             "description": "The files associated with this file set.",
             "uniqueItems": true,
             "items": {
-              "title": "File"
+              "title": "File",
+              "type": "string"
             }
           },
           "control_for": {
@@ -40220,7 +40388,8 @@
             "description": "The file sets for which this file set is a control.",
             "uniqueItems": true,
             "items": {
-              "title": "File Set Controlled By This File Set"
+              "title": "File Set Controlled By This File Set",
+              "type": "string"
             }
           },
           "submitted_files_timestamp": {
@@ -40235,7 +40404,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File Set For"
+              "title": "Input File Set For",
+              "type": "string"
             }
           },
           "assemblies": {
@@ -40625,7 +40795,8 @@
             "description": "The files associated with this file set.",
             "uniqueItems": true,
             "items": {
-              "title": "File"
+              "title": "File",
+              "type": "string"
             }
           },
           "control_for": {
@@ -40634,7 +40805,8 @@
             "description": "The file sets for which this file set is a control.",
             "uniqueItems": true,
             "items": {
-              "title": "File Set Controlled By This File Set"
+              "title": "File Set Controlled By This File Set",
+              "type": "string"
             }
           },
           "submitted_files_timestamp": {
@@ -40649,7 +40821,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File Set For"
+              "title": "Input File Set For",
+              "type": "string"
             }
           },
           "related_multiome_datasets": {
@@ -40983,7 +41156,8 @@
             "description": "The files associated with this file set.",
             "uniqueItems": true,
             "items": {
-              "title": "File"
+              "title": "File",
+              "type": "string"
             }
           },
           "control_for": {
@@ -40992,7 +41166,8 @@
             "description": "The file sets for which this file set is a control.",
             "uniqueItems": true,
             "items": {
-              "title": "File Set Controlled By This File Set"
+              "title": "File Set Controlled By This File Set",
+              "type": "string"
             }
           },
           "submitted_files_timestamp": {
@@ -41007,7 +41182,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File Set For"
+              "title": "Input File Set For",
+              "type": "string"
             }
           }
         }
@@ -41360,7 +41536,8 @@
             "description": "The files associated with this file set.",
             "uniqueItems": true,
             "items": {
-              "title": "File"
+              "title": "File",
+              "type": "string"
             }
           },
           "control_for": {
@@ -41369,7 +41546,8 @@
             "description": "The file sets for which this file set is a control.",
             "uniqueItems": true,
             "items": {
-              "title": "File Set Controlled By This File Set"
+              "title": "File Set Controlled By This File Set",
+              "type": "string"
             }
           },
           "submitted_files_timestamp": {
@@ -41384,7 +41562,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Input File Set For"
+              "title": "Input File Set For",
+              "type": "string"
             }
           }
         }
@@ -42298,7 +42477,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Biosamples Modified"
+              "title": "Biosamples Modified",
+              "type": "string"
             }
           }
         }
@@ -42491,7 +42671,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Biosamples Modified"
+              "title": "Biosamples Modified",
+              "type": "string"
             }
           }
         }
@@ -44030,7 +44211,8 @@
             "description": "The samples associated with this publication.",
             "uniqueItems": true,
             "items": {
-              "title": "Sample"
+              "title": "Sample",
+              "type": "string"
             }
           },
           "donors": {
@@ -44039,7 +44221,8 @@
             "description": "The donors associated with this publication.",
             "uniqueItems": true,
             "items": {
-              "title": "Donor"
+              "title": "Donor",
+              "type": "string"
             }
           },
           "file_sets": {
@@ -44048,7 +44231,8 @@
             "description": "The file sets associated with this publication.",
             "uniqueItems": true,
             "items": {
-              "title": "File Set"
+              "title": "File Set",
+              "type": "string"
             }
           },
           "workflows": {
@@ -44057,7 +44241,8 @@
             "description": "The workflows associated with this publication.",
             "uniqueItems": true,
             "items": {
-              "title": "Workflow"
+              "title": "Workflow",
+              "type": "string"
             }
           },
           "software": {
@@ -44066,7 +44251,8 @@
             "description": "The software associated with this publication.",
             "uniqueItems": true,
             "items": {
-              "title": "Software"
+              "title": "Software",
+              "type": "string"
             }
           },
           "software_versions": {
@@ -44075,7 +44261,8 @@
             "description": "The software versions associated with this publication.",
             "uniqueItems": true,
             "items": {
-              "title": "Software Version"
+              "title": "Software Version",
+              "type": "string"
             }
           }
         }
@@ -44615,7 +44802,8 @@
             "description": "The file sets linked to this sample.",
             "uniqueItems": true,
             "items": {
-              "title": "File Set"
+              "title": "File Set",
+              "type": "string"
             }
           },
           "multiplexed_in": {
@@ -44624,7 +44812,8 @@
             "description": "The multiplexed samples in which this sample is included.",
             "uniqueItems": true,
             "items": {
-              "title": "Multiplexed In"
+              "title": "Multiplexed In",
+              "type": "string"
             }
           },
           "sorted_fractions": {
@@ -44633,7 +44822,8 @@
             "description": "The fractions into which this sample has been sorted.",
             "uniqueItems": true,
             "items": {
-              "title": "Sorted Fraction Sample"
+              "title": "Sorted Fraction Sample",
+              "type": "string"
             }
           },
           "origin_of": {
@@ -44642,7 +44832,8 @@
             "description": "The samples which originate from this sample, such as through a process of cell differentiation.",
             "uniqueItems": true,
             "items": {
-              "title": "Originated Sample"
+              "title": "Originated Sample",
+              "type": "string"
             }
           },
           "institutional_certificates": {
@@ -44651,7 +44842,8 @@
             "description": "The institutional certificates under which use of this sample is approved.",
             "uniqueItems": true,
             "items": {
-              "title": "Institutional Certificate"
+              "title": "Institutional Certificate",
+              "type": "string"
             }
           },
           "sex": {
@@ -44686,7 +44878,8 @@
             "description": "The parts into which this sample has been divided.",
             "uniqueItems": true,
             "items": {
-              "title": "Biosample Part"
+              "title": "Biosample Part",
+              "type": "string"
             }
           },
           "pooled_in": {
@@ -44695,7 +44888,8 @@
             "description": "The pooled samples in which this sample is included.",
             "uniqueItems": true,
             "items": {
-              "title": "Biosample Pooled In"
+              "title": "Biosample Pooled In",
+              "type": "string"
             }
           },
           "demultiplexed_to": {
@@ -44704,7 +44898,8 @@
             "description": "The parts into which this sample has been demultiplexed.",
             "uniqueItems": true,
             "items": {
-              "title": "Demultiplexed To"
+              "title": "Demultiplexed To",
+              "type": "string"
             }
           }
         }
@@ -45065,7 +45260,8 @@
             "description": "The file sets linked to this sample.",
             "uniqueItems": true,
             "items": {
-              "title": "File Set"
+              "title": "File Set",
+              "type": "string"
             }
           },
           "multiplexed_in": {
@@ -45074,7 +45270,8 @@
             "description": "The multiplexed samples in which this sample is included.",
             "uniqueItems": true,
             "items": {
-              "title": "Multiplexed In"
+              "title": "Multiplexed In",
+              "type": "string"
             }
           },
           "sorted_fractions": {
@@ -45083,7 +45280,8 @@
             "description": "The fractions into which this sample has been sorted.",
             "uniqueItems": true,
             "items": {
-              "title": "Sorted Fraction Sample"
+              "title": "Sorted Fraction Sample",
+              "type": "string"
             }
           },
           "origin_of": {
@@ -45092,7 +45290,8 @@
             "description": "The samples which originate from this sample, such as through a process of cell differentiation.",
             "uniqueItems": true,
             "items": {
-              "title": "Originated Sample"
+              "title": "Originated Sample",
+              "type": "string"
             }
           },
           "institutional_certificates": {
@@ -45101,7 +45300,8 @@
             "description": "The institutional certificates under which use of this sample is approved.",
             "uniqueItems": true,
             "items": {
-              "title": "Institutional Certificate"
+              "title": "Institutional Certificate",
+              "type": "string"
             }
           },
           "sample_terms": {
@@ -45648,7 +45848,8 @@
             "description": "The file sets linked to this sample.",
             "uniqueItems": true,
             "items": {
-              "title": "File Set"
+              "title": "File Set",
+              "type": "string"
             }
           },
           "multiplexed_in": {
@@ -45657,7 +45858,8 @@
             "description": "The multiplexed samples in which this sample is included.",
             "uniqueItems": true,
             "items": {
-              "title": "Multiplexed In"
+              "title": "Multiplexed In",
+              "type": "string"
             }
           },
           "sorted_fractions": {
@@ -45666,7 +45868,8 @@
             "description": "The fractions into which this sample has been sorted.",
             "uniqueItems": true,
             "items": {
-              "title": "Sorted Fraction Sample"
+              "title": "Sorted Fraction Sample",
+              "type": "string"
             }
           },
           "origin_of": {
@@ -45675,7 +45878,8 @@
             "description": "The samples which originate from this sample, such as through a process of cell differentiation.",
             "uniqueItems": true,
             "items": {
-              "title": "Originated Sample"
+              "title": "Originated Sample",
+              "type": "string"
             }
           },
           "institutional_certificates": {
@@ -45684,7 +45888,8 @@
             "description": "The institutional certificates under which use of this sample is approved.",
             "uniqueItems": true,
             "items": {
-              "title": "Institutional Certificate"
+              "title": "Institutional Certificate",
+              "type": "string"
             }
           },
           "sex": {
@@ -45719,7 +45924,8 @@
             "description": "The parts into which this sample has been divided.",
             "uniqueItems": true,
             "items": {
-              "title": "Biosample Part"
+              "title": "Biosample Part",
+              "type": "string"
             }
           },
           "pooled_in": {
@@ -45728,7 +45934,8 @@
             "description": "The pooled samples in which this sample is included.",
             "uniqueItems": true,
             "items": {
-              "title": "Biosample Pooled In"
+              "title": "Biosample Pooled In",
+              "type": "string"
             }
           },
           "classifications": {
@@ -46102,7 +46309,8 @@
             "description": "The file sets linked to this sample.",
             "uniqueItems": true,
             "items": {
-              "title": "File Set"
+              "title": "File Set",
+              "type": "string"
             }
           },
           "multiplexed_in": {
@@ -46111,7 +46319,8 @@
             "description": "The multiplexed samples in which this sample is included.",
             "uniqueItems": true,
             "items": {
-              "title": "Multiplexed In"
+              "title": "Multiplexed In",
+              "type": "string"
             }
           },
           "sorted_fractions": {
@@ -46120,7 +46329,8 @@
             "description": "The fractions into which this sample has been sorted.",
             "uniqueItems": true,
             "items": {
-              "title": "Sorted Fraction Sample"
+              "title": "Sorted Fraction Sample",
+              "type": "string"
             }
           },
           "origin_of": {
@@ -46129,7 +46339,8 @@
             "description": "The samples which originate from this sample, such as through a process of cell differentiation.",
             "uniqueItems": true,
             "items": {
-              "title": "Originated Sample"
+              "title": "Originated Sample",
+              "type": "string"
             }
           },
           "institutional_certificates": {
@@ -46138,7 +46349,8 @@
             "description": "The institutional certificates under which use of this sample is approved.",
             "uniqueItems": true,
             "items": {
-              "title": "Institutional Certificate"
+              "title": "Institutional Certificate",
+              "type": "string"
             }
           },
           "classifications": {
@@ -46642,7 +46854,8 @@
             "description": "The file sets linked to this sample.",
             "uniqueItems": true,
             "items": {
-              "title": "File Set"
+              "title": "File Set",
+              "type": "string"
             }
           },
           "multiplexed_in": {
@@ -46651,7 +46864,8 @@
             "description": "The multiplexed samples in which this sample is included.",
             "uniqueItems": true,
             "items": {
-              "title": "Multiplexed In"
+              "title": "Multiplexed In",
+              "type": "string"
             }
           },
           "sorted_fractions": {
@@ -46660,7 +46874,8 @@
             "description": "The fractions into which this sample has been sorted.",
             "uniqueItems": true,
             "items": {
-              "title": "Sorted Fraction Sample"
+              "title": "Sorted Fraction Sample",
+              "type": "string"
             }
           },
           "origin_of": {
@@ -46669,7 +46884,8 @@
             "description": "The samples which originate from this sample, such as through a process of cell differentiation.",
             "uniqueItems": true,
             "items": {
-              "title": "Originated Sample"
+              "title": "Originated Sample",
+              "type": "string"
             }
           },
           "institutional_certificates": {
@@ -46678,7 +46894,8 @@
             "description": "The institutional certificates under which use of this sample is approved.",
             "uniqueItems": true,
             "items": {
-              "title": "Institutional Certificate"
+              "title": "Institutional Certificate",
+              "type": "string"
             }
           },
           "sex": {
@@ -46713,7 +46930,8 @@
             "description": "The parts into which this sample has been divided.",
             "uniqueItems": true,
             "items": {
-              "title": "Biosample Part"
+              "title": "Biosample Part",
+              "type": "string"
             }
           },
           "pooled_in": {
@@ -46722,7 +46940,8 @@
             "description": "The pooled samples in which this sample is included.",
             "uniqueItems": true,
             "items": {
-              "title": "Biosample Pooled In"
+              "title": "Biosample Pooled In",
+              "type": "string"
             }
           },
           "classifications": {
@@ -47211,7 +47430,8 @@
             "description": "The file sets linked to this sample.",
             "uniqueItems": true,
             "items": {
-              "title": "File Set"
+              "title": "File Set",
+              "type": "string"
             }
           },
           "multiplexed_in": {
@@ -47220,7 +47440,8 @@
             "description": "The multiplexed samples in which this sample is included.",
             "uniqueItems": true,
             "items": {
-              "title": "Multiplexed In"
+              "title": "Multiplexed In",
+              "type": "string"
             }
           },
           "sorted_fractions": {
@@ -47229,7 +47450,8 @@
             "description": "The fractions into which this sample has been sorted.",
             "uniqueItems": true,
             "items": {
-              "title": "Sorted Fraction Sample"
+              "title": "Sorted Fraction Sample",
+              "type": "string"
             }
           },
           "origin_of": {
@@ -47238,7 +47460,8 @@
             "description": "The samples which originate from this sample, such as through a process of cell differentiation.",
             "uniqueItems": true,
             "items": {
-              "title": "Originated Sample"
+              "title": "Originated Sample",
+              "type": "string"
             }
           },
           "institutional_certificates": {
@@ -47247,7 +47470,8 @@
             "description": "The institutional certificates under which use of this sample is approved.",
             "uniqueItems": true,
             "items": {
-              "title": "Institutional Certificate"
+              "title": "Institutional Certificate",
+              "type": "string"
             }
           },
           "sex": {
@@ -47282,7 +47506,8 @@
             "description": "The parts into which this sample has been divided.",
             "uniqueItems": true,
             "items": {
-              "title": "Biosample Part"
+              "title": "Biosample Part",
+              "type": "string"
             }
           },
           "pooled_in": {
@@ -47291,7 +47516,8 @@
             "description": "The pooled samples in which this sample is included.",
             "uniqueItems": true,
             "items": {
-              "title": "Biosample Pooled In"
+              "title": "Biosample Pooled In",
+              "type": "string"
             }
           },
           "classifications": {
@@ -48028,7 +48254,8 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "title": "Biosamples Treated"
+              "title": "Biosamples Treated",
+              "type": "string"
             }
           }
         }
@@ -48434,7 +48661,8 @@
             "description": "The analysis steps which are part of this workflow.",
             "uniqueItems": true,
             "items": {
-              "title": "Analysis Step"
+              "title": "Analysis Step",
+              "type": "string"
             }
           }
         }

@@ -258,10 +258,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     filtered = True # bool | Filter by filtered (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    integrated_in = None # List[object] | Filter by integrated_in (optional)
-    input_file_for = None # List[object] | Filter by input_file_for (optional)
-    gene_list_for = None # List[object] | Filter by gene_list_for (optional)
-    loci_list_for = None # List[object] | Filter by loci_list_for (optional)
+    integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
+    input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
+    gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
+    loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
     href = 'href_example' # str | Filter by href (optional)
     s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
     upload_credentials = None # object | Filter by upload_credentials (optional)
@@ -325,10 +325,10 @@ Name | Type | Description  | Notes
  **filtered** | **bool**| Filter by filtered | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **integrated_in** | [**List[object]**](List[object].md)| Filter by integrated_in | [optional] 
- **input_file_for** | [**List[object]**](List[object].md)| Filter by input_file_for | [optional] 
- **gene_list_for** | [**List[object]**](List[object].md)| Filter by gene_list_for | [optional] 
- **loci_list_for** | [**List[object]**](List[object].md)| Filter by loci_list_for | [optional] 
+ **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
+ **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
+ **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
+ **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
  **href** | **str**| Filter by href | [optional] 
  **s3_uri** | **str**| Filter by s3_uri | [optional] 
  **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
@@ -425,10 +425,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     file_set_type = 'file_set_type_example' # str | Filter by file_set_type (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    files = None # List[object] | Filter by files (optional)
-    control_for = None # List[object] | Filter by control_for (optional)
+    files = ['files_example'] # List[str] | Filter by files (optional)
+    control_for = ['control_for_example'] # List[str] | Filter by control_for (optional)
     submitted_files_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by submitted_files_timestamp (optional)
-    input_file_set_for = None # List[object] | Filter by input_file_set_for (optional)
+    input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     assay_titles = ['assay_titles_example'] # List[str] | Filter by assay_titles (optional)
 
     try:
@@ -476,10 +476,10 @@ Name | Type | Description  | Notes
  **file_set_type** | **str**| Filter by file_set_type | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **files** | [**List[object]**](List[object].md)| Filter by files | [optional] 
- **control_for** | [**List[object]**](List[object].md)| Filter by control_for | [optional] 
+ **files** | [**List[str]**](List[str].md)| Filter by files | [optional] 
+ **control_for** | [**List[str]**](List[str].md)| Filter by control_for | [optional] 
  **submitted_files_timestamp** | **datetime**| Filter by submitted_files_timestamp | [optional] 
- **input_file_set_for** | [**List[object]**](List[object].md)| Filter by input_file_set_for | [optional] 
+ **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **assay_titles** | [**List[str]**](List[str].md)| Filter by assay_titles | [optional] 
 
 ### Return type
@@ -956,11 +956,11 @@ with igvf_client.ApiClient(configuration) as api_client:
     library_construction_platform = 'library_construction_platform_example' # str | Filter by library_construction_platform (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    files = None # List[object] | Filter by files (optional)
-    control_for = None # List[object] | Filter by control_for (optional)
+    files = ['files_example'] # List[str] | Filter by files (optional)
+    control_for = ['control_for_example'] # List[str] | Filter by control_for (optional)
     submitted_files_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by submitted_files_timestamp (optional)
-    input_file_set_for = None # List[object] | Filter by input_file_set_for (optional)
-    measurement_sets = None # List[object] | Filter by measurement_sets (optional)
+    input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
+    measurement_sets = ['measurement_sets_example'] # List[str] | Filter by measurement_sets (optional)
 
     try:
         # List items in the AuxiliarySet collection.
@@ -1008,11 +1008,11 @@ Name | Type | Description  | Notes
  **library_construction_platform** | **str**| Filter by library_construction_platform | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **files** | [**List[object]**](List[object].md)| Filter by files | [optional] 
- **control_for** | [**List[object]**](List[object].md)| Filter by control_for | [optional] 
+ **files** | [**List[str]**](List[str].md)| Filter by files | [optional] 
+ **control_for** | [**List[str]**](List[str].md)| Filter by control_for | [optional] 
  **submitted_files_timestamp** | **datetime**| Filter by submitted_files_timestamp | [optional] 
- **input_file_set_for** | [**List[object]**](List[object].md)| Filter by input_file_set_for | [optional] 
- **measurement_sets** | [**List[object]**](List[object].md)| Filter by measurement_sets | [optional] 
+ **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
+ **measurement_sets** | [**List[str]**](List[str].md)| Filter by measurement_sets | [optional] 
 
 ### Return type
 
@@ -1312,7 +1312,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
     name_quantification = 'name_quantification_example' # str | Filter by name_quantification (optional)
-    biomarker_for = None # List[object] | Filter by biomarker_for (optional)
+    biomarker_for = ['biomarker_for_example'] # List[str] | Filter by biomarker_for (optional)
 
     try:
         # List items in the Biomarker collection.
@@ -1353,7 +1353,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
  **name_quantification** | **str**| Filter by name_quantification | [optional] 
- **biomarker_for** | [**List[object]**](List[object].md)| Filter by biomarker_for | [optional] 
+ **biomarker_for** | [**List[str]**](List[str].md)| Filter by biomarker_for | [optional] 
 
 ### Return type
 
@@ -1453,10 +1453,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     seqspec_of = ['seqspec_of_example'] # List[str] | Filter by seqspec_of (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    integrated_in = None # List[object] | Filter by integrated_in (optional)
-    input_file_for = None # List[object] | Filter by input_file_for (optional)
-    gene_list_for = None # List[object] | Filter by gene_list_for (optional)
-    loci_list_for = None # List[object] | Filter by loci_list_for (optional)
+    integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
+    input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
+    gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
+    loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
     href = 'href_example' # str | Filter by href (optional)
     s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
     upload_credentials = None # object | Filter by upload_credentials (optional)
@@ -1513,10 +1513,10 @@ Name | Type | Description  | Notes
  **seqspec_of** | [**List[str]**](List[str].md)| Filter by seqspec_of | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **integrated_in** | [**List[object]**](List[object].md)| Filter by integrated_in | [optional] 
- **input_file_for** | [**List[object]**](List[object].md)| Filter by input_file_for | [optional] 
- **gene_list_for** | [**List[object]**](List[object].md)| Filter by gene_list_for | [optional] 
- **loci_list_for** | [**List[object]**](List[object].md)| Filter by loci_list_for | [optional] 
+ **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
+ **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
+ **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
+ **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
  **href** | **str**| Filter by href | [optional] 
  **s3_uri** | **str**| Filter by s3_uri | [optional] 
  **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
@@ -1632,11 +1632,11 @@ with igvf_client.ApiClient(configuration) as api_client:
     targeton = 'targeton_example' # str | Filter by targeton (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    files = None # List[object] | Filter by files (optional)
-    control_for = None # List[object] | Filter by control_for (optional)
+    files = ['files_example'] # List[str] | Filter by files (optional)
+    control_for = ['control_for_example'] # List[str] | Filter by control_for (optional)
     submitted_files_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by submitted_files_timestamp (optional)
-    input_file_set_for = None # List[object] | Filter by input_file_set_for (optional)
-    applied_to_samples = None # List[object] | Filter by applied_to_samples (optional)
+    input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
+    applied_to_samples = ['applied_to_samples_example'] # List[str] | Filter by applied_to_samples (optional)
 
     try:
         # List items in the ConstructLibrarySet collection.
@@ -1702,11 +1702,11 @@ Name | Type | Description  | Notes
  **targeton** | **str**| Filter by targeton | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **files** | [**List[object]**](List[object].md)| Filter by files | [optional] 
- **control_for** | [**List[object]**](List[object].md)| Filter by control_for | [optional] 
+ **files** | [**List[str]**](List[str].md)| Filter by files | [optional] 
+ **control_for** | [**List[str]**](List[str].md)| Filter by control_for | [optional] 
  **submitted_files_timestamp** | **datetime**| Filter by submitted_files_timestamp | [optional] 
- **input_file_set_for** | [**List[object]**](List[object].md)| Filter by input_file_set_for | [optional] 
- **applied_to_samples** | [**List[object]**](List[object].md)| Filter by applied_to_samples | [optional] 
+ **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
+ **applied_to_samples** | [**List[str]**](List[str].md)| Filter by applied_to_samples | [optional] 
 
 ### Return type
 
@@ -1799,7 +1799,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     cas_species = 'cas_species_example' # str | Filter by cas_species (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    biosamples_modified = None # List[object] | Filter by biosamples_modified (optional)
+    biosamples_modified = ['biosamples_modified_example'] # List[str] | Filter by biosamples_modified (optional)
 
     try:
         # List items in the CrisprModification collection.
@@ -1846,7 +1846,7 @@ Name | Type | Description  | Notes
  **cas_species** | **str**| Filter by cas_species | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **biosamples_modified** | [**List[object]**](List[object].md)| Filter by biosamples_modified | [optional] 
+ **biosamples_modified** | [**List[str]**](List[str].md)| Filter by biosamples_modified | [optional] 
 
 ### Return type
 
@@ -1940,10 +1940,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     file_set_type = 'file_set_type_example' # str | Filter by file_set_type (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    files = None # List[object] | Filter by files (optional)
-    control_for = None # List[object] | Filter by control_for (optional)
+    files = ['files_example'] # List[str] | Filter by files (optional)
+    control_for = ['control_for_example'] # List[str] | Filter by control_for (optional)
     submitted_files_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by submitted_files_timestamp (optional)
-    input_file_set_for = None # List[object] | Filter by input_file_set_for (optional)
+    input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     assemblies = ['assemblies_example'] # List[str] | Filter by assemblies (optional)
     transcriptome_annotations = ['transcriptome_annotations_example'] # List[str] | Filter by transcriptome_annotations (optional)
 
@@ -1993,10 +1993,10 @@ Name | Type | Description  | Notes
  **file_set_type** | **str**| Filter by file_set_type | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **files** | [**List[object]**](List[object].md)| Filter by files | [optional] 
- **control_for** | [**List[object]**](List[object].md)| Filter by control_for | [optional] 
+ **files** | [**List[str]**](List[str].md)| Filter by files | [optional] 
+ **control_for** | [**List[str]**](List[str].md)| Filter by control_for | [optional] 
  **submitted_files_timestamp** | **datetime**| Filter by submitted_files_timestamp | [optional] 
- **input_file_set_for** | [**List[object]**](List[object].md)| Filter by input_file_set_for | [optional] 
+ **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **assemblies** | [**List[str]**](List[str].md)| Filter by assemblies | [optional] 
  **transcriptome_annotations** | [**List[str]**](List[str].md)| Filter by transcriptome_annotations | [optional] 
 
@@ -2089,7 +2089,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     tagged_proteins = ['tagged_proteins_example'] # List[str] | Filter by tagged_proteins (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    biosamples_modified = None # List[object] | Filter by biosamples_modified (optional)
+    biosamples_modified = ['biosamples_modified_example'] # List[str] | Filter by biosamples_modified (optional)
 
     try:
         # List items in the DegronModification collection.
@@ -2134,7 +2134,7 @@ Name | Type | Description  | Notes
  **tagged_proteins** | [**List[str]**](List[str].md)| Filter by tagged_proteins | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **biosamples_modified** | [**List[object]**](List[object].md)| Filter by biosamples_modified | [optional] 
+ **biosamples_modified** | [**List[str]**](List[str].md)| Filter by biosamples_modified | [optional] 
 
 ### Return type
 
@@ -2571,10 +2571,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     validation_error_detail = 'validation_error_detail_example' # str | Filter by validation_error_detail (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    integrated_in = None # List[object] | Filter by integrated_in (optional)
-    input_file_for = None # List[object] | Filter by input_file_for (optional)
-    gene_list_for = None # List[object] | Filter by gene_list_for (optional)
-    loci_list_for = None # List[object] | Filter by loci_list_for (optional)
+    integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
+    input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
+    gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
+    loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
     href = 'href_example' # str | Filter by href (optional)
     s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
     upload_credentials = None # object | Filter by upload_credentials (optional)
@@ -2633,10 +2633,10 @@ Name | Type | Description  | Notes
  **validation_error_detail** | **str**| Filter by validation_error_detail | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **integrated_in** | [**List[object]**](List[object].md)| Filter by integrated_in | [optional] 
- **input_file_for** | [**List[object]**](List[object].md)| Filter by input_file_for | [optional] 
- **gene_list_for** | [**List[object]**](List[object].md)| Filter by gene_list_for | [optional] 
- **loci_list_for** | [**List[object]**](List[object].md)| Filter by loci_list_for | [optional] 
+ **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
+ **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
+ **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
+ **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
  **href** | **str**| Filter by href | [optional] 
  **s3_uri** | **str**| Filter by s3_uri | [optional] 
  **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
@@ -2965,10 +2965,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     validation_error_detail = 'validation_error_detail_example' # str | Filter by validation_error_detail (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    integrated_in = None # List[object] | Filter by integrated_in (optional)
-    input_file_for = None # List[object] | Filter by input_file_for (optional)
-    gene_list_for = None # List[object] | Filter by gene_list_for (optional)
-    loci_list_for = None # List[object] | Filter by loci_list_for (optional)
+    integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
+    input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
+    gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
+    loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
     href = 'href_example' # str | Filter by href (optional)
     s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
     upload_credentials = None # object | Filter by upload_credentials (optional)
@@ -3024,10 +3024,10 @@ Name | Type | Description  | Notes
  **validation_error_detail** | **str**| Filter by validation_error_detail | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **integrated_in** | [**List[object]**](List[object].md)| Filter by integrated_in | [optional] 
- **input_file_for** | [**List[object]**](List[object].md)| Filter by input_file_for | [optional] 
- **gene_list_for** | [**List[object]**](List[object].md)| Filter by gene_list_for | [optional] 
- **loci_list_for** | [**List[object]**](List[object].md)| Filter by loci_list_for | [optional] 
+ **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
+ **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
+ **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
+ **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
  **href** | **str**| Filter by href | [optional] 
  **s3_uri** | **str**| Filter by s3_uri | [optional] 
  **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
@@ -3277,18 +3277,18 @@ with igvf_client.ApiClient(configuration) as api_client:
     growth_medium = 'growth_medium_example' # str | Filter by growth_medium (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    file_sets = None # List[object] | Filter by file_sets (optional)
-    multiplexed_in = None # List[object] | Filter by multiplexed_in (optional)
-    sorted_fractions = None # List[object] | Filter by sorted_fractions (optional)
-    origin_of = None # List[object] | Filter by origin_of (optional)
-    institutional_certificates = None # List[object] | Filter by institutional_certificates (optional)
+    file_sets = ['file_sets_example'] # List[str] | Filter by file_sets (optional)
+    multiplexed_in = ['multiplexed_in_example'] # List[str] | Filter by multiplexed_in (optional)
+    sorted_fractions = ['sorted_fractions_example'] # List[str] | Filter by sorted_fractions (optional)
+    origin_of = ['origin_of_example'] # List[str] | Filter by origin_of (optional)
+    institutional_certificates = ['institutional_certificates_example'] # List[str] | Filter by institutional_certificates (optional)
     sex = 'sex_example' # str | Filter by sex (optional)
     age = 'age_example' # str | Filter by age (optional)
     upper_bound_age_in_hours = 3.4 # float | Filter by upper_bound_age_in_hours (optional)
     lower_bound_age_in_hours = 3.4 # float | Filter by lower_bound_age_in_hours (optional)
-    parts = None # List[object] | Filter by parts (optional)
-    pooled_in = None # List[object] | Filter by pooled_in (optional)
-    demultiplexed_to = None # List[object] | Filter by demultiplexed_to (optional)
+    parts = ['parts_example'] # List[str] | Filter by parts (optional)
+    pooled_in = ['pooled_in_example'] # List[str] | Filter by pooled_in (optional)
+    demultiplexed_to = ['demultiplexed_to_example'] # List[str] | Filter by demultiplexed_to (optional)
 
     try:
         # List items in the InVitroSystem collection.
@@ -3371,18 +3371,18 @@ Name | Type | Description  | Notes
  **growth_medium** | **str**| Filter by growth_medium | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **file_sets** | [**List[object]**](List[object].md)| Filter by file_sets | [optional] 
- **multiplexed_in** | [**List[object]**](List[object].md)| Filter by multiplexed_in | [optional] 
- **sorted_fractions** | [**List[object]**](List[object].md)| Filter by sorted_fractions | [optional] 
- **origin_of** | [**List[object]**](List[object].md)| Filter by origin_of | [optional] 
- **institutional_certificates** | [**List[object]**](List[object].md)| Filter by institutional_certificates | [optional] 
+ **file_sets** | [**List[str]**](List[str].md)| Filter by file_sets | [optional] 
+ **multiplexed_in** | [**List[str]**](List[str].md)| Filter by multiplexed_in | [optional] 
+ **sorted_fractions** | [**List[str]**](List[str].md)| Filter by sorted_fractions | [optional] 
+ **origin_of** | [**List[str]**](List[str].md)| Filter by origin_of | [optional] 
+ **institutional_certificates** | [**List[str]**](List[str].md)| Filter by institutional_certificates | [optional] 
  **sex** | **str**| Filter by sex | [optional] 
  **age** | **str**| Filter by age | [optional] 
  **upper_bound_age_in_hours** | **float**| Filter by upper_bound_age_in_hours | [optional] 
  **lower_bound_age_in_hours** | **float**| Filter by lower_bound_age_in_hours | [optional] 
- **parts** | [**List[object]**](List[object].md)| Filter by parts | [optional] 
- **pooled_in** | [**List[object]**](List[object].md)| Filter by pooled_in | [optional] 
- **demultiplexed_to** | [**List[object]**](List[object].md)| Filter by demultiplexed_to | [optional] 
+ **parts** | [**List[str]**](List[str].md)| Filter by parts | [optional] 
+ **pooled_in** | [**List[str]**](List[str].md)| Filter by pooled_in | [optional] 
+ **demultiplexed_to** | [**List[str]**](List[str].md)| Filter by demultiplexed_to | [optional] 
 
 ### Return type
 
@@ -3730,10 +3730,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     dimension2 = 'dimension2_example' # str | Filter by dimension2 (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    integrated_in = None # List[object] | Filter by integrated_in (optional)
-    input_file_for = None # List[object] | Filter by input_file_for (optional)
-    gene_list_for = None # List[object] | Filter by gene_list_for (optional)
-    loci_list_for = None # List[object] | Filter by loci_list_for (optional)
+    integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
+    input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
+    gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
+    loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
     href = 'href_example' # str | Filter by href (optional)
     s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
     upload_credentials = None # object | Filter by upload_credentials (optional)
@@ -3793,10 +3793,10 @@ Name | Type | Description  | Notes
  **dimension2** | **str**| Filter by dimension2 | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **integrated_in** | [**List[object]**](List[object].md)| Filter by integrated_in | [optional] 
- **input_file_for** | [**List[object]**](List[object].md)| Filter by input_file_for | [optional] 
- **gene_list_for** | [**List[object]**](List[object].md)| Filter by gene_list_for | [optional] 
- **loci_list_for** | [**List[object]**](List[object].md)| Filter by loci_list_for | [optional] 
+ **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
+ **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
+ **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
+ **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
  **href** | **str**| Filter by href | [optional] 
  **s3_uri** | **str**| Filter by s3_uri | [optional] 
  **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
@@ -3902,10 +3902,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     targeted_genes = ['targeted_genes_example'] # List[str] | Filter by targeted_genes (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    files = None # List[object] | Filter by files (optional)
-    control_for = None # List[object] | Filter by control_for (optional)
+    files = ['files_example'] # List[str] | Filter by files (optional)
+    control_for = ['control_for_example'] # List[str] | Filter by control_for (optional)
     submitted_files_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by submitted_files_timestamp (optional)
-    input_file_set_for = None # List[object] | Filter by input_file_set_for (optional)
+    input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     related_multiome_datasets = ['related_multiome_datasets_example'] # List[str] | Filter by related_multiome_datasets (optional)
 
     try:
@@ -3962,10 +3962,10 @@ Name | Type | Description  | Notes
  **targeted_genes** | [**List[str]**](List[str].md)| Filter by targeted_genes | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **files** | [**List[object]**](List[object].md)| Filter by files | [optional] 
- **control_for** | [**List[object]**](List[object].md)| Filter by control_for | [optional] 
+ **files** | [**List[str]**](List[str].md)| Filter by files | [optional] 
+ **control_for** | [**List[str]**](List[str].md)| Filter by control_for | [optional] 
  **submitted_files_timestamp** | **datetime**| Filter by submitted_files_timestamp | [optional] 
- **input_file_set_for** | [**List[object]**](List[object].md)| Filter by input_file_set_for | [optional] 
+ **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **related_multiome_datasets** | [**List[str]**](List[str].md)| Filter by related_multiome_datasets | [optional] 
 
 ### Return type
@@ -4067,10 +4067,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     validation_error_detail = 'validation_error_detail_example' # str | Filter by validation_error_detail (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    integrated_in = None # List[object] | Filter by integrated_in (optional)
-    input_file_for = None # List[object] | Filter by input_file_for (optional)
-    gene_list_for = None # List[object] | Filter by gene_list_for (optional)
-    loci_list_for = None # List[object] | Filter by loci_list_for (optional)
+    integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
+    input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
+    gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
+    loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
     href = 'href_example' # str | Filter by href (optional)
     s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
     upload_credentials = None # object | Filter by upload_credentials (optional)
@@ -4128,10 +4128,10 @@ Name | Type | Description  | Notes
  **validation_error_detail** | **str**| Filter by validation_error_detail | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **integrated_in** | [**List[object]**](List[object].md)| Filter by integrated_in | [optional] 
- **input_file_for** | [**List[object]**](List[object].md)| Filter by input_file_for | [optional] 
- **gene_list_for** | [**List[object]**](List[object].md)| Filter by gene_list_for | [optional] 
- **loci_list_for** | [**List[object]**](List[object].md)| Filter by loci_list_for | [optional] 
+ **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
+ **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
+ **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
+ **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
  **href** | **str**| Filter by href | [optional] 
  **s3_uri** | **str**| Filter by s3_uri | [optional] 
  **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
@@ -4234,10 +4234,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     assessed_genes = ['assessed_genes_example'] # List[str] | Filter by assessed_genes (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    files = None # List[object] | Filter by files (optional)
-    control_for = None # List[object] | Filter by control_for (optional)
+    files = ['files_example'] # List[str] | Filter by files (optional)
+    control_for = ['control_for_example'] # List[str] | Filter by control_for (optional)
     submitted_files_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by submitted_files_timestamp (optional)
-    input_file_set_for = None # List[object] | Filter by input_file_set_for (optional)
+    input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
 
     try:
         # List items in the ModelSet collection.
@@ -4291,10 +4291,10 @@ Name | Type | Description  | Notes
  **assessed_genes** | [**List[str]**](List[str].md)| Filter by assessed_genes | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **files** | [**List[object]**](List[object].md)| Filter by files | [optional] 
- **control_for** | [**List[object]**](List[object].md)| Filter by control_for | [optional] 
+ **files** | [**List[str]**](List[str].md)| Filter by files | [optional] 
+ **control_for** | [**List[str]**](List[str].md)| Filter by control_for | [optional] 
  **submitted_files_timestamp** | **datetime**| Filter by submitted_files_timestamp | [optional] 
- **input_file_set_for** | [**List[object]**](List[object].md)| Filter by input_file_set_for | [optional] 
+ **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
 
 ### Return type
 
@@ -4399,11 +4399,11 @@ with igvf_client.ApiClient(configuration) as api_client:
     barcode_sample_map = 'barcode_sample_map_example' # str | Filter by barcode_sample_map (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    file_sets = None # List[object] | Filter by file_sets (optional)
-    multiplexed_in = None # List[object] | Filter by multiplexed_in (optional)
-    sorted_fractions = None # List[object] | Filter by sorted_fractions (optional)
-    origin_of = None # List[object] | Filter by origin_of (optional)
-    institutional_certificates = None # List[object] | Filter by institutional_certificates (optional)
+    file_sets = ['file_sets_example'] # List[str] | Filter by file_sets (optional)
+    multiplexed_in = ['multiplexed_in_example'] # List[str] | Filter by multiplexed_in (optional)
+    sorted_fractions = ['sorted_fractions_example'] # List[str] | Filter by sorted_fractions (optional)
+    origin_of = ['origin_of_example'] # List[str] | Filter by origin_of (optional)
+    institutional_certificates = ['institutional_certificates_example'] # List[str] | Filter by institutional_certificates (optional)
     sample_terms = ['sample_terms_example'] # List[str] | Filter by sample_terms (optional)
     disease_terms = ['disease_terms_example'] # List[str] | Filter by disease_terms (optional)
     treatments = ['treatments_example'] # List[str] | Filter by treatments (optional)
@@ -4470,11 +4470,11 @@ Name | Type | Description  | Notes
  **barcode_sample_map** | **str**| Filter by barcode_sample_map | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **file_sets** | [**List[object]**](List[object].md)| Filter by file_sets | [optional] 
- **multiplexed_in** | [**List[object]**](List[object].md)| Filter by multiplexed_in | [optional] 
- **sorted_fractions** | [**List[object]**](List[object].md)| Filter by sorted_fractions | [optional] 
- **origin_of** | [**List[object]**](List[object].md)| Filter by origin_of | [optional] 
- **institutional_certificates** | [**List[object]**](List[object].md)| Filter by institutional_certificates | [optional] 
+ **file_sets** | [**List[str]**](List[str].md)| Filter by file_sets | [optional] 
+ **multiplexed_in** | [**List[str]**](List[str].md)| Filter by multiplexed_in | [optional] 
+ **sorted_fractions** | [**List[str]**](List[str].md)| Filter by sorted_fractions | [optional] 
+ **origin_of** | [**List[str]**](List[str].md)| Filter by origin_of | [optional] 
+ **institutional_certificates** | [**List[str]**](List[str].md)| Filter by institutional_certificates | [optional] 
  **sample_terms** | [**List[str]**](List[str].md)| Filter by sample_terms | [optional] 
  **disease_terms** | [**List[str]**](List[str].md)| Filter by disease_terms | [optional] 
  **treatments** | [**List[str]**](List[str].md)| Filter by treatments | [optional] 
@@ -5212,10 +5212,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     scope = 'scope_example' # str | Filter by scope (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    files = None # List[object] | Filter by files (optional)
-    control_for = None # List[object] | Filter by control_for (optional)
+    files = ['files_example'] # List[str] | Filter by files (optional)
+    control_for = ['control_for_example'] # List[str] | Filter by control_for (optional)
     submitted_files_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by submitted_files_timestamp (optional)
-    input_file_set_for = None # List[object] | Filter by input_file_set_for (optional)
+    input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
 
     try:
         # List items in the PredictionSet collection.
@@ -5268,10 +5268,10 @@ Name | Type | Description  | Notes
  **scope** | **str**| Filter by scope | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **files** | [**List[object]**](List[object].md)| Filter by files | [optional] 
- **control_for** | [**List[object]**](List[object].md)| Filter by control_for | [optional] 
+ **files** | [**List[str]**](List[str].md)| Filter by files | [optional] 
+ **control_for** | [**List[str]**](List[str].md)| Filter by control_for | [optional] 
  **submitted_files_timestamp** | **datetime**| Filter by submitted_files_timestamp | [optional] 
- **input_file_set_for** | [**List[object]**](List[object].md)| Filter by input_file_set_for | [optional] 
+ **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
 
 ### Return type
 
@@ -5392,17 +5392,17 @@ with igvf_client.ApiClient(configuration) as api_client:
     passage_number = 56 # int | Filter by passage_number (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    file_sets = None # List[object] | Filter by file_sets (optional)
-    multiplexed_in = None # List[object] | Filter by multiplexed_in (optional)
-    sorted_fractions = None # List[object] | Filter by sorted_fractions (optional)
-    origin_of = None # List[object] | Filter by origin_of (optional)
-    institutional_certificates = None # List[object] | Filter by institutional_certificates (optional)
+    file_sets = ['file_sets_example'] # List[str] | Filter by file_sets (optional)
+    multiplexed_in = ['multiplexed_in_example'] # List[str] | Filter by multiplexed_in (optional)
+    sorted_fractions = ['sorted_fractions_example'] # List[str] | Filter by sorted_fractions (optional)
+    origin_of = ['origin_of_example'] # List[str] | Filter by origin_of (optional)
+    institutional_certificates = ['institutional_certificates_example'] # List[str] | Filter by institutional_certificates (optional)
     sex = 'sex_example' # str | Filter by sex (optional)
     age = 'age_example' # str | Filter by age (optional)
     upper_bound_age_in_hours = 3.4 # float | Filter by upper_bound_age_in_hours (optional)
     lower_bound_age_in_hours = 3.4 # float | Filter by lower_bound_age_in_hours (optional)
-    parts = None # List[object] | Filter by parts (optional)
-    pooled_in = None # List[object] | Filter by pooled_in (optional)
+    parts = ['parts_example'] # List[str] | Filter by parts (optional)
+    pooled_in = ['pooled_in_example'] # List[str] | Filter by pooled_in (optional)
     classifications = ['classifications_example'] # List[str] | Filter by classifications (optional)
 
     try:
@@ -5478,17 +5478,17 @@ Name | Type | Description  | Notes
  **passage_number** | **int**| Filter by passage_number | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **file_sets** | [**List[object]**](List[object].md)| Filter by file_sets | [optional] 
- **multiplexed_in** | [**List[object]**](List[object].md)| Filter by multiplexed_in | [optional] 
- **sorted_fractions** | [**List[object]**](List[object].md)| Filter by sorted_fractions | [optional] 
- **origin_of** | [**List[object]**](List[object].md)| Filter by origin_of | [optional] 
- **institutional_certificates** | [**List[object]**](List[object].md)| Filter by institutional_certificates | [optional] 
+ **file_sets** | [**List[str]**](List[str].md)| Filter by file_sets | [optional] 
+ **multiplexed_in** | [**List[str]**](List[str].md)| Filter by multiplexed_in | [optional] 
+ **sorted_fractions** | [**List[str]**](List[str].md)| Filter by sorted_fractions | [optional] 
+ **origin_of** | [**List[str]**](List[str].md)| Filter by origin_of | [optional] 
+ **institutional_certificates** | [**List[str]**](List[str].md)| Filter by institutional_certificates | [optional] 
  **sex** | **str**| Filter by sex | [optional] 
  **age** | **str**| Filter by age | [optional] 
  **upper_bound_age_in_hours** | **float**| Filter by upper_bound_age_in_hours | [optional] 
  **lower_bound_age_in_hours** | **float**| Filter by lower_bound_age_in_hours | [optional] 
- **parts** | [**List[object]**](List[object].md)| Filter by parts | [optional] 
- **pooled_in** | [**List[object]**](List[object].md)| Filter by pooled_in | [optional] 
+ **parts** | [**List[str]**](List[str].md)| Filter by parts | [optional] 
+ **pooled_in** | [**List[str]**](List[str].md)| Filter by pooled_in | [optional] 
  **classifications** | [**List[str]**](List[str].md)| Filter by classifications | [optional] 
 
 ### Return type
@@ -5583,12 +5583,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
     publication_year = 56 # int | Filter by publication_year (optional)
-    samples = None # List[object] | Filter by samples (optional)
-    donors = None # List[object] | Filter by donors (optional)
-    file_sets = None # List[object] | Filter by file_sets (optional)
-    workflows = None # List[object] | Filter by workflows (optional)
-    software = None # List[object] | Filter by software (optional)
-    software_versions = None # List[object] | Filter by software_versions (optional)
+    samples = ['samples_example'] # List[str] | Filter by samples (optional)
+    donors = ['donors_example'] # List[str] | Filter by donors (optional)
+    file_sets = ['file_sets_example'] # List[str] | Filter by file_sets (optional)
+    workflows = ['workflows_example'] # List[str] | Filter by workflows (optional)
+    software = ['software_example'] # List[str] | Filter by software (optional)
+    software_versions = ['software_versions_example'] # List[str] | Filter by software_versions (optional)
 
     try:
         # List items in the Publication collection.
@@ -5636,12 +5636,12 @@ Name | Type | Description  | Notes
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
  **publication_year** | **int**| Filter by publication_year | [optional] 
- **samples** | [**List[object]**](List[object].md)| Filter by samples | [optional] 
- **donors** | [**List[object]**](List[object].md)| Filter by donors | [optional] 
- **file_sets** | [**List[object]**](List[object].md)| Filter by file_sets | [optional] 
- **workflows** | [**List[object]**](List[object].md)| Filter by workflows | [optional] 
- **software** | [**List[object]**](List[object].md)| Filter by software | [optional] 
- **software_versions** | [**List[object]**](List[object].md)| Filter by software_versions | [optional] 
+ **samples** | [**List[str]**](List[str].md)| Filter by samples | [optional] 
+ **donors** | [**List[str]**](List[str].md)| Filter by donors | [optional] 
+ **file_sets** | [**List[str]**](List[str].md)| Filter by file_sets | [optional] 
+ **workflows** | [**List[str]**](List[str].md)| Filter by workflows | [optional] 
+ **software** | [**List[str]**](List[str].md)| Filter by software | [optional] 
+ **software_versions** | [**List[str]**](List[str].md)| Filter by software_versions | [optional] 
 
 ### Return type
 
@@ -5749,10 +5749,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     external_id = 'external_id_example' # str | Filter by external_id (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    integrated_in = None # List[object] | Filter by integrated_in (optional)
-    input_file_for = None # List[object] | Filter by input_file_for (optional)
-    gene_list_for = None # List[object] | Filter by gene_list_for (optional)
-    loci_list_for = None # List[object] | Filter by loci_list_for (optional)
+    integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
+    input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
+    gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
+    loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
     href = 'href_example' # str | Filter by href (optional)
     s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
     upload_credentials = None # object | Filter by upload_credentials (optional)
@@ -5817,10 +5817,10 @@ Name | Type | Description  | Notes
  **external_id** | **str**| Filter by external_id | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **integrated_in** | [**List[object]**](List[object].md)| Filter by integrated_in | [optional] 
- **input_file_for** | [**List[object]**](List[object].md)| Filter by input_file_for | [optional] 
- **gene_list_for** | [**List[object]**](List[object].md)| Filter by gene_list_for | [optional] 
- **loci_list_for** | [**List[object]**](List[object].md)| Filter by loci_list_for | [optional] 
+ **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
+ **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
+ **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
+ **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
  **href** | **str**| Filter by href | [optional] 
  **s3_uri** | **str**| Filter by s3_uri | [optional] 
  **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
@@ -6559,14 +6559,14 @@ with igvf_client.ApiClient(configuration) as api_client:
     index = 'index_example' # str | Filter by index (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    integrated_in = None # List[object] | Filter by integrated_in (optional)
-    input_file_for = None # List[object] | Filter by input_file_for (optional)
-    gene_list_for = None # List[object] | Filter by gene_list_for (optional)
-    loci_list_for = None # List[object] | Filter by loci_list_for (optional)
+    integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
+    input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
+    gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
+    loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
     href = 'href_example' # str | Filter by href (optional)
     s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
     upload_credentials = None # object | Filter by upload_credentials (optional)
-    seqspecs = None # List[object] | Filter by seqspecs (optional)
+    seqspecs = ['seqspecs_example'] # List[str] | Filter by seqspecs (optional)
 
     try:
         # List items in the SequenceFile collection.
@@ -6632,14 +6632,14 @@ Name | Type | Description  | Notes
  **index** | **str**| Filter by index | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **integrated_in** | [**List[object]**](List[object].md)| Filter by integrated_in | [optional] 
- **input_file_for** | [**List[object]**](List[object].md)| Filter by input_file_for | [optional] 
- **gene_list_for** | [**List[object]**](List[object].md)| Filter by gene_list_for | [optional] 
- **loci_list_for** | [**List[object]**](List[object].md)| Filter by loci_list_for | [optional] 
+ **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
+ **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
+ **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
+ **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
  **href** | **str**| Filter by href | [optional] 
  **s3_uri** | **str**| Filter by s3_uri | [optional] 
  **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
- **seqspecs** | [**List[object]**](List[object].md)| Filter by seqspecs | [optional] 
+ **seqspecs** | [**List[str]**](List[str].md)| Filter by seqspecs | [optional] 
 
 ### Return type
 
@@ -6745,10 +6745,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     start_view_position = 'start_view_position_example' # str | Filter by start_view_position (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    integrated_in = None # List[object] | Filter by integrated_in (optional)
-    input_file_for = None # List[object] | Filter by input_file_for (optional)
-    gene_list_for = None # List[object] | Filter by gene_list_for (optional)
-    loci_list_for = None # List[object] | Filter by loci_list_for (optional)
+    integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
+    input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
+    gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
+    loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
     href = 'href_example' # str | Filter by href (optional)
     s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
     upload_credentials = None # object | Filter by upload_credentials (optional)
@@ -6812,10 +6812,10 @@ Name | Type | Description  | Notes
  **start_view_position** | **str**| Filter by start_view_position | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **integrated_in** | [**List[object]**](List[object].md)| Filter by integrated_in | [optional] 
- **input_file_for** | [**List[object]**](List[object].md)| Filter by input_file_for | [optional] 
- **gene_list_for** | [**List[object]**](List[object].md)| Filter by gene_list_for | [optional] 
- **loci_list_for** | [**List[object]**](List[object].md)| Filter by loci_list_for | [optional] 
+ **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
+ **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
+ **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
+ **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
  **href** | **str**| Filter by href | [optional] 
  **s3_uri** | **str**| Filter by s3_uri | [optional] 
  **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
@@ -7295,10 +7295,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     validation_error_detail = 'validation_error_detail_example' # str | Filter by validation_error_detail (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    integrated_in = None # List[object] | Filter by integrated_in (optional)
-    input_file_for = None # List[object] | Filter by input_file_for (optional)
-    gene_list_for = None # List[object] | Filter by gene_list_for (optional)
-    loci_list_for = None # List[object] | Filter by loci_list_for (optional)
+    integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
+    input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
+    gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
+    loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
     href = 'href_example' # str | Filter by href (optional)
     s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
     upload_credentials = None # object | Filter by upload_credentials (optional)
@@ -7359,10 +7359,10 @@ Name | Type | Description  | Notes
  **validation_error_detail** | **str**| Filter by validation_error_detail | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **integrated_in** | [**List[object]**](List[object].md)| Filter by integrated_in | [optional] 
- **input_file_for** | [**List[object]**](List[object].md)| Filter by input_file_for | [optional] 
- **gene_list_for** | [**List[object]**](List[object].md)| Filter by gene_list_for | [optional] 
- **loci_list_for** | [**List[object]**](List[object].md)| Filter by loci_list_for | [optional] 
+ **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
+ **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
+ **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
+ **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
  **href** | **str**| Filter by href | [optional] 
  **s3_uri** | **str**| Filter by s3_uri | [optional] 
  **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
@@ -7473,11 +7473,11 @@ with igvf_client.ApiClient(configuration) as api_client:
     sample_terms = ['sample_terms_example'] # List[str] | Filter by sample_terms (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    file_sets = None # List[object] | Filter by file_sets (optional)
-    multiplexed_in = None # List[object] | Filter by multiplexed_in (optional)
-    sorted_fractions = None # List[object] | Filter by sorted_fractions (optional)
-    origin_of = None # List[object] | Filter by origin_of (optional)
-    institutional_certificates = None # List[object] | Filter by institutional_certificates (optional)
+    file_sets = ['file_sets_example'] # List[str] | Filter by file_sets (optional)
+    multiplexed_in = ['multiplexed_in_example'] # List[str] | Filter by multiplexed_in (optional)
+    sorted_fractions = ['sorted_fractions_example'] # List[str] | Filter by sorted_fractions (optional)
+    origin_of = ['origin_of_example'] # List[str] | Filter by origin_of (optional)
+    institutional_certificates = ['institutional_certificates_example'] # List[str] | Filter by institutional_certificates (optional)
     classifications = ['classifications_example'] # List[str] | Filter by classifications (optional)
 
     try:
@@ -7540,11 +7540,11 @@ Name | Type | Description  | Notes
  **sample_terms** | [**List[str]**](List[str].md)| Filter by sample_terms | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **file_sets** | [**List[object]**](List[object].md)| Filter by file_sets | [optional] 
- **multiplexed_in** | [**List[object]**](List[object].md)| Filter by multiplexed_in | [optional] 
- **sorted_fractions** | [**List[object]**](List[object].md)| Filter by sorted_fractions | [optional] 
- **origin_of** | [**List[object]**](List[object].md)| Filter by origin_of | [optional] 
- **institutional_certificates** | [**List[object]**](List[object].md)| Filter by institutional_certificates | [optional] 
+ **file_sets** | [**List[str]**](List[str].md)| Filter by file_sets | [optional] 
+ **multiplexed_in** | [**List[str]**](List[str].md)| Filter by multiplexed_in | [optional] 
+ **sorted_fractions** | [**List[str]**](List[str].md)| Filter by sorted_fractions | [optional] 
+ **origin_of** | [**List[str]**](List[str].md)| Filter by origin_of | [optional] 
+ **institutional_certificates** | [**List[str]**](List[str].md)| Filter by institutional_certificates | [optional] 
  **classifications** | [**List[str]**](List[str].md)| Filter by classifications | [optional] 
 
 ### Return type
@@ -7669,17 +7669,17 @@ with igvf_client.ApiClient(configuration) as api_client:
     preservation_method = 'preservation_method_example' # str | Filter by preservation_method (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    file_sets = None # List[object] | Filter by file_sets (optional)
-    multiplexed_in = None # List[object] | Filter by multiplexed_in (optional)
-    sorted_fractions = None # List[object] | Filter by sorted_fractions (optional)
-    origin_of = None # List[object] | Filter by origin_of (optional)
-    institutional_certificates = None # List[object] | Filter by institutional_certificates (optional)
+    file_sets = ['file_sets_example'] # List[str] | Filter by file_sets (optional)
+    multiplexed_in = ['multiplexed_in_example'] # List[str] | Filter by multiplexed_in (optional)
+    sorted_fractions = ['sorted_fractions_example'] # List[str] | Filter by sorted_fractions (optional)
+    origin_of = ['origin_of_example'] # List[str] | Filter by origin_of (optional)
+    institutional_certificates = ['institutional_certificates_example'] # List[str] | Filter by institutional_certificates (optional)
     sex = 'sex_example' # str | Filter by sex (optional)
     age = 'age_example' # str | Filter by age (optional)
     upper_bound_age_in_hours = 3.4 # float | Filter by upper_bound_age_in_hours (optional)
     lower_bound_age_in_hours = 3.4 # float | Filter by lower_bound_age_in_hours (optional)
-    parts = None # List[object] | Filter by parts (optional)
-    pooled_in = None # List[object] | Filter by pooled_in (optional)
+    parts = ['parts_example'] # List[str] | Filter by parts (optional)
+    pooled_in = ['pooled_in_example'] # List[str] | Filter by pooled_in (optional)
     classifications = ['classifications_example'] # List[str] | Filter by classifications (optional)
 
     try:
@@ -7758,17 +7758,17 @@ Name | Type | Description  | Notes
  **preservation_method** | **str**| Filter by preservation_method | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **file_sets** | [**List[object]**](List[object].md)| Filter by file_sets | [optional] 
- **multiplexed_in** | [**List[object]**](List[object].md)| Filter by multiplexed_in | [optional] 
- **sorted_fractions** | [**List[object]**](List[object].md)| Filter by sorted_fractions | [optional] 
- **origin_of** | [**List[object]**](List[object].md)| Filter by origin_of | [optional] 
- **institutional_certificates** | [**List[object]**](List[object].md)| Filter by institutional_certificates | [optional] 
+ **file_sets** | [**List[str]**](List[str].md)| Filter by file_sets | [optional] 
+ **multiplexed_in** | [**List[str]**](List[str].md)| Filter by multiplexed_in | [optional] 
+ **sorted_fractions** | [**List[str]**](List[str].md)| Filter by sorted_fractions | [optional] 
+ **origin_of** | [**List[str]**](List[str].md)| Filter by origin_of | [optional] 
+ **institutional_certificates** | [**List[str]**](List[str].md)| Filter by institutional_certificates | [optional] 
  **sex** | **str**| Filter by sex | [optional] 
  **age** | **str**| Filter by age | [optional] 
  **upper_bound_age_in_hours** | **float**| Filter by upper_bound_age_in_hours | [optional] 
  **lower_bound_age_in_hours** | **float**| Filter by lower_bound_age_in_hours | [optional] 
- **parts** | [**List[object]**](List[object].md)| Filter by parts | [optional] 
- **pooled_in** | [**List[object]**](List[object].md)| Filter by pooled_in | [optional] 
+ **parts** | [**List[str]**](List[str].md)| Filter by parts | [optional] 
+ **pooled_in** | [**List[str]**](List[str].md)| Filter by pooled_in | [optional] 
  **classifications** | [**List[str]**](List[str].md)| Filter by classifications | [optional] 
 
 ### Return type
@@ -7868,7 +7868,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     depletion = True # bool | Filter by depletion (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    biosamples_treated = None # List[object] | Filter by biosamples_treated (optional)
+    biosamples_treated = ['biosamples_treated_example'] # List[str] | Filter by biosamples_treated (optional)
 
     try:
         # List items in the Treatment collection.
@@ -7921,7 +7921,7 @@ Name | Type | Description  | Notes
  **depletion** | **bool**| Filter by depletion | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **biosamples_treated** | [**List[object]**](List[object].md)| Filter by biosamples_treated | [optional] 
+ **biosamples_treated** | [**List[str]**](List[str].md)| Filter by biosamples_treated | [optional] 
 
 ### Return type
 
@@ -8167,17 +8167,17 @@ with igvf_client.ApiClient(configuration) as api_client:
     protocols = ['protocols_example'] # List[str] | Filter by protocols (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    file_sets = None # List[object] | Filter by file_sets (optional)
-    multiplexed_in = None # List[object] | Filter by multiplexed_in (optional)
-    sorted_fractions = None # List[object] | Filter by sorted_fractions (optional)
-    origin_of = None # List[object] | Filter by origin_of (optional)
-    institutional_certificates = None # List[object] | Filter by institutional_certificates (optional)
+    file_sets = ['file_sets_example'] # List[str] | Filter by file_sets (optional)
+    multiplexed_in = ['multiplexed_in_example'] # List[str] | Filter by multiplexed_in (optional)
+    sorted_fractions = ['sorted_fractions_example'] # List[str] | Filter by sorted_fractions (optional)
+    origin_of = ['origin_of_example'] # List[str] | Filter by origin_of (optional)
+    institutional_certificates = ['institutional_certificates_example'] # List[str] | Filter by institutional_certificates (optional)
     sex = 'sex_example' # str | Filter by sex (optional)
     age = 'age_example' # str | Filter by age (optional)
     upper_bound_age_in_hours = 3.4 # float | Filter by upper_bound_age_in_hours (optional)
     lower_bound_age_in_hours = 3.4 # float | Filter by lower_bound_age_in_hours (optional)
-    parts = None # List[object] | Filter by parts (optional)
-    pooled_in = None # List[object] | Filter by pooled_in (optional)
+    parts = ['parts_example'] # List[str] | Filter by parts (optional)
+    pooled_in = ['pooled_in_example'] # List[str] | Filter by pooled_in (optional)
     classifications = ['classifications_example'] # List[str] | Filter by classifications (optional)
 
     try:
@@ -8252,17 +8252,17 @@ Name | Type | Description  | Notes
  **protocols** | [**List[str]**](List[str].md)| Filter by protocols | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **file_sets** | [**List[object]**](List[object].md)| Filter by file_sets | [optional] 
- **multiplexed_in** | [**List[object]**](List[object].md)| Filter by multiplexed_in | [optional] 
- **sorted_fractions** | [**List[object]**](List[object].md)| Filter by sorted_fractions | [optional] 
- **origin_of** | [**List[object]**](List[object].md)| Filter by origin_of | [optional] 
- **institutional_certificates** | [**List[object]**](List[object].md)| Filter by institutional_certificates | [optional] 
+ **file_sets** | [**List[str]**](List[str].md)| Filter by file_sets | [optional] 
+ **multiplexed_in** | [**List[str]**](List[str].md)| Filter by multiplexed_in | [optional] 
+ **sorted_fractions** | [**List[str]**](List[str].md)| Filter by sorted_fractions | [optional] 
+ **origin_of** | [**List[str]**](List[str].md)| Filter by origin_of | [optional] 
+ **institutional_certificates** | [**List[str]**](List[str].md)| Filter by institutional_certificates | [optional] 
  **sex** | **str**| Filter by sex | [optional] 
  **age** | **str**| Filter by age | [optional] 
  **upper_bound_age_in_hours** | **float**| Filter by upper_bound_age_in_hours | [optional] 
  **lower_bound_age_in_hours** | **float**| Filter by lower_bound_age_in_hours | [optional] 
- **parts** | [**List[object]**](List[object].md)| Filter by parts | [optional] 
- **pooled_in** | [**List[object]**](List[object].md)| Filter by pooled_in | [optional] 
+ **parts** | [**List[str]**](List[str].md)| Filter by parts | [optional] 
+ **pooled_in** | [**List[str]**](List[str].md)| Filter by pooled_in | [optional] 
  **classifications** | [**List[str]**](List[str].md)| Filter by classifications | [optional] 
 
 ### Return type
@@ -8356,7 +8356,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     workflow_version = 56 # int | Filter by workflow_version (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    analysis_steps = None # List[object] | Filter by analysis_steps (optional)
+    analysis_steps = ['analysis_steps_example'] # List[str] | Filter by analysis_steps (optional)
 
     try:
         # List items in the Workflow collection.
@@ -8403,7 +8403,7 @@ Name | Type | Description  | Notes
  **workflow_version** | **int**| Filter by workflow_version | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **analysis_steps** | [**List[object]**](List[object].md)| Filter by analysis_steps | [optional] 
+ **analysis_steps** | [**List[str]**](List[str].md)| Filter by analysis_steps | [optional] 
 
 ### Return type
 

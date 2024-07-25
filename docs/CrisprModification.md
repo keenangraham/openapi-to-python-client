@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
-**biosamples_modified** | **List[object]** | The biosamples which have been modified with this modification. | [optional] 
+**biosamples_modified** | **List[str]** | The biosamples which have been modified with this modification. | [optional] 
 
 ## Example
 

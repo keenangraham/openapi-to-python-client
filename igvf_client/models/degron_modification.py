@@ -53,7 +53,7 @@ class DegronModification(BaseModel):
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = None
-    biosamples_modified: Optional[List[Any]] = Field(default=None, description="The biosamples which have been modified with this modification.")
+    biosamples_modified: Optional[List[StrictStr]] = Field(default=None, description="The biosamples which have been modified with this modification.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "sources", "lot_id", "product_id", "documents", "status", "lab", "award", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "activated", "activating_agent_term_id", "activating_agent_term_name", "modality", "degron_system", "tagged_proteins", "@id", "@type", "summary", "biosamples_modified"]
 
     @field_validator('lot_id')

@@ -56,11 +56,11 @@ class AuxiliarySet(BaseModel):
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = None
-    files: Optional[List[Any]] = Field(default=None, description="The files associated with this file set.")
-    control_for: Optional[List[Any]] = Field(default=None, description="The file sets for which this file set is a control.")
+    files: Optional[List[StrictStr]] = Field(default=None, description="The files associated with this file set.")
+    control_for: Optional[List[StrictStr]] = Field(default=None, description="The file sets for which this file set is a control.")
     submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
-    input_file_set_for: Optional[List[Any]] = Field(default=None, description="The file sets that use this file set as an input.")
-    measurement_sets: Optional[List[Any]] = Field(default=None, description="The measurement sets that link to this auxiliary set.")
+    input_file_set_for: Optional[List[StrictStr]] = Field(default=None, description="The file sets that use this file set as an input.")
+    measurement_sets: Optional[List[StrictStr]] = Field(default=None, description="The measurement sets that link to this auxiliary set.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "publications", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "url", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "library_construction_platform", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "measurement_sets"]
 
     @field_validator('collections')

@@ -76,11 +76,11 @@ class ConstructLibrarySet(BaseModel):
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = None
-    files: Optional[List[Any]] = Field(default=None, description="The files associated with this file set.")
-    control_for: Optional[List[Any]] = Field(default=None, description="The file sets for which this file set is a control.")
+    files: Optional[List[StrictStr]] = Field(default=None, description="The files associated with this file set.")
+    control_for: Optional[List[StrictStr]] = Field(default=None, description="The file sets for which this file set is a control.")
     submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
-    input_file_set_for: Optional[List[Any]] = Field(default=None, description="The file sets that use this file set as an input.")
-    applied_to_samples: Optional[List[Any]] = Field(default=None, description="The samples that link to this construct library set.")
+    input_file_set_for: Optional[List[StrictStr]] = Field(default=None, description="The file sets that use this file set as an input.")
+    applied_to_samples: Optional[List[StrictStr]] = Field(default=None, description="The samples that link to this construct library set.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["small_scale_loci_list", "large_scale_loci_list", "small_scale_gene_list", "large_scale_gene_list", "release_timestamp", "publications", "publication_identifiers", "documents", "sources", "lot_id", "product_id", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "file_set_type", "scope", "selection_criteria", "integrated_content_files", "associated_phenotypes", "orf_list", "exon", "tile", "guide_type", "tiling_modality", "average_guide_coverage", "lower_bound_guide_coverage", "upper_bound_guide_coverage", "average_insert_size", "lower_bound_insert_size", "upper_bound_insert_size", "targeton", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "applied_to_samples"]
 

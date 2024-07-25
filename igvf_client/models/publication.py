@@ -57,12 +57,12 @@ class Publication(BaseModel):
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the publication.")
     publication_year: Optional[StrictInt] = Field(default=None, description="The year the publication was published.")
-    samples: Optional[List[Any]] = Field(default=None, description="The samples associated with this publication.")
-    donors: Optional[List[Any]] = Field(default=None, description="The donors associated with this publication.")
-    file_sets: Optional[List[Any]] = Field(default=None, description="The file sets associated with this publication.")
-    workflows: Optional[List[Any]] = Field(default=None, description="The workflows associated with this publication.")
-    software: Optional[List[Any]] = Field(default=None, description="The software associated with this publication.")
-    software_versions: Optional[List[Any]] = Field(default=None, description="The software versions associated with this publication.")
+    samples: Optional[List[StrictStr]] = Field(default=None, description="The samples associated with this publication.")
+    donors: Optional[List[StrictStr]] = Field(default=None, description="The donors associated with this publication.")
+    file_sets: Optional[List[StrictStr]] = Field(default=None, description="The file sets associated with this publication.")
+    workflows: Optional[List[StrictStr]] = Field(default=None, description="The workflows associated with this publication.")
+    software: Optional[List[StrictStr]] = Field(default=None, description="The software associated with this publication.")
+    software_versions: Optional[List[StrictStr]] = Field(default=None, description="The software versions associated with this publication.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["release_timestamp", "publication_identifiers", "status", "lab", "award", "attachment", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "title", "abstract", "authors", "date_published", "date_revised", "issue", "page", "volume", "journal", "published_by", "@id", "@type", "summary", "publication_year", "samples", "donors", "file_sets", "workflows", "software", "software_versions"]
 

@@ -695,10 +695,10 @@ class IgvfApi:
         filtered: Annotated[Optional[StrictBool], Field(description="Filter by filtered")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -805,13 +805,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -961,10 +961,10 @@ class IgvfApi:
         filtered: Annotated[Optional[StrictBool], Field(description="Filter by filtered")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -1071,13 +1071,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -1227,10 +1227,10 @@ class IgvfApi:
         filtered: Annotated[Optional[StrictBool], Field(description="Filter by filtered")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -1337,13 +1337,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -1817,10 +1817,10 @@ class IgvfApi:
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assay_titles: Annotated[Optional[List[StrictStr]], Field(description="Filter by assay_titles")] = None,
         _request_timeout: Union[
             None,
@@ -1898,13 +1898,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param assay_titles: Filter by assay_titles
         :type assay_titles: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -2019,10 +2019,10 @@ class IgvfApi:
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assay_titles: Annotated[Optional[List[StrictStr]], Field(description="Filter by assay_titles")] = None,
         _request_timeout: Union[
             None,
@@ -2100,13 +2100,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param assay_titles: Filter by assay_titles
         :type assay_titles: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -2221,10 +2221,10 @@ class IgvfApi:
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assay_titles: Annotated[Optional[List[StrictStr]], Field(description="Filter by assay_titles")] = None,
         _request_timeout: Union[
             None,
@@ -2302,13 +2302,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param assay_titles: Filter by assay_titles
         :type assay_titles: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -4734,11 +4734,11 @@ class IgvfApi:
         library_construction_platform: Annotated[Optional[StrictStr], Field(description="Filter by library_construction_platform")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
-        measurement_sets: Annotated[Optional[List[Any]], Field(description="Filter by measurement_sets")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
+        measurement_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4817,15 +4817,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param measurement_sets: Filter by measurement_sets
-        :type measurement_sets: List[object]
+        :type measurement_sets: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4940,11 +4940,11 @@ class IgvfApi:
         library_construction_platform: Annotated[Optional[StrictStr], Field(description="Filter by library_construction_platform")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
-        measurement_sets: Annotated[Optional[List[Any]], Field(description="Filter by measurement_sets")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
+        measurement_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5023,15 +5023,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param measurement_sets: Filter by measurement_sets
-        :type measurement_sets: List[object]
+        :type measurement_sets: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5146,11 +5146,11 @@ class IgvfApi:
         library_construction_platform: Annotated[Optional[StrictStr], Field(description="Filter by library_construction_platform")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
-        measurement_sets: Annotated[Optional[List[Any]], Field(description="Filter by measurement_sets")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
+        measurement_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5229,15 +5229,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param measurement_sets: Filter by measurement_sets
-        :type measurement_sets: List[object]
+        :type measurement_sets: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6614,7 +6614,7 @@ class IgvfApi:
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
         name_quantification: Annotated[Optional[StrictStr], Field(description="Filter by name_quantification")] = None,
-        biomarker_for: Annotated[Optional[List[Any]], Field(description="Filter by biomarker_for")] = None,
+        biomarker_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by biomarker_for")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6679,7 +6679,7 @@ class IgvfApi:
         :param name_quantification: Filter by name_quantification
         :type name_quantification: str
         :param biomarker_for: Filter by biomarker_for
-        :type biomarker_for: List[object]
+        :type biomarker_for: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6776,7 +6776,7 @@ class IgvfApi:
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
         name_quantification: Annotated[Optional[StrictStr], Field(description="Filter by name_quantification")] = None,
-        biomarker_for: Annotated[Optional[List[Any]], Field(description="Filter by biomarker_for")] = None,
+        biomarker_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by biomarker_for")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6841,7 +6841,7 @@ class IgvfApi:
         :param name_quantification: Filter by name_quantification
         :type name_quantification: str
         :param biomarker_for: Filter by biomarker_for
-        :type biomarker_for: List[object]
+        :type biomarker_for: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6938,7 +6938,7 @@ class IgvfApi:
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
         name_quantification: Annotated[Optional[StrictStr], Field(description="Filter by name_quantification")] = None,
-        biomarker_for: Annotated[Optional[List[Any]], Field(description="Filter by biomarker_for")] = None,
+        biomarker_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by biomarker_for")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7003,7 +7003,7 @@ class IgvfApi:
         :param name_quantification: Filter by name_quantification
         :type name_quantification: str
         :param biomarker_for: Filter by biomarker_for
-        :type biomarker_for: List[object]
+        :type biomarker_for: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7311,10 +7311,10 @@ class IgvfApi:
         seqspec_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by seqspec_of")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -7408,13 +7408,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -7549,10 +7549,10 @@ class IgvfApi:
         seqspec_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by seqspec_of")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -7646,13 +7646,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -7787,10 +7787,10 @@ class IgvfApi:
         seqspec_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by seqspec_of")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -7884,13 +7884,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -8339,11 +8339,11 @@ class IgvfApi:
         targeton: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by targeton")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
-        applied_to_samples: Annotated[Optional[List[Any]], Field(description="Filter by applied_to_samples")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
+        applied_to_samples: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8458,15 +8458,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param applied_to_samples: Filter by applied_to_samples
-        :type applied_to_samples: List[object]
+        :type applied_to_samples: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8617,11 +8617,11 @@ class IgvfApi:
         targeton: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by targeton")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
-        applied_to_samples: Annotated[Optional[List[Any]], Field(description="Filter by applied_to_samples")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
+        applied_to_samples: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8736,15 +8736,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param applied_to_samples: Filter by applied_to_samples
-        :type applied_to_samples: List[object]
+        :type applied_to_samples: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8895,11 +8895,11 @@ class IgvfApi:
         targeton: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by targeton")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
-        applied_to_samples: Annotated[Optional[List[Any]], Field(description="Filter by applied_to_samples")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
+        applied_to_samples: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9014,15 +9014,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param applied_to_samples: Filter by applied_to_samples
-        :type applied_to_samples: List[object]
+        :type applied_to_samples: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9520,7 +9520,7 @@ class IgvfApi:
         cas_species: Annotated[Optional[StrictStr], Field(description="Filter by cas_species")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        biosamples_modified: Annotated[Optional[List[Any]], Field(description="Filter by biosamples_modified")] = None,
+        biosamples_modified: Annotated[Optional[List[StrictStr]], Field(description="Filter by biosamples_modified")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9597,7 +9597,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param biosamples_modified: Filter by biosamples_modified
-        :type biosamples_modified: List[object]
+        :type biosamples_modified: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9706,7 +9706,7 @@ class IgvfApi:
         cas_species: Annotated[Optional[StrictStr], Field(description="Filter by cas_species")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        biosamples_modified: Annotated[Optional[List[Any]], Field(description="Filter by biosamples_modified")] = None,
+        biosamples_modified: Annotated[Optional[List[StrictStr]], Field(description="Filter by biosamples_modified")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9783,7 +9783,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param biosamples_modified: Filter by biosamples_modified
-        :type biosamples_modified: List[object]
+        :type biosamples_modified: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9892,7 +9892,7 @@ class IgvfApi:
         cas_species: Annotated[Optional[StrictStr], Field(description="Filter by cas_species")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        biosamples_modified: Annotated[Optional[List[Any]], Field(description="Filter by biosamples_modified")] = None,
+        biosamples_modified: Annotated[Optional[List[StrictStr]], Field(description="Filter by biosamples_modified")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9969,7 +9969,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param biosamples_modified: Filter by biosamples_modified
-        :type biosamples_modified: List[object]
+        :type biosamples_modified: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10308,10 +10308,10 @@ class IgvfApi:
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assemblies: Annotated[Optional[List[StrictStr]], Field(description="Filter by assemblies")] = None,
         transcriptome_annotations: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotations")] = None,
         _request_timeout: Union[
@@ -10392,13 +10392,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param assemblies: Filter by assemblies
         :type assemblies: List[str]
         :param transcriptome_annotations: Filter by transcriptome_annotations
@@ -10518,10 +10518,10 @@ class IgvfApi:
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assemblies: Annotated[Optional[List[StrictStr]], Field(description="Filter by assemblies")] = None,
         transcriptome_annotations: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotations")] = None,
         _request_timeout: Union[
@@ -10602,13 +10602,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param assemblies: Filter by assemblies
         :type assemblies: List[str]
         :param transcriptome_annotations: Filter by transcriptome_annotations
@@ -10728,10 +10728,10 @@ class IgvfApi:
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assemblies: Annotated[Optional[List[StrictStr]], Field(description="Filter by assemblies")] = None,
         transcriptome_annotations: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotations")] = None,
         _request_timeout: Union[
@@ -10812,13 +10812,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param assemblies: Filter by assemblies
         :type assemblies: List[str]
         :param transcriptome_annotations: Filter by transcriptome_annotations
@@ -11213,7 +11213,7 @@ class IgvfApi:
         tagged_proteins: Annotated[Optional[List[StrictStr]], Field(description="Filter by tagged_proteins")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        biosamples_modified: Annotated[Optional[List[Any]], Field(description="Filter by biosamples_modified")] = None,
+        biosamples_modified: Annotated[Optional[List[StrictStr]], Field(description="Filter by biosamples_modified")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11286,7 +11286,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param biosamples_modified: Filter by biosamples_modified
-        :type biosamples_modified: List[object]
+        :type biosamples_modified: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11391,7 +11391,7 @@ class IgvfApi:
         tagged_proteins: Annotated[Optional[List[StrictStr]], Field(description="Filter by tagged_proteins")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        biosamples_modified: Annotated[Optional[List[Any]], Field(description="Filter by biosamples_modified")] = None,
+        biosamples_modified: Annotated[Optional[List[StrictStr]], Field(description="Filter by biosamples_modified")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11464,7 +11464,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param biosamples_modified: Filter by biosamples_modified
-        :type biosamples_modified: List[object]
+        :type biosamples_modified: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11569,7 +11569,7 @@ class IgvfApi:
         tagged_proteins: Annotated[Optional[List[StrictStr]], Field(description="Filter by tagged_proteins")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        biosamples_modified: Annotated[Optional[List[Any]], Field(description="Filter by biosamples_modified")] = None,
+        biosamples_modified: Annotated[Optional[List[StrictStr]], Field(description="Filter by biosamples_modified")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11642,7 +11642,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param biosamples_modified: Filter by biosamples_modified
-        :type biosamples_modified: List[object]
+        :type biosamples_modified: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13593,10 +13593,10 @@ class IgvfApi:
         validation_error_detail: Annotated[Optional[StrictStr], Field(description="Filter by validation_error_detail")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -13694,13 +13694,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -13839,10 +13839,10 @@ class IgvfApi:
         validation_error_detail: Annotated[Optional[StrictStr], Field(description="Filter by validation_error_detail")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -13940,13 +13940,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -14085,10 +14085,10 @@ class IgvfApi:
         validation_error_detail: Annotated[Optional[StrictStr], Field(description="Filter by validation_error_detail")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -14186,13 +14186,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -15747,10 +15747,10 @@ class IgvfApi:
         validation_error_detail: Annotated[Optional[StrictStr], Field(description="Filter by validation_error_detail")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -15842,13 +15842,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -15981,10 +15981,10 @@ class IgvfApi:
         validation_error_detail: Annotated[Optional[StrictStr], Field(description="Filter by validation_error_detail")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -16076,13 +16076,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -16215,10 +16215,10 @@ class IgvfApi:
         validation_error_detail: Annotated[Optional[StrictStr], Field(description="Filter by validation_error_detail")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -16310,13 +16310,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -17372,18 +17372,18 @@ class IgvfApi:
         growth_medium: Annotated[Optional[StrictStr], Field(description="Filter by growth_medium")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sex: Annotated[Optional[StrictStr], Field(description="Filter by sex")] = None,
         age: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by age")] = None,
         upper_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by upper_bound_age_in_hours")] = None,
         lower_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age_in_hours")] = None,
-        parts: Annotated[Optional[List[Any]], Field(description="Filter by parts")] = None,
-        pooled_in: Annotated[Optional[List[Any]], Field(description="Filter by pooled_in")] = None,
-        demultiplexed_to: Annotated[Optional[List[Any]], Field(description="Filter by demultiplexed_to")] = None,
+        parts: Annotated[Optional[List[StrictStr]], Field(description="Filter by parts")] = None,
+        pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
+        demultiplexed_to: Annotated[Optional[List[StrictStr]], Field(description="Filter by demultiplexed_to")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17532,15 +17532,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sex: Filter by sex
         :type sex: str
         :param age: Filter by age
@@ -17550,11 +17550,11 @@ class IgvfApi:
         :param lower_bound_age_in_hours: Filter by lower_bound_age_in_hours
         :type lower_bound_age_in_hours: float
         :param parts: Filter by parts
-        :type parts: List[object]
+        :type parts: List[str]
         :param pooled_in: Filter by pooled_in
-        :type pooled_in: List[object]
+        :type pooled_in: List[str]
         :param demultiplexed_to: Filter by demultiplexed_to
-        :type demultiplexed_to: List[object]
+        :type demultiplexed_to: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17746,18 +17746,18 @@ class IgvfApi:
         growth_medium: Annotated[Optional[StrictStr], Field(description="Filter by growth_medium")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sex: Annotated[Optional[StrictStr], Field(description="Filter by sex")] = None,
         age: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by age")] = None,
         upper_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by upper_bound_age_in_hours")] = None,
         lower_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age_in_hours")] = None,
-        parts: Annotated[Optional[List[Any]], Field(description="Filter by parts")] = None,
-        pooled_in: Annotated[Optional[List[Any]], Field(description="Filter by pooled_in")] = None,
-        demultiplexed_to: Annotated[Optional[List[Any]], Field(description="Filter by demultiplexed_to")] = None,
+        parts: Annotated[Optional[List[StrictStr]], Field(description="Filter by parts")] = None,
+        pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
+        demultiplexed_to: Annotated[Optional[List[StrictStr]], Field(description="Filter by demultiplexed_to")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17906,15 +17906,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sex: Filter by sex
         :type sex: str
         :param age: Filter by age
@@ -17924,11 +17924,11 @@ class IgvfApi:
         :param lower_bound_age_in_hours: Filter by lower_bound_age_in_hours
         :type lower_bound_age_in_hours: float
         :param parts: Filter by parts
-        :type parts: List[object]
+        :type parts: List[str]
         :param pooled_in: Filter by pooled_in
-        :type pooled_in: List[object]
+        :type pooled_in: List[str]
         :param demultiplexed_to: Filter by demultiplexed_to
-        :type demultiplexed_to: List[object]
+        :type demultiplexed_to: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18120,18 +18120,18 @@ class IgvfApi:
         growth_medium: Annotated[Optional[StrictStr], Field(description="Filter by growth_medium")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sex: Annotated[Optional[StrictStr], Field(description="Filter by sex")] = None,
         age: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by age")] = None,
         upper_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by upper_bound_age_in_hours")] = None,
         lower_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age_in_hours")] = None,
-        parts: Annotated[Optional[List[Any]], Field(description="Filter by parts")] = None,
-        pooled_in: Annotated[Optional[List[Any]], Field(description="Filter by pooled_in")] = None,
-        demultiplexed_to: Annotated[Optional[List[Any]], Field(description="Filter by demultiplexed_to")] = None,
+        parts: Annotated[Optional[List[StrictStr]], Field(description="Filter by parts")] = None,
+        pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
+        demultiplexed_to: Annotated[Optional[List[StrictStr]], Field(description="Filter by demultiplexed_to")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18280,15 +18280,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sex: Filter by sex
         :type sex: str
         :param age: Filter by age
@@ -18298,11 +18298,11 @@ class IgvfApi:
         :param lower_bound_age_in_hours: Filter by lower_bound_age_in_hours
         :type lower_bound_age_in_hours: float
         :param parts: Filter by parts
-        :type parts: List[object]
+        :type parts: List[str]
         :param pooled_in: Filter by pooled_in
-        :type pooled_in: List[object]
+        :type pooled_in: List[str]
         :param demultiplexed_to: Filter by demultiplexed_to
-        :type demultiplexed_to: List[object]
+        :type demultiplexed_to: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20237,10 +20237,10 @@ class IgvfApi:
         dimension2: Annotated[Optional[StrictStr], Field(description="Filter by dimension2")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -20339,13 +20339,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -20487,10 +20487,10 @@ class IgvfApi:
         dimension2: Annotated[Optional[StrictStr], Field(description="Filter by dimension2")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -20589,13 +20589,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -20737,10 +20737,10 @@ class IgvfApi:
         dimension2: Annotated[Optional[StrictStr], Field(description="Filter by dimension2")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -20839,13 +20839,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -21304,10 +21304,10 @@ class IgvfApi:
         targeted_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         related_multiome_datasets: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_multiome_datasets")] = None,
         _request_timeout: Union[
             None,
@@ -21403,13 +21403,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param related_multiome_datasets: Filter by related_multiome_datasets
         :type related_multiome_datasets: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -21542,10 +21542,10 @@ class IgvfApi:
         targeted_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         related_multiome_datasets: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_multiome_datasets")] = None,
         _request_timeout: Union[
             None,
@@ -21641,13 +21641,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param related_multiome_datasets: Filter by related_multiome_datasets
         :type related_multiome_datasets: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -21780,10 +21780,10 @@ class IgvfApi:
         targeted_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         related_multiome_datasets: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_multiome_datasets")] = None,
         _request_timeout: Union[
             None,
@@ -21879,13 +21879,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param related_multiome_datasets: Filter by related_multiome_datasets
         :type related_multiome_datasets: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -22334,10 +22334,10 @@ class IgvfApi:
         validation_error_detail: Annotated[Optional[StrictStr], Field(description="Filter by validation_error_detail")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -22433,13 +22433,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -22576,10 +22576,10 @@ class IgvfApi:
         validation_error_detail: Annotated[Optional[StrictStr], Field(description="Filter by validation_error_detail")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -22675,13 +22675,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -22818,10 +22818,10 @@ class IgvfApi:
         validation_error_detail: Annotated[Optional[StrictStr], Field(description="Filter by validation_error_detail")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -22917,13 +22917,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -23365,10 +23365,10 @@ class IgvfApi:
         assessed_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by assessed_genes")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23459,13 +23459,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23591,10 +23591,10 @@ class IgvfApi:
         assessed_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by assessed_genes")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23685,13 +23685,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23817,10 +23817,10 @@ class IgvfApi:
         assessed_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by assessed_genes")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23911,13 +23911,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -24347,11 +24347,11 @@ class IgvfApi:
         barcode_sample_map: Annotated[Optional[StrictStr], Field(description="Filter by barcode_sample_map")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sample_terms: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms")] = None,
         disease_terms: Annotated[Optional[List[StrictStr]], Field(description="Filter by disease_terms")] = None,
         treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments")] = None,
@@ -24460,15 +24460,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sample_terms: Filter by sample_terms
         :type sample_terms: List[str]
         :param disease_terms: Filter by disease_terms
@@ -24629,11 +24629,11 @@ class IgvfApi:
         barcode_sample_map: Annotated[Optional[StrictStr], Field(description="Filter by barcode_sample_map")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sample_terms: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms")] = None,
         disease_terms: Annotated[Optional[List[StrictStr]], Field(description="Filter by disease_terms")] = None,
         treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments")] = None,
@@ -24742,15 +24742,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sample_terms: Filter by sample_terms
         :type sample_terms: List[str]
         :param disease_terms: Filter by disease_terms
@@ -24911,11 +24911,11 @@ class IgvfApi:
         barcode_sample_map: Annotated[Optional[StrictStr], Field(description="Filter by barcode_sample_map")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sample_terms: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms")] = None,
         disease_terms: Annotated[Optional[List[StrictStr]], Field(description="Filter by disease_terms")] = None,
         treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments")] = None,
@@ -25024,15 +25024,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sample_terms: Filter by sample_terms
         :type sample_terms: List[str]
         :param disease_terms: Filter by disease_terms
@@ -28909,10 +28909,10 @@ class IgvfApi:
         scope: Annotated[Optional[StrictStr], Field(description="Filter by scope")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -29001,13 +29001,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -29131,10 +29131,10 @@ class IgvfApi:
         scope: Annotated[Optional[StrictStr], Field(description="Filter by scope")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -29223,13 +29223,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -29353,10 +29353,10 @@ class IgvfApi:
         scope: Annotated[Optional[StrictStr], Field(description="Filter by scope")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        files: Annotated[Optional[List[Any]], Field(description="Filter by files")] = None,
-        control_for: Annotated[Optional[List[Any]], Field(description="Filter by control_for")] = None,
+        files: Annotated[Optional[List[StrictStr]], Field(description="Filter by files")] = None,
+        control_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for")] = None,
         submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
-        input_file_set_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_set_for")] = None,
+        input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -29445,13 +29445,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param files: Filter by files
-        :type files: List[object]
+        :type files: List[str]
         :param control_for: Filter by control_for
-        :type control_for: List[object]
+        :type control_for: List[str]
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
         :type submitted_files_timestamp: datetime
         :param input_file_set_for: Filter by input_file_set_for
-        :type input_file_set_for: List[object]
+        :type input_file_set_for: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -29891,17 +29891,17 @@ class IgvfApi:
         passage_number: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="Filter by passage_number")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sex: Annotated[Optional[StrictStr], Field(description="Filter by sex")] = None,
         age: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by age")] = None,
         upper_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by upper_bound_age_in_hours")] = None,
         lower_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age_in_hours")] = None,
-        parts: Annotated[Optional[List[Any]], Field(description="Filter by parts")] = None,
-        pooled_in: Annotated[Optional[List[Any]], Field(description="Filter by pooled_in")] = None,
+        parts: Annotated[Optional[List[StrictStr]], Field(description="Filter by parts")] = None,
+        pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         classifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by classifications")] = None,
         _request_timeout: Union[
             None,
@@ -30035,15 +30035,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sex: Filter by sex
         :type sex: str
         :param age: Filter by age
@@ -30053,9 +30053,9 @@ class IgvfApi:
         :param lower_bound_age_in_hours: Filter by lower_bound_age_in_hours
         :type lower_bound_age_in_hours: float
         :param parts: Filter by parts
-        :type parts: List[object]
+        :type parts: List[str]
         :param pooled_in: Filter by pooled_in
-        :type pooled_in: List[object]
+        :type pooled_in: List[str]
         :param classifications: Filter by classifications
         :type classifications: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -30233,17 +30233,17 @@ class IgvfApi:
         passage_number: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="Filter by passage_number")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sex: Annotated[Optional[StrictStr], Field(description="Filter by sex")] = None,
         age: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by age")] = None,
         upper_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by upper_bound_age_in_hours")] = None,
         lower_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age_in_hours")] = None,
-        parts: Annotated[Optional[List[Any]], Field(description="Filter by parts")] = None,
-        pooled_in: Annotated[Optional[List[Any]], Field(description="Filter by pooled_in")] = None,
+        parts: Annotated[Optional[List[StrictStr]], Field(description="Filter by parts")] = None,
+        pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         classifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by classifications")] = None,
         _request_timeout: Union[
             None,
@@ -30377,15 +30377,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sex: Filter by sex
         :type sex: str
         :param age: Filter by age
@@ -30395,9 +30395,9 @@ class IgvfApi:
         :param lower_bound_age_in_hours: Filter by lower_bound_age_in_hours
         :type lower_bound_age_in_hours: float
         :param parts: Filter by parts
-        :type parts: List[object]
+        :type parts: List[str]
         :param pooled_in: Filter by pooled_in
-        :type pooled_in: List[object]
+        :type pooled_in: List[str]
         :param classifications: Filter by classifications
         :type classifications: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -30575,17 +30575,17 @@ class IgvfApi:
         passage_number: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="Filter by passage_number")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sex: Annotated[Optional[StrictStr], Field(description="Filter by sex")] = None,
         age: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by age")] = None,
         upper_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by upper_bound_age_in_hours")] = None,
         lower_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age_in_hours")] = None,
-        parts: Annotated[Optional[List[Any]], Field(description="Filter by parts")] = None,
-        pooled_in: Annotated[Optional[List[Any]], Field(description="Filter by pooled_in")] = None,
+        parts: Annotated[Optional[List[StrictStr]], Field(description="Filter by parts")] = None,
+        pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         classifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by classifications")] = None,
         _request_timeout: Union[
             None,
@@ -30719,15 +30719,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sex: Filter by sex
         :type sex: str
         :param age: Filter by age
@@ -30737,9 +30737,9 @@ class IgvfApi:
         :param lower_bound_age_in_hours: Filter by lower_bound_age_in_hours
         :type lower_bound_age_in_hours: float
         :param parts: Filter by parts
-        :type parts: List[object]
+        :type parts: List[str]
         :param pooled_in: Filter by pooled_in
-        :type pooled_in: List[object]
+        :type pooled_in: List[str]
         :param classifications: Filter by classifications
         :type classifications: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -31344,12 +31344,12 @@ class IgvfApi:
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
         publication_year: Annotated[Optional[StrictInt], Field(description="Filter by publication_year")] = None,
-        samples: Annotated[Optional[List[Any]], Field(description="Filter by samples")] = None,
-        donors: Annotated[Optional[List[Any]], Field(description="Filter by donors")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        workflows: Annotated[Optional[List[Any]], Field(description="Filter by workflows")] = None,
-        software: Annotated[Optional[List[Any]], Field(description="Filter by software")] = None,
-        software_versions: Annotated[Optional[List[Any]], Field(description="Filter by software_versions")] = None,
+        samples: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples")] = None,
+        donors: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        workflows: Annotated[Optional[List[StrictStr]], Field(description="Filter by workflows")] = None,
+        software: Annotated[Optional[List[StrictStr]], Field(description="Filter by software")] = None,
+        software_versions: Annotated[Optional[List[StrictStr]], Field(description="Filter by software_versions")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -31428,17 +31428,17 @@ class IgvfApi:
         :param publication_year: Filter by publication_year
         :type publication_year: int
         :param samples: Filter by samples
-        :type samples: List[object]
+        :type samples: List[str]
         :param donors: Filter by donors
-        :type donors: List[object]
+        :type donors: List[str]
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param workflows: Filter by workflows
-        :type workflows: List[object]
+        :type workflows: List[str]
         :param software: Filter by software
-        :type software: List[object]
+        :type software: List[str]
         :param software_versions: Filter by software_versions
-        :type software_versions: List[object]
+        :type software_versions: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -31554,12 +31554,12 @@ class IgvfApi:
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
         publication_year: Annotated[Optional[StrictInt], Field(description="Filter by publication_year")] = None,
-        samples: Annotated[Optional[List[Any]], Field(description="Filter by samples")] = None,
-        donors: Annotated[Optional[List[Any]], Field(description="Filter by donors")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        workflows: Annotated[Optional[List[Any]], Field(description="Filter by workflows")] = None,
-        software: Annotated[Optional[List[Any]], Field(description="Filter by software")] = None,
-        software_versions: Annotated[Optional[List[Any]], Field(description="Filter by software_versions")] = None,
+        samples: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples")] = None,
+        donors: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        workflows: Annotated[Optional[List[StrictStr]], Field(description="Filter by workflows")] = None,
+        software: Annotated[Optional[List[StrictStr]], Field(description="Filter by software")] = None,
+        software_versions: Annotated[Optional[List[StrictStr]], Field(description="Filter by software_versions")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -31638,17 +31638,17 @@ class IgvfApi:
         :param publication_year: Filter by publication_year
         :type publication_year: int
         :param samples: Filter by samples
-        :type samples: List[object]
+        :type samples: List[str]
         :param donors: Filter by donors
-        :type donors: List[object]
+        :type donors: List[str]
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param workflows: Filter by workflows
-        :type workflows: List[object]
+        :type workflows: List[str]
         :param software: Filter by software
-        :type software: List[object]
+        :type software: List[str]
         :param software_versions: Filter by software_versions
-        :type software_versions: List[object]
+        :type software_versions: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -31764,12 +31764,12 @@ class IgvfApi:
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
         publication_year: Annotated[Optional[StrictInt], Field(description="Filter by publication_year")] = None,
-        samples: Annotated[Optional[List[Any]], Field(description="Filter by samples")] = None,
-        donors: Annotated[Optional[List[Any]], Field(description="Filter by donors")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        workflows: Annotated[Optional[List[Any]], Field(description="Filter by workflows")] = None,
-        software: Annotated[Optional[List[Any]], Field(description="Filter by software")] = None,
-        software_versions: Annotated[Optional[List[Any]], Field(description="Filter by software_versions")] = None,
+        samples: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples")] = None,
+        donors: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        workflows: Annotated[Optional[List[StrictStr]], Field(description="Filter by workflows")] = None,
+        software: Annotated[Optional[List[StrictStr]], Field(description="Filter by software")] = None,
+        software_versions: Annotated[Optional[List[StrictStr]], Field(description="Filter by software_versions")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -31848,17 +31848,17 @@ class IgvfApi:
         :param publication_year: Filter by publication_year
         :type publication_year: int
         :param samples: Filter by samples
-        :type samples: List[object]
+        :type samples: List[str]
         :param donors: Filter by donors
-        :type donors: List[object]
+        :type donors: List[str]
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param workflows: Filter by workflows
-        :type workflows: List[object]
+        :type workflows: List[str]
         :param software: Filter by software
-        :type software: List[object]
+        :type software: List[str]
         :param software_versions: Filter by software_versions
-        :type software_versions: List[object]
+        :type software_versions: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -32270,10 +32270,10 @@ class IgvfApi:
         external_id: Annotated[Optional[StrictStr], Field(description="Filter by external_id")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -32383,13 +32383,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -32540,10 +32540,10 @@ class IgvfApi:
         external_id: Annotated[Optional[StrictStr], Field(description="Filter by external_id")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -32653,13 +32653,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -32810,10 +32810,10 @@ class IgvfApi:
         external_id: Annotated[Optional[StrictStr], Field(description="Filter by external_id")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -32923,13 +32923,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -36307,14 +36307,14 @@ class IgvfApi:
         index: Annotated[Optional[StrictStr], Field(description="Filter by index")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
-        seqspecs: Annotated[Optional[List[Any]], Field(description="Filter by seqspecs")] = None,
+        seqspecs: Annotated[Optional[List[StrictStr]], Field(description="Filter by seqspecs")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -36429,13 +36429,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -36443,7 +36443,7 @@ class IgvfApi:
         :param upload_credentials: Filter by upload_credentials
         :type upload_credentials: object
         :param seqspecs: Filter by seqspecs
-        :type seqspecs: List[object]
+        :type seqspecs: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -36597,14 +36597,14 @@ class IgvfApi:
         index: Annotated[Optional[StrictStr], Field(description="Filter by index")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
-        seqspecs: Annotated[Optional[List[Any]], Field(description="Filter by seqspecs")] = None,
+        seqspecs: Annotated[Optional[List[StrictStr]], Field(description="Filter by seqspecs")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -36719,13 +36719,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -36733,7 +36733,7 @@ class IgvfApi:
         :param upload_credentials: Filter by upload_credentials
         :type upload_credentials: object
         :param seqspecs: Filter by seqspecs
-        :type seqspecs: List[object]
+        :type seqspecs: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -36887,14 +36887,14 @@ class IgvfApi:
         index: Annotated[Optional[StrictStr], Field(description="Filter by index")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
-        seqspecs: Annotated[Optional[List[Any]], Field(description="Filter by seqspecs")] = None,
+        seqspecs: Annotated[Optional[List[StrictStr]], Field(description="Filter by seqspecs")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -37009,13 +37009,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -37023,7 +37023,7 @@ class IgvfApi:
         :param upload_credentials: Filter by upload_credentials
         :type upload_credentials: object
         :param seqspecs: Filter by seqspecs
-        :type seqspecs: List[object]
+        :type seqspecs: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -37538,10 +37538,10 @@ class IgvfApi:
         start_view_position: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by start_view_position")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -37648,13 +37648,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -37804,10 +37804,10 @@ class IgvfApi:
         start_view_position: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by start_view_position")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -37914,13 +37914,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -38070,10 +38070,10 @@ class IgvfApi:
         start_view_position: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by start_view_position")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -38180,13 +38180,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -40621,10 +40621,10 @@ class IgvfApi:
         validation_error_detail: Annotated[Optional[StrictStr], Field(description="Filter by validation_error_detail")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -40726,13 +40726,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -40875,10 +40875,10 @@ class IgvfApi:
         validation_error_detail: Annotated[Optional[StrictStr], Field(description="Filter by validation_error_detail")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -40980,13 +40980,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -41129,10 +41129,10 @@ class IgvfApi:
         validation_error_detail: Annotated[Optional[StrictStr], Field(description="Filter by validation_error_detail")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        integrated_in: Annotated[Optional[List[Any]], Field(description="Filter by integrated_in")] = None,
-        input_file_for: Annotated[Optional[List[Any]], Field(description="Filter by input_file_for")] = None,
-        gene_list_for: Annotated[Optional[List[Any]], Field(description="Filter by gene_list_for")] = None,
-        loci_list_for: Annotated[Optional[List[Any]], Field(description="Filter by loci_list_for")] = None,
+        integrated_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_in")] = None,
+        input_file_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_for")] = None,
+        gene_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene_list_for")] = None,
+        loci_list_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by loci_list_for")] = None,
         href: Annotated[Optional[StrictStr], Field(description="Filter by href")] = None,
         s3_uri: Annotated[Optional[StrictStr], Field(description="Filter by s3_uri")] = None,
         upload_credentials: Annotated[Optional[Dict[str, Any]], Field(description="Filter by upload_credentials")] = None,
@@ -41234,13 +41234,13 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param integrated_in: Filter by integrated_in
-        :type integrated_in: List[object]
+        :type integrated_in: List[str]
         :param input_file_for: Filter by input_file_for
-        :type input_file_for: List[object]
+        :type input_file_for: List[str]
         :param gene_list_for: Filter by gene_list_for
-        :type gene_list_for: List[object]
+        :type gene_list_for: List[str]
         :param loci_list_for: Filter by loci_list_for
-        :type loci_list_for: List[object]
+        :type loci_list_for: List[str]
         :param href: Filter by href
         :type href: str
         :param s3_uri: Filter by s3_uri
@@ -41708,11 +41708,11 @@ class IgvfApi:
         sample_terms: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         classifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by classifications")] = None,
         _request_timeout: Union[
             None,
@@ -41820,15 +41820,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param classifications: Filter by classifications
         :type classifications: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -41974,11 +41974,11 @@ class IgvfApi:
         sample_terms: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         classifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by classifications")] = None,
         _request_timeout: Union[
             None,
@@ -42086,15 +42086,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param classifications: Filter by classifications
         :type classifications: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -42240,11 +42240,11 @@ class IgvfApi:
         sample_terms: Annotated[Optional[List[StrictStr]], Field(description="Filter by sample_terms")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         classifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by classifications")] = None,
         _request_timeout: Union[
             None,
@@ -42352,15 +42352,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param classifications: Filter by classifications
         :type classifications: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -42873,17 +42873,17 @@ class IgvfApi:
         preservation_method: Annotated[Optional[StrictStr], Field(description="Filter by preservation_method")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sex: Annotated[Optional[StrictStr], Field(description="Filter by sex")] = None,
         age: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by age")] = None,
         upper_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by upper_bound_age_in_hours")] = None,
         lower_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age_in_hours")] = None,
-        parts: Annotated[Optional[List[Any]], Field(description="Filter by parts")] = None,
-        pooled_in: Annotated[Optional[List[Any]], Field(description="Filter by pooled_in")] = None,
+        parts: Annotated[Optional[List[StrictStr]], Field(description="Filter by parts")] = None,
+        pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         classifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by classifications")] = None,
         _request_timeout: Union[
             None,
@@ -43023,15 +43023,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sex: Filter by sex
         :type sex: str
         :param age: Filter by age
@@ -43041,9 +43041,9 @@ class IgvfApi:
         :param lower_bound_age_in_hours: Filter by lower_bound_age_in_hours
         :type lower_bound_age_in_hours: float
         :param parts: Filter by parts
-        :type parts: List[object]
+        :type parts: List[str]
         :param pooled_in: Filter by pooled_in
-        :type pooled_in: List[object]
+        :type pooled_in: List[str]
         :param classifications: Filter by classifications
         :type classifications: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -43227,17 +43227,17 @@ class IgvfApi:
         preservation_method: Annotated[Optional[StrictStr], Field(description="Filter by preservation_method")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sex: Annotated[Optional[StrictStr], Field(description="Filter by sex")] = None,
         age: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by age")] = None,
         upper_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by upper_bound_age_in_hours")] = None,
         lower_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age_in_hours")] = None,
-        parts: Annotated[Optional[List[Any]], Field(description="Filter by parts")] = None,
-        pooled_in: Annotated[Optional[List[Any]], Field(description="Filter by pooled_in")] = None,
+        parts: Annotated[Optional[List[StrictStr]], Field(description="Filter by parts")] = None,
+        pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         classifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by classifications")] = None,
         _request_timeout: Union[
             None,
@@ -43377,15 +43377,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sex: Filter by sex
         :type sex: str
         :param age: Filter by age
@@ -43395,9 +43395,9 @@ class IgvfApi:
         :param lower_bound_age_in_hours: Filter by lower_bound_age_in_hours
         :type lower_bound_age_in_hours: float
         :param parts: Filter by parts
-        :type parts: List[object]
+        :type parts: List[str]
         :param pooled_in: Filter by pooled_in
-        :type pooled_in: List[object]
+        :type pooled_in: List[str]
         :param classifications: Filter by classifications
         :type classifications: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -43581,17 +43581,17 @@ class IgvfApi:
         preservation_method: Annotated[Optional[StrictStr], Field(description="Filter by preservation_method")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sex: Annotated[Optional[StrictStr], Field(description="Filter by sex")] = None,
         age: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by age")] = None,
         upper_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by upper_bound_age_in_hours")] = None,
         lower_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age_in_hours")] = None,
-        parts: Annotated[Optional[List[Any]], Field(description="Filter by parts")] = None,
-        pooled_in: Annotated[Optional[List[Any]], Field(description="Filter by pooled_in")] = None,
+        parts: Annotated[Optional[List[StrictStr]], Field(description="Filter by parts")] = None,
+        pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         classifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by classifications")] = None,
         _request_timeout: Union[
             None,
@@ -43731,15 +43731,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sex: Filter by sex
         :type sex: str
         :param age: Filter by age
@@ -43749,9 +43749,9 @@ class IgvfApi:
         :param lower_bound_age_in_hours: Filter by lower_bound_age_in_hours
         :type lower_bound_age_in_hours: float
         :param parts: Filter by parts
-        :type parts: List[object]
+        :type parts: List[str]
         :param pooled_in: Filter by pooled_in
-        :type pooled_in: List[object]
+        :type pooled_in: List[str]
         :param classifications: Filter by classifications
         :type classifications: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -44379,7 +44379,7 @@ class IgvfApi:
         depletion: Annotated[Optional[StrictBool], Field(description="Filter by depletion")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        biosamples_treated: Annotated[Optional[List[Any]], Field(description="Filter by biosamples_treated")] = None,
+        biosamples_treated: Annotated[Optional[List[StrictStr]], Field(description="Filter by biosamples_treated")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -44468,7 +44468,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param biosamples_treated: Filter by biosamples_treated
-        :type biosamples_treated: List[object]
+        :type biosamples_treated: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -44589,7 +44589,7 @@ class IgvfApi:
         depletion: Annotated[Optional[StrictBool], Field(description="Filter by depletion")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        biosamples_treated: Annotated[Optional[List[Any]], Field(description="Filter by biosamples_treated")] = None,
+        biosamples_treated: Annotated[Optional[List[StrictStr]], Field(description="Filter by biosamples_treated")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -44678,7 +44678,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param biosamples_treated: Filter by biosamples_treated
-        :type biosamples_treated: List[object]
+        :type biosamples_treated: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -44799,7 +44799,7 @@ class IgvfApi:
         depletion: Annotated[Optional[StrictBool], Field(description="Filter by depletion")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        biosamples_treated: Annotated[Optional[List[Any]], Field(description="Filter by biosamples_treated")] = None,
+        biosamples_treated: Annotated[Optional[List[StrictStr]], Field(description="Filter by biosamples_treated")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -44888,7 +44888,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param biosamples_treated: Filter by biosamples_treated
-        :type biosamples_treated: List[object]
+        :type biosamples_treated: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -45948,17 +45948,17 @@ class IgvfApi:
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sex: Annotated[Optional[StrictStr], Field(description="Filter by sex")] = None,
         age: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by age")] = None,
         upper_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by upper_bound_age_in_hours")] = None,
         lower_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age_in_hours")] = None,
-        parts: Annotated[Optional[List[Any]], Field(description="Filter by parts")] = None,
-        pooled_in: Annotated[Optional[List[Any]], Field(description="Filter by pooled_in")] = None,
+        parts: Annotated[Optional[List[StrictStr]], Field(description="Filter by parts")] = None,
+        pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         classifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by classifications")] = None,
         _request_timeout: Union[
             None,
@@ -46090,15 +46090,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sex: Filter by sex
         :type sex: str
         :param age: Filter by age
@@ -46108,9 +46108,9 @@ class IgvfApi:
         :param lower_bound_age_in_hours: Filter by lower_bound_age_in_hours
         :type lower_bound_age_in_hours: float
         :param parts: Filter by parts
-        :type parts: List[object]
+        :type parts: List[str]
         :param pooled_in: Filter by pooled_in
-        :type pooled_in: List[object]
+        :type pooled_in: List[str]
         :param classifications: Filter by classifications
         :type classifications: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -46286,17 +46286,17 @@ class IgvfApi:
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sex: Annotated[Optional[StrictStr], Field(description="Filter by sex")] = None,
         age: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by age")] = None,
         upper_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by upper_bound_age_in_hours")] = None,
         lower_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age_in_hours")] = None,
-        parts: Annotated[Optional[List[Any]], Field(description="Filter by parts")] = None,
-        pooled_in: Annotated[Optional[List[Any]], Field(description="Filter by pooled_in")] = None,
+        parts: Annotated[Optional[List[StrictStr]], Field(description="Filter by parts")] = None,
+        pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         classifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by classifications")] = None,
         _request_timeout: Union[
             None,
@@ -46428,15 +46428,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sex: Filter by sex
         :type sex: str
         :param age: Filter by age
@@ -46446,9 +46446,9 @@ class IgvfApi:
         :param lower_bound_age_in_hours: Filter by lower_bound_age_in_hours
         :type lower_bound_age_in_hours: float
         :param parts: Filter by parts
-        :type parts: List[object]
+        :type parts: List[str]
         :param pooled_in: Filter by pooled_in
-        :type pooled_in: List[object]
+        :type pooled_in: List[str]
         :param classifications: Filter by classifications
         :type classifications: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -46624,17 +46624,17 @@ class IgvfApi:
         protocols: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by protocols")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        file_sets: Annotated[Optional[List[Any]], Field(description="Filter by file_sets")] = None,
-        multiplexed_in: Annotated[Optional[List[Any]], Field(description="Filter by multiplexed_in")] = None,
-        sorted_fractions: Annotated[Optional[List[Any]], Field(description="Filter by sorted_fractions")] = None,
-        origin_of: Annotated[Optional[List[Any]], Field(description="Filter by origin_of")] = None,
-        institutional_certificates: Annotated[Optional[List[Any]], Field(description="Filter by institutional_certificates")] = None,
+        file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets")] = None,
+        multiplexed_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in")] = None,
+        sorted_fractions: Annotated[Optional[List[StrictStr]], Field(description="Filter by sorted_fractions")] = None,
+        origin_of: Annotated[Optional[List[StrictStr]], Field(description="Filter by origin_of")] = None,
+        institutional_certificates: Annotated[Optional[List[StrictStr]], Field(description="Filter by institutional_certificates")] = None,
         sex: Annotated[Optional[StrictStr], Field(description="Filter by sex")] = None,
         age: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by age")] = None,
         upper_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by upper_bound_age_in_hours")] = None,
         lower_bound_age_in_hours: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age_in_hours")] = None,
-        parts: Annotated[Optional[List[Any]], Field(description="Filter by parts")] = None,
-        pooled_in: Annotated[Optional[List[Any]], Field(description="Filter by pooled_in")] = None,
+        parts: Annotated[Optional[List[StrictStr]], Field(description="Filter by parts")] = None,
+        pooled_in: Annotated[Optional[List[StrictStr]], Field(description="Filter by pooled_in")] = None,
         classifications: Annotated[Optional[List[StrictStr]], Field(description="Filter by classifications")] = None,
         _request_timeout: Union[
             None,
@@ -46766,15 +46766,15 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param file_sets: Filter by file_sets
-        :type file_sets: List[object]
+        :type file_sets: List[str]
         :param multiplexed_in: Filter by multiplexed_in
-        :type multiplexed_in: List[object]
+        :type multiplexed_in: List[str]
         :param sorted_fractions: Filter by sorted_fractions
-        :type sorted_fractions: List[object]
+        :type sorted_fractions: List[str]
         :param origin_of: Filter by origin_of
-        :type origin_of: List[object]
+        :type origin_of: List[str]
         :param institutional_certificates: Filter by institutional_certificates
-        :type institutional_certificates: List[object]
+        :type institutional_certificates: List[str]
         :param sex: Filter by sex
         :type sex: str
         :param age: Filter by age
@@ -46784,9 +46784,9 @@ class IgvfApi:
         :param lower_bound_age_in_hours: Filter by lower_bound_age_in_hours
         :type lower_bound_age_in_hours: float
         :param parts: Filter by parts
-        :type parts: List[object]
+        :type parts: List[str]
         :param pooled_in: Filter by pooled_in
-        :type pooled_in: List[object]
+        :type pooled_in: List[str]
         :param classifications: Filter by classifications
         :type classifications: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -47384,7 +47384,7 @@ class IgvfApi:
         workflow_version: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Filter by workflow_version")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        analysis_steps: Annotated[Optional[List[Any]], Field(description="Filter by analysis_steps")] = None,
+        analysis_steps: Annotated[Optional[List[StrictStr]], Field(description="Filter by analysis_steps")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -47461,7 +47461,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param analysis_steps: Filter by analysis_steps
-        :type analysis_steps: List[object]
+        :type analysis_steps: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -47570,7 +47570,7 @@ class IgvfApi:
         workflow_version: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Filter by workflow_version")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        analysis_steps: Annotated[Optional[List[Any]], Field(description="Filter by analysis_steps")] = None,
+        analysis_steps: Annotated[Optional[List[StrictStr]], Field(description="Filter by analysis_steps")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -47647,7 +47647,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param analysis_steps: Filter by analysis_steps
-        :type analysis_steps: List[object]
+        :type analysis_steps: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -47756,7 +47756,7 @@ class IgvfApi:
         workflow_version: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Filter by workflow_version")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        analysis_steps: Annotated[Optional[List[Any]], Field(description="Filter by analysis_steps")] = None,
+        analysis_steps: Annotated[Optional[List[StrictStr]], Field(description="Filter by analysis_steps")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -47833,7 +47833,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param analysis_steps: Filter by analysis_steps
-        :type analysis_steps: List[object]
+        :type analysis_steps: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of

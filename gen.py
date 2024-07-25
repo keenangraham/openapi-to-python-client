@@ -865,41 +865,20 @@ def clean_schema(schema):
             if key in valid_attrs:
                 if key == "properties":
                     cleaned[key] = {k: clean_schema(v) for k, v in value.items()}
-                elif key == 'type':
-                    if isinstance(value, list):
-                        if 'linkFrom' not in schema:
-                            print('multiple types', key, value, schema)
-                            print('setting type string')
-                            cleaned['type'] = 'string'
-                    elif 'linkFrom' in schema:
-                        cleaned['type'] = 'string'
-                    else:
-                        cleaned[key] = value
-                elif key == 'linkTo':
-                    cleaned['type'] = 'string'
-                    continue
-                    if isinstance(value, str):
-                        value = [value]
-                    resolved_subtypes = set()
-                    for v in value:
-                        resolved_subtypes.update(subtypes[v])
-                    value = list(sorted(resolved_subtypes))
-                    res = [
-                        {
-                            '$ref': f"#/components/schemas/{v}",
-                        }
-                        for v in value
-                    ]
-                    cleaned = {}
-                    res.append({'type': 'string'})
-                    cleaned['oneOf'] = res
-                    return cleaned
+                elif key == "items":
+                    print(key, value)
+                    cleaned[key] = clean_schema(value)
+                    print('got items', key, cleaned[key])
                 elif key == "required" and not isinstance(value, list):
                     cleaned[key] = list(value)  # Convert to list if it's not already
                 elif isinstance(value, dict):
                     cleaned[key] = clean_schema(value)
                 else:
                     cleaned[key] = value
+        if 'linkTo' in schema or 'linkFrom' in schema:
+            cleaned['type'] = 'string'
+            cleaned.pop('linkTo', None)
+            cleaned.pop('linkFrom', None)
         return cleaned
 
 schemas = {

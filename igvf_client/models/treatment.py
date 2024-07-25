@@ -61,7 +61,7 @@ class Treatment(BaseModel):
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = None
-    biosamples_treated: Optional[List[Any]] = Field(default=None, description="The samples which have been treated using this treatment.")
+    biosamples_treated: Optional[List[StrictStr]] = Field(default=None, description="The samples which have been treated using this treatment.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "lab", "award", "sources", "lot_id", "product_id", "documents", "status", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "amount", "amount_units", "duration", "duration_units", "pH", "purpose", "post_treatment_time", "post_treatment_time_units", "temperature", "temperature_units", "treatment_type", "treatment_term_id", "treatment_term_name", "depletion", "@id", "@type", "summary", "biosamples_treated"]
 
     @field_validator('lot_id')
