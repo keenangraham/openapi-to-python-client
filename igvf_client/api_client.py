@@ -354,6 +354,8 @@ class ApiClient:
             return obj.value
         elif isinstance(obj, SecretStr):
             return obj.get_secret_value()
+        elif isinstance(obj, bool):
+            return str(obj).lower()
         elif isinstance(obj, self.PRIMITIVE_TYPES):
             return obj
         elif isinstance(obj, list):

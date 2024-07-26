@@ -849,7 +849,6 @@ def fill_in_collection_template(schema_name, schema):
     return collection_template
 
 
-
 def clean_schema(schema):
         valid_attrs = [
             "type", "properties", "required", "additionalProperties",
@@ -865,10 +864,6 @@ def clean_schema(schema):
             if key in valid_attrs:
                 if key == "properties":
                     cleaned[key] = {k: clean_schema(v) for k, v in value.items()}
-                elif key == "items":
-                    print(key, value)
-                    cleaned[key] = clean_schema(value)
-                    print('got items', key, cleaned[key])
                 elif key == "required" and not isinstance(value, list):
                     cleaned[key] = list(value)  # Convert to list if it's not already
                 elif isinstance(value, dict):
