@@ -5,11 +5,10 @@ from {{{packageName}}} import {{{classname}}}
 
 api = {{{classname}}}()
 
-{{#asyncio}}await {{/asyncio}}api.{{{operationId}}}(**parameters)
-
 {{#summary}}
 # {{{.}}}
 {{/summary}}
+{{#asyncio}}await {{/asyncio}}api.{{{operationId}}}(**parameters)
 ```
 
 {{#vendorExtensions.x-py-postponed-example-imports.size}}

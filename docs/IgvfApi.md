@@ -81,9 +81,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.access_keys(**parameters)
-
 # List items in the AccessKey collection.
+api.access_keys(**parameters)
 ```
 
 
@@ -153,9 +152,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.alignment_files(**parameters)
-
 # List items in the AlignmentFile collection.
+api.alignment_files(**parameters)
 ```
 
 
@@ -260,9 +258,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.analysis_sets(**parameters)
-
 # List items in the AnalysisSet collection.
+api.analysis_sets(**parameters)
 ```
 
 
@@ -394,9 +391,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.analysis_step_versions(**parameters)
-
 # List items in the AnalysisStepVersion collection.
+api.analysis_step_versions(**parameters)
 ```
 
 
@@ -472,9 +468,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.analysis_steps(**parameters)
-
 # List items in the AnalysisStep collection.
+api.analysis_steps(**parameters)
 ```
 
 
@@ -556,9 +551,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.assay_terms(**parameters)
-
 # List items in the AssayTerm collection.
+api.assay_terms(**parameters)
 ```
 
 
@@ -638,9 +632,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.auxiliary_sets(**parameters)
-
 # List items in the AuxiliarySet collection.
+api.auxiliary_sets(**parameters)
 ```
 
 
@@ -773,9 +766,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.awards(**parameters)
-
 # List items in the Award collection.
+api.awards(**parameters)
 ```
 
 
@@ -852,9 +844,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.batch_download(**parameters)
-
 # List files to download based on search query. All results are returned.
+api.batch_download(**parameters)
 ```
 
 
@@ -909,9 +900,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.biomarkers(**parameters)
-
 # List items in the Biomarker collection.
+api.biomarkers(**parameters)
 ```
 
 
@@ -991,9 +981,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.configuration_files(**parameters)
-
 # List items in the ConfigurationFile collection.
+api.configuration_files(**parameters)
 ```
 
 
@@ -1091,9 +1080,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.construct_library_sets(**parameters)
-
 # List items in the ConstructLibrarySet collection.
+api.construct_library_sets(**parameters)
 ```
 
 
@@ -1228,9 +1216,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.crispr_modifications(**parameters)
-
 # List items in the CrisprModification collection.
+api.crispr_modifications(**parameters)
 ```
 
 
@@ -1315,9 +1302,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.curated_sets(**parameters)
-
 # List items in the CuratedSet collection.
+api.curated_sets(**parameters)
 ```
 
 
@@ -1448,9 +1434,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.degron_modifications(**parameters)
-
 # List items in the DegronModification collection.
+api.degron_modifications(**parameters)
 ```
 
 
@@ -1533,9 +1518,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.documents(**parameters)
-
 # List items in the Document collection.
+api.documents(**parameters)
 ```
 
 
@@ -1610,9 +1594,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.download(**parameters)
-
 # Download file.
+api.download(**parameters)
 ```
 
 
@@ -1664,9 +1647,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.genes(**parameters)
-
 # List items in the Gene collection.
+api.genes(**parameters)
 ```
 
 
@@ -1745,9 +1727,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.genome_browser_annotation_files(**parameters)
-
 # List items in the GenomeBrowserAnnotationFile collection.
+api.genome_browser_annotation_files(**parameters)
 ```
 
 
@@ -1847,9 +1828,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.get_by_id(**parameters)
-
 # Get item information
+api.get_by_id(**parameters)
 ```
 
 
@@ -1900,9 +1880,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.human_donors(**parameters)
-
 # List items in the HumanDonor collection.
+api.human_donors(**parameters)
 ```
 
 
@@ -1996,9 +1975,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.image_files(**parameters)
-
 # List items in the ImageFile collection.
+api.image_files(**parameters)
 ```
 
 
@@ -2095,9 +2073,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.images(**parameters)
-
 # List items in the Image collection.
+api.images(**parameters)
 ```
 
 
@@ -2168,9 +2145,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.in_vitro_systems(**parameters)
-
 # List items in the InVitroSystem collection.
+api.in_vitro_systems(**parameters)
 ```
 
 
@@ -2324,9 +2300,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.institutional_certificates(**parameters)
-
 # List items in the InstitutionalCertificate collection.
+api.institutional_certificates(**parameters)
 ```
 
 
@@ -2404,9 +2379,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.labs(**parameters)
-
 # List items in the Lab collection.
+api.labs(**parameters)
 ```
 
 
@@ -2481,9 +2455,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.matrix_files(**parameters)
-
 # List items in the MatrixFile collection.
+api.matrix_files(**parameters)
 ```
 
 
@@ -2584,9 +2557,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.measurement_sets(**parameters)
-
 # List items in the MeasurementSet collection.
+api.measurement_sets(**parameters)
 ```
 
 
@@ -2751,9 +2723,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.model_files(**parameters)
-
 # List items in the ModelFile collection.
+api.model_files(**parameters)
 ```
 
 
@@ -2852,9 +2823,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.model_sets(**parameters)
-
 # List items in the ModelSet collection.
+api.model_sets(**parameters)
 ```
 
 
@@ -2991,9 +2961,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.multiplexed_samples(**parameters)
-
 # List items in the MultiplexedSample collection.
+api.multiplexed_samples(**parameters)
 ```
 
 
@@ -3129,9 +3098,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.open_reading_frames(**parameters)
-
 # List items in the OpenReadingFrame collection.
+api.open_reading_frames(**parameters)
 ```
 
 
@@ -3209,9 +3177,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.pages(**parameters)
-
 # List items in the Page collection.
+api.pages(**parameters)
 ```
 
 
@@ -3285,9 +3252,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.phenotype_terms(**parameters)
-
 # List items in the PhenotypeTerm collection.
+api.phenotype_terms(**parameters)
 ```
 
 
@@ -3363,9 +3329,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.phenotypic_features(**parameters)
-
 # List items in the PhenotypicFeature collection.
+api.phenotypic_features(**parameters)
 ```
 
 
@@ -3443,9 +3408,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.platform_terms(**parameters)
-
 # List items in the PlatformTerm collection.
+api.platform_terms(**parameters)
 ```
 
 
@@ -3523,9 +3487,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.prediction_sets(**parameters)
-
 # List items in the PredictionSet collection.
+api.prediction_sets(**parameters)
 ```
 
 
@@ -3669,9 +3632,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.primary_cells(**parameters)
-
 # List items in the PrimaryCell collection.
+api.primary_cells(**parameters)
 ```
 
 
@@ -3812,9 +3774,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.publications(**parameters)
-
 # List items in the Publication collection.
+api.publications(**parameters)
 ```
 
 
@@ -3904,9 +3865,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.reference_files(**parameters)
-
 # List items in the ReferenceFile collection.
+api.reference_files(**parameters)
 ```
 
 
@@ -4012,9 +3972,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.report(**parameters)
-
 # Generate a report based on search query. All results are returned.
+api.report(**parameters)
 ```
 
 
@@ -4071,9 +4030,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.rodent_donors(**parameters)
-
 # List items in the RodentDonor collection.
+api.rodent_donors(**parameters)
 ```
 
 
@@ -4171,9 +4129,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.sample_terms(**parameters)
-
 # List items in the SampleTerm collection.
+api.sample_terms(**parameters)
 ```
 
 
@@ -4254,9 +4211,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.schema_for_item_type(**parameters)
-
 # Retrieve JSON schema for item type
+api.schema_for_item_type(**parameters)
 ```
 
 
@@ -4306,9 +4262,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.schemas(**parameters)
-
 # Retrieve JSON schemas for all item types
+api.schemas(**parameters)
 ```
 
 
@@ -4355,9 +4310,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.search(**parameters)
-
 # Search for items in the IGVF Project
+api.search(**parameters)
 ```
 
 
@@ -4413,9 +4367,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.sequence_files(**parameters)
-
 # List items in the SequenceFile collection.
+api.sequence_files(**parameters)
 ```
 
 
@@ -4526,9 +4479,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.signal_files(**parameters)
-
 # List items in the SignalFile collection.
+api.signal_files(**parameters)
 ```
 
 
@@ -4633,9 +4585,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.software(**parameters)
-
 # List items in the Software collection.
+api.software(**parameters)
 ```
 
 
@@ -4714,9 +4665,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.software_versions(**parameters)
-
 # List items in the SoftwareVersion collection.
+api.software_versions(**parameters)
 ```
 
 
@@ -4796,9 +4746,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.sources(**parameters)
-
 # List items in the Source collection.
+api.sources(**parameters)
 ```
 
 
@@ -4869,9 +4818,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.tabular_files(**parameters)
-
 # List items in the TabularFile collection.
+api.tabular_files(**parameters)
 ```
 
 
@@ -4973,9 +4921,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.technical_samples(**parameters)
-
 # List items in the TechnicalSample collection.
+api.technical_samples(**parameters)
 ```
 
 
@@ -5089,9 +5036,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.tissues(**parameters)
-
 # List items in the Tissue collection.
+api.tissues(**parameters)
 ```
 
 
@@ -5235,9 +5181,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.treatments(**parameters)
-
 # List items in the Treatment collection.
+api.treatments(**parameters)
 ```
 
 
@@ -5328,9 +5273,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.users(**parameters)
-
 # List items in the User collection.
+api.users(**parameters)
 ```
 
 
@@ -5406,9 +5350,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.whole_organisms(**parameters)
-
 # List items in the WholeOrganism collection.
+api.whole_organisms(**parameters)
 ```
 
 
@@ -5548,9 +5491,8 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.workflows(**parameters)
-
 # List items in the Workflow collection.
+api.workflows(**parameters)
 ```
 
 
