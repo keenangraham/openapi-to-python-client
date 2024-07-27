@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **associated_phenotypes** | **List[str]** | Ontological terms for diseases or phenotypes associated with the sequence material cloned in this construct library. | [optional] 
 **orf_list** | **List[str]** | List of Open Reading Frame this construct library was designed to target. | [optional] 
 **exon** | **str** | An identifier in plain text for the specific exon in an expression vector library. The associated gene must be listed in the small_scale_gene_list property. | [optional] 
-**tile** | [**Tile1**](Tile1.md) |  | [optional] 
+**tile** | [**Tile**](Tile.md) |  | [optional] 
 **guide_type** | **str** | The design of guides used in a CRISPR library, paired-guide (pgRNA) or single-guide (sgRNA). | [optional] 
 **tiling_modality** | **str** | The tiling modality of guides across elements or loci in a CRISPR library. | [optional] 
 **average_guide_coverage** | **float** | The average number of guides targeting each element of interest in the library. | [optional] 

@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from igvf_client.models.page_layout1 import PageLayout1
+from igvf_client.models.page_layout import PageLayout
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -43,7 +43,7 @@ class Page(BaseModel):
     parent: Optional[StrictStr] = Field(default=None, description="The parent page associated with this page.")
     name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The name shown in this page's URL.")
     title: Optional[StrictStr] = Field(default=None, description="The name shown in the browser's title bar and tabs.")
-    layout: Optional[PageLayout1] = None
+    layout: Optional[PageLayout] = None
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
@@ -187,7 +187,7 @@ class Page(BaseModel):
             "parent": obj.get("parent"),
             "name": obj.get("name"),
             "title": obj.get("title"),
-            "layout": PageLayout1.from_dict(obj["layout"]) if obj.get("layout") is not None else None,
+            "layout": PageLayout.from_dict(obj["layout"]) if obj.get("layout") is not None else None,
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),
             "summary": obj.get("summary"),

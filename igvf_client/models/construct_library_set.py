@@ -21,7 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_v
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
 from igvf_client.models.locus1 import Locus1
-from igvf_client.models.tile1 import Tile1
+from igvf_client.models.tile import Tile
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -62,7 +62,7 @@ class ConstructLibrarySet(BaseModel):
     associated_phenotypes: Optional[List[StrictStr]] = Field(default=None, description="Ontological terms for diseases or phenotypes associated with the sequence material cloned in this construct library.")
     orf_list: Optional[List[StrictStr]] = Field(default=None, description="List of Open Reading Frame this construct library was designed to target.")
     exon: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="An identifier in plain text for the specific exon in an expression vector library. The associated gene must be listed in the small_scale_gene_list property.")
-    tile: Optional[Tile1] = None
+    tile: Optional[Tile] = None
     guide_type: Optional[StrictStr] = Field(default=None, description="The design of guides used in a CRISPR library, paired-guide (pgRNA) or single-guide (sgRNA).")
     tiling_modality: Optional[StrictStr] = Field(default=None, description="The tiling modality of guides across elements or loci in a CRISPR library.")
     average_guide_coverage: Optional[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]] = Field(default=None, description="The average number of guides targeting each element of interest in the library.")
@@ -346,7 +346,7 @@ class ConstructLibrarySet(BaseModel):
             "associated_phenotypes": obj.get("associated_phenotypes"),
             "orf_list": obj.get("orf_list"),
             "exon": obj.get("exon"),
-            "tile": Tile1.from_dict(obj["tile"]) if obj.get("tile") is not None else None,
+            "tile": Tile.from_dict(obj["tile"]) if obj.get("tile") is not None else None,
             "guide_type": obj.get("guide_type"),
             "tiling_modality": obj.get("tiling_modality"),
             "average_guide_coverage": obj.get("average_guide_coverage"),
