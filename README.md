@@ -94,10 +94,11 @@ with igvf_client.ApiClient(configuration) as api_client:
     summary = ['summary_example'] # List[str] | Filter by summary (optional)
     submitted_by_id = ['submitted_by_id_example'] # List[str] | Filter by submitted_by.@id (optional)
     submitted_by_title = ['submitted_by_title_example'] # List[str] | Filter by submitted_by.title (optional)
+    additional_field_filters = None # object | Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (optional)
 
     try:
         # List items in the AccessKey collection.
-        api_response = api_instance.access_keys(query=query, limit=limit, sort=sort, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, status=status, user=user, access_key_id=access_key_id, secret_access_key_hash=secret_access_key_hash, id=id, summary=summary, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
+        api_response = api_instance.access_keys(query=query, limit=limit, sort=sort, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, status=status, user=user, access_key_id=access_key_id, secret_access_key_hash=secret_access_key_hash, id=id, summary=summary, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title, additional_field_filters=additional_field_filters)
         print("The response of IgvfApi->access_keys:\n")
         pprint(api_response)
     except ApiException as e:
