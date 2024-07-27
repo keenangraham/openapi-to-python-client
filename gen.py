@@ -108,7 +108,7 @@ def generate_openapi_spec(schemas):
                             "schema": {
                                 "type": "object"
                             },
-                            "description": "Any field from any object type can be used as a filter. Use '!' at end of field name for negation, '*' in value as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: `{'status!': 'in progress', 'summary': '*', 'file_size': 'gte:30000'}`",
+                            "description": "Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}",
                             "style": "form",
                             "explode": True,
                         },
