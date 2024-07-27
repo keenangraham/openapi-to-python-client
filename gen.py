@@ -18,6 +18,7 @@ def generate_openapi_spec(schemas):
         "paths": {
             "/{resource_id}": {
                 "get": {
+                    "tags": ["IGVF"],
                     "summary": "Get item information",
                     "description": "Retrieve detailed information about a specific item using its @id or uuid.",
                     "operationId": "get_by_id",
@@ -84,6 +85,7 @@ def generate_openapi_spec(schemas):
             },
             "/search": {
                 "get": {
+                    "tags": ["IGVF"],
                     "summary": "Search for items in the IGVF Project.",
                     "description": "Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.",
                     "operationId": "search",
@@ -204,6 +206,7 @@ def generate_openapi_spec(schemas):
             },
             "/profiles": {
                 "get": {
+                    "tags": ["IGVF"],
                     "summary": "Retrieve JSON schemas for all item types",
                     "description": "Returns JSON schemas of all the item types defined in IGVF",
                     'operationId': 'schemas',
@@ -223,6 +226,7 @@ def generate_openapi_spec(schemas):
             },
             "/profiles/{item_type}": {
                 "get": {
+                    "tags": ["IGVF"],
                     "summary": "Retrieve JSON schema for item type",
                     "description": "Returns JSON schemas of all the item types defined in IGVF",
                     'operationId': 'schema_for_item_type',
@@ -253,6 +257,7 @@ def generate_openapi_spec(schemas):
             },
             "/multireport.tsv": {
                 "get": {
+                    "tags": ["IGVF"],
                     "summary": "Generate a report based on search query. All results are returned.",
                     "description": "Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).",
                     "operationId": "report",
@@ -356,6 +361,7 @@ def generate_openapi_spec(schemas):
             },
             "/{file_id}/@@download": {
                 "get": {
+                    "tags": ["IGVF"],
                     "summary": "Download file.",
                     "description": "Returns underlying file associated with file metadata",
                     "operationId": "download",
@@ -393,6 +399,7 @@ def generate_openapi_spec(schemas):
             },
             "/batch-download": {
                 "get": {
+                    "tags": ["IGVF"],
                     "summary": "List files to download based on search query. All results are returned.",
                     "description": "Generates TSV of files contained in FileSets in search results.",
                     "operationId": "batch_download",

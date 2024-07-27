@@ -43,64 +43,64 @@ All URIs are relative to *https://api.data.igvf.org*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*CollectionsApi* | [**access_keys**](docs/CollectionsApi.md#access_keys) | **GET** /access-keys/@@listing | List items in the AccessKey collection.
-*CollectionsApi* | [**alignment_files**](docs/CollectionsApi.md#alignment_files) | **GET** /alignment-files/@@listing | List items in the AlignmentFile collection.
-*CollectionsApi* | [**analysis_sets**](docs/CollectionsApi.md#analysis_sets) | **GET** /analysis-sets/@@listing | List items in the AnalysisSet collection.
-*CollectionsApi* | [**analysis_step_versions**](docs/CollectionsApi.md#analysis_step_versions) | **GET** /analysis-step-versions/@@listing | List items in the AnalysisStepVersion collection.
-*CollectionsApi* | [**analysis_steps**](docs/CollectionsApi.md#analysis_steps) | **GET** /analysis-steps/@@listing | List items in the AnalysisStep collection.
-*CollectionsApi* | [**assay_terms**](docs/CollectionsApi.md#assay_terms) | **GET** /assay-terms/@@listing | List items in the AssayTerm collection.
-*CollectionsApi* | [**auxiliary_sets**](docs/CollectionsApi.md#auxiliary_sets) | **GET** /auxiliary-sets/@@listing | List items in the AuxiliarySet collection.
-*CollectionsApi* | [**awards**](docs/CollectionsApi.md#awards) | **GET** /awards/@@listing | List items in the Award collection.
-*CollectionsApi* | [**biomarkers**](docs/CollectionsApi.md#biomarkers) | **GET** /biomarkers/@@listing | List items in the Biomarker collection.
-*CollectionsApi* | [**configuration_files**](docs/CollectionsApi.md#configuration_files) | **GET** /configuration-files/@@listing | List items in the ConfigurationFile collection.
-*CollectionsApi* | [**construct_library_sets**](docs/CollectionsApi.md#construct_library_sets) | **GET** /construct-library-sets/@@listing | List items in the ConstructLibrarySet collection.
-*CollectionsApi* | [**crispr_modifications**](docs/CollectionsApi.md#crispr_modifications) | **GET** /crispr-modifications/@@listing | List items in the CrisprModification collection.
-*CollectionsApi* | [**curated_sets**](docs/CollectionsApi.md#curated_sets) | **GET** /curated-sets/@@listing | List items in the CuratedSet collection.
-*CollectionsApi* | [**degron_modifications**](docs/CollectionsApi.md#degron_modifications) | **GET** /degron-modifications/@@listing | List items in the DegronModification collection.
-*CollectionsApi* | [**documents**](docs/CollectionsApi.md#documents) | **GET** /documents/@@listing | List items in the Document collection.
-*CollectionsApi* | [**genes**](docs/CollectionsApi.md#genes) | **GET** /genes/@@listing | List items in the Gene collection.
-*CollectionsApi* | [**genome_browser_annotation_files**](docs/CollectionsApi.md#genome_browser_annotation_files) | **GET** /genome-browser-annotation-files/@@listing | List items in the GenomeBrowserAnnotationFile collection.
-*CollectionsApi* | [**human_donors**](docs/CollectionsApi.md#human_donors) | **GET** /human-donors/@@listing | List items in the HumanDonor collection.
-*CollectionsApi* | [**image_files**](docs/CollectionsApi.md#image_files) | **GET** /image-files/@@listing | List items in the ImageFile collection.
-*CollectionsApi* | [**images**](docs/CollectionsApi.md#images) | **GET** /images/@@listing | List items in the Image collection.
-*CollectionsApi* | [**in_vitro_systems**](docs/CollectionsApi.md#in_vitro_systems) | **GET** /in-vitro-systems/@@listing | List items in the InVitroSystem collection.
-*CollectionsApi* | [**institutional_certificates**](docs/CollectionsApi.md#institutional_certificates) | **GET** /institutional-certificates/@@listing | List items in the InstitutionalCertificate collection.
-*CollectionsApi* | [**labs**](docs/CollectionsApi.md#labs) | **GET** /labs/@@listing | List items in the Lab collection.
-*CollectionsApi* | [**matrix_files**](docs/CollectionsApi.md#matrix_files) | **GET** /matrix-files/@@listing | List items in the MatrixFile collection.
-*CollectionsApi* | [**measurement_sets**](docs/CollectionsApi.md#measurement_sets) | **GET** /measurement-sets/@@listing | List items in the MeasurementSet collection.
-*CollectionsApi* | [**model_files**](docs/CollectionsApi.md#model_files) | **GET** /model-files/@@listing | List items in the ModelFile collection.
-*CollectionsApi* | [**model_sets**](docs/CollectionsApi.md#model_sets) | **GET** /model-sets/@@listing | List items in the ModelSet collection.
-*CollectionsApi* | [**multiplexed_samples**](docs/CollectionsApi.md#multiplexed_samples) | **GET** /multiplexed-samples/@@listing | List items in the MultiplexedSample collection.
-*CollectionsApi* | [**open_reading_frames**](docs/CollectionsApi.md#open_reading_frames) | **GET** /open-reading-frames/@@listing | List items in the OpenReadingFrame collection.
-*CollectionsApi* | [**pages**](docs/CollectionsApi.md#pages) | **GET** /pages/@@listing | List items in the Page collection.
-*CollectionsApi* | [**phenotype_terms**](docs/CollectionsApi.md#phenotype_terms) | **GET** /phenotype-terms/@@listing | List items in the PhenotypeTerm collection.
-*CollectionsApi* | [**phenotypic_features**](docs/CollectionsApi.md#phenotypic_features) | **GET** /phenotypic-features/@@listing | List items in the PhenotypicFeature collection.
-*CollectionsApi* | [**platform_terms**](docs/CollectionsApi.md#platform_terms) | **GET** /platform-terms/@@listing | List items in the PlatformTerm collection.
-*CollectionsApi* | [**prediction_sets**](docs/CollectionsApi.md#prediction_sets) | **GET** /prediction-sets/@@listing | List items in the PredictionSet collection.
-*CollectionsApi* | [**primary_cells**](docs/CollectionsApi.md#primary_cells) | **GET** /primary-cells/@@listing | List items in the PrimaryCell collection.
-*CollectionsApi* | [**publications**](docs/CollectionsApi.md#publications) | **GET** /publications/@@listing | List items in the Publication collection.
-*CollectionsApi* | [**reference_files**](docs/CollectionsApi.md#reference_files) | **GET** /reference-files/@@listing | List items in the ReferenceFile collection.
-*CollectionsApi* | [**rodent_donors**](docs/CollectionsApi.md#rodent_donors) | **GET** /rodent-donors/@@listing | List items in the RodentDonor collection.
-*CollectionsApi* | [**sample_terms**](docs/CollectionsApi.md#sample_terms) | **GET** /sample-terms/@@listing | List items in the SampleTerm collection.
-*CollectionsApi* | [**sequence_files**](docs/CollectionsApi.md#sequence_files) | **GET** /sequence-files/@@listing | List items in the SequenceFile collection.
-*CollectionsApi* | [**signal_files**](docs/CollectionsApi.md#signal_files) | **GET** /signal-files/@@listing | List items in the SignalFile collection.
-*CollectionsApi* | [**software**](docs/CollectionsApi.md#software) | **GET** /software/@@listing | List items in the Software collection.
-*CollectionsApi* | [**software_versions**](docs/CollectionsApi.md#software_versions) | **GET** /software-versions/@@listing | List items in the SoftwareVersion collection.
-*CollectionsApi* | [**sources**](docs/CollectionsApi.md#sources) | **GET** /sources/@@listing | List items in the Source collection.
-*CollectionsApi* | [**tabular_files**](docs/CollectionsApi.md#tabular_files) | **GET** /tabular-files/@@listing | List items in the TabularFile collection.
-*CollectionsApi* | [**technical_samples**](docs/CollectionsApi.md#technical_samples) | **GET** /technical-samples/@@listing | List items in the TechnicalSample collection.
-*CollectionsApi* | [**tissues**](docs/CollectionsApi.md#tissues) | **GET** /tissues/@@listing | List items in the Tissue collection.
-*CollectionsApi* | [**treatments**](docs/CollectionsApi.md#treatments) | **GET** /treatments/@@listing | List items in the Treatment collection.
-*CollectionsApi* | [**users**](docs/CollectionsApi.md#users) | **GET** /users/@@listing | List items in the User collection.
-*CollectionsApi* | [**whole_organisms**](docs/CollectionsApi.md#whole_organisms) | **GET** /whole-organisms/@@listing | List items in the WholeOrganism collection.
-*CollectionsApi* | [**workflows**](docs/CollectionsApi.md#workflows) | **GET** /workflows/@@listing | List items in the Workflow collection.
-*DefaultApi* | [**batch_download**](docs/DefaultApi.md#batch_download) | **GET** /batch-download | List files to download based on search query. All results are returned.
-*DefaultApi* | [**download**](docs/DefaultApi.md#download) | **GET** /{file_id}/@@download | Download file.
-*DefaultApi* | [**get_by_id**](docs/DefaultApi.md#get_by_id) | **GET** /{resource_id} | Get item information
-*DefaultApi* | [**report**](docs/DefaultApi.md#report) | **GET** /multireport.tsv | Generate a report based on search query. All results are returned.
-*DefaultApi* | [**schema_for_item_type**](docs/DefaultApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schema for item type
-*DefaultApi* | [**schemas**](docs/DefaultApi.md#schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
-*DefaultApi* | [**search**](docs/DefaultApi.md#search) | **GET** /search | Search for items in the IGVF Project.
+*IgvfApi* | [**access_keys**](docs/IgvfApi.md#access_keys) | **GET** /access-keys/@@listing | List items in the AccessKey collection.
+*IgvfApi* | [**alignment_files**](docs/IgvfApi.md#alignment_files) | **GET** /alignment-files/@@listing | List items in the AlignmentFile collection.
+*IgvfApi* | [**analysis_sets**](docs/IgvfApi.md#analysis_sets) | **GET** /analysis-sets/@@listing | List items in the AnalysisSet collection.
+*IgvfApi* | [**analysis_step_versions**](docs/IgvfApi.md#analysis_step_versions) | **GET** /analysis-step-versions/@@listing | List items in the AnalysisStepVersion collection.
+*IgvfApi* | [**analysis_steps**](docs/IgvfApi.md#analysis_steps) | **GET** /analysis-steps/@@listing | List items in the AnalysisStep collection.
+*IgvfApi* | [**assay_terms**](docs/IgvfApi.md#assay_terms) | **GET** /assay-terms/@@listing | List items in the AssayTerm collection.
+*IgvfApi* | [**auxiliary_sets**](docs/IgvfApi.md#auxiliary_sets) | **GET** /auxiliary-sets/@@listing | List items in the AuxiliarySet collection.
+*IgvfApi* | [**awards**](docs/IgvfApi.md#awards) | **GET** /awards/@@listing | List items in the Award collection.
+*IgvfApi* | [**batch_download**](docs/IgvfApi.md#batch_download) | **GET** /batch-download | List files to download based on search query. All results are returned.
+*IgvfApi* | [**biomarkers**](docs/IgvfApi.md#biomarkers) | **GET** /biomarkers/@@listing | List items in the Biomarker collection.
+*IgvfApi* | [**configuration_files**](docs/IgvfApi.md#configuration_files) | **GET** /configuration-files/@@listing | List items in the ConfigurationFile collection.
+*IgvfApi* | [**construct_library_sets**](docs/IgvfApi.md#construct_library_sets) | **GET** /construct-library-sets/@@listing | List items in the ConstructLibrarySet collection.
+*IgvfApi* | [**crispr_modifications**](docs/IgvfApi.md#crispr_modifications) | **GET** /crispr-modifications/@@listing | List items in the CrisprModification collection.
+*IgvfApi* | [**curated_sets**](docs/IgvfApi.md#curated_sets) | **GET** /curated-sets/@@listing | List items in the CuratedSet collection.
+*IgvfApi* | [**degron_modifications**](docs/IgvfApi.md#degron_modifications) | **GET** /degron-modifications/@@listing | List items in the DegronModification collection.
+*IgvfApi* | [**documents**](docs/IgvfApi.md#documents) | **GET** /documents/@@listing | List items in the Document collection.
+*IgvfApi* | [**download**](docs/IgvfApi.md#download) | **GET** /{file_id}/@@download | Download file.
+*IgvfApi* | [**genes**](docs/IgvfApi.md#genes) | **GET** /genes/@@listing | List items in the Gene collection.
+*IgvfApi* | [**genome_browser_annotation_files**](docs/IgvfApi.md#genome_browser_annotation_files) | **GET** /genome-browser-annotation-files/@@listing | List items in the GenomeBrowserAnnotationFile collection.
+*IgvfApi* | [**get_by_id**](docs/IgvfApi.md#get_by_id) | **GET** /{resource_id} | Get item information
+*IgvfApi* | [**human_donors**](docs/IgvfApi.md#human_donors) | **GET** /human-donors/@@listing | List items in the HumanDonor collection.
+*IgvfApi* | [**image_files**](docs/IgvfApi.md#image_files) | **GET** /image-files/@@listing | List items in the ImageFile collection.
+*IgvfApi* | [**images**](docs/IgvfApi.md#images) | **GET** /images/@@listing | List items in the Image collection.
+*IgvfApi* | [**in_vitro_systems**](docs/IgvfApi.md#in_vitro_systems) | **GET** /in-vitro-systems/@@listing | List items in the InVitroSystem collection.
+*IgvfApi* | [**institutional_certificates**](docs/IgvfApi.md#institutional_certificates) | **GET** /institutional-certificates/@@listing | List items in the InstitutionalCertificate collection.
+*IgvfApi* | [**labs**](docs/IgvfApi.md#labs) | **GET** /labs/@@listing | List items in the Lab collection.
+*IgvfApi* | [**matrix_files**](docs/IgvfApi.md#matrix_files) | **GET** /matrix-files/@@listing | List items in the MatrixFile collection.
+*IgvfApi* | [**measurement_sets**](docs/IgvfApi.md#measurement_sets) | **GET** /measurement-sets/@@listing | List items in the MeasurementSet collection.
+*IgvfApi* | [**model_files**](docs/IgvfApi.md#model_files) | **GET** /model-files/@@listing | List items in the ModelFile collection.
+*IgvfApi* | [**model_sets**](docs/IgvfApi.md#model_sets) | **GET** /model-sets/@@listing | List items in the ModelSet collection.
+*IgvfApi* | [**multiplexed_samples**](docs/IgvfApi.md#multiplexed_samples) | **GET** /multiplexed-samples/@@listing | List items in the MultiplexedSample collection.
+*IgvfApi* | [**open_reading_frames**](docs/IgvfApi.md#open_reading_frames) | **GET** /open-reading-frames/@@listing | List items in the OpenReadingFrame collection.
+*IgvfApi* | [**pages**](docs/IgvfApi.md#pages) | **GET** /pages/@@listing | List items in the Page collection.
+*IgvfApi* | [**phenotype_terms**](docs/IgvfApi.md#phenotype_terms) | **GET** /phenotype-terms/@@listing | List items in the PhenotypeTerm collection.
+*IgvfApi* | [**phenotypic_features**](docs/IgvfApi.md#phenotypic_features) | **GET** /phenotypic-features/@@listing | List items in the PhenotypicFeature collection.
+*IgvfApi* | [**platform_terms**](docs/IgvfApi.md#platform_terms) | **GET** /platform-terms/@@listing | List items in the PlatformTerm collection.
+*IgvfApi* | [**prediction_sets**](docs/IgvfApi.md#prediction_sets) | **GET** /prediction-sets/@@listing | List items in the PredictionSet collection.
+*IgvfApi* | [**primary_cells**](docs/IgvfApi.md#primary_cells) | **GET** /primary-cells/@@listing | List items in the PrimaryCell collection.
+*IgvfApi* | [**publications**](docs/IgvfApi.md#publications) | **GET** /publications/@@listing | List items in the Publication collection.
+*IgvfApi* | [**reference_files**](docs/IgvfApi.md#reference_files) | **GET** /reference-files/@@listing | List items in the ReferenceFile collection.
+*IgvfApi* | [**report**](docs/IgvfApi.md#report) | **GET** /multireport.tsv | Generate a report based on search query. All results are returned.
+*IgvfApi* | [**rodent_donors**](docs/IgvfApi.md#rodent_donors) | **GET** /rodent-donors/@@listing | List items in the RodentDonor collection.
+*IgvfApi* | [**sample_terms**](docs/IgvfApi.md#sample_terms) | **GET** /sample-terms/@@listing | List items in the SampleTerm collection.
+*IgvfApi* | [**schema_for_item_type**](docs/IgvfApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schema for item type
+*IgvfApi* | [**schemas**](docs/IgvfApi.md#schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
+*IgvfApi* | [**search**](docs/IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project.
+*IgvfApi* | [**sequence_files**](docs/IgvfApi.md#sequence_files) | **GET** /sequence-files/@@listing | List items in the SequenceFile collection.
+*IgvfApi* | [**signal_files**](docs/IgvfApi.md#signal_files) | **GET** /signal-files/@@listing | List items in the SignalFile collection.
+*IgvfApi* | [**software**](docs/IgvfApi.md#software) | **GET** /software/@@listing | List items in the Software collection.
+*IgvfApi* | [**software_versions**](docs/IgvfApi.md#software_versions) | **GET** /software-versions/@@listing | List items in the SoftwareVersion collection.
+*IgvfApi* | [**sources**](docs/IgvfApi.md#sources) | **GET** /sources/@@listing | List items in the Source collection.
+*IgvfApi* | [**tabular_files**](docs/IgvfApi.md#tabular_files) | **GET** /tabular-files/@@listing | List items in the TabularFile collection.
+*IgvfApi* | [**technical_samples**](docs/IgvfApi.md#technical_samples) | **GET** /technical-samples/@@listing | List items in the TechnicalSample collection.
+*IgvfApi* | [**tissues**](docs/IgvfApi.md#tissues) | **GET** /tissues/@@listing | List items in the Tissue collection.
+*IgvfApi* | [**treatments**](docs/IgvfApi.md#treatments) | **GET** /treatments/@@listing | List items in the Treatment collection.
+*IgvfApi* | [**users**](docs/IgvfApi.md#users) | **GET** /users/@@listing | List items in the User collection.
+*IgvfApi* | [**whole_organisms**](docs/IgvfApi.md#whole_organisms) | **GET** /whole-organisms/@@listing | List items in the WholeOrganism collection.
+*IgvfApi* | [**workflows**](docs/IgvfApi.md#workflows) | **GET** /workflows/@@listing | List items in the Workflow collection.
 
 
 ## Documentation For Models
