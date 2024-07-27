@@ -232,26 +232,9 @@ Class | Method | HTTP request | Description
  - [WorkflowResults](docs/WorkflowResults.md)
 
 
-<a id="documentation-for-authorization"></a>
-## Documentation For Authorization
-
-
-Authentication schemes defined for the API:
-<a id="basicAuth"></a>
-### basicAuth
-
-- **Type**: HTTP basic authentication
-
-
-## Author
-
-
-
-
-
 
 ## Optional authorization
-```
+```python
 from igvf_client import Configuration
 from igvf_client import ApiClient
 from igvf_client import IgvfApi
