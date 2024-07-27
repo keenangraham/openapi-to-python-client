@@ -832,15 +832,18 @@ def fill_in_collection_template(schema_name, schema):
         }
     }
     for prop, prop_schema in schema["properties"].items():
-        exclude = ['default', 'uniqueItems']
+        add_as_item = 'items' not in prop_schema # We always want to be able to enter multiple search values.
+        exclude = ['default', 'uniqueItems', 'notSubmittable', 'readonly', 'permission', 'submissionExample', 'serverDefault', 'minItems', 'format']
         filtered_prop_schema = {k: v for k, v in prop_schema.items() if k not in exclude}
         if prop == '@type':
+            continue
+        if prop == 'schema_version':
             continue
         collection_template[f"/{collection_name}/@@listing"]["get"]["parameters"].append(
             {
                 "name": f"{prop}",
                 "in": "query",
-                "schema": filtered_prop_schema,
+                "schema": filtered_prop_schema if not add_as_item else {"type": "array", "items": filtered_prop_schema},
                 "description": f"Filter by {prop}",
                 "style": "form",
                 "explode": True,

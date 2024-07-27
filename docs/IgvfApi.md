@@ -65,7 +65,7 @@ Method | HTTP request | Description
 
 
 # **access_keys**
-> AccessKeyResults access_keys(query=query, limit=limit, sort=sort, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, status=status, user=user, access_key_id=access_key_id, secret_access_key_hash=secret_access_key_hash, id=id, summary=summary)
+> AccessKeyResults access_keys(query=query, limit=limit, sort=sort, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, status=status, user=user, access_key_id=access_key_id, secret_access_key_hash=secret_access_key_hash, id=id, summary=summary)
 
 List items in the AccessKey collection.
 
@@ -105,24 +105,23 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    user = 'user_example' # str | Filter by user (optional)
-    access_key_id = 'access_key_id_example' # str | Filter by access_key_id (optional)
-    secret_access_key_hash = 'secret_access_key_hash_example' # str | Filter by secret_access_key_hash (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    user = ['user_example'] # List[str] | Filter by user (optional)
+    access_key_id = ['access_key_id_example'] # List[str] | Filter by access_key_id (optional)
+    secret_access_key_hash = ['secret_access_key_hash_example'] # List[str] | Filter by secret_access_key_hash (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
 
     try:
         # List items in the AccessKey collection.
-        api_response = api_instance.access_keys(query=query, limit=limit, sort=sort, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, status=status, user=user, access_key_id=access_key_id, secret_access_key_hash=secret_access_key_hash, id=id, summary=summary)
+        api_response = api_instance.access_keys(query=query, limit=limit, sort=sort, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, status=status, user=user, access_key_id=access_key_id, secret_access_key_hash=secret_access_key_hash, id=id, summary=summary)
         print("The response of IgvfApi->access_keys:\n")
         pprint(api_response)
     except Exception as e:
@@ -139,20 +138,19 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **user** | **str**| Filter by user | [optional] 
- **access_key_id** | **str**| Filter by access_key_id | [optional] 
- **secret_access_key_hash** | **str**| Filter by secret_access_key_hash | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **user** | [**List[str]**](List[str].md)| Filter by user | [optional] 
+ **access_key_id** | [**List[str]**](List[str].md)| Filter by access_key_id | [optional] 
+ **secret_access_key_hash** | [**List[str]**](List[str].md)| Filter by secret_access_key_hash | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
 
 ### Return type
 
@@ -179,7 +177,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **alignment_files**
-> AlignmentFileResults alignment_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, transcriptome_annotation=transcriptome_annotation, assembly=assembly, release_timestamp=release_timestamp, reference_files=reference_files, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, redacted=redacted, filtered=filtered, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, content_summary=content_summary)
+> AlignmentFileResults alignment_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, transcriptome_annotation=transcriptome_annotation, assembly=assembly, release_timestamp=release_timestamp, reference_files=reference_files, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, redacted=redacted, filtered=filtered, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, content_summary=content_summary)
 
 List items in the AlignmentFile collection.
 
@@ -219,57 +217,56 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    controlled_access = True # bool | Filter by controlled_access (optional)
-    anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
-    transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
-    assembly = 'assembly_example' # str | Filter by assembly (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    controlled_access = [True] # List[bool] | Filter by controlled_access (optional)
+    anvil_url = ['anvil_url_example'] # List[str] | Filter by anvil_url (optional)
+    transcriptome_annotation = ['transcriptome_annotation_example'] # List[str] | Filter by transcriptome_annotation (optional)
+    assembly = ['assembly_example'] # List[str] | Filter by assembly (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     reference_files = ['reference_files_example'] # List[str] | Filter by reference_files (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
-    content_md5sum = 'content_md5sum_example' # str | Filter by content_md5sum (optional)
-    content_type = 'content_type_example' # str | Filter by content_type (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    analysis_step_version = ['analysis_step_version_example'] # List[str] | Filter by analysis_step_version (optional)
+    content_md5sum = ['content_md5sum_example'] # List[str] | Filter by content_md5sum (optional)
+    content_type = ['content_type_example'] # List[str] | Filter by content_type (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     derived_from = ['derived_from_example'] # List[str] | Filter by derived_from (optional)
-    file_format = 'file_format_example' # str | Filter by file_format (optional)
+    file_format = ['file_format_example'] # List[str] | Filter by file_format (optional)
     file_format_specifications = ['file_format_specifications_example'] # List[str] | Filter by file_format_specifications (optional)
-    file_set = 'file_set_example' # str | Filter by file_set (optional)
-    file_size = 56 # int | Filter by file_size (optional)
-    md5sum = 'md5sum_example' # str | Filter by md5sum (optional)
-    submitted_file_name = 'submitted_file_name_example' # str | Filter by submitted_file_name (optional)
-    upload_status = 'upload_status_example' # str | Filter by upload_status (optional)
-    validation_error_detail = 'validation_error_detail_example' # str | Filter by validation_error_detail (optional)
-    redacted = True # bool | Filter by redacted (optional)
-    filtered = True # bool | Filter by filtered (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    file_set = ['file_set_example'] # List[str] | Filter by file_set (optional)
+    file_size = [56] # List[int] | Filter by file_size (optional)
+    md5sum = ['md5sum_example'] # List[str] | Filter by md5sum (optional)
+    submitted_file_name = ['submitted_file_name_example'] # List[str] | Filter by submitted_file_name (optional)
+    upload_status = ['upload_status_example'] # List[str] | Filter by upload_status (optional)
+    validation_error_detail = ['validation_error_detail_example'] # List[str] | Filter by validation_error_detail (optional)
+    redacted = [True] # List[bool] | Filter by redacted (optional)
+    filtered = [True] # List[bool] | Filter by filtered (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
     input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
     gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
     loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
-    href = 'href_example' # str | Filter by href (optional)
-    s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
-    upload_credentials = None # object | Filter by upload_credentials (optional)
-    content_summary = 'content_summary_example' # str | Filter by content_summary (optional)
+    href = ['href_example'] # List[str] | Filter by href (optional)
+    s3_uri = ['s3_uri_example'] # List[str] | Filter by s3_uri (optional)
+    upload_credentials = None # List[object] | Filter by upload_credentials (optional)
+    content_summary = ['content_summary_example'] # List[str] | Filter by content_summary (optional)
 
     try:
         # List items in the AlignmentFile collection.
-        api_response = api_instance.alignment_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, transcriptome_annotation=transcriptome_annotation, assembly=assembly, release_timestamp=release_timestamp, reference_files=reference_files, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, redacted=redacted, filtered=filtered, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, content_summary=content_summary)
+        api_response = api_instance.alignment_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, transcriptome_annotation=transcriptome_annotation, assembly=assembly, release_timestamp=release_timestamp, reference_files=reference_files, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, redacted=redacted, filtered=filtered, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, content_summary=content_summary)
         print("The response of IgvfApi->alignment_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -286,53 +283,52 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **controlled_access** | **bool**| Filter by controlled_access | [optional] 
- **anvil_url** | **str**| Filter by anvil_url | [optional] 
- **transcriptome_annotation** | **str**| Filter by transcriptome_annotation | [optional] 
- **assembly** | **str**| Filter by assembly | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **controlled_access** | [**List[bool]**](List[bool].md)| Filter by controlled_access | [optional] 
+ **anvil_url** | [**List[str]**](List[str].md)| Filter by anvil_url | [optional] 
+ **transcriptome_annotation** | [**List[str]**](List[str].md)| Filter by transcriptome_annotation | [optional] 
+ **assembly** | [**List[str]**](List[str].md)| Filter by assembly | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **reference_files** | [**List[str]**](List[str].md)| Filter by reference_files | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
- **content_md5sum** | **str**| Filter by content_md5sum | [optional] 
- **content_type** | **str**| Filter by content_type | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **analysis_step_version** | [**List[str]**](List[str].md)| Filter by analysis_step_version | [optional] 
+ **content_md5sum** | [**List[str]**](List[str].md)| Filter by content_md5sum | [optional] 
+ **content_type** | [**List[str]**](List[str].md)| Filter by content_type | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **derived_from** | [**List[str]**](List[str].md)| Filter by derived_from | [optional] 
- **file_format** | **str**| Filter by file_format | [optional] 
+ **file_format** | [**List[str]**](List[str].md)| Filter by file_format | [optional] 
  **file_format_specifications** | [**List[str]**](List[str].md)| Filter by file_format_specifications | [optional] 
- **file_set** | **str**| Filter by file_set | [optional] 
- **file_size** | **int**| Filter by file_size | [optional] 
- **md5sum** | **str**| Filter by md5sum | [optional] 
- **submitted_file_name** | **str**| Filter by submitted_file_name | [optional] 
- **upload_status** | **str**| Filter by upload_status | [optional] 
- **validation_error_detail** | **str**| Filter by validation_error_detail | [optional] 
- **redacted** | **bool**| Filter by redacted | [optional] 
- **filtered** | **bool**| Filter by filtered | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **file_set** | [**List[str]**](List[str].md)| Filter by file_set | [optional] 
+ **file_size** | [**List[int]**](List[int].md)| Filter by file_size | [optional] 
+ **md5sum** | [**List[str]**](List[str].md)| Filter by md5sum | [optional] 
+ **submitted_file_name** | [**List[str]**](List[str].md)| Filter by submitted_file_name | [optional] 
+ **upload_status** | [**List[str]**](List[str].md)| Filter by upload_status | [optional] 
+ **validation_error_detail** | [**List[str]**](List[str].md)| Filter by validation_error_detail | [optional] 
+ **redacted** | [**List[bool]**](List[bool].md)| Filter by redacted | [optional] 
+ **filtered** | [**List[bool]**](List[bool].md)| Filter by filtered | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
  **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
  **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
  **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
- **href** | **str**| Filter by href | [optional] 
- **s3_uri** | **str**| Filter by s3_uri | [optional] 
- **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
- **content_summary** | **str**| Filter by content_summary | [optional] 
+ **href** | [**List[str]**](List[str].md)| Filter by href | [optional] 
+ **s3_uri** | [**List[str]**](List[str].md)| Filter by s3_uri | [optional] 
+ **upload_credentials** | [**List[object]**](List[object].md)| Filter by upload_credentials | [optional] 
+ **content_summary** | [**List[str]**](List[str].md)| Filter by content_summary | [optional] 
 
 ### Return type
 
@@ -359,7 +355,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **analysis_sets**
-> AnalysisSetResults analysis_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, assay_titles=assay_titles)
+> AnalysisSetResults analysis_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, assay_titles=assay_titles)
 
 List items in the AnalysisSet collection.
 
@@ -400,40 +396,39 @@ with igvf_client.ApiClient(configuration) as api_client:
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     input_file_sets = ['input_file_sets_example'] # List[str] | Filter by input_file_sets (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     samples = ['samples_example'] # List[str] | Filter by samples (optional)
     donors = ['donors_example'] # List[str] | Filter by donors (optional)
-    file_set_type = 'file_set_type_example' # str | Filter by file_set_type (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    file_set_type = ['file_set_type_example'] # List[str] | Filter by file_set_type (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     files = ['files_example'] # List[str] | Filter by files (optional)
     control_for = ['control_for_example'] # List[str] | Filter by control_for (optional)
-    submitted_files_timestamp = 'submitted_files_timestamp_example' # str | Filter by submitted_files_timestamp (optional)
+    submitted_files_timestamp = ['submitted_files_timestamp_example'] # List[str] | Filter by submitted_files_timestamp (optional)
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     assay_titles = ['assay_titles_example'] # List[str] | Filter by assay_titles (optional)
 
     try:
         # List items in the AnalysisSet collection.
-        api_response = api_instance.analysis_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, assay_titles=assay_titles)
+        api_response = api_instance.analysis_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, assay_titles=assay_titles)
         print("The response of IgvfApi->analysis_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -451,34 +446,33 @@ Name | Type | Description  | Notes
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **input_file_sets** | [**List[str]**](List[str].md)| Filter by input_file_sets | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **samples** | [**List[str]**](List[str].md)| Filter by samples | [optional] 
  **donors** | [**List[str]**](List[str].md)| Filter by donors | [optional] 
- **file_set_type** | **str**| Filter by file_set_type | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **file_set_type** | [**List[str]**](List[str].md)| Filter by file_set_type | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **files** | [**List[str]**](List[str].md)| Filter by files | [optional] 
  **control_for** | [**List[str]**](List[str].md)| Filter by control_for | [optional] 
- **submitted_files_timestamp** | **str**| Filter by submitted_files_timestamp | [optional] 
+ **submitted_files_timestamp** | [**List[str]**](List[str].md)| Filter by submitted_files_timestamp | [optional] 
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **assay_titles** | [**List[str]**](List[str].md)| Filter by assay_titles | [optional] 
 
@@ -507,7 +501,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **analysis_step_versions**
-> AnalysisStepVersionResults analysis_step_versions(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step=analysis_step, software_versions=software_versions, id=id, summary=summary)
+> AnalysisStepVersionResults analysis_step_versions(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step=analysis_step, software_versions=software_versions, id=id, summary=summary)
 
 List items in the AnalysisStepVersion collection.
 
@@ -547,26 +541,25 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    analysis_step = 'analysis_step_example' # str | Filter by analysis_step (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    analysis_step = ['analysis_step_example'] # List[str] | Filter by analysis_step (optional)
     software_versions = ['software_versions_example'] # List[str] | Filter by software_versions (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
 
     try:
         # List items in the AnalysisStepVersion collection.
-        api_response = api_instance.analysis_step_versions(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step=analysis_step, software_versions=software_versions, id=id, summary=summary)
+        api_response = api_instance.analysis_step_versions(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step=analysis_step, software_versions=software_versions, id=id, summary=summary)
         print("The response of IgvfApi->analysis_step_versions:\n")
         pprint(api_response)
     except Exception as e:
@@ -583,22 +576,21 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **analysis_step** | **str**| Filter by analysis_step | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **analysis_step** | [**List[str]**](List[str].md)| Filter by analysis_step | [optional] 
  **software_versions** | [**List[str]**](List[str].md)| Filter by software_versions | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
 
 ### Return type
 
@@ -625,7 +617,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **analysis_steps**
-> AnalysisStepResults analysis_steps(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_types=analysis_step_types, step_label=step_label, title=title, workflow=workflow, parents=parents, input_content_types=input_content_types, output_content_types=output_content_types, id=id, summary=summary, name=name)
+> AnalysisStepResults analysis_steps(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_types=analysis_step_types, step_label=step_label, title=title, workflow=workflow, parents=parents, input_content_types=input_content_types, output_content_types=output_content_types, id=id, summary=summary, name=name)
 
 List items in the AnalysisStep collection.
 
@@ -665,32 +657,31 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
     analysis_step_types = ['analysis_step_types_example'] # List[str] | Filter by analysis_step_types (optional)
-    step_label = 'step_label_example' # str | Filter by step_label (optional)
-    title = 'title_example' # str | Filter by title (optional)
-    workflow = 'workflow_example' # str | Filter by workflow (optional)
+    step_label = ['step_label_example'] # List[str] | Filter by step_label (optional)
+    title = ['title_example'] # List[str] | Filter by title (optional)
+    workflow = ['workflow_example'] # List[str] | Filter by workflow (optional)
     parents = ['parents_example'] # List[str] | Filter by parents (optional)
     input_content_types = ['input_content_types_example'] # List[str] | Filter by input_content_types (optional)
     output_content_types = ['output_content_types_example'] # List[str] | Filter by output_content_types (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
-    name = 'name_example' # str | Filter by name (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
+    name = ['name_example'] # List[str] | Filter by name (optional)
 
     try:
         # List items in the AnalysisStep collection.
-        api_response = api_instance.analysis_steps(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_types=analysis_step_types, step_label=step_label, title=title, workflow=workflow, parents=parents, input_content_types=input_content_types, output_content_types=output_content_types, id=id, summary=summary, name=name)
+        api_response = api_instance.analysis_steps(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_types=analysis_step_types, step_label=step_label, title=title, workflow=workflow, parents=parents, input_content_types=input_content_types, output_content_types=output_content_types, id=id, summary=summary, name=name)
         print("The response of IgvfApi->analysis_steps:\n")
         pprint(api_response)
     except Exception as e:
@@ -707,28 +698,27 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
  **analysis_step_types** | [**List[str]**](List[str].md)| Filter by analysis_step_types | [optional] 
- **step_label** | **str**| Filter by step_label | [optional] 
- **title** | **str**| Filter by title | [optional] 
- **workflow** | **str**| Filter by workflow | [optional] 
+ **step_label** | [**List[str]**](List[str].md)| Filter by step_label | [optional] 
+ **title** | [**List[str]**](List[str].md)| Filter by title | [optional] 
+ **workflow** | [**List[str]**](List[str].md)| Filter by workflow | [optional] 
  **parents** | [**List[str]**](List[str].md)| Filter by parents | [optional] 
  **input_content_types** | [**List[str]**](List[str].md)| Filter by input_content_types | [optional] 
  **output_content_types** | [**List[str]**](List[str].md)| Filter by output_content_types | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
- **name** | **str**| Filter by name | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
+ **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
 
 ### Return type
 
@@ -755,7 +745,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assay_terms**
-> AssayTermResults assay_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, preferred_assay_titles=preferred_assay_titles, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology, assay_slims=assay_slims, category_slims=category_slims, objective_slims=objective_slims)
+> AssayTermResults assay_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, preferred_assay_titles=preferred_assay_titles, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology, assay_slims=assay_slims, category_slims=category_slims, objective_slims=objective_slims)
 
 List items in the AssayTerm collection.
 
@@ -795,34 +785,33 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    term_id = 'term_id_example' # str | Filter by term_id (optional)
-    term_name = 'term_name_example' # str | Filter by term_name (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    term_id = ['term_id_example'] # List[str] | Filter by term_id (optional)
+    term_name = ['term_name_example'] # List[str] | Filter by term_name (optional)
     deprecated_ntr_terms = ['deprecated_ntr_terms_example'] # List[str] | Filter by deprecated_ntr_terms (optional)
     is_a = ['is_a_example'] # List[str] | Filter by is_a (optional)
     preferred_assay_titles = ['preferred_assay_titles_example'] # List[str] | Filter by preferred_assay_titles (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
-    name = 'name_example' # str | Filter by name (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
+    name = ['name_example'] # List[str] | Filter by name (optional)
     synonyms = ['synonyms_example'] # List[str] | Filter by synonyms (optional)
     ancestors = ['ancestors_example'] # List[str] | Filter by ancestors (optional)
-    ontology = 'ontology_example' # str | Filter by ontology (optional)
+    ontology = ['ontology_example'] # List[str] | Filter by ontology (optional)
     assay_slims = ['assay_slims_example'] # List[str] | Filter by assay_slims (optional)
     category_slims = ['category_slims_example'] # List[str] | Filter by category_slims (optional)
     objective_slims = ['objective_slims_example'] # List[str] | Filter by objective_slims (optional)
 
     try:
         # List items in the AssayTerm collection.
-        api_response = api_instance.assay_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, preferred_assay_titles=preferred_assay_titles, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology, assay_slims=assay_slims, category_slims=category_slims, objective_slims=objective_slims)
+        api_response = api_instance.assay_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, preferred_assay_titles=preferred_assay_titles, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology, assay_slims=assay_slims, category_slims=category_slims, objective_slims=objective_slims)
         print("The response of IgvfApi->assay_terms:\n")
         pprint(api_response)
     except Exception as e:
@@ -839,27 +828,26 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **term_id** | **str**| Filter by term_id | [optional] 
- **term_name** | **str**| Filter by term_name | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **term_id** | [**List[str]**](List[str].md)| Filter by term_id | [optional] 
+ **term_name** | [**List[str]**](List[str].md)| Filter by term_name | [optional] 
  **deprecated_ntr_terms** | [**List[str]**](List[str].md)| Filter by deprecated_ntr_terms | [optional] 
  **is_a** | [**List[str]**](List[str].md)| Filter by is_a | [optional] 
  **preferred_assay_titles** | [**List[str]**](List[str].md)| Filter by preferred_assay_titles | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
- **name** | **str**| Filter by name | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
+ **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
  **synonyms** | [**List[str]**](List[str].md)| Filter by synonyms | [optional] 
  **ancestors** | [**List[str]**](List[str].md)| Filter by ancestors | [optional] 
- **ontology** | **str**| Filter by ontology | [optional] 
+ **ontology** | [**List[str]**](List[str].md)| Filter by ontology | [optional] 
  **assay_slims** | [**List[str]**](List[str].md)| Filter by assay_slims | [optional] 
  **category_slims** | [**List[str]**](List[str].md)| Filter by category_slims | [optional] 
  **objective_slims** | [**List[str]**](List[str].md)| Filter by objective_slims | [optional] 
@@ -889,7 +877,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **auxiliary_sets**
-> AuxiliarySetResults auxiliary_sets(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, library_construction_platform=library_construction_platform, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, measurement_sets=measurement_sets)
+> AuxiliarySetResults auxiliary_sets(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, library_construction_platform=library_construction_platform, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, measurement_sets=measurement_sets)
 
 List items in the AuxiliarySet collection.
 
@@ -929,42 +917,41 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    url = 'url_example' # str | Filter by url (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     samples = ['samples_example'] # List[str] | Filter by samples (optional)
     donors = ['donors_example'] # List[str] | Filter by donors (optional)
-    file_set_type = 'file_set_type_example' # str | Filter by file_set_type (optional)
-    library_construction_platform = 'library_construction_platform_example' # str | Filter by library_construction_platform (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    file_set_type = ['file_set_type_example'] # List[str] | Filter by file_set_type (optional)
+    library_construction_platform = ['library_construction_platform_example'] # List[str] | Filter by library_construction_platform (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     files = ['files_example'] # List[str] | Filter by files (optional)
     control_for = ['control_for_example'] # List[str] | Filter by control_for (optional)
-    submitted_files_timestamp = 'submitted_files_timestamp_example' # str | Filter by submitted_files_timestamp (optional)
+    submitted_files_timestamp = ['submitted_files_timestamp_example'] # List[str] | Filter by submitted_files_timestamp (optional)
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     measurement_sets = ['measurement_sets_example'] # List[str] | Filter by measurement_sets (optional)
 
     try:
         # List items in the AuxiliarySet collection.
-        api_response = api_instance.auxiliary_sets(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, library_construction_platform=library_construction_platform, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, measurement_sets=measurement_sets)
+        api_response = api_instance.auxiliary_sets(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, library_construction_platform=library_construction_platform, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, measurement_sets=measurement_sets)
         print("The response of IgvfApi->auxiliary_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -981,36 +968,35 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **url** | **str**| Filter by url | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **samples** | [**List[str]**](List[str].md)| Filter by samples | [optional] 
  **donors** | [**List[str]**](List[str].md)| Filter by donors | [optional] 
- **file_set_type** | **str**| Filter by file_set_type | [optional] 
- **library_construction_platform** | **str**| Filter by library_construction_platform | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **file_set_type** | [**List[str]**](List[str].md)| Filter by file_set_type | [optional] 
+ **library_construction_platform** | [**List[str]**](List[str].md)| Filter by library_construction_platform | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **files** | [**List[str]**](List[str].md)| Filter by files | [optional] 
  **control_for** | [**List[str]**](List[str].md)| Filter by control_for | [optional] 
- **submitted_files_timestamp** | **str**| Filter by submitted_files_timestamp | [optional] 
+ **submitted_files_timestamp** | [**List[str]**](List[str].md)| Filter by submitted_files_timestamp | [optional] 
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **measurement_sets** | [**List[str]**](List[str].md)| Filter by measurement_sets | [optional] 
 
@@ -1039,7 +1025,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **awards**
-> AwardResults awards(query=query, limit=limit, sort=sort, status=status, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, title=title, name=name, start_date=start_date, end_date=end_date, pis=pis, contact_pi=contact_pi, project=project, viewing_group=viewing_group, component=component, id=id, summary=summary)
+> AwardResults awards(query=query, limit=limit, sort=sort, status=status, url=url, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, title=title, name=name, start_date=start_date, end_date=end_date, pis=pis, contact_pi=contact_pi, project=project, viewing_group=viewing_group, component=component, id=id, summary=summary)
 
 List items in the Award collection.
 
@@ -1079,31 +1065,30 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    url = 'url_example' # str | Filter by url (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    title = 'title_example' # str | Filter by title (optional)
-    name = 'name_example' # str | Filter by name (optional)
-    start_date = 'start_date_example' # str | Filter by start_date (optional)
-    end_date = 'end_date_example' # str | Filter by end_date (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    title = ['title_example'] # List[str] | Filter by title (optional)
+    name = ['name_example'] # List[str] | Filter by name (optional)
+    start_date = ['start_date_example'] # List[str] | Filter by start_date (optional)
+    end_date = ['end_date_example'] # List[str] | Filter by end_date (optional)
     pis = ['pis_example'] # List[str] | Filter by pis (optional)
-    contact_pi = 'contact_pi_example' # str | Filter by contact_pi (optional)
-    project = 'project_example' # str | Filter by project (optional)
-    viewing_group = 'viewing_group_example' # str | Filter by viewing_group (optional)
-    component = 'component_example' # str | Filter by component (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    contact_pi = ['contact_pi_example'] # List[str] | Filter by contact_pi (optional)
+    project = ['project_example'] # List[str] | Filter by project (optional)
+    viewing_group = ['viewing_group_example'] # List[str] | Filter by viewing_group (optional)
+    component = ['component_example'] # List[str] | Filter by component (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
 
     try:
         # List items in the Award collection.
-        api_response = api_instance.awards(query=query, limit=limit, sort=sort, status=status, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, title=title, name=name, start_date=start_date, end_date=end_date, pis=pis, contact_pi=contact_pi, project=project, viewing_group=viewing_group, component=component, id=id, summary=summary)
+        api_response = api_instance.awards(query=query, limit=limit, sort=sort, status=status, url=url, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, title=title, name=name, start_date=start_date, end_date=end_date, pis=pis, contact_pi=contact_pi, project=project, viewing_group=viewing_group, component=component, id=id, summary=summary)
         print("The response of IgvfApi->awards:\n")
         pprint(api_response)
     except Exception as e:
@@ -1120,27 +1105,26 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **url** | **str**| Filter by url | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **title** | **str**| Filter by title | [optional] 
- **name** | **str**| Filter by name | [optional] 
- **start_date** | **str**| Filter by start_date | [optional] 
- **end_date** | **str**| Filter by end_date | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **title** | [**List[str]**](List[str].md)| Filter by title | [optional] 
+ **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
+ **start_date** | [**List[str]**](List[str].md)| Filter by start_date | [optional] 
+ **end_date** | [**List[str]**](List[str].md)| Filter by end_date | [optional] 
  **pis** | [**List[str]**](List[str].md)| Filter by pis | [optional] 
- **contact_pi** | **str**| Filter by contact_pi | [optional] 
- **project** | **str**| Filter by project | [optional] 
- **viewing_group** | **str**| Filter by viewing_group | [optional] 
- **component** | **str**| Filter by component | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **contact_pi** | [**List[str]**](List[str].md)| Filter by contact_pi | [optional] 
+ **project** | [**List[str]**](List[str].md)| Filter by project | [optional] 
+ **viewing_group** | [**List[str]**](List[str].md)| Filter by viewing_group | [optional] 
+ **component** | [**List[str]**](List[str].md)| Filter by component | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
 
 ### Return type
 
@@ -1252,7 +1236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **biomarkers**
-> BiomarkerResults biomarkers(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, classification=classification, quantification=quantification, synonyms=synonyms, gene=gene, id=id, summary=summary, name_quantification=name_quantification, biomarker_for=biomarker_for)
+> BiomarkerResults biomarkers(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, classification=classification, quantification=quantification, synonyms=synonyms, gene=gene, id=id, summary=summary, name_quantification=name_quantification, biomarker_for=biomarker_for)
 
 List items in the Biomarker collection.
 
@@ -1292,31 +1276,30 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    name = 'name_example' # str | Filter by name (optional)
-    classification = 'classification_example' # str | Filter by classification (optional)
-    quantification = 'quantification_example' # str | Filter by quantification (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    name = ['name_example'] # List[str] | Filter by name (optional)
+    classification = ['classification_example'] # List[str] | Filter by classification (optional)
+    quantification = ['quantification_example'] # List[str] | Filter by quantification (optional)
     synonyms = ['synonyms_example'] # List[str] | Filter by synonyms (optional)
-    gene = 'gene_example' # str | Filter by gene (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
-    name_quantification = 'name_quantification_example' # str | Filter by name_quantification (optional)
+    gene = ['gene_example'] # List[str] | Filter by gene (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
+    name_quantification = ['name_quantification_example'] # List[str] | Filter by name_quantification (optional)
     biomarker_for = ['biomarker_for_example'] # List[str] | Filter by biomarker_for (optional)
 
     try:
         # List items in the Biomarker collection.
-        api_response = api_instance.biomarkers(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, classification=classification, quantification=quantification, synonyms=synonyms, gene=gene, id=id, summary=summary, name_quantification=name_quantification, biomarker_for=biomarker_for)
+        api_response = api_instance.biomarkers(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, classification=classification, quantification=quantification, synonyms=synonyms, gene=gene, id=id, summary=summary, name_quantification=name_quantification, biomarker_for=biomarker_for)
         print("The response of IgvfApi->biomarkers:\n")
         pprint(api_response)
     except Exception as e:
@@ -1333,26 +1316,25 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **name** | **str**| Filter by name | [optional] 
- **classification** | **str**| Filter by classification | [optional] 
- **quantification** | **str**| Filter by quantification | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
+ **classification** | [**List[str]**](List[str].md)| Filter by classification | [optional] 
+ **quantification** | [**List[str]**](List[str].md)| Filter by quantification | [optional] 
  **synonyms** | [**List[str]**](List[str].md)| Filter by synonyms | [optional] 
- **gene** | **str**| Filter by gene | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
- **name_quantification** | **str**| Filter by name_quantification | [optional] 
+ **gene** | [**List[str]**](List[str].md)| Filter by gene | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
+ **name_quantification** | [**List[str]**](List[str].md)| Filter by name_quantification | [optional] 
  **biomarker_for** | [**List[str]**](List[str].md)| Filter by biomarker_for | [optional] 
 
 ### Return type
@@ -1380,7 +1362,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **configuration_files**
-> ConfigurationFileResults configuration_files(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, seqspec_of=seqspec_of, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
+> ConfigurationFileResults configuration_files(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, seqspec_of=seqspec_of, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
 
 List items in the ConfigurationFile collection.
 
@@ -1420,50 +1402,49 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
-    content_md5sum = 'content_md5sum_example' # str | Filter by content_md5sum (optional)
-    content_type = 'content_type_example' # str | Filter by content_type (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    analysis_step_version = ['analysis_step_version_example'] # List[str] | Filter by analysis_step_version (optional)
+    content_md5sum = ['content_md5sum_example'] # List[str] | Filter by content_md5sum (optional)
+    content_type = ['content_type_example'] # List[str] | Filter by content_type (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     derived_from = ['derived_from_example'] # List[str] | Filter by derived_from (optional)
-    file_format = 'file_format_example' # str | Filter by file_format (optional)
+    file_format = ['file_format_example'] # List[str] | Filter by file_format (optional)
     file_format_specifications = ['file_format_specifications_example'] # List[str] | Filter by file_format_specifications (optional)
-    file_set = 'file_set_example' # str | Filter by file_set (optional)
-    file_size = 56 # int | Filter by file_size (optional)
-    md5sum = 'md5sum_example' # str | Filter by md5sum (optional)
-    submitted_file_name = 'submitted_file_name_example' # str | Filter by submitted_file_name (optional)
-    upload_status = 'upload_status_example' # str | Filter by upload_status (optional)
-    validation_error_detail = 'validation_error_detail_example' # str | Filter by validation_error_detail (optional)
+    file_set = ['file_set_example'] # List[str] | Filter by file_set (optional)
+    file_size = [56] # List[int] | Filter by file_size (optional)
+    md5sum = ['md5sum_example'] # List[str] | Filter by md5sum (optional)
+    submitted_file_name = ['submitted_file_name_example'] # List[str] | Filter by submitted_file_name (optional)
+    upload_status = ['upload_status_example'] # List[str] | Filter by upload_status (optional)
+    validation_error_detail = ['validation_error_detail_example'] # List[str] | Filter by validation_error_detail (optional)
     seqspec_of = ['seqspec_of_example'] # List[str] | Filter by seqspec_of (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
     input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
     gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
     loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
-    href = 'href_example' # str | Filter by href (optional)
-    s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
-    upload_credentials = None # object | Filter by upload_credentials (optional)
+    href = ['href_example'] # List[str] | Filter by href (optional)
+    s3_uri = ['s3_uri_example'] # List[str] | Filter by s3_uri (optional)
+    upload_credentials = None # List[object] | Filter by upload_credentials (optional)
 
     try:
         # List items in the ConfigurationFile collection.
-        api_response = api_instance.configuration_files(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, seqspec_of=seqspec_of, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
+        api_response = api_instance.configuration_files(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, seqspec_of=seqspec_of, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
         print("The response of IgvfApi->configuration_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -1480,46 +1461,45 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
- **content_md5sum** | **str**| Filter by content_md5sum | [optional] 
- **content_type** | **str**| Filter by content_type | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **analysis_step_version** | [**List[str]**](List[str].md)| Filter by analysis_step_version | [optional] 
+ **content_md5sum** | [**List[str]**](List[str].md)| Filter by content_md5sum | [optional] 
+ **content_type** | [**List[str]**](List[str].md)| Filter by content_type | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **derived_from** | [**List[str]**](List[str].md)| Filter by derived_from | [optional] 
- **file_format** | **str**| Filter by file_format | [optional] 
+ **file_format** | [**List[str]**](List[str].md)| Filter by file_format | [optional] 
  **file_format_specifications** | [**List[str]**](List[str].md)| Filter by file_format_specifications | [optional] 
- **file_set** | **str**| Filter by file_set | [optional] 
- **file_size** | **int**| Filter by file_size | [optional] 
- **md5sum** | **str**| Filter by md5sum | [optional] 
- **submitted_file_name** | **str**| Filter by submitted_file_name | [optional] 
- **upload_status** | **str**| Filter by upload_status | [optional] 
- **validation_error_detail** | **str**| Filter by validation_error_detail | [optional] 
+ **file_set** | [**List[str]**](List[str].md)| Filter by file_set | [optional] 
+ **file_size** | [**List[int]**](List[int].md)| Filter by file_size | [optional] 
+ **md5sum** | [**List[str]**](List[str].md)| Filter by md5sum | [optional] 
+ **submitted_file_name** | [**List[str]**](List[str].md)| Filter by submitted_file_name | [optional] 
+ **upload_status** | [**List[str]**](List[str].md)| Filter by upload_status | [optional] 
+ **validation_error_detail** | [**List[str]**](List[str].md)| Filter by validation_error_detail | [optional] 
  **seqspec_of** | [**List[str]**](List[str].md)| Filter by seqspec_of | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
  **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
  **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
  **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
- **href** | **str**| Filter by href | [optional] 
- **s3_uri** | **str**| Filter by s3_uri | [optional] 
- **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
+ **href** | [**List[str]**](List[str].md)| Filter by href | [optional] 
+ **s3_uri** | [**List[str]**](List[str].md)| Filter by s3_uri | [optional] 
+ **upload_credentials** | [**List[object]**](List[object].md)| Filter by upload_credentials | [optional] 
 
 ### Return type
 
@@ -1546,7 +1526,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **construct_library_sets**
-> ConstructLibrarySetResults construct_library_sets(query=query, limit=limit, sort=sort, small_scale_loci_list=small_scale_loci_list, large_scale_loci_list=large_scale_loci_list, small_scale_gene_list=small_scale_gene_list, large_scale_gene_list=large_scale_gene_list, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, sources=sources, lot_id=lot_id, product_id=product_id, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, file_set_type=file_set_type, scope=scope, selection_criteria=selection_criteria, integrated_content_files=integrated_content_files, associated_phenotypes=associated_phenotypes, orf_list=orf_list, exon=exon, tile=tile, guide_type=guide_type, tiling_modality=tiling_modality, average_guide_coverage=average_guide_coverage, lower_bound_guide_coverage=lower_bound_guide_coverage, upper_bound_guide_coverage=upper_bound_guide_coverage, average_insert_size=average_insert_size, lower_bound_insert_size=lower_bound_insert_size, upper_bound_insert_size=upper_bound_insert_size, targeton=targeton, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, applied_to_samples=applied_to_samples)
+> ConstructLibrarySetResults construct_library_sets(query=query, limit=limit, sort=sort, small_scale_loci_list=small_scale_loci_list, large_scale_loci_list=large_scale_loci_list, small_scale_gene_list=small_scale_gene_list, large_scale_gene_list=large_scale_gene_list, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, sources=sources, lot_id=lot_id, product_id=product_id, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, file_set_type=file_set_type, scope=scope, selection_criteria=selection_criteria, integrated_content_files=integrated_content_files, associated_phenotypes=associated_phenotypes, orf_list=orf_list, exon=exon, tile=tile, guide_type=guide_type, tiling_modality=tiling_modality, average_guide_coverage=average_guide_coverage, lower_bound_guide_coverage=lower_bound_guide_coverage, upper_bound_guide_coverage=upper_bound_guide_coverage, average_insert_size=average_insert_size, lower_bound_insert_size=lower_bound_insert_size, upper_bound_insert_size=upper_bound_insert_size, targeton=targeton, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, applied_to_samples=applied_to_samples)
 
 List items in the ConstructLibrarySet collection.
 
@@ -1560,6 +1540,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 import igvf_client
 from igvf_client.models.construct_library_set_results import ConstructLibrarySetResults
 from igvf_client.models.locus import Locus
+from igvf_client.models.tile import Tile
 from igvf_client.rest import ApiException
 from pprint import pprint
 
@@ -1588,59 +1569,58 @@ with igvf_client.ApiClient(configuration) as api_client:
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     small_scale_loci_list = [igvf_client.Locus()] # List[Locus] | Filter by small_scale_loci_list (optional)
-    large_scale_loci_list = 'large_scale_loci_list_example' # str | Filter by large_scale_loci_list (optional)
+    large_scale_loci_list = ['large_scale_loci_list_example'] # List[str] | Filter by large_scale_loci_list (optional)
     small_scale_gene_list = ['small_scale_gene_list_example'] # List[str] | Filter by small_scale_gene_list (optional)
-    large_scale_gene_list = 'large_scale_gene_list_example' # str | Filter by large_scale_gene_list (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    large_scale_gene_list = ['large_scale_gene_list_example'] # List[str] | Filter by large_scale_gene_list (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
-    lot_id = 'lot_id_example' # str | Filter by lot_id (optional)
-    product_id = 'product_id_example' # str | Filter by product_id (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lot_id = ['lot_id_example'] # List[str] | Filter by lot_id (optional)
+    product_id = ['product_id_example'] # List[str] | Filter by product_id (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    file_set_type = 'file_set_type_example' # str | Filter by file_set_type (optional)
-    scope = 'scope_example' # str | Filter by scope (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    file_set_type = ['file_set_type_example'] # List[str] | Filter by file_set_type (optional)
+    scope = ['scope_example'] # List[str] | Filter by scope (optional)
     selection_criteria = ['selection_criteria_example'] # List[str] | Filter by selection_criteria (optional)
     integrated_content_files = ['integrated_content_files_example'] # List[str] | Filter by integrated_content_files (optional)
     associated_phenotypes = ['associated_phenotypes_example'] # List[str] | Filter by associated_phenotypes (optional)
     orf_list = ['orf_list_example'] # List[str] | Filter by orf_list (optional)
-    exon = 'exon_example' # str | Filter by exon (optional)
-    tile = {'key': igvf_client.Tile()} # Tile | Filter by tile (optional)
-    guide_type = 'guide_type_example' # str | Filter by guide_type (optional)
-    tiling_modality = 'tiling_modality_example' # str | Filter by tiling_modality (optional)
-    average_guide_coverage = 3.4 # float | Filter by average_guide_coverage (optional)
-    lower_bound_guide_coverage = 56 # int | Filter by lower_bound_guide_coverage (optional)
-    upper_bound_guide_coverage = 56 # int | Filter by upper_bound_guide_coverage (optional)
-    average_insert_size = 3.4 # float | Filter by average_insert_size (optional)
-    lower_bound_insert_size = 56 # int | Filter by lower_bound_insert_size (optional)
-    upper_bound_insert_size = 56 # int | Filter by upper_bound_insert_size (optional)
-    targeton = 'targeton_example' # str | Filter by targeton (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    exon = ['exon_example'] # List[str] | Filter by exon (optional)
+    tile = [igvf_client.Tile()] # List[Tile] | Filter by tile (optional)
+    guide_type = ['guide_type_example'] # List[str] | Filter by guide_type (optional)
+    tiling_modality = ['tiling_modality_example'] # List[str] | Filter by tiling_modality (optional)
+    average_guide_coverage = [3.4] # List[float] | Filter by average_guide_coverage (optional)
+    lower_bound_guide_coverage = [56] # List[int] | Filter by lower_bound_guide_coverage (optional)
+    upper_bound_guide_coverage = [56] # List[int] | Filter by upper_bound_guide_coverage (optional)
+    average_insert_size = [3.4] # List[float] | Filter by average_insert_size (optional)
+    lower_bound_insert_size = [56] # List[int] | Filter by lower_bound_insert_size (optional)
+    upper_bound_insert_size = [56] # List[int] | Filter by upper_bound_insert_size (optional)
+    targeton = ['targeton_example'] # List[str] | Filter by targeton (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     files = ['files_example'] # List[str] | Filter by files (optional)
     control_for = ['control_for_example'] # List[str] | Filter by control_for (optional)
-    submitted_files_timestamp = 'submitted_files_timestamp_example' # str | Filter by submitted_files_timestamp (optional)
+    submitted_files_timestamp = ['submitted_files_timestamp_example'] # List[str] | Filter by submitted_files_timestamp (optional)
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     applied_to_samples = ['applied_to_samples_example'] # List[str] | Filter by applied_to_samples (optional)
 
     try:
         # List items in the ConstructLibrarySet collection.
-        api_response = api_instance.construct_library_sets(query=query, limit=limit, sort=sort, small_scale_loci_list=small_scale_loci_list, large_scale_loci_list=large_scale_loci_list, small_scale_gene_list=small_scale_gene_list, large_scale_gene_list=large_scale_gene_list, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, sources=sources, lot_id=lot_id, product_id=product_id, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, file_set_type=file_set_type, scope=scope, selection_criteria=selection_criteria, integrated_content_files=integrated_content_files, associated_phenotypes=associated_phenotypes, orf_list=orf_list, exon=exon, tile=tile, guide_type=guide_type, tiling_modality=tiling_modality, average_guide_coverage=average_guide_coverage, lower_bound_guide_coverage=lower_bound_guide_coverage, upper_bound_guide_coverage=upper_bound_guide_coverage, average_insert_size=average_insert_size, lower_bound_insert_size=lower_bound_insert_size, upper_bound_insert_size=upper_bound_insert_size, targeton=targeton, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, applied_to_samples=applied_to_samples)
+        api_response = api_instance.construct_library_sets(query=query, limit=limit, sort=sort, small_scale_loci_list=small_scale_loci_list, large_scale_loci_list=large_scale_loci_list, small_scale_gene_list=small_scale_gene_list, large_scale_gene_list=large_scale_gene_list, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, sources=sources, lot_id=lot_id, product_id=product_id, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, file_set_type=file_set_type, scope=scope, selection_criteria=selection_criteria, integrated_content_files=integrated_content_files, associated_phenotypes=associated_phenotypes, orf_list=orf_list, exon=exon, tile=tile, guide_type=guide_type, tiling_modality=tiling_modality, average_guide_coverage=average_guide_coverage, lower_bound_guide_coverage=lower_bound_guide_coverage, upper_bound_guide_coverage=upper_bound_guide_coverage, average_insert_size=average_insert_size, lower_bound_insert_size=lower_bound_insert_size, upper_bound_insert_size=upper_bound_insert_size, targeton=targeton, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, applied_to_samples=applied_to_samples)
         print("The response of IgvfApi->construct_library_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -1658,53 +1638,52 @@ Name | Type | Description  | Notes
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **small_scale_loci_list** | [**List[Locus]**](List[Locus].md)| Filter by small_scale_loci_list | [optional] 
- **large_scale_loci_list** | **str**| Filter by large_scale_loci_list | [optional] 
+ **large_scale_loci_list** | [**List[str]**](List[str].md)| Filter by large_scale_loci_list | [optional] 
  **small_scale_gene_list** | [**List[str]**](List[str].md)| Filter by small_scale_gene_list | [optional] 
- **large_scale_gene_list** | **str**| Filter by large_scale_gene_list | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **large_scale_gene_list** | [**List[str]**](List[str].md)| Filter by large_scale_gene_list | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
- **lot_id** | **str**| Filter by lot_id | [optional] 
- **product_id** | **str**| Filter by product_id | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lot_id** | [**List[str]**](List[str].md)| Filter by lot_id | [optional] 
+ **product_id** | [**List[str]**](List[str].md)| Filter by product_id | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **file_set_type** | **str**| Filter by file_set_type | [optional] 
- **scope** | **str**| Filter by scope | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **file_set_type** | [**List[str]**](List[str].md)| Filter by file_set_type | [optional] 
+ **scope** | [**List[str]**](List[str].md)| Filter by scope | [optional] 
  **selection_criteria** | [**List[str]**](List[str].md)| Filter by selection_criteria | [optional] 
  **integrated_content_files** | [**List[str]**](List[str].md)| Filter by integrated_content_files | [optional] 
  **associated_phenotypes** | [**List[str]**](List[str].md)| Filter by associated_phenotypes | [optional] 
  **orf_list** | [**List[str]**](List[str].md)| Filter by orf_list | [optional] 
- **exon** | **str**| Filter by exon | [optional] 
- **tile** | [**Tile**](Tile.md)| Filter by tile | [optional] 
- **guide_type** | **str**| Filter by guide_type | [optional] 
- **tiling_modality** | **str**| Filter by tiling_modality | [optional] 
- **average_guide_coverage** | **float**| Filter by average_guide_coverage | [optional] 
- **lower_bound_guide_coverage** | **int**| Filter by lower_bound_guide_coverage | [optional] 
- **upper_bound_guide_coverage** | **int**| Filter by upper_bound_guide_coverage | [optional] 
- **average_insert_size** | **float**| Filter by average_insert_size | [optional] 
- **lower_bound_insert_size** | **int**| Filter by lower_bound_insert_size | [optional] 
- **upper_bound_insert_size** | **int**| Filter by upper_bound_insert_size | [optional] 
- **targeton** | **str**| Filter by targeton | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **exon** | [**List[str]**](List[str].md)| Filter by exon | [optional] 
+ **tile** | [**List[Tile]**](List[Tile].md)| Filter by tile | [optional] 
+ **guide_type** | [**List[str]**](List[str].md)| Filter by guide_type | [optional] 
+ **tiling_modality** | [**List[str]**](List[str].md)| Filter by tiling_modality | [optional] 
+ **average_guide_coverage** | [**List[float]**](List[float].md)| Filter by average_guide_coverage | [optional] 
+ **lower_bound_guide_coverage** | [**List[int]**](List[int].md)| Filter by lower_bound_guide_coverage | [optional] 
+ **upper_bound_guide_coverage** | [**List[int]**](List[int].md)| Filter by upper_bound_guide_coverage | [optional] 
+ **average_insert_size** | [**List[float]**](List[float].md)| Filter by average_insert_size | [optional] 
+ **lower_bound_insert_size** | [**List[int]**](List[int].md)| Filter by lower_bound_insert_size | [optional] 
+ **upper_bound_insert_size** | [**List[int]**](List[int].md)| Filter by upper_bound_insert_size | [optional] 
+ **targeton** | [**List[str]**](List[str].md)| Filter by targeton | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **files** | [**List[str]**](List[str].md)| Filter by files | [optional] 
  **control_for** | [**List[str]**](List[str].md)| Filter by control_for | [optional] 
- **submitted_files_timestamp** | **str**| Filter by submitted_files_timestamp | [optional] 
+ **submitted_files_timestamp** | [**List[str]**](List[str].md)| Filter by submitted_files_timestamp | [optional] 
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **applied_to_samples** | [**List[str]**](List[str].md)| Filter by applied_to_samples | [optional] 
 
@@ -1733,7 +1712,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **crispr_modifications**
-> CrisprModificationResults crispr_modifications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, status=status, lab=lab, award=award, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, activated=activated, activating_agent_term_id=activating_agent_term_id, activating_agent_term_name=activating_agent_term_name, modality=modality, cas=cas, fused_domain=fused_domain, tagged_protein=tagged_protein, cas_species=cas_species, id=id, summary=summary, biosamples_modified=biosamples_modified)
+> CrisprModificationResults crispr_modifications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, status=status, lab=lab, award=award, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, activated=activated, activating_agent_term_id=activating_agent_term_id, activating_agent_term_name=activating_agent_term_name, modality=modality, cas=cas, fused_domain=fused_domain, tagged_protein=tagged_protein, cas_species=cas_species, id=id, summary=summary, biosamples_modified=biosamples_modified)
 
 List items in the CrisprModification collection.
 
@@ -1773,37 +1752,36 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
-    lot_id = 'lot_id_example' # str | Filter by lot_id (optional)
-    product_id = 'product_id_example' # str | Filter by product_id (optional)
+    lot_id = ['lot_id_example'] # List[str] | Filter by lot_id (optional)
+    product_id = ['product_id_example'] # List[str] | Filter by product_id (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    activated = True # bool | Filter by activated (optional)
-    activating_agent_term_id = 'activating_agent_term_id_example' # str | Filter by activating_agent_term_id (optional)
-    activating_agent_term_name = 'activating_agent_term_name_example' # str | Filter by activating_agent_term_name (optional)
-    modality = 'modality_example' # str | Filter by modality (optional)
-    cas = 'cas_example' # str | Filter by cas (optional)
-    fused_domain = 'fused_domain_example' # str | Filter by fused_domain (optional)
-    tagged_protein = 'tagged_protein_example' # str | Filter by tagged_protein (optional)
-    cas_species = 'cas_species_example' # str | Filter by cas_species (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    activated = [True] # List[bool] | Filter by activated (optional)
+    activating_agent_term_id = ['activating_agent_term_id_example'] # List[str] | Filter by activating_agent_term_id (optional)
+    activating_agent_term_name = ['activating_agent_term_name_example'] # List[str] | Filter by activating_agent_term_name (optional)
+    modality = ['modality_example'] # List[str] | Filter by modality (optional)
+    cas = ['cas_example'] # List[str] | Filter by cas (optional)
+    fused_domain = ['fused_domain_example'] # List[str] | Filter by fused_domain (optional)
+    tagged_protein = ['tagged_protein_example'] # List[str] | Filter by tagged_protein (optional)
+    cas_species = ['cas_species_example'] # List[str] | Filter by cas_species (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     biosamples_modified = ['biosamples_modified_example'] # List[str] | Filter by biosamples_modified (optional)
 
     try:
         # List items in the CrisprModification collection.
-        api_response = api_instance.crispr_modifications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, status=status, lab=lab, award=award, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, activated=activated, activating_agent_term_id=activating_agent_term_id, activating_agent_term_name=activating_agent_term_name, modality=modality, cas=cas, fused_domain=fused_domain, tagged_protein=tagged_protein, cas_species=cas_species, id=id, summary=summary, biosamples_modified=biosamples_modified)
+        api_response = api_instance.crispr_modifications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, status=status, lab=lab, award=award, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, activated=activated, activating_agent_term_id=activating_agent_term_id, activating_agent_term_name=activating_agent_term_name, modality=modality, cas=cas, fused_domain=fused_domain, tagged_protein=tagged_protein, cas_species=cas_species, id=id, summary=summary, biosamples_modified=biosamples_modified)
         print("The response of IgvfApi->crispr_modifications:\n")
         pprint(api_response)
     except Exception as e:
@@ -1820,32 +1798,31 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
- **lot_id** | **str**| Filter by lot_id | [optional] 
- **product_id** | **str**| Filter by product_id | [optional] 
+ **lot_id** | [**List[str]**](List[str].md)| Filter by lot_id | [optional] 
+ **product_id** | [**List[str]**](List[str].md)| Filter by product_id | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **activated** | **bool**| Filter by activated | [optional] 
- **activating_agent_term_id** | **str**| Filter by activating_agent_term_id | [optional] 
- **activating_agent_term_name** | **str**| Filter by activating_agent_term_name | [optional] 
- **modality** | **str**| Filter by modality | [optional] 
- **cas** | **str**| Filter by cas | [optional] 
- **fused_domain** | **str**| Filter by fused_domain | [optional] 
- **tagged_protein** | **str**| Filter by tagged_protein | [optional] 
- **cas_species** | **str**| Filter by cas_species | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **activated** | [**List[bool]**](List[bool].md)| Filter by activated | [optional] 
+ **activating_agent_term_id** | [**List[str]**](List[str].md)| Filter by activating_agent_term_id | [optional] 
+ **activating_agent_term_name** | [**List[str]**](List[str].md)| Filter by activating_agent_term_name | [optional] 
+ **modality** | [**List[str]**](List[str].md)| Filter by modality | [optional] 
+ **cas** | [**List[str]**](List[str].md)| Filter by cas | [optional] 
+ **fused_domain** | [**List[str]**](List[str].md)| Filter by fused_domain | [optional] 
+ **tagged_protein** | [**List[str]**](List[str].md)| Filter by tagged_protein | [optional] 
+ **cas_species** | [**List[str]**](List[str].md)| Filter by cas_species | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **biosamples_modified** | [**List[str]**](List[str].md)| Filter by biosamples_modified | [optional] 
 
 ### Return type
@@ -1873,7 +1850,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **curated_sets**
-> CuratedSetResults curated_sets(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, assemblies=assemblies, transcriptome_annotations=transcriptome_annotations)
+> CuratedSetResults curated_sets(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, assemblies=assemblies, transcriptome_annotations=transcriptome_annotations)
 
 List items in the CuratedSet collection.
 
@@ -1913,43 +1890,42 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    taxa = 'taxa_example' # str | Filter by taxa (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    taxa = ['taxa_example'] # List[str] | Filter by taxa (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    url = 'url_example' # str | Filter by url (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     samples = ['samples_example'] # List[str] | Filter by samples (optional)
     donors = ['donors_example'] # List[str] | Filter by donors (optional)
-    file_set_type = 'file_set_type_example' # str | Filter by file_set_type (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    file_set_type = ['file_set_type_example'] # List[str] | Filter by file_set_type (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     files = ['files_example'] # List[str] | Filter by files (optional)
     control_for = ['control_for_example'] # List[str] | Filter by control_for (optional)
-    submitted_files_timestamp = 'submitted_files_timestamp_example' # str | Filter by submitted_files_timestamp (optional)
+    submitted_files_timestamp = ['submitted_files_timestamp_example'] # List[str] | Filter by submitted_files_timestamp (optional)
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     assemblies = ['assemblies_example'] # List[str] | Filter by assemblies (optional)
     transcriptome_annotations = ['transcriptome_annotations_example'] # List[str] | Filter by transcriptome_annotations (optional)
 
     try:
         # List items in the CuratedSet collection.
-        api_response = api_instance.curated_sets(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, assemblies=assemblies, transcriptome_annotations=transcriptome_annotations)
+        api_response = api_instance.curated_sets(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, assemblies=assemblies, transcriptome_annotations=transcriptome_annotations)
         print("The response of IgvfApi->curated_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -1966,36 +1942,35 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **taxa** | **str**| Filter by taxa | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **taxa** | [**List[str]**](List[str].md)| Filter by taxa | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **url** | **str**| Filter by url | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **samples** | [**List[str]**](List[str].md)| Filter by samples | [optional] 
  **donors** | [**List[str]**](List[str].md)| Filter by donors | [optional] 
- **file_set_type** | **str**| Filter by file_set_type | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **file_set_type** | [**List[str]**](List[str].md)| Filter by file_set_type | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **files** | [**List[str]**](List[str].md)| Filter by files | [optional] 
  **control_for** | [**List[str]**](List[str].md)| Filter by control_for | [optional] 
- **submitted_files_timestamp** | **str**| Filter by submitted_files_timestamp | [optional] 
+ **submitted_files_timestamp** | [**List[str]**](List[str].md)| Filter by submitted_files_timestamp | [optional] 
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **assemblies** | [**List[str]**](List[str].md)| Filter by assemblies | [optional] 
  **transcriptome_annotations** | [**List[str]**](List[str].md)| Filter by transcriptome_annotations | [optional] 
@@ -2025,7 +2000,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **degron_modifications**
-> DegronModificationResults degron_modifications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, status=status, lab=lab, award=award, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, activated=activated, activating_agent_term_id=activating_agent_term_id, activating_agent_term_name=activating_agent_term_name, modality=modality, degron_system=degron_system, tagged_proteins=tagged_proteins, id=id, summary=summary, biosamples_modified=biosamples_modified)
+> DegronModificationResults degron_modifications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, status=status, lab=lab, award=award, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, activated=activated, activating_agent_term_id=activating_agent_term_id, activating_agent_term_name=activating_agent_term_name, modality=modality, degron_system=degron_system, tagged_proteins=tagged_proteins, id=id, summary=summary, biosamples_modified=biosamples_modified)
 
 List items in the DegronModification collection.
 
@@ -2065,35 +2040,34 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
-    lot_id = 'lot_id_example' # str | Filter by lot_id (optional)
-    product_id = 'product_id_example' # str | Filter by product_id (optional)
+    lot_id = ['lot_id_example'] # List[str] | Filter by lot_id (optional)
+    product_id = ['product_id_example'] # List[str] | Filter by product_id (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    activated = True # bool | Filter by activated (optional)
-    activating_agent_term_id = 'activating_agent_term_id_example' # str | Filter by activating_agent_term_id (optional)
-    activating_agent_term_name = 'activating_agent_term_name_example' # str | Filter by activating_agent_term_name (optional)
-    modality = 'modality_example' # str | Filter by modality (optional)
-    degron_system = 'degron_system_example' # str | Filter by degron_system (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    activated = [True] # List[bool] | Filter by activated (optional)
+    activating_agent_term_id = ['activating_agent_term_id_example'] # List[str] | Filter by activating_agent_term_id (optional)
+    activating_agent_term_name = ['activating_agent_term_name_example'] # List[str] | Filter by activating_agent_term_name (optional)
+    modality = ['modality_example'] # List[str] | Filter by modality (optional)
+    degron_system = ['degron_system_example'] # List[str] | Filter by degron_system (optional)
     tagged_proteins = ['tagged_proteins_example'] # List[str] | Filter by tagged_proteins (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     biosamples_modified = ['biosamples_modified_example'] # List[str] | Filter by biosamples_modified (optional)
 
     try:
         # List items in the DegronModification collection.
-        api_response = api_instance.degron_modifications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, status=status, lab=lab, award=award, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, activated=activated, activating_agent_term_id=activating_agent_term_id, activating_agent_term_name=activating_agent_term_name, modality=modality, degron_system=degron_system, tagged_proteins=tagged_proteins, id=id, summary=summary, biosamples_modified=biosamples_modified)
+        api_response = api_instance.degron_modifications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, status=status, lab=lab, award=award, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, activated=activated, activating_agent_term_id=activating_agent_term_id, activating_agent_term_name=activating_agent_term_name, modality=modality, degron_system=degron_system, tagged_proteins=tagged_proteins, id=id, summary=summary, biosamples_modified=biosamples_modified)
         print("The response of IgvfApi->degron_modifications:\n")
         pprint(api_response)
     except Exception as e:
@@ -2110,30 +2084,29 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
- **lot_id** | **str**| Filter by lot_id | [optional] 
- **product_id** | **str**| Filter by product_id | [optional] 
+ **lot_id** | [**List[str]**](List[str].md)| Filter by lot_id | [optional] 
+ **product_id** | [**List[str]**](List[str].md)| Filter by product_id | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **activated** | **bool**| Filter by activated | [optional] 
- **activating_agent_term_id** | **str**| Filter by activating_agent_term_id | [optional] 
- **activating_agent_term_name** | **str**| Filter by activating_agent_term_name | [optional] 
- **modality** | **str**| Filter by modality | [optional] 
- **degron_system** | **str**| Filter by degron_system | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **activated** | [**List[bool]**](List[bool].md)| Filter by activated | [optional] 
+ **activating_agent_term_id** | [**List[str]**](List[str].md)| Filter by activating_agent_term_id | [optional] 
+ **activating_agent_term_name** | [**List[str]**](List[str].md)| Filter by activating_agent_term_name | [optional] 
+ **modality** | [**List[str]**](List[str].md)| Filter by modality | [optional] 
+ **degron_system** | [**List[str]**](List[str].md)| Filter by degron_system | [optional] 
  **tagged_proteins** | [**List[str]**](List[str].md)| Filter by tagged_proteins | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **biosamples_modified** | [**List[str]**](List[str].md)| Filter by biosamples_modified | [optional] 
 
 ### Return type
@@ -2161,7 +2134,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **documents**
-> DocumentResults documents(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, attachment=attachment, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, document_type=document_type, characterization_method=characterization_method, urls=urls, id=id, summary=summary)
+> DocumentResults documents(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, attachment=attachment, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, document_type=document_type, characterization_method=characterization_method, urls=urls, id=id, summary=summary)
 
 List items in the Document collection.
 
@@ -2173,6 +2146,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 import igvf_client
+from igvf_client.models.attachment import Attachment
 from igvf_client.models.document_results import DocumentResults
 from igvf_client.rest import ApiException
 from pprint import pprint
@@ -2201,28 +2175,27 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    attachment = {'key': igvf_client.Attachment()} # Attachment | Filter by attachment (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    attachment = [igvf_client.Attachment()] # List[Attachment] | Filter by attachment (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    document_type = 'document_type_example' # str | Filter by document_type (optional)
-    characterization_method = 'characterization_method_example' # str | Filter by characterization_method (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    document_type = ['document_type_example'] # List[str] | Filter by document_type (optional)
+    characterization_method = ['characterization_method_example'] # List[str] | Filter by characterization_method (optional)
     urls = ['urls_example'] # List[str] | Filter by urls (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
 
     try:
         # List items in the Document collection.
-        api_response = api_instance.documents(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, attachment=attachment, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, document_type=document_type, characterization_method=characterization_method, urls=urls, id=id, summary=summary)
+        api_response = api_instance.documents(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, attachment=attachment, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, document_type=document_type, characterization_method=characterization_method, urls=urls, id=id, summary=summary)
         print("The response of IgvfApi->documents:\n")
         pprint(api_response)
     except Exception as e:
@@ -2239,24 +2212,23 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **attachment** | [**Attachment**](Attachment.md)| Filter by attachment | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **attachment** | [**List[Attachment]**](List[Attachment].md)| Filter by attachment | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **document_type** | **str**| Filter by document_type | [optional] 
- **characterization_method** | **str**| Filter by characterization_method | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **document_type** | [**List[str]**](List[str].md)| Filter by document_type | [optional] 
+ **characterization_method** | [**List[str]**](List[str].md)| Filter by characterization_method | [optional] 
  **urls** | [**List[str]**](List[str].md)| Filter by urls | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
 
 ### Return type
 
@@ -2363,7 +2335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **genes**
-> GeneResults genes(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, transcriptome_annotation=transcriptome_annotation, taxa=taxa, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, geneid=geneid, symbol=symbol, name=name, synonyms=synonyms, dbxrefs=dbxrefs, locations=locations, version_number=version_number, id=id, summary=summary, title=title, geneid_with_version=geneid_with_version)
+> GeneResults genes(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, transcriptome_annotation=transcriptome_annotation, taxa=taxa, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, geneid=geneid, symbol=symbol, name=name, synonyms=synonyms, dbxrefs=dbxrefs, locations=locations, version_number=version_number, id=id, summary=summary, title=title, geneid_with_version=geneid_with_version)
 
 List items in the Gene collection.
 
@@ -2404,33 +2376,32 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
-    taxa = 'taxa_example' # str | Filter by taxa (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    transcriptome_annotation = ['transcriptome_annotation_example'] # List[str] | Filter by transcriptome_annotation (optional)
+    taxa = ['taxa_example'] # List[str] | Filter by taxa (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    geneid = 'geneid_example' # str | Filter by geneid (optional)
-    symbol = 'symbol_example' # str | Filter by symbol (optional)
-    name = 'name_example' # str | Filter by name (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    geneid = ['geneid_example'] # List[str] | Filter by geneid (optional)
+    symbol = ['symbol_example'] # List[str] | Filter by symbol (optional)
+    name = ['name_example'] # List[str] | Filter by name (optional)
     synonyms = ['synonyms_example'] # List[str] | Filter by synonyms (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     locations = [igvf_client.GeneLocation()] # List[GeneLocation] | Filter by locations (optional)
-    version_number = 'version_number_example' # str | Filter by version_number (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
-    title = 'title_example' # str | Filter by title (optional)
-    geneid_with_version = 'geneid_with_version_example' # str | Filter by geneid_with_version (optional)
+    version_number = ['version_number_example'] # List[str] | Filter by version_number (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
+    title = ['title_example'] # List[str] | Filter by title (optional)
+    geneid_with_version = ['geneid_with_version_example'] # List[str] | Filter by geneid_with_version (optional)
 
     try:
         # List items in the Gene collection.
-        api_response = api_instance.genes(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, transcriptome_annotation=transcriptome_annotation, taxa=taxa, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, geneid=geneid, symbol=symbol, name=name, synonyms=synonyms, dbxrefs=dbxrefs, locations=locations, version_number=version_number, id=id, summary=summary, title=title, geneid_with_version=geneid_with_version)
+        api_response = api_instance.genes(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, transcriptome_annotation=transcriptome_annotation, taxa=taxa, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, geneid=geneid, symbol=symbol, name=name, synonyms=synonyms, dbxrefs=dbxrefs, locations=locations, version_number=version_number, id=id, summary=summary, title=title, geneid_with_version=geneid_with_version)
         print("The response of IgvfApi->genes:\n")
         pprint(api_response)
     except Exception as e:
@@ -2447,29 +2418,28 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **transcriptome_annotation** | **str**| Filter by transcriptome_annotation | [optional] 
- **taxa** | **str**| Filter by taxa | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **transcriptome_annotation** | [**List[str]**](List[str].md)| Filter by transcriptome_annotation | [optional] 
+ **taxa** | [**List[str]**](List[str].md)| Filter by taxa | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **geneid** | **str**| Filter by geneid | [optional] 
- **symbol** | **str**| Filter by symbol | [optional] 
- **name** | **str**| Filter by name | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **geneid** | [**List[str]**](List[str].md)| Filter by geneid | [optional] 
+ **symbol** | [**List[str]**](List[str].md)| Filter by symbol | [optional] 
+ **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
  **synonyms** | [**List[str]**](List[str].md)| Filter by synonyms | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **locations** | [**List[GeneLocation]**](List[GeneLocation].md)| Filter by locations | [optional] 
- **version_number** | **str**| Filter by version_number | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
- **title** | **str**| Filter by title | [optional] 
- **geneid_with_version** | **str**| Filter by geneid_with_version | [optional] 
+ **version_number** | [**List[str]**](List[str].md)| Filter by version_number | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
+ **title** | [**List[str]**](List[str].md)| Filter by title | [optional] 
+ **geneid_with_version** | [**List[str]**](List[str].md)| Filter by geneid_with_version | [optional] 
 
 ### Return type
 
@@ -2496,7 +2466,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **genome_browser_annotation_files**
-> GenomeBrowserAnnotationFileResults genome_browser_annotation_files(query=query, limit=limit, sort=sort, assembly=assembly, release_timestamp=release_timestamp, file_format_type=file_format_type, transcriptome_annotation=transcriptome_annotation, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
+> GenomeBrowserAnnotationFileResults genome_browser_annotation_files(query=query, limit=limit, sort=sort, assembly=assembly, release_timestamp=release_timestamp, file_format_type=file_format_type, transcriptome_annotation=transcriptome_annotation, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
 
 List items in the GenomeBrowserAnnotationFile collection.
 
@@ -2536,52 +2506,51 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    assembly = 'assembly_example' # str | Filter by assembly (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    file_format_type = 'file_format_type_example' # str | Filter by file_format_type (optional)
-    transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
+    assembly = ['assembly_example'] # List[str] | Filter by assembly (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    file_format_type = ['file_format_type_example'] # List[str] | Filter by file_format_type (optional)
+    transcriptome_annotation = ['transcriptome_annotation_example'] # List[str] | Filter by transcriptome_annotation (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
-    content_md5sum = 'content_md5sum_example' # str | Filter by content_md5sum (optional)
-    content_type = 'content_type_example' # str | Filter by content_type (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    analysis_step_version = ['analysis_step_version_example'] # List[str] | Filter by analysis_step_version (optional)
+    content_md5sum = ['content_md5sum_example'] # List[str] | Filter by content_md5sum (optional)
+    content_type = ['content_type_example'] # List[str] | Filter by content_type (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     derived_from = ['derived_from_example'] # List[str] | Filter by derived_from (optional)
-    file_format = 'file_format_example' # str | Filter by file_format (optional)
+    file_format = ['file_format_example'] # List[str] | Filter by file_format (optional)
     file_format_specifications = ['file_format_specifications_example'] # List[str] | Filter by file_format_specifications (optional)
-    file_set = 'file_set_example' # str | Filter by file_set (optional)
-    file_size = 56 # int | Filter by file_size (optional)
-    md5sum = 'md5sum_example' # str | Filter by md5sum (optional)
-    submitted_file_name = 'submitted_file_name_example' # str | Filter by submitted_file_name (optional)
-    upload_status = 'upload_status_example' # str | Filter by upload_status (optional)
-    validation_error_detail = 'validation_error_detail_example' # str | Filter by validation_error_detail (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    file_set = ['file_set_example'] # List[str] | Filter by file_set (optional)
+    file_size = [56] # List[int] | Filter by file_size (optional)
+    md5sum = ['md5sum_example'] # List[str] | Filter by md5sum (optional)
+    submitted_file_name = ['submitted_file_name_example'] # List[str] | Filter by submitted_file_name (optional)
+    upload_status = ['upload_status_example'] # List[str] | Filter by upload_status (optional)
+    validation_error_detail = ['validation_error_detail_example'] # List[str] | Filter by validation_error_detail (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
     input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
     gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
     loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
-    href = 'href_example' # str | Filter by href (optional)
-    s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
-    upload_credentials = None # object | Filter by upload_credentials (optional)
+    href = ['href_example'] # List[str] | Filter by href (optional)
+    s3_uri = ['s3_uri_example'] # List[str] | Filter by s3_uri (optional)
+    upload_credentials = None # List[object] | Filter by upload_credentials (optional)
 
     try:
         # List items in the GenomeBrowserAnnotationFile collection.
-        api_response = api_instance.genome_browser_annotation_files(query=query, limit=limit, sort=sort, assembly=assembly, release_timestamp=release_timestamp, file_format_type=file_format_type, transcriptome_annotation=transcriptome_annotation, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
+        api_response = api_instance.genome_browser_annotation_files(query=query, limit=limit, sort=sort, assembly=assembly, release_timestamp=release_timestamp, file_format_type=file_format_type, transcriptome_annotation=transcriptome_annotation, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
         print("The response of IgvfApi->genome_browser_annotation_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -2598,48 +2567,47 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **assembly** | **str**| Filter by assembly | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **file_format_type** | **str**| Filter by file_format_type | [optional] 
- **transcriptome_annotation** | **str**| Filter by transcriptome_annotation | [optional] 
+ **assembly** | [**List[str]**](List[str].md)| Filter by assembly | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **file_format_type** | [**List[str]**](List[str].md)| Filter by file_format_type | [optional] 
+ **transcriptome_annotation** | [**List[str]**](List[str].md)| Filter by transcriptome_annotation | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
- **content_md5sum** | **str**| Filter by content_md5sum | [optional] 
- **content_type** | **str**| Filter by content_type | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **analysis_step_version** | [**List[str]**](List[str].md)| Filter by analysis_step_version | [optional] 
+ **content_md5sum** | [**List[str]**](List[str].md)| Filter by content_md5sum | [optional] 
+ **content_type** | [**List[str]**](List[str].md)| Filter by content_type | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **derived_from** | [**List[str]**](List[str].md)| Filter by derived_from | [optional] 
- **file_format** | **str**| Filter by file_format | [optional] 
+ **file_format** | [**List[str]**](List[str].md)| Filter by file_format | [optional] 
  **file_format_specifications** | [**List[str]**](List[str].md)| Filter by file_format_specifications | [optional] 
- **file_set** | **str**| Filter by file_set | [optional] 
- **file_size** | **int**| Filter by file_size | [optional] 
- **md5sum** | **str**| Filter by md5sum | [optional] 
- **submitted_file_name** | **str**| Filter by submitted_file_name | [optional] 
- **upload_status** | **str**| Filter by upload_status | [optional] 
- **validation_error_detail** | **str**| Filter by validation_error_detail | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **file_set** | [**List[str]**](List[str].md)| Filter by file_set | [optional] 
+ **file_size** | [**List[int]**](List[int].md)| Filter by file_size | [optional] 
+ **md5sum** | [**List[str]**](List[str].md)| Filter by md5sum | [optional] 
+ **submitted_file_name** | [**List[str]**](List[str].md)| Filter by submitted_file_name | [optional] 
+ **upload_status** | [**List[str]**](List[str].md)| Filter by upload_status | [optional] 
+ **validation_error_detail** | [**List[str]**](List[str].md)| Filter by validation_error_detail | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
  **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
  **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
  **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
- **href** | **str**| Filter by href | [optional] 
- **s3_uri** | **str**| Filter by s3_uri | [optional] 
- **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
+ **href** | [**List[str]**](List[str].md)| Filter by href | [optional] 
+ **s3_uri** | [**List[str]**](List[str].md)| Filter by s3_uri | [optional] 
+ **upload_credentials** | [**List[object]**](List[object].md)| Filter by upload_credentials | [optional] 
 
 ### Return type
 
@@ -2746,7 +2714,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **human_donors**
-> HumanDonorResults human_donors(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, url=url, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, sex=sex, phenotypic_features=phenotypic_features, virtual=virtual, related_donors=related_donors, ethnicities=ethnicities, human_donor_identifiers=human_donor_identifiers, id=id, summary=summary)
+> HumanDonorResults human_donors(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, url=url, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, sex=sex, phenotypic_features=phenotypic_features, virtual=virtual, related_donors=related_donors, ethnicities=ethnicities, human_donor_identifiers=human_donor_identifiers, id=id, summary=summary)
 
 List items in the HumanDonor collection.
 
@@ -2787,40 +2755,39 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    taxa = 'taxa_example' # str | Filter by taxa (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    taxa = ['taxa_example'] # List[str] | Filter by taxa (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
-    url = 'url_example' # str | Filter by url (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    sex = 'sex_example' # str | Filter by sex (optional)
+    sex = ['sex_example'] # List[str] | Filter by sex (optional)
     phenotypic_features = ['phenotypic_features_example'] # List[str] | Filter by phenotypic_features (optional)
-    virtual = True # bool | Filter by virtual (optional)
+    virtual = [True] # List[bool] | Filter by virtual (optional)
     related_donors = [igvf_client.RelatedDonor()] # List[RelatedDonor] | Filter by related_donors (optional)
     ethnicities = ['ethnicities_example'] # List[str] | Filter by ethnicities (optional)
     human_donor_identifiers = ['human_donor_identifiers_example'] # List[str] | Filter by human_donor_identifiers (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
 
     try:
         # List items in the HumanDonor collection.
-        api_response = api_instance.human_donors(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, url=url, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, sex=sex, phenotypic_features=phenotypic_features, virtual=virtual, related_donors=related_donors, ethnicities=ethnicities, human_donor_identifiers=human_donor_identifiers, id=id, summary=summary)
+        api_response = api_instance.human_donors(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, url=url, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, sex=sex, phenotypic_features=phenotypic_features, virtual=virtual, related_donors=related_donors, ethnicities=ethnicities, human_donor_identifiers=human_donor_identifiers, id=id, summary=summary)
         print("The response of IgvfApi->human_donors:\n")
         pprint(api_response)
     except Exception as e:
@@ -2837,36 +2804,35 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **taxa** | **str**| Filter by taxa | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **taxa** | [**List[str]**](List[str].md)| Filter by taxa | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
- **url** | **str**| Filter by url | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **sex** | **str**| Filter by sex | [optional] 
+ **sex** | [**List[str]**](List[str].md)| Filter by sex | [optional] 
  **phenotypic_features** | [**List[str]**](List[str].md)| Filter by phenotypic_features | [optional] 
- **virtual** | **bool**| Filter by virtual | [optional] 
+ **virtual** | [**List[bool]**](List[bool].md)| Filter by virtual | [optional] 
  **related_donors** | [**List[RelatedDonor]**](List[RelatedDonor].md)| Filter by related_donors | [optional] 
  **ethnicities** | [**List[str]**](List[str].md)| Filter by ethnicities | [optional] 
  **human_donor_identifiers** | [**List[str]**](List[str].md)| Filter by human_donor_identifiers | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
 
 ### Return type
 
@@ -2893,7 +2859,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **image_files**
-> ImageFileResults image_files(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
+> ImageFileResults image_files(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
 
 List items in the ImageFile collection.
 
@@ -2933,49 +2899,48 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
-    content_md5sum = 'content_md5sum_example' # str | Filter by content_md5sum (optional)
-    content_type = 'content_type_example' # str | Filter by content_type (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    analysis_step_version = ['analysis_step_version_example'] # List[str] | Filter by analysis_step_version (optional)
+    content_md5sum = ['content_md5sum_example'] # List[str] | Filter by content_md5sum (optional)
+    content_type = ['content_type_example'] # List[str] | Filter by content_type (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     derived_from = ['derived_from_example'] # List[str] | Filter by derived_from (optional)
-    file_format = 'file_format_example' # str | Filter by file_format (optional)
+    file_format = ['file_format_example'] # List[str] | Filter by file_format (optional)
     file_format_specifications = ['file_format_specifications_example'] # List[str] | Filter by file_format_specifications (optional)
-    file_set = 'file_set_example' # str | Filter by file_set (optional)
-    file_size = 56 # int | Filter by file_size (optional)
-    md5sum = 'md5sum_example' # str | Filter by md5sum (optional)
-    submitted_file_name = 'submitted_file_name_example' # str | Filter by submitted_file_name (optional)
-    upload_status = 'upload_status_example' # str | Filter by upload_status (optional)
-    validation_error_detail = 'validation_error_detail_example' # str | Filter by validation_error_detail (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    file_set = ['file_set_example'] # List[str] | Filter by file_set (optional)
+    file_size = [56] # List[int] | Filter by file_size (optional)
+    md5sum = ['md5sum_example'] # List[str] | Filter by md5sum (optional)
+    submitted_file_name = ['submitted_file_name_example'] # List[str] | Filter by submitted_file_name (optional)
+    upload_status = ['upload_status_example'] # List[str] | Filter by upload_status (optional)
+    validation_error_detail = ['validation_error_detail_example'] # List[str] | Filter by validation_error_detail (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
     input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
     gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
     loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
-    href = 'href_example' # str | Filter by href (optional)
-    s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
-    upload_credentials = None # object | Filter by upload_credentials (optional)
+    href = ['href_example'] # List[str] | Filter by href (optional)
+    s3_uri = ['s3_uri_example'] # List[str] | Filter by s3_uri (optional)
+    upload_credentials = None # List[object] | Filter by upload_credentials (optional)
 
     try:
         # List items in the ImageFile collection.
-        api_response = api_instance.image_files(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
+        api_response = api_instance.image_files(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
         print("The response of IgvfApi->image_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -2992,45 +2957,44 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
- **content_md5sum** | **str**| Filter by content_md5sum | [optional] 
- **content_type** | **str**| Filter by content_type | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **analysis_step_version** | [**List[str]**](List[str].md)| Filter by analysis_step_version | [optional] 
+ **content_md5sum** | [**List[str]**](List[str].md)| Filter by content_md5sum | [optional] 
+ **content_type** | [**List[str]**](List[str].md)| Filter by content_type | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **derived_from** | [**List[str]**](List[str].md)| Filter by derived_from | [optional] 
- **file_format** | **str**| Filter by file_format | [optional] 
+ **file_format** | [**List[str]**](List[str].md)| Filter by file_format | [optional] 
  **file_format_specifications** | [**List[str]**](List[str].md)| Filter by file_format_specifications | [optional] 
- **file_set** | **str**| Filter by file_set | [optional] 
- **file_size** | **int**| Filter by file_size | [optional] 
- **md5sum** | **str**| Filter by md5sum | [optional] 
- **submitted_file_name** | **str**| Filter by submitted_file_name | [optional] 
- **upload_status** | **str**| Filter by upload_status | [optional] 
- **validation_error_detail** | **str**| Filter by validation_error_detail | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **file_set** | [**List[str]**](List[str].md)| Filter by file_set | [optional] 
+ **file_size** | [**List[int]**](List[int].md)| Filter by file_size | [optional] 
+ **md5sum** | [**List[str]**](List[str].md)| Filter by md5sum | [optional] 
+ **submitted_file_name** | [**List[str]**](List[str].md)| Filter by submitted_file_name | [optional] 
+ **upload_status** | [**List[str]**](List[str].md)| Filter by upload_status | [optional] 
+ **validation_error_detail** | [**List[str]**](List[str].md)| Filter by validation_error_detail | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
  **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
  **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
  **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
- **href** | **str**| Filter by href | [optional] 
- **s3_uri** | **str**| Filter by s3_uri | [optional] 
- **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
+ **href** | [**List[str]**](List[str].md)| Filter by href | [optional] 
+ **s3_uri** | [**List[str]**](List[str].md)| Filter by s3_uri | [optional] 
+ **upload_credentials** | [**List[object]**](List[object].md)| Filter by upload_credentials | [optional] 
 
 ### Return type
 
@@ -3057,7 +3021,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **images**
-> ImageResults images(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, attachment=attachment, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, caption=caption, id=id, summary=summary, thumb_nail=thumb_nail, download_url=download_url)
+> ImageResults images(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, attachment=attachment, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, caption=caption, id=id, summary=summary, thumb_nail=thumb_nail, download_url=download_url)
 
 List items in the Image collection.
 
@@ -3069,6 +3033,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 import igvf_client
+from igvf_client.models.attachment1 import Attachment1
 from igvf_client.models.image_results import ImageResults
 from igvf_client.rest import ApiException
 from pprint import pprint
@@ -3097,26 +3062,25 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    attachment = {'key': igvf_client.Attachment1()} # Attachment1 | Filter by attachment (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    attachment = [igvf_client.Attachment1()] # List[Attachment1] | Filter by attachment (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    caption = 'caption_example' # str | Filter by caption (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
-    thumb_nail = 'thumb_nail_example' # str | Filter by thumb_nail (optional)
-    download_url = 'download_url_example' # str | Filter by download_url (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    caption = ['caption_example'] # List[str] | Filter by caption (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
+    thumb_nail = ['thumb_nail_example'] # List[str] | Filter by thumb_nail (optional)
+    download_url = ['download_url_example'] # List[str] | Filter by download_url (optional)
 
     try:
         # List items in the Image collection.
-        api_response = api_instance.images(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, attachment=attachment, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, caption=caption, id=id, summary=summary, thumb_nail=thumb_nail, download_url=download_url)
+        api_response = api_instance.images(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, attachment=attachment, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, caption=caption, id=id, summary=summary, thumb_nail=thumb_nail, download_url=download_url)
         print("The response of IgvfApi->images:\n")
         pprint(api_response)
     except Exception as e:
@@ -3133,22 +3097,21 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **attachment** | [**Attachment1**](Attachment1.md)| Filter by attachment | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **attachment** | [**List[Attachment1]**](List[Attachment1].md)| Filter by attachment | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **caption** | **str**| Filter by caption | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
- **thumb_nail** | **str**| Filter by thumb_nail | [optional] 
- **download_url** | **str**| Filter by download_url | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **caption** | [**List[str]**](List[str].md)| Filter by caption | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
+ **thumb_nail** | [**List[str]**](List[str].md)| Filter by thumb_nail | [optional] 
+ **download_url** | [**List[str]**](List[str].md)| Filter by download_url | [optional] 
 
 ### Return type
 
@@ -3175,7 +3138,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **in_vitro_systems**
-> InVitroSystemResults in_vitro_systems(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, taxa=taxa, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, classifications=classifications, time_post_change=time_post_change, time_post_change_units=time_post_change_units, cell_fate_change_treatments=cell_fate_change_treatments, cell_fate_change_protocol=cell_fate_change_protocol, demultiplexed_from=demultiplexed_from, passage_number=passage_number, targeted_sample_term=targeted_sample_term, growth_medium=growth_medium, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, demultiplexed_to=demultiplexed_to)
+> InVitroSystemResults in_vitro_systems(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, taxa=taxa, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, classifications=classifications, time_post_change=time_post_change, time_post_change_units=time_post_change_units, cell_fate_change_treatments=cell_fate_change_treatments, cell_fate_change_protocol=cell_fate_change_protocol, demultiplexed_from=demultiplexed_from, passage_number=passage_number, targeted_sample_term=targeted_sample_term, growth_medium=growth_medium, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, demultiplexed_to=demultiplexed_to)
 
 List items in the InVitroSystem collection.
 
@@ -3215,84 +3178,83 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
-    taxa = 'taxa_example' # str | Filter by taxa (optional)
-    url = 'url_example' # str | Filter by url (optional)
+    taxa = ['taxa_example'] # List[str] | Filter by taxa (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
-    lot_id = 'lot_id_example' # str | Filter by lot_id (optional)
-    product_id = 'product_id_example' # str | Filter by product_id (optional)
+    lot_id = ['lot_id_example'] # List[str] | Filter by lot_id (optional)
+    product_id = ['product_id_example'] # List[str] | Filter by product_id (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    lower_bound_age = 3.4 # float | Filter by lower_bound_age (optional)
-    upper_bound_age = 3.4 # float | Filter by upper_bound_age (optional)
-    age_units = 'age_units_example' # str | Filter by age_units (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    lower_bound_age = [3.4] # List[float] | Filter by lower_bound_age (optional)
+    upper_bound_age = [3.4] # List[float] | Filter by upper_bound_age (optional)
+    age_units = ['age_units_example'] # List[str] | Filter by age_units (optional)
     sample_terms = ['sample_terms_example'] # List[str] | Filter by sample_terms (optional)
     disease_terms = ['disease_terms_example'] # List[str] | Filter by disease_terms (optional)
     pooled_from = ['pooled_from_example'] # List[str] | Filter by pooled_from (optional)
-    part_of = 'part_of_example' # str | Filter by part_of (optional)
-    originated_from = 'originated_from_example' # str | Filter by originated_from (optional)
+    part_of = ['part_of_example'] # List[str] | Filter by part_of (optional)
+    originated_from = ['originated_from_example'] # List[str] | Filter by originated_from (optional)
     treatments = ['treatments_example'] # List[str] | Filter by treatments (optional)
     donors = ['donors_example'] # List[str] | Filter by donors (optional)
     biomarkers = ['biomarkers_example'] # List[str] | Filter by biomarkers (optional)
-    embryonic = True # bool | Filter by embryonic (optional)
+    embryonic = [True] # List[bool] | Filter by embryonic (optional)
     modifications = ['modifications_example'] # List[str] | Filter by modifications (optional)
-    cellular_sub_pool = 'cellular_sub_pool_example' # str | Filter by cellular_sub_pool (optional)
-    starting_amount = 3.4 # float | Filter by starting_amount (optional)
-    starting_amount_units = 'starting_amount_units_example' # str | Filter by starting_amount_units (optional)
+    cellular_sub_pool = ['cellular_sub_pool_example'] # List[str] | Filter by cellular_sub_pool (optional)
+    starting_amount = [3.4] # List[float] | Filter by starting_amount (optional)
+    starting_amount_units = ['starting_amount_units_example'] # List[str] | Filter by starting_amount_units (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    date_obtained = 'date_obtained_example' # str | Filter by date_obtained (optional)
-    sorted_from = 'sorted_from_example' # str | Filter by sorted_from (optional)
-    sorted_from_detail = 'sorted_from_detail_example' # str | Filter by sorted_from_detail (optional)
-    virtual = True # bool | Filter by virtual (optional)
+    date_obtained = ['date_obtained_example'] # List[str] | Filter by date_obtained (optional)
+    sorted_from = ['sorted_from_example'] # List[str] | Filter by sorted_from (optional)
+    sorted_from_detail = ['sorted_from_detail_example'] # List[str] | Filter by sorted_from_detail (optional)
+    virtual = [True] # List[bool] | Filter by virtual (optional)
     construct_library_sets = ['construct_library_sets_example'] # List[str] | Filter by construct_library_sets (optional)
-    moi = 3.4 # float | Filter by moi (optional)
-    nucleic_acid_delivery = 'nucleic_acid_delivery_example' # str | Filter by nucleic_acid_delivery (optional)
-    time_post_library_delivery = 3.4 # float | Filter by time_post_library_delivery (optional)
-    time_post_library_delivery_units = 'time_post_library_delivery_units_example' # str | Filter by time_post_library_delivery_units (optional)
+    moi = [3.4] # List[float] | Filter by moi (optional)
+    nucleic_acid_delivery = ['nucleic_acid_delivery_example'] # List[str] | Filter by nucleic_acid_delivery (optional)
+    time_post_library_delivery = [3.4] # List[float] | Filter by time_post_library_delivery (optional)
+    time_post_library_delivery_units = ['time_post_library_delivery_units_example'] # List[str] | Filter by time_post_library_delivery_units (optional)
     protocols = ['protocols_example'] # List[str] | Filter by protocols (optional)
     classifications = ['classifications_example'] # List[str] | Filter by classifications (optional)
-    time_post_change = 3.4 # float | Filter by time_post_change (optional)
-    time_post_change_units = 'time_post_change_units_example' # str | Filter by time_post_change_units (optional)
+    time_post_change = [3.4] # List[float] | Filter by time_post_change (optional)
+    time_post_change_units = ['time_post_change_units_example'] # List[str] | Filter by time_post_change_units (optional)
     cell_fate_change_treatments = ['cell_fate_change_treatments_example'] # List[str] | Filter by cell_fate_change_treatments (optional)
-    cell_fate_change_protocol = 'cell_fate_change_protocol_example' # str | Filter by cell_fate_change_protocol (optional)
-    demultiplexed_from = 'demultiplexed_from_example' # str | Filter by demultiplexed_from (optional)
-    passage_number = 56 # int | Filter by passage_number (optional)
-    targeted_sample_term = 'targeted_sample_term_example' # str | Filter by targeted_sample_term (optional)
-    growth_medium = 'growth_medium_example' # str | Filter by growth_medium (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    cell_fate_change_protocol = ['cell_fate_change_protocol_example'] # List[str] | Filter by cell_fate_change_protocol (optional)
+    demultiplexed_from = ['demultiplexed_from_example'] # List[str] | Filter by demultiplexed_from (optional)
+    passage_number = [56] # List[int] | Filter by passage_number (optional)
+    targeted_sample_term = ['targeted_sample_term_example'] # List[str] | Filter by targeted_sample_term (optional)
+    growth_medium = ['growth_medium_example'] # List[str] | Filter by growth_medium (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     file_sets = ['file_sets_example'] # List[str] | Filter by file_sets (optional)
     multiplexed_in = ['multiplexed_in_example'] # List[str] | Filter by multiplexed_in (optional)
     sorted_fractions = ['sorted_fractions_example'] # List[str] | Filter by sorted_fractions (optional)
     origin_of = ['origin_of_example'] # List[str] | Filter by origin_of (optional)
     institutional_certificates = ['institutional_certificates_example'] # List[str] | Filter by institutional_certificates (optional)
-    sex = 'sex_example' # str | Filter by sex (optional)
-    age = 'age_example' # str | Filter by age (optional)
-    upper_bound_age_in_hours = 3.4 # float | Filter by upper_bound_age_in_hours (optional)
-    lower_bound_age_in_hours = 3.4 # float | Filter by lower_bound_age_in_hours (optional)
+    sex = ['sex_example'] # List[str] | Filter by sex (optional)
+    age = ['age_example'] # List[str] | Filter by age (optional)
+    upper_bound_age_in_hours = [3.4] # List[float] | Filter by upper_bound_age_in_hours (optional)
+    lower_bound_age_in_hours = [3.4] # List[float] | Filter by lower_bound_age_in_hours (optional)
     parts = ['parts_example'] # List[str] | Filter by parts (optional)
     pooled_in = ['pooled_in_example'] # List[str] | Filter by pooled_in (optional)
     demultiplexed_to = ['demultiplexed_to_example'] # List[str] | Filter by demultiplexed_to (optional)
 
     try:
         # List items in the InVitroSystem collection.
-        api_response = api_instance.in_vitro_systems(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, taxa=taxa, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, classifications=classifications, time_post_change=time_post_change, time_post_change_units=time_post_change_units, cell_fate_change_treatments=cell_fate_change_treatments, cell_fate_change_protocol=cell_fate_change_protocol, demultiplexed_from=demultiplexed_from, passage_number=passage_number, targeted_sample_term=targeted_sample_term, growth_medium=growth_medium, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, demultiplexed_to=demultiplexed_to)
+        api_response = api_instance.in_vitro_systems(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, taxa=taxa, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, classifications=classifications, time_post_change=time_post_change, time_post_change_units=time_post_change_units, cell_fate_change_treatments=cell_fate_change_treatments, cell_fate_change_protocol=cell_fate_change_protocol, demultiplexed_from=demultiplexed_from, passage_number=passage_number, targeted_sample_term=targeted_sample_term, growth_medium=growth_medium, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, demultiplexed_to=demultiplexed_to)
         print("The response of IgvfApi->in_vitro_systems:\n")
         pprint(api_response)
     except Exception as e:
@@ -3309,77 +3271,76 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
- **taxa** | **str**| Filter by taxa | [optional] 
- **url** | **str**| Filter by url | [optional] 
+ **taxa** | [**List[str]**](List[str].md)| Filter by taxa | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
- **lot_id** | **str**| Filter by lot_id | [optional] 
- **product_id** | **str**| Filter by product_id | [optional] 
+ **lot_id** | [**List[str]**](List[str].md)| Filter by lot_id | [optional] 
+ **product_id** | [**List[str]**](List[str].md)| Filter by product_id | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **lower_bound_age** | **float**| Filter by lower_bound_age | [optional] 
- **upper_bound_age** | **float**| Filter by upper_bound_age | [optional] 
- **age_units** | **str**| Filter by age_units | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **lower_bound_age** | [**List[float]**](List[float].md)| Filter by lower_bound_age | [optional] 
+ **upper_bound_age** | [**List[float]**](List[float].md)| Filter by upper_bound_age | [optional] 
+ **age_units** | [**List[str]**](List[str].md)| Filter by age_units | [optional] 
  **sample_terms** | [**List[str]**](List[str].md)| Filter by sample_terms | [optional] 
  **disease_terms** | [**List[str]**](List[str].md)| Filter by disease_terms | [optional] 
  **pooled_from** | [**List[str]**](List[str].md)| Filter by pooled_from | [optional] 
- **part_of** | **str**| Filter by part_of | [optional] 
- **originated_from** | **str**| Filter by originated_from | [optional] 
+ **part_of** | [**List[str]**](List[str].md)| Filter by part_of | [optional] 
+ **originated_from** | [**List[str]**](List[str].md)| Filter by originated_from | [optional] 
  **treatments** | [**List[str]**](List[str].md)| Filter by treatments | [optional] 
  **donors** | [**List[str]**](List[str].md)| Filter by donors | [optional] 
  **biomarkers** | [**List[str]**](List[str].md)| Filter by biomarkers | [optional] 
- **embryonic** | **bool**| Filter by embryonic | [optional] 
+ **embryonic** | [**List[bool]**](List[bool].md)| Filter by embryonic | [optional] 
  **modifications** | [**List[str]**](List[str].md)| Filter by modifications | [optional] 
- **cellular_sub_pool** | **str**| Filter by cellular_sub_pool | [optional] 
- **starting_amount** | **float**| Filter by starting_amount | [optional] 
- **starting_amount_units** | **str**| Filter by starting_amount_units | [optional] 
+ **cellular_sub_pool** | [**List[str]**](List[str].md)| Filter by cellular_sub_pool | [optional] 
+ **starting_amount** | [**List[float]**](List[float].md)| Filter by starting_amount | [optional] 
+ **starting_amount_units** | [**List[str]**](List[str].md)| Filter by starting_amount_units | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **date_obtained** | **str**| Filter by date_obtained | [optional] 
- **sorted_from** | **str**| Filter by sorted_from | [optional] 
- **sorted_from_detail** | **str**| Filter by sorted_from_detail | [optional] 
- **virtual** | **bool**| Filter by virtual | [optional] 
+ **date_obtained** | [**List[str]**](List[str].md)| Filter by date_obtained | [optional] 
+ **sorted_from** | [**List[str]**](List[str].md)| Filter by sorted_from | [optional] 
+ **sorted_from_detail** | [**List[str]**](List[str].md)| Filter by sorted_from_detail | [optional] 
+ **virtual** | [**List[bool]**](List[bool].md)| Filter by virtual | [optional] 
  **construct_library_sets** | [**List[str]**](List[str].md)| Filter by construct_library_sets | [optional] 
- **moi** | **float**| Filter by moi | [optional] 
- **nucleic_acid_delivery** | **str**| Filter by nucleic_acid_delivery | [optional] 
- **time_post_library_delivery** | **float**| Filter by time_post_library_delivery | [optional] 
- **time_post_library_delivery_units** | **str**| Filter by time_post_library_delivery_units | [optional] 
+ **moi** | [**List[float]**](List[float].md)| Filter by moi | [optional] 
+ **nucleic_acid_delivery** | [**List[str]**](List[str].md)| Filter by nucleic_acid_delivery | [optional] 
+ **time_post_library_delivery** | [**List[float]**](List[float].md)| Filter by time_post_library_delivery | [optional] 
+ **time_post_library_delivery_units** | [**List[str]**](List[str].md)| Filter by time_post_library_delivery_units | [optional] 
  **protocols** | [**List[str]**](List[str].md)| Filter by protocols | [optional] 
  **classifications** | [**List[str]**](List[str].md)| Filter by classifications | [optional] 
- **time_post_change** | **float**| Filter by time_post_change | [optional] 
- **time_post_change_units** | **str**| Filter by time_post_change_units | [optional] 
+ **time_post_change** | [**List[float]**](List[float].md)| Filter by time_post_change | [optional] 
+ **time_post_change_units** | [**List[str]**](List[str].md)| Filter by time_post_change_units | [optional] 
  **cell_fate_change_treatments** | [**List[str]**](List[str].md)| Filter by cell_fate_change_treatments | [optional] 
- **cell_fate_change_protocol** | **str**| Filter by cell_fate_change_protocol | [optional] 
- **demultiplexed_from** | **str**| Filter by demultiplexed_from | [optional] 
- **passage_number** | **int**| Filter by passage_number | [optional] 
- **targeted_sample_term** | **str**| Filter by targeted_sample_term | [optional] 
- **growth_medium** | **str**| Filter by growth_medium | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **cell_fate_change_protocol** | [**List[str]**](List[str].md)| Filter by cell_fate_change_protocol | [optional] 
+ **demultiplexed_from** | [**List[str]**](List[str].md)| Filter by demultiplexed_from | [optional] 
+ **passage_number** | [**List[int]**](List[int].md)| Filter by passage_number | [optional] 
+ **targeted_sample_term** | [**List[str]**](List[str].md)| Filter by targeted_sample_term | [optional] 
+ **growth_medium** | [**List[str]**](List[str].md)| Filter by growth_medium | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **file_sets** | [**List[str]**](List[str].md)| Filter by file_sets | [optional] 
  **multiplexed_in** | [**List[str]**](List[str].md)| Filter by multiplexed_in | [optional] 
  **sorted_fractions** | [**List[str]**](List[str].md)| Filter by sorted_fractions | [optional] 
  **origin_of** | [**List[str]**](List[str].md)| Filter by origin_of | [optional] 
  **institutional_certificates** | [**List[str]**](List[str].md)| Filter by institutional_certificates | [optional] 
- **sex** | **str**| Filter by sex | [optional] 
- **age** | **str**| Filter by age | [optional] 
- **upper_bound_age_in_hours** | **float**| Filter by upper_bound_age_in_hours | [optional] 
- **lower_bound_age_in_hours** | **float**| Filter by lower_bound_age_in_hours | [optional] 
+ **sex** | [**List[str]**](List[str].md)| Filter by sex | [optional] 
+ **age** | [**List[str]**](List[str].md)| Filter by age | [optional] 
+ **upper_bound_age_in_hours** | [**List[float]**](List[float].md)| Filter by upper_bound_age_in_hours | [optional] 
+ **lower_bound_age_in_hours** | [**List[float]**](List[float].md)| Filter by lower_bound_age_in_hours | [optional] 
  **parts** | [**List[str]**](List[str].md)| Filter by parts | [optional] 
  **pooled_in** | [**List[str]**](List[str].md)| Filter by pooled_in | [optional] 
  **demultiplexed_to** | [**List[str]**](List[str].md)| Filter by demultiplexed_to | [optional] 
@@ -3409,7 +3370,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **institutional_certificates**
-> InstitutionalCertificateResults institutional_certificates(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, certificate_identifier=certificate_identifier, controlled_access=controlled_access, data_use_limitation=data_use_limitation, data_use_limitation_modifiers=data_use_limitation_modifiers, samples=samples, urls=urls, id=id, summary=summary)
+> InstitutionalCertificateResults institutional_certificates(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, certificate_identifier=certificate_identifier, controlled_access=controlled_access, data_use_limitation=data_use_limitation, data_use_limitation_modifiers=data_use_limitation_modifiers, samples=samples, urls=urls, id=id, summary=summary)
 
 List items in the InstitutionalCertificate collection.
 
@@ -3449,30 +3410,29 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    certificate_identifier = 'certificate_identifier_example' # str | Filter by certificate_identifier (optional)
-    controlled_access = True # bool | Filter by controlled_access (optional)
-    data_use_limitation = 'data_use_limitation_example' # str | Filter by data_use_limitation (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    certificate_identifier = ['certificate_identifier_example'] # List[str] | Filter by certificate_identifier (optional)
+    controlled_access = [True] # List[bool] | Filter by controlled_access (optional)
+    data_use_limitation = ['data_use_limitation_example'] # List[str] | Filter by data_use_limitation (optional)
     data_use_limitation_modifiers = ['data_use_limitation_modifiers_example'] # List[str] | Filter by data_use_limitation_modifiers (optional)
     samples = ['samples_example'] # List[str] | Filter by samples (optional)
     urls = ['urls_example'] # List[str] | Filter by urls (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
 
     try:
         # List items in the InstitutionalCertificate collection.
-        api_response = api_instance.institutional_certificates(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, certificate_identifier=certificate_identifier, controlled_access=controlled_access, data_use_limitation=data_use_limitation, data_use_limitation_modifiers=data_use_limitation_modifiers, samples=samples, urls=urls, id=id, summary=summary)
+        api_response = api_instance.institutional_certificates(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, certificate_identifier=certificate_identifier, controlled_access=controlled_access, data_use_limitation=data_use_limitation, data_use_limitation_modifiers=data_use_limitation_modifiers, samples=samples, urls=urls, id=id, summary=summary)
         print("The response of IgvfApi->institutional_certificates:\n")
         pprint(api_response)
     except Exception as e:
@@ -3489,26 +3449,25 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **certificate_identifier** | **str**| Filter by certificate_identifier | [optional] 
- **controlled_access** | **bool**| Filter by controlled_access | [optional] 
- **data_use_limitation** | **str**| Filter by data_use_limitation | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **certificate_identifier** | [**List[str]**](List[str].md)| Filter by certificate_identifier | [optional] 
+ **controlled_access** | [**List[bool]**](List[bool].md)| Filter by controlled_access | [optional] 
+ **data_use_limitation** | [**List[str]**](List[str].md)| Filter by data_use_limitation | [optional] 
  **data_use_limitation_modifiers** | [**List[str]**](List[str].md)| Filter by data_use_limitation_modifiers | [optional] 
  **samples** | [**List[str]**](List[str].md)| Filter by samples | [optional] 
  **urls** | [**List[str]**](List[str].md)| Filter by urls | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
 
 ### Return type
 
@@ -3535,7 +3494,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **labs**
-> LabResults labs(query=query, limit=limit, sort=sort, status=status, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, pi=pi, awards=awards, institute_label=institute_label, id=id, summary=summary, title=title)
+> LabResults labs(query=query, limit=limit, sort=sort, status=status, url=url, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, pi=pi, awards=awards, institute_label=institute_label, id=id, summary=summary, title=title)
 
 List items in the Lab collection.
 
@@ -3575,27 +3534,26 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    url = 'url_example' # str | Filter by url (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    name = 'name_example' # str | Filter by name (optional)
-    pi = 'pi_example' # str | Filter by pi (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    name = ['name_example'] # List[str] | Filter by name (optional)
+    pi = ['pi_example'] # List[str] | Filter by pi (optional)
     awards = ['awards_example'] # List[str] | Filter by awards (optional)
-    institute_label = 'institute_label_example' # str | Filter by institute_label (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
-    title = 'title_example' # str | Filter by title (optional)
+    institute_label = ['institute_label_example'] # List[str] | Filter by institute_label (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
+    title = ['title_example'] # List[str] | Filter by title (optional)
 
     try:
         # List items in the Lab collection.
-        api_response = api_instance.labs(query=query, limit=limit, sort=sort, status=status, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, pi=pi, awards=awards, institute_label=institute_label, id=id, summary=summary, title=title)
+        api_response = api_instance.labs(query=query, limit=limit, sort=sort, status=status, url=url, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, pi=pi, awards=awards, institute_label=institute_label, id=id, summary=summary, title=title)
         print("The response of IgvfApi->labs:\n")
         pprint(api_response)
     except Exception as e:
@@ -3612,23 +3570,22 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **url** | **str**| Filter by url | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **name** | **str**| Filter by name | [optional] 
- **pi** | **str**| Filter by pi | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
+ **pi** | [**List[str]**](List[str].md)| Filter by pi | [optional] 
  **awards** | [**List[str]**](List[str].md)| Filter by awards | [optional] 
- **institute_label** | **str**| Filter by institute_label | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
- **title** | **str**| Filter by title | [optional] 
+ **institute_label** | [**List[str]**](List[str].md)| Filter by institute_label | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
+ **title** | [**List[str]**](List[str].md)| Filter by title | [optional] 
 
 ### Return type
 
@@ -3655,7 +3612,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **matrix_files**
-> MatrixFileResults matrix_files(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, reference_files=reference_files, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, dimension1=dimension1, dimension2=dimension2, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, content_summary=content_summary)
+> MatrixFileResults matrix_files(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, reference_files=reference_files, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, dimension1=dimension1, dimension2=dimension2, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, content_summary=content_summary)
 
 List items in the MatrixFile collection.
 
@@ -3695,53 +3652,52 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     reference_files = ['reference_files_example'] # List[str] | Filter by reference_files (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
-    content_md5sum = 'content_md5sum_example' # str | Filter by content_md5sum (optional)
-    content_type = 'content_type_example' # str | Filter by content_type (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    analysis_step_version = ['analysis_step_version_example'] # List[str] | Filter by analysis_step_version (optional)
+    content_md5sum = ['content_md5sum_example'] # List[str] | Filter by content_md5sum (optional)
+    content_type = ['content_type_example'] # List[str] | Filter by content_type (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     derived_from = ['derived_from_example'] # List[str] | Filter by derived_from (optional)
-    file_format = 'file_format_example' # str | Filter by file_format (optional)
+    file_format = ['file_format_example'] # List[str] | Filter by file_format (optional)
     file_format_specifications = ['file_format_specifications_example'] # List[str] | Filter by file_format_specifications (optional)
-    file_set = 'file_set_example' # str | Filter by file_set (optional)
-    file_size = 56 # int | Filter by file_size (optional)
-    md5sum = 'md5sum_example' # str | Filter by md5sum (optional)
-    submitted_file_name = 'submitted_file_name_example' # str | Filter by submitted_file_name (optional)
-    upload_status = 'upload_status_example' # str | Filter by upload_status (optional)
-    validation_error_detail = 'validation_error_detail_example' # str | Filter by validation_error_detail (optional)
-    dimension1 = 'dimension1_example' # str | Filter by dimension1 (optional)
-    dimension2 = 'dimension2_example' # str | Filter by dimension2 (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    file_set = ['file_set_example'] # List[str] | Filter by file_set (optional)
+    file_size = [56] # List[int] | Filter by file_size (optional)
+    md5sum = ['md5sum_example'] # List[str] | Filter by md5sum (optional)
+    submitted_file_name = ['submitted_file_name_example'] # List[str] | Filter by submitted_file_name (optional)
+    upload_status = ['upload_status_example'] # List[str] | Filter by upload_status (optional)
+    validation_error_detail = ['validation_error_detail_example'] # List[str] | Filter by validation_error_detail (optional)
+    dimension1 = ['dimension1_example'] # List[str] | Filter by dimension1 (optional)
+    dimension2 = ['dimension2_example'] # List[str] | Filter by dimension2 (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
     input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
     gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
     loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
-    href = 'href_example' # str | Filter by href (optional)
-    s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
-    upload_credentials = None # object | Filter by upload_credentials (optional)
-    content_summary = 'content_summary_example' # str | Filter by content_summary (optional)
+    href = ['href_example'] # List[str] | Filter by href (optional)
+    s3_uri = ['s3_uri_example'] # List[str] | Filter by s3_uri (optional)
+    upload_credentials = None # List[object] | Filter by upload_credentials (optional)
+    content_summary = ['content_summary_example'] # List[str] | Filter by content_summary (optional)
 
     try:
         # List items in the MatrixFile collection.
-        api_response = api_instance.matrix_files(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, reference_files=reference_files, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, dimension1=dimension1, dimension2=dimension2, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, content_summary=content_summary)
+        api_response = api_instance.matrix_files(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, reference_files=reference_files, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, dimension1=dimension1, dimension2=dimension2, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, content_summary=content_summary)
         print("The response of IgvfApi->matrix_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -3758,49 +3714,48 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **reference_files** | [**List[str]**](List[str].md)| Filter by reference_files | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
- **content_md5sum** | **str**| Filter by content_md5sum | [optional] 
- **content_type** | **str**| Filter by content_type | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **analysis_step_version** | [**List[str]**](List[str].md)| Filter by analysis_step_version | [optional] 
+ **content_md5sum** | [**List[str]**](List[str].md)| Filter by content_md5sum | [optional] 
+ **content_type** | [**List[str]**](List[str].md)| Filter by content_type | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **derived_from** | [**List[str]**](List[str].md)| Filter by derived_from | [optional] 
- **file_format** | **str**| Filter by file_format | [optional] 
+ **file_format** | [**List[str]**](List[str].md)| Filter by file_format | [optional] 
  **file_format_specifications** | [**List[str]**](List[str].md)| Filter by file_format_specifications | [optional] 
- **file_set** | **str**| Filter by file_set | [optional] 
- **file_size** | **int**| Filter by file_size | [optional] 
- **md5sum** | **str**| Filter by md5sum | [optional] 
- **submitted_file_name** | **str**| Filter by submitted_file_name | [optional] 
- **upload_status** | **str**| Filter by upload_status | [optional] 
- **validation_error_detail** | **str**| Filter by validation_error_detail | [optional] 
- **dimension1** | **str**| Filter by dimension1 | [optional] 
- **dimension2** | **str**| Filter by dimension2 | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **file_set** | [**List[str]**](List[str].md)| Filter by file_set | [optional] 
+ **file_size** | [**List[int]**](List[int].md)| Filter by file_size | [optional] 
+ **md5sum** | [**List[str]**](List[str].md)| Filter by md5sum | [optional] 
+ **submitted_file_name** | [**List[str]**](List[str].md)| Filter by submitted_file_name | [optional] 
+ **upload_status** | [**List[str]**](List[str].md)| Filter by upload_status | [optional] 
+ **validation_error_detail** | [**List[str]**](List[str].md)| Filter by validation_error_detail | [optional] 
+ **dimension1** | [**List[str]**](List[str].md)| Filter by dimension1 | [optional] 
+ **dimension2** | [**List[str]**](List[str].md)| Filter by dimension2 | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
  **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
  **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
  **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
- **href** | **str**| Filter by href | [optional] 
- **s3_uri** | **str**| Filter by s3_uri | [optional] 
- **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
- **content_summary** | **str**| Filter by content_summary | [optional] 
+ **href** | [**List[str]**](List[str].md)| Filter by href | [optional] 
+ **s3_uri** | [**List[str]**](List[str].md)| Filter by s3_uri | [optional] 
+ **upload_credentials** | [**List[object]**](List[object].md)| Filter by upload_credentials | [optional] 
+ **content_summary** | [**List[str]**](List[str].md)| Filter by content_summary | [optional] 
 
 ### Return type
 
@@ -3827,7 +3782,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **measurement_sets**
-> MeasurementSetResults measurement_sets(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, assay_term=assay_term, library_construction_platform=library_construction_platform, protocols=protocols, preferred_assay_title=preferred_assay_title, multiome_size=multiome_size, control_file_sets=control_file_sets, sequencing_library_types=sequencing_library_types, auxiliary_sets=auxiliary_sets, external_image_url=external_image_url, targeted_genes=targeted_genes, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, related_multiome_datasets=related_multiome_datasets)
+> MeasurementSetResults measurement_sets(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, assay_term=assay_term, library_construction_platform=library_construction_platform, protocols=protocols, preferred_assay_title=preferred_assay_title, multiome_size=multiome_size, control_file_sets=control_file_sets, sequencing_library_types=sequencing_library_types, auxiliary_sets=auxiliary_sets, external_image_url=external_image_url, targeted_genes=targeted_genes, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, related_multiome_datasets=related_multiome_datasets)
 
 List items in the MeasurementSet collection.
 
@@ -3867,50 +3822,49 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     samples = ['samples_example'] # List[str] | Filter by samples (optional)
     donors = ['donors_example'] # List[str] | Filter by donors (optional)
-    file_set_type = 'file_set_type_example' # str | Filter by file_set_type (optional)
-    assay_term = 'assay_term_example' # str | Filter by assay_term (optional)
-    library_construction_platform = 'library_construction_platform_example' # str | Filter by library_construction_platform (optional)
+    file_set_type = ['file_set_type_example'] # List[str] | Filter by file_set_type (optional)
+    assay_term = ['assay_term_example'] # List[str] | Filter by assay_term (optional)
+    library_construction_platform = ['library_construction_platform_example'] # List[str] | Filter by library_construction_platform (optional)
     protocols = ['protocols_example'] # List[str] | Filter by protocols (optional)
-    preferred_assay_title = 'preferred_assay_title_example' # str | Filter by preferred_assay_title (optional)
-    multiome_size = 56 # int | Filter by multiome_size (optional)
+    preferred_assay_title = ['preferred_assay_title_example'] # List[str] | Filter by preferred_assay_title (optional)
+    multiome_size = [56] # List[int] | Filter by multiome_size (optional)
     control_file_sets = ['control_file_sets_example'] # List[str] | Filter by control_file_sets (optional)
     sequencing_library_types = ['sequencing_library_types_example'] # List[str] | Filter by sequencing_library_types (optional)
     auxiliary_sets = ['auxiliary_sets_example'] # List[str] | Filter by auxiliary_sets (optional)
-    external_image_url = 'external_image_url_example' # str | Filter by external_image_url (optional)
+    external_image_url = ['external_image_url_example'] # List[str] | Filter by external_image_url (optional)
     targeted_genes = ['targeted_genes_example'] # List[str] | Filter by targeted_genes (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     files = ['files_example'] # List[str] | Filter by files (optional)
     control_for = ['control_for_example'] # List[str] | Filter by control_for (optional)
-    submitted_files_timestamp = 'submitted_files_timestamp_example' # str | Filter by submitted_files_timestamp (optional)
+    submitted_files_timestamp = ['submitted_files_timestamp_example'] # List[str] | Filter by submitted_files_timestamp (optional)
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     related_multiome_datasets = ['related_multiome_datasets_example'] # List[str] | Filter by related_multiome_datasets (optional)
 
     try:
         # List items in the MeasurementSet collection.
-        api_response = api_instance.measurement_sets(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, assay_term=assay_term, library_construction_platform=library_construction_platform, protocols=protocols, preferred_assay_title=preferred_assay_title, multiome_size=multiome_size, control_file_sets=control_file_sets, sequencing_library_types=sequencing_library_types, auxiliary_sets=auxiliary_sets, external_image_url=external_image_url, targeted_genes=targeted_genes, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, related_multiome_datasets=related_multiome_datasets)
+        api_response = api_instance.measurement_sets(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, assay_term=assay_term, library_construction_platform=library_construction_platform, protocols=protocols, preferred_assay_title=preferred_assay_title, multiome_size=multiome_size, control_file_sets=control_file_sets, sequencing_library_types=sequencing_library_types, auxiliary_sets=auxiliary_sets, external_image_url=external_image_url, targeted_genes=targeted_genes, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, related_multiome_datasets=related_multiome_datasets)
         print("The response of IgvfApi->measurement_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -3927,44 +3881,43 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **samples** | [**List[str]**](List[str].md)| Filter by samples | [optional] 
  **donors** | [**List[str]**](List[str].md)| Filter by donors | [optional] 
- **file_set_type** | **str**| Filter by file_set_type | [optional] 
- **assay_term** | **str**| Filter by assay_term | [optional] 
- **library_construction_platform** | **str**| Filter by library_construction_platform | [optional] 
+ **file_set_type** | [**List[str]**](List[str].md)| Filter by file_set_type | [optional] 
+ **assay_term** | [**List[str]**](List[str].md)| Filter by assay_term | [optional] 
+ **library_construction_platform** | [**List[str]**](List[str].md)| Filter by library_construction_platform | [optional] 
  **protocols** | [**List[str]**](List[str].md)| Filter by protocols | [optional] 
- **preferred_assay_title** | **str**| Filter by preferred_assay_title | [optional] 
- **multiome_size** | **int**| Filter by multiome_size | [optional] 
+ **preferred_assay_title** | [**List[str]**](List[str].md)| Filter by preferred_assay_title | [optional] 
+ **multiome_size** | [**List[int]**](List[int].md)| Filter by multiome_size | [optional] 
  **control_file_sets** | [**List[str]**](List[str].md)| Filter by control_file_sets | [optional] 
  **sequencing_library_types** | [**List[str]**](List[str].md)| Filter by sequencing_library_types | [optional] 
  **auxiliary_sets** | [**List[str]**](List[str].md)| Filter by auxiliary_sets | [optional] 
- **external_image_url** | **str**| Filter by external_image_url | [optional] 
+ **external_image_url** | [**List[str]**](List[str].md)| Filter by external_image_url | [optional] 
  **targeted_genes** | [**List[str]**](List[str].md)| Filter by targeted_genes | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **files** | [**List[str]**](List[str].md)| Filter by files | [optional] 
  **control_for** | [**List[str]**](List[str].md)| Filter by control_for | [optional] 
- **submitted_files_timestamp** | **str**| Filter by submitted_files_timestamp | [optional] 
+ **submitted_files_timestamp** | [**List[str]**](List[str].md)| Filter by submitted_files_timestamp | [optional] 
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **related_multiome_datasets** | [**List[str]**](List[str].md)| Filter by related_multiome_datasets | [optional] 
 
@@ -3993,7 +3946,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **model_files**
-> ModelFileResults model_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
+> ModelFileResults model_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
 
 List items in the ModelFile collection.
 
@@ -4033,51 +3986,50 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    controlled_access = True # bool | Filter by controlled_access (optional)
-    anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    controlled_access = [True] # List[bool] | Filter by controlled_access (optional)
+    anvil_url = ['anvil_url_example'] # List[str] | Filter by anvil_url (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
-    content_md5sum = 'content_md5sum_example' # str | Filter by content_md5sum (optional)
-    content_type = 'content_type_example' # str | Filter by content_type (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    analysis_step_version = ['analysis_step_version_example'] # List[str] | Filter by analysis_step_version (optional)
+    content_md5sum = ['content_md5sum_example'] # List[str] | Filter by content_md5sum (optional)
+    content_type = ['content_type_example'] # List[str] | Filter by content_type (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     derived_from = ['derived_from_example'] # List[str] | Filter by derived_from (optional)
-    file_format = 'file_format_example' # str | Filter by file_format (optional)
+    file_format = ['file_format_example'] # List[str] | Filter by file_format (optional)
     file_format_specifications = ['file_format_specifications_example'] # List[str] | Filter by file_format_specifications (optional)
-    file_set = 'file_set_example' # str | Filter by file_set (optional)
-    file_size = 56 # int | Filter by file_size (optional)
-    md5sum = 'md5sum_example' # str | Filter by md5sum (optional)
-    submitted_file_name = 'submitted_file_name_example' # str | Filter by submitted_file_name (optional)
-    upload_status = 'upload_status_example' # str | Filter by upload_status (optional)
-    validation_error_detail = 'validation_error_detail_example' # str | Filter by validation_error_detail (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    file_set = ['file_set_example'] # List[str] | Filter by file_set (optional)
+    file_size = [56] # List[int] | Filter by file_size (optional)
+    md5sum = ['md5sum_example'] # List[str] | Filter by md5sum (optional)
+    submitted_file_name = ['submitted_file_name_example'] # List[str] | Filter by submitted_file_name (optional)
+    upload_status = ['upload_status_example'] # List[str] | Filter by upload_status (optional)
+    validation_error_detail = ['validation_error_detail_example'] # List[str] | Filter by validation_error_detail (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
     input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
     gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
     loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
-    href = 'href_example' # str | Filter by href (optional)
-    s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
-    upload_credentials = None # object | Filter by upload_credentials (optional)
+    href = ['href_example'] # List[str] | Filter by href (optional)
+    s3_uri = ['s3_uri_example'] # List[str] | Filter by s3_uri (optional)
+    upload_credentials = None # List[object] | Filter by upload_credentials (optional)
 
     try:
         # List items in the ModelFile collection.
-        api_response = api_instance.model_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
+        api_response = api_instance.model_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
         print("The response of IgvfApi->model_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -4094,47 +4046,46 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **controlled_access** | **bool**| Filter by controlled_access | [optional] 
- **anvil_url** | **str**| Filter by anvil_url | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **controlled_access** | [**List[bool]**](List[bool].md)| Filter by controlled_access | [optional] 
+ **anvil_url** | [**List[str]**](List[str].md)| Filter by anvil_url | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
- **content_md5sum** | **str**| Filter by content_md5sum | [optional] 
- **content_type** | **str**| Filter by content_type | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **analysis_step_version** | [**List[str]**](List[str].md)| Filter by analysis_step_version | [optional] 
+ **content_md5sum** | [**List[str]**](List[str].md)| Filter by content_md5sum | [optional] 
+ **content_type** | [**List[str]**](List[str].md)| Filter by content_type | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **derived_from** | [**List[str]**](List[str].md)| Filter by derived_from | [optional] 
- **file_format** | **str**| Filter by file_format | [optional] 
+ **file_format** | [**List[str]**](List[str].md)| Filter by file_format | [optional] 
  **file_format_specifications** | [**List[str]**](List[str].md)| Filter by file_format_specifications | [optional] 
- **file_set** | **str**| Filter by file_set | [optional] 
- **file_size** | **int**| Filter by file_size | [optional] 
- **md5sum** | **str**| Filter by md5sum | [optional] 
- **submitted_file_name** | **str**| Filter by submitted_file_name | [optional] 
- **upload_status** | **str**| Filter by upload_status | [optional] 
- **validation_error_detail** | **str**| Filter by validation_error_detail | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **file_set** | [**List[str]**](List[str].md)| Filter by file_set | [optional] 
+ **file_size** | [**List[int]**](List[int].md)| Filter by file_size | [optional] 
+ **md5sum** | [**List[str]**](List[str].md)| Filter by md5sum | [optional] 
+ **submitted_file_name** | [**List[str]**](List[str].md)| Filter by submitted_file_name | [optional] 
+ **upload_status** | [**List[str]**](List[str].md)| Filter by upload_status | [optional] 
+ **validation_error_detail** | [**List[str]**](List[str].md)| Filter by validation_error_detail | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
  **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
  **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
  **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
- **href** | **str**| Filter by href | [optional] 
- **s3_uri** | **str**| Filter by s3_uri | [optional] 
- **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
+ **href** | [**List[str]**](List[str].md)| Filter by href | [optional] 
+ **s3_uri** | [**List[str]**](List[str].md)| Filter by s3_uri | [optional] 
+ **upload_credentials** | [**List[object]**](List[object].md)| Filter by upload_credentials | [optional] 
 
 ### Return type
 
@@ -4161,7 +4112,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **model_sets**
-> ModelSetResults model_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, model_name=model_name, model_version=model_version, prediction_objects=prediction_objects, model_zoo_location=model_zoo_location, software_version=software_version, assessed_genes=assessed_genes, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for)
+> ModelSetResults model_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, model_name=model_name, model_version=model_version, prediction_objects=prediction_objects, model_zoo_location=model_zoo_location, software_version=software_version, assessed_genes=assessed_genes, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for)
 
 List items in the ModelSet collection.
 
@@ -4202,46 +4153,45 @@ with igvf_client.ApiClient(configuration) as api_client:
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     input_file_sets = ['input_file_sets_example'] # List[str] | Filter by input_file_sets (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    url = 'url_example' # str | Filter by url (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     samples = ['samples_example'] # List[str] | Filter by samples (optional)
     donors = ['donors_example'] # List[str] | Filter by donors (optional)
-    file_set_type = 'file_set_type_example' # str | Filter by file_set_type (optional)
-    model_name = 'model_name_example' # str | Filter by model_name (optional)
-    model_version = 'model_version_example' # str | Filter by model_version (optional)
+    file_set_type = ['file_set_type_example'] # List[str] | Filter by file_set_type (optional)
+    model_name = ['model_name_example'] # List[str] | Filter by model_name (optional)
+    model_version = ['model_version_example'] # List[str] | Filter by model_version (optional)
     prediction_objects = ['prediction_objects_example'] # List[str] | Filter by prediction_objects (optional)
-    model_zoo_location = 'model_zoo_location_example' # str | Filter by model_zoo_location (optional)
-    software_version = 'software_version_example' # str | Filter by software_version (optional)
+    model_zoo_location = ['model_zoo_location_example'] # List[str] | Filter by model_zoo_location (optional)
+    software_version = ['software_version_example'] # List[str] | Filter by software_version (optional)
     assessed_genes = ['assessed_genes_example'] # List[str] | Filter by assessed_genes (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     files = ['files_example'] # List[str] | Filter by files (optional)
     control_for = ['control_for_example'] # List[str] | Filter by control_for (optional)
-    submitted_files_timestamp = 'submitted_files_timestamp_example' # str | Filter by submitted_files_timestamp (optional)
+    submitted_files_timestamp = ['submitted_files_timestamp_example'] # List[str] | Filter by submitted_files_timestamp (optional)
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
 
     try:
         # List items in the ModelSet collection.
-        api_response = api_instance.model_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, model_name=model_name, model_version=model_version, prediction_objects=prediction_objects, model_zoo_location=model_zoo_location, software_version=software_version, assessed_genes=assessed_genes, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for)
+        api_response = api_instance.model_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, model_name=model_name, model_version=model_version, prediction_objects=prediction_objects, model_zoo_location=model_zoo_location, software_version=software_version, assessed_genes=assessed_genes, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for)
         print("The response of IgvfApi->model_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -4259,41 +4209,40 @@ Name | Type | Description  | Notes
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **input_file_sets** | [**List[str]**](List[str].md)| Filter by input_file_sets | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **url** | **str**| Filter by url | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **samples** | [**List[str]**](List[str].md)| Filter by samples | [optional] 
  **donors** | [**List[str]**](List[str].md)| Filter by donors | [optional] 
- **file_set_type** | **str**| Filter by file_set_type | [optional] 
- **model_name** | **str**| Filter by model_name | [optional] 
- **model_version** | **str**| Filter by model_version | [optional] 
+ **file_set_type** | [**List[str]**](List[str].md)| Filter by file_set_type | [optional] 
+ **model_name** | [**List[str]**](List[str].md)| Filter by model_name | [optional] 
+ **model_version** | [**List[str]**](List[str].md)| Filter by model_version | [optional] 
  **prediction_objects** | [**List[str]**](List[str].md)| Filter by prediction_objects | [optional] 
- **model_zoo_location** | **str**| Filter by model_zoo_location | [optional] 
- **software_version** | **str**| Filter by software_version | [optional] 
+ **model_zoo_location** | [**List[str]**](List[str].md)| Filter by model_zoo_location | [optional] 
+ **software_version** | [**List[str]**](List[str].md)| Filter by software_version | [optional] 
  **assessed_genes** | [**List[str]**](List[str].md)| Filter by assessed_genes | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **files** | [**List[str]**](List[str].md)| Filter by files | [optional] 
  **control_for** | [**List[str]**](List[str].md)| Filter by control_for | [optional] 
- **submitted_files_timestamp** | **str**| Filter by submitted_files_timestamp | [optional] 
+ **submitted_files_timestamp** | [**List[str]**](List[str].md)| Filter by submitted_files_timestamp | [optional] 
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
 
 ### Return type
@@ -4321,7 +4270,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **multiplexed_samples**
-> MultiplexedSampleResults multiplexed_samples(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, url=url, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, multiplexed_samples=multiplexed_samples, cellular_sub_pool=cellular_sub_pool, barcode_sample_map=barcode_sample_map, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sample_terms=sample_terms, disease_terms=disease_terms, treatments=treatments, modifications=modifications, donors=donors, biomarkers=biomarkers, sources=sources, classifications=classifications)
+> MultiplexedSampleResults multiplexed_samples(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, url=url, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, multiplexed_samples=multiplexed_samples, cellular_sub_pool=cellular_sub_pool, barcode_sample_map=barcode_sample_map, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sample_terms=sample_terms, disease_terms=disease_terms, treatments=treatments, modifications=modifications, donors=donors, biomarkers=biomarkers, sources=sources, classifications=classifications)
 
 List items in the MultiplexedSample collection.
 
@@ -4361,44 +4310,43 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
-    url = 'url_example' # str | Filter by url (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    starting_amount = 3.4 # float | Filter by starting_amount (optional)
-    starting_amount_units = 'starting_amount_units_example' # str | Filter by starting_amount_units (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    starting_amount = [3.4] # List[float] | Filter by starting_amount (optional)
+    starting_amount_units = ['starting_amount_units_example'] # List[str] | Filter by starting_amount_units (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    date_obtained = 'date_obtained_example' # str | Filter by date_obtained (optional)
-    sorted_from = 'sorted_from_example' # str | Filter by sorted_from (optional)
-    sorted_from_detail = 'sorted_from_detail_example' # str | Filter by sorted_from_detail (optional)
-    virtual = True # bool | Filter by virtual (optional)
+    date_obtained = ['date_obtained_example'] # List[str] | Filter by date_obtained (optional)
+    sorted_from = ['sorted_from_example'] # List[str] | Filter by sorted_from (optional)
+    sorted_from_detail = ['sorted_from_detail_example'] # List[str] | Filter by sorted_from_detail (optional)
+    virtual = [True] # List[bool] | Filter by virtual (optional)
     construct_library_sets = ['construct_library_sets_example'] # List[str] | Filter by construct_library_sets (optional)
-    moi = 3.4 # float | Filter by moi (optional)
-    nucleic_acid_delivery = 'nucleic_acid_delivery_example' # str | Filter by nucleic_acid_delivery (optional)
-    time_post_library_delivery = 3.4 # float | Filter by time_post_library_delivery (optional)
-    time_post_library_delivery_units = 'time_post_library_delivery_units_example' # str | Filter by time_post_library_delivery_units (optional)
+    moi = [3.4] # List[float] | Filter by moi (optional)
+    nucleic_acid_delivery = ['nucleic_acid_delivery_example'] # List[str] | Filter by nucleic_acid_delivery (optional)
+    time_post_library_delivery = [3.4] # List[float] | Filter by time_post_library_delivery (optional)
+    time_post_library_delivery_units = ['time_post_library_delivery_units_example'] # List[str] | Filter by time_post_library_delivery_units (optional)
     protocols = ['protocols_example'] # List[str] | Filter by protocols (optional)
     multiplexed_samples = ['multiplexed_samples_example'] # List[str] | Filter by multiplexed_samples (optional)
-    cellular_sub_pool = 'cellular_sub_pool_example' # str | Filter by cellular_sub_pool (optional)
-    barcode_sample_map = 'barcode_sample_map_example' # str | Filter by barcode_sample_map (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    cellular_sub_pool = ['cellular_sub_pool_example'] # List[str] | Filter by cellular_sub_pool (optional)
+    barcode_sample_map = ['barcode_sample_map_example'] # List[str] | Filter by barcode_sample_map (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     file_sets = ['file_sets_example'] # List[str] | Filter by file_sets (optional)
     multiplexed_in = ['multiplexed_in_example'] # List[str] | Filter by multiplexed_in (optional)
     sorted_fractions = ['sorted_fractions_example'] # List[str] | Filter by sorted_fractions (optional)
@@ -4415,7 +4363,7 @@ with igvf_client.ApiClient(configuration) as api_client:
 
     try:
         # List items in the MultiplexedSample collection.
-        api_response = api_instance.multiplexed_samples(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, url=url, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, multiplexed_samples=multiplexed_samples, cellular_sub_pool=cellular_sub_pool, barcode_sample_map=barcode_sample_map, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sample_terms=sample_terms, disease_terms=disease_terms, treatments=treatments, modifications=modifications, donors=donors, biomarkers=biomarkers, sources=sources, classifications=classifications)
+        api_response = api_instance.multiplexed_samples(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, url=url, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, multiplexed_samples=multiplexed_samples, cellular_sub_pool=cellular_sub_pool, barcode_sample_map=barcode_sample_map, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sample_terms=sample_terms, disease_terms=disease_terms, treatments=treatments, modifications=modifications, donors=donors, biomarkers=biomarkers, sources=sources, classifications=classifications)
         print("The response of IgvfApi->multiplexed_samples:\n")
         pprint(api_response)
     except Exception as e:
@@ -4432,44 +4380,43 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
- **url** | **str**| Filter by url | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **starting_amount** | **float**| Filter by starting_amount | [optional] 
- **starting_amount_units** | **str**| Filter by starting_amount_units | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **starting_amount** | [**List[float]**](List[float].md)| Filter by starting_amount | [optional] 
+ **starting_amount_units** | [**List[str]**](List[str].md)| Filter by starting_amount_units | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **date_obtained** | **str**| Filter by date_obtained | [optional] 
- **sorted_from** | **str**| Filter by sorted_from | [optional] 
- **sorted_from_detail** | **str**| Filter by sorted_from_detail | [optional] 
- **virtual** | **bool**| Filter by virtual | [optional] 
+ **date_obtained** | [**List[str]**](List[str].md)| Filter by date_obtained | [optional] 
+ **sorted_from** | [**List[str]**](List[str].md)| Filter by sorted_from | [optional] 
+ **sorted_from_detail** | [**List[str]**](List[str].md)| Filter by sorted_from_detail | [optional] 
+ **virtual** | [**List[bool]**](List[bool].md)| Filter by virtual | [optional] 
  **construct_library_sets** | [**List[str]**](List[str].md)| Filter by construct_library_sets | [optional] 
- **moi** | **float**| Filter by moi | [optional] 
- **nucleic_acid_delivery** | **str**| Filter by nucleic_acid_delivery | [optional] 
- **time_post_library_delivery** | **float**| Filter by time_post_library_delivery | [optional] 
- **time_post_library_delivery_units** | **str**| Filter by time_post_library_delivery_units | [optional] 
+ **moi** | [**List[float]**](List[float].md)| Filter by moi | [optional] 
+ **nucleic_acid_delivery** | [**List[str]**](List[str].md)| Filter by nucleic_acid_delivery | [optional] 
+ **time_post_library_delivery** | [**List[float]**](List[float].md)| Filter by time_post_library_delivery | [optional] 
+ **time_post_library_delivery_units** | [**List[str]**](List[str].md)| Filter by time_post_library_delivery_units | [optional] 
  **protocols** | [**List[str]**](List[str].md)| Filter by protocols | [optional] 
  **multiplexed_samples** | [**List[str]**](List[str].md)| Filter by multiplexed_samples | [optional] 
- **cellular_sub_pool** | **str**| Filter by cellular_sub_pool | [optional] 
- **barcode_sample_map** | **str**| Filter by barcode_sample_map | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **cellular_sub_pool** | [**List[str]**](List[str].md)| Filter by cellular_sub_pool | [optional] 
+ **barcode_sample_map** | [**List[str]**](List[str].md)| Filter by barcode_sample_map | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **file_sets** | [**List[str]**](List[str].md)| Filter by file_sets | [optional] 
  **multiplexed_in** | [**List[str]**](List[str].md)| Filter by multiplexed_in | [optional] 
  **sorted_fractions** | [**List[str]**](List[str].md)| Filter by sorted_fractions | [optional] 
@@ -4509,7 +4456,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **open_reading_frames**
-> OpenReadingFrameResults open_reading_frames(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lab=lab, award=award, orf_id=orf_id, gene=gene, protein_id=protein_id, dbxrefs=dbxrefs, pct_identical_protein=pct_identical_protein, pct_coverage_protein=pct_coverage_protein, pct_coverage_orf=pct_coverage_orf, id=id, summary=summary)
+> OpenReadingFrameResults open_reading_frames(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lab=lab, award=award, orf_id=orf_id, gene=gene, protein_id=protein_id, dbxrefs=dbxrefs, pct_identical_protein=pct_identical_protein, pct_coverage_protein=pct_coverage_protein, pct_coverage_orf=pct_coverage_orf, id=id, summary=summary)
 
 List items in the OpenReadingFrame collection.
 
@@ -4549,31 +4496,30 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    orf_id = 'orf_id_example' # str | Filter by orf_id (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    orf_id = ['orf_id_example'] # List[str] | Filter by orf_id (optional)
     gene = ['gene_example'] # List[str] | Filter by gene (optional)
-    protein_id = 'protein_id_example' # str | Filter by protein_id (optional)
+    protein_id = ['protein_id_example'] # List[str] | Filter by protein_id (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    pct_identical_protein = 3.4 # float | Filter by pct_identical_protein (optional)
-    pct_coverage_protein = 3.4 # float | Filter by pct_coverage_protein (optional)
-    pct_coverage_orf = 3.4 # float | Filter by pct_coverage_orf (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    pct_identical_protein = [3.4] # List[float] | Filter by pct_identical_protein (optional)
+    pct_coverage_protein = [3.4] # List[float] | Filter by pct_coverage_protein (optional)
+    pct_coverage_orf = [3.4] # List[float] | Filter by pct_coverage_orf (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
 
     try:
         # List items in the OpenReadingFrame collection.
-        api_response = api_instance.open_reading_frames(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lab=lab, award=award, orf_id=orf_id, gene=gene, protein_id=protein_id, dbxrefs=dbxrefs, pct_identical_protein=pct_identical_protein, pct_coverage_protein=pct_coverage_protein, pct_coverage_orf=pct_coverage_orf, id=id, summary=summary)
+        api_response = api_instance.open_reading_frames(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lab=lab, award=award, orf_id=orf_id, gene=gene, protein_id=protein_id, dbxrefs=dbxrefs, pct_identical_protein=pct_identical_protein, pct_coverage_protein=pct_coverage_protein, pct_coverage_orf=pct_coverage_orf, id=id, summary=summary)
         print("The response of IgvfApi->open_reading_frames:\n")
         pprint(api_response)
     except Exception as e:
@@ -4590,27 +4536,26 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **orf_id** | **str**| Filter by orf_id | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **orf_id** | [**List[str]**](List[str].md)| Filter by orf_id | [optional] 
  **gene** | [**List[str]**](List[str].md)| Filter by gene | [optional] 
- **protein_id** | **str**| Filter by protein_id | [optional] 
+ **protein_id** | [**List[str]**](List[str].md)| Filter by protein_id | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **pct_identical_protein** | **float**| Filter by pct_identical_protein | [optional] 
- **pct_coverage_protein** | **float**| Filter by pct_coverage_protein | [optional] 
- **pct_coverage_orf** | **float**| Filter by pct_coverage_orf | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **pct_identical_protein** | [**List[float]**](List[float].md)| Filter by pct_identical_protein | [optional] 
+ **pct_coverage_protein** | [**List[float]**](List[float].md)| Filter by pct_coverage_protein | [optional] 
+ **pct_coverage_orf** | [**List[float]**](List[float].md)| Filter by pct_coverage_orf | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
 
 ### Return type
 
@@ -4637,7 +4582,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pages**
-> PageResults pages(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, lab=lab, award=award, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, parent=parent, name=name, title=title, layout=layout, id=id, summary=summary, canonical_uri=canonical_uri)
+> PageResults pages(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, lab=lab, award=award, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, parent=parent, name=name, title=title, layout=layout, id=id, summary=summary, canonical_uri=canonical_uri)
 
 List items in the Page collection.
 
@@ -4649,6 +4594,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 import igvf_client
+from igvf_client.models.page_layout import PageLayout
 from igvf_client.models.page_results import PageResults
 from igvf_client.rest import ApiException
 from pprint import pprint
@@ -4677,29 +4623,28 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    parent = 'parent_example' # str | Filter by parent (optional)
-    name = 'name_example' # str | Filter by name (optional)
-    title = 'title_example' # str | Filter by title (optional)
-    layout = {'key': igvf_client.PageLayout()} # PageLayout | Filter by layout (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
-    canonical_uri = 'canonical_uri_example' # str | Filter by canonical_uri (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    parent = ['parent_example'] # List[str] | Filter by parent (optional)
+    name = ['name_example'] # List[str] | Filter by name (optional)
+    title = ['title_example'] # List[str] | Filter by title (optional)
+    layout = [igvf_client.PageLayout()] # List[PageLayout] | Filter by layout (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
+    canonical_uri = ['canonical_uri_example'] # List[str] | Filter by canonical_uri (optional)
 
     try:
         # List items in the Page collection.
-        api_response = api_instance.pages(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, lab=lab, award=award, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, parent=parent, name=name, title=title, layout=layout, id=id, summary=summary, canonical_uri=canonical_uri)
+        api_response = api_instance.pages(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, lab=lab, award=award, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, parent=parent, name=name, title=title, layout=layout, id=id, summary=summary, canonical_uri=canonical_uri)
         print("The response of IgvfApi->pages:\n")
         pprint(api_response)
     except Exception as e:
@@ -4716,25 +4661,24 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **parent** | **str**| Filter by parent | [optional] 
- **name** | **str**| Filter by name | [optional] 
- **title** | **str**| Filter by title | [optional] 
- **layout** | [**PageLayout**](PageLayout.md)| Filter by layout | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
- **canonical_uri** | **str**| Filter by canonical_uri | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **parent** | [**List[str]**](List[str].md)| Filter by parent | [optional] 
+ **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
+ **title** | [**List[str]**](List[str].md)| Filter by title | [optional] 
+ **layout** | [**List[PageLayout]**](List[PageLayout].md)| Filter by layout | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
+ **canonical_uri** | [**List[str]**](List[str].md)| Filter by canonical_uri | [optional] 
 
 ### Return type
 
@@ -4761,7 +4705,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **phenotype_terms**
-> PhenotypeTermResults phenotype_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology)
+> PhenotypeTermResults phenotype_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology)
 
 List items in the PhenotypeTerm collection.
 
@@ -4801,30 +4745,29 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    term_id = 'term_id_example' # str | Filter by term_id (optional)
-    term_name = 'term_name_example' # str | Filter by term_name (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    term_id = ['term_id_example'] # List[str] | Filter by term_id (optional)
+    term_name = ['term_name_example'] # List[str] | Filter by term_name (optional)
     deprecated_ntr_terms = ['deprecated_ntr_terms_example'] # List[str] | Filter by deprecated_ntr_terms (optional)
     is_a = ['is_a_example'] # List[str] | Filter by is_a (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
-    name = 'name_example' # str | Filter by name (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
+    name = ['name_example'] # List[str] | Filter by name (optional)
     synonyms = ['synonyms_example'] # List[str] | Filter by synonyms (optional)
     ancestors = ['ancestors_example'] # List[str] | Filter by ancestors (optional)
-    ontology = 'ontology_example' # str | Filter by ontology (optional)
+    ontology = ['ontology_example'] # List[str] | Filter by ontology (optional)
 
     try:
         # List items in the PhenotypeTerm collection.
-        api_response = api_instance.phenotype_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology)
+        api_response = api_instance.phenotype_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology)
         print("The response of IgvfApi->phenotype_terms:\n")
         pprint(api_response)
     except Exception as e:
@@ -4841,26 +4784,25 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **term_id** | **str**| Filter by term_id | [optional] 
- **term_name** | **str**| Filter by term_name | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **term_id** | [**List[str]**](List[str].md)| Filter by term_id | [optional] 
+ **term_name** | [**List[str]**](List[str].md)| Filter by term_name | [optional] 
  **deprecated_ntr_terms** | [**List[str]**](List[str].md)| Filter by deprecated_ntr_terms | [optional] 
  **is_a** | [**List[str]**](List[str].md)| Filter by is_a | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
- **name** | **str**| Filter by name | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
+ **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
  **synonyms** | [**List[str]**](List[str].md)| Filter by synonyms | [optional] 
  **ancestors** | [**List[str]**](List[str].md)| Filter by ancestors | [optional] 
- **ontology** | **str**| Filter by ontology | [optional] 
+ **ontology** | [**List[str]**](List[str].md)| Filter by ontology | [optional] 
 
 ### Return type
 
@@ -4887,7 +4829,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **phenotypic_features**
-> PhenotypicFeatureResults phenotypic_features(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, feature=feature, quantity=quantity, quantity_units=quantity_units, observation_date=observation_date, id=id, summary=summary)
+> PhenotypicFeatureResults phenotypic_features(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, feature=feature, quantity=quantity, quantity_units=quantity_units, observation_date=observation_date, id=id, summary=summary)
 
 List items in the PhenotypicFeature collection.
 
@@ -4927,28 +4869,27 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    feature = 'feature_example' # str | Filter by feature (optional)
-    quantity = 3.4 # float | Filter by quantity (optional)
-    quantity_units = 'quantity_units_example' # str | Filter by quantity_units (optional)
-    observation_date = 'observation_date_example' # str | Filter by observation_date (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    feature = ['feature_example'] # List[str] | Filter by feature (optional)
+    quantity = [3.4] # List[float] | Filter by quantity (optional)
+    quantity_units = ['quantity_units_example'] # List[str] | Filter by quantity_units (optional)
+    observation_date = ['observation_date_example'] # List[str] | Filter by observation_date (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
 
     try:
         # List items in the PhenotypicFeature collection.
-        api_response = api_instance.phenotypic_features(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, feature=feature, quantity=quantity, quantity_units=quantity_units, observation_date=observation_date, id=id, summary=summary)
+        api_response = api_instance.phenotypic_features(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, lab=lab, award=award, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, feature=feature, quantity=quantity, quantity_units=quantity_units, observation_date=observation_date, id=id, summary=summary)
         print("The response of IgvfApi->phenotypic_features:\n")
         pprint(api_response)
     except Exception as e:
@@ -4965,24 +4906,23 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **feature** | **str**| Filter by feature | [optional] 
- **quantity** | **float**| Filter by quantity | [optional] 
- **quantity_units** | **str**| Filter by quantity_units | [optional] 
- **observation_date** | **str**| Filter by observation_date | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **feature** | [**List[str]**](List[str].md)| Filter by feature | [optional] 
+ **quantity** | [**List[float]**](List[float].md)| Filter by quantity | [optional] 
+ **quantity_units** | [**List[str]**](List[str].md)| Filter by quantity_units | [optional] 
+ **observation_date** | [**List[str]**](List[str].md)| Filter by observation_date | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
 
 ### Return type
 
@@ -5009,7 +4949,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **platform_terms**
-> PlatformTermResults platform_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, company=company, sequencing_kits=sequencing_kits, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology)
+> PlatformTermResults platform_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, company=company, sequencing_kits=sequencing_kits, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology)
 
 List items in the PlatformTerm collection.
 
@@ -5049,32 +4989,31 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    term_id = 'term_id_example' # str | Filter by term_id (optional)
-    term_name = 'term_name_example' # str | Filter by term_name (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    term_id = ['term_id_example'] # List[str] | Filter by term_id (optional)
+    term_name = ['term_name_example'] # List[str] | Filter by term_name (optional)
     deprecated_ntr_terms = ['deprecated_ntr_terms_example'] # List[str] | Filter by deprecated_ntr_terms (optional)
     is_a = ['is_a_example'] # List[str] | Filter by is_a (optional)
-    company = 'company_example' # str | Filter by company (optional)
+    company = ['company_example'] # List[str] | Filter by company (optional)
     sequencing_kits = ['sequencing_kits_example'] # List[str] | Filter by sequencing_kits (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
-    name = 'name_example' # str | Filter by name (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
+    name = ['name_example'] # List[str] | Filter by name (optional)
     synonyms = ['synonyms_example'] # List[str] | Filter by synonyms (optional)
     ancestors = ['ancestors_example'] # List[str] | Filter by ancestors (optional)
-    ontology = 'ontology_example' # str | Filter by ontology (optional)
+    ontology = ['ontology_example'] # List[str] | Filter by ontology (optional)
 
     try:
         # List items in the PlatformTerm collection.
-        api_response = api_instance.platform_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, company=company, sequencing_kits=sequencing_kits, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology)
+        api_response = api_instance.platform_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, company=company, sequencing_kits=sequencing_kits, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology)
         print("The response of IgvfApi->platform_terms:\n")
         pprint(api_response)
     except Exception as e:
@@ -5091,28 +5030,27 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **term_id** | **str**| Filter by term_id | [optional] 
- **term_name** | **str**| Filter by term_name | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **term_id** | [**List[str]**](List[str].md)| Filter by term_id | [optional] 
+ **term_name** | [**List[str]**](List[str].md)| Filter by term_name | [optional] 
  **deprecated_ntr_terms** | [**List[str]**](List[str].md)| Filter by deprecated_ntr_terms | [optional] 
  **is_a** | [**List[str]**](List[str].md)| Filter by is_a | [optional] 
- **company** | **str**| Filter by company | [optional] 
+ **company** | [**List[str]**](List[str].md)| Filter by company | [optional] 
  **sequencing_kits** | [**List[str]**](List[str].md)| Filter by sequencing_kits | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
- **name** | **str**| Filter by name | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
+ **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
  **synonyms** | [**List[str]**](List[str].md)| Filter by synonyms | [optional] 
  **ancestors** | [**List[str]**](List[str].md)| Filter by ancestors | [optional] 
- **ontology** | **str**| Filter by ontology | [optional] 
+ **ontology** | [**List[str]**](List[str].md)| Filter by ontology | [optional] 
 
 ### Return type
 
@@ -5139,7 +5077,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **prediction_sets**
-> PredictionSetResults prediction_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, small_scale_loci_list=small_scale_loci_list, large_scale_loci_list=large_scale_loci_list, small_scale_gene_list=small_scale_gene_list, large_scale_gene_list=large_scale_gene_list, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, scope=scope, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for)
+> PredictionSetResults prediction_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, small_scale_loci_list=small_scale_loci_list, large_scale_loci_list=large_scale_loci_list, small_scale_gene_list=small_scale_gene_list, large_scale_gene_list=large_scale_gene_list, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, scope=scope, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for)
 
 List items in the PredictionSet collection.
 
@@ -5182,44 +5120,43 @@ with igvf_client.ApiClient(configuration) as api_client:
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     input_file_sets = ['input_file_sets_example'] # List[str] | Filter by input_file_sets (optional)
     small_scale_loci_list = [igvf_client.Locus()] # List[Locus] | Filter by small_scale_loci_list (optional)
-    large_scale_loci_list = 'large_scale_loci_list_example' # str | Filter by large_scale_loci_list (optional)
+    large_scale_loci_list = ['large_scale_loci_list_example'] # List[str] | Filter by large_scale_loci_list (optional)
     small_scale_gene_list = ['small_scale_gene_list_example'] # List[str] | Filter by small_scale_gene_list (optional)
-    large_scale_gene_list = 'large_scale_gene_list_example' # str | Filter by large_scale_gene_list (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    large_scale_gene_list = ['large_scale_gene_list_example'] # List[str] | Filter by large_scale_gene_list (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    url = 'url_example' # str | Filter by url (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     samples = ['samples_example'] # List[str] | Filter by samples (optional)
     donors = ['donors_example'] # List[str] | Filter by donors (optional)
-    file_set_type = 'file_set_type_example' # str | Filter by file_set_type (optional)
-    scope = 'scope_example' # str | Filter by scope (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    file_set_type = ['file_set_type_example'] # List[str] | Filter by file_set_type (optional)
+    scope = ['scope_example'] # List[str] | Filter by scope (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     files = ['files_example'] # List[str] | Filter by files (optional)
     control_for = ['control_for_example'] # List[str] | Filter by control_for (optional)
-    submitted_files_timestamp = 'submitted_files_timestamp_example' # str | Filter by submitted_files_timestamp (optional)
+    submitted_files_timestamp = ['submitted_files_timestamp_example'] # List[str] | Filter by submitted_files_timestamp (optional)
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
 
     try:
         # List items in the PredictionSet collection.
-        api_response = api_instance.prediction_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, small_scale_loci_list=small_scale_loci_list, large_scale_loci_list=large_scale_loci_list, small_scale_gene_list=small_scale_gene_list, large_scale_gene_list=large_scale_gene_list, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, scope=scope, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for)
+        api_response = api_instance.prediction_sets(query=query, limit=limit, sort=sort, input_file_sets=input_file_sets, small_scale_loci_list=small_scale_loci_list, large_scale_loci_list=large_scale_loci_list, small_scale_gene_list=small_scale_gene_list, large_scale_gene_list=large_scale_gene_list, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, url=url, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, samples=samples, donors=donors, file_set_type=file_set_type, scope=scope, id=id, summary=summary, files=files, control_for=control_for, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for)
         print("The response of IgvfApi->prediction_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -5238,39 +5175,38 @@ Name | Type | Description  | Notes
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **input_file_sets** | [**List[str]**](List[str].md)| Filter by input_file_sets | [optional] 
  **small_scale_loci_list** | [**List[Locus]**](List[Locus].md)| Filter by small_scale_loci_list | [optional] 
- **large_scale_loci_list** | **str**| Filter by large_scale_loci_list | [optional] 
+ **large_scale_loci_list** | [**List[str]**](List[str].md)| Filter by large_scale_loci_list | [optional] 
  **small_scale_gene_list** | [**List[str]**](List[str].md)| Filter by small_scale_gene_list | [optional] 
- **large_scale_gene_list** | **str**| Filter by large_scale_gene_list | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **large_scale_gene_list** | [**List[str]**](List[str].md)| Filter by large_scale_gene_list | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **url** | **str**| Filter by url | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **samples** | [**List[str]**](List[str].md)| Filter by samples | [optional] 
  **donors** | [**List[str]**](List[str].md)| Filter by donors | [optional] 
- **file_set_type** | **str**| Filter by file_set_type | [optional] 
- **scope** | **str**| Filter by scope | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **file_set_type** | [**List[str]**](List[str].md)| Filter by file_set_type | [optional] 
+ **scope** | [**List[str]**](List[str].md)| Filter by scope | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **files** | [**List[str]**](List[str].md)| Filter by files | [optional] 
  **control_for** | [**List[str]**](List[str].md)| Filter by control_for | [optional] 
- **submitted_files_timestamp** | **str**| Filter by submitted_files_timestamp | [optional] 
+ **submitted_files_timestamp** | [**List[str]**](List[str].md)| Filter by submitted_files_timestamp | [optional] 
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
 
 ### Return type
@@ -5298,7 +5234,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **primary_cells**
-> PrimaryCellResults primary_cells(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, taxa=taxa, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, passage_number=passage_number, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, classifications=classifications)
+> PrimaryCellResults primary_cells(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, taxa=taxa, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, passage_number=passage_number, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, classifications=classifications)
 
 List items in the PrimaryCell collection.
 
@@ -5338,76 +5274,75 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
-    taxa = 'taxa_example' # str | Filter by taxa (optional)
-    url = 'url_example' # str | Filter by url (optional)
+    taxa = ['taxa_example'] # List[str] | Filter by taxa (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
-    lot_id = 'lot_id_example' # str | Filter by lot_id (optional)
-    product_id = 'product_id_example' # str | Filter by product_id (optional)
+    lot_id = ['lot_id_example'] # List[str] | Filter by lot_id (optional)
+    product_id = ['product_id_example'] # List[str] | Filter by product_id (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    lower_bound_age = 3.4 # float | Filter by lower_bound_age (optional)
-    upper_bound_age = 3.4 # float | Filter by upper_bound_age (optional)
-    age_units = 'age_units_example' # str | Filter by age_units (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    lower_bound_age = [3.4] # List[float] | Filter by lower_bound_age (optional)
+    upper_bound_age = [3.4] # List[float] | Filter by upper_bound_age (optional)
+    age_units = ['age_units_example'] # List[str] | Filter by age_units (optional)
     sample_terms = ['sample_terms_example'] # List[str] | Filter by sample_terms (optional)
     disease_terms = ['disease_terms_example'] # List[str] | Filter by disease_terms (optional)
     pooled_from = ['pooled_from_example'] # List[str] | Filter by pooled_from (optional)
-    part_of = 'part_of_example' # str | Filter by part_of (optional)
-    originated_from = 'originated_from_example' # str | Filter by originated_from (optional)
+    part_of = ['part_of_example'] # List[str] | Filter by part_of (optional)
+    originated_from = ['originated_from_example'] # List[str] | Filter by originated_from (optional)
     treatments = ['treatments_example'] # List[str] | Filter by treatments (optional)
     donors = ['donors_example'] # List[str] | Filter by donors (optional)
     biomarkers = ['biomarkers_example'] # List[str] | Filter by biomarkers (optional)
-    embryonic = True # bool | Filter by embryonic (optional)
+    embryonic = [True] # List[bool] | Filter by embryonic (optional)
     modifications = ['modifications_example'] # List[str] | Filter by modifications (optional)
-    cellular_sub_pool = 'cellular_sub_pool_example' # str | Filter by cellular_sub_pool (optional)
-    starting_amount = 3.4 # float | Filter by starting_amount (optional)
-    starting_amount_units = 'starting_amount_units_example' # str | Filter by starting_amount_units (optional)
+    cellular_sub_pool = ['cellular_sub_pool_example'] # List[str] | Filter by cellular_sub_pool (optional)
+    starting_amount = [3.4] # List[float] | Filter by starting_amount (optional)
+    starting_amount_units = ['starting_amount_units_example'] # List[str] | Filter by starting_amount_units (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    date_obtained = 'date_obtained_example' # str | Filter by date_obtained (optional)
-    sorted_from = 'sorted_from_example' # str | Filter by sorted_from (optional)
-    sorted_from_detail = 'sorted_from_detail_example' # str | Filter by sorted_from_detail (optional)
-    virtual = True # bool | Filter by virtual (optional)
+    date_obtained = ['date_obtained_example'] # List[str] | Filter by date_obtained (optional)
+    sorted_from = ['sorted_from_example'] # List[str] | Filter by sorted_from (optional)
+    sorted_from_detail = ['sorted_from_detail_example'] # List[str] | Filter by sorted_from_detail (optional)
+    virtual = [True] # List[bool] | Filter by virtual (optional)
     construct_library_sets = ['construct_library_sets_example'] # List[str] | Filter by construct_library_sets (optional)
-    moi = 3.4 # float | Filter by moi (optional)
-    nucleic_acid_delivery = 'nucleic_acid_delivery_example' # str | Filter by nucleic_acid_delivery (optional)
-    time_post_library_delivery = 3.4 # float | Filter by time_post_library_delivery (optional)
-    time_post_library_delivery_units = 'time_post_library_delivery_units_example' # str | Filter by time_post_library_delivery_units (optional)
+    moi = [3.4] # List[float] | Filter by moi (optional)
+    nucleic_acid_delivery = ['nucleic_acid_delivery_example'] # List[str] | Filter by nucleic_acid_delivery (optional)
+    time_post_library_delivery = [3.4] # List[float] | Filter by time_post_library_delivery (optional)
+    time_post_library_delivery_units = ['time_post_library_delivery_units_example'] # List[str] | Filter by time_post_library_delivery_units (optional)
     protocols = ['protocols_example'] # List[str] | Filter by protocols (optional)
-    passage_number = 56 # int | Filter by passage_number (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    passage_number = [56] # List[int] | Filter by passage_number (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     file_sets = ['file_sets_example'] # List[str] | Filter by file_sets (optional)
     multiplexed_in = ['multiplexed_in_example'] # List[str] | Filter by multiplexed_in (optional)
     sorted_fractions = ['sorted_fractions_example'] # List[str] | Filter by sorted_fractions (optional)
     origin_of = ['origin_of_example'] # List[str] | Filter by origin_of (optional)
     institutional_certificates = ['institutional_certificates_example'] # List[str] | Filter by institutional_certificates (optional)
-    sex = 'sex_example' # str | Filter by sex (optional)
-    age = 'age_example' # str | Filter by age (optional)
-    upper_bound_age_in_hours = 3.4 # float | Filter by upper_bound_age_in_hours (optional)
-    lower_bound_age_in_hours = 3.4 # float | Filter by lower_bound_age_in_hours (optional)
+    sex = ['sex_example'] # List[str] | Filter by sex (optional)
+    age = ['age_example'] # List[str] | Filter by age (optional)
+    upper_bound_age_in_hours = [3.4] # List[float] | Filter by upper_bound_age_in_hours (optional)
+    lower_bound_age_in_hours = [3.4] # List[float] | Filter by lower_bound_age_in_hours (optional)
     parts = ['parts_example'] # List[str] | Filter by parts (optional)
     pooled_in = ['pooled_in_example'] # List[str] | Filter by pooled_in (optional)
     classifications = ['classifications_example'] # List[str] | Filter by classifications (optional)
 
     try:
         # List items in the PrimaryCell collection.
-        api_response = api_instance.primary_cells(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, taxa=taxa, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, passage_number=passage_number, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, classifications=classifications)
+        api_response = api_instance.primary_cells(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, taxa=taxa, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, passage_number=passage_number, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, classifications=classifications)
         print("The response of IgvfApi->primary_cells:\n")
         pprint(api_response)
     except Exception as e:
@@ -5424,69 +5359,68 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
- **taxa** | **str**| Filter by taxa | [optional] 
- **url** | **str**| Filter by url | [optional] 
+ **taxa** | [**List[str]**](List[str].md)| Filter by taxa | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
- **lot_id** | **str**| Filter by lot_id | [optional] 
- **product_id** | **str**| Filter by product_id | [optional] 
+ **lot_id** | [**List[str]**](List[str].md)| Filter by lot_id | [optional] 
+ **product_id** | [**List[str]**](List[str].md)| Filter by product_id | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **lower_bound_age** | **float**| Filter by lower_bound_age | [optional] 
- **upper_bound_age** | **float**| Filter by upper_bound_age | [optional] 
- **age_units** | **str**| Filter by age_units | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **lower_bound_age** | [**List[float]**](List[float].md)| Filter by lower_bound_age | [optional] 
+ **upper_bound_age** | [**List[float]**](List[float].md)| Filter by upper_bound_age | [optional] 
+ **age_units** | [**List[str]**](List[str].md)| Filter by age_units | [optional] 
  **sample_terms** | [**List[str]**](List[str].md)| Filter by sample_terms | [optional] 
  **disease_terms** | [**List[str]**](List[str].md)| Filter by disease_terms | [optional] 
  **pooled_from** | [**List[str]**](List[str].md)| Filter by pooled_from | [optional] 
- **part_of** | **str**| Filter by part_of | [optional] 
- **originated_from** | **str**| Filter by originated_from | [optional] 
+ **part_of** | [**List[str]**](List[str].md)| Filter by part_of | [optional] 
+ **originated_from** | [**List[str]**](List[str].md)| Filter by originated_from | [optional] 
  **treatments** | [**List[str]**](List[str].md)| Filter by treatments | [optional] 
  **donors** | [**List[str]**](List[str].md)| Filter by donors | [optional] 
  **biomarkers** | [**List[str]**](List[str].md)| Filter by biomarkers | [optional] 
- **embryonic** | **bool**| Filter by embryonic | [optional] 
+ **embryonic** | [**List[bool]**](List[bool].md)| Filter by embryonic | [optional] 
  **modifications** | [**List[str]**](List[str].md)| Filter by modifications | [optional] 
- **cellular_sub_pool** | **str**| Filter by cellular_sub_pool | [optional] 
- **starting_amount** | **float**| Filter by starting_amount | [optional] 
- **starting_amount_units** | **str**| Filter by starting_amount_units | [optional] 
+ **cellular_sub_pool** | [**List[str]**](List[str].md)| Filter by cellular_sub_pool | [optional] 
+ **starting_amount** | [**List[float]**](List[float].md)| Filter by starting_amount | [optional] 
+ **starting_amount_units** | [**List[str]**](List[str].md)| Filter by starting_amount_units | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **date_obtained** | **str**| Filter by date_obtained | [optional] 
- **sorted_from** | **str**| Filter by sorted_from | [optional] 
- **sorted_from_detail** | **str**| Filter by sorted_from_detail | [optional] 
- **virtual** | **bool**| Filter by virtual | [optional] 
+ **date_obtained** | [**List[str]**](List[str].md)| Filter by date_obtained | [optional] 
+ **sorted_from** | [**List[str]**](List[str].md)| Filter by sorted_from | [optional] 
+ **sorted_from_detail** | [**List[str]**](List[str].md)| Filter by sorted_from_detail | [optional] 
+ **virtual** | [**List[bool]**](List[bool].md)| Filter by virtual | [optional] 
  **construct_library_sets** | [**List[str]**](List[str].md)| Filter by construct_library_sets | [optional] 
- **moi** | **float**| Filter by moi | [optional] 
- **nucleic_acid_delivery** | **str**| Filter by nucleic_acid_delivery | [optional] 
- **time_post_library_delivery** | **float**| Filter by time_post_library_delivery | [optional] 
- **time_post_library_delivery_units** | **str**| Filter by time_post_library_delivery_units | [optional] 
+ **moi** | [**List[float]**](List[float].md)| Filter by moi | [optional] 
+ **nucleic_acid_delivery** | [**List[str]**](List[str].md)| Filter by nucleic_acid_delivery | [optional] 
+ **time_post_library_delivery** | [**List[float]**](List[float].md)| Filter by time_post_library_delivery | [optional] 
+ **time_post_library_delivery_units** | [**List[str]**](List[str].md)| Filter by time_post_library_delivery_units | [optional] 
  **protocols** | [**List[str]**](List[str].md)| Filter by protocols | [optional] 
- **passage_number** | **int**| Filter by passage_number | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **passage_number** | [**List[int]**](List[int].md)| Filter by passage_number | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **file_sets** | [**List[str]**](List[str].md)| Filter by file_sets | [optional] 
  **multiplexed_in** | [**List[str]**](List[str].md)| Filter by multiplexed_in | [optional] 
  **sorted_fractions** | [**List[str]**](List[str].md)| Filter by sorted_fractions | [optional] 
  **origin_of** | [**List[str]**](List[str].md)| Filter by origin_of | [optional] 
  **institutional_certificates** | [**List[str]**](List[str].md)| Filter by institutional_certificates | [optional] 
- **sex** | **str**| Filter by sex | [optional] 
- **age** | **str**| Filter by age | [optional] 
- **upper_bound_age_in_hours** | **float**| Filter by upper_bound_age_in_hours | [optional] 
- **lower_bound_age_in_hours** | **float**| Filter by lower_bound_age_in_hours | [optional] 
+ **sex** | [**List[str]**](List[str].md)| Filter by sex | [optional] 
+ **age** | [**List[str]**](List[str].md)| Filter by age | [optional] 
+ **upper_bound_age_in_hours** | [**List[float]**](List[float].md)| Filter by upper_bound_age_in_hours | [optional] 
+ **lower_bound_age_in_hours** | [**List[float]**](List[float].md)| Filter by lower_bound_age_in_hours | [optional] 
  **parts** | [**List[str]**](List[str].md)| Filter by parts | [optional] 
  **pooled_in** | [**List[str]**](List[str].md)| Filter by pooled_in | [optional] 
  **classifications** | [**List[str]**](List[str].md)| Filter by classifications | [optional] 
@@ -5516,7 +5450,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **publications**
-> PublicationResults publications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publication_identifiers=publication_identifiers, status=status, lab=lab, award=award, attachment=attachment, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, title=title, abstract=abstract, authors=authors, date_published=date_published, date_revised=date_revised, issue=issue, page=page, volume=volume, journal=journal, published_by=published_by, id=id, summary=summary, publication_year=publication_year, samples=samples, donors=donors, file_sets=file_sets, workflows=workflows, software=software, software_versions=software_versions)
+> PublicationResults publications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publication_identifiers=publication_identifiers, status=status, lab=lab, award=award, attachment=attachment, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, title=title, abstract=abstract, authors=authors, date_published=date_published, date_revised=date_revised, issue=issue, page=page, volume=volume, journal=journal, published_by=published_by, id=id, summary=summary, publication_year=publication_year, samples=samples, donors=donors, file_sets=file_sets, workflows=workflows, software=software, software_versions=software_versions)
 
 List items in the Publication collection.
 
@@ -5528,6 +5462,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 import igvf_client
+from igvf_client.models.attachment import Attachment
 from igvf_client.models.publication_results import PublicationResults
 from igvf_client.rest import ApiException
 from pprint import pprint
@@ -5556,33 +5491,32 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    attachment = {'key': igvf_client.Attachment()} # Attachment | Filter by attachment (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    attachment = [igvf_client.Attachment()] # List[Attachment] | Filter by attachment (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    title = 'title_example' # str | Filter by title (optional)
-    abstract = 'abstract_example' # str | Filter by abstract (optional)
-    authors = 'authors_example' # str | Filter by authors (optional)
-    date_published = 'date_published_example' # str | Filter by date_published (optional)
-    date_revised = 'date_revised_example' # str | Filter by date_revised (optional)
-    issue = 'issue_example' # str | Filter by issue (optional)
-    page = 'page_example' # str | Filter by page (optional)
-    volume = 'volume_example' # str | Filter by volume (optional)
-    journal = 'journal_example' # str | Filter by journal (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    title = ['title_example'] # List[str] | Filter by title (optional)
+    abstract = ['abstract_example'] # List[str] | Filter by abstract (optional)
+    authors = ['authors_example'] # List[str] | Filter by authors (optional)
+    date_published = ['date_published_example'] # List[str] | Filter by date_published (optional)
+    date_revised = ['date_revised_example'] # List[str] | Filter by date_revised (optional)
+    issue = ['issue_example'] # List[str] | Filter by issue (optional)
+    page = ['page_example'] # List[str] | Filter by page (optional)
+    volume = ['volume_example'] # List[str] | Filter by volume (optional)
+    journal = ['journal_example'] # List[str] | Filter by journal (optional)
     published_by = ['published_by_example'] # List[str] | Filter by published_by (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
-    publication_year = 56 # int | Filter by publication_year (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
+    publication_year = [56] # List[int] | Filter by publication_year (optional)
     samples = ['samples_example'] # List[str] | Filter by samples (optional)
     donors = ['donors_example'] # List[str] | Filter by donors (optional)
     file_sets = ['file_sets_example'] # List[str] | Filter by file_sets (optional)
@@ -5592,7 +5526,7 @@ with igvf_client.ApiClient(configuration) as api_client:
 
     try:
         # List items in the Publication collection.
-        api_response = api_instance.publications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publication_identifiers=publication_identifiers, status=status, lab=lab, award=award, attachment=attachment, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, title=title, abstract=abstract, authors=authors, date_published=date_published, date_revised=date_revised, issue=issue, page=page, volume=volume, journal=journal, published_by=published_by, id=id, summary=summary, publication_year=publication_year, samples=samples, donors=donors, file_sets=file_sets, workflows=workflows, software=software, software_versions=software_versions)
+        api_response = api_instance.publications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publication_identifiers=publication_identifiers, status=status, lab=lab, award=award, attachment=attachment, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, title=title, abstract=abstract, authors=authors, date_published=date_published, date_revised=date_revised, issue=issue, page=page, volume=volume, journal=journal, published_by=published_by, id=id, summary=summary, publication_year=publication_year, samples=samples, donors=donors, file_sets=file_sets, workflows=workflows, software=software, software_versions=software_versions)
         print("The response of IgvfApi->publications:\n")
         pprint(api_response)
     except Exception as e:
@@ -5609,33 +5543,32 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **attachment** | [**Attachment**](Attachment.md)| Filter by attachment | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **attachment** | [**List[Attachment]**](List[Attachment].md)| Filter by attachment | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **title** | **str**| Filter by title | [optional] 
- **abstract** | **str**| Filter by abstract | [optional] 
- **authors** | **str**| Filter by authors | [optional] 
- **date_published** | **str**| Filter by date_published | [optional] 
- **date_revised** | **str**| Filter by date_revised | [optional] 
- **issue** | **str**| Filter by issue | [optional] 
- **page** | **str**| Filter by page | [optional] 
- **volume** | **str**| Filter by volume | [optional] 
- **journal** | **str**| Filter by journal | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **title** | [**List[str]**](List[str].md)| Filter by title | [optional] 
+ **abstract** | [**List[str]**](List[str].md)| Filter by abstract | [optional] 
+ **authors** | [**List[str]**](List[str].md)| Filter by authors | [optional] 
+ **date_published** | [**List[str]**](List[str].md)| Filter by date_published | [optional] 
+ **date_revised** | [**List[str]**](List[str].md)| Filter by date_revised | [optional] 
+ **issue** | [**List[str]**](List[str].md)| Filter by issue | [optional] 
+ **page** | [**List[str]**](List[str].md)| Filter by page | [optional] 
+ **volume** | [**List[str]**](List[str].md)| Filter by volume | [optional] 
+ **journal** | [**List[str]**](List[str].md)| Filter by journal | [optional] 
  **published_by** | [**List[str]**](List[str].md)| Filter by published_by | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
- **publication_year** | **int**| Filter by publication_year | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
+ **publication_year** | [**List[int]**](List[int].md)| Filter by publication_year | [optional] 
  **samples** | [**List[str]**](List[str].md)| Filter by samples | [optional] 
  **donors** | [**List[str]**](List[str].md)| Filter by donors | [optional] 
  **file_sets** | [**List[str]**](List[str].md)| Filter by file_sets | [optional] 
@@ -5668,7 +5601,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reference_files**
-> ReferenceFileResults reference_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, assembly=assembly, release_timestamp=release_timestamp, file_format_type=file_format_type, transcriptome_annotation=transcriptome_annotation, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, source_url=source_url, sources=sources, external=external, external_id=external_id, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
+> ReferenceFileResults reference_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, assembly=assembly, release_timestamp=release_timestamp, file_format_type=file_format_type, transcriptome_annotation=transcriptome_annotation, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, source_url=source_url, sources=sources, external=external, external_id=external_id, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
 
 List items in the ReferenceFile collection.
 
@@ -5708,58 +5641,57 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    controlled_access = True # bool | Filter by controlled_access (optional)
-    anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
-    assembly = 'assembly_example' # str | Filter by assembly (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    file_format_type = 'file_format_type_example' # str | Filter by file_format_type (optional)
-    transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
+    controlled_access = [True] # List[bool] | Filter by controlled_access (optional)
+    anvil_url = ['anvil_url_example'] # List[str] | Filter by anvil_url (optional)
+    assembly = ['assembly_example'] # List[str] | Filter by assembly (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    file_format_type = ['file_format_type_example'] # List[str] | Filter by file_format_type (optional)
+    transcriptome_annotation = ['transcriptome_annotation_example'] # List[str] | Filter by transcriptome_annotation (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
-    content_md5sum = 'content_md5sum_example' # str | Filter by content_md5sum (optional)
-    content_type = 'content_type_example' # str | Filter by content_type (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    analysis_step_version = ['analysis_step_version_example'] # List[str] | Filter by analysis_step_version (optional)
+    content_md5sum = ['content_md5sum_example'] # List[str] | Filter by content_md5sum (optional)
+    content_type = ['content_type_example'] # List[str] | Filter by content_type (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     derived_from = ['derived_from_example'] # List[str] | Filter by derived_from (optional)
-    file_format = 'file_format_example' # str | Filter by file_format (optional)
+    file_format = ['file_format_example'] # List[str] | Filter by file_format (optional)
     file_format_specifications = ['file_format_specifications_example'] # List[str] | Filter by file_format_specifications (optional)
-    file_set = 'file_set_example' # str | Filter by file_set (optional)
-    file_size = 56 # int | Filter by file_size (optional)
-    md5sum = 'md5sum_example' # str | Filter by md5sum (optional)
-    submitted_file_name = 'submitted_file_name_example' # str | Filter by submitted_file_name (optional)
-    upload_status = 'upload_status_example' # str | Filter by upload_status (optional)
-    validation_error_detail = 'validation_error_detail_example' # str | Filter by validation_error_detail (optional)
-    source_url = 'source_url_example' # str | Filter by source_url (optional)
+    file_set = ['file_set_example'] # List[str] | Filter by file_set (optional)
+    file_size = [56] # List[int] | Filter by file_size (optional)
+    md5sum = ['md5sum_example'] # List[str] | Filter by md5sum (optional)
+    submitted_file_name = ['submitted_file_name_example'] # List[str] | Filter by submitted_file_name (optional)
+    upload_status = ['upload_status_example'] # List[str] | Filter by upload_status (optional)
+    validation_error_detail = ['validation_error_detail_example'] # List[str] | Filter by validation_error_detail (optional)
+    source_url = ['source_url_example'] # List[str] | Filter by source_url (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
-    external = True # bool | Filter by external (optional)
-    external_id = 'external_id_example' # str | Filter by external_id (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    external = [True] # List[bool] | Filter by external (optional)
+    external_id = ['external_id_example'] # List[str] | Filter by external_id (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
     input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
     gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
     loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
-    href = 'href_example' # str | Filter by href (optional)
-    s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
-    upload_credentials = None # object | Filter by upload_credentials (optional)
+    href = ['href_example'] # List[str] | Filter by href (optional)
+    s3_uri = ['s3_uri_example'] # List[str] | Filter by s3_uri (optional)
+    upload_credentials = None # List[object] | Filter by upload_credentials (optional)
 
     try:
         # List items in the ReferenceFile collection.
-        api_response = api_instance.reference_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, assembly=assembly, release_timestamp=release_timestamp, file_format_type=file_format_type, transcriptome_annotation=transcriptome_annotation, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, source_url=source_url, sources=sources, external=external, external_id=external_id, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
+        api_response = api_instance.reference_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, assembly=assembly, release_timestamp=release_timestamp, file_format_type=file_format_type, transcriptome_annotation=transcriptome_annotation, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, source_url=source_url, sources=sources, external=external, external_id=external_id, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
         print("The response of IgvfApi->reference_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -5776,54 +5708,53 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **controlled_access** | **bool**| Filter by controlled_access | [optional] 
- **anvil_url** | **str**| Filter by anvil_url | [optional] 
- **assembly** | **str**| Filter by assembly | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **file_format_type** | **str**| Filter by file_format_type | [optional] 
- **transcriptome_annotation** | **str**| Filter by transcriptome_annotation | [optional] 
+ **controlled_access** | [**List[bool]**](List[bool].md)| Filter by controlled_access | [optional] 
+ **anvil_url** | [**List[str]**](List[str].md)| Filter by anvil_url | [optional] 
+ **assembly** | [**List[str]**](List[str].md)| Filter by assembly | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **file_format_type** | [**List[str]**](List[str].md)| Filter by file_format_type | [optional] 
+ **transcriptome_annotation** | [**List[str]**](List[str].md)| Filter by transcriptome_annotation | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
- **content_md5sum** | **str**| Filter by content_md5sum | [optional] 
- **content_type** | **str**| Filter by content_type | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **analysis_step_version** | [**List[str]**](List[str].md)| Filter by analysis_step_version | [optional] 
+ **content_md5sum** | [**List[str]**](List[str].md)| Filter by content_md5sum | [optional] 
+ **content_type** | [**List[str]**](List[str].md)| Filter by content_type | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **derived_from** | [**List[str]**](List[str].md)| Filter by derived_from | [optional] 
- **file_format** | **str**| Filter by file_format | [optional] 
+ **file_format** | [**List[str]**](List[str].md)| Filter by file_format | [optional] 
  **file_format_specifications** | [**List[str]**](List[str].md)| Filter by file_format_specifications | [optional] 
- **file_set** | **str**| Filter by file_set | [optional] 
- **file_size** | **int**| Filter by file_size | [optional] 
- **md5sum** | **str**| Filter by md5sum | [optional] 
- **submitted_file_name** | **str**| Filter by submitted_file_name | [optional] 
- **upload_status** | **str**| Filter by upload_status | [optional] 
- **validation_error_detail** | **str**| Filter by validation_error_detail | [optional] 
- **source_url** | **str**| Filter by source_url | [optional] 
+ **file_set** | [**List[str]**](List[str].md)| Filter by file_set | [optional] 
+ **file_size** | [**List[int]**](List[int].md)| Filter by file_size | [optional] 
+ **md5sum** | [**List[str]**](List[str].md)| Filter by md5sum | [optional] 
+ **submitted_file_name** | [**List[str]**](List[str].md)| Filter by submitted_file_name | [optional] 
+ **upload_status** | [**List[str]**](List[str].md)| Filter by upload_status | [optional] 
+ **validation_error_detail** | [**List[str]**](List[str].md)| Filter by validation_error_detail | [optional] 
+ **source_url** | [**List[str]**](List[str].md)| Filter by source_url | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
- **external** | **bool**| Filter by external | [optional] 
- **external_id** | **str**| Filter by external_id | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **external** | [**List[bool]**](List[bool].md)| Filter by external | [optional] 
+ **external_id** | [**List[str]**](List[str].md)| Filter by external_id | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
  **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
  **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
  **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
- **href** | **str**| Filter by href | [optional] 
- **s3_uri** | **str**| Filter by s3_uri | [optional] 
- **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
+ **href** | [**List[str]**](List[str].md)| Filter by href | [optional] 
+ **s3_uri** | [**List[str]**](List[str].md)| Filter by s3_uri | [optional] 
+ **upload_credentials** | [**List[object]**](List[object].md)| Filter by upload_credentials | [optional] 
 
 ### Return type
 
@@ -5939,7 +5870,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **rodent_donors**
-> RodentDonorResults rodent_donors(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, sex=sex, phenotypic_features=phenotypic_features, virtual=virtual, strain_background=strain_background, strain=strain, genotype=genotype, individual_rodent=individual_rodent, rodent_identifier=rodent_identifier, id=id, summary=summary)
+> RodentDonorResults rodent_donors(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, sex=sex, phenotypic_features=phenotypic_features, virtual=virtual, strain_background=strain_background, strain=strain, genotype=genotype, individual_rodent=individual_rodent, rodent_identifier=rodent_identifier, id=id, summary=summary)
 
 List items in the RodentDonor collection.
 
@@ -5979,45 +5910,44 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    taxa = 'taxa_example' # str | Filter by taxa (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    taxa = ['taxa_example'] # List[str] | Filter by taxa (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
-    url = 'url_example' # str | Filter by url (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
-    lot_id = 'lot_id_example' # str | Filter by lot_id (optional)
-    product_id = 'product_id_example' # str | Filter by product_id (optional)
+    lot_id = ['lot_id_example'] # List[str] | Filter by lot_id (optional)
+    product_id = ['product_id_example'] # List[str] | Filter by product_id (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    sex = 'sex_example' # str | Filter by sex (optional)
+    sex = ['sex_example'] # List[str] | Filter by sex (optional)
     phenotypic_features = ['phenotypic_features_example'] # List[str] | Filter by phenotypic_features (optional)
-    virtual = True # bool | Filter by virtual (optional)
-    strain_background = 'strain_background_example' # str | Filter by strain_background (optional)
-    strain = 'strain_example' # str | Filter by strain (optional)
-    genotype = 'genotype_example' # str | Filter by genotype (optional)
-    individual_rodent = True # bool | Filter by individual_rodent (optional)
-    rodent_identifier = 'rodent_identifier_example' # str | Filter by rodent_identifier (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    virtual = [True] # List[bool] | Filter by virtual (optional)
+    strain_background = ['strain_background_example'] # List[str] | Filter by strain_background (optional)
+    strain = ['strain_example'] # List[str] | Filter by strain (optional)
+    genotype = ['genotype_example'] # List[str] | Filter by genotype (optional)
+    individual_rodent = [True] # List[bool] | Filter by individual_rodent (optional)
+    rodent_identifier = ['rodent_identifier_example'] # List[str] | Filter by rodent_identifier (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
 
     try:
         # List items in the RodentDonor collection.
-        api_response = api_instance.rodent_donors(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, sex=sex, phenotypic_features=phenotypic_features, virtual=virtual, strain_background=strain_background, strain=strain, genotype=genotype, individual_rodent=individual_rodent, rodent_identifier=rodent_identifier, id=id, summary=summary)
+        api_response = api_instance.rodent_donors(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, dbxrefs=dbxrefs, sex=sex, phenotypic_features=phenotypic_features, virtual=virtual, strain_background=strain_background, strain=strain, genotype=genotype, individual_rodent=individual_rodent, rodent_identifier=rodent_identifier, id=id, summary=summary)
         print("The response of IgvfApi->rodent_donors:\n")
         pprint(api_response)
     except Exception as e:
@@ -6034,41 +5964,40 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **taxa** | **str**| Filter by taxa | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **taxa** | [**List[str]**](List[str].md)| Filter by taxa | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
- **url** | **str**| Filter by url | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
- **lot_id** | **str**| Filter by lot_id | [optional] 
- **product_id** | **str**| Filter by product_id | [optional] 
+ **lot_id** | [**List[str]**](List[str].md)| Filter by lot_id | [optional] 
+ **product_id** | [**List[str]**](List[str].md)| Filter by product_id | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **sex** | **str**| Filter by sex | [optional] 
+ **sex** | [**List[str]**](List[str].md)| Filter by sex | [optional] 
  **phenotypic_features** | [**List[str]**](List[str].md)| Filter by phenotypic_features | [optional] 
- **virtual** | **bool**| Filter by virtual | [optional] 
- **strain_background** | **str**| Filter by strain_background | [optional] 
- **strain** | **str**| Filter by strain | [optional] 
- **genotype** | **str**| Filter by genotype | [optional] 
- **individual_rodent** | **bool**| Filter by individual_rodent | [optional] 
- **rodent_identifier** | **str**| Filter by rodent_identifier | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **virtual** | [**List[bool]**](List[bool].md)| Filter by virtual | [optional] 
+ **strain_background** | [**List[str]**](List[str].md)| Filter by strain_background | [optional] 
+ **strain** | [**List[str]**](List[str].md)| Filter by strain | [optional] 
+ **genotype** | [**List[str]**](List[str].md)| Filter by genotype | [optional] 
+ **individual_rodent** | [**List[bool]**](List[bool].md)| Filter by individual_rodent | [optional] 
+ **rodent_identifier** | [**List[str]**](List[str].md)| Filter by rodent_identifier | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
 
 ### Return type
 
@@ -6095,7 +6024,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sample_terms**
-> SampleTermResults sample_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, dbxrefs=dbxrefs, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology, organ_slims=organ_slims, cell_slims=cell_slims, developmental_slims=developmental_slims, system_slims=system_slims)
+> SampleTermResults sample_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, dbxrefs=dbxrefs, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology, organ_slims=organ_slims, cell_slims=cell_slims, developmental_slims=developmental_slims, system_slims=system_slims)
 
 List items in the SampleTerm collection.
 
@@ -6135,27 +6064,26 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    term_id = 'term_id_example' # str | Filter by term_id (optional)
-    term_name = 'term_name_example' # str | Filter by term_name (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    term_id = ['term_id_example'] # List[str] | Filter by term_id (optional)
+    term_name = ['term_name_example'] # List[str] | Filter by term_name (optional)
     deprecated_ntr_terms = ['deprecated_ntr_terms_example'] # List[str] | Filter by deprecated_ntr_terms (optional)
     is_a = ['is_a_example'] # List[str] | Filter by is_a (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
-    name = 'name_example' # str | Filter by name (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
+    name = ['name_example'] # List[str] | Filter by name (optional)
     synonyms = ['synonyms_example'] # List[str] | Filter by synonyms (optional)
     ancestors = ['ancestors_example'] # List[str] | Filter by ancestors (optional)
-    ontology = 'ontology_example' # str | Filter by ontology (optional)
+    ontology = ['ontology_example'] # List[str] | Filter by ontology (optional)
     organ_slims = ['organ_slims_example'] # List[str] | Filter by organ_slims (optional)
     cell_slims = ['cell_slims_example'] # List[str] | Filter by cell_slims (optional)
     developmental_slims = ['developmental_slims_example'] # List[str] | Filter by developmental_slims (optional)
@@ -6163,7 +6091,7 @@ with igvf_client.ApiClient(configuration) as api_client:
 
     try:
         # List items in the SampleTerm collection.
-        api_response = api_instance.sample_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, dbxrefs=dbxrefs, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology, organ_slims=organ_slims, cell_slims=cell_slims, developmental_slims=developmental_slims, system_slims=system_slims)
+        api_response = api_instance.sample_terms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, term_id=term_id, term_name=term_name, deprecated_ntr_terms=deprecated_ntr_terms, is_a=is_a, dbxrefs=dbxrefs, id=id, summary=summary, name=name, synonyms=synonyms, ancestors=ancestors, ontology=ontology, organ_slims=organ_slims, cell_slims=cell_slims, developmental_slims=developmental_slims, system_slims=system_slims)
         print("The response of IgvfApi->sample_terms:\n")
         pprint(api_response)
     except Exception as e:
@@ -6180,27 +6108,26 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **term_id** | **str**| Filter by term_id | [optional] 
- **term_name** | **str**| Filter by term_name | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **term_id** | [**List[str]**](List[str].md)| Filter by term_id | [optional] 
+ **term_name** | [**List[str]**](List[str].md)| Filter by term_name | [optional] 
  **deprecated_ntr_terms** | [**List[str]**](List[str].md)| Filter by deprecated_ntr_terms | [optional] 
  **is_a** | [**List[str]**](List[str].md)| Filter by is_a | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
- **name** | **str**| Filter by name | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
+ **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
  **synonyms** | [**List[str]**](List[str].md)| Filter by synonyms | [optional] 
  **ancestors** | [**List[str]**](List[str].md)| Filter by ancestors | [optional] 
- **ontology** | **str**| Filter by ontology | [optional] 
+ **ontology** | [**List[str]**](List[str].md)| Filter by ontology | [optional] 
  **organ_slims** | [**List[str]**](List[str].md)| Filter by organ_slims | [optional] 
  **cell_slims** | [**List[str]**](List[str].md)| Filter by cell_slims | [optional] 
  **developmental_slims** | [**List[str]**](List[str].md)| Filter by developmental_slims | [optional] 
@@ -6474,7 +6401,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sequence_files**
-> SequenceFileResults sequence_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, flowcell_id=flowcell_id, lane=lane, read_count=read_count, minimum_read_length=minimum_read_length, maximum_read_length=maximum_read_length, mean_read_length=mean_read_length, sequencing_platform=sequencing_platform, sequencing_kit=sequencing_kit, sequencing_run=sequencing_run, illumina_read_type=illumina_read_type, index=index, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, seqspecs=seqspecs)
+> SequenceFileResults sequence_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, flowcell_id=flowcell_id, lane=lane, read_count=read_count, minimum_read_length=minimum_read_length, maximum_read_length=maximum_read_length, mean_read_length=mean_read_length, sequencing_platform=sequencing_platform, sequencing_kit=sequencing_kit, sequencing_run=sequencing_run, illumina_read_type=illumina_read_type, index=index, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, seqspecs=seqspecs)
 
 List items in the SequenceFile collection.
 
@@ -6514,63 +6441,62 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    controlled_access = True # bool | Filter by controlled_access (optional)
-    anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    controlled_access = [True] # List[bool] | Filter by controlled_access (optional)
+    anvil_url = ['anvil_url_example'] # List[str] | Filter by anvil_url (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
-    content_md5sum = 'content_md5sum_example' # str | Filter by content_md5sum (optional)
-    content_type = 'content_type_example' # str | Filter by content_type (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    analysis_step_version = ['analysis_step_version_example'] # List[str] | Filter by analysis_step_version (optional)
+    content_md5sum = ['content_md5sum_example'] # List[str] | Filter by content_md5sum (optional)
+    content_type = ['content_type_example'] # List[str] | Filter by content_type (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     derived_from = ['derived_from_example'] # List[str] | Filter by derived_from (optional)
-    file_format = 'file_format_example' # str | Filter by file_format (optional)
+    file_format = ['file_format_example'] # List[str] | Filter by file_format (optional)
     file_format_specifications = ['file_format_specifications_example'] # List[str] | Filter by file_format_specifications (optional)
-    file_set = 'file_set_example' # str | Filter by file_set (optional)
-    file_size = 56 # int | Filter by file_size (optional)
-    md5sum = 'md5sum_example' # str | Filter by md5sum (optional)
-    submitted_file_name = 'submitted_file_name_example' # str | Filter by submitted_file_name (optional)
-    upload_status = 'upload_status_example' # str | Filter by upload_status (optional)
-    validation_error_detail = 'validation_error_detail_example' # str | Filter by validation_error_detail (optional)
-    flowcell_id = 'flowcell_id_example' # str | Filter by flowcell_id (optional)
-    lane = 56 # int | Filter by lane (optional)
-    read_count = 56 # int | Filter by read_count (optional)
-    minimum_read_length = 56 # int | Filter by minimum_read_length (optional)
-    maximum_read_length = 56 # int | Filter by maximum_read_length (optional)
-    mean_read_length = 3.4 # float | Filter by mean_read_length (optional)
-    sequencing_platform = 'sequencing_platform_example' # str | Filter by sequencing_platform (optional)
-    sequencing_kit = 'sequencing_kit_example' # str | Filter by sequencing_kit (optional)
-    sequencing_run = 56 # int | Filter by sequencing_run (optional)
-    illumina_read_type = 'illumina_read_type_example' # str | Filter by illumina_read_type (optional)
-    index = 'index_example' # str | Filter by index (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    file_set = ['file_set_example'] # List[str] | Filter by file_set (optional)
+    file_size = [56] # List[int] | Filter by file_size (optional)
+    md5sum = ['md5sum_example'] # List[str] | Filter by md5sum (optional)
+    submitted_file_name = ['submitted_file_name_example'] # List[str] | Filter by submitted_file_name (optional)
+    upload_status = ['upload_status_example'] # List[str] | Filter by upload_status (optional)
+    validation_error_detail = ['validation_error_detail_example'] # List[str] | Filter by validation_error_detail (optional)
+    flowcell_id = ['flowcell_id_example'] # List[str] | Filter by flowcell_id (optional)
+    lane = [56] # List[int] | Filter by lane (optional)
+    read_count = [56] # List[int] | Filter by read_count (optional)
+    minimum_read_length = [56] # List[int] | Filter by minimum_read_length (optional)
+    maximum_read_length = [56] # List[int] | Filter by maximum_read_length (optional)
+    mean_read_length = [3.4] # List[float] | Filter by mean_read_length (optional)
+    sequencing_platform = ['sequencing_platform_example'] # List[str] | Filter by sequencing_platform (optional)
+    sequencing_kit = ['sequencing_kit_example'] # List[str] | Filter by sequencing_kit (optional)
+    sequencing_run = [56] # List[int] | Filter by sequencing_run (optional)
+    illumina_read_type = ['illumina_read_type_example'] # List[str] | Filter by illumina_read_type (optional)
+    index = ['index_example'] # List[str] | Filter by index (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
     input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
     gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
     loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
-    href = 'href_example' # str | Filter by href (optional)
-    s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
-    upload_credentials = None # object | Filter by upload_credentials (optional)
+    href = ['href_example'] # List[str] | Filter by href (optional)
+    s3_uri = ['s3_uri_example'] # List[str] | Filter by s3_uri (optional)
+    upload_credentials = None # List[object] | Filter by upload_credentials (optional)
     seqspecs = ['seqspecs_example'] # List[str] | Filter by seqspecs (optional)
 
     try:
         # List items in the SequenceFile collection.
-        api_response = api_instance.sequence_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, flowcell_id=flowcell_id, lane=lane, read_count=read_count, minimum_read_length=minimum_read_length, maximum_read_length=maximum_read_length, mean_read_length=mean_read_length, sequencing_platform=sequencing_platform, sequencing_kit=sequencing_kit, sequencing_run=sequencing_run, illumina_read_type=illumina_read_type, index=index, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, seqspecs=seqspecs)
+        api_response = api_instance.sequence_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, release_timestamp=release_timestamp, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, flowcell_id=flowcell_id, lane=lane, read_count=read_count, minimum_read_length=minimum_read_length, maximum_read_length=maximum_read_length, mean_read_length=mean_read_length, sequencing_platform=sequencing_platform, sequencing_kit=sequencing_kit, sequencing_run=sequencing_run, illumina_read_type=illumina_read_type, index=index, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, seqspecs=seqspecs)
         print("The response of IgvfApi->sequence_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -6587,58 +6513,57 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **controlled_access** | **bool**| Filter by controlled_access | [optional] 
- **anvil_url** | **str**| Filter by anvil_url | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **controlled_access** | [**List[bool]**](List[bool].md)| Filter by controlled_access | [optional] 
+ **anvil_url** | [**List[str]**](List[str].md)| Filter by anvil_url | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
- **content_md5sum** | **str**| Filter by content_md5sum | [optional] 
- **content_type** | **str**| Filter by content_type | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **analysis_step_version** | [**List[str]**](List[str].md)| Filter by analysis_step_version | [optional] 
+ **content_md5sum** | [**List[str]**](List[str].md)| Filter by content_md5sum | [optional] 
+ **content_type** | [**List[str]**](List[str].md)| Filter by content_type | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **derived_from** | [**List[str]**](List[str].md)| Filter by derived_from | [optional] 
- **file_format** | **str**| Filter by file_format | [optional] 
+ **file_format** | [**List[str]**](List[str].md)| Filter by file_format | [optional] 
  **file_format_specifications** | [**List[str]**](List[str].md)| Filter by file_format_specifications | [optional] 
- **file_set** | **str**| Filter by file_set | [optional] 
- **file_size** | **int**| Filter by file_size | [optional] 
- **md5sum** | **str**| Filter by md5sum | [optional] 
- **submitted_file_name** | **str**| Filter by submitted_file_name | [optional] 
- **upload_status** | **str**| Filter by upload_status | [optional] 
- **validation_error_detail** | **str**| Filter by validation_error_detail | [optional] 
- **flowcell_id** | **str**| Filter by flowcell_id | [optional] 
- **lane** | **int**| Filter by lane | [optional] 
- **read_count** | **int**| Filter by read_count | [optional] 
- **minimum_read_length** | **int**| Filter by minimum_read_length | [optional] 
- **maximum_read_length** | **int**| Filter by maximum_read_length | [optional] 
- **mean_read_length** | **float**| Filter by mean_read_length | [optional] 
- **sequencing_platform** | **str**| Filter by sequencing_platform | [optional] 
- **sequencing_kit** | **str**| Filter by sequencing_kit | [optional] 
- **sequencing_run** | **int**| Filter by sequencing_run | [optional] 
- **illumina_read_type** | **str**| Filter by illumina_read_type | [optional] 
- **index** | **str**| Filter by index | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **file_set** | [**List[str]**](List[str].md)| Filter by file_set | [optional] 
+ **file_size** | [**List[int]**](List[int].md)| Filter by file_size | [optional] 
+ **md5sum** | [**List[str]**](List[str].md)| Filter by md5sum | [optional] 
+ **submitted_file_name** | [**List[str]**](List[str].md)| Filter by submitted_file_name | [optional] 
+ **upload_status** | [**List[str]**](List[str].md)| Filter by upload_status | [optional] 
+ **validation_error_detail** | [**List[str]**](List[str].md)| Filter by validation_error_detail | [optional] 
+ **flowcell_id** | [**List[str]**](List[str].md)| Filter by flowcell_id | [optional] 
+ **lane** | [**List[int]**](List[int].md)| Filter by lane | [optional] 
+ **read_count** | [**List[int]**](List[int].md)| Filter by read_count | [optional] 
+ **minimum_read_length** | [**List[int]**](List[int].md)| Filter by minimum_read_length | [optional] 
+ **maximum_read_length** | [**List[int]**](List[int].md)| Filter by maximum_read_length | [optional] 
+ **mean_read_length** | [**List[float]**](List[float].md)| Filter by mean_read_length | [optional] 
+ **sequencing_platform** | [**List[str]**](List[str].md)| Filter by sequencing_platform | [optional] 
+ **sequencing_kit** | [**List[str]**](List[str].md)| Filter by sequencing_kit | [optional] 
+ **sequencing_run** | [**List[int]**](List[int].md)| Filter by sequencing_run | [optional] 
+ **illumina_read_type** | [**List[str]**](List[str].md)| Filter by illumina_read_type | [optional] 
+ **index** | [**List[str]**](List[str].md)| Filter by index | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
  **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
  **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
  **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
- **href** | **str**| Filter by href | [optional] 
- **s3_uri** | **str**| Filter by s3_uri | [optional] 
- **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
+ **href** | [**List[str]**](List[str].md)| Filter by href | [optional] 
+ **s3_uri** | [**List[str]**](List[str].md)| Filter by s3_uri | [optional] 
+ **upload_credentials** | [**List[object]**](List[object].md)| Filter by upload_credentials | [optional] 
  **seqspecs** | [**List[str]**](List[str].md)| Filter by seqspecs | [optional] 
 
 ### Return type
@@ -6666,7 +6591,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **signal_files**
-> SignalFileResults signal_files(query=query, limit=limit, sort=sort, transcriptome_annotation=transcriptome_annotation, assembly=assembly, release_timestamp=release_timestamp, reference_files=reference_files, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, strand_specificity=strand_specificity, filtered=filtered, normalized=normalized, start_view_position=start_view_position, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, content_summary=content_summary)
+> SignalFileResults signal_files(query=query, limit=limit, sort=sort, transcriptome_annotation=transcriptome_annotation, assembly=assembly, release_timestamp=release_timestamp, reference_files=reference_files, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, strand_specificity=strand_specificity, filtered=filtered, normalized=normalized, start_view_position=start_view_position, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, content_summary=content_summary)
 
 List items in the SignalFile collection.
 
@@ -6706,57 +6631,56 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
-    assembly = 'assembly_example' # str | Filter by assembly (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    transcriptome_annotation = ['transcriptome_annotation_example'] # List[str] | Filter by transcriptome_annotation (optional)
+    assembly = ['assembly_example'] # List[str] | Filter by assembly (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     reference_files = ['reference_files_example'] # List[str] | Filter by reference_files (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
-    content_md5sum = 'content_md5sum_example' # str | Filter by content_md5sum (optional)
-    content_type = 'content_type_example' # str | Filter by content_type (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    analysis_step_version = ['analysis_step_version_example'] # List[str] | Filter by analysis_step_version (optional)
+    content_md5sum = ['content_md5sum_example'] # List[str] | Filter by content_md5sum (optional)
+    content_type = ['content_type_example'] # List[str] | Filter by content_type (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     derived_from = ['derived_from_example'] # List[str] | Filter by derived_from (optional)
-    file_format = 'file_format_example' # str | Filter by file_format (optional)
+    file_format = ['file_format_example'] # List[str] | Filter by file_format (optional)
     file_format_specifications = ['file_format_specifications_example'] # List[str] | Filter by file_format_specifications (optional)
-    file_set = 'file_set_example' # str | Filter by file_set (optional)
-    file_size = 56 # int | Filter by file_size (optional)
-    md5sum = 'md5sum_example' # str | Filter by md5sum (optional)
-    submitted_file_name = 'submitted_file_name_example' # str | Filter by submitted_file_name (optional)
-    upload_status = 'upload_status_example' # str | Filter by upload_status (optional)
-    validation_error_detail = 'validation_error_detail_example' # str | Filter by validation_error_detail (optional)
-    strand_specificity = 'strand_specificity_example' # str | Filter by strand_specificity (optional)
-    filtered = True # bool | Filter by filtered (optional)
-    normalized = True # bool | Filter by normalized (optional)
-    start_view_position = 'start_view_position_example' # str | Filter by start_view_position (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    file_set = ['file_set_example'] # List[str] | Filter by file_set (optional)
+    file_size = [56] # List[int] | Filter by file_size (optional)
+    md5sum = ['md5sum_example'] # List[str] | Filter by md5sum (optional)
+    submitted_file_name = ['submitted_file_name_example'] # List[str] | Filter by submitted_file_name (optional)
+    upload_status = ['upload_status_example'] # List[str] | Filter by upload_status (optional)
+    validation_error_detail = ['validation_error_detail_example'] # List[str] | Filter by validation_error_detail (optional)
+    strand_specificity = ['strand_specificity_example'] # List[str] | Filter by strand_specificity (optional)
+    filtered = [True] # List[bool] | Filter by filtered (optional)
+    normalized = [True] # List[bool] | Filter by normalized (optional)
+    start_view_position = ['start_view_position_example'] # List[str] | Filter by start_view_position (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
     input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
     gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
     loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
-    href = 'href_example' # str | Filter by href (optional)
-    s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
-    upload_credentials = None # object | Filter by upload_credentials (optional)
-    content_summary = 'content_summary_example' # str | Filter by content_summary (optional)
+    href = ['href_example'] # List[str] | Filter by href (optional)
+    s3_uri = ['s3_uri_example'] # List[str] | Filter by s3_uri (optional)
+    upload_credentials = None # List[object] | Filter by upload_credentials (optional)
+    content_summary = ['content_summary_example'] # List[str] | Filter by content_summary (optional)
 
     try:
         # List items in the SignalFile collection.
-        api_response = api_instance.signal_files(query=query, limit=limit, sort=sort, transcriptome_annotation=transcriptome_annotation, assembly=assembly, release_timestamp=release_timestamp, reference_files=reference_files, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, strand_specificity=strand_specificity, filtered=filtered, normalized=normalized, start_view_position=start_view_position, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, content_summary=content_summary)
+        api_response = api_instance.signal_files(query=query, limit=limit, sort=sort, transcriptome_annotation=transcriptome_annotation, assembly=assembly, release_timestamp=release_timestamp, reference_files=reference_files, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, strand_specificity=strand_specificity, filtered=filtered, normalized=normalized, start_view_position=start_view_position, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials, content_summary=content_summary)
         print("The response of IgvfApi->signal_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -6773,53 +6697,52 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **transcriptome_annotation** | **str**| Filter by transcriptome_annotation | [optional] 
- **assembly** | **str**| Filter by assembly | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **transcriptome_annotation** | [**List[str]**](List[str].md)| Filter by transcriptome_annotation | [optional] 
+ **assembly** | [**List[str]**](List[str].md)| Filter by assembly | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **reference_files** | [**List[str]**](List[str].md)| Filter by reference_files | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
- **content_md5sum** | **str**| Filter by content_md5sum | [optional] 
- **content_type** | **str**| Filter by content_type | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **analysis_step_version** | [**List[str]**](List[str].md)| Filter by analysis_step_version | [optional] 
+ **content_md5sum** | [**List[str]**](List[str].md)| Filter by content_md5sum | [optional] 
+ **content_type** | [**List[str]**](List[str].md)| Filter by content_type | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **derived_from** | [**List[str]**](List[str].md)| Filter by derived_from | [optional] 
- **file_format** | **str**| Filter by file_format | [optional] 
+ **file_format** | [**List[str]**](List[str].md)| Filter by file_format | [optional] 
  **file_format_specifications** | [**List[str]**](List[str].md)| Filter by file_format_specifications | [optional] 
- **file_set** | **str**| Filter by file_set | [optional] 
- **file_size** | **int**| Filter by file_size | [optional] 
- **md5sum** | **str**| Filter by md5sum | [optional] 
- **submitted_file_name** | **str**| Filter by submitted_file_name | [optional] 
- **upload_status** | **str**| Filter by upload_status | [optional] 
- **validation_error_detail** | **str**| Filter by validation_error_detail | [optional] 
- **strand_specificity** | **str**| Filter by strand_specificity | [optional] 
- **filtered** | **bool**| Filter by filtered | [optional] 
- **normalized** | **bool**| Filter by normalized | [optional] 
- **start_view_position** | **str**| Filter by start_view_position | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **file_set** | [**List[str]**](List[str].md)| Filter by file_set | [optional] 
+ **file_size** | [**List[int]**](List[int].md)| Filter by file_size | [optional] 
+ **md5sum** | [**List[str]**](List[str].md)| Filter by md5sum | [optional] 
+ **submitted_file_name** | [**List[str]**](List[str].md)| Filter by submitted_file_name | [optional] 
+ **upload_status** | [**List[str]**](List[str].md)| Filter by upload_status | [optional] 
+ **validation_error_detail** | [**List[str]**](List[str].md)| Filter by validation_error_detail | [optional] 
+ **strand_specificity** | [**List[str]**](List[str].md)| Filter by strand_specificity | [optional] 
+ **filtered** | [**List[bool]**](List[bool].md)| Filter by filtered | [optional] 
+ **normalized** | [**List[bool]**](List[bool].md)| Filter by normalized | [optional] 
+ **start_view_position** | [**List[str]**](List[str].md)| Filter by start_view_position | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
  **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
  **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
  **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
- **href** | **str**| Filter by href | [optional] 
- **s3_uri** | **str**| Filter by s3_uri | [optional] 
- **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
- **content_summary** | **str**| Filter by content_summary | [optional] 
+ **href** | [**List[str]**](List[str].md)| Filter by href | [optional] 
+ **s3_uri** | [**List[str]**](List[str].md)| Filter by s3_uri | [optional] 
+ **upload_credentials** | [**List[object]**](List[object].md)| Filter by upload_credentials | [optional] 
+ **content_summary** | [**List[str]**](List[str].md)| Filter by content_summary | [optional] 
 
 ### Return type
 
@@ -6846,7 +6769,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **software**
-> SoftwareResults software(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, lab=lab, award=award, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, title=title, source_url=source_url, used_by=used_by, id=id, summary=summary, versions=versions)
+> SoftwareResults software(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, lab=lab, award=award, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, title=title, source_url=source_url, used_by=used_by, id=id, summary=summary, versions=versions)
 
 List items in the Software collection.
 
@@ -6886,31 +6809,30 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    name = 'name_example' # str | Filter by name (optional)
-    title = 'title_example' # str | Filter by title (optional)
-    source_url = 'source_url_example' # str | Filter by source_url (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    name = ['name_example'] # List[str] | Filter by name (optional)
+    title = ['title_example'] # List[str] | Filter by title (optional)
+    source_url = ['source_url_example'] # List[str] | Filter by source_url (optional)
     used_by = ['used_by_example'] # List[str] | Filter by used_by (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     versions = ['versions_example'] # List[str] | Filter by versions (optional)
 
     try:
         # List items in the Software collection.
-        api_response = api_instance.software(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, lab=lab, award=award, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, title=title, source_url=source_url, used_by=used_by, id=id, summary=summary, versions=versions)
+        api_response = api_instance.software(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, lab=lab, award=award, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, title=title, source_url=source_url, used_by=used_by, id=id, summary=summary, versions=versions)
         print("The response of IgvfApi->software:\n")
         pprint(api_response)
     except Exception as e:
@@ -6927,26 +6849,25 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **name** | **str**| Filter by name | [optional] 
- **title** | **str**| Filter by title | [optional] 
- **source_url** | **str**| Filter by source_url | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
+ **title** | [**List[str]**](List[str].md)| Filter by title | [optional] 
+ **source_url** | [**List[str]**](List[str].md)| Filter by source_url | [optional] 
  **used_by** | [**List[str]**](List[str].md)| Filter by used_by | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **versions** | [**List[str]**](List[str].md)| Filter by versions | [optional] 
 
 ### Return type
@@ -6974,7 +6895,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **software_versions**
-> SoftwareVersionResults software_versions(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, lab=lab, award=award, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, software=software, version=version, download_id=download_id, downloaded_url=downloaded_url, id=id, summary=summary, name=name)
+> SoftwareVersionResults software_versions(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, lab=lab, award=award, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, software=software, version=version, download_id=download_id, downloaded_url=downloaded_url, id=id, summary=summary, name=name)
 
 List items in the SoftwareVersion collection.
 
@@ -7014,31 +6935,30 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    software = 'software_example' # str | Filter by software (optional)
-    version = 'version_example' # str | Filter by version (optional)
-    download_id = 'download_id_example' # str | Filter by download_id (optional)
-    downloaded_url = 'downloaded_url_example' # str | Filter by downloaded_url (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
-    name = 'name_example' # str | Filter by name (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    software = ['software_example'] # List[str] | Filter by software (optional)
+    version = ['version_example'] # List[str] | Filter by version (optional)
+    download_id = ['download_id_example'] # List[str] | Filter by download_id (optional)
+    downloaded_url = ['downloaded_url_example'] # List[str] | Filter by downloaded_url (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
+    name = ['name_example'] # List[str] | Filter by name (optional)
 
     try:
         # List items in the SoftwareVersion collection.
-        api_response = api_instance.software_versions(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, lab=lab, award=award, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, software=software, version=version, download_id=download_id, downloaded_url=downloaded_url, id=id, summary=summary, name=name)
+        api_response = api_instance.software_versions(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, lab=lab, award=award, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, software=software, version=version, download_id=download_id, downloaded_url=downloaded_url, id=id, summary=summary, name=name)
         print("The response of IgvfApi->software_versions:\n")
         pprint(api_response)
     except Exception as e:
@@ -7055,27 +6975,26 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **software** | **str**| Filter by software | [optional] 
- **version** | **str**| Filter by version | [optional] 
- **download_id** | **str**| Filter by download_id | [optional] 
- **downloaded_url** | **str**| Filter by downloaded_url | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
- **name** | **str**| Filter by name | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **software** | [**List[str]**](List[str].md)| Filter by software | [optional] 
+ **version** | [**List[str]**](List[str].md)| Filter by version | [optional] 
+ **download_id** | [**List[str]**](List[str].md)| Filter by download_id | [optional] 
+ **downloaded_url** | [**List[str]**](List[str].md)| Filter by downloaded_url | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
+ **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
 
 ### Return type
 
@@ -7102,7 +7021,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources**
-> SourceResults sources(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, title=title, name=name, id=id, summary=summary)
+> SourceResults sources(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, url=url, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, title=title, name=name, id=id, summary=summary)
 
 List items in the Source collection.
 
@@ -7142,25 +7061,24 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    url = 'url_example' # str | Filter by url (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    title = 'title_example' # str | Filter by title (optional)
-    name = 'name_example' # str | Filter by name (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    title = ['title_example'] # List[str] | Filter by title (optional)
+    name = ['name_example'] # List[str] | Filter by name (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
 
     try:
         # List items in the Source collection.
-        api_response = api_instance.sources(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, url=url, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, title=title, name=name, id=id, summary=summary)
+        api_response = api_instance.sources(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, url=url, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, title=title, name=name, id=id, summary=summary)
         print("The response of IgvfApi->sources:\n")
         pprint(api_response)
     except Exception as e:
@@ -7177,21 +7095,20 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **url** | **str**| Filter by url | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **title** | **str**| Filter by title | [optional] 
- **name** | **str**| Filter by name | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **title** | [**List[str]**](List[str].md)| Filter by title | [optional] 
+ **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
 
 ### Return type
 
@@ -7218,7 +7135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tabular_files**
-> TabularFileResults tabular_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, assembly=assembly, release_timestamp=release_timestamp, file_format_type=file_format_type, transcriptome_annotation=transcriptome_annotation, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
+> TabularFileResults tabular_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, assembly=assembly, release_timestamp=release_timestamp, file_format_type=file_format_type, transcriptome_annotation=transcriptome_annotation, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
 
 List items in the TabularFile collection.
 
@@ -7258,54 +7175,53 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    controlled_access = True # bool | Filter by controlled_access (optional)
-    anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
-    assembly = 'assembly_example' # str | Filter by assembly (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    file_format_type = 'file_format_type_example' # str | Filter by file_format_type (optional)
-    transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
+    controlled_access = [True] # List[bool] | Filter by controlled_access (optional)
+    anvil_url = ['anvil_url_example'] # List[str] | Filter by anvil_url (optional)
+    assembly = ['assembly_example'] # List[str] | Filter by assembly (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    file_format_type = ['file_format_type_example'] # List[str] | Filter by file_format_type (optional)
+    transcriptome_annotation = ['transcriptome_annotation_example'] # List[str] | Filter by transcriptome_annotation (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
-    content_md5sum = 'content_md5sum_example' # str | Filter by content_md5sum (optional)
-    content_type = 'content_type_example' # str | Filter by content_type (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    analysis_step_version = ['analysis_step_version_example'] # List[str] | Filter by analysis_step_version (optional)
+    content_md5sum = ['content_md5sum_example'] # List[str] | Filter by content_md5sum (optional)
+    content_type = ['content_type_example'] # List[str] | Filter by content_type (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     derived_from = ['derived_from_example'] # List[str] | Filter by derived_from (optional)
-    file_format = 'file_format_example' # str | Filter by file_format (optional)
+    file_format = ['file_format_example'] # List[str] | Filter by file_format (optional)
     file_format_specifications = ['file_format_specifications_example'] # List[str] | Filter by file_format_specifications (optional)
-    file_set = 'file_set_example' # str | Filter by file_set (optional)
-    file_size = 56 # int | Filter by file_size (optional)
-    md5sum = 'md5sum_example' # str | Filter by md5sum (optional)
-    submitted_file_name = 'submitted_file_name_example' # str | Filter by submitted_file_name (optional)
-    upload_status = 'upload_status_example' # str | Filter by upload_status (optional)
-    validation_error_detail = 'validation_error_detail_example' # str | Filter by validation_error_detail (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    file_set = ['file_set_example'] # List[str] | Filter by file_set (optional)
+    file_size = [56] # List[int] | Filter by file_size (optional)
+    md5sum = ['md5sum_example'] # List[str] | Filter by md5sum (optional)
+    submitted_file_name = ['submitted_file_name_example'] # List[str] | Filter by submitted_file_name (optional)
+    upload_status = ['upload_status_example'] # List[str] | Filter by upload_status (optional)
+    validation_error_detail = ['validation_error_detail_example'] # List[str] | Filter by validation_error_detail (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     integrated_in = ['integrated_in_example'] # List[str] | Filter by integrated_in (optional)
     input_file_for = ['input_file_for_example'] # List[str] | Filter by input_file_for (optional)
     gene_list_for = ['gene_list_for_example'] # List[str] | Filter by gene_list_for (optional)
     loci_list_for = ['loci_list_for_example'] # List[str] | Filter by loci_list_for (optional)
-    href = 'href_example' # str | Filter by href (optional)
-    s3_uri = 's3_uri_example' # str | Filter by s3_uri (optional)
-    upload_credentials = None # object | Filter by upload_credentials (optional)
+    href = ['href_example'] # List[str] | Filter by href (optional)
+    s3_uri = ['s3_uri_example'] # List[str] | Filter by s3_uri (optional)
+    upload_credentials = None # List[object] | Filter by upload_credentials (optional)
 
     try:
         # List items in the TabularFile collection.
-        api_response = api_instance.tabular_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, assembly=assembly, release_timestamp=release_timestamp, file_format_type=file_format_type, transcriptome_annotation=transcriptome_annotation, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
+        api_response = api_instance.tabular_files(query=query, limit=limit, sort=sort, controlled_access=controlled_access, anvil_url=anvil_url, assembly=assembly, release_timestamp=release_timestamp, file_format_type=file_format_type, transcriptome_annotation=transcriptome_annotation, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, analysis_step_version=analysis_step_version, content_md5sum=content_md5sum, content_type=content_type, dbxrefs=dbxrefs, derived_from=derived_from, file_format=file_format, file_format_specifications=file_format_specifications, file_set=file_set, file_size=file_size, md5sum=md5sum, submitted_file_name=submitted_file_name, upload_status=upload_status, validation_error_detail=validation_error_detail, id=id, summary=summary, integrated_in=integrated_in, input_file_for=input_file_for, gene_list_for=gene_list_for, loci_list_for=loci_list_for, href=href, s3_uri=s3_uri, upload_credentials=upload_credentials)
         print("The response of IgvfApi->tabular_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -7322,50 +7238,49 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **controlled_access** | **bool**| Filter by controlled_access | [optional] 
- **anvil_url** | **str**| Filter by anvil_url | [optional] 
- **assembly** | **str**| Filter by assembly | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **file_format_type** | **str**| Filter by file_format_type | [optional] 
- **transcriptome_annotation** | **str**| Filter by transcriptome_annotation | [optional] 
+ **controlled_access** | [**List[bool]**](List[bool].md)| Filter by controlled_access | [optional] 
+ **anvil_url** | [**List[str]**](List[str].md)| Filter by anvil_url | [optional] 
+ **assembly** | [**List[str]**](List[str].md)| Filter by assembly | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **file_format_type** | [**List[str]**](List[str].md)| Filter by file_format_type | [optional] 
+ **transcriptome_annotation** | [**List[str]**](List[str].md)| Filter by transcriptome_annotation | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
- **content_md5sum** | **str**| Filter by content_md5sum | [optional] 
- **content_type** | **str**| Filter by content_type | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **analysis_step_version** | [**List[str]**](List[str].md)| Filter by analysis_step_version | [optional] 
+ **content_md5sum** | [**List[str]**](List[str].md)| Filter by content_md5sum | [optional] 
+ **content_type** | [**List[str]**](List[str].md)| Filter by content_type | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **derived_from** | [**List[str]**](List[str].md)| Filter by derived_from | [optional] 
- **file_format** | **str**| Filter by file_format | [optional] 
+ **file_format** | [**List[str]**](List[str].md)| Filter by file_format | [optional] 
  **file_format_specifications** | [**List[str]**](List[str].md)| Filter by file_format_specifications | [optional] 
- **file_set** | **str**| Filter by file_set | [optional] 
- **file_size** | **int**| Filter by file_size | [optional] 
- **md5sum** | **str**| Filter by md5sum | [optional] 
- **submitted_file_name** | **str**| Filter by submitted_file_name | [optional] 
- **upload_status** | **str**| Filter by upload_status | [optional] 
- **validation_error_detail** | **str**| Filter by validation_error_detail | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **file_set** | [**List[str]**](List[str].md)| Filter by file_set | [optional] 
+ **file_size** | [**List[int]**](List[int].md)| Filter by file_size | [optional] 
+ **md5sum** | [**List[str]**](List[str].md)| Filter by md5sum | [optional] 
+ **submitted_file_name** | [**List[str]**](List[str].md)| Filter by submitted_file_name | [optional] 
+ **upload_status** | [**List[str]**](List[str].md)| Filter by upload_status | [optional] 
+ **validation_error_detail** | [**List[str]**](List[str].md)| Filter by validation_error_detail | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **integrated_in** | [**List[str]**](List[str].md)| Filter by integrated_in | [optional] 
  **input_file_for** | [**List[str]**](List[str].md)| Filter by input_file_for | [optional] 
  **gene_list_for** | [**List[str]**](List[str].md)| Filter by gene_list_for | [optional] 
  **loci_list_for** | [**List[str]**](List[str].md)| Filter by loci_list_for | [optional] 
- **href** | **str**| Filter by href | [optional] 
- **s3_uri** | **str**| Filter by s3_uri | [optional] 
- **upload_credentials** | [**object**](object.md)| Filter by upload_credentials | [optional] 
+ **href** | [**List[str]**](List[str].md)| Filter by href | [optional] 
+ **s3_uri** | [**List[str]**](List[str].md)| Filter by s3_uri | [optional] 
+ **upload_credentials** | [**List[object]**](List[object].md)| Filter by upload_credentials | [optional] 
 
 ### Return type
 
@@ -7392,7 +7307,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **technical_samples**
-> TechnicalSampleResults technical_samples(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, sample_material=sample_material, taxa=taxa, sample_terms=sample_terms, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, classifications=classifications)
+> TechnicalSampleResults technical_samples(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, sample_material=sample_material, taxa=taxa, sample_terms=sample_terms, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, classifications=classifications)
 
 List items in the TechnicalSample collection.
 
@@ -7432,47 +7347,46 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
-    url = 'url_example' # str | Filter by url (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
-    lot_id = 'lot_id_example' # str | Filter by lot_id (optional)
-    product_id = 'product_id_example' # str | Filter by product_id (optional)
+    lot_id = ['lot_id_example'] # List[str] | Filter by lot_id (optional)
+    product_id = ['product_id_example'] # List[str] | Filter by product_id (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    starting_amount = 3.4 # float | Filter by starting_amount (optional)
-    starting_amount_units = 'starting_amount_units_example' # str | Filter by starting_amount_units (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    starting_amount = [3.4] # List[float] | Filter by starting_amount (optional)
+    starting_amount_units = ['starting_amount_units_example'] # List[str] | Filter by starting_amount_units (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    date_obtained = 'date_obtained_example' # str | Filter by date_obtained (optional)
-    sorted_from = 'sorted_from_example' # str | Filter by sorted_from (optional)
-    sorted_from_detail = 'sorted_from_detail_example' # str | Filter by sorted_from_detail (optional)
-    virtual = True # bool | Filter by virtual (optional)
+    date_obtained = ['date_obtained_example'] # List[str] | Filter by date_obtained (optional)
+    sorted_from = ['sorted_from_example'] # List[str] | Filter by sorted_from (optional)
+    sorted_from_detail = ['sorted_from_detail_example'] # List[str] | Filter by sorted_from_detail (optional)
+    virtual = [True] # List[bool] | Filter by virtual (optional)
     construct_library_sets = ['construct_library_sets_example'] # List[str] | Filter by construct_library_sets (optional)
-    moi = 3.4 # float | Filter by moi (optional)
-    nucleic_acid_delivery = 'nucleic_acid_delivery_example' # str | Filter by nucleic_acid_delivery (optional)
-    time_post_library_delivery = 3.4 # float | Filter by time_post_library_delivery (optional)
-    time_post_library_delivery_units = 'time_post_library_delivery_units_example' # str | Filter by time_post_library_delivery_units (optional)
+    moi = [3.4] # List[float] | Filter by moi (optional)
+    nucleic_acid_delivery = ['nucleic_acid_delivery_example'] # List[str] | Filter by nucleic_acid_delivery (optional)
+    time_post_library_delivery = [3.4] # List[float] | Filter by time_post_library_delivery (optional)
+    time_post_library_delivery_units = ['time_post_library_delivery_units_example'] # List[str] | Filter by time_post_library_delivery_units (optional)
     protocols = ['protocols_example'] # List[str] | Filter by protocols (optional)
-    sample_material = 'sample_material_example' # str | Filter by sample_material (optional)
-    taxa = 'taxa_example' # str | Filter by taxa (optional)
+    sample_material = ['sample_material_example'] # List[str] | Filter by sample_material (optional)
+    taxa = ['taxa_example'] # List[str] | Filter by taxa (optional)
     sample_terms = ['sample_terms_example'] # List[str] | Filter by sample_terms (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     file_sets = ['file_sets_example'] # List[str] | Filter by file_sets (optional)
     multiplexed_in = ['multiplexed_in_example'] # List[str] | Filter by multiplexed_in (optional)
     sorted_fractions = ['sorted_fractions_example'] # List[str] | Filter by sorted_fractions (optional)
@@ -7482,7 +7396,7 @@ with igvf_client.ApiClient(configuration) as api_client:
 
     try:
         # List items in the TechnicalSample collection.
-        api_response = api_instance.technical_samples(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, sample_material=sample_material, taxa=taxa, sample_terms=sample_terms, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, classifications=classifications)
+        api_response = api_instance.technical_samples(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, sample_material=sample_material, taxa=taxa, sample_terms=sample_terms, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, classifications=classifications)
         print("The response of IgvfApi->technical_samples:\n")
         pprint(api_response)
     except Exception as e:
@@ -7499,47 +7413,46 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
- **url** | **str**| Filter by url | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
- **lot_id** | **str**| Filter by lot_id | [optional] 
- **product_id** | **str**| Filter by product_id | [optional] 
+ **lot_id** | [**List[str]**](List[str].md)| Filter by lot_id | [optional] 
+ **product_id** | [**List[str]**](List[str].md)| Filter by product_id | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **starting_amount** | **float**| Filter by starting_amount | [optional] 
- **starting_amount_units** | **str**| Filter by starting_amount_units | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **starting_amount** | [**List[float]**](List[float].md)| Filter by starting_amount | [optional] 
+ **starting_amount_units** | [**List[str]**](List[str].md)| Filter by starting_amount_units | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **date_obtained** | **str**| Filter by date_obtained | [optional] 
- **sorted_from** | **str**| Filter by sorted_from | [optional] 
- **sorted_from_detail** | **str**| Filter by sorted_from_detail | [optional] 
- **virtual** | **bool**| Filter by virtual | [optional] 
+ **date_obtained** | [**List[str]**](List[str].md)| Filter by date_obtained | [optional] 
+ **sorted_from** | [**List[str]**](List[str].md)| Filter by sorted_from | [optional] 
+ **sorted_from_detail** | [**List[str]**](List[str].md)| Filter by sorted_from_detail | [optional] 
+ **virtual** | [**List[bool]**](List[bool].md)| Filter by virtual | [optional] 
  **construct_library_sets** | [**List[str]**](List[str].md)| Filter by construct_library_sets | [optional] 
- **moi** | **float**| Filter by moi | [optional] 
- **nucleic_acid_delivery** | **str**| Filter by nucleic_acid_delivery | [optional] 
- **time_post_library_delivery** | **float**| Filter by time_post_library_delivery | [optional] 
- **time_post_library_delivery_units** | **str**| Filter by time_post_library_delivery_units | [optional] 
+ **moi** | [**List[float]**](List[float].md)| Filter by moi | [optional] 
+ **nucleic_acid_delivery** | [**List[str]**](List[str].md)| Filter by nucleic_acid_delivery | [optional] 
+ **time_post_library_delivery** | [**List[float]**](List[float].md)| Filter by time_post_library_delivery | [optional] 
+ **time_post_library_delivery_units** | [**List[str]**](List[str].md)| Filter by time_post_library_delivery_units | [optional] 
  **protocols** | [**List[str]**](List[str].md)| Filter by protocols | [optional] 
- **sample_material** | **str**| Filter by sample_material | [optional] 
- **taxa** | **str**| Filter by taxa | [optional] 
+ **sample_material** | [**List[str]**](List[str].md)| Filter by sample_material | [optional] 
+ **taxa** | [**List[str]**](List[str].md)| Filter by taxa | [optional] 
  **sample_terms** | [**List[str]**](List[str].md)| Filter by sample_terms | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **file_sets** | [**List[str]**](List[str].md)| Filter by file_sets | [optional] 
  **multiplexed_in** | [**List[str]**](List[str].md)| Filter by multiplexed_in | [optional] 
  **sorted_fractions** | [**List[str]**](List[str].md)| Filter by sorted_fractions | [optional] 
@@ -7572,7 +7485,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tissues**
-> TissueResults tissues(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, taxa=taxa, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, pmi=pmi, pmi_units=pmi_units, ccf_id=ccf_id, preservation_method=preservation_method, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, classifications=classifications)
+> TissueResults tissues(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, taxa=taxa, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, pmi=pmi, pmi_units=pmi_units, ccf_id=ccf_id, preservation_method=preservation_method, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, classifications=classifications)
 
 List items in the Tissue collection.
 
@@ -7612,79 +7525,78 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
-    taxa = 'taxa_example' # str | Filter by taxa (optional)
-    url = 'url_example' # str | Filter by url (optional)
+    taxa = ['taxa_example'] # List[str] | Filter by taxa (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
-    lot_id = 'lot_id_example' # str | Filter by lot_id (optional)
-    product_id = 'product_id_example' # str | Filter by product_id (optional)
+    lot_id = ['lot_id_example'] # List[str] | Filter by lot_id (optional)
+    product_id = ['product_id_example'] # List[str] | Filter by product_id (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    lower_bound_age = 3.4 # float | Filter by lower_bound_age (optional)
-    upper_bound_age = 3.4 # float | Filter by upper_bound_age (optional)
-    age_units = 'age_units_example' # str | Filter by age_units (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    lower_bound_age = [3.4] # List[float] | Filter by lower_bound_age (optional)
+    upper_bound_age = [3.4] # List[float] | Filter by upper_bound_age (optional)
+    age_units = ['age_units_example'] # List[str] | Filter by age_units (optional)
     sample_terms = ['sample_terms_example'] # List[str] | Filter by sample_terms (optional)
     disease_terms = ['disease_terms_example'] # List[str] | Filter by disease_terms (optional)
     pooled_from = ['pooled_from_example'] # List[str] | Filter by pooled_from (optional)
-    part_of = 'part_of_example' # str | Filter by part_of (optional)
-    originated_from = 'originated_from_example' # str | Filter by originated_from (optional)
+    part_of = ['part_of_example'] # List[str] | Filter by part_of (optional)
+    originated_from = ['originated_from_example'] # List[str] | Filter by originated_from (optional)
     treatments = ['treatments_example'] # List[str] | Filter by treatments (optional)
     donors = ['donors_example'] # List[str] | Filter by donors (optional)
     biomarkers = ['biomarkers_example'] # List[str] | Filter by biomarkers (optional)
-    embryonic = True # bool | Filter by embryonic (optional)
+    embryonic = [True] # List[bool] | Filter by embryonic (optional)
     modifications = ['modifications_example'] # List[str] | Filter by modifications (optional)
-    cellular_sub_pool = 'cellular_sub_pool_example' # str | Filter by cellular_sub_pool (optional)
-    starting_amount = 3.4 # float | Filter by starting_amount (optional)
-    starting_amount_units = 'starting_amount_units_example' # str | Filter by starting_amount_units (optional)
+    cellular_sub_pool = ['cellular_sub_pool_example'] # List[str] | Filter by cellular_sub_pool (optional)
+    starting_amount = [3.4] # List[float] | Filter by starting_amount (optional)
+    starting_amount_units = ['starting_amount_units_example'] # List[str] | Filter by starting_amount_units (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    date_obtained = 'date_obtained_example' # str | Filter by date_obtained (optional)
-    sorted_from = 'sorted_from_example' # str | Filter by sorted_from (optional)
-    sorted_from_detail = 'sorted_from_detail_example' # str | Filter by sorted_from_detail (optional)
-    virtual = True # bool | Filter by virtual (optional)
+    date_obtained = ['date_obtained_example'] # List[str] | Filter by date_obtained (optional)
+    sorted_from = ['sorted_from_example'] # List[str] | Filter by sorted_from (optional)
+    sorted_from_detail = ['sorted_from_detail_example'] # List[str] | Filter by sorted_from_detail (optional)
+    virtual = [True] # List[bool] | Filter by virtual (optional)
     construct_library_sets = ['construct_library_sets_example'] # List[str] | Filter by construct_library_sets (optional)
-    moi = 3.4 # float | Filter by moi (optional)
-    nucleic_acid_delivery = 'nucleic_acid_delivery_example' # str | Filter by nucleic_acid_delivery (optional)
-    time_post_library_delivery = 3.4 # float | Filter by time_post_library_delivery (optional)
-    time_post_library_delivery_units = 'time_post_library_delivery_units_example' # str | Filter by time_post_library_delivery_units (optional)
+    moi = [3.4] # List[float] | Filter by moi (optional)
+    nucleic_acid_delivery = ['nucleic_acid_delivery_example'] # List[str] | Filter by nucleic_acid_delivery (optional)
+    time_post_library_delivery = [3.4] # List[float] | Filter by time_post_library_delivery (optional)
+    time_post_library_delivery_units = ['time_post_library_delivery_units_example'] # List[str] | Filter by time_post_library_delivery_units (optional)
     protocols = ['protocols_example'] # List[str] | Filter by protocols (optional)
-    pmi = 56 # int | Filter by pmi (optional)
-    pmi_units = 'pmi_units_example' # str | Filter by pmi_units (optional)
-    ccf_id = 'ccf_id_example' # str | Filter by ccf_id (optional)
-    preservation_method = 'preservation_method_example' # str | Filter by preservation_method (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    pmi = [56] # List[int] | Filter by pmi (optional)
+    pmi_units = ['pmi_units_example'] # List[str] | Filter by pmi_units (optional)
+    ccf_id = ['ccf_id_example'] # List[str] | Filter by ccf_id (optional)
+    preservation_method = ['preservation_method_example'] # List[str] | Filter by preservation_method (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     file_sets = ['file_sets_example'] # List[str] | Filter by file_sets (optional)
     multiplexed_in = ['multiplexed_in_example'] # List[str] | Filter by multiplexed_in (optional)
     sorted_fractions = ['sorted_fractions_example'] # List[str] | Filter by sorted_fractions (optional)
     origin_of = ['origin_of_example'] # List[str] | Filter by origin_of (optional)
     institutional_certificates = ['institutional_certificates_example'] # List[str] | Filter by institutional_certificates (optional)
-    sex = 'sex_example' # str | Filter by sex (optional)
-    age = 'age_example' # str | Filter by age (optional)
-    upper_bound_age_in_hours = 3.4 # float | Filter by upper_bound_age_in_hours (optional)
-    lower_bound_age_in_hours = 3.4 # float | Filter by lower_bound_age_in_hours (optional)
+    sex = ['sex_example'] # List[str] | Filter by sex (optional)
+    age = ['age_example'] # List[str] | Filter by age (optional)
+    upper_bound_age_in_hours = [3.4] # List[float] | Filter by upper_bound_age_in_hours (optional)
+    lower_bound_age_in_hours = [3.4] # List[float] | Filter by lower_bound_age_in_hours (optional)
     parts = ['parts_example'] # List[str] | Filter by parts (optional)
     pooled_in = ['pooled_in_example'] # List[str] | Filter by pooled_in (optional)
     classifications = ['classifications_example'] # List[str] | Filter by classifications (optional)
 
     try:
         # List items in the Tissue collection.
-        api_response = api_instance.tissues(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, taxa=taxa, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, pmi=pmi, pmi_units=pmi_units, ccf_id=ccf_id, preservation_method=preservation_method, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, classifications=classifications)
+        api_response = api_instance.tissues(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, taxa=taxa, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, pmi=pmi, pmi_units=pmi_units, ccf_id=ccf_id, preservation_method=preservation_method, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, classifications=classifications)
         print("The response of IgvfApi->tissues:\n")
         pprint(api_response)
     except Exception as e:
@@ -7701,72 +7613,71 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
- **taxa** | **str**| Filter by taxa | [optional] 
- **url** | **str**| Filter by url | [optional] 
+ **taxa** | [**List[str]**](List[str].md)| Filter by taxa | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
- **lot_id** | **str**| Filter by lot_id | [optional] 
- **product_id** | **str**| Filter by product_id | [optional] 
+ **lot_id** | [**List[str]**](List[str].md)| Filter by lot_id | [optional] 
+ **product_id** | [**List[str]**](List[str].md)| Filter by product_id | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **lower_bound_age** | **float**| Filter by lower_bound_age | [optional] 
- **upper_bound_age** | **float**| Filter by upper_bound_age | [optional] 
- **age_units** | **str**| Filter by age_units | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **lower_bound_age** | [**List[float]**](List[float].md)| Filter by lower_bound_age | [optional] 
+ **upper_bound_age** | [**List[float]**](List[float].md)| Filter by upper_bound_age | [optional] 
+ **age_units** | [**List[str]**](List[str].md)| Filter by age_units | [optional] 
  **sample_terms** | [**List[str]**](List[str].md)| Filter by sample_terms | [optional] 
  **disease_terms** | [**List[str]**](List[str].md)| Filter by disease_terms | [optional] 
  **pooled_from** | [**List[str]**](List[str].md)| Filter by pooled_from | [optional] 
- **part_of** | **str**| Filter by part_of | [optional] 
- **originated_from** | **str**| Filter by originated_from | [optional] 
+ **part_of** | [**List[str]**](List[str].md)| Filter by part_of | [optional] 
+ **originated_from** | [**List[str]**](List[str].md)| Filter by originated_from | [optional] 
  **treatments** | [**List[str]**](List[str].md)| Filter by treatments | [optional] 
  **donors** | [**List[str]**](List[str].md)| Filter by donors | [optional] 
  **biomarkers** | [**List[str]**](List[str].md)| Filter by biomarkers | [optional] 
- **embryonic** | **bool**| Filter by embryonic | [optional] 
+ **embryonic** | [**List[bool]**](List[bool].md)| Filter by embryonic | [optional] 
  **modifications** | [**List[str]**](List[str].md)| Filter by modifications | [optional] 
- **cellular_sub_pool** | **str**| Filter by cellular_sub_pool | [optional] 
- **starting_amount** | **float**| Filter by starting_amount | [optional] 
- **starting_amount_units** | **str**| Filter by starting_amount_units | [optional] 
+ **cellular_sub_pool** | [**List[str]**](List[str].md)| Filter by cellular_sub_pool | [optional] 
+ **starting_amount** | [**List[float]**](List[float].md)| Filter by starting_amount | [optional] 
+ **starting_amount_units** | [**List[str]**](List[str].md)| Filter by starting_amount_units | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **date_obtained** | **str**| Filter by date_obtained | [optional] 
- **sorted_from** | **str**| Filter by sorted_from | [optional] 
- **sorted_from_detail** | **str**| Filter by sorted_from_detail | [optional] 
- **virtual** | **bool**| Filter by virtual | [optional] 
+ **date_obtained** | [**List[str]**](List[str].md)| Filter by date_obtained | [optional] 
+ **sorted_from** | [**List[str]**](List[str].md)| Filter by sorted_from | [optional] 
+ **sorted_from_detail** | [**List[str]**](List[str].md)| Filter by sorted_from_detail | [optional] 
+ **virtual** | [**List[bool]**](List[bool].md)| Filter by virtual | [optional] 
  **construct_library_sets** | [**List[str]**](List[str].md)| Filter by construct_library_sets | [optional] 
- **moi** | **float**| Filter by moi | [optional] 
- **nucleic_acid_delivery** | **str**| Filter by nucleic_acid_delivery | [optional] 
- **time_post_library_delivery** | **float**| Filter by time_post_library_delivery | [optional] 
- **time_post_library_delivery_units** | **str**| Filter by time_post_library_delivery_units | [optional] 
+ **moi** | [**List[float]**](List[float].md)| Filter by moi | [optional] 
+ **nucleic_acid_delivery** | [**List[str]**](List[str].md)| Filter by nucleic_acid_delivery | [optional] 
+ **time_post_library_delivery** | [**List[float]**](List[float].md)| Filter by time_post_library_delivery | [optional] 
+ **time_post_library_delivery_units** | [**List[str]**](List[str].md)| Filter by time_post_library_delivery_units | [optional] 
  **protocols** | [**List[str]**](List[str].md)| Filter by protocols | [optional] 
- **pmi** | **int**| Filter by pmi | [optional] 
- **pmi_units** | **str**| Filter by pmi_units | [optional] 
- **ccf_id** | **str**| Filter by ccf_id | [optional] 
- **preservation_method** | **str**| Filter by preservation_method | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **pmi** | [**List[int]**](List[int].md)| Filter by pmi | [optional] 
+ **pmi_units** | [**List[str]**](List[str].md)| Filter by pmi_units | [optional] 
+ **ccf_id** | [**List[str]**](List[str].md)| Filter by ccf_id | [optional] 
+ **preservation_method** | [**List[str]**](List[str].md)| Filter by preservation_method | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **file_sets** | [**List[str]**](List[str].md)| Filter by file_sets | [optional] 
  **multiplexed_in** | [**List[str]**](List[str].md)| Filter by multiplexed_in | [optional] 
  **sorted_fractions** | [**List[str]**](List[str].md)| Filter by sorted_fractions | [optional] 
  **origin_of** | [**List[str]**](List[str].md)| Filter by origin_of | [optional] 
  **institutional_certificates** | [**List[str]**](List[str].md)| Filter by institutional_certificates | [optional] 
- **sex** | **str**| Filter by sex | [optional] 
- **age** | **str**| Filter by age | [optional] 
- **upper_bound_age_in_hours** | **float**| Filter by upper_bound_age_in_hours | [optional] 
- **lower_bound_age_in_hours** | **float**| Filter by lower_bound_age_in_hours | [optional] 
+ **sex** | [**List[str]**](List[str].md)| Filter by sex | [optional] 
+ **age** | [**List[str]**](List[str].md)| Filter by age | [optional] 
+ **upper_bound_age_in_hours** | [**List[float]**](List[float].md)| Filter by upper_bound_age_in_hours | [optional] 
+ **lower_bound_age_in_hours** | [**List[float]**](List[float].md)| Filter by lower_bound_age_in_hours | [optional] 
  **parts** | [**List[str]**](List[str].md)| Filter by parts | [optional] 
  **pooled_in** | [**List[str]**](List[str].md)| Filter by pooled_in | [optional] 
  **classifications** | [**List[str]**](List[str].md)| Filter by classifications | [optional] 
@@ -7796,7 +7707,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **treatments**
-> TreatmentResults treatments(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, lab=lab, award=award, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, amount=amount, amount_units=amount_units, duration=duration, duration_units=duration_units, p_h=p_h, purpose=purpose, post_treatment_time=post_treatment_time, post_treatment_time_units=post_treatment_time_units, temperature=temperature, temperature_units=temperature_units, treatment_type=treatment_type, treatment_term_id=treatment_term_id, treatment_term_name=treatment_term_name, depletion=depletion, id=id, summary=summary, biosamples_treated=biosamples_treated)
+> TreatmentResults treatments(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, lab=lab, award=award, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, amount=amount, amount_units=amount_units, duration=duration, duration_units=duration_units, p_h=p_h, purpose=purpose, post_treatment_time=post_treatment_time, post_treatment_time_units=post_treatment_time_units, temperature=temperature, temperature_units=temperature_units, treatment_type=treatment_type, treatment_term_id=treatment_term_id, treatment_term_name=treatment_term_name, depletion=depletion, id=id, summary=summary, biosamples_treated=biosamples_treated)
 
 List items in the Treatment collection.
 
@@ -7836,43 +7747,42 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
-    lot_id = 'lot_id_example' # str | Filter by lot_id (optional)
-    product_id = 'product_id_example' # str | Filter by product_id (optional)
+    lot_id = ['lot_id_example'] # List[str] | Filter by lot_id (optional)
+    product_id = ['product_id_example'] # List[str] | Filter by product_id (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    amount = 3.4 # float | Filter by amount (optional)
-    amount_units = 'amount_units_example' # str | Filter by amount_units (optional)
-    duration = 3.4 # float | Filter by duration (optional)
-    duration_units = 'duration_units_example' # str | Filter by duration_units (optional)
-    p_h = 3.4 # float | Filter by pH (optional)
-    purpose = 'purpose_example' # str | Filter by purpose (optional)
-    post_treatment_time = 3.4 # float | Filter by post_treatment_time (optional)
-    post_treatment_time_units = 'post_treatment_time_units_example' # str | Filter by post_treatment_time_units (optional)
-    temperature = 3.4 # float | Filter by temperature (optional)
-    temperature_units = 'temperature_units_example' # str | Filter by temperature_units (optional)
-    treatment_type = 'treatment_type_example' # str | Filter by treatment_type (optional)
-    treatment_term_id = 'treatment_term_id_example' # str | Filter by treatment_term_id (optional)
-    treatment_term_name = 'treatment_term_name_example' # str | Filter by treatment_term_name (optional)
-    depletion = True # bool | Filter by depletion (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    amount = [3.4] # List[float] | Filter by amount (optional)
+    amount_units = ['amount_units_example'] # List[str] | Filter by amount_units (optional)
+    duration = [3.4] # List[float] | Filter by duration (optional)
+    duration_units = ['duration_units_example'] # List[str] | Filter by duration_units (optional)
+    p_h = [3.4] # List[float] | Filter by pH (optional)
+    purpose = ['purpose_example'] # List[str] | Filter by purpose (optional)
+    post_treatment_time = [3.4] # List[float] | Filter by post_treatment_time (optional)
+    post_treatment_time_units = ['post_treatment_time_units_example'] # List[str] | Filter by post_treatment_time_units (optional)
+    temperature = [3.4] # List[float] | Filter by temperature (optional)
+    temperature_units = ['temperature_units_example'] # List[str] | Filter by temperature_units (optional)
+    treatment_type = ['treatment_type_example'] # List[str] | Filter by treatment_type (optional)
+    treatment_term_id = ['treatment_term_id_example'] # List[str] | Filter by treatment_term_id (optional)
+    treatment_term_name = ['treatment_term_name_example'] # List[str] | Filter by treatment_term_name (optional)
+    depletion = [True] # List[bool] | Filter by depletion (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     biosamples_treated = ['biosamples_treated_example'] # List[str] | Filter by biosamples_treated (optional)
 
     try:
         # List items in the Treatment collection.
-        api_response = api_instance.treatments(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, lab=lab, award=award, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, amount=amount, amount_units=amount_units, duration=duration, duration_units=duration_units, p_h=p_h, purpose=purpose, post_treatment_time=post_treatment_time, post_treatment_time_units=post_treatment_time_units, temperature=temperature, temperature_units=temperature_units, treatment_type=treatment_type, treatment_term_id=treatment_term_id, treatment_term_name=treatment_term_name, depletion=depletion, id=id, summary=summary, biosamples_treated=biosamples_treated)
+        api_response = api_instance.treatments(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, lab=lab, award=award, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, amount=amount, amount_units=amount_units, duration=duration, duration_units=duration_units, p_h=p_h, purpose=purpose, post_treatment_time=post_treatment_time, post_treatment_time_units=post_treatment_time_units, temperature=temperature, temperature_units=temperature_units, treatment_type=treatment_type, treatment_term_id=treatment_term_id, treatment_term_name=treatment_term_name, depletion=depletion, id=id, summary=summary, biosamples_treated=biosamples_treated)
         print("The response of IgvfApi->treatments:\n")
         pprint(api_response)
     except Exception as e:
@@ -7889,38 +7799,37 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
- **lot_id** | **str**| Filter by lot_id | [optional] 
- **product_id** | **str**| Filter by product_id | [optional] 
+ **lot_id** | [**List[str]**](List[str].md)| Filter by lot_id | [optional] 
+ **product_id** | [**List[str]**](List[str].md)| Filter by product_id | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **amount** | **float**| Filter by amount | [optional] 
- **amount_units** | **str**| Filter by amount_units | [optional] 
- **duration** | **float**| Filter by duration | [optional] 
- **duration_units** | **str**| Filter by duration_units | [optional] 
- **p_h** | **float**| Filter by pH | [optional] 
- **purpose** | **str**| Filter by purpose | [optional] 
- **post_treatment_time** | **float**| Filter by post_treatment_time | [optional] 
- **post_treatment_time_units** | **str**| Filter by post_treatment_time_units | [optional] 
- **temperature** | **float**| Filter by temperature | [optional] 
- **temperature_units** | **str**| Filter by temperature_units | [optional] 
- **treatment_type** | **str**| Filter by treatment_type | [optional] 
- **treatment_term_id** | **str**| Filter by treatment_term_id | [optional] 
- **treatment_term_name** | **str**| Filter by treatment_term_name | [optional] 
- **depletion** | **bool**| Filter by depletion | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **amount** | [**List[float]**](List[float].md)| Filter by amount | [optional] 
+ **amount_units** | [**List[str]**](List[str].md)| Filter by amount_units | [optional] 
+ **duration** | [**List[float]**](List[float].md)| Filter by duration | [optional] 
+ **duration_units** | [**List[str]**](List[str].md)| Filter by duration_units | [optional] 
+ **p_h** | [**List[float]**](List[float].md)| Filter by pH | [optional] 
+ **purpose** | [**List[str]**](List[str].md)| Filter by purpose | [optional] 
+ **post_treatment_time** | [**List[float]**](List[float].md)| Filter by post_treatment_time | [optional] 
+ **post_treatment_time_units** | [**List[str]**](List[str].md)| Filter by post_treatment_time_units | [optional] 
+ **temperature** | [**List[float]**](List[float].md)| Filter by temperature | [optional] 
+ **temperature_units** | [**List[str]**](List[str].md)| Filter by temperature_units | [optional] 
+ **treatment_type** | [**List[str]**](List[str].md)| Filter by treatment_type | [optional] 
+ **treatment_term_id** | [**List[str]**](List[str].md)| Filter by treatment_term_id | [optional] 
+ **treatment_term_name** | [**List[str]**](List[str].md)| Filter by treatment_term_name | [optional] 
+ **depletion** | [**List[bool]**](List[bool].md)| Filter by depletion | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **biosamples_treated** | [**List[str]**](List[str].md)| Filter by biosamples_treated | [optional] 
 
 ### Return type
@@ -7948,7 +7857,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **users**
-> UserResults users(query=query, limit=limit, sort=sort, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, email=email, first_name=first_name, last_name=last_name, lab=lab, submits_for=submits_for, groups=groups, viewing_groups=viewing_groups, job_title=job_title, id=id, summary=summary, title=title)
+> UserResults users(query=query, limit=limit, sort=sort, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, email=email, first_name=first_name, last_name=last_name, lab=lab, submits_for=submits_for, groups=groups, viewing_groups=viewing_groups, job_title=job_title, id=id, summary=summary, title=title)
 
 List items in the User collection.
 
@@ -7988,30 +7897,29 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    email = 'email_example' # str | Filter by email (optional)
-    first_name = 'first_name_example' # str | Filter by first_name (optional)
-    last_name = 'last_name_example' # str | Filter by last_name (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    email = ['email_example'] # List[str] | Filter by email (optional)
+    first_name = ['first_name_example'] # List[str] | Filter by first_name (optional)
+    last_name = ['last_name_example'] # List[str] | Filter by last_name (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
     submits_for = ['submits_for_example'] # List[str] | Filter by submits_for (optional)
     groups = ['groups_example'] # List[str] | Filter by groups (optional)
     viewing_groups = ['viewing_groups_example'] # List[str] | Filter by viewing_groups (optional)
-    job_title = 'job_title_example' # str | Filter by job_title (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
-    title = 'title_example' # str | Filter by title (optional)
+    job_title = ['job_title_example'] # List[str] | Filter by job_title (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
+    title = ['title_example'] # List[str] | Filter by title (optional)
 
     try:
         # List items in the User collection.
-        api_response = api_instance.users(query=query, limit=limit, sort=sort, status=status, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, email=email, first_name=first_name, last_name=last_name, lab=lab, submits_for=submits_for, groups=groups, viewing_groups=viewing_groups, job_title=job_title, id=id, summary=summary, title=title)
+        api_response = api_instance.users(query=query, limit=limit, sort=sort, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, email=email, first_name=first_name, last_name=last_name, lab=lab, submits_for=submits_for, groups=groups, viewing_groups=viewing_groups, job_title=job_title, id=id, summary=summary, title=title)
         print("The response of IgvfApi->users:\n")
         pprint(api_response)
     except Exception as e:
@@ -8028,26 +7936,25 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **email** | **str**| Filter by email | [optional] 
- **first_name** | **str**| Filter by first_name | [optional] 
- **last_name** | **str**| Filter by last_name | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **email** | [**List[str]**](List[str].md)| Filter by email | [optional] 
+ **first_name** | [**List[str]**](List[str].md)| Filter by first_name | [optional] 
+ **last_name** | [**List[str]**](List[str].md)| Filter by last_name | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
  **submits_for** | [**List[str]**](List[str].md)| Filter by submits_for | [optional] 
  **groups** | [**List[str]**](List[str].md)| Filter by groups | [optional] 
  **viewing_groups** | [**List[str]**](List[str].md)| Filter by viewing_groups | [optional] 
- **job_title** | **str**| Filter by job_title | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
- **title** | **str**| Filter by title | [optional] 
+ **job_title** | [**List[str]**](List[str].md)| Filter by job_title | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
+ **title** | [**List[str]**](List[str].md)| Filter by title | [optional] 
 
 ### Return type
 
@@ -8074,7 +7981,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **whole_organisms**
-> WholeOrganismResults whole_organisms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, classifications=classifications)
+> WholeOrganismResults whole_organisms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, classifications=classifications)
 
 List items in the WholeOrganism collection.
 
@@ -8114,75 +8021,74 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
-    taxa = 'taxa_example' # str | Filter by taxa (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
+    taxa = ['taxa_example'] # List[str] | Filter by taxa (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
-    url = 'url_example' # str | Filter by url (optional)
+    url = ['url_example'] # List[str] | Filter by url (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
-    lot_id = 'lot_id_example' # str | Filter by lot_id (optional)
-    product_id = 'product_id_example' # str | Filter by product_id (optional)
+    lot_id = ['lot_id_example'] # List[str] | Filter by lot_id (optional)
+    product_id = ['product_id_example'] # List[str] | Filter by product_id (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    lower_bound_age = 3.4 # float | Filter by lower_bound_age (optional)
-    upper_bound_age = 3.4 # float | Filter by upper_bound_age (optional)
-    age_units = 'age_units_example' # str | Filter by age_units (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    lower_bound_age = [3.4] # List[float] | Filter by lower_bound_age (optional)
+    upper_bound_age = [3.4] # List[float] | Filter by upper_bound_age (optional)
+    age_units = ['age_units_example'] # List[str] | Filter by age_units (optional)
     sample_terms = ['sample_terms_example'] # List[str] | Filter by sample_terms (optional)
     disease_terms = ['disease_terms_example'] # List[str] | Filter by disease_terms (optional)
     pooled_from = ['pooled_from_example'] # List[str] | Filter by pooled_from (optional)
-    part_of = 'part_of_example' # str | Filter by part_of (optional)
-    originated_from = 'originated_from_example' # str | Filter by originated_from (optional)
+    part_of = ['part_of_example'] # List[str] | Filter by part_of (optional)
+    originated_from = ['originated_from_example'] # List[str] | Filter by originated_from (optional)
     treatments = ['treatments_example'] # List[str] | Filter by treatments (optional)
     donors = ['donors_example'] # List[str] | Filter by donors (optional)
     biomarkers = ['biomarkers_example'] # List[str] | Filter by biomarkers (optional)
-    embryonic = True # bool | Filter by embryonic (optional)
+    embryonic = [True] # List[bool] | Filter by embryonic (optional)
     modifications = ['modifications_example'] # List[str] | Filter by modifications (optional)
-    cellular_sub_pool = 'cellular_sub_pool_example' # str | Filter by cellular_sub_pool (optional)
-    starting_amount = 3.4 # float | Filter by starting_amount (optional)
-    starting_amount_units = 'starting_amount_units_example' # str | Filter by starting_amount_units (optional)
+    cellular_sub_pool = ['cellular_sub_pool_example'] # List[str] | Filter by cellular_sub_pool (optional)
+    starting_amount = [3.4] # List[float] | Filter by starting_amount (optional)
+    starting_amount_units = ['starting_amount_units_example'] # List[str] | Filter by starting_amount_units (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    date_obtained = 'date_obtained_example' # str | Filter by date_obtained (optional)
-    sorted_from = 'sorted_from_example' # str | Filter by sorted_from (optional)
-    sorted_from_detail = 'sorted_from_detail_example' # str | Filter by sorted_from_detail (optional)
-    virtual = True # bool | Filter by virtual (optional)
+    date_obtained = ['date_obtained_example'] # List[str] | Filter by date_obtained (optional)
+    sorted_from = ['sorted_from_example'] # List[str] | Filter by sorted_from (optional)
+    sorted_from_detail = ['sorted_from_detail_example'] # List[str] | Filter by sorted_from_detail (optional)
+    virtual = [True] # List[bool] | Filter by virtual (optional)
     construct_library_sets = ['construct_library_sets_example'] # List[str] | Filter by construct_library_sets (optional)
-    moi = 3.4 # float | Filter by moi (optional)
-    nucleic_acid_delivery = 'nucleic_acid_delivery_example' # str | Filter by nucleic_acid_delivery (optional)
-    time_post_library_delivery = 3.4 # float | Filter by time_post_library_delivery (optional)
-    time_post_library_delivery_units = 'time_post_library_delivery_units_example' # str | Filter by time_post_library_delivery_units (optional)
+    moi = [3.4] # List[float] | Filter by moi (optional)
+    nucleic_acid_delivery = ['nucleic_acid_delivery_example'] # List[str] | Filter by nucleic_acid_delivery (optional)
+    time_post_library_delivery = [3.4] # List[float] | Filter by time_post_library_delivery (optional)
+    time_post_library_delivery_units = ['time_post_library_delivery_units_example'] # List[str] | Filter by time_post_library_delivery_units (optional)
     protocols = ['protocols_example'] # List[str] | Filter by protocols (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     file_sets = ['file_sets_example'] # List[str] | Filter by file_sets (optional)
     multiplexed_in = ['multiplexed_in_example'] # List[str] | Filter by multiplexed_in (optional)
     sorted_fractions = ['sorted_fractions_example'] # List[str] | Filter by sorted_fractions (optional)
     origin_of = ['origin_of_example'] # List[str] | Filter by origin_of (optional)
     institutional_certificates = ['institutional_certificates_example'] # List[str] | Filter by institutional_certificates (optional)
-    sex = 'sex_example' # str | Filter by sex (optional)
-    age = 'age_example' # str | Filter by age (optional)
-    upper_bound_age_in_hours = 3.4 # float | Filter by upper_bound_age_in_hours (optional)
-    lower_bound_age_in_hours = 3.4 # float | Filter by lower_bound_age_in_hours (optional)
+    sex = ['sex_example'] # List[str] | Filter by sex (optional)
+    age = ['age_example'] # List[str] | Filter by age (optional)
+    upper_bound_age_in_hours = [3.4] # List[float] | Filter by upper_bound_age_in_hours (optional)
+    lower_bound_age_in_hours = [3.4] # List[float] | Filter by lower_bound_age_in_hours (optional)
     parts = ['parts_example'] # List[str] | Filter by parts (optional)
     pooled_in = ['pooled_in_example'] # List[str] | Filter by pooled_in (optional)
     classifications = ['classifications_example'] # List[str] | Filter by classifications (optional)
 
     try:
         # List items in the WholeOrganism collection.
-        api_response = api_instance.whole_organisms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, classifications=classifications)
+        api_response = api_instance.whole_organisms(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, taxa=taxa, publications=publications, publication_identifiers=publication_identifiers, url=url, sources=sources, lot_id=lot_id, product_id=product_id, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, lower_bound_age=lower_bound_age, upper_bound_age=upper_bound_age, age_units=age_units, sample_terms=sample_terms, disease_terms=disease_terms, pooled_from=pooled_from, part_of=part_of, originated_from=originated_from, treatments=treatments, donors=donors, biomarkers=biomarkers, embryonic=embryonic, modifications=modifications, cellular_sub_pool=cellular_sub_pool, starting_amount=starting_amount, starting_amount_units=starting_amount_units, dbxrefs=dbxrefs, date_obtained=date_obtained, sorted_from=sorted_from, sorted_from_detail=sorted_from_detail, virtual=virtual, construct_library_sets=construct_library_sets, moi=moi, nucleic_acid_delivery=nucleic_acid_delivery, time_post_library_delivery=time_post_library_delivery, time_post_library_delivery_units=time_post_library_delivery_units, protocols=protocols, id=id, summary=summary, file_sets=file_sets, multiplexed_in=multiplexed_in, sorted_fractions=sorted_fractions, origin_of=origin_of, institutional_certificates=institutional_certificates, sex=sex, age=age, upper_bound_age_in_hours=upper_bound_age_in_hours, lower_bound_age_in_hours=lower_bound_age_in_hours, parts=parts, pooled_in=pooled_in, classifications=classifications)
         print("The response of IgvfApi->whole_organisms:\n")
         pprint(api_response)
     except Exception as e:
@@ -8199,68 +8105,67 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
- **taxa** | **str**| Filter by taxa | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
+ **taxa** | [**List[str]**](List[str].md)| Filter by taxa | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
- **url** | **str**| Filter by url | [optional] 
+ **url** | [**List[str]**](List[str].md)| Filter by url | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
- **lot_id** | **str**| Filter by lot_id | [optional] 
- **product_id** | **str**| Filter by product_id | [optional] 
+ **lot_id** | [**List[str]**](List[str].md)| Filter by lot_id | [optional] 
+ **product_id** | [**List[str]**](List[str].md)| Filter by product_id | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **lower_bound_age** | **float**| Filter by lower_bound_age | [optional] 
- **upper_bound_age** | **float**| Filter by upper_bound_age | [optional] 
- **age_units** | **str**| Filter by age_units | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **lower_bound_age** | [**List[float]**](List[float].md)| Filter by lower_bound_age | [optional] 
+ **upper_bound_age** | [**List[float]**](List[float].md)| Filter by upper_bound_age | [optional] 
+ **age_units** | [**List[str]**](List[str].md)| Filter by age_units | [optional] 
  **sample_terms** | [**List[str]**](List[str].md)| Filter by sample_terms | [optional] 
  **disease_terms** | [**List[str]**](List[str].md)| Filter by disease_terms | [optional] 
  **pooled_from** | [**List[str]**](List[str].md)| Filter by pooled_from | [optional] 
- **part_of** | **str**| Filter by part_of | [optional] 
- **originated_from** | **str**| Filter by originated_from | [optional] 
+ **part_of** | [**List[str]**](List[str].md)| Filter by part_of | [optional] 
+ **originated_from** | [**List[str]**](List[str].md)| Filter by originated_from | [optional] 
  **treatments** | [**List[str]**](List[str].md)| Filter by treatments | [optional] 
  **donors** | [**List[str]**](List[str].md)| Filter by donors | [optional] 
  **biomarkers** | [**List[str]**](List[str].md)| Filter by biomarkers | [optional] 
- **embryonic** | **bool**| Filter by embryonic | [optional] 
+ **embryonic** | [**List[bool]**](List[bool].md)| Filter by embryonic | [optional] 
  **modifications** | [**List[str]**](List[str].md)| Filter by modifications | [optional] 
- **cellular_sub_pool** | **str**| Filter by cellular_sub_pool | [optional] 
- **starting_amount** | **float**| Filter by starting_amount | [optional] 
- **starting_amount_units** | **str**| Filter by starting_amount_units | [optional] 
+ **cellular_sub_pool** | [**List[str]**](List[str].md)| Filter by cellular_sub_pool | [optional] 
+ **starting_amount** | [**List[float]**](List[float].md)| Filter by starting_amount | [optional] 
+ **starting_amount_units** | [**List[str]**](List[str].md)| Filter by starting_amount_units | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **date_obtained** | **str**| Filter by date_obtained | [optional] 
- **sorted_from** | **str**| Filter by sorted_from | [optional] 
- **sorted_from_detail** | **str**| Filter by sorted_from_detail | [optional] 
- **virtual** | **bool**| Filter by virtual | [optional] 
+ **date_obtained** | [**List[str]**](List[str].md)| Filter by date_obtained | [optional] 
+ **sorted_from** | [**List[str]**](List[str].md)| Filter by sorted_from | [optional] 
+ **sorted_from_detail** | [**List[str]**](List[str].md)| Filter by sorted_from_detail | [optional] 
+ **virtual** | [**List[bool]**](List[bool].md)| Filter by virtual | [optional] 
  **construct_library_sets** | [**List[str]**](List[str].md)| Filter by construct_library_sets | [optional] 
- **moi** | **float**| Filter by moi | [optional] 
- **nucleic_acid_delivery** | **str**| Filter by nucleic_acid_delivery | [optional] 
- **time_post_library_delivery** | **float**| Filter by time_post_library_delivery | [optional] 
- **time_post_library_delivery_units** | **str**| Filter by time_post_library_delivery_units | [optional] 
+ **moi** | [**List[float]**](List[float].md)| Filter by moi | [optional] 
+ **nucleic_acid_delivery** | [**List[str]**](List[str].md)| Filter by nucleic_acid_delivery | [optional] 
+ **time_post_library_delivery** | [**List[float]**](List[float].md)| Filter by time_post_library_delivery | [optional] 
+ **time_post_library_delivery_units** | [**List[str]**](List[str].md)| Filter by time_post_library_delivery_units | [optional] 
  **protocols** | [**List[str]**](List[str].md)| Filter by protocols | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **file_sets** | [**List[str]**](List[str].md)| Filter by file_sets | [optional] 
  **multiplexed_in** | [**List[str]**](List[str].md)| Filter by multiplexed_in | [optional] 
  **sorted_fractions** | [**List[str]**](List[str].md)| Filter by sorted_fractions | [optional] 
  **origin_of** | [**List[str]**](List[str].md)| Filter by origin_of | [optional] 
  **institutional_certificates** | [**List[str]**](List[str].md)| Filter by institutional_certificates | [optional] 
- **sex** | **str**| Filter by sex | [optional] 
- **age** | **str**| Filter by age | [optional] 
- **upper_bound_age_in_hours** | **float**| Filter by upper_bound_age_in_hours | [optional] 
- **lower_bound_age_in_hours** | **float**| Filter by lower_bound_age_in_hours | [optional] 
+ **sex** | [**List[str]**](List[str].md)| Filter by sex | [optional] 
+ **age** | [**List[str]**](List[str].md)| Filter by age | [optional] 
+ **upper_bound_age_in_hours** | [**List[float]**](List[float].md)| Filter by upper_bound_age_in_hours | [optional] 
+ **lower_bound_age_in_hours** | [**List[float]**](List[float].md)| Filter by lower_bound_age_in_hours | [optional] 
  **parts** | [**List[str]**](List[str].md)| Filter by parts | [optional] 
  **pooled_in** | [**List[str]**](List[str].md)| Filter by pooled_in | [optional] 
  **classifications** | [**List[str]**](List[str].md)| Filter by classifications | [optional] 
@@ -8290,7 +8195,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **workflows**
-> WorkflowResults workflows(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, source_url=source_url, workflow_repositories=workflow_repositories, standards_page=standards_page, workflow_version=workflow_version, id=id, summary=summary, analysis_steps=analysis_steps)
+> WorkflowResults workflows(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, source_url=source_url, workflow_repositories=workflow_repositories, standards_page=standards_page, workflow_version=workflow_version, id=id, summary=summary, analysis_steps=analysis_steps)
 
 List items in the Workflow collection.
 
@@ -8330,37 +8235,36 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
+    release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
-    lab = 'lab_example' # str | Filter by lab (optional)
-    award = 'award_example' # str | Filter by award (optional)
-    accession = 'accession_example' # str | Filter by accession (optional)
+    lab = ['lab_example'] # List[str] | Filter by lab (optional)
+    award = ['award_example'] # List[str] | Filter by award (optional)
+    accession = ['accession_example'] # List[str] | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
     collections = ['collections_example'] # List[str] | Filter by collections (optional)
-    status = 'status_example' # str | Filter by status (optional)
-    revoke_detail = 'revoke_detail_example' # str | Filter by revoke_detail (optional)
-    schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
-    uuid = 'uuid_example' # str | Filter by uuid (optional)
-    notes = 'notes_example' # str | Filter by notes (optional)
+    status = ['status_example'] # List[str] | Filter by status (optional)
+    revoke_detail = ['revoke_detail_example'] # List[str] | Filter by revoke_detail (optional)
+    uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
+    notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
-    submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
-    description = 'description_example' # str | Filter by description (optional)
-    name = 'name_example' # str | Filter by name (optional)
-    source_url = 'source_url_example' # str | Filter by source_url (optional)
+    creation_timestamp = ['creation_timestamp_example'] # List[str] | Filter by creation_timestamp (optional)
+    submitted_by = ['submitted_by_example'] # List[str] | Filter by submitted_by (optional)
+    submitter_comment = ['submitter_comment_example'] # List[str] | Filter by submitter_comment (optional)
+    description = ['description_example'] # List[str] | Filter by description (optional)
+    name = ['name_example'] # List[str] | Filter by name (optional)
+    source_url = ['source_url_example'] # List[str] | Filter by source_url (optional)
     workflow_repositories = ['workflow_repositories_example'] # List[str] | Filter by workflow_repositories (optional)
-    standards_page = 'standards_page_example' # str | Filter by standards_page (optional)
-    workflow_version = 56 # int | Filter by workflow_version (optional)
-    id = 'id_example' # str | Filter by @id (optional)
-    summary = 'summary_example' # str | Filter by summary (optional)
+    standards_page = ['standards_page_example'] # List[str] | Filter by standards_page (optional)
+    workflow_version = [56] # List[int] | Filter by workflow_version (optional)
+    id = ['id_example'] # List[str] | Filter by @id (optional)
+    summary = ['summary_example'] # List[str] | Filter by summary (optional)
     analysis_steps = ['analysis_steps_example'] # List[str] | Filter by analysis_steps (optional)
 
     try:
         # List items in the Workflow collection.
-        api_response = api_instance.workflows(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, source_url=source_url, workflow_repositories=workflow_repositories, standards_page=standards_page, workflow_version=workflow_version, id=id, summary=summary, analysis_steps=analysis_steps)
+        api_response = api_instance.workflows(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, lab=lab, award=award, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, name=name, source_url=source_url, workflow_repositories=workflow_repositories, standards_page=standards_page, workflow_version=workflow_version, id=id, summary=summary, analysis_steps=analysis_steps)
         print("The response of IgvfApi->workflows:\n")
         pprint(api_response)
     except Exception as e:
@@ -8377,32 +8281,31 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
- **lab** | **str**| Filter by lab | [optional] 
- **award** | **str**| Filter by award | [optional] 
- **accession** | **str**| Filter by accession | [optional] 
+ **lab** | [**List[str]**](List[str].md)| Filter by lab | [optional] 
+ **award** | [**List[str]**](List[str].md)| Filter by award | [optional] 
+ **accession** | [**List[str]**](List[str].md)| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
  **collections** | [**List[str]**](List[str].md)| Filter by collections | [optional] 
- **status** | **str**| Filter by status | [optional] 
- **revoke_detail** | **str**| Filter by revoke_detail | [optional] 
- **schema_version** | **str**| Filter by schema_version | [optional] 
- **uuid** | **str**| Filter by uuid | [optional] 
- **notes** | **str**| Filter by notes | [optional] 
+ **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
+ **revoke_detail** | [**List[str]**](List[str].md)| Filter by revoke_detail | [optional] 
+ **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
+ **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
- **submitted_by** | **str**| Filter by submitted_by | [optional] 
- **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
- **description** | **str**| Filter by description | [optional] 
- **name** | **str**| Filter by name | [optional] 
- **source_url** | **str**| Filter by source_url | [optional] 
+ **creation_timestamp** | [**List[str]**](List[str].md)| Filter by creation_timestamp | [optional] 
+ **submitted_by** | [**List[str]**](List[str].md)| Filter by submitted_by | [optional] 
+ **submitter_comment** | [**List[str]**](List[str].md)| Filter by submitter_comment | [optional] 
+ **description** | [**List[str]**](List[str].md)| Filter by description | [optional] 
+ **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
+ **source_url** | [**List[str]**](List[str].md)| Filter by source_url | [optional] 
  **workflow_repositories** | [**List[str]**](List[str].md)| Filter by workflow_repositories | [optional] 
- **standards_page** | **str**| Filter by standards_page | [optional] 
- **workflow_version** | **int**| Filter by workflow_version | [optional] 
- **id** | **str**| Filter by @id | [optional] 
- **summary** | **str**| Filter by summary | [optional] 
+ **standards_page** | [**List[str]**](List[str].md)| Filter by standards_page | [optional] 
+ **workflow_version** | [**List[int]**](List[int].md)| Filter by workflow_version | [optional] 
+ **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
+ **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **analysis_steps** | [**List[str]**](List[str].md)| Filter by analysis_steps | [optional] 
 
 ### Return type
