@@ -373,7 +373,7 @@ def generate_openapi_spec(schemas):
                                 "type": "string"
                             },
                             "required": True,
-                            "description": "The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`)."
+                            "description": "The unique identifier for the file to download, e.g. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03)."
                         }
                     ],
                     "responses": {
