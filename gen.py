@@ -997,7 +997,8 @@ def fill_in_collection_template(schema_name, schema):
     for prop, prop_schema in schema["properties"].items():
         if property_is_slim_embedded(prop, embedded_fields_keys):
             continue
-        exclude = ['default', 'uniqueItems']
+        add_as_item = 'items' not in prop_schema # We always want to be able to enter multiple search values.
+        exclude = ['default', 'uniqueItems', 'notSubmittable', 'readonly', 'permission', 'submissionExample', 'serverDefault', 'minItems', 'format']
         filtered_prop_schema = {k: v for k, v in prop_schema.items() if k not in exclude}
         if prop == '@type':
             continue
@@ -1005,7 +1006,7 @@ def fill_in_collection_template(schema_name, schema):
             {
                 "name": f"{prop}",
                 "in": "query",
-                "schema": filtered_prop_schema,
+                "schema": filtered_prop_schema if not add_as_item else {"type": "array", "items": filtered_prop_schema},
                 "description": f"Filter by {prop}",
                 "style": "form",
                 "explode": True,
@@ -1014,10 +1015,7 @@ def fill_in_collection_template(schema_name, schema):
     for k, v in embedded_fields.items():
         prop = v['path']
         prop_schema = v['schema']
-        if 'items' in prop_schema:
-            add_as_item = False
-        else:
-            add_as_item = v['is_an_item']
+        add_as_item = 'items' not in prop_schema # We always want to be able to enter multiple search values.
         exclude = ['default', 'uniqueItems', 'notSubmittable', 'readonly', 'permission', 'submissionExample', 'serverDefault', 'minItems', 'format']
         filtered_prop_schema = {k: v for k, v in prop_schema.items() if k not in exclude}
         if '@type' in prop:

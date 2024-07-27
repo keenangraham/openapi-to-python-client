@@ -1044,8 +1044,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -1055,9 +1058,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -1452,8 +1458,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -1463,18 +1472,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -1484,8 +1496,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -1495,8 +1510,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -1536,8 +1554,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -1547,9 +1568,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -1559,8 +1583,11 @@
             "name": "workflow.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by workflow.@id",
             "style": "form",
@@ -1570,11 +1597,14 @@
             "name": "workflow.accession",
             "in": "query",
             "schema": {
-              "title": "Accession",
-              "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "comment": "Do not submit. The accession is assigned by the server.",
-              "type": "string",
-              "accessionType": "WF"
+              "type": "array",
+              "items": {
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
+                "comment": "Do not submit. The accession is assigned by the server.",
+                "type": "string",
+                "accessionType": "WF"
+              }
             },
             "description": "Filter by workflow.accession",
             "style": "form",
@@ -1876,8 +1906,11 @@
             "name": "analysis_step.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by analysis_step.@id",
             "style": "form",
@@ -1887,11 +1920,14 @@
             "name": "analysis_step.name",
             "in": "query",
             "schema": {
-              "title": "Name",
-              "type": "string",
-              "description": "Full name of the analysis step.",
-              "comment": "Do not submit. Value is automatically assigned by the server.",
-              "uniqueKey": true
+              "type": "array",
+              "items": {
+                "title": "Name",
+                "type": "string",
+                "description": "Full name of the analysis step.",
+                "comment": "Do not submit. Value is automatically assigned by the server.",
+                "uniqueKey": true
+              }
             },
             "description": "Filter by analysis_step.name",
             "style": "form",
@@ -1901,8 +1937,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -1912,18 +1951,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -1933,8 +1975,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -1944,8 +1989,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -1985,8 +2033,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -1996,9 +2047,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -2432,8 +2486,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -2443,9 +2500,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -2850,8 +2910,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -2861,18 +2924,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -2882,11 +2948,14 @@
             "name": "award.name",
             "in": "query",
             "schema": {
-              "title": "Name",
-              "description": "The official grant number from the NIH database, if applicable",
-              "type": "string",
-              "pattern": "^[A-Za-z0-9\\-]+$",
-              "uniqueKey": true
+              "type": "array",
+              "items": {
+                "title": "Name",
+                "description": "The official grant number from the NIH database, if applicable",
+                "type": "string",
+                "pattern": "^[A-Za-z0-9\\-]+$",
+                "uniqueKey": true
+              }
             },
             "description": "Filter by award.name",
             "style": "form",
@@ -2896,8 +2965,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -2907,8 +2979,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -2918,8 +2993,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -2929,9 +3007,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -3357,8 +3438,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -3368,18 +3452,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -3389,8 +3476,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -3400,8 +3490,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -3411,8 +3504,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -3422,9 +3518,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -3982,8 +4081,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -3993,18 +4095,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -4014,8 +4119,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -4025,8 +4133,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -4173,8 +4284,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -4184,9 +4298,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -4784,8 +4901,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -4795,18 +4915,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -4816,8 +4939,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -4827,8 +4953,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -4958,8 +5087,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -4969,9 +5101,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -5763,8 +5898,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -5774,18 +5912,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -5795,8 +5936,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -5806,8 +5950,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -5817,8 +5964,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -5828,9 +5978,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -6520,8 +6673,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -6531,18 +6687,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -6552,8 +6711,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -6563,8 +6725,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -6574,8 +6739,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -6585,9 +6753,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -7326,8 +7497,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -7337,18 +7511,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -7358,8 +7535,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -7369,8 +7549,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -7380,8 +7563,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -7391,9 +7577,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -8068,8 +8257,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -8079,18 +8271,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -8100,8 +8295,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -8111,8 +8309,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -8122,8 +8323,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -8133,9 +8337,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -8884,8 +9091,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -8895,18 +9105,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -8916,8 +9129,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -8927,8 +9143,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -8938,8 +9157,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -8949,9 +9171,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -9652,8 +9877,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -9663,18 +9891,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -9684,8 +9915,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -9695,8 +9929,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -9706,8 +9943,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -9717,9 +9957,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -10550,8 +10793,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -10561,18 +10807,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -10582,8 +10831,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -10593,8 +10845,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -10604,8 +10859,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -10615,9 +10873,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -11517,8 +11778,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -11528,18 +11792,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -11549,8 +11816,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -11560,8 +11830,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -11571,8 +11844,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -11582,9 +11858,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -12382,8 +12661,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -12393,18 +12675,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -12414,8 +12699,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -12425,8 +12713,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -12436,8 +12727,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -12447,9 +12741,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -13216,8 +13513,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -13227,18 +13527,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -13248,8 +13551,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -13259,8 +13565,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -13270,8 +13579,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -13281,9 +13593,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -13786,8 +14101,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -13797,18 +14115,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -13818,8 +14139,11 @@
             "name": "award.contact_pi.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.contact_pi.@id",
             "style": "form",
@@ -13829,9 +14153,12 @@
             "name": "award.contact_pi.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by award.contact_pi.title",
             "style": "form",
@@ -13841,11 +14168,14 @@
             "name": "award.title",
             "in": "query",
             "schema": {
-              "rdfs:subPropertyOf": "dc:title",
-              "title": "Title",
-              "description": "The grant name from the NIH database, if applicable.",
-              "type": "string",
-              "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+              "type": "array",
+              "items": {
+                "rdfs:subPropertyOf": "dc:title",
+                "title": "Title",
+                "description": "The grant name from the NIH database, if applicable.",
+                "type": "string",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+              }
             },
             "description": "Filter by award.title",
             "style": "form",
@@ -14295,8 +14625,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -14306,8 +14639,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -14683,8 +15019,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -14694,9 +15033,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -15211,8 +15553,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -15222,18 +15567,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -15243,8 +15591,11 @@
             "name": "award.contact_pi.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.contact_pi.@id",
             "style": "form",
@@ -15254,9 +15605,12 @@
             "name": "award.contact_pi.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by award.contact_pi.title",
             "style": "form",
@@ -15266,11 +15620,14 @@
             "name": "award.title",
             "in": "query",
             "schema": {
-              "rdfs:subPropertyOf": "dc:title",
-              "title": "Title",
-              "description": "The grant name from the NIH database, if applicable.",
-              "type": "string",
-              "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+              "type": "array",
+              "items": {
+                "rdfs:subPropertyOf": "dc:title",
+                "title": "Title",
+                "description": "The grant name from the NIH database, if applicable.",
+                "type": "string",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+              }
             },
             "description": "Filter by award.title",
             "style": "form",
@@ -15645,8 +16002,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -15656,8 +16016,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -16143,8 +16506,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -16154,9 +16520,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -17157,8 +17526,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -17168,18 +17540,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -17346,8 +17721,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -17357,8 +17735,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -17368,8 +17749,11 @@
             "name": "large_scale_gene_list.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by large_scale_gene_list.@id",
             "style": "form",
@@ -17379,11 +17763,14 @@
             "name": "large_scale_gene_list.accession",
             "in": "query",
             "schema": {
-              "title": "Accession",
-              "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "comment": "Do not submit. The accession is assigned by the server.",
-              "type": "string",
-              "accessionType": "FI"
+              "type": "array",
+              "items": {
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
+                "comment": "Do not submit. The accession is assigned by the server.",
+                "type": "string",
+                "accessionType": "FI"
+              }
             },
             "description": "Filter by large_scale_gene_list.accession",
             "style": "form",
@@ -17414,8 +17801,11 @@
             "name": "large_scale_loci_list.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by large_scale_loci_list.@id",
             "style": "form",
@@ -17425,11 +17815,14 @@
             "name": "large_scale_loci_list.accession",
             "in": "query",
             "schema": {
-              "title": "Accession",
-              "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "comment": "Do not submit. The accession is assigned by the server.",
-              "type": "string",
-              "accessionType": "FI"
+              "type": "array",
+              "items": {
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
+                "comment": "Do not submit. The accession is assigned by the server.",
+                "type": "string",
+                "accessionType": "FI"
+              }
             },
             "description": "Filter by large_scale_loci_list.accession",
             "style": "form",
@@ -17610,8 +18003,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -17621,9 +18017,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -18176,8 +18575,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -18187,18 +18589,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -18208,8 +18613,11 @@
             "name": "award.contact_pi.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.contact_pi.@id",
             "style": "form",
@@ -18219,9 +18627,12 @@
             "name": "award.contact_pi.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by award.contact_pi.title",
             "style": "form",
@@ -18231,11 +18642,14 @@
             "name": "award.title",
             "in": "query",
             "schema": {
-              "rdfs:subPropertyOf": "dc:title",
-              "title": "Title",
-              "description": "The grant name from the NIH database, if applicable.",
-              "type": "string",
-              "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+              "type": "array",
+              "items": {
+                "rdfs:subPropertyOf": "dc:title",
+                "title": "Title",
+                "description": "The grant name from the NIH database, if applicable.",
+                "type": "string",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+              }
             },
             "description": "Filter by award.title",
             "style": "form",
@@ -18610,8 +19024,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -18621,8 +19038,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -18998,8 +19418,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -19009,9 +19432,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -19618,8 +20044,11 @@
             "name": "assay_term.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by assay_term.@id",
             "style": "form",
@@ -19629,11 +20058,14 @@
             "name": "assay_term.term_name",
             "in": "query",
             "schema": {
-              "title": "Term Name",
-              "description": "Ontology term describing a biological sample, assay, trait, or disease.",
-              "comment": "The term should match the term identifiers specified in term_id.",
-              "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Term Name",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease.",
+                "comment": "The term should match the term identifiers specified in term_id.",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "type": "string"
+              }
             },
             "description": "Filter by assay_term.term_name",
             "style": "form",
@@ -19720,8 +20152,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -19731,18 +20166,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -19752,8 +20190,11 @@
             "name": "award.contact_pi.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.contact_pi.@id",
             "style": "form",
@@ -19763,9 +20204,12 @@
             "name": "award.contact_pi.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by award.contact_pi.title",
             "style": "form",
@@ -19775,11 +20219,14 @@
             "name": "award.title",
             "in": "query",
             "schema": {
-              "rdfs:subPropertyOf": "dc:title",
-              "title": "Title",
-              "description": "The grant name from the NIH database, if applicable.",
-              "type": "string",
-              "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+              "type": "array",
+              "items": {
+                "rdfs:subPropertyOf": "dc:title",
+                "title": "Title",
+                "description": "The grant name from the NIH database, if applicable.",
+                "type": "string",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+              }
             },
             "description": "Filter by award.title",
             "style": "form",
@@ -20221,8 +20668,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -20232,8 +20682,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -20243,8 +20696,11 @@
             "name": "library_construction_platform.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by library_construction_platform.@id",
             "style": "form",
@@ -20254,11 +20710,14 @@
             "name": "library_construction_platform.term_name",
             "in": "query",
             "schema": {
-              "title": "Term Name",
-              "description": "Ontology term describing a biological sample, assay, trait, or disease.",
-              "comment": "The term should match the term identifiers specified in term_id.",
-              "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Term Name",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease.",
+                "comment": "The term should match the term identifiers specified in term_id.",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "type": "string"
+              }
             },
             "description": "Filter by library_construction_platform.term_name",
             "style": "form",
@@ -20892,8 +21351,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -20903,9 +21365,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -21577,8 +22042,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -21588,18 +22056,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -21609,8 +22080,11 @@
             "name": "award.contact_pi.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.contact_pi.@id",
             "style": "form",
@@ -21620,9 +22094,12 @@
             "name": "award.contact_pi.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by award.contact_pi.title",
             "style": "form",
@@ -21632,11 +22109,14 @@
             "name": "award.title",
             "in": "query",
             "schema": {
-              "rdfs:subPropertyOf": "dc:title",
-              "title": "Title",
-              "description": "The grant name from the NIH database, if applicable.",
-              "type": "string",
-              "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+              "type": "array",
+              "items": {
+                "rdfs:subPropertyOf": "dc:title",
+                "title": "Title",
+                "description": "The grant name from the NIH database, if applicable.",
+                "type": "string",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+              }
             },
             "description": "Filter by award.title",
             "style": "form",
@@ -22063,8 +22543,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -22074,8 +22557,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -22451,8 +22937,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -22462,9 +22951,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -23052,8 +23544,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -23063,18 +23558,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -23084,8 +23582,11 @@
             "name": "award.contact_pi.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.contact_pi.@id",
             "style": "form",
@@ -23095,9 +23596,12 @@
             "name": "award.contact_pi.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by award.contact_pi.title",
             "style": "form",
@@ -23107,11 +23611,14 @@
             "name": "award.title",
             "in": "query",
             "schema": {
-              "rdfs:subPropertyOf": "dc:title",
-              "title": "Title",
-              "description": "The grant name from the NIH database, if applicable.",
-              "type": "string",
-              "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+              "type": "array",
+              "items": {
+                "rdfs:subPropertyOf": "dc:title",
+                "title": "Title",
+                "description": "The grant name from the NIH database, if applicable.",
+                "type": "string",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+              }
             },
             "description": "Filter by award.title",
             "style": "form",
@@ -23486,8 +23993,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -23497,8 +24007,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -23508,8 +24021,11 @@
             "name": "large_scale_gene_list.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by large_scale_gene_list.@id",
             "style": "form",
@@ -23519,11 +24035,14 @@
             "name": "large_scale_gene_list.accession",
             "in": "query",
             "schema": {
-              "title": "Accession",
-              "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "comment": "Do not submit. The accession is assigned by the server.",
-              "type": "string",
-              "accessionType": "FI"
+              "type": "array",
+              "items": {
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
+                "comment": "Do not submit. The accession is assigned by the server.",
+                "type": "string",
+                "accessionType": "FI"
+              }
             },
             "description": "Filter by large_scale_gene_list.accession",
             "style": "form",
@@ -23554,8 +24073,11 @@
             "name": "large_scale_loci_list.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by large_scale_loci_list.@id",
             "style": "form",
@@ -23565,11 +24087,14 @@
             "name": "large_scale_loci_list.accession",
             "in": "query",
             "schema": {
-              "title": "Accession",
-              "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "comment": "Do not submit. The accession is assigned by the server.",
-              "type": "string",
-              "accessionType": "FI"
+              "type": "array",
+              "items": {
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
+                "comment": "Do not submit. The accession is assigned by the server.",
+                "type": "string",
+                "accessionType": "FI"
+              }
             },
             "description": "Filter by large_scale_loci_list.accession",
             "style": "form",
@@ -24073,8 +24598,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -24084,9 +24612,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -24590,8 +25121,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -24601,9 +25135,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -24992,8 +25529,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -25003,9 +25543,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -25407,8 +25950,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -25418,18 +25964,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -25439,8 +25988,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -25450,8 +26002,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -25461,8 +26016,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -25472,9 +26030,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -25879,8 +26440,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -25890,9 +26454,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -26412,8 +26979,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -26423,18 +26993,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -26444,8 +27017,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -26455,8 +27031,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -26466,8 +27045,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -26477,9 +27059,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -26941,8 +27526,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -26952,18 +27540,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -26973,8 +27564,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -26984,8 +27578,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -26995,8 +27592,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -27006,9 +27606,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -27529,8 +28132,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -27540,9 +28146,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -27958,8 +28567,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -27969,9 +28581,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -28460,8 +29075,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -28471,9 +29089,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -28967,8 +29588,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -28978,9 +29602,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -29860,8 +30487,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -29871,9 +30501,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -30224,8 +30857,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -30235,18 +30871,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -30256,8 +30895,11 @@
             "name": "feature.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by feature.@id",
             "style": "form",
@@ -30267,11 +30909,14 @@
             "name": "feature.term_id",
             "in": "query",
             "schema": {
-              "@type": "@id",
-              "title": "Phenotype Term ID",
-              "description": "An ontology term identifier describing a phenotype.",
-              "type": "string",
-              "pattern": "^(DOID|EFO|HP|MONDO|OBA|NTR):[0-9]{2,8}|OBA:VT[0-9]{2,8}|NCIT:C[0-9]{2,8}$"
+              "type": "array",
+              "items": {
+                "@type": "@id",
+                "title": "Phenotype Term ID",
+                "description": "An ontology term identifier describing a phenotype.",
+                "type": "string",
+                "pattern": "^(DOID|EFO|HP|MONDO|OBA|NTR):[0-9]{2,8}|OBA:VT[0-9]{2,8}|NCIT:C[0-9]{2,8}$"
+              }
             },
             "description": "Filter by feature.term_id",
             "style": "form",
@@ -30281,11 +30926,14 @@
             "name": "feature.term_name",
             "in": "query",
             "schema": {
-              "title": "Term Name",
-              "description": "Ontology term describing a biological sample, assay, trait, or disease.",
-              "comment": "The term should match the term identifiers specified in term_id.",
-              "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Term Name",
+                "description": "Ontology term describing a biological sample, assay, trait, or disease.",
+                "comment": "The term should match the term identifiers specified in term_id.",
+                "pattern": "^(?![\\s\"'])[\\S|\\s]*[^\\s\"']$",
+                "type": "string"
+              }
             },
             "description": "Filter by feature.term_name",
             "style": "form",
@@ -30295,8 +30943,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -30306,8 +30957,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -30317,8 +30971,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -30328,9 +30985,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -30946,8 +31606,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -30957,18 +31620,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -30978,8 +31644,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -30989,8 +31658,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -31000,8 +31672,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -31011,9 +31686,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -32063,8 +32741,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -32074,18 +32755,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -32373,8 +33057,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -32384,8 +33071,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -32475,8 +33165,11 @@
             "name": "originated_from.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by originated_from.@id",
             "style": "form",
@@ -32486,11 +33179,14 @@
             "name": "originated_from.accession",
             "in": "query",
             "schema": {
-              "title": "Accession",
-              "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "comment": "Do not submit. The accession is assigned by the server.",
-              "type": "string",
-              "accessionType": "SM"
+              "type": "array",
+              "items": {
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
+                "comment": "Do not submit. The accession is assigned by the server.",
+                "type": "string",
+                "accessionType": "SM"
+              }
             },
             "description": "Filter by originated_from.accession",
             "style": "form",
@@ -32531,8 +33227,11 @@
             "name": "sorted_from.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by sorted_from.@id",
             "style": "form",
@@ -32542,11 +33241,14 @@
             "name": "sorted_from.accession",
             "in": "query",
             "schema": {
-              "title": "Accession",
-              "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "comment": "Do not submit. The accession is assigned by the server.",
-              "type": "string",
-              "accessionType": "SM"
+              "type": "array",
+              "items": {
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
+                "comment": "Do not submit. The accession is assigned by the server.",
+                "type": "string",
+                "accessionType": "SM"
+              }
             },
             "description": "Filter by sorted_from.accession",
             "style": "form",
@@ -32570,8 +33272,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -32581,9 +33286,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -33403,8 +34111,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -33414,18 +34125,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -33618,8 +34332,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -33629,8 +34346,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -33932,8 +34652,11 @@
             "name": "sorted_from.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by sorted_from.@id",
             "style": "form",
@@ -33943,11 +34666,14 @@
             "name": "sorted_from.accession",
             "in": "query",
             "schema": {
-              "title": "Accession",
-              "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "comment": "Do not submit. The accession is assigned by the server.",
-              "type": "string",
-              "accessionType": "SM"
+              "type": "array",
+              "items": {
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
+                "comment": "Do not submit. The accession is assigned by the server.",
+                "type": "string",
+                "accessionType": "SM"
+              }
             },
             "description": "Filter by sorted_from.accession",
             "style": "form",
@@ -33971,8 +34697,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -33982,9 +34711,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -35031,8 +35763,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -35042,18 +35777,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -35246,8 +35984,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -35257,8 +35998,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -35379,8 +36123,11 @@
             "name": "sorted_from.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by sorted_from.@id",
             "style": "form",
@@ -35390,11 +36137,14 @@
             "name": "sorted_from.accession",
             "in": "query",
             "schema": {
-              "title": "Accession",
-              "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "comment": "Do not submit. The accession is assigned by the server.",
-              "type": "string",
-              "accessionType": "SM"
+              "type": "array",
+              "items": {
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
+                "comment": "Do not submit. The accession is assigned by the server.",
+                "type": "string",
+                "accessionType": "SM"
+              }
             },
             "description": "Filter by sorted_from.accession",
             "style": "form",
@@ -35418,8 +36168,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -35429,9 +36182,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -36268,8 +37024,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -36279,18 +37038,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -36421,8 +37183,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -36432,8 +37197,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -36505,8 +37273,11 @@
             "name": "sorted_from.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by sorted_from.@id",
             "style": "form",
@@ -36516,11 +37287,14 @@
             "name": "sorted_from.accession",
             "in": "query",
             "schema": {
-              "title": "Accession",
-              "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "comment": "Do not submit. The accession is assigned by the server.",
-              "type": "string",
-              "accessionType": "SM"
+              "type": "array",
+              "items": {
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
+                "comment": "Do not submit. The accession is assigned by the server.",
+                "type": "string",
+                "accessionType": "SM"
+              }
             },
             "description": "Filter by sorted_from.accession",
             "style": "form",
@@ -36544,8 +37318,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -36555,9 +37332,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -37556,8 +38336,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -37567,18 +38350,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -37771,8 +38557,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -37782,8 +38571,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -37904,8 +38696,11 @@
             "name": "sorted_from.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by sorted_from.@id",
             "style": "form",
@@ -37915,11 +38710,14 @@
             "name": "sorted_from.accession",
             "in": "query",
             "schema": {
-              "title": "Accession",
-              "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "comment": "Do not submit. The accession is assigned by the server.",
-              "type": "string",
-              "accessionType": "SM"
+              "type": "array",
+              "items": {
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
+                "comment": "Do not submit. The accession is assigned by the server.",
+                "type": "string",
+                "accessionType": "SM"
+              }
             },
             "description": "Filter by sorted_from.accession",
             "style": "form",
@@ -37943,8 +38741,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -37954,9 +38755,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -38991,8 +39795,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -39002,18 +39809,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -39206,8 +40016,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -39217,8 +40030,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -39339,8 +40155,11 @@
             "name": "sorted_from.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by sorted_from.@id",
             "style": "form",
@@ -39350,11 +40169,14 @@
             "name": "sorted_from.accession",
             "in": "query",
             "schema": {
-              "title": "Accession",
-              "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "comment": "Do not submit. The accession is assigned by the server.",
-              "type": "string",
-              "accessionType": "SM"
+              "type": "array",
+              "items": {
+                "title": "Accession",
+                "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
+                "comment": "Do not submit. The accession is assigned by the server.",
+                "type": "string",
+                "accessionType": "SM"
+              }
             },
             "description": "Filter by sorted_from.accession",
             "style": "form",
@@ -39378,8 +40200,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -39389,9 +40214,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -39898,8 +40726,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -39909,18 +40740,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -39930,8 +40764,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -39941,8 +40778,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -39952,8 +40792,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -39963,9 +40806,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -40351,8 +41197,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -40362,18 +41211,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -40383,8 +41235,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -40394,8 +41249,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -40405,8 +41263,11 @@
             "name": "software.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by software.@id",
             "style": "form",
@@ -40416,10 +41277,13 @@
             "name": "software.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "description": "The preferred viewable name of the software.",
-              "type": "string",
-              "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "description": "The preferred viewable name of the software.",
+                "type": "string",
+                "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
+              }
             },
             "description": "Filter by software.title",
             "style": "form",
@@ -40429,8 +41293,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -40440,9 +41307,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -40782,8 +41652,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -40793,9 +41666,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -41369,8 +42245,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -41380,18 +42259,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -41401,8 +42283,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -41412,8 +42297,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -41437,8 +42325,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -41448,9 +42339,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -41883,8 +42777,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -41894,9 +42791,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
@@ -42393,8 +43293,11 @@
             "name": "award.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by award.@id",
             "style": "form",
@@ -42404,18 +43307,21 @@
             "name": "award.component",
             "in": "query",
             "schema": {
-              "title": "Project Component",
-              "description": "The project component the award is associated with.",
-              "type": "string",
-              "enum": [
-                "affiliate",
-                "data analysis",
-                "data coordination",
-                "functional characterization",
-                "mapping",
-                "networks",
-                "predictive modeling"
-              ]
+              "type": "array",
+              "items": {
+                "title": "Project Component",
+                "description": "The project component the award is associated with.",
+                "type": "string",
+                "enum": [
+                  "affiliate",
+                  "data analysis",
+                  "data coordination",
+                  "functional characterization",
+                  "mapping",
+                  "networks",
+                  "predictive modeling"
+                ]
+              }
             },
             "description": "Filter by award.component",
             "style": "form",
@@ -42425,8 +43331,11 @@
             "name": "lab.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.@id",
             "style": "form",
@@ -42436,8 +43345,11 @@
             "name": "lab.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string"
+              }
             },
             "description": "Filter by lab.title",
             "style": "form",
@@ -42447,8 +43359,11 @@
             "name": "standards_page.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by standards_page.@id",
             "style": "form",
@@ -42458,9 +43373,12 @@
             "name": "standards_page.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "description": "The name shown in the browser's title bar and tabs.",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "description": "The name shown in the browser's title bar and tabs.",
+                "type": "string"
+              }
             },
             "description": "Filter by standards_page.title",
             "style": "form",
@@ -42470,8 +43388,11 @@
             "name": "submitted_by.@id",
             "in": "query",
             "schema": {
-              "title": "ID",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "title": "ID",
+                "type": "string"
+              }
             },
             "description": "Filter by submitted_by.@id",
             "style": "form",
@@ -42481,9 +43402,12 @@
             "name": "submitted_by.title",
             "in": "query",
             "schema": {
-              "title": "Title",
-              "type": "string",
-              "description": "The full name of the user."
+              "type": "array",
+              "items": {
+                "title": "Title",
+                "type": "string",
+                "description": "The full name of the user."
+              }
             },
             "description": "Filter by submitted_by.title",
             "style": "form",
