@@ -98,7 +98,7 @@ class IgvfApi:
     def access_keys(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
@@ -133,7 +133,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -232,7 +232,7 @@ class IgvfApi:
     def access_keys_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
@@ -267,7 +267,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -366,7 +366,7 @@ class IgvfApi:
     def access_keys_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
@@ -401,7 +401,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -656,7 +656,7 @@ class IgvfApi:
     def alignment_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -726,7 +726,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -930,7 +930,7 @@ class IgvfApi:
     def alignment_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -1000,7 +1000,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -1204,7 +1204,7 @@ class IgvfApi:
     def alignment_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -1274,7 +1274,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -1844,7 +1844,7 @@ class IgvfApi:
     def analysis_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -1941,7 +1941,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -2226,7 +2226,7 @@ class IgvfApi:
     def analysis_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -2323,7 +2323,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -2608,7 +2608,7 @@ class IgvfApi:
     def analysis_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -2705,7 +2705,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -3518,7 +3518,7 @@ class IgvfApi:
     def analysis_step_versions(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -3559,7 +3559,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -3676,7 +3676,7 @@ class IgvfApi:
     def analysis_step_versions_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -3717,7 +3717,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -3834,7 +3834,7 @@ class IgvfApi:
     def analysis_step_versions_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -3875,7 +3875,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -4184,7 +4184,7 @@ class IgvfApi:
     def analysis_steps(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -4231,7 +4231,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -4366,7 +4366,7 @@ class IgvfApi:
     def analysis_steps_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -4413,7 +4413,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -4548,7 +4548,7 @@ class IgvfApi:
     def analysis_steps_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -4595,7 +4595,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -4958,7 +4958,7 @@ class IgvfApi:
     def assay_terms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -5003,7 +5003,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -5132,7 +5132,7 @@ class IgvfApi:
     def assay_terms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -5177,7 +5177,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -5306,7 +5306,7 @@ class IgvfApi:
     def assay_terms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -5351,7 +5351,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -5696,7 +5696,7 @@ class IgvfApi:
     def auxiliary_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -5794,7 +5794,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -6082,7 +6082,7 @@ class IgvfApi:
     def auxiliary_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -6180,7 +6180,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -6468,7 +6468,7 @@ class IgvfApi:
     def auxiliary_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -6566,7 +6566,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -7388,7 +7388,7 @@ class IgvfApi:
     def awards(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
         url: Annotated[Optional[List[StrictStr]], Field(description="Filter by url")] = None,
@@ -7430,7 +7430,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -7550,7 +7550,7 @@ class IgvfApi:
     def awards_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
         url: Annotated[Optional[List[StrictStr]], Field(description="Filter by url")] = None,
@@ -7592,7 +7592,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -7712,7 +7712,7 @@ class IgvfApi:
     def awards_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
         url: Annotated[Optional[List[StrictStr]], Field(description="Filter by url")] = None,
@@ -7754,7 +7754,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -8377,7 +8377,7 @@ class IgvfApi:
     def biomarkers(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -8422,7 +8422,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -8551,7 +8551,7 @@ class IgvfApi:
     def biomarkers_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -8596,7 +8596,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -8725,7 +8725,7 @@ class IgvfApi:
     def biomarkers_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -8770,7 +8770,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -9115,7 +9115,7 @@ class IgvfApi:
     def configuration_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -9178,7 +9178,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -9361,7 +9361,7 @@ class IgvfApi:
     def configuration_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -9424,7 +9424,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -9607,7 +9607,7 @@ class IgvfApi:
     def configuration_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -9670,7 +9670,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -10177,7 +10177,7 @@ class IgvfApi:
     def construct_library_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         small_scale_loci_list: Annotated[Optional[List[Locus]], Field(description="Filter by small_scale_loci_list")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
@@ -10277,7 +10277,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -10571,7 +10571,7 @@ class IgvfApi:
     def construct_library_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         small_scale_loci_list: Annotated[Optional[List[Locus]], Field(description="Filter by small_scale_loci_list")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
@@ -10671,7 +10671,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -10965,7 +10965,7 @@ class IgvfApi:
     def construct_library_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         small_scale_loci_list: Annotated[Optional[List[Locus]], Field(description="Filter by small_scale_loci_list")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
@@ -11065,7 +11065,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -11905,7 +11905,7 @@ class IgvfApi:
     def crispr_modifications(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         sources: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources")] = None,
@@ -11955,7 +11955,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -12099,7 +12099,7 @@ class IgvfApi:
     def crispr_modifications_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         sources: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources")] = None,
@@ -12149,7 +12149,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -12293,7 +12293,7 @@ class IgvfApi:
     def crispr_modifications_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         sources: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources")] = None,
@@ -12343,7 +12343,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -12733,7 +12733,7 @@ class IgvfApi:
     def curated_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by taxa")] = None,
@@ -12829,7 +12829,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -13111,7 +13111,7 @@ class IgvfApi:
     def curated_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by taxa")] = None,
@@ -13207,7 +13207,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -13489,7 +13489,7 @@ class IgvfApi:
     def curated_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by taxa")] = None,
@@ -13585,7 +13585,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -14389,7 +14389,7 @@ class IgvfApi:
     def degron_modifications(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         sources: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources")] = None,
@@ -14437,7 +14437,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -14575,7 +14575,7 @@ class IgvfApi:
     def degron_modifications_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         sources: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources")] = None,
@@ -14623,7 +14623,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -14761,7 +14761,7 @@ class IgvfApi:
     def degron_modifications_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         sources: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources")] = None,
@@ -14809,7 +14809,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -15181,7 +15181,7 @@ class IgvfApi:
     def documents(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -15221,7 +15221,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -15335,7 +15335,7 @@ class IgvfApi:
     def documents_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -15375,7 +15375,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -15489,7 +15489,7 @@ class IgvfApi:
     def documents_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -15529,7 +15529,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -16093,7 +16093,7 @@ class IgvfApi:
     def genes(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
@@ -16137,7 +16137,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -16263,7 +16263,7 @@ class IgvfApi:
     def genes_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
@@ -16307,7 +16307,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -16433,7 +16433,7 @@ class IgvfApi:
     def genes_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
@@ -16477,7 +16477,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -16813,7 +16813,7 @@ class IgvfApi:
     def genome_browser_annotation_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         assembly: Annotated[Optional[List[StrictStr]], Field(description="Filter by assembly")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
@@ -16878,7 +16878,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -17067,7 +17067,7 @@ class IgvfApi:
     def genome_browser_annotation_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         assembly: Annotated[Optional[List[StrictStr]], Field(description="Filter by assembly")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
@@ -17132,7 +17132,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -17321,7 +17321,7 @@ class IgvfApi:
     def genome_browser_annotation_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         assembly: Annotated[Optional[List[StrictStr]], Field(description="Filter by assembly")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
@@ -17386,7 +17386,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -18174,7 +18174,7 @@ class IgvfApi:
     def human_donors(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by taxa")] = None,
@@ -18233,7 +18233,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -18404,7 +18404,7 @@ class IgvfApi:
     def human_donors_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by taxa")] = None,
@@ -18463,7 +18463,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -18634,7 +18634,7 @@ class IgvfApi:
     def human_donors_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by taxa")] = None,
@@ -18693,7 +18693,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -19164,7 +19164,7 @@ class IgvfApi:
     def image_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -19226,7 +19226,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -19406,7 +19406,7 @@ class IgvfApi:
     def image_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -19468,7 +19468,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -19648,7 +19648,7 @@ class IgvfApi:
     def image_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -19710,7 +19710,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -20208,7 +20208,7 @@ class IgvfApi:
     def images(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -20244,7 +20244,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -20346,7 +20346,7 @@ class IgvfApi:
     def images_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -20382,7 +20382,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -20484,7 +20484,7 @@ class IgvfApi:
     def images_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -20520,7 +20520,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -20784,7 +20784,7 @@ class IgvfApi:
     def in_vitro_systems(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -20903,7 +20903,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -21254,7 +21254,7 @@ class IgvfApi:
     def in_vitro_systems_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -21373,7 +21373,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -21724,7 +21724,7 @@ class IgvfApi:
     def in_vitro_systems_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -21843,7 +21843,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -22854,7 +22854,7 @@ class IgvfApi:
     def institutional_certificates(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -22897,7 +22897,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -23020,7 +23020,7 @@ class IgvfApi:
     def institutional_certificates_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -23063,7 +23063,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -23186,7 +23186,7 @@ class IgvfApi:
     def institutional_certificates_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -23229,7 +23229,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -23556,7 +23556,7 @@ class IgvfApi:
     def labs(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
         url: Annotated[Optional[List[StrictStr]], Field(description="Filter by url")] = None,
@@ -23596,7 +23596,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -23710,7 +23710,7 @@ class IgvfApi:
     def labs_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
         url: Annotated[Optional[List[StrictStr]], Field(description="Filter by url")] = None,
@@ -23750,7 +23750,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -23864,7 +23864,7 @@ class IgvfApi:
     def labs_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
         url: Annotated[Optional[List[StrictStr]], Field(description="Filter by url")] = None,
@@ -23904,7 +23904,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -24204,7 +24204,7 @@ class IgvfApi:
     def matrix_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         reference_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by reference_files")] = None,
@@ -24270,7 +24270,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -24462,7 +24462,7 @@ class IgvfApi:
     def matrix_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         reference_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by reference_files")] = None,
@@ -24528,7 +24528,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -24720,7 +24720,7 @@ class IgvfApi:
     def matrix_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         reference_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by reference_files")] = None,
@@ -24786,7 +24786,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -25320,7 +25320,7 @@ class IgvfApi:
     def measurement_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -25450,7 +25450,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -25834,7 +25834,7 @@ class IgvfApi:
     def measurement_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -25964,7 +25964,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -26348,7 +26348,7 @@ class IgvfApi:
     def measurement_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -26478,7 +26478,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -27588,7 +27588,7 @@ class IgvfApi:
     def model_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -27652,7 +27652,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -27838,7 +27838,7 @@ class IgvfApi:
     def model_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -27902,7 +27902,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -28088,7 +28088,7 @@ class IgvfApi:
     def model_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -28152,7 +28152,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -28668,7 +28668,7 @@ class IgvfApi:
     def model_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -28770,7 +28770,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -29070,7 +29070,7 @@ class IgvfApi:
     def model_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -29172,7 +29172,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -29472,7 +29472,7 @@ class IgvfApi:
     def model_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -29574,7 +29574,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -30432,7 +30432,7 @@ class IgvfApi:
     def multiplexed_samples(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -30533,7 +30533,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -30830,7 +30830,7 @@ class IgvfApi:
     def multiplexed_samples_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -30931,7 +30931,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -31228,7 +31228,7 @@ class IgvfApi:
     def multiplexed_samples_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -31329,7 +31329,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -32178,7 +32178,7 @@ class IgvfApi:
     def open_reading_frames(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -32221,7 +32221,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -32344,7 +32344,7 @@ class IgvfApi:
     def open_reading_frames_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -32387,7 +32387,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -32510,7 +32510,7 @@ class IgvfApi:
     def open_reading_frames_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -32553,7 +32553,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -32880,7 +32880,7 @@ class IgvfApi:
     def pages(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         lab: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab")] = None,
@@ -32919,7 +32919,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -33030,7 +33030,7 @@ class IgvfApi:
     def pages_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         lab: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab")] = None,
@@ -33069,7 +33069,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -33180,7 +33180,7 @@ class IgvfApi:
     def pages_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         lab: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab")] = None,
@@ -33219,7 +33219,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -33510,7 +33510,7 @@ class IgvfApi:
     def phenotype_terms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -33551,7 +33551,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -33668,7 +33668,7 @@ class IgvfApi:
     def phenotype_terms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -33709,7 +33709,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -33826,7 +33826,7 @@ class IgvfApi:
     def phenotype_terms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -33867,7 +33867,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -34176,7 +34176,7 @@ class IgvfApi:
     def phenotypic_features(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -34219,7 +34219,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -34342,7 +34342,7 @@ class IgvfApi:
     def phenotypic_features_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -34385,7 +34385,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -34508,7 +34508,7 @@ class IgvfApi:
     def phenotypic_features_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -34551,7 +34551,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -34878,7 +34878,7 @@ class IgvfApi:
     def platform_terms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -34921,7 +34921,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -35044,7 +35044,7 @@ class IgvfApi:
     def platform_terms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -35087,7 +35087,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -35210,7 +35210,7 @@ class IgvfApi:
     def platform_terms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -35253,7 +35253,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -35580,7 +35580,7 @@ class IgvfApi:
     def prediction_sets(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         input_file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets")] = None,
         small_scale_loci_list: Annotated[Optional[List[Locus]], Field(description="Filter by small_scale_loci_list")] = None,
@@ -35689,7 +35689,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -36010,7 +36010,7 @@ class IgvfApi:
     def prediction_sets_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         input_file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets")] = None,
         small_scale_loci_list: Annotated[Optional[List[Locus]], Field(description="Filter by small_scale_loci_list")] = None,
@@ -36119,7 +36119,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -36440,7 +36440,7 @@ class IgvfApi:
     def prediction_sets_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         input_file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets")] = None,
         small_scale_loci_list: Annotated[Optional[List[Locus]], Field(description="Filter by small_scale_loci_list")] = None,
@@ -36549,7 +36549,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -37470,7 +37470,7 @@ class IgvfApi:
     def primary_cells(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -37576,7 +37576,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -37888,7 +37888,7 @@ class IgvfApi:
     def primary_cells_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -37994,7 +37994,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -38306,7 +38306,7 @@ class IgvfApi:
     def primary_cells_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -38412,7 +38412,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -39306,7 +39306,7 @@ class IgvfApi:
     def publications(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -39361,7 +39361,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -39520,7 +39520,7 @@ class IgvfApi:
     def publications_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -39575,7 +39575,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -39734,7 +39734,7 @@ class IgvfApi:
     def publications_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -39789,7 +39789,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -40224,7 +40224,7 @@ class IgvfApi:
     def reference_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -40295,7 +40295,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -40502,7 +40502,7 @@ class IgvfApi:
     def reference_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -40573,7 +40573,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -40780,7 +40780,7 @@ class IgvfApi:
     def reference_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -40851,7 +40851,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -41429,9 +41429,11 @@ class IgvfApi:
     @validate_call
     def report(
         self,
-        type: Annotated[List[StrictStr], Field(description="Type of items to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
+        type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
@@ -41451,11 +41453,15 @@ class IgvfApi:
 
         Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).
 
-        :param type: Type of items to return. Can be repeated for multiple types. (required)
-        :type type: List[str]
         :param query: Query string for searching.
         :type query: str
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
+        :param type: Filter by item type.
+        :type type: List[str]
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
+        :type limit: Limit
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.
+        :type sort: List[str]
+        :param field_filters: Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
         :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
         :type include_fields: List[str]
@@ -41484,8 +41490,10 @@ class IgvfApi:
         """ # noqa: E501
 
         _param = self._report_serialize(
-            type=type,
             query=query,
+            type=type,
+            limit=limit,
+            sort=sort,
             field_filters=field_filters,
             include_fields=include_fields,
             frame=frame,
@@ -41515,9 +41523,11 @@ class IgvfApi:
     @validate_call
     def report_with_http_info(
         self,
-        type: Annotated[List[StrictStr], Field(description="Type of items to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
+        type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
@@ -41537,11 +41547,15 @@ class IgvfApi:
 
         Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).
 
-        :param type: Type of items to return. Can be repeated for multiple types. (required)
-        :type type: List[str]
         :param query: Query string for searching.
         :type query: str
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
+        :param type: Filter by item type.
+        :type type: List[str]
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
+        :type limit: Limit
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.
+        :type sort: List[str]
+        :param field_filters: Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
         :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
         :type include_fields: List[str]
@@ -41570,8 +41584,10 @@ class IgvfApi:
         """ # noqa: E501
 
         _param = self._report_serialize(
-            type=type,
             query=query,
+            type=type,
+            limit=limit,
+            sort=sort,
             field_filters=field_filters,
             include_fields=include_fields,
             frame=frame,
@@ -41601,9 +41617,11 @@ class IgvfApi:
     @validate_call
     def report_without_preload_content(
         self,
-        type: Annotated[List[StrictStr], Field(description="Type of items to return. Can be repeated for multiple types.")],
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
+        type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
         frame: Annotated[Optional[StrictStr], Field(description="Object with links, or object with some links embedded.")] = None,
         _request_timeout: Union[
@@ -41623,11 +41641,15 @@ class IgvfApi:
 
         Like /search endpoint but returns a TSV file instead of JSON. Must specify item type(s).
 
-        :param type: Type of items to return. Can be repeated for multiple types. (required)
-        :type type: List[str]
         :param query: Query string for searching.
         :type query: str
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
+        :param type: Filter by item type.
+        :type type: List[str]
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
+        :type limit: Limit
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.
+        :type sort: List[str]
+        :param field_filters: Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
         :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
         :type include_fields: List[str]
@@ -41656,8 +41678,10 @@ class IgvfApi:
         """ # noqa: E501
 
         _param = self._report_serialize(
-            type=type,
             query=query,
+            type=type,
+            limit=limit,
+            sort=sort,
             field_filters=field_filters,
             include_fields=include_fields,
             frame=frame,
@@ -41682,8 +41706,10 @@ class IgvfApi:
 
     def _report_serialize(
         self,
-        type,
         query,
+        type,
+        limit,
+        sort,
         field_filters,
         include_fields,
         frame,
@@ -41697,6 +41723,7 @@ class IgvfApi:
 
         _collection_formats: Dict[str, str] = {
             'type': 'multi',
+            'sort': 'multi',
             'field': 'multi',
         }
 
@@ -41709,13 +41736,21 @@ class IgvfApi:
 
         # process the path parameters
         # process the query parameters
+        if query is not None:
+            
+            _query_params.append(('query', query))
+            
         if type is not None:
             
             _query_params.append(('type', type))
             
-        if query is not None:
+        if limit is not None:
             
-            _query_params.append(('query', query))
+            _query_params.append(('limit', limit))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
             
         if field_filters is not None:
             for k, v in field_filters.items():
@@ -41770,7 +41805,7 @@ class IgvfApi:
     def rodent_donors(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by taxa")] = None,
@@ -41833,7 +41868,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -42016,7 +42051,7 @@ class IgvfApi:
     def rodent_donors_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by taxa")] = None,
@@ -42079,7 +42114,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -42262,7 +42297,7 @@ class IgvfApi:
     def rodent_donors_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by taxa")] = None,
@@ -42325,7 +42360,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -42832,7 +42867,7 @@ class IgvfApi:
     def sample_terms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -42878,7 +42913,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -43010,7 +43045,7 @@ class IgvfApi:
     def sample_terms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -43056,7 +43091,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -43188,7 +43223,7 @@ class IgvfApi:
     def sample_terms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -43234,7 +43269,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -44090,7 +44125,7 @@ class IgvfApi:
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         _request_timeout: Union[
@@ -44114,7 +44149,7 @@ class IgvfApi:
         :type query: str
         :param type: Filter by item type.
         :type type: List[str]
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.
         :type sort: List[str]
@@ -44174,7 +44209,7 @@ class IgvfApi:
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         _request_timeout: Union[
@@ -44198,7 +44233,7 @@ class IgvfApi:
         :type query: str
         :param type: Filter by item type.
         :type type: List[str]
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.
         :type sort: List[str]
@@ -44258,7 +44293,7 @@ class IgvfApi:
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
         field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         _request_timeout: Union[
@@ -44282,7 +44317,7 @@ class IgvfApi:
         :type query: str
         :param type: Filter by item type.
         :type type: List[str]
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.
         :type sort: List[str]
@@ -44424,7 +44459,7 @@ class IgvfApi:
     def sequence_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -44500,7 +44535,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -44722,7 +44757,7 @@ class IgvfApi:
     def sequence_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -44798,7 +44833,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -45020,7 +45055,7 @@ class IgvfApi:
     def sequence_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -45096,7 +45131,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -45720,7 +45755,7 @@ class IgvfApi:
     def signal_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
         assembly: Annotated[Optional[List[StrictStr]], Field(description="Filter by assembly")] = None,
@@ -45790,7 +45825,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -45994,7 +46029,7 @@ class IgvfApi:
     def signal_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
         assembly: Annotated[Optional[List[StrictStr]], Field(description="Filter by assembly")] = None,
@@ -46064,7 +46099,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -46268,7 +46303,7 @@ class IgvfApi:
     def signal_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
         assembly: Annotated[Optional[List[StrictStr]], Field(description="Filter by assembly")] = None,
@@ -46338,7 +46373,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -46908,7 +46943,7 @@ class IgvfApi:
     def software(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -46952,7 +46987,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -47078,7 +47113,7 @@ class IgvfApi:
     def software_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -47122,7 +47157,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -47248,7 +47283,7 @@ class IgvfApi:
     def software_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -47292,7 +47327,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -47628,7 +47663,7 @@ class IgvfApi:
     def software_versions(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -47673,7 +47708,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -47802,7 +47837,7 @@ class IgvfApi:
     def software_versions_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -47847,7 +47882,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -47976,7 +48011,7 @@ class IgvfApi:
     def software_versions_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -48021,7 +48056,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -48366,7 +48401,7 @@ class IgvfApi:
     def sources(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -48402,7 +48437,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -48504,7 +48539,7 @@ class IgvfApi:
     def sources_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -48540,7 +48575,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -48642,7 +48677,7 @@ class IgvfApi:
     def sources_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
@@ -48678,7 +48713,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -48942,7 +48977,7 @@ class IgvfApi:
     def tabular_files(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -49009,7 +49044,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -49204,7 +49239,7 @@ class IgvfApi:
     def tabular_files_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -49271,7 +49306,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -49466,7 +49501,7 @@ class IgvfApi:
     def tabular_files_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[List[StrictBool]], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by anvil_url")] = None,
@@ -49533,7 +49568,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -50076,7 +50111,7 @@ class IgvfApi:
     def technical_samples(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -50155,7 +50190,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -50386,7 +50421,7 @@ class IgvfApi:
     def technical_samples_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -50465,7 +50500,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -50696,7 +50731,7 @@ class IgvfApi:
     def technical_samples_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -50775,7 +50810,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -51426,7 +51461,7 @@ class IgvfApi:
     def tissues(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -51535,7 +51570,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -51856,7 +51891,7 @@ class IgvfApi:
     def tissues_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -51965,7 +52000,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -52286,7 +52321,7 @@ class IgvfApi:
     def tissues_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -52395,7 +52430,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -53316,7 +53351,7 @@ class IgvfApi:
     def treatments(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         lot_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by lot_id")] = None,
@@ -53372,7 +53407,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -53534,7 +53569,7 @@ class IgvfApi:
     def treatments_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         lot_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by lot_id")] = None,
@@ -53590,7 +53625,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -53752,7 +53787,7 @@ class IgvfApi:
     def treatments_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         lot_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by lot_id")] = None,
@@ -53808,7 +53843,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -54252,7 +54287,7 @@ class IgvfApi:
     def users(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
@@ -54293,7 +54328,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -54410,7 +54445,7 @@ class IgvfApi:
     def users_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
@@ -54451,7 +54486,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -54568,7 +54603,7 @@ class IgvfApi:
     def users_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
@@ -54609,7 +54644,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -54918,7 +54953,7 @@ class IgvfApi:
     def whole_organisms(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by taxa")] = None,
@@ -55023,7 +55058,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -55332,7 +55367,7 @@ class IgvfApi:
     def whole_organisms_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by taxa")] = None,
@@ -55437,7 +55472,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -55746,7 +55781,7 @@ class IgvfApi:
     def whole_organisms_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by taxa")] = None,
@@ -55851,7 +55886,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -56736,7 +56771,7 @@ class IgvfApi:
     def workflows(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -56787,7 +56822,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -56934,7 +56969,7 @@ class IgvfApi:
     def workflows_with_http_info(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -56985,7 +57020,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
@@ -57132,7 +57167,7 @@ class IgvfApi:
     def workflows_without_preload_content(
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
+        limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Default is 25. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
@@ -57183,7 +57218,7 @@ class IgvfApi:
 
         :param query: Query string for searching.
         :type query: str
-        :param limit: Maximum number of results to return. Use 'all' for all results.
+        :param limit: Maximum number of results to return. Default is 25. Use 'all' for all results.
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]

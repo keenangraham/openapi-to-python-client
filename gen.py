@@ -108,7 +108,7 @@ def generate_openapi_spec(schemas):
                             "schema": {
                                 "$ref": "#/components/schemas/Limit",
                             },
-                            "description": "Maximum number of results to return. Use 'all' for all results.",
+                            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
                             "example": 100,
                         },
                         {
@@ -258,19 +258,35 @@ def generate_openapi_spec(schemas):
                     "operationId": "report",
                     "parameters": [
                         {
-                            "name": "type",
-                            "in": "query",
-                            "schema": {"type": "array", "items": {"type": "string"}},
-                            "style": "form",
-                            "explode": True,
-                            "required": True,
-                            "description": "Type of items to return. Can be repeated for multiple types."
-                        },
-                        {
                             "name": "query",
                             "in": "query",
                             "schema": {"type": "string"},
                             "description": "Query string for searching."
+                        },
+                        {
+                             "name": "type",
+                             "in": "query",
+                             "schema": {"type": "array", "items": {"type": "string"}},
+                             "style": "form",
+                             "explode": True,
+                             "description": "Filter by item type."
+                        },
+                        {
+                            "name": "limit",
+                            "in": "query",
+                            "schema": {
+                                "$ref": "#/components/schemas/Limit",
+                            },
+                            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
+                            "example": 100,
+                        },
+                        {
+                            "name": "sort",
+                            "in": "query",
+                            "schema": {"type": "array", "items": {"type": "string"}},
+                            "style": "form",
+                            "explode": True,
+                            "description": "Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all."
                         },
                         {
                             "name": "field_filters",
@@ -278,7 +294,7 @@ def generate_openapi_spec(schemas):
                             "schema": {
                                 "type": "object"
                             },
-                            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+                            "description": "Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}",
                             "style": "form",
                             "explode": True,
                         },
@@ -896,7 +912,7 @@ def fill_in_collection_template(schema_name, schema):
                         "schema": {
                             "$ref": "#/components/schemas/Limit",
                         },
-                        "description": "Maximum number of results to return. Use 'all' for all results.",
+                        "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
                         "examples": {
                             "number": {"value": 100},
                             "all": {"value": "all"}

@@ -265,7 +265,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "example": 100
           },
           {
@@ -586,6 +586,14 @@
         "operationId": "report",
         "parameters": [
           {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Query string for searching."
+          },
+          {
             "name": "type",
             "in": "query",
             "schema": {
@@ -596,16 +604,29 @@
             },
             "style": "form",
             "explode": true,
-            "required": true,
-            "description": "Type of items to return. Can be repeated for multiple types."
+            "description": "Filter by item type."
           },
           {
-            "name": "query",
+            "name": "limit",
             "in": "query",
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/Limit"
             },
-            "description": "Query string for searching."
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
+            "example": 100
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "description": "Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all."
           },
           {
             "name": "field_filters",
@@ -613,7 +634,7 @@
             "schema": {
               "type": "object"
             },
-            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "description": "Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}",
             "style": "form",
             "explode": true
           },
@@ -828,7 +849,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -1190,7 +1211,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -1754,7 +1775,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -2216,7 +2237,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -2707,7 +2728,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -3243,7 +3264,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -3715,7 +3736,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -4527,7 +4548,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -5383,7 +5404,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -6340,7 +6361,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -7174,7 +7195,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -8066,7 +8087,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -8885,7 +8906,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -9787,7 +9808,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -10638,7 +10659,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -11637,7 +11658,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -12720,7 +12741,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -13683,7 +13704,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -14609,7 +14630,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -16075,7 +16096,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -17594,7 +17615,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -19123,7 +19144,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -20570,7 +20591,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -22618,7 +22639,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -24165,7 +24186,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -25858,7 +25879,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -26419,7 +26440,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -26799,7 +26820,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -27309,7 +27330,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -27759,7 +27780,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -28408,7 +28429,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -28990,7 +29011,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -29556,7 +29577,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -30017,7 +30038,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -30554,7 +30575,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -31093,7 +31114,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -31591,7 +31612,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -32017,7 +32038,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -32524,7 +32545,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -33210,7 +33231,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -35015,7 +35036,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -36496,7 +36517,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -38062,7 +38083,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -39179,7 +39200,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -40801,7 +40822,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -42352,7 +42373,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -42872,7 +42893,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -43399,7 +43420,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -43781,7 +43802,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -44516,7 +44537,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
@@ -44997,7 +45018,7 @@
             "schema": {
               "$ref": "#/components/schemas/Limit"
             },
-            "description": "Maximum number of results to return. Use 'all' for all results.",
+            "description": "Maximum number of results to return. Default is 25. Use 'all' for all results.",
             "examples": {
               "number": {
                 "value": 100
