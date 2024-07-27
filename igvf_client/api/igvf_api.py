@@ -44090,10 +44090,9 @@ class IgvfApi:
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -44115,14 +44114,12 @@ class IgvfApi:
         :type query: str
         :param type: Filter by item type.
         :type type: List[str]
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
-        :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: Limit
-        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.
         :type sort: List[str]
-        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
-        :type include_fields: List[str]
+        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
+        :type field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -44148,10 +44145,9 @@ class IgvfApi:
         _param = self._search_serialize(
             query=query,
             type=type,
-            field_filters=field_filters,
             limit=limit,
             sort=sort,
-            include_fields=include_fields,
+            field_filters=field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -44178,10 +44174,9 @@ class IgvfApi:
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -44203,14 +44198,12 @@ class IgvfApi:
         :type query: str
         :param type: Filter by item type.
         :type type: List[str]
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
-        :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: Limit
-        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.
         :type sort: List[str]
-        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
-        :type include_fields: List[str]
+        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
+        :type field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -44236,10 +44229,9 @@ class IgvfApi:
         _param = self._search_serialize(
             query=query,
             type=type,
-            field_filters=field_filters,
             limit=limit,
             sort=sort,
-            include_fields=include_fields,
+            field_filters=field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -44266,10 +44258,9 @@ class IgvfApi:
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
-        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
+        sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -44291,14 +44282,12 @@ class IgvfApi:
         :type query: str
         :param type: Filter by item type.
         :type type: List[str]
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
-        :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: Limit
-        :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
+        :param sort: Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.
         :type sort: List[str]
-        :param include_fields: Fields to include in the response. Can be repeated for multiple fields.
-        :type include_fields: List[str]
+        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
+        :type field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -44324,10 +44313,9 @@ class IgvfApi:
         _param = self._search_serialize(
             query=query,
             type=type,
-            field_filters=field_filters,
             limit=limit,
             sort=sort,
-            include_fields=include_fields,
+            field_filters=field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -44349,10 +44337,9 @@ class IgvfApi:
         self,
         query,
         type,
-        field_filters,
         limit,
         sort,
-        include_fields,
+        field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -44364,7 +44351,6 @@ class IgvfApi:
         _collection_formats: Dict[str, str] = {
             'type': 'multi',
             'sort': 'multi',
-            'field': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -44384,10 +44370,6 @@ class IgvfApi:
             
             _query_params.append(('type', type))
             
-        if field_filters is not None:
-            for k, v in field_filters.items():
-                _query_params.append((k, v))
-            
         if limit is not None:
             
             _query_params.append(('limit', limit))
@@ -44396,9 +44378,9 @@ class IgvfApi:
             
             _query_params.append(('sort', sort))
             
-        if include_fields is not None:
-            
-            _query_params.append(('field', include_fields))
+        if field_filters is not None:
+            for k, v in field_filters.items():
+                _query_params.append((k, v))
             
         # process the header parameters
         # process the form parameters

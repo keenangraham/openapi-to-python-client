@@ -103,16 +103,6 @@ def generate_openapi_spec(schemas):
                              "description": "Filter by item type."
                         },
                         {
-                            "name": "field_filters",
-                            "in": "query",
-                            "schema": {
-                                "type": "object"
-                            },
-                            "description": "Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}",
-                            "style": "form",
-                            "explode": True,
-                        },
-                        {
                             "name": "limit",
                             "in": "query",
                             "schema": {
@@ -127,15 +117,17 @@ def generate_openapi_spec(schemas):
                             "schema": {"type": "array", "items": {"type": "string"}},
                             "style": "form",
                             "explode": True,
-                            "description": "Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all."
+                            "description": "Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all."
                         },
                         {
-                            "name": "field",
+                            "name": "field_filters",
                             "in": "query",
-                            "schema": {"type": "array", "items": {"type": "string"}},
+                            "schema": {
+                                "type": "object"
+                            },
+                            "description": "Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}",
                             "style": "form",
                             "explode": True,
-                            "description": "Fields to include in the response. Can be repeated for multiple fields."
                         },
                         {
                             "name": "frame",
