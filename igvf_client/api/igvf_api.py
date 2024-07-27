@@ -114,7 +114,6 @@ class IgvfApi:
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -166,8 +165,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -208,7 +205,6 @@ class IgvfApi:
             summary=summary,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -252,7 +248,6 @@ class IgvfApi:
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -304,8 +299,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -346,7 +339,6 @@ class IgvfApi:
             summary=summary,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -390,7 +382,6 @@ class IgvfApi:
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -442,8 +433,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -484,7 +473,6 @@ class IgvfApi:
             summary=summary,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -523,7 +511,6 @@ class IgvfApi:
         summary,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -627,10 +614,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -724,7 +707,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -846,8 +828,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -923,7 +903,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1002,7 +981,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1124,8 +1102,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1201,7 +1177,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1280,7 +1255,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1402,8 +1376,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1479,7 +1451,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1553,7 +1524,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -1832,10 +1802,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1956,7 +1922,6 @@ class IgvfApi:
         samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2132,8 +2097,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2236,7 +2199,6 @@ class IgvfApi:
             samples_treatments=samples_treatments,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2342,7 +2304,6 @@ class IgvfApi:
         samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2518,8 +2479,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2622,7 +2581,6 @@ class IgvfApi:
             samples_treatments=samples_treatments,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2728,7 +2686,6 @@ class IgvfApi:
         samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2904,8 +2861,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3008,7 +2963,6 @@ class IgvfApi:
             samples_treatments=samples_treatments,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3109,7 +3063,6 @@ class IgvfApi:
         samples_treatments,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -3523,10 +3476,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -3591,7 +3540,6 @@ class IgvfApi:
         software_versions_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by software_versions.name")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3655,8 +3603,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3703,7 +3649,6 @@ class IgvfApi:
             software_versions_name=software_versions_name,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3753,7 +3698,6 @@ class IgvfApi:
         software_versions_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by software_versions.name")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3817,8 +3761,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3865,7 +3807,6 @@ class IgvfApi:
             software_versions_name=software_versions_name,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3915,7 +3856,6 @@ class IgvfApi:
         software_versions_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by software_versions.name")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3979,8 +3919,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4027,7 +3965,6 @@ class IgvfApi:
             software_versions_name=software_versions_name,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4072,7 +4009,6 @@ class IgvfApi:
         software_versions_name,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -4206,10 +4142,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -4280,7 +4212,6 @@ class IgvfApi:
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
         workflow_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by workflow.@id")] = None,
         workflow_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by workflow.accession")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4356,8 +4287,6 @@ class IgvfApi:
         :type workflow_id: List[str]
         :param workflow_accession: Filter by workflow.accession
         :type workflow_accession: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4410,7 +4339,6 @@ class IgvfApi:
             submitted_by_title=submitted_by_title,
             workflow_id=workflow_id,
             workflow_accession=workflow_accession,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4466,7 +4394,6 @@ class IgvfApi:
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
         workflow_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by workflow.@id")] = None,
         workflow_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by workflow.accession")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4542,8 +4469,6 @@ class IgvfApi:
         :type workflow_id: List[str]
         :param workflow_accession: Filter by workflow.accession
         :type workflow_accession: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4596,7 +4521,6 @@ class IgvfApi:
             submitted_by_title=submitted_by_title,
             workflow_id=workflow_id,
             workflow_accession=workflow_accession,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4652,7 +4576,6 @@ class IgvfApi:
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
         workflow_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by workflow.@id")] = None,
         workflow_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by workflow.accession")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4728,8 +4651,6 @@ class IgvfApi:
         :type workflow_id: List[str]
         :param workflow_accession: Filter by workflow.accession
         :type workflow_accession: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4782,7 +4703,6 @@ class IgvfApi:
             submitted_by_title=submitted_by_title,
             workflow_id=workflow_id,
             workflow_accession=workflow_accession,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4833,7 +4753,6 @@ class IgvfApi:
         submitted_by_title,
         workflow_id,
         workflow_accession,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -4997,10 +4916,6 @@ class IgvfApi:
             
             _query_params.append(('workflow.accession', workflow_accession))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -5069,7 +4984,6 @@ class IgvfApi:
         objective_slims: Annotated[Optional[List[StrictStr]], Field(description="Filter by objective_slims")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5141,8 +5055,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5193,7 +5105,6 @@ class IgvfApi:
             objective_slims=objective_slims,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5247,7 +5158,6 @@ class IgvfApi:
         objective_slims: Annotated[Optional[List[StrictStr]], Field(description="Filter by objective_slims")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5319,8 +5229,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5371,7 +5279,6 @@ class IgvfApi:
             objective_slims=objective_slims,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5425,7 +5332,6 @@ class IgvfApi:
         objective_slims: Annotated[Optional[List[StrictStr]], Field(description="Filter by objective_slims")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5497,8 +5403,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5549,7 +5453,6 @@ class IgvfApi:
             objective_slims=objective_slims,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5598,7 +5501,6 @@ class IgvfApi:
         objective_slims,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -5752,10 +5654,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -5877,7 +5775,6 @@ class IgvfApi:
         samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6055,8 +5952,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6160,7 +6055,6 @@ class IgvfApi:
             samples_treatments=samples_treatments,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6267,7 +6161,6 @@ class IgvfApi:
         samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6445,8 +6338,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6550,7 +6441,6 @@ class IgvfApi:
             samples_treatments=samples_treatments,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6657,7 +6547,6 @@ class IgvfApi:
         samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6835,8 +6724,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6940,7 +6827,6 @@ class IgvfApi:
             samples_treatments=samples_treatments,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7042,7 +6928,6 @@ class IgvfApi:
         samples_treatments,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -7461,10 +7346,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -7530,7 +7411,6 @@ class IgvfApi:
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7596,8 +7476,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7645,7 +7523,6 @@ class IgvfApi:
             summary=summary,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7696,7 +7573,6 @@ class IgvfApi:
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7762,8 +7638,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7811,7 +7685,6 @@ class IgvfApi:
             summary=summary,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7862,7 +7735,6 @@ class IgvfApi:
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7928,8 +7800,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7977,7 +7847,6 @@ class IgvfApi:
             summary=summary,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8023,7 +7892,6 @@ class IgvfApi:
         summary,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -8161,10 +8029,6 @@ class IgvfApi:
         if submitted_by_title is not None:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
-            
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
             
         # process the header parameters
         # process the form parameters
@@ -8539,7 +8403,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8611,8 +8474,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8663,7 +8524,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8717,7 +8577,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8789,8 +8648,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8841,7 +8698,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8895,7 +8751,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8967,8 +8822,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9019,7 +8872,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9068,7 +8920,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -9222,10 +9073,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -9312,7 +9159,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9420,8 +9266,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9490,7 +9334,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9562,7 +9405,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9670,8 +9512,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9740,7 +9580,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9812,7 +9651,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9920,8 +9758,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9990,7 +9826,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10057,7 +9892,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -10301,10 +10135,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -10428,7 +10258,6 @@ class IgvfApi:
         small_scale_gene_list_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10610,8 +10439,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10717,7 +10544,6 @@ class IgvfApi:
             small_scale_gene_list_synonyms=small_scale_gene_list_synonyms,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10826,7 +10652,6 @@ class IgvfApi:
         small_scale_gene_list_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11008,8 +10833,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11115,7 +10938,6 @@ class IgvfApi:
             small_scale_gene_list_synonyms=small_scale_gene_list_synonyms,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11224,7 +11046,6 @@ class IgvfApi:
         small_scale_gene_list_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11406,8 +11227,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11513,7 +11332,6 @@ class IgvfApi:
             small_scale_gene_list_synonyms=small_scale_gene_list_synonyms,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11617,7 +11435,6 @@ class IgvfApi:
         small_scale_gene_list_synonyms,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -12046,10 +11863,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -12123,7 +11936,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12205,8 +12017,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12262,7 +12072,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12321,7 +12130,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12403,8 +12211,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12460,7 +12266,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12519,7 +12324,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12601,8 +12405,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12658,7 +12460,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12712,7 +12513,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -12891,10 +12691,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -13014,7 +12810,6 @@ class IgvfApi:
         samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13188,8 +12983,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13291,7 +13084,6 @@ class IgvfApi:
             samples_treatments=samples_treatments,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13396,7 +13188,6 @@ class IgvfApi:
         samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13570,8 +13361,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13673,7 +13462,6 @@ class IgvfApi:
             samples_treatments=samples_treatments,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13778,7 +13566,6 @@ class IgvfApi:
         samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13952,8 +13739,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14055,7 +13840,6 @@ class IgvfApi:
             samples_treatments=samples_treatments,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14155,7 +13939,6 @@ class IgvfApi:
         samples_treatments,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -14564,10 +14347,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -14639,7 +14418,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14717,8 +14495,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14772,7 +14548,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14829,7 +14604,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14907,8 +14681,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14962,7 +14734,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15019,7 +14790,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15097,8 +14867,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15152,7 +14920,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15204,7 +14971,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -15373,10 +15139,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -15440,7 +15202,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15502,8 +15263,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15549,7 +15308,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15598,7 +15356,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15660,8 +15417,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15707,7 +15462,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15756,7 +15510,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15818,8 +15571,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15865,7 +15616,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15909,7 +15659,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -16037,10 +15786,6 @@ class IgvfApi:
         if submitted_by_title is not None:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
-            
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
             
         # process the header parameters
         # process the form parameters
@@ -16373,7 +16118,6 @@ class IgvfApi:
         geneid_with_version: Annotated[Optional[List[StrictStr]], Field(description="Filter by geneid_with_version")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16443,8 +16187,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -16494,7 +16236,6 @@ class IgvfApi:
             geneid_with_version=geneid_with_version,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -16547,7 +16288,6 @@ class IgvfApi:
         geneid_with_version: Annotated[Optional[List[StrictStr]], Field(description="Filter by geneid_with_version")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16617,8 +16357,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -16668,7 +16406,6 @@ class IgvfApi:
             geneid_with_version=geneid_with_version,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -16721,7 +16458,6 @@ class IgvfApi:
         geneid_with_version: Annotated[Optional[List[StrictStr]], Field(description="Filter by geneid_with_version")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16791,8 +16527,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -16842,7 +16576,6 @@ class IgvfApi:
             geneid_with_version=geneid_with_version,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -16890,7 +16623,6 @@ class IgvfApi:
         geneid_with_version,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -17039,10 +16771,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -17131,7 +16859,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17243,8 +16970,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17315,7 +17040,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17389,7 +17113,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17501,8 +17224,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17573,7 +17294,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17647,7 +17367,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17759,8 +17478,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17831,7 +17548,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17900,7 +17616,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -18153,10 +17868,6 @@ class IgvfApi:
         if submitted_by_title is not None:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
-            
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
             
         # process the header parameters
         # process the form parameters
@@ -18503,7 +18214,6 @@ class IgvfApi:
         related_donors_donor_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_donors.donor.accession")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18603,8 +18313,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18669,7 +18377,6 @@ class IgvfApi:
             related_donors_donor_accession=related_donors_donor_accession,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18737,7 +18444,6 @@ class IgvfApi:
         related_donors_donor_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_donors.donor.accession")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18837,8 +18543,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18903,7 +18607,6 @@ class IgvfApi:
             related_donors_donor_accession=related_donors_donor_accession,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18971,7 +18674,6 @@ class IgvfApi:
         related_donors_donor_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_donors.donor.accession")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19071,8 +18773,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19137,7 +18837,6 @@ class IgvfApi:
             related_donors_donor_accession=related_donors_donor_accession,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19200,7 +18899,6 @@ class IgvfApi:
         related_donors_donor_accession,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -19424,10 +19122,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -19513,7 +19207,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19619,8 +19312,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19688,7 +19379,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19759,7 +19449,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19865,8 +19554,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19934,7 +19621,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20005,7 +19691,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20111,8 +19796,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20180,7 +19863,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20246,7 +19928,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -20485,10 +20166,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -20548,7 +20225,6 @@ class IgvfApi:
         download_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by download_url")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20602,8 +20278,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20645,7 +20319,6 @@ class IgvfApi:
             download_url=download_url,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20690,7 +20363,6 @@ class IgvfApi:
         download_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by download_url")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20744,8 +20416,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20787,7 +20457,6 @@ class IgvfApi:
             download_url=download_url,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20832,7 +20501,6 @@ class IgvfApi:
         download_url: Annotated[Optional[List[StrictStr]], Field(description="Filter by download_url")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20886,8 +20554,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20929,7 +20595,6 @@ class IgvfApi:
             download_url=download_url,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20969,7 +20634,6 @@ class IgvfApi:
         download_url,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -21077,10 +20741,6 @@ class IgvfApi:
         if submitted_by_title is not None:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
-            
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
             
         # process the header parameters
         # process the form parameters
@@ -21224,7 +20884,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21444,8 +21103,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -21570,7 +21227,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21698,7 +21354,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21918,8 +21573,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -22044,7 +21697,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22172,7 +21824,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -22392,8 +22043,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -22518,7 +22167,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22641,7 +22289,6 @@ class IgvfApi:
         treatments_status,
         treatments_summary,
         treatments_treatment_type,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -23165,10 +22812,6 @@ class IgvfApi:
             
             _query_params.append(('treatments.treatment_type', treatments_treatment_type))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -23235,7 +22878,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23303,8 +22945,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23353,7 +22993,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23405,7 +23044,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23473,8 +23111,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23523,7 +23159,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23575,7 +23210,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23643,8 +23277,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23693,7 +23325,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23740,7 +23371,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -23884,10 +23514,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -23951,7 +23577,6 @@ class IgvfApi:
         awards_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by awards.name")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -24013,8 +23638,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -24060,7 +23683,6 @@ class IgvfApi:
             awards_name=awards_name,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -24109,7 +23731,6 @@ class IgvfApi:
         awards_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by awards.name")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -24171,8 +23792,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -24218,7 +23837,6 @@ class IgvfApi:
             awards_name=awards_name,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -24267,7 +23885,6 @@ class IgvfApi:
         awards_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by awards.name")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -24329,8 +23946,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -24376,7 +23991,6 @@ class IgvfApi:
             awards_name=awards_name,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -24420,7 +24034,6 @@ class IgvfApi:
         awards_name,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -24549,10 +24162,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -24642,7 +24251,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -24756,8 +24364,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -24829,7 +24435,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -24904,7 +24509,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -25018,8 +24622,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -25091,7 +24693,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -25166,7 +24767,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -25280,8 +24880,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -25353,7 +24951,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -25423,7 +25020,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -25682,10 +25278,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -25839,7 +25431,6 @@ class IgvfApi:
         targeted_genes_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.name")] = None,
         targeted_genes_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.symbol")] = None,
         targeted_genes_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.synonyms")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26081,8 +25672,6 @@ class IgvfApi:
         :type targeted_genes_symbol: List[str]
         :param targeted_genes_synonyms: Filter by targeted_genes.synonyms
         :type targeted_genes_synonyms: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -26218,7 +25807,6 @@ class IgvfApi:
             targeted_genes_name=targeted_genes_name,
             targeted_genes_symbol=targeted_genes_symbol,
             targeted_genes_synonyms=targeted_genes_synonyms,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26357,7 +25945,6 @@ class IgvfApi:
         targeted_genes_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.name")] = None,
         targeted_genes_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.symbol")] = None,
         targeted_genes_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.synonyms")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26599,8 +26186,6 @@ class IgvfApi:
         :type targeted_genes_symbol: List[str]
         :param targeted_genes_synonyms: Filter by targeted_genes.synonyms
         :type targeted_genes_synonyms: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -26736,7 +26321,6 @@ class IgvfApi:
             targeted_genes_name=targeted_genes_name,
             targeted_genes_symbol=targeted_genes_symbol,
             targeted_genes_synonyms=targeted_genes_synonyms,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26875,7 +26459,6 @@ class IgvfApi:
         targeted_genes_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.name")] = None,
         targeted_genes_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.symbol")] = None,
         targeted_genes_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.synonyms")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -27117,8 +26700,6 @@ class IgvfApi:
         :type targeted_genes_symbol: List[str]
         :param targeted_genes_synonyms: Filter by targeted_genes.synonyms
         :type targeted_genes_synonyms: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -27254,7 +26835,6 @@ class IgvfApi:
             targeted_genes_name=targeted_genes_name,
             targeted_genes_symbol=targeted_genes_symbol,
             targeted_genes_synonyms=targeted_genes_synonyms,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -27388,7 +26968,6 @@ class IgvfApi:
         targeted_genes_name,
         targeted_genes_symbol,
         targeted_genes_synonyms,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -27967,10 +27546,6 @@ class IgvfApi:
             
             _query_params.append(('targeted_genes.synonyms', targeted_genes_synonyms))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -28058,7 +27633,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -28168,8 +27742,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -28239,7 +27811,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -28312,7 +27883,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -28422,8 +27992,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -28493,7 +28061,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -28566,7 +28133,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -28676,8 +28242,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -28747,7 +28311,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -28815,7 +28378,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -29064,10 +28626,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -29193,7 +28751,6 @@ class IgvfApi:
         samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -29379,8 +28936,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -29488,7 +29043,6 @@ class IgvfApi:
             samples_treatments=samples_treatments,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -29599,7 +29153,6 @@ class IgvfApi:
         samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -29785,8 +29338,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -29894,7 +29445,6 @@ class IgvfApi:
             samples_treatments=samples_treatments,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -30005,7 +29555,6 @@ class IgvfApi:
         samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -30191,8 +29740,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -30300,7 +29847,6 @@ class IgvfApi:
             samples_treatments=samples_treatments,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -30406,7 +29952,6 @@ class IgvfApi:
         samples_treatments,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -30845,10 +30390,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -30973,7 +30514,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -31157,8 +30697,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -31265,7 +30803,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -31375,7 +30912,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -31559,8 +31095,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -31667,7 +31201,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -31777,7 +31310,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -31961,8 +31493,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -32069,7 +31599,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -32174,7 +31703,6 @@ class IgvfApi:
         treatments_status,
         treatments_summary,
         treatments_treatment_type,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -32608,10 +32136,6 @@ class IgvfApi:
             
             _query_params.append(('treatments.treatment_type', treatments_treatment_type))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -32678,7 +32202,6 @@ class IgvfApi:
         gene_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene.@id")] = None,
         gene_geneid: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by gene.geneid")] = None,
         gene_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene.symbol")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -32746,8 +32269,6 @@ class IgvfApi:
         :type gene_geneid: List[str]
         :param gene_symbol: Filter by gene.symbol
         :type gene_symbol: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -32796,7 +32317,6 @@ class IgvfApi:
             gene_id=gene_id,
             gene_geneid=gene_geneid,
             gene_symbol=gene_symbol,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -32848,7 +32368,6 @@ class IgvfApi:
         gene_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene.@id")] = None,
         gene_geneid: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by gene.geneid")] = None,
         gene_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene.symbol")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -32916,8 +32435,6 @@ class IgvfApi:
         :type gene_geneid: List[str]
         :param gene_symbol: Filter by gene.symbol
         :type gene_symbol: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -32966,7 +32483,6 @@ class IgvfApi:
             gene_id=gene_id,
             gene_geneid=gene_geneid,
             gene_symbol=gene_symbol,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -33018,7 +32534,6 @@ class IgvfApi:
         gene_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene.@id")] = None,
         gene_geneid: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by gene.geneid")] = None,
         gene_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by gene.symbol")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -33086,8 +32601,6 @@ class IgvfApi:
         :type gene_geneid: List[str]
         :param gene_symbol: Filter by gene.symbol
         :type gene_symbol: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -33136,7 +32649,6 @@ class IgvfApi:
             gene_id=gene_id,
             gene_geneid=gene_geneid,
             gene_symbol=gene_symbol,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -33183,7 +32695,6 @@ class IgvfApi:
         gene_id,
         gene_geneid,
         gene_symbol,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -33327,10 +32838,6 @@ class IgvfApi:
             
             _query_params.append(('gene.symbol', gene_symbol))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -33393,7 +32900,6 @@ class IgvfApi:
         canonical_uri: Annotated[Optional[List[StrictStr]], Field(description="Filter by canonical_uri")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -33453,8 +32959,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -33499,7 +33003,6 @@ class IgvfApi:
             canonical_uri=canonical_uri,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -33547,7 +33050,6 @@ class IgvfApi:
         canonical_uri: Annotated[Optional[List[StrictStr]], Field(description="Filter by canonical_uri")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -33607,8 +33109,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -33653,7 +33153,6 @@ class IgvfApi:
             canonical_uri=canonical_uri,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -33701,7 +33200,6 @@ class IgvfApi:
         canonical_uri: Annotated[Optional[List[StrictStr]], Field(description="Filter by canonical_uri")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -33761,8 +33259,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -33807,7 +33303,6 @@ class IgvfApi:
             canonical_uri=canonical_uri,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -33850,7 +33345,6 @@ class IgvfApi:
         canonical_uri,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -33974,10 +33468,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -34042,7 +33532,6 @@ class IgvfApi:
         ontology: Annotated[Optional[List[StrictStr]], Field(description="Filter by ontology")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -34106,8 +33595,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -34154,7 +33641,6 @@ class IgvfApi:
             ontology=ontology,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -34204,7 +33690,6 @@ class IgvfApi:
         ontology: Annotated[Optional[List[StrictStr]], Field(description="Filter by ontology")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -34268,8 +33753,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -34316,7 +33799,6 @@ class IgvfApi:
             ontology=ontology,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -34366,7 +33848,6 @@ class IgvfApi:
         ontology: Annotated[Optional[List[StrictStr]], Field(description="Filter by ontology")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -34430,8 +33911,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -34478,7 +33957,6 @@ class IgvfApi:
             ontology=ontology,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -34523,7 +34001,6 @@ class IgvfApi:
         ontology,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -34657,10 +34134,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -34727,7 +34200,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -34795,8 +34267,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -34845,7 +34315,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -34897,7 +34366,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -34965,8 +34433,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -35015,7 +34481,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -35067,7 +34532,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -35135,8 +34599,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -35185,7 +34647,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -35232,7 +34693,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -35376,10 +34836,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -35446,7 +34902,6 @@ class IgvfApi:
         ontology: Annotated[Optional[List[StrictStr]], Field(description="Filter by ontology")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -35514,8 +34969,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -35564,7 +35017,6 @@ class IgvfApi:
             ontology=ontology,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -35616,7 +35068,6 @@ class IgvfApi:
         ontology: Annotated[Optional[List[StrictStr]], Field(description="Filter by ontology")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -35684,8 +35135,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -35734,7 +35183,6 @@ class IgvfApi:
             ontology=ontology,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -35786,7 +35234,6 @@ class IgvfApi:
         ontology: Annotated[Optional[List[StrictStr]], Field(description="Filter by ontology")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -35854,8 +35301,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -35904,7 +35349,6 @@ class IgvfApi:
             ontology=ontology,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -35951,7 +35395,6 @@ class IgvfApi:
         ontology,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -36095,10 +35538,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -36231,7 +35670,6 @@ class IgvfApi:
         small_scale_gene_list_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -36431,8 +35869,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -36547,7 +35983,6 @@ class IgvfApi:
             small_scale_gene_list_synonyms=small_scale_gene_list_synonyms,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -36665,7 +36100,6 @@ class IgvfApi:
         small_scale_gene_list_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -36865,8 +36299,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -36981,7 +36413,6 @@ class IgvfApi:
             small_scale_gene_list_synonyms=small_scale_gene_list_synonyms,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -37099,7 +36530,6 @@ class IgvfApi:
         small_scale_gene_list_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -37299,8 +36729,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -37415,7 +36843,6 @@ class IgvfApi:
             small_scale_gene_list_synonyms=small_scale_gene_list_synonyms,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -37528,7 +36955,6 @@ class IgvfApi:
         small_scale_gene_list_synonyms,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -38002,10 +37428,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -38135,7 +37557,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -38329,8 +37750,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -38442,7 +37861,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -38557,7 +37975,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -38751,8 +38168,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -38864,7 +38279,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -38979,7 +38393,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -39173,8 +38586,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -39286,7 +38697,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -39396,7 +38806,6 @@ class IgvfApi:
         treatments_status,
         treatments_summary,
         treatments_treatment_type,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -39855,10 +39264,6 @@ class IgvfApi:
             
             _query_params.append(('treatments.treatment_type', treatments_treatment_type))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -39937,7 +39342,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -40029,8 +39433,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -40091,7 +39493,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -40155,7 +39556,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -40247,8 +39647,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -40309,7 +39707,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -40373,7 +39770,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -40465,8 +39861,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -40527,7 +39921,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -40586,7 +39979,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -40790,10 +40182,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -40888,7 +40276,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -41012,8 +40399,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -41090,7 +40475,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -41170,7 +40554,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -41294,8 +40677,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -41372,7 +40753,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -41452,7 +40832,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -41576,8 +40955,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -41654,7 +41031,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -41729,7 +41105,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -42012,10 +41387,6 @@ class IgvfApi:
         if submitted_by_title is not None:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
-            
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
             
         # process the header parameters
         # process the form parameters
@@ -42443,7 +41814,6 @@ class IgvfApi:
         sources_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources.@id")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -42551,8 +41921,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -42621,7 +41989,6 @@ class IgvfApi:
             sources_id=sources_id,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -42693,7 +42060,6 @@ class IgvfApi:
         sources_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources.@id")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -42801,8 +42167,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -42871,7 +42235,6 @@ class IgvfApi:
             sources_id=sources_id,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -42943,7 +42306,6 @@ class IgvfApi:
         sources_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources.@id")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -43051,8 +42413,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -43121,7 +42481,6 @@ class IgvfApi:
             sources_id=sources_id,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -43188,7 +42547,6 @@ class IgvfApi:
         sources_id,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -43432,10 +42790,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -43505,7 +42859,6 @@ class IgvfApi:
         system_slims: Annotated[Optional[List[StrictStr]], Field(description="Filter by system_slims")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -43579,8 +42932,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -43632,7 +42983,6 @@ class IgvfApi:
             system_slims=system_slims,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -43687,7 +43037,6 @@ class IgvfApi:
         system_slims: Annotated[Optional[List[StrictStr]], Field(description="Filter by system_slims")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -43761,8 +43110,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -43814,7 +43161,6 @@ class IgvfApi:
             system_slims=system_slims,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -43869,7 +43215,6 @@ class IgvfApi:
         system_slims: Annotated[Optional[List[StrictStr]], Field(description="Filter by system_slims")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -43943,8 +43288,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -43996,7 +43339,6 @@ class IgvfApi:
             system_slims=system_slims,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -44046,7 +43388,6 @@ class IgvfApi:
         system_slims,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -44204,10 +43545,6 @@ class IgvfApi:
         if submitted_by_title is not None:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
-            
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
             
         # process the header parameters
         # process the form parameters
@@ -44751,9 +44088,9 @@ class IgvfApi:
     @validate_call
     def search(
         self,
-        type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
+        type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation, '*' in value as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: `{'status!': 'in progress', 'summary': '*', 'file_size': 'gte:30000'}`")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
@@ -44774,11 +44111,11 @@ class IgvfApi:
 
         Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
 
-        :param type: Type of objects to return. Can be repeated for multiple types.
-        :type type: List[str]
         :param query: Query string for searching.
         :type query: str
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
+        :param type: Filter by item type.
+        :type type: List[str]
+        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation, '*' in value as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: `{'status!': 'in progress', 'summary': '*', 'file_size': 'gte:30000'}`
         :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: Limit
@@ -44809,8 +44146,8 @@ class IgvfApi:
         """ # noqa: E501
 
         _param = self._search_serialize(
-            type=type,
             query=query,
+            type=type,
             field_filters=field_filters,
             limit=limit,
             sort=sort,
@@ -44839,9 +44176,9 @@ class IgvfApi:
     @validate_call
     def search_with_http_info(
         self,
-        type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
+        type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation, '*' in value as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: `{'status!': 'in progress', 'summary': '*', 'file_size': 'gte:30000'}`")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
@@ -44862,11 +44199,11 @@ class IgvfApi:
 
         Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
 
-        :param type: Type of objects to return. Can be repeated for multiple types.
-        :type type: List[str]
         :param query: Query string for searching.
         :type query: str
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
+        :param type: Filter by item type.
+        :type type: List[str]
+        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation, '*' in value as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: `{'status!': 'in progress', 'summary': '*', 'file_size': 'gte:30000'}`
         :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: Limit
@@ -44897,8 +44234,8 @@ class IgvfApi:
         """ # noqa: E501
 
         _param = self._search_serialize(
-            type=type,
             query=query,
+            type=type,
             field_filters=field_filters,
             limit=limit,
             sort=sort,
@@ -44927,9 +44264,9 @@ class IgvfApi:
     @validate_call
     def search_without_preload_content(
         self,
-        type: Annotated[Optional[List[StrictStr]], Field(description="Type of objects to return. Can be repeated for multiple types.")] = None,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
+        type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation, '*' in value as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: `{'status!': 'in progress', 'summary': '*', 'file_size': 'gte:30000'}`")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
@@ -44950,11 +44287,11 @@ class IgvfApi:
 
         Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
 
-        :param type: Type of objects to return. Can be repeated for multiple types.
-        :type type: List[str]
         :param query: Query string for searching.
         :type query: str
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
+        :param type: Filter by item type.
+        :type type: List[str]
+        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation, '*' in value as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: `{'status!': 'in progress', 'summary': '*', 'file_size': 'gte:30000'}`
         :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: Limit
@@ -44985,8 +44322,8 @@ class IgvfApi:
         """ # noqa: E501
 
         _param = self._search_serialize(
-            type=type,
             query=query,
+            type=type,
             field_filters=field_filters,
             limit=limit,
             sort=sort,
@@ -45010,8 +44347,8 @@ class IgvfApi:
 
     def _search_serialize(
         self,
-        type,
         query,
+        type,
         field_filters,
         limit,
         sort,
@@ -45039,13 +44376,13 @@ class IgvfApi:
 
         # process the path parameters
         # process the query parameters
-        if type is not None:
-            
-            _query_params.append(('type', type))
-            
         if query is not None:
             
             _query_params.append(('query', query))
+            
+        if type is not None:
+            
+            _query_params.append(('type', type))
             
         if field_filters is not None:
             for k, v in field_filters.items():
@@ -45162,7 +44499,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -45296,8 +44632,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -45379,7 +44713,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -45464,7 +44797,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -45598,8 +44930,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -45681,7 +45011,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -45766,7 +45095,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -45900,8 +45228,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -45983,7 +45309,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -46063,7 +45388,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -46372,10 +45696,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -46469,7 +45789,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -46591,8 +45910,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -46668,7 +45985,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -46747,7 +46063,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -46869,8 +46184,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -46946,7 +46259,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -47025,7 +46337,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -47147,8 +46458,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -47224,7 +46533,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -47298,7 +46606,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -47577,10 +46884,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -47648,7 +46951,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -47718,8 +47020,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -47769,7 +47069,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -47822,7 +47121,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -47892,8 +47190,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -47943,7 +47239,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -47996,7 +47291,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -48066,8 +47360,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -48117,7 +47409,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -48165,7 +47456,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -48314,10 +47604,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -48386,7 +47672,6 @@ class IgvfApi:
         software_title: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by software.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -48458,8 +47743,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -48510,7 +47793,6 @@ class IgvfApi:
             software_title=software_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -48564,7 +47846,6 @@ class IgvfApi:
         software_title: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by software.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -48636,8 +47917,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -48688,7 +47967,6 @@ class IgvfApi:
             software_title=software_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -48742,7 +48020,6 @@ class IgvfApi:
         software_title: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by software.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -48814,8 +48091,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -48866,7 +48141,6 @@ class IgvfApi:
             software_title=software_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -48915,7 +48189,6 @@ class IgvfApi:
         software_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -49069,10 +48342,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -49132,7 +48401,6 @@ class IgvfApi:
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -49186,8 +48454,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -49229,7 +48495,6 @@ class IgvfApi:
             summary=summary,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -49274,7 +48539,6 @@ class IgvfApi:
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -49328,8 +48592,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -49371,7 +48633,6 @@ class IgvfApi:
             summary=summary,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -49416,7 +48677,6 @@ class IgvfApi:
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -49470,8 +48730,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -49513,7 +48771,6 @@ class IgvfApi:
             summary=summary,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -49553,7 +48810,6 @@ class IgvfApi:
         summary,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -49662,10 +48918,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -49756,7 +49008,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -49872,8 +49123,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -49946,7 +49195,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -50022,7 +49270,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -50138,8 +49385,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -50212,7 +49457,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -50288,7 +49532,6 @@ class IgvfApi:
         lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by lab.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -50404,8 +49647,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -50478,7 +49719,6 @@ class IgvfApi:
             lab_title=lab_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -50549,7 +49789,6 @@ class IgvfApi:
         lab_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -50813,10 +50052,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -50919,7 +50154,6 @@ class IgvfApi:
         sources_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources.@id")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -51059,8 +50293,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -51145,7 +50377,6 @@ class IgvfApi:
             sources_id=sources_id,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -51233,7 +50464,6 @@ class IgvfApi:
         sources_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources.@id")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -51373,8 +50603,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -51459,7 +50687,6 @@ class IgvfApi:
             sources_id=sources_id,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -51547,7 +50774,6 @@ class IgvfApi:
         sources_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources.@id")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -51687,8 +50913,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -51773,7 +50997,6 @@ class IgvfApi:
             sources_id=sources_id,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -51856,7 +51079,6 @@ class IgvfApi:
         sources_id,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -52180,10 +51402,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -52316,7 +51534,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -52516,8 +51733,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -52632,7 +51847,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -52750,7 +51964,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -52950,8 +52163,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -53066,7 +52277,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -53184,7 +52394,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -53384,8 +52593,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -53500,7 +52707,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -53613,7 +52819,6 @@ class IgvfApi:
         treatments_status,
         treatments_summary,
         treatments_treatment_type,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -54087,10 +53292,6 @@ class IgvfApi:
             
             _query_params.append(('treatments.treatment_type', treatments_treatment_type))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -54170,7 +53371,6 @@ class IgvfApi:
         sources_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources.@id")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -54264,8 +53464,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -54327,7 +53525,6 @@ class IgvfApi:
             sources_id=sources_id,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -54392,7 +53589,6 @@ class IgvfApi:
         sources_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources.@id")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -54486,8 +53682,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -54549,7 +53743,6 @@ class IgvfApi:
             sources_id=sources_id,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -54614,7 +53807,6 @@ class IgvfApi:
         sources_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources.@id")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -54708,8 +53900,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -54771,7 +53961,6 @@ class IgvfApi:
             sources_id=sources_id,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -54831,7 +54020,6 @@ class IgvfApi:
         sources_id,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -55040,10 +54228,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -55108,7 +54292,6 @@ class IgvfApi:
         title: Annotated[Optional[List[StrictStr]], Field(description="Filter by title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -55172,8 +54355,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -55220,7 +54401,6 @@ class IgvfApi:
             title=title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -55270,7 +54450,6 @@ class IgvfApi:
         title: Annotated[Optional[List[StrictStr]], Field(description="Filter by title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -55334,8 +54513,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -55382,7 +54559,6 @@ class IgvfApi:
             title=title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -55432,7 +54608,6 @@ class IgvfApi:
         title: Annotated[Optional[List[StrictStr]], Field(description="Filter by title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -55496,8 +54671,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -55544,7 +54717,6 @@ class IgvfApi:
             title=title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -55589,7 +54761,6 @@ class IgvfApi:
         title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -55723,10 +54894,6 @@ class IgvfApi:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -55855,7 +55022,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -56047,8 +55213,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -56159,7 +55323,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -56273,7 +55436,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -56465,8 +55627,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -56577,7 +55737,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -56691,7 +55850,6 @@ class IgvfApi:
         treatments_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.status")] = None,
         treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.summary")] = None,
         treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by treatments.treatment_type")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -56883,8 +56041,6 @@ class IgvfApi:
         :type treatments_summary: List[str]
         :param treatments_treatment_type: Filter by treatments.treatment_type
         :type treatments_treatment_type: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -56995,7 +56151,6 @@ class IgvfApi:
             treatments_status=treatments_status,
             treatments_summary=treatments_summary,
             treatments_treatment_type=treatments_treatment_type,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -57104,7 +56259,6 @@ class IgvfApi:
         treatments_status,
         treatments_summary,
         treatments_treatment_type,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -57558,10 +56712,6 @@ class IgvfApi:
             
             _query_params.append(('treatments.treatment_type', treatments_treatment_type))
             
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -57636,7 +56786,6 @@ class IgvfApi:
         standards_page_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by standards_page.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -57720,8 +56869,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -57778,7 +56925,6 @@ class IgvfApi:
             standards_page_title=standards_page_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -57838,7 +56984,6 @@ class IgvfApi:
         standards_page_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by standards_page.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -57922,8 +57067,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -57980,7 +57123,6 @@ class IgvfApi:
             standards_page_title=standards_page_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -58040,7 +57182,6 @@ class IgvfApi:
         standards_page_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by standards_page.title")] = None,
         submitted_by_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_by.title")] = None,
-        additional_field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -58124,8 +57265,6 @@ class IgvfApi:
         :type submitted_by_id: List[str]
         :param submitted_by_title: Filter by submitted_by.title
         :type submitted_by_title: List[str]
-        :param additional_field_filters: Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.
-        :type additional_field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -58182,7 +57321,6 @@ class IgvfApi:
             standards_page_title=standards_page_title,
             submitted_by_id=submitted_by_id,
             submitted_by_title=submitted_by_title,
-            additional_field_filters=additional_field_filters,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -58237,7 +57375,6 @@ class IgvfApi:
         standards_page_title,
         submitted_by_id,
         submitted_by_title,
-        additional_field_filters,
         _request_auth,
         _content_type,
         _headers,
@@ -58420,10 +57557,6 @@ class IgvfApi:
         if submitted_by_title is not None:
             
             _query_params.append(('submitted_by.title', submitted_by_title))
-            
-        if additional_field_filters is not None:
-            for k, v in additional_field_filters.items():
-                _query_params.append((k, v))
             
         # process the header parameters
         # process the form parameters

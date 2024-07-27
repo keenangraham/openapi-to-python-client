@@ -89,18 +89,18 @@ def generate_openapi_spec(schemas):
                     "operationId": "search",
                     "parameters": [
                         {
+                            "name": "query",
+                            "in": "query",
+                            "schema": {"type": "string"},
+                            "description": "Query string for searching."
+                        },
+                        {
                              "name": "type",
                              "in": "query",
                              "schema": {"type": "array", "items": {"type": "string"}},
                              "style": "form",
                              "explode": True,
-                             "description": "Type of objects to return. Can be repeated for multiple types."
-                        },
-                        {
-                            "name": "query",
-                            "in": "query",
-                            "schema": {"type": "string"},
-                            "description": "Query string for searching."
+                             "description": "Filter by item type."
                         },
                         {
                             "name": "field_filters",
@@ -108,7 +108,7 @@ def generate_openapi_spec(schemas):
                             "schema": {
                                 "type": "object"
                             },
-                            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+                            "description": "Any field from any object type can be used as a filter. Use '!' at end of field name for negation, '*' in value as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: `{'status!': 'in progress', 'summary': '*', 'file_size': 'gte:30000'}`",
                             "style": "form",
                             "explode": True,
                         },
@@ -1040,18 +1040,6 @@ def fill_in_collection_template(schema_name, schema):
                 "explode": True,
             }
         )
-    collection_template[f"/{collection_name}/@@listing"]["get"]["parameters"].append(
-        {
-            "name": "additional_field_filters",
-            "in": "query",
-            "schema": {
-                "type": "object"
-            },
-            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
-            "style": "form",
-            "explode": True,
-        }
-    )
     return collection_template
 
 
