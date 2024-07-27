@@ -6230,21 +6230,6 @@
             "explode": true
           },
           {
-            "name": "upload_credentials",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Upload Credentials",
-                "description": "The upload credentials for S3 to submit the file content.",
-                "type": "object"
-              }
-            },
-            "description": "Filter by upload_credentials",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "upload_status",
             "in": "query",
             "schema": {
@@ -7063,21 +7048,6 @@
               }
             },
             "description": "Filter by summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "upload_credentials",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Upload Credentials",
-                "description": "The upload credentials for S3 to submit the file content.",
-                "type": "object"
-              }
-            },
-            "description": "Filter by upload_credentials",
             "style": "form",
             "explode": true
           },
@@ -7962,21 +7932,6 @@
             "explode": true
           },
           {
-            "name": "upload_credentials",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Upload Credentials",
-                "description": "The upload credentials for S3 to submit the file content.",
-                "type": "object"
-              }
-            },
-            "description": "Filter by upload_credentials",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "upload_status",
             "in": "query",
             "schema": {
@@ -8780,21 +8735,6 @@
               }
             },
             "description": "Filter by summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "upload_credentials",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Upload Credentials",
-                "description": "The upload credentials for S3 to submit the file content.",
-                "type": "object"
-              }
-            },
-            "description": "Filter by upload_credentials",
             "style": "form",
             "explode": true
           },
@@ -9689,21 +9629,6 @@
             "explode": true
           },
           {
-            "name": "upload_credentials",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Upload Credentials",
-                "description": "The upload credentials for S3 to submit the file content.",
-                "type": "object"
-              }
-            },
-            "description": "Filter by upload_credentials",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "upload_status",
             "in": "query",
             "schema": {
@@ -10539,21 +10464,6 @@
               }
             },
             "description": "Filter by summary",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "upload_credentials",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Upload Credentials",
-                "description": "The upload credentials for S3 to submit the file content.",
-                "type": "object"
-              }
-            },
-            "description": "Filter by upload_credentials",
             "style": "form",
             "explode": true
           },
@@ -11541,21 +11451,6 @@
               }
             },
             "description": "Filter by transcriptome_annotation",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "upload_credentials",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Upload Credentials",
-                "description": "The upload credentials for S3 to submit the file content.",
-                "type": "object"
-              }
-            },
-            "description": "Filter by upload_credentials",
             "style": "form",
             "explode": true
           },
@@ -12631,21 +12526,6 @@
             "explode": true
           },
           {
-            "name": "upload_credentials",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Upload Credentials",
-                "description": "The upload credentials for S3 to submit the file content.",
-                "type": "object"
-              }
-            },
-            "description": "Filter by upload_credentials",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "upload_status",
             "in": "query",
             "schema": {
@@ -13597,21 +13477,6 @@
             "explode": true
           },
           {
-            "name": "upload_credentials",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Upload Credentials",
-                "description": "The upload credentials for S3 to submit the file content.",
-                "type": "object"
-              }
-            },
-            "description": "Filter by upload_credentials",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "upload_status",
             "in": "query",
             "schema": {
@@ -14522,21 +14387,6 @@
               }
             },
             "description": "Filter by transcriptome_annotation",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "upload_credentials",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Upload Credentials",
-                "description": "The upload credentials for S3 to submit the file content.",
-                "type": "object"
-              }
-            },
-            "description": "Filter by upload_credentials",
             "style": "form",
             "explode": true
           },

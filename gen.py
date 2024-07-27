@@ -1021,6 +1021,8 @@ def fill_in_collection_template(schema_name, schema):
             continue
         if prop == 'schema_version':
             continue
+        if prop == 'upload_credentials':
+            continue
         if 'properties' in prop_schema:
             print('skipping', prop, 'as query param')
             continue

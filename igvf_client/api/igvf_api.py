@@ -703,7 +703,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -820,8 +819,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -899,7 +896,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -977,7 +973,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -1094,8 +1089,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -1173,7 +1166,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -1251,7 +1243,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -1368,8 +1359,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -1447,7 +1436,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -1520,7 +1508,6 @@ class IgvfApi:
         submitter_comment,
         summary,
         transcriptome_annotation,
-        upload_credentials,
         upload_status,
         uuid,
         validation_error_detail,
@@ -1579,7 +1566,6 @@ class IgvfApi:
             'submitter_comment': 'multi',
             'summary': 'multi',
             'transcriptome_annotation': 'multi',
-            'upload_credentials': 'multi',
             'upload_status': 'multi',
             'uuid': 'multi',
             'validation_error_detail': 'multi',
@@ -1785,10 +1771,6 @@ class IgvfApi:
         if transcriptome_annotation is not None:
             
             _query_params.append(('transcriptome_annotation', transcriptome_annotation))
-            
-        if upload_credentials is not None:
-            
-            _query_params.append(('upload_credentials', upload_credentials))
             
         if upload_status is not None:
             
@@ -9155,7 +9137,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -9258,8 +9239,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -9330,7 +9309,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -9401,7 +9379,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -9504,8 +9481,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -9576,7 +9551,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -9647,7 +9621,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -9750,8 +9723,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -9822,7 +9793,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -9888,7 +9858,6 @@ class IgvfApi:
         submitted_file_name,
         submitter_comment,
         summary,
-        upload_credentials,
         upload_status,
         uuid,
         validation_error_detail,
@@ -9940,7 +9909,6 @@ class IgvfApi:
             'submitted_file_name': 'multi',
             'submitter_comment': 'multi',
             'summary': 'multi',
-            'upload_credentials': 'multi',
             'upload_status': 'multi',
             'uuid': 'multi',
             'validation_error_detail': 'multi',
@@ -10118,10 +10086,6 @@ class IgvfApi:
         if summary is not None:
             
             _query_params.append(('summary', summary))
-            
-        if upload_credentials is not None:
-            
-            _query_params.append(('upload_credentials', upload_credentials))
             
         if upload_status is not None:
             
@@ -16855,7 +16819,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -16962,8 +16925,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -17036,7 +16997,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -17109,7 +17069,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -17216,8 +17175,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -17290,7 +17247,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -17363,7 +17319,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -17470,8 +17425,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -17544,7 +17497,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -17612,7 +17564,6 @@ class IgvfApi:
         submitter_comment,
         summary,
         transcriptome_annotation,
-        upload_credentials,
         upload_status,
         uuid,
         validation_error_detail,
@@ -17666,7 +17617,6 @@ class IgvfApi:
             'submitter_comment': 'multi',
             'summary': 'multi',
             'transcriptome_annotation': 'multi',
-            'upload_credentials': 'multi',
             'upload_status': 'multi',
             'uuid': 'multi',
             'validation_error_detail': 'multi',
@@ -17852,10 +17802,6 @@ class IgvfApi:
         if transcriptome_annotation is not None:
             
             _query_params.append(('transcriptome_annotation', transcriptome_annotation))
-            
-        if upload_credentials is not None:
-            
-            _query_params.append(('upload_credentials', upload_credentials))
             
         if upload_status is not None:
             
@@ -19203,7 +19149,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -19304,8 +19249,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -19375,7 +19318,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -19445,7 +19387,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -19546,8 +19487,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -19617,7 +19556,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -19687,7 +19625,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -19788,8 +19725,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -19859,7 +19794,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -19924,7 +19858,6 @@ class IgvfApi:
         submitted_file_name,
         submitter_comment,
         summary,
-        upload_credentials,
         upload_status,
         uuid,
         validation_error_detail,
@@ -19975,7 +19908,6 @@ class IgvfApi:
             'submitted_file_name': 'multi',
             'submitter_comment': 'multi',
             'summary': 'multi',
-            'upload_credentials': 'multi',
             'upload_status': 'multi',
             'uuid': 'multi',
             'validation_error_detail': 'multi',
@@ -20149,10 +20081,6 @@ class IgvfApi:
         if summary is not None:
             
             _query_params.append(('summary', summary))
-            
-        if upload_credentials is not None:
-            
-            _query_params.append(('upload_credentials', upload_credentials))
             
         if upload_status is not None:
             
@@ -24247,7 +24175,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -24356,8 +24283,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -24431,7 +24356,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -24505,7 +24429,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -24614,8 +24537,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -24689,7 +24610,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -24763,7 +24683,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -24872,8 +24791,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -24947,7 +24864,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -25016,7 +24932,6 @@ class IgvfApi:
         submitted_file_name,
         submitter_comment,
         summary,
-        upload_credentials,
         upload_status,
         uuid,
         validation_error_detail,
@@ -25071,7 +24986,6 @@ class IgvfApi:
             'submitted_file_name': 'multi',
             'submitter_comment': 'multi',
             'summary': 'multi',
-            'upload_credentials': 'multi',
             'upload_status': 'multi',
             'uuid': 'multi',
             'validation_error_detail': 'multi',
@@ -25261,10 +25175,6 @@ class IgvfApi:
         if summary is not None:
             
             _query_params.append(('summary', summary))
-            
-        if upload_credentials is not None:
-            
-            _query_params.append(('upload_credentials', upload_credentials))
             
         if upload_status is not None:
             
@@ -27629,7 +27539,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -27734,8 +27643,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -27807,7 +27714,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -27879,7 +27785,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -27984,8 +27889,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -28057,7 +27960,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -28129,7 +28031,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -28234,8 +28135,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -28307,7 +28206,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -28374,7 +28272,6 @@ class IgvfApi:
         submitted_file_name,
         submitter_comment,
         summary,
-        upload_credentials,
         upload_status,
         uuid,
         validation_error_detail,
@@ -28427,7 +28324,6 @@ class IgvfApi:
             'submitted_file_name': 'multi',
             'submitter_comment': 'multi',
             'summary': 'multi',
-            'upload_credentials': 'multi',
             'upload_status': 'multi',
             'uuid': 'multi',
             'validation_error_detail': 'multi',
@@ -28609,10 +28505,6 @@ class IgvfApi:
         if summary is not None:
             
             _query_params.append(('summary', summary))
-            
-        if upload_credentials is not None:
-            
-            _query_params.append(('upload_credentials', upload_credentials))
             
         if upload_status is not None:
             
@@ -40272,7 +40164,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -40391,8 +40282,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -40471,7 +40360,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -40550,7 +40438,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -40669,8 +40556,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -40749,7 +40634,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -40828,7 +40712,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -40947,8 +40830,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -41027,7 +40908,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -41101,7 +40981,6 @@ class IgvfApi:
         submitter_comment,
         summary,
         transcriptome_annotation,
-        upload_credentials,
         upload_status,
         uuid,
         validation_error_detail,
@@ -41161,7 +41040,6 @@ class IgvfApi:
             'submitter_comment': 'multi',
             'summary': 'multi',
             'transcriptome_annotation': 'multi',
-            'upload_credentials': 'multi',
             'upload_status': 'multi',
             'uuid': 'multi',
             'validation_error_detail': 'multi',
@@ -41371,10 +41249,6 @@ class IgvfApi:
         if transcriptome_annotation is not None:
             
             _query_params.append(('transcriptome_annotation', transcriptome_annotation))
-            
-        if upload_credentials is not None:
-            
-            _query_params.append(('upload_credentials', upload_credentials))
             
         if upload_status is not None:
             
@@ -44512,7 +44386,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -44641,8 +44514,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -44726,7 +44597,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -44810,7 +44680,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -44939,8 +44808,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -45024,7 +44891,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -45108,7 +44974,6 @@ class IgvfApi:
         submitted_file_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by submitted_file_name")] = None,
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -45237,8 +45102,6 @@ class IgvfApi:
         :type submitter_comment: List[str]
         :param summary: Filter by summary
         :type summary: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -45322,7 +45185,6 @@ class IgvfApi:
             submitted_file_name=submitted_file_name,
             submitter_comment=submitter_comment,
             summary=summary,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -45401,7 +45263,6 @@ class IgvfApi:
         submitted_file_name,
         submitter_comment,
         summary,
-        upload_credentials,
         upload_status,
         uuid,
         validation_error_detail,
@@ -45466,7 +45327,6 @@ class IgvfApi:
             'submitted_file_name': 'multi',
             'submitter_comment': 'multi',
             'summary': 'multi',
-            'upload_credentials': 'multi',
             'upload_status': 'multi',
             'uuid': 'multi',
             'validation_error_detail': 'multi',
@@ -45697,10 +45557,6 @@ class IgvfApi:
             
             _query_params.append(('summary', summary))
             
-        if upload_credentials is not None:
-            
-            _query_params.append(('upload_credentials', upload_credentials))
-            
         if upload_status is not None:
             
             _query_params.append(('upload_status', upload_status))
@@ -45802,7 +45658,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -45919,8 +45774,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -45998,7 +45851,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -46076,7 +45928,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -46193,8 +46044,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -46272,7 +46121,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -46350,7 +46198,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -46467,8 +46314,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -46546,7 +46391,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -46619,7 +46463,6 @@ class IgvfApi:
         submitter_comment,
         summary,
         transcriptome_annotation,
-        upload_credentials,
         upload_status,
         uuid,
         validation_error_detail,
@@ -46678,7 +46521,6 @@ class IgvfApi:
             'submitter_comment': 'multi',
             'summary': 'multi',
             'transcriptome_annotation': 'multi',
-            'upload_credentials': 'multi',
             'upload_status': 'multi',
             'uuid': 'multi',
             'validation_error_detail': 'multi',
@@ -46884,10 +46726,6 @@ class IgvfApi:
         if transcriptome_annotation is not None:
             
             _query_params.append(('transcriptome_annotation', transcriptome_annotation))
-            
-        if upload_credentials is not None:
-            
-            _query_params.append(('upload_credentials', upload_credentials))
             
         if upload_status is not None:
             
@@ -49021,7 +48859,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -49132,8 +48969,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -49208,7 +49043,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -49283,7 +49117,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -49394,8 +49227,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -49470,7 +49301,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -49545,7 +49375,6 @@ class IgvfApi:
         submitter_comment: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by submitter_comment")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         transcriptome_annotation: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotation")] = None,
-        upload_credentials: Annotated[Optional[List[Dict[str, Any]]], Field(description="Filter by upload_credentials")] = None,
         upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by upload_status")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         validation_error_detail: Annotated[Optional[List[StrictStr]], Field(description="Filter by validation_error_detail")] = None,
@@ -49656,8 +49485,6 @@ class IgvfApi:
         :type summary: List[str]
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: List[str]
-        :param upload_credentials: Filter by upload_credentials
-        :type upload_credentials: List[object]
         :param upload_status: Filter by upload_status
         :type upload_status: List[str]
         :param uuid: Filter by uuid
@@ -49732,7 +49559,6 @@ class IgvfApi:
             submitter_comment=submitter_comment,
             summary=summary,
             transcriptome_annotation=transcriptome_annotation,
-            upload_credentials=upload_credentials,
             upload_status=upload_status,
             uuid=uuid,
             validation_error_detail=validation_error_detail,
@@ -49802,7 +49628,6 @@ class IgvfApi:
         submitter_comment,
         summary,
         transcriptome_annotation,
-        upload_credentials,
         upload_status,
         uuid,
         validation_error_detail,
@@ -49858,7 +49683,6 @@ class IgvfApi:
             'submitter_comment': 'multi',
             'summary': 'multi',
             'transcriptome_annotation': 'multi',
-            'upload_credentials': 'multi',
             'upload_status': 'multi',
             'uuid': 'multi',
             'validation_error_detail': 'multi',
@@ -50052,10 +49876,6 @@ class IgvfApi:
         if transcriptome_annotation is not None:
             
             _query_params.append(('transcriptome_annotation', transcriptome_annotation))
-            
-        if upload_credentials is not None:
-            
-            _query_params.append(('upload_credentials', upload_credentials))
             
         if upload_status is not None:
             
