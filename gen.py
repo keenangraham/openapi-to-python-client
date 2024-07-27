@@ -1042,6 +1042,8 @@ def fill_in_collection_template(schema_name, schema):
         filtered_prop_schema = {k: v for k, v in prop_schema.items() if k not in exclude}
         if '@type' in prop:
             continue
+        if prop == 'upload_credentials':
+            continue
         if prop == 'schema_version':
             continue
         if 'properties' in prop_schema:
