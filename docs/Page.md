@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **parent** | **str** | The parent page associated with this page. | [optional] 
 **name** | **str** | The name shown in this page&#39;s URL. | [optional] 
 **title** | **str** | The name shown in the browser&#39;s title bar and tabs. | [optional] 
-**layout** | [**PageLayout1**](PageLayout1.md) |  | [optional] 
+**layout** | [**PageLayout**](PageLayout.md) |  | [optional] 
 **id** | **str** |  | [optional] 
 **type** | **List[str]** |  | [optional] 
 **summary** | **str** | A summary of the object. | [optional] 

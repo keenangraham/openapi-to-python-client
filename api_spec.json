@@ -3324,68 +3324,6 @@
             "explode": true
           },
           {
-            "name": "attachment",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Attachment",
-                "type": "object",
-                "description": "The attached content.",
-                "additionalProperties": false,
-                "properties": {
-                  "download": {
-                    "title": "File Name",
-                    "type": "string"
-                  },
-                  "href": {
-                    "title": "Hypertext REFerence",
-                    "type": "string"
-                  },
-                  "type": {
-                    "title": "MIME type",
-                    "type": "string",
-                    "enum": [
-                      "application/json",
-                      "application/pdf",
-                      "image/gif",
-                      "image/jpeg",
-                      "image/png",
-                      "image/svs",
-                      "image/tiff",
-                      "text/autosql",
-                      "text/html",
-                      "text/plain",
-                      "text/tab-separated-values"
-                    ]
-                  },
-                  "md5sum": {
-                    "title": "MD5sum",
-                    "type": "string"
-                  },
-                  "size": {
-                    "title": "File Size",
-                    "type": "integer",
-                    "minimum": 0
-                  },
-                  "width": {
-                    "title": "Image Width",
-                    "type": "integer",
-                    "minimum": 0
-                  },
-                  "height": {
-                    "title": "Image Height",
-                    "type": "integer",
-                    "minimum": 0
-                  }
-                }
-              }
-            },
-            "description": "Filter by attachment",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "uuid",
             "in": "query",
             "schema": {
@@ -18172,42 +18110,6 @@
             "explode": true
           },
           {
-            "name": "tile",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Tile",
-                "description": "The coordinates and an identifier in plain text for the specific tile of a protein region cloned in an expression vector library. The associated gene for this protein must be listed in the small_scale_gene_list or large_scale_gene_list property.",
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "tile_id": {
-                    "title": "Tile ID",
-                    "description": "An identifier in plain text for the specific tile of a protein region cloned in an expression vector library.",
-                    "type": "string",
-                    "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$"
-                  },
-                  "tile_start": {
-                    "title": "Tile Start",
-                    "description": "The 1-based, closed (inclusive) starting coordinate.",
-                    "type": "integer",
-                    "minimum": 1
-                  },
-                  "tile_end": {
-                    "title": "Tile End",
-                    "description": "The 1-based, closed (inclusive) ending coordinate.",
-                    "type": "integer",
-                    "minimum": 1
-                  }
-                }
-              }
-            },
-            "description": "Filter by tile",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "guide_type",
             "in": "query",
             "schema": {
@@ -26598,60 +26500,6 @@
             "explode": true
           },
           {
-            "name": "attachment",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Attachment",
-                "type": "object",
-                "description": "The attached content.",
-                "additionalProperties": false,
-                "properties": {
-                  "download": {
-                    "title": "File Name",
-                    "type": "string"
-                  },
-                  "href": {
-                    "title": "Hypertext REFerence",
-                    "type": "string"
-                  },
-                  "type": {
-                    "title": "MIME type",
-                    "type": "string",
-                    "enum": [
-                      "image/png",
-                      "image/jpeg",
-                      "image/gif"
-                    ]
-                  },
-                  "md5sum": {
-                    "title": "MD5sum",
-                    "type": "string"
-                  },
-                  "size": {
-                    "title": "File Size",
-                    "type": "integer",
-                    "minimum": 0
-                  },
-                  "width": {
-                    "title": "Image Width",
-                    "type": "integer",
-                    "minimum": 0
-                  },
-                  "height": {
-                    "title": "Image Height",
-                    "type": "integer",
-                    "minimum": 0
-                  }
-                }
-              }
-            },
-            "description": "Filter by attachment",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "uuid",
             "in": "query",
             "schema": {
@@ -31996,54 +31844,6 @@
             "explode": true
           },
           {
-            "name": "layout",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Page Layout",
-                "description": "Hierarchical description of the page layout.",
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "blocks": {
-                    "type": "array",
-                    "items": {
-                      "title": "Page Layout Components",
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "@id": {
-                          "title": "Block ID",
-                          "description": "Unique identifier for this blocUnique identifier for this block.",
-                          "type": "string"
-                        },
-                        "@type": {
-                          "title": "Block Type",
-                          "description": "Indicates whether this block contains markdown or a component specification.",
-                          "type": "string"
-                        },
-                        "body": {
-                          "title": "Block Body",
-                          "description": "The text content of this block.",
-                          "type": "string"
-                        },
-                        "direction": {
-                          "title": "Direction",
-                          "description": "The text language direction -- ltr or rtl.",
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "description": "Filter by layout",
-            "style": "form",
-            "explode": true
-          },
-          {
             "name": "@id",
             "in": "query",
             "schema": {
@@ -32819,68 +32619,6 @@
               }
             },
             "description": "Filter by status",
-            "style": "form",
-            "explode": true
-          },
-          {
-            "name": "attachment",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "title": "Attachment",
-                "type": "object",
-                "description": "The attached content.",
-                "additionalProperties": false,
-                "properties": {
-                  "download": {
-                    "title": "File Name",
-                    "type": "string"
-                  },
-                  "href": {
-                    "title": "Hypertext REFerence",
-                    "type": "string"
-                  },
-                  "type": {
-                    "title": "MIME type",
-                    "type": "string",
-                    "enum": [
-                      "application/json",
-                      "application/pdf",
-                      "image/gif",
-                      "image/jpeg",
-                      "image/png",
-                      "image/svs",
-                      "image/tiff",
-                      "text/autosql",
-                      "text/html",
-                      "text/plain",
-                      "text/tab-separated-values"
-                    ]
-                  },
-                  "md5sum": {
-                    "title": "MD5sum",
-                    "type": "string"
-                  },
-                  "size": {
-                    "title": "File Size",
-                    "type": "integer",
-                    "minimum": 0
-                  },
-                  "width": {
-                    "title": "Image Width",
-                    "type": "integer",
-                    "minimum": 0
-                  },
-                  "height": {
-                    "title": "Image Height",
-                    "type": "integer",
-                    "minimum": 0
-                  }
-                }
-              }
-            },
-            "description": "Filter by attachment",
             "style": "form",
             "explode": true
           },

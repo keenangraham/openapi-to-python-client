@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from igvf_client.models.attachment3 import Attachment3
+from igvf_client.models.attachment1 import Attachment1
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +30,7 @@ class Image(BaseModel):
     """ # noqa: E501
     release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
-    attachment: Optional[Attachment3] = None
+    attachment: Optional[Attachment1] = None
     schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
@@ -161,7 +161,7 @@ class Image(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "status": obj.get("status"),
-            "attachment": Attachment3.from_dict(obj["attachment"]) if obj.get("attachment") is not None else None,
+            "attachment": Attachment1.from_dict(obj["attachment"]) if obj.get("attachment") is not None else None,
             "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),

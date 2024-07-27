@@ -28,8 +28,6 @@ from igvf_client.models.assay_term import AssayTerm
 from igvf_client.models.assay_term_results import AssayTermResults
 from igvf_client.models.attachment import Attachment
 from igvf_client.models.attachment1 import Attachment1
-from igvf_client.models.attachment2 import Attachment2
-from igvf_client.models.attachment3 import Attachment3
 from igvf_client.models.auxiliary_set import AuxiliarySet
 from igvf_client.models.auxiliary_set_results import AuxiliarySetResults
 from igvf_client.models.award import Award
@@ -92,9 +90,7 @@ from igvf_client.models.open_reading_frame import OpenReadingFrame
 from igvf_client.models.open_reading_frame_results import OpenReadingFrameResults
 from igvf_client.models.page import Page
 from igvf_client.models.page_layout import PageLayout
-from igvf_client.models.page_layout1 import PageLayout1
 from igvf_client.models.page_layout_components import PageLayoutComponents
-from igvf_client.models.page_layout_components1 import PageLayoutComponents1
 from igvf_client.models.page_results import PageResults
 from igvf_client.models.phenotype_term import PhenotypeTerm
 from igvf_client.models.phenotype_term_results import PhenotypeTermResults
@@ -133,7 +129,6 @@ from igvf_client.models.tabular_file_results import TabularFileResults
 from igvf_client.models.technical_sample import TechnicalSample
 from igvf_client.models.technical_sample_results import TechnicalSampleResults
 from igvf_client.models.tile import Tile
-from igvf_client.models.tile1 import Tile1
 from igvf_client.models.tissue import Tissue
 from igvf_client.models.tissue_results import TissueResults
 from igvf_client.models.treatment import Treatment

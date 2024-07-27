@@ -1756,7 +1756,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **construct_library_sets**
-> ConstructLibrarySetResults construct_library_sets(query=query, limit=limit, sort=sort, small_scale_loci_list=small_scale_loci_list, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, sources=sources, lot_id=lot_id, product_id=product_id, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, file_set_type=file_set_type, scope=scope, selection_criteria=selection_criteria, integrated_content_files=integrated_content_files, exon=exon, tile=tile, guide_type=guide_type, tiling_modality=tiling_modality, average_guide_coverage=average_guide_coverage, lower_bound_guide_coverage=lower_bound_guide_coverage, upper_bound_guide_coverage=upper_bound_guide_coverage, average_insert_size=average_insert_size, lower_bound_insert_size=lower_bound_insert_size, upper_bound_insert_size=upper_bound_insert_size, targeton=targeton, id=id, summary=summary, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, applied_to_samples_id=applied_to_samples_id, applied_to_samples_accession=applied_to_samples_accession, applied_to_samples_aliases=applied_to_samples_aliases, applied_to_samples_disease_terms_id=applied_to_samples_disease_terms_id, applied_to_samples_disease_terms_term_name=applied_to_samples_disease_terms_term_name, applied_to_samples_sample_terms_id=applied_to_samples_sample_terms_id, applied_to_samples_sample_terms_term_name=applied_to_samples_sample_terms_term_name, applied_to_samples_status=applied_to_samples_status, applied_to_samples_summary=applied_to_samples_summary, associated_phenotypes_id=associated_phenotypes_id, associated_phenotypes_term_id=associated_phenotypes_term_id, associated_phenotypes_term_name=associated_phenotypes_term_name, award_id=award_id, award_component=award_component, control_for_id=control_for_id, control_for_accession=control_for_accession, control_for_aliases=control_for_aliases, files_id=files_id, files_accession=files_accession, files_aliases=files_aliases, files_content_type=files_content_type, files_file_format=files_file_format, files_upload_status=files_upload_status, lab_id=lab_id, lab_title=lab_title, large_scale_gene_list_id=large_scale_gene_list_id, large_scale_gene_list_accession=large_scale_gene_list_accession, large_scale_gene_list_aliases=large_scale_gene_list_aliases, large_scale_loci_list_id=large_scale_loci_list_id, large_scale_loci_list_accession=large_scale_loci_list_accession, large_scale_loci_list_aliases=large_scale_loci_list_aliases, orf_list_id=orf_list_id, orf_list_aliases=orf_list_aliases, orf_list_gene=orf_list_gene, orf_list_orf_id=orf_list_orf_id, small_scale_gene_list_id=small_scale_gene_list_id, small_scale_gene_list_geneid=small_scale_gene_list_geneid, small_scale_gene_list_name=small_scale_gene_list_name, small_scale_gene_list_symbol=small_scale_gene_list_symbol, small_scale_gene_list_synonyms=small_scale_gene_list_synonyms, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
+> ConstructLibrarySetResults construct_library_sets(query=query, limit=limit, sort=sort, small_scale_loci_list=small_scale_loci_list, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, sources=sources, lot_id=lot_id, product_id=product_id, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, file_set_type=file_set_type, scope=scope, selection_criteria=selection_criteria, integrated_content_files=integrated_content_files, exon=exon, guide_type=guide_type, tiling_modality=tiling_modality, average_guide_coverage=average_guide_coverage, lower_bound_guide_coverage=lower_bound_guide_coverage, upper_bound_guide_coverage=upper_bound_guide_coverage, average_insert_size=average_insert_size, lower_bound_insert_size=lower_bound_insert_size, upper_bound_insert_size=upper_bound_insert_size, targeton=targeton, id=id, summary=summary, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, applied_to_samples_id=applied_to_samples_id, applied_to_samples_accession=applied_to_samples_accession, applied_to_samples_aliases=applied_to_samples_aliases, applied_to_samples_disease_terms_id=applied_to_samples_disease_terms_id, applied_to_samples_disease_terms_term_name=applied_to_samples_disease_terms_term_name, applied_to_samples_sample_terms_id=applied_to_samples_sample_terms_id, applied_to_samples_sample_terms_term_name=applied_to_samples_sample_terms_term_name, applied_to_samples_status=applied_to_samples_status, applied_to_samples_summary=applied_to_samples_summary, associated_phenotypes_id=associated_phenotypes_id, associated_phenotypes_term_id=associated_phenotypes_term_id, associated_phenotypes_term_name=associated_phenotypes_term_name, award_id=award_id, award_component=award_component, control_for_id=control_for_id, control_for_accession=control_for_accession, control_for_aliases=control_for_aliases, files_id=files_id, files_accession=files_accession, files_aliases=files_aliases, files_content_type=files_content_type, files_file_format=files_file_format, files_upload_status=files_upload_status, lab_id=lab_id, lab_title=lab_title, large_scale_gene_list_id=large_scale_gene_list_id, large_scale_gene_list_accession=large_scale_gene_list_accession, large_scale_gene_list_aliases=large_scale_gene_list_aliases, large_scale_loci_list_id=large_scale_loci_list_id, large_scale_loci_list_accession=large_scale_loci_list_accession, large_scale_loci_list_aliases=large_scale_loci_list_aliases, orf_list_id=orf_list_id, orf_list_aliases=orf_list_aliases, orf_list_gene=orf_list_gene, orf_list_orf_id=orf_list_orf_id, small_scale_gene_list_id=small_scale_gene_list_id, small_scale_gene_list_geneid=small_scale_gene_list_geneid, small_scale_gene_list_name=small_scale_gene_list_name, small_scale_gene_list_symbol=small_scale_gene_list_symbol, small_scale_gene_list_synonyms=small_scale_gene_list_synonyms, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
 
 List items in the ConstructLibrarySet collection.
 
@@ -1770,7 +1770,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 import igvf_client
 from igvf_client.models.construct_library_set_results import ConstructLibrarySetResults
 from igvf_client.models.locus import Locus
-from igvf_client.models.tile import Tile
 from igvf_client.rest import ApiException
 from pprint import pprint
 
@@ -1822,7 +1821,6 @@ with igvf_client.ApiClient(configuration) as api_client:
     selection_criteria = ['selection_criteria_example'] # List[str] | Filter by selection_criteria (optional)
     integrated_content_files = ['integrated_content_files_example'] # List[str] | Filter by integrated_content_files (optional)
     exon = ['exon_example'] # List[str] | Filter by exon (optional)
-    tile = [igvf_client.Tile()] # List[Tile] | Filter by tile (optional)
     guide_type = ['guide_type_example'] # List[str] | Filter by guide_type (optional)
     tiling_modality = ['tiling_modality_example'] # List[str] | Filter by tiling_modality (optional)
     average_guide_coverage = [3.4] # List[float] | Filter by average_guide_coverage (optional)
@@ -1881,7 +1879,7 @@ with igvf_client.ApiClient(configuration) as api_client:
 
     try:
         # List items in the ConstructLibrarySet collection.
-        api_response = api_instance.construct_library_sets(query=query, limit=limit, sort=sort, small_scale_loci_list=small_scale_loci_list, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, sources=sources, lot_id=lot_id, product_id=product_id, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, file_set_type=file_set_type, scope=scope, selection_criteria=selection_criteria, integrated_content_files=integrated_content_files, exon=exon, tile=tile, guide_type=guide_type, tiling_modality=tiling_modality, average_guide_coverage=average_guide_coverage, lower_bound_guide_coverage=lower_bound_guide_coverage, upper_bound_guide_coverage=upper_bound_guide_coverage, average_insert_size=average_insert_size, lower_bound_insert_size=lower_bound_insert_size, upper_bound_insert_size=upper_bound_insert_size, targeton=targeton, id=id, summary=summary, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, applied_to_samples_id=applied_to_samples_id, applied_to_samples_accession=applied_to_samples_accession, applied_to_samples_aliases=applied_to_samples_aliases, applied_to_samples_disease_terms_id=applied_to_samples_disease_terms_id, applied_to_samples_disease_terms_term_name=applied_to_samples_disease_terms_term_name, applied_to_samples_sample_terms_id=applied_to_samples_sample_terms_id, applied_to_samples_sample_terms_term_name=applied_to_samples_sample_terms_term_name, applied_to_samples_status=applied_to_samples_status, applied_to_samples_summary=applied_to_samples_summary, associated_phenotypes_id=associated_phenotypes_id, associated_phenotypes_term_id=associated_phenotypes_term_id, associated_phenotypes_term_name=associated_phenotypes_term_name, award_id=award_id, award_component=award_component, control_for_id=control_for_id, control_for_accession=control_for_accession, control_for_aliases=control_for_aliases, files_id=files_id, files_accession=files_accession, files_aliases=files_aliases, files_content_type=files_content_type, files_file_format=files_file_format, files_upload_status=files_upload_status, lab_id=lab_id, lab_title=lab_title, large_scale_gene_list_id=large_scale_gene_list_id, large_scale_gene_list_accession=large_scale_gene_list_accession, large_scale_gene_list_aliases=large_scale_gene_list_aliases, large_scale_loci_list_id=large_scale_loci_list_id, large_scale_loci_list_accession=large_scale_loci_list_accession, large_scale_loci_list_aliases=large_scale_loci_list_aliases, orf_list_id=orf_list_id, orf_list_aliases=orf_list_aliases, orf_list_gene=orf_list_gene, orf_list_orf_id=orf_list_orf_id, small_scale_gene_list_id=small_scale_gene_list_id, small_scale_gene_list_geneid=small_scale_gene_list_geneid, small_scale_gene_list_name=small_scale_gene_list_name, small_scale_gene_list_symbol=small_scale_gene_list_symbol, small_scale_gene_list_synonyms=small_scale_gene_list_synonyms, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
+        api_response = api_instance.construct_library_sets(query=query, limit=limit, sort=sort, small_scale_loci_list=small_scale_loci_list, release_timestamp=release_timestamp, publications=publications, publication_identifiers=publication_identifiers, documents=documents, sources=sources, lot_id=lot_id, product_id=product_id, accession=accession, alternate_accessions=alternate_accessions, collections=collections, status=status, revoke_detail=revoke_detail, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, file_set_type=file_set_type, scope=scope, selection_criteria=selection_criteria, integrated_content_files=integrated_content_files, exon=exon, guide_type=guide_type, tiling_modality=tiling_modality, average_guide_coverage=average_guide_coverage, lower_bound_guide_coverage=lower_bound_guide_coverage, upper_bound_guide_coverage=upper_bound_guide_coverage, average_insert_size=average_insert_size, lower_bound_insert_size=lower_bound_insert_size, upper_bound_insert_size=upper_bound_insert_size, targeton=targeton, id=id, summary=summary, submitted_files_timestamp=submitted_files_timestamp, input_file_set_for=input_file_set_for, applied_to_samples_id=applied_to_samples_id, applied_to_samples_accession=applied_to_samples_accession, applied_to_samples_aliases=applied_to_samples_aliases, applied_to_samples_disease_terms_id=applied_to_samples_disease_terms_id, applied_to_samples_disease_terms_term_name=applied_to_samples_disease_terms_term_name, applied_to_samples_sample_terms_id=applied_to_samples_sample_terms_id, applied_to_samples_sample_terms_term_name=applied_to_samples_sample_terms_term_name, applied_to_samples_status=applied_to_samples_status, applied_to_samples_summary=applied_to_samples_summary, associated_phenotypes_id=associated_phenotypes_id, associated_phenotypes_term_id=associated_phenotypes_term_id, associated_phenotypes_term_name=associated_phenotypes_term_name, award_id=award_id, award_component=award_component, control_for_id=control_for_id, control_for_accession=control_for_accession, control_for_aliases=control_for_aliases, files_id=files_id, files_accession=files_accession, files_aliases=files_aliases, files_content_type=files_content_type, files_file_format=files_file_format, files_upload_status=files_upload_status, lab_id=lab_id, lab_title=lab_title, large_scale_gene_list_id=large_scale_gene_list_id, large_scale_gene_list_accession=large_scale_gene_list_accession, large_scale_gene_list_aliases=large_scale_gene_list_aliases, large_scale_loci_list_id=large_scale_loci_list_id, large_scale_loci_list_accession=large_scale_loci_list_accession, large_scale_loci_list_aliases=large_scale_loci_list_aliases, orf_list_id=orf_list_id, orf_list_aliases=orf_list_aliases, orf_list_gene=orf_list_gene, orf_list_orf_id=orf_list_orf_id, small_scale_gene_list_id=small_scale_gene_list_id, small_scale_gene_list_geneid=small_scale_gene_list_geneid, small_scale_gene_list_name=small_scale_gene_list_name, small_scale_gene_list_symbol=small_scale_gene_list_symbol, small_scale_gene_list_synonyms=small_scale_gene_list_synonyms, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
         print("The response of IgvfApi->construct_library_sets:\n")
         pprint(api_response)
     except Exception as e:
@@ -1922,7 +1920,6 @@ Name | Type | Description  | Notes
  **selection_criteria** | [**List[str]**](List[str].md)| Filter by selection_criteria | [optional] 
  **integrated_content_files** | [**List[str]**](List[str].md)| Filter by integrated_content_files | [optional] 
  **exon** | [**List[str]**](List[str].md)| Filter by exon | [optional] 
- **tile** | [**List[Tile]**](List[Tile].md)| Filter by tile | [optional] 
  **guide_type** | [**List[str]**](List[str].md)| Filter by guide_type | [optional] 
  **tiling_modality** | [**List[str]**](List[str].md)| Filter by tiling_modality | [optional] 
  **average_guide_coverage** | [**List[float]**](List[float].md)| Filter by average_guide_coverage | [optional] 
@@ -2524,7 +2521,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **documents**
-> DocumentResults documents(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, attachment=attachment, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, document_type=document_type, characterization_method=characterization_method, urls=urls, id=id, summary=summary, award_id=award_id, award_component=award_component, lab_id=lab_id, lab_title=lab_title, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
+> DocumentResults documents(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, document_type=document_type, characterization_method=characterization_method, urls=urls, id=id, summary=summary, award_id=award_id, award_component=award_component, lab_id=lab_id, lab_title=lab_title, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
 
 List items in the Document collection.
 
@@ -2536,7 +2533,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 import igvf_client
-from igvf_client.models.attachment import Attachment
 from igvf_client.models.document_results import DocumentResults
 from igvf_client.rest import ApiException
 from pprint import pprint
@@ -2567,7 +2563,6 @@ with igvf_client.ApiClient(configuration) as api_client:
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     status = ['status_example'] # List[str] | Filter by status (optional)
-    attachment = [igvf_client.Attachment()] # List[Attachment] | Filter by attachment (optional)
     uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
     notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
@@ -2588,7 +2583,7 @@ with igvf_client.ApiClient(configuration) as api_client:
 
     try:
         # List items in the Document collection.
-        api_response = api_instance.documents(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, attachment=attachment, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, document_type=document_type, characterization_method=characterization_method, urls=urls, id=id, summary=summary, award_id=award_id, award_component=award_component, lab_id=lab_id, lab_title=lab_title, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
+        api_response = api_instance.documents(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, document_type=document_type, characterization_method=characterization_method, urls=urls, id=id, summary=summary, award_id=award_id, award_component=award_component, lab_id=lab_id, lab_title=lab_title, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
         print("The response of IgvfApi->documents:\n")
         pprint(api_response)
     except Exception as e:
@@ -2607,7 +2602,6 @@ Name | Type | Description  | Notes
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
- **attachment** | [**List[Attachment]**](List[Attachment].md)| Filter by attachment | [optional] 
  **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
  **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
@@ -3448,7 +3442,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **images**
-> ImageResults images(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, attachment=attachment, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, caption=caption, id=id, summary=summary, thumb_nail=thumb_nail, download_url=download_url, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
+> ImageResults images(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, caption=caption, id=id, summary=summary, thumb_nail=thumb_nail, download_url=download_url, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
 
 List items in the Image collection.
 
@@ -3460,7 +3454,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 import igvf_client
-from igvf_client.models.attachment1 import Attachment1
 from igvf_client.models.image_results import ImageResults
 from igvf_client.rest import ApiException
 from pprint import pprint
@@ -3491,7 +3484,6 @@ with igvf_client.ApiClient(configuration) as api_client:
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     status = ['status_example'] # List[str] | Filter by status (optional)
-    attachment = [igvf_client.Attachment1()] # List[Attachment1] | Filter by attachment (optional)
     uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
     notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
@@ -3508,7 +3500,7 @@ with igvf_client.ApiClient(configuration) as api_client:
 
     try:
         # List items in the Image collection.
-        api_response = api_instance.images(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, attachment=attachment, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, caption=caption, id=id, summary=summary, thumb_nail=thumb_nail, download_url=download_url, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
+        api_response = api_instance.images(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, caption=caption, id=id, summary=summary, thumb_nail=thumb_nail, download_url=download_url, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
         print("The response of IgvfApi->images:\n")
         pprint(api_response)
     except Exception as e:
@@ -3527,7 +3519,6 @@ Name | Type | Description  | Notes
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
- **attachment** | [**List[Attachment1]**](List[Attachment1].md)| Filter by attachment | [optional] 
  **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
  **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
@@ -5379,7 +5370,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pages**
-> PageResults pages(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, lab=lab, award=award, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, parent=parent, name=name, title=title, layout=layout, id=id, summary=summary, canonical_uri=canonical_uri, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
+> PageResults pages(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, lab=lab, award=award, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, parent=parent, name=name, title=title, id=id, summary=summary, canonical_uri=canonical_uri, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
 
 List items in the Page collection.
 
@@ -5391,7 +5382,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 import igvf_client
-from igvf_client.models.page_layout import PageLayout
 from igvf_client.models.page_results import PageResults
 from igvf_client.rest import ApiException
 from pprint import pprint
@@ -5433,7 +5423,6 @@ with igvf_client.ApiClient(configuration) as api_client:
     parent = ['parent_example'] # List[str] | Filter by parent (optional)
     name = ['name_example'] # List[str] | Filter by name (optional)
     title = ['title_example'] # List[str] | Filter by title (optional)
-    layout = [igvf_client.PageLayout()] # List[PageLayout] | Filter by layout (optional)
     id = ['id_example'] # List[str] | Filter by @id (optional)
     summary = ['summary_example'] # List[str] | Filter by summary (optional)
     canonical_uri = ['canonical_uri_example'] # List[str] | Filter by canonical_uri (optional)
@@ -5442,7 +5431,7 @@ with igvf_client.ApiClient(configuration) as api_client:
 
     try:
         # List items in the Page collection.
-        api_response = api_instance.pages(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, lab=lab, award=award, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, parent=parent, name=name, title=title, layout=layout, id=id, summary=summary, canonical_uri=canonical_uri, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
+        api_response = api_instance.pages(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, lab=lab, award=award, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, parent=parent, name=name, title=title, id=id, summary=summary, canonical_uri=canonical_uri, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
         print("The response of IgvfApi->pages:\n")
         pprint(api_response)
     except Exception as e:
@@ -5472,7 +5461,6 @@ Name | Type | Description  | Notes
  **parent** | [**List[str]**](List[str].md)| Filter by parent | [optional] 
  **name** | [**List[str]**](List[str].md)| Filter by name | [optional] 
  **title** | [**List[str]**](List[str].md)| Filter by title | [optional] 
- **layout** | [**List[PageLayout]**](List[PageLayout].md)| Filter by layout | [optional] 
  **id** | [**List[str]**](List[str].md)| Filter by @id | [optional] 
  **summary** | [**List[str]**](List[str].md)| Filter by summary | [optional] 
  **canonical_uri** | [**List[str]**](List[str].md)| Filter by canonical_uri | [optional] 
@@ -6409,7 +6397,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **publications**
-> PublicationResults publications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publication_identifiers=publication_identifiers, status=status, attachment=attachment, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, title=title, abstract=abstract, authors=authors, date_published=date_published, date_revised=date_revised, issue=issue, page=page, volume=volume, journal=journal, published_by=published_by, id=id, summary=summary, publication_year=publication_year, samples=samples, donors=donors, file_sets=file_sets, workflows=workflows, software=software, software_versions=software_versions, award_id=award_id, award_component=award_component, lab_id=lab_id, lab_title=lab_title, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
+> PublicationResults publications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publication_identifiers=publication_identifiers, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, title=title, abstract=abstract, authors=authors, date_published=date_published, date_revised=date_revised, issue=issue, page=page, volume=volume, journal=journal, published_by=published_by, id=id, summary=summary, publication_year=publication_year, samples=samples, donors=donors, file_sets=file_sets, workflows=workflows, software=software, software_versions=software_versions, award_id=award_id, award_component=award_component, lab_id=lab_id, lab_title=lab_title, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
 
 List items in the Publication collection.
 
@@ -6421,7 +6409,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 import igvf_client
-from igvf_client.models.attachment import Attachment
 from igvf_client.models.publication_results import PublicationResults
 from igvf_client.rest import ApiException
 from pprint import pprint
@@ -6453,7 +6440,6 @@ with igvf_client.ApiClient(configuration) as api_client:
     release_timestamp = ['release_timestamp_example'] # List[str] | Filter by release_timestamp (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     status = ['status_example'] # List[str] | Filter by status (optional)
-    attachment = [igvf_client.Attachment()] # List[Attachment] | Filter by attachment (optional)
     uuid = ['uuid_example'] # List[str] | Filter by uuid (optional)
     notes = ['notes_example'] # List[str] | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
@@ -6488,7 +6474,7 @@ with igvf_client.ApiClient(configuration) as api_client:
 
     try:
         # List items in the Publication collection.
-        api_response = api_instance.publications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publication_identifiers=publication_identifiers, status=status, attachment=attachment, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, title=title, abstract=abstract, authors=authors, date_published=date_published, date_revised=date_revised, issue=issue, page=page, volume=volume, journal=journal, published_by=published_by, id=id, summary=summary, publication_year=publication_year, samples=samples, donors=donors, file_sets=file_sets, workflows=workflows, software=software, software_versions=software_versions, award_id=award_id, award_component=award_component, lab_id=lab_id, lab_title=lab_title, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
+        api_response = api_instance.publications(query=query, limit=limit, sort=sort, release_timestamp=release_timestamp, publication_identifiers=publication_identifiers, status=status, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, title=title, abstract=abstract, authors=authors, date_published=date_published, date_revised=date_revised, issue=issue, page=page, volume=volume, journal=journal, published_by=published_by, id=id, summary=summary, publication_year=publication_year, samples=samples, donors=donors, file_sets=file_sets, workflows=workflows, software=software, software_versions=software_versions, award_id=award_id, award_component=award_component, lab_id=lab_id, lab_title=lab_title, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
         print("The response of IgvfApi->publications:\n")
         pprint(api_response)
     except Exception as e:
@@ -6508,7 +6494,6 @@ Name | Type | Description  | Notes
  **release_timestamp** | [**List[str]**](List[str].md)| Filter by release_timestamp | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **status** | [**List[str]**](List[str].md)| Filter by status | [optional] 
- **attachment** | [**List[Attachment]**](List[Attachment].md)| Filter by attachment | [optional] 
  **uuid** | [**List[str]**](List[str].md)| Filter by uuid | [optional] 
  **notes** | [**List[str]**](List[str].md)| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 

@@ -25,8 +25,6 @@ from igvf_client.models.analysis_set_results import AnalysisSetResults
 from igvf_client.models.analysis_step_results import AnalysisStepResults
 from igvf_client.models.analysis_step_version_results import AnalysisStepVersionResults
 from igvf_client.models.assay_term_results import AssayTermResults
-from igvf_client.models.attachment import Attachment
-from igvf_client.models.attachment1 import Attachment1
 from igvf_client.models.auxiliary_set_results import AuxiliarySetResults
 from igvf_client.models.award_results import AwardResults
 from igvf_client.models.biomarker_results import BiomarkerResults
@@ -54,7 +52,6 @@ from igvf_client.models.model_file_results import ModelFileResults
 from igvf_client.models.model_set_results import ModelSetResults
 from igvf_client.models.multiplexed_sample_results import MultiplexedSampleResults
 from igvf_client.models.open_reading_frame_results import OpenReadingFrameResults
-from igvf_client.models.page_layout import PageLayout
 from igvf_client.models.page_results import PageResults
 from igvf_client.models.phenotype_term_results import PhenotypeTermResults
 from igvf_client.models.phenotypic_feature_results import PhenotypicFeatureResults
@@ -73,7 +70,6 @@ from igvf_client.models.software_version_results import SoftwareVersionResults
 from igvf_client.models.source_results import SourceResults
 from igvf_client.models.tabular_file_results import TabularFileResults
 from igvf_client.models.technical_sample_results import TechnicalSampleResults
-from igvf_client.models.tile import Tile
 from igvf_client.models.tissue_results import TissueResults
 from igvf_client.models.treatment_results import TreatmentResults
 from igvf_client.models.user_results import UserResults
@@ -10207,7 +10203,6 @@ class IgvfApi:
         selection_criteria: Annotated[Optional[List[StrictStr]], Field(description="Filter by selection_criteria")] = None,
         integrated_content_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_content_files")] = None,
         exon: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by exon")] = None,
-        tile: Annotated[Optional[List[Tile]], Field(description="Filter by tile")] = None,
         guide_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by guide_type")] = None,
         tiling_modality: Annotated[Optional[List[StrictStr]], Field(description="Filter by tiling_modality")] = None,
         average_guide_coverage: Annotated[Optional[List[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]]], Field(description="Filter by average_guide_coverage")] = None,
@@ -10334,8 +10329,6 @@ class IgvfApi:
         :type integrated_content_files: List[str]
         :param exon: Filter by exon
         :type exon: List[str]
-        :param tile: Filter by tile
-        :type tile: List[Tile]
         :param guide_type: Filter by guide_type
         :type guide_type: List[str]
         :param tiling_modality: Filter by tiling_modality
@@ -10496,7 +10489,6 @@ class IgvfApi:
             selection_criteria=selection_criteria,
             integrated_content_files=integrated_content_files,
             exon=exon,
-            tile=tile,
             guide_type=guide_type,
             tiling_modality=tiling_modality,
             average_guide_coverage=average_guide_coverage,
@@ -10605,7 +10597,6 @@ class IgvfApi:
         selection_criteria: Annotated[Optional[List[StrictStr]], Field(description="Filter by selection_criteria")] = None,
         integrated_content_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_content_files")] = None,
         exon: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by exon")] = None,
-        tile: Annotated[Optional[List[Tile]], Field(description="Filter by tile")] = None,
         guide_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by guide_type")] = None,
         tiling_modality: Annotated[Optional[List[StrictStr]], Field(description="Filter by tiling_modality")] = None,
         average_guide_coverage: Annotated[Optional[List[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]]], Field(description="Filter by average_guide_coverage")] = None,
@@ -10732,8 +10723,6 @@ class IgvfApi:
         :type integrated_content_files: List[str]
         :param exon: Filter by exon
         :type exon: List[str]
-        :param tile: Filter by tile
-        :type tile: List[Tile]
         :param guide_type: Filter by guide_type
         :type guide_type: List[str]
         :param tiling_modality: Filter by tiling_modality
@@ -10894,7 +10883,6 @@ class IgvfApi:
             selection_criteria=selection_criteria,
             integrated_content_files=integrated_content_files,
             exon=exon,
-            tile=tile,
             guide_type=guide_type,
             tiling_modality=tiling_modality,
             average_guide_coverage=average_guide_coverage,
@@ -11003,7 +10991,6 @@ class IgvfApi:
         selection_criteria: Annotated[Optional[List[StrictStr]], Field(description="Filter by selection_criteria")] = None,
         integrated_content_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by integrated_content_files")] = None,
         exon: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by exon")] = None,
-        tile: Annotated[Optional[List[Tile]], Field(description="Filter by tile")] = None,
         guide_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by guide_type")] = None,
         tiling_modality: Annotated[Optional[List[StrictStr]], Field(description="Filter by tiling_modality")] = None,
         average_guide_coverage: Annotated[Optional[List[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]]], Field(description="Filter by average_guide_coverage")] = None,
@@ -11130,8 +11117,6 @@ class IgvfApi:
         :type integrated_content_files: List[str]
         :param exon: Filter by exon
         :type exon: List[str]
-        :param tile: Filter by tile
-        :type tile: List[Tile]
         :param guide_type: Filter by guide_type
         :type guide_type: List[str]
         :param tiling_modality: Filter by tiling_modality
@@ -11292,7 +11277,6 @@ class IgvfApi:
             selection_criteria=selection_criteria,
             integrated_content_files=integrated_content_files,
             exon=exon,
-            tile=tile,
             guide_type=guide_type,
             tiling_modality=tiling_modality,
             average_guide_coverage=average_guide_coverage,
@@ -11396,7 +11380,6 @@ class IgvfApi:
         selection_criteria,
         integrated_content_files,
         exon,
-        tile,
         guide_type,
         tiling_modality,
         average_guide_coverage,
@@ -11486,7 +11469,6 @@ class IgvfApi:
             'selection_criteria': 'multi',
             'integrated_content_files': 'multi',
             'exon': 'multi',
-            'tile': 'multi',
             'guide_type': 'multi',
             'tiling_modality': 'multi',
             'average_guide_coverage': 'multi',
@@ -11660,10 +11642,6 @@ class IgvfApi:
         if exon is not None:
             
             _query_params.append(('exon', exon))
-            
-        if tile is not None:
-            
-            _query_params.append(('tile', tile))
             
         if guide_type is not None:
             
@@ -15207,7 +15185,6 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
-        attachment: Annotated[Optional[List[Attachment]], Field(description="Filter by attachment")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
@@ -15252,8 +15229,6 @@ class IgvfApi:
         :type release_timestamp: List[str]
         :param status: Filter by status
         :type status: List[str]
-        :param attachment: Filter by attachment
-        :type attachment: List[Attachment]
         :param uuid: Filter by uuid
         :type uuid: List[str]
         :param notes: Filter by notes
@@ -15316,7 +15291,6 @@ class IgvfApi:
             sort=sort,
             release_timestamp=release_timestamp,
             status=status,
-            attachment=attachment,
             uuid=uuid,
             notes=notes,
             aliases=aliases,
@@ -15365,7 +15339,6 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
-        attachment: Annotated[Optional[List[Attachment]], Field(description="Filter by attachment")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
@@ -15410,8 +15383,6 @@ class IgvfApi:
         :type release_timestamp: List[str]
         :param status: Filter by status
         :type status: List[str]
-        :param attachment: Filter by attachment
-        :type attachment: List[Attachment]
         :param uuid: Filter by uuid
         :type uuid: List[str]
         :param notes: Filter by notes
@@ -15474,7 +15445,6 @@ class IgvfApi:
             sort=sort,
             release_timestamp=release_timestamp,
             status=status,
-            attachment=attachment,
             uuid=uuid,
             notes=notes,
             aliases=aliases,
@@ -15523,7 +15493,6 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
-        attachment: Annotated[Optional[List[Attachment]], Field(description="Filter by attachment")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
@@ -15568,8 +15537,6 @@ class IgvfApi:
         :type release_timestamp: List[str]
         :param status: Filter by status
         :type status: List[str]
-        :param attachment: Filter by attachment
-        :type attachment: List[Attachment]
         :param uuid: Filter by uuid
         :type uuid: List[str]
         :param notes: Filter by notes
@@ -15632,7 +15599,6 @@ class IgvfApi:
             sort=sort,
             release_timestamp=release_timestamp,
             status=status,
-            attachment=attachment,
             uuid=uuid,
             notes=notes,
             aliases=aliases,
@@ -15676,7 +15642,6 @@ class IgvfApi:
         sort,
         release_timestamp,
         status,
-        attachment,
         uuid,
         notes,
         aliases,
@@ -15706,7 +15671,6 @@ class IgvfApi:
             'sort': 'multi',
             'release_timestamp': 'multi',
             'status': 'multi',
-            'attachment': 'multi',
             'uuid': 'multi',
             'notes': 'multi',
             'aliases': 'multi',
@@ -15754,10 +15718,6 @@ class IgvfApi:
         if status is not None:
             
             _query_params.append(('status', status))
-            
-        if attachment is not None:
-            
-            _query_params.append(('attachment', attachment))
             
         if uuid is not None:
             
@@ -20252,7 +20212,6 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
-        attachment: Annotated[Optional[List[Attachment1]], Field(description="Filter by attachment")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
@@ -20293,8 +20252,6 @@ class IgvfApi:
         :type release_timestamp: List[str]
         :param status: Filter by status
         :type status: List[str]
-        :param attachment: Filter by attachment
-        :type attachment: List[Attachment1]
         :param uuid: Filter by uuid
         :type uuid: List[str]
         :param notes: Filter by notes
@@ -20349,7 +20306,6 @@ class IgvfApi:
             sort=sort,
             release_timestamp=release_timestamp,
             status=status,
-            attachment=attachment,
             uuid=uuid,
             notes=notes,
             aliases=aliases,
@@ -20394,7 +20350,6 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
-        attachment: Annotated[Optional[List[Attachment1]], Field(description="Filter by attachment")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
@@ -20435,8 +20390,6 @@ class IgvfApi:
         :type release_timestamp: List[str]
         :param status: Filter by status
         :type status: List[str]
-        :param attachment: Filter by attachment
-        :type attachment: List[Attachment1]
         :param uuid: Filter by uuid
         :type uuid: List[str]
         :param notes: Filter by notes
@@ -20491,7 +20444,6 @@ class IgvfApi:
             sort=sort,
             release_timestamp=release_timestamp,
             status=status,
-            attachment=attachment,
             uuid=uuid,
             notes=notes,
             aliases=aliases,
@@ -20536,7 +20488,6 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
-        attachment: Annotated[Optional[List[Attachment1]], Field(description="Filter by attachment")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
@@ -20577,8 +20528,6 @@ class IgvfApi:
         :type release_timestamp: List[str]
         :param status: Filter by status
         :type status: List[str]
-        :param attachment: Filter by attachment
-        :type attachment: List[Attachment1]
         :param uuid: Filter by uuid
         :type uuid: List[str]
         :param notes: Filter by notes
@@ -20633,7 +20582,6 @@ class IgvfApi:
             sort=sort,
             release_timestamp=release_timestamp,
             status=status,
-            attachment=attachment,
             uuid=uuid,
             notes=notes,
             aliases=aliases,
@@ -20673,7 +20621,6 @@ class IgvfApi:
         sort,
         release_timestamp,
         status,
-        attachment,
         uuid,
         notes,
         aliases,
@@ -20699,7 +20646,6 @@ class IgvfApi:
             'sort': 'multi',
             'release_timestamp': 'multi',
             'status': 'multi',
-            'attachment': 'multi',
             'uuid': 'multi',
             'notes': 'multi',
             'aliases': 'multi',
@@ -20743,10 +20689,6 @@ class IgvfApi:
         if status is not None:
             
             _query_params.append(('status', status))
-            
-        if attachment is not None:
-            
-            _query_params.append(('attachment', attachment))
             
         if uuid is not None:
             
@@ -32953,7 +32895,6 @@ class IgvfApi:
         parent: Annotated[Optional[List[StrictStr]], Field(description="Filter by parent")] = None,
         name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by name")] = None,
         title: Annotated[Optional[List[StrictStr]], Field(description="Filter by title")] = None,
-        layout: Annotated[Optional[List[PageLayout]], Field(description="Filter by layout")] = None,
         id: Annotated[Optional[List[StrictStr]], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         canonical_uri: Annotated[Optional[List[StrictStr]], Field(description="Filter by canonical_uri")] = None,
@@ -33008,8 +32949,6 @@ class IgvfApi:
         :type name: List[str]
         :param title: Filter by title
         :type title: List[str]
-        :param layout: Filter by layout
-        :type layout: List[PageLayout]
         :param id: Filter by @id
         :type id: List[str]
         :param summary: Filter by summary
@@ -33059,7 +32998,6 @@ class IgvfApi:
             parent=parent,
             name=name,
             title=title,
-            layout=layout,
             id=id,
             summary=summary,
             canonical_uri=canonical_uri,
@@ -33107,7 +33045,6 @@ class IgvfApi:
         parent: Annotated[Optional[List[StrictStr]], Field(description="Filter by parent")] = None,
         name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by name")] = None,
         title: Annotated[Optional[List[StrictStr]], Field(description="Filter by title")] = None,
-        layout: Annotated[Optional[List[PageLayout]], Field(description="Filter by layout")] = None,
         id: Annotated[Optional[List[StrictStr]], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         canonical_uri: Annotated[Optional[List[StrictStr]], Field(description="Filter by canonical_uri")] = None,
@@ -33162,8 +33099,6 @@ class IgvfApi:
         :type name: List[str]
         :param title: Filter by title
         :type title: List[str]
-        :param layout: Filter by layout
-        :type layout: List[PageLayout]
         :param id: Filter by @id
         :type id: List[str]
         :param summary: Filter by summary
@@ -33213,7 +33148,6 @@ class IgvfApi:
             parent=parent,
             name=name,
             title=title,
-            layout=layout,
             id=id,
             summary=summary,
             canonical_uri=canonical_uri,
@@ -33261,7 +33195,6 @@ class IgvfApi:
         parent: Annotated[Optional[List[StrictStr]], Field(description="Filter by parent")] = None,
         name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by name")] = None,
         title: Annotated[Optional[List[StrictStr]], Field(description="Filter by title")] = None,
-        layout: Annotated[Optional[List[PageLayout]], Field(description="Filter by layout")] = None,
         id: Annotated[Optional[List[StrictStr]], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by summary")] = None,
         canonical_uri: Annotated[Optional[List[StrictStr]], Field(description="Filter by canonical_uri")] = None,
@@ -33316,8 +33249,6 @@ class IgvfApi:
         :type name: List[str]
         :param title: Filter by title
         :type title: List[str]
-        :param layout: Filter by layout
-        :type layout: List[PageLayout]
         :param id: Filter by @id
         :type id: List[str]
         :param summary: Filter by summary
@@ -33367,7 +33298,6 @@ class IgvfApi:
             parent=parent,
             name=name,
             title=title,
-            layout=layout,
             id=id,
             summary=summary,
             canonical_uri=canonical_uri,
@@ -33410,7 +33340,6 @@ class IgvfApi:
         parent,
         name,
         title,
-        layout,
         id,
         summary,
         canonical_uri,
@@ -33439,7 +33368,6 @@ class IgvfApi:
             'parent': 'multi',
             'name': 'multi',
             'title': 'multi',
-            'layout': 'multi',
             '@id': 'multi',
             'summary': 'multi',
             'canonical_uri': 'multi',
@@ -33519,10 +33447,6 @@ class IgvfApi:
         if title is not None:
             
             _query_params.append(('title', title))
-            
-        if layout is not None:
-            
-            _query_params.append(('layout', layout))
             
         if id is not None:
             
@@ -39387,7 +39311,6 @@ class IgvfApi:
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
-        attachment: Annotated[Optional[List[Attachment]], Field(description="Filter by attachment")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
@@ -39448,8 +39371,6 @@ class IgvfApi:
         :type publication_identifiers: List[str]
         :param status: Filter by status
         :type status: List[str]
-        :param attachment: Filter by attachment
-        :type attachment: List[Attachment]
         :param uuid: Filter by uuid
         :type uuid: List[str]
         :param notes: Filter by notes
@@ -39541,7 +39462,6 @@ class IgvfApi:
             release_timestamp=release_timestamp,
             publication_identifiers=publication_identifiers,
             status=status,
-            attachment=attachment,
             uuid=uuid,
             notes=notes,
             aliases=aliases,
@@ -39605,7 +39525,6 @@ class IgvfApi:
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
-        attachment: Annotated[Optional[List[Attachment]], Field(description="Filter by attachment")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
@@ -39666,8 +39585,6 @@ class IgvfApi:
         :type publication_identifiers: List[str]
         :param status: Filter by status
         :type status: List[str]
-        :param attachment: Filter by attachment
-        :type attachment: List[Attachment]
         :param uuid: Filter by uuid
         :type uuid: List[str]
         :param notes: Filter by notes
@@ -39759,7 +39676,6 @@ class IgvfApi:
             release_timestamp=release_timestamp,
             publication_identifiers=publication_identifiers,
             status=status,
-            attachment=attachment,
             uuid=uuid,
             notes=notes,
             aliases=aliases,
@@ -39823,7 +39739,6 @@ class IgvfApi:
         release_timestamp: Annotated[Optional[List[StrictStr]], Field(description="Filter by release_timestamp")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by status")] = None,
-        attachment: Annotated[Optional[List[Attachment]], Field(description="Filter by attachment")] = None,
         uuid: Annotated[Optional[List[StrictStr]], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
@@ -39884,8 +39799,6 @@ class IgvfApi:
         :type publication_identifiers: List[str]
         :param status: Filter by status
         :type status: List[str]
-        :param attachment: Filter by attachment
-        :type attachment: List[Attachment]
         :param uuid: Filter by uuid
         :type uuid: List[str]
         :param notes: Filter by notes
@@ -39977,7 +39890,6 @@ class IgvfApi:
             release_timestamp=release_timestamp,
             publication_identifiers=publication_identifiers,
             status=status,
-            attachment=attachment,
             uuid=uuid,
             notes=notes,
             aliases=aliases,
@@ -40036,7 +39948,6 @@ class IgvfApi:
         release_timestamp,
         publication_identifiers,
         status,
-        attachment,
         uuid,
         notes,
         aliases,
@@ -40081,7 +39992,6 @@ class IgvfApi:
             'release_timestamp': 'multi',
             'publication_identifiers': 'multi',
             'status': 'multi',
-            'attachment': 'multi',
             'uuid': 'multi',
             'notes': 'multi',
             'aliases': 'multi',
@@ -40147,10 +40057,6 @@ class IgvfApi:
         if status is not None:
             
             _query_params.append(('status', status))
-            
-        if attachment is not None:
-            
-            _query_params.append(('attachment', attachment))
             
         if uuid is not None:
             

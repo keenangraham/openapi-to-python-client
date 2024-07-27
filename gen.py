@@ -1004,6 +1004,9 @@ def fill_in_collection_template(schema_name, schema):
             continue
         if prop == 'schema_version':
             continue
+        if 'properties' in prop_schema:
+            print('skipping', prop, 'as query param')
+            continue
         collection_template[f"/{collection_name}/@@listing"]["get"]["parameters"].append(
             {
                 "name": f"{prop}",
@@ -1021,6 +1024,11 @@ def fill_in_collection_template(schema_name, schema):
         exclude = ['default', 'uniqueItems', 'notSubmittable', 'readonly', 'permission', 'submissionExample', 'serverDefault', 'minItems', 'format']
         filtered_prop_schema = {k: v for k, v in prop_schema.items() if k not in exclude}
         if '@type' in prop:
+            continue
+        if prop == 'schema_version':
+            continue
+        if 'properties' in prop_schema:
+            print('skipping', prop, 'as query param')
             continue
         collection_template[f"/{collection_name}/@@listing"]["get"]["parameters"].append(
             {
