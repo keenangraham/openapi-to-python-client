@@ -78,7 +78,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.access_keys(**parameters) # List items in the AccessKey collection. 
@@ -147,7 +146,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -252,7 +250,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -385,7 +382,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.analysis_step_versions(**parameters) # List items in the AnalysisStepVersion collection. 
@@ -460,7 +456,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -543,7 +538,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.assay_terms(**parameters) # List items in the AssayTerm collection. 
@@ -622,7 +616,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -756,7 +749,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.awards(**parameters) # List items in the Award collection. 
@@ -833,7 +825,6 @@ Generates TSV of files contained in FileSets in search results.
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.batch_download(**parameters) # List files to download based on search query. All results are returned. 
@@ -887,7 +878,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -967,7 +957,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -1065,7 +1054,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -1201,7 +1189,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.crispr_modifications(**parameters) # List items in the CrisprModification collection. 
@@ -1285,7 +1272,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -1417,7 +1403,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.degron_modifications(**parameters) # List items in the DegronModification collection. 
@@ -1500,7 +1485,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.documents(**parameters) # List items in the Document collection. 
@@ -1575,7 +1559,6 @@ Returns underlying file associated with file metadata
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.download(**parameters) # Download file. 
@@ -1626,7 +1609,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -1705,7 +1687,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -1806,7 +1787,6 @@ Retrieve detailed information about a specific item using its @id or uuid.
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.get_by_id(**parameters) # Get item information 
@@ -1856,7 +1836,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -1950,7 +1929,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -2048,7 +2026,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.images(**parameters) # List items in the Image collection. 
@@ -2118,7 +2095,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -2273,7 +2249,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.institutional_certificates(**parameters) # List items in the InstitutionalCertificate collection. 
@@ -2351,7 +2326,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.labs(**parameters) # List items in the Lab collection. 
@@ -2425,7 +2399,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -2526,7 +2499,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -2692,7 +2664,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.model_files(**parameters) # List items in the ModelFile collection. 
@@ -2790,7 +2761,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -2928,7 +2898,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.multiplexed_samples(**parameters) # List items in the MultiplexedSample collection. 
@@ -3064,7 +3033,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.open_reading_frames(**parameters) # List items in the OpenReadingFrame collection. 
@@ -3142,7 +3110,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.pages(**parameters) # List items in the Page collection. 
@@ -3215,7 +3182,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -3291,7 +3257,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -3370,7 +3335,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.platform_terms(**parameters) # List items in the PlatformTerm collection. 
@@ -3447,7 +3411,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -3592,7 +3555,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.primary_cells(**parameters) # List items in the PrimaryCell collection. 
@@ -3733,7 +3695,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.publications(**parameters) # List items in the Publication collection. 
@@ -3822,7 +3783,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -3929,7 +3889,6 @@ Like /search endpoint but returns a TSV file instead of JSON. Must specify item 
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.report(**parameters) # Generate a report based on search query. All results are returned. 
@@ -3985,7 +3944,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -4084,7 +4042,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.sample_terms(**parameters) # List items in the SampleTerm collection. 
@@ -4165,7 +4122,6 @@ Returns JSON schemas of all the item types defined in IGVF
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.schema_for_item_type(**parameters) # Retrieve JSON schema for item type 
@@ -4215,7 +4171,6 @@ Returns JSON schemas of all the item types defined in IGVF
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.schemas(**parameters) # Retrieve JSON schemas for all item types 
@@ -4261,7 +4216,6 @@ Search endpoint that accepts various query parameters to filter, sort, and pagin
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -4317,7 +4271,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -4429,7 +4382,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.signal_files(**parameters) # List items in the SignalFile collection. 
@@ -4534,7 +4486,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.software(**parameters) # List items in the Software collection. 
@@ -4612,7 +4563,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -4693,7 +4643,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.sources(**parameters) # List items in the Source collection. 
@@ -4763,7 +4712,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -4865,7 +4813,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -4979,7 +4926,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -5124,7 +5070,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.treatments(**parameters) # List items in the Treatment collection. 
@@ -5215,7 +5160,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 ```python
 from igvf_client import IgvfApi
 
-
 api = IgvfApi()
 
 api.users(**parameters) # List items in the User collection. 
@@ -5290,7 +5234,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
@@ -5430,7 +5373,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ```python
 from igvf_client import IgvfApi
-
 
 api = IgvfApi()
 
