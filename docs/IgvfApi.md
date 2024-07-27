@@ -76,29 +76,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.access_key_results import AccessKeyResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -169,29 +148,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.alignment_file_results import AlignmentFileResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -297,29 +255,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.analysis_set_results import AnalysisSetResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -452,29 +389,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.analysis_step_version_results import AnalysisStepVersionResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -551,29 +467,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.analysis_step_results import AnalysisStepResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -656,29 +551,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.assay_term_results import AssayTermResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -759,29 +633,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.auxiliary_set_results import AuxiliarySetResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -915,29 +768,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.award_results import AwardResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -1015,28 +847,8 @@ Generates TSV of files contained in FileSets in search results.
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -1092,29 +904,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.biomarker_results import BiomarkerResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -1195,29 +986,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.configuration_file_results import ConfigurationFileResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -1316,30 +1086,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.construct_library_set_results import ConstructLibrarySetResults
-from igvf_client.models.locus import Locus
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -1475,29 +1223,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.crispr_modification_results import CrisprModificationResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -1583,29 +1310,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.curated_set_results import CuratedSetResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -1737,29 +1443,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.degron_modification_results import DegronModificationResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -1843,29 +1528,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.document_results import DocumentResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -1941,28 +1605,8 @@ Returns underlying file associated with file metadata
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -2015,30 +1659,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.gene_location import GeneLocation
-from igvf_client.models.gene_results import GeneResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -2118,29 +1740,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.genome_browser_annotation_file_results import GenomeBrowserAnnotationFileResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -2241,29 +1842,8 @@ Retrieve detailed information about a specific item using its @id or uuid.
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.item import Item
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -2315,29 +1895,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.human_donor_results import HumanDonorResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -2432,29 +1991,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.image_file_results import ImageFileResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -2552,29 +2090,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.image_results import ImageResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -2646,29 +2163,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.in_vitro_system_results import InVitroSystemResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -2823,29 +2319,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.institutional_certificate_results import InstitutionalCertificateResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -2924,29 +2399,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.lab_results import LabResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -3022,29 +2476,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.matrix_file_results import MatrixFileResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -3146,29 +2579,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.measurement_set_results import MeasurementSetResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -3334,29 +2746,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.model_file_results import ModelFileResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -3456,29 +2847,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.model_set_results import ModelSetResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -3616,29 +2986,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.multiplexed_sample_results import MultiplexedSampleResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -3775,29 +3124,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.open_reading_frame_results import OpenReadingFrameResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -3876,29 +3204,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.page_results import PageResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -3973,29 +3280,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.phenotype_term_results import PhenotypeTermResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -4072,29 +3358,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.phenotypic_feature_results import PhenotypicFeatureResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -4173,29 +3438,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.platform_term_results import PlatformTermResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -4274,30 +3518,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.locus import Locus
-from igvf_client.models.prediction_set_results import PredictionSetResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -4442,29 +3664,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.primary_cell_results import PrimaryCellResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -4606,29 +3807,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.publication_results import PublicationResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -4719,29 +3899,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.reference_file_results import ReferenceFileResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -4848,28 +4007,8 @@ Like /search endpoint but returns a TSV file instead of JSON. Must specify item 
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -4927,29 +4066,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.rodent_donor_results import RodentDonorResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -5048,29 +4166,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.sample_term_results import SampleTermResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -5152,29 +4249,8 @@ Returns JSON schemas of all the item types defined in IGVF
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.item_type import ItemType
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -5225,28 +4301,8 @@ Returns JSON schemas of all the item types defined in IGVF
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -5294,29 +4350,8 @@ Search endpoint that accepts various query parameters to filter, sort, and pagin
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.search_results import SearchResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -5373,29 +4408,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.sequence_file_results import SequenceFileResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -5507,29 +4521,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.signal_file_results import SignalFileResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -5635,29 +4628,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.software_results import SoftwareResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -5737,29 +4709,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.software_version_results import SoftwareVersionResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -5840,29 +4791,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.source_results import SourceResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -5934,29 +4864,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.tabular_file_results import TabularFileResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -6059,29 +4968,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.technical_sample_results import TechnicalSampleResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -6196,29 +5084,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.tissue_results import TissueResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -6363,29 +5230,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.treatment_results import TreatmentResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -6477,29 +5323,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.user_results import UserResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -6576,29 +5401,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.whole_organism_results import WholeOrganismResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
@@ -6739,29 +5543,8 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 * Basic Authentication (basicAuth):
 
 ```python
-import igvf_client
-from igvf_client.models.workflow_results import WorkflowResults
 from igvf_client import IgvfApi
 
-# Defining the host is optional and defaults to https://api.data.igvf.org
-# See configuration.py for a list of all supported configuration parameters.
-configuration = igvf_client.Configuration(
-    host = "https://api.data.igvf.org"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = igvf_client.Configuration(
-    access_key = os.environ["IGVF_ACCESS_KEY"],
-    secret_access_key = os.environ["IGVF_SECRET_ACCESS_KEY"]
-)
-
-# Enter a context with an instance of the API client
-# Create an instance of the API class
 
 api = IgvfApi()
 
