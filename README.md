@@ -84,7 +84,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     status = 'status_example' # str | Filter by status (optional)

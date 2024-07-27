@@ -6,7 +6,7 @@ A gene in the human or mouse genomes. The genes objects in IGVF are imported fro
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**release_timestamp** | **datetime** | The date the object was released. | [optional] 
+**release_timestamp** | **str** | The date the object was released. | [optional] 
 **transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
 **taxa** | **str** | The species of the organism. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
-**creation_timestamp** | **datetime** | The date the object was created. | [optional] 
+**creation_timestamp** | **str** | The date the object was created. | [optional] 
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 

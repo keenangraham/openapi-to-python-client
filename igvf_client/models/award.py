@@ -17,7 +17,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import date, datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
@@ -34,14 +33,14 @@ class Award(BaseModel):
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
-    creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
+    creation_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was created.")
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     title: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The grant name from the NIH database, if applicable.")
     name: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The official grant number from the NIH database, if applicable")
-    start_date: Optional[date] = Field(default=None, description="The date when the award begins.")
-    end_date: Optional[date] = Field(default=None, description="The date when the award concludes.")
+    start_date: Optional[StrictStr] = Field(default=None, description="The date when the award begins.")
+    end_date: Optional[StrictStr] = Field(default=None, description="The date when the award concludes.")
     pis: Optional[List[StrictStr]] = Field(default=None, description="Principal Investigator(s) of the grant.")
     contact_pi: Optional[StrictStr] = Field(default=None, description="The contact Principal Investigator of the grant.")
     project: Optional[StrictStr] = Field(default=None, description="The collection of biological data related to a single initiative, originating from a consortium.")

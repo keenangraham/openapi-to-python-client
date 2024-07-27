@@ -16,7 +16,6 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from datetime import date, datetime
 from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, Dict, List, Optional, Union
 from typing_extensions import Annotated
@@ -105,7 +104,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -148,7 +147,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -243,7 +242,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -286,7 +285,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -381,7 +380,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -424,7 +423,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -576,17 +575,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -676,7 +666,7 @@ class IgvfApi:
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         reference_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by reference_files")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
@@ -688,7 +678,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -754,7 +744,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param reference_files: Filter by reference_files
         :type reference_files: List[str]
         :param documents: Filter by documents
@@ -778,7 +768,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -954,7 +944,7 @@ class IgvfApi:
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         reference_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by reference_files")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
@@ -966,7 +956,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -1032,7 +1022,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param reference_files: Filter by reference_files
         :type reference_files: List[str]
         :param documents: Filter by documents
@@ -1056,7 +1046,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -1232,7 +1222,7 @@ class IgvfApi:
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         reference_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by reference_files")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
@@ -1244,7 +1234,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -1310,7 +1300,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param reference_files: Filter by reference_files
         :type reference_files: List[str]
         :param documents: Filter by documents
@@ -1334,7 +1324,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -1613,17 +1603,8 @@ class IgvfApi:
             _query_params.append(('assembly', assembly))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if reference_files is not None:
             
@@ -1670,17 +1651,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -1858,7 +1830,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -1871,14 +1843,14 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assay_titles: Annotated[Optional[List[StrictStr]], Field(description="Filter by assay_titles")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
@@ -1959,7 +1931,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -1985,7 +1957,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -1999,7 +1971,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param assay_titles: Filter by assay_titles
@@ -2244,7 +2216,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -2257,14 +2229,14 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assay_titles: Annotated[Optional[List[StrictStr]], Field(description="Filter by assay_titles")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
@@ -2345,7 +2317,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -2371,7 +2343,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -2385,7 +2357,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param assay_titles: Filter by assay_titles
@@ -2630,7 +2602,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -2643,14 +2615,14 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assay_titles: Annotated[Optional[List[StrictStr]], Field(description="Filter by assay_titles")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
@@ -2731,7 +2703,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -2757,7 +2729,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -2771,7 +2743,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param assay_titles: Filter by assay_titles
@@ -3176,17 +3148,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publications is not None:
             
@@ -3237,17 +3200,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -3274,17 +3228,8 @@ class IgvfApi:
             _query_params.append(('summary', summary))
             
         if submitted_files_timestamp is not None:
-            if isinstance(submitted_files_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'submitted_files_timestamp',
-                        submitted_files_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('submitted_files_timestamp', submitted_files_timestamp))
+            
+            _query_params.append(('submitted_files_timestamp', submitted_files_timestamp))
             
         if input_file_set_for is not None:
             
@@ -3554,13 +3499,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
@@ -3599,7 +3544,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -3611,7 +3556,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -3716,13 +3661,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
@@ -3761,7 +3706,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -3773,7 +3718,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -3878,13 +3823,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
@@ -3923,7 +3868,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -3935,7 +3880,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -4093,17 +4038,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if status is not None:
             
@@ -4126,17 +4062,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -4238,13 +4165,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_types: Annotated[Optional[List[StrictStr]], Field(description="Filter by analysis_step_types")] = None,
@@ -4289,7 +4216,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -4301,7 +4228,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -4424,13 +4351,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_types: Annotated[Optional[List[StrictStr]], Field(description="Filter by analysis_step_types")] = None,
@@ -4475,7 +4402,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -4487,7 +4414,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -4610,13 +4537,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_types: Annotated[Optional[List[StrictStr]], Field(description="Filter by analysis_step_types")] = None,
@@ -4661,7 +4588,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -4673,7 +4600,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -4858,17 +4785,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if status is not None:
             
@@ -4891,17 +4809,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -5027,13 +4936,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         term_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by term_id")] = None,
@@ -5076,7 +4985,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -5088,7 +4997,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -5205,13 +5114,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         term_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by term_id")] = None,
@@ -5254,7 +5163,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -5266,7 +5175,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -5383,13 +5292,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         term_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by term_id")] = None,
@@ -5432,7 +5341,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -5444,7 +5353,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -5624,17 +5533,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if status is not None:
             
@@ -5657,17 +5557,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -5785,7 +5676,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -5799,7 +5690,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -5807,7 +5698,7 @@ class IgvfApi:
         library_construction_platform: Annotated[Optional[StrictStr], Field(description="Filter by library_construction_platform")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
@@ -5887,7 +5778,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -5915,7 +5806,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -5931,7 +5822,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param award_id: Filter by award.@id
@@ -6175,7 +6066,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -6189,7 +6080,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -6197,7 +6088,7 @@ class IgvfApi:
         library_construction_platform: Annotated[Optional[StrictStr], Field(description="Filter by library_construction_platform")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
@@ -6277,7 +6168,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -6305,7 +6196,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -6321,7 +6212,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param award_id: Filter by award.@id
@@ -6565,7 +6456,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -6579,7 +6470,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -6587,7 +6478,7 @@ class IgvfApi:
         library_construction_platform: Annotated[Optional[StrictStr], Field(description="Filter by library_construction_platform")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
@@ -6667,7 +6558,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -6695,7 +6586,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -6711,7 +6602,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param award_id: Filter by award.@id
@@ -7115,17 +7006,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publications is not None:
             
@@ -7180,17 +7062,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -7221,17 +7094,8 @@ class IgvfApi:
             _query_params.append(('summary', summary))
             
         if submitted_files_timestamp is not None:
-            if isinstance(submitted_files_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'submitted_files_timestamp',
-                        submitted_files_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('submitted_files_timestamp', submitted_files_timestamp))
+            
+            _query_params.append(('submitted_files_timestamp', submitted_files_timestamp))
             
         if input_file_set_for is not None:
             
@@ -7503,13 +7367,13 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by title")] = None,
         name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by name")] = None,
-        start_date: Annotated[Optional[date], Field(description="Filter by start_date")] = None,
-        end_date: Annotated[Optional[date], Field(description="Filter by end_date")] = None,
+        start_date: Annotated[Optional[StrictStr], Field(description="Filter by start_date")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Filter by end_date")] = None,
         pis: Annotated[Optional[List[StrictStr]], Field(description="Filter by pis")] = None,
         contact_pi: Annotated[Optional[StrictStr], Field(description="Filter by contact_pi")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Filter by project")] = None,
@@ -7555,7 +7419,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -7565,9 +7429,9 @@ class IgvfApi:
         :param name: Filter by name
         :type name: str
         :param start_date: Filter by start_date
-        :type start_date: date
+        :type start_date: str
         :param end_date: Filter by end_date
-        :type end_date: date
+        :type end_date: str
         :param pis: Filter by pis
         :type pis: List[str]
         :param contact_pi: Filter by contact_pi
@@ -7669,13 +7533,13 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by title")] = None,
         name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by name")] = None,
-        start_date: Annotated[Optional[date], Field(description="Filter by start_date")] = None,
-        end_date: Annotated[Optional[date], Field(description="Filter by end_date")] = None,
+        start_date: Annotated[Optional[StrictStr], Field(description="Filter by start_date")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Filter by end_date")] = None,
         pis: Annotated[Optional[List[StrictStr]], Field(description="Filter by pis")] = None,
         contact_pi: Annotated[Optional[StrictStr], Field(description="Filter by contact_pi")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Filter by project")] = None,
@@ -7721,7 +7585,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -7731,9 +7595,9 @@ class IgvfApi:
         :param name: Filter by name
         :type name: str
         :param start_date: Filter by start_date
-        :type start_date: date
+        :type start_date: str
         :param end_date: Filter by end_date
-        :type end_date: date
+        :type end_date: str
         :param pis: Filter by pis
         :type pis: List[str]
         :param contact_pi: Filter by contact_pi
@@ -7835,13 +7699,13 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by title")] = None,
         name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by name")] = None,
-        start_date: Annotated[Optional[date], Field(description="Filter by start_date")] = None,
-        end_date: Annotated[Optional[date], Field(description="Filter by end_date")] = None,
+        start_date: Annotated[Optional[StrictStr], Field(description="Filter by start_date")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Filter by end_date")] = None,
         pis: Annotated[Optional[List[StrictStr]], Field(description="Filter by pis")] = None,
         contact_pi: Annotated[Optional[StrictStr], Field(description="Filter by contact_pi")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Filter by project")] = None,
@@ -7887,7 +7751,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -7897,9 +7761,9 @@ class IgvfApi:
         :param name: Filter by name
         :type name: str
         :param start_date: Filter by start_date
-        :type start_date: date
+        :type start_date: str
         :param end_date: Filter by end_date
-        :type end_date: date
+        :type end_date: str
         :param pis: Filter by pis
         :type pis: List[str]
         :param contact_pi: Filter by contact_pi
@@ -8072,17 +7936,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -8101,30 +7956,12 @@ class IgvfApi:
             _query_params.append(('name', name))
             
         if start_date is not None:
-            if isinstance(start_date, date):
-                _query_params.append(
-                    (
-                        'start_date',
-                        start_date.strftime(
-                            self.api_client.configuration.date_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('start_date', start_date))
+            
+            _query_params.append(('start_date', start_date))
             
         if end_date is not None:
-            if isinstance(end_date, date):
-                _query_params.append(
-                    (
-                        'end_date',
-                        end_date.strftime(
-                            self.api_client.configuration.date_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('end_date', end_date))
+            
+            _query_params.append(('end_date', end_date))
             
         if pis is not None:
             
@@ -8511,13 +8348,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Filter by name")] = None,
@@ -8560,7 +8397,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -8572,7 +8409,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -8689,13 +8526,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Filter by name")] = None,
@@ -8738,7 +8575,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -8750,7 +8587,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -8867,13 +8704,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Filter by name")] = None,
@@ -8916,7 +8753,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -8928,7 +8765,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -9102,17 +8939,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if status is not None:
             
@@ -9135,17 +8963,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -9263,7 +9082,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
@@ -9274,7 +9093,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -9330,7 +9149,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param documents: Filter by documents
         :type documents: List[str]
         :param accession: Filter by accession
@@ -9352,7 +9171,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -9513,7 +9332,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
@@ -9524,7 +9343,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -9580,7 +9399,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param documents: Filter by documents
         :type documents: List[str]
         :param accession: Filter by accession
@@ -9602,7 +9421,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -9763,7 +9582,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
@@ -9774,7 +9593,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -9830,7 +9649,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param documents: Filter by documents
         :type documents: List[str]
         :param accession: Filter by accession
@@ -9852,7 +9671,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -10097,17 +9916,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if documents is not None:
             
@@ -10150,17 +9960,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -10331,7 +10132,7 @@ class IgvfApi:
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         small_scale_loci_list: Annotated[Optional[List[Locus]], Field(description="Filter by small_scale_loci_list")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -10347,7 +10148,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
@@ -10367,7 +10168,7 @@ class IgvfApi:
         targeton: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by targeton")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         applied_to_samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.@id")] = None,
         applied_to_samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.accession")] = None,
@@ -10437,7 +10238,7 @@ class IgvfApi:
         :param small_scale_loci_list: Filter by small_scale_loci_list
         :type small_scale_loci_list: List[Locus]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -10469,7 +10270,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -10509,7 +10310,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param applied_to_samples_id: Filter by applied_to_samples.@id
@@ -10733,7 +10534,7 @@ class IgvfApi:
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         small_scale_loci_list: Annotated[Optional[List[Locus]], Field(description="Filter by small_scale_loci_list")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -10749,7 +10550,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
@@ -10769,7 +10570,7 @@ class IgvfApi:
         targeton: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by targeton")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         applied_to_samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.@id")] = None,
         applied_to_samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.accession")] = None,
@@ -10839,7 +10640,7 @@ class IgvfApi:
         :param small_scale_loci_list: Filter by small_scale_loci_list
         :type small_scale_loci_list: List[Locus]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -10871,7 +10672,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -10911,7 +10712,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param applied_to_samples_id: Filter by applied_to_samples.@id
@@ -11135,7 +10936,7 @@ class IgvfApi:
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         small_scale_loci_list: Annotated[Optional[List[Locus]], Field(description="Filter by small_scale_loci_list")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -11151,7 +10952,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
@@ -11171,7 +10972,7 @@ class IgvfApi:
         targeton: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by targeton")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         applied_to_samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.@id")] = None,
         applied_to_samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.accession")] = None,
@@ -11241,7 +11042,7 @@ class IgvfApi:
         :param small_scale_loci_list: Filter by small_scale_loci_list
         :type small_scale_loci_list: List[Locus]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -11273,7 +11074,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -11313,7 +11114,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param applied_to_samples_id: Filter by applied_to_samples.@id
@@ -11693,17 +11494,8 @@ class IgvfApi:
             _query_params.append(('small_scale_loci_list', small_scale_loci_list))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publications is not None:
             
@@ -11766,17 +11558,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -11855,17 +11638,8 @@ class IgvfApi:
             _query_params.append(('summary', summary))
             
         if submitted_files_timestamp is not None:
-            if isinstance(submitted_files_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'submitted_files_timestamp',
-                        submitted_files_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('submitted_files_timestamp', submitted_files_timestamp))
+            
+            _query_params.append(('submitted_files_timestamp', submitted_files_timestamp))
             
         if input_file_set_for is not None:
             
@@ -12083,7 +11857,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         sources: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources")] = None,
         lot_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by lot_id")] = None,
         product_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by product_id")] = None,
@@ -12093,7 +11867,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         activated: Annotated[Optional[StrictBool], Field(description="Filter by activated")] = None,
@@ -12137,7 +11911,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param sources: Filter by sources
         :type sources: List[str]
         :param lot_id: Filter by lot_id
@@ -12157,7 +11931,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -12281,7 +12055,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         sources: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources")] = None,
         lot_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by lot_id")] = None,
         product_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by product_id")] = None,
@@ -12291,7 +12065,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         activated: Annotated[Optional[StrictBool], Field(description="Filter by activated")] = None,
@@ -12335,7 +12109,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param sources: Filter by sources
         :type sources: List[str]
         :param lot_id: Filter by lot_id
@@ -12355,7 +12129,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -12479,7 +12253,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         sources: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources")] = None,
         lot_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by lot_id")] = None,
         product_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by product_id")] = None,
@@ -12489,7 +12263,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         activated: Annotated[Optional[StrictBool], Field(description="Filter by activated")] = None,
@@ -12533,7 +12307,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param sources: Filter by sources
         :type sources: List[str]
         :param lot_id: Filter by lot_id
@@ -12553,7 +12327,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -12740,17 +12514,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if sources is not None:
             
@@ -12789,17 +12554,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -12921,7 +12677,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -12936,14 +12692,14 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assemblies: Annotated[Optional[List[StrictStr]], Field(description="Filter by assemblies")] = None,
         transcriptome_annotations: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotations")] = None,
@@ -13021,7 +12777,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param taxa: Filter by taxa
         :type taxa: str
         :param publications: Filter by publications
@@ -13051,7 +12807,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -13065,7 +12821,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param assemblies: Filter by assemblies
@@ -13303,7 +13059,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -13318,14 +13074,14 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assemblies: Annotated[Optional[List[StrictStr]], Field(description="Filter by assemblies")] = None,
         transcriptome_annotations: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotations")] = None,
@@ -13403,7 +13159,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param taxa: Filter by taxa
         :type taxa: str
         :param publications: Filter by publications
@@ -13433,7 +13189,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -13447,7 +13203,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param assemblies: Filter by assemblies
@@ -13685,7 +13441,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -13700,14 +13456,14 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
         file_set_type: Annotated[Optional[StrictStr], Field(description="Filter by file_set_type")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assemblies: Annotated[Optional[List[StrictStr]], Field(description="Filter by assemblies")] = None,
         transcriptome_annotations: Annotated[Optional[List[StrictStr]], Field(description="Filter by transcriptome_annotations")] = None,
@@ -13785,7 +13541,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param taxa: Filter by taxa
         :type taxa: str
         :param publications: Filter by publications
@@ -13815,7 +13571,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -13829,7 +13585,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param assemblies: Filter by assemblies
@@ -14223,17 +13979,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if taxa is not None:
             
@@ -14292,17 +14039,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -14329,17 +14067,8 @@ class IgvfApi:
             _query_params.append(('summary', summary))
             
         if submitted_files_timestamp is not None:
-            if isinstance(submitted_files_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'submitted_files_timestamp',
-                        submitted_files_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('submitted_files_timestamp', submitted_files_timestamp))
+            
+            _query_params.append(('submitted_files_timestamp', submitted_files_timestamp))
             
         if input_file_set_for is not None:
             
@@ -14597,7 +14326,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         sources: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources")] = None,
         lot_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by lot_id")] = None,
         product_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by product_id")] = None,
@@ -14607,7 +14336,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         activated: Annotated[Optional[StrictBool], Field(description="Filter by activated")] = None,
@@ -14649,7 +14378,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param sources: Filter by sources
         :type sources: List[str]
         :param lot_id: Filter by lot_id
@@ -14669,7 +14398,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -14787,7 +14516,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         sources: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources")] = None,
         lot_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by lot_id")] = None,
         product_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by product_id")] = None,
@@ -14797,7 +14526,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         activated: Annotated[Optional[StrictBool], Field(description="Filter by activated")] = None,
@@ -14839,7 +14568,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param sources: Filter by sources
         :type sources: List[str]
         :param lot_id: Filter by lot_id
@@ -14859,7 +14588,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -14977,7 +14706,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         sources: Annotated[Optional[List[StrictStr]], Field(description="Filter by sources")] = None,
         lot_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by lot_id")] = None,
         product_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by product_id")] = None,
@@ -14987,7 +14716,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         activated: Annotated[Optional[StrictBool], Field(description="Filter by activated")] = None,
@@ -15029,7 +14758,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param sources: Filter by sources
         :type sources: List[str]
         :param lot_id: Filter by lot_id
@@ -15049,7 +14778,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -15229,17 +14958,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if sources is not None:
             
@@ -15278,17 +14998,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -15402,14 +15113,14 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         attachment: Annotated[Optional[Dict[str, Any]], Field(description="Filter by attachment")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         document_type: Annotated[Optional[StrictStr], Field(description="Filter by document_type")] = None,
@@ -15447,7 +15158,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param attachment: Filter by attachment
@@ -15461,7 +15172,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -15564,14 +15275,14 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         attachment: Annotated[Optional[Dict[str, Any]], Field(description="Filter by attachment")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         document_type: Annotated[Optional[StrictStr], Field(description="Filter by document_type")] = None,
@@ -15609,7 +15320,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param attachment: Filter by attachment
@@ -15623,7 +15334,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -15726,14 +15437,14 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         attachment: Annotated[Optional[Dict[str, Any]], Field(description="Filter by attachment")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         document_type: Annotated[Optional[StrictStr], Field(description="Filter by document_type")] = None,
@@ -15771,7 +15482,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param attachment: Filter by attachment
@@ -15785,7 +15496,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -15940,17 +15651,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if status is not None:
             
@@ -15977,17 +15679,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -16349,7 +16042,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -16357,7 +16050,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         geneid: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by geneid")] = None,
@@ -16397,7 +16090,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: str
         :param taxa: Filter by taxa
@@ -16413,7 +16106,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -16523,7 +16216,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -16531,7 +16224,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         geneid: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by geneid")] = None,
@@ -16571,7 +16264,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: str
         :param taxa: Filter by taxa
@@ -16587,7 +16280,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -16697,7 +16390,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -16705,7 +16398,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         geneid: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by geneid")] = None,
@@ -16745,7 +16438,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param transcriptome_annotation: Filter by transcriptome_annotation
         :type transcriptome_annotation: str
         :param taxa: Filter by taxa
@@ -16761,7 +16454,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -16928,17 +16621,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if transcriptome_annotation is not None:
             
@@ -16969,17 +16653,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -17086,7 +16761,7 @@ class IgvfApi:
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         file_format_type: Annotated[Optional[StrictStr], Field(description="Filter by file_format_type")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -17099,7 +16774,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -17156,7 +16831,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param file_format_type: Filter by file_format_type
         :type file_format_type: str
         :param transcriptome_annotation: Filter by transcriptome_annotation
@@ -17182,7 +16857,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -17344,7 +17019,7 @@ class IgvfApi:
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         file_format_type: Annotated[Optional[StrictStr], Field(description="Filter by file_format_type")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -17357,7 +17032,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -17414,7 +17089,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param file_format_type: Filter by file_format_type
         :type file_format_type: str
         :param transcriptome_annotation: Filter by transcriptome_annotation
@@ -17440,7 +17115,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -17602,7 +17277,7 @@ class IgvfApi:
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         file_format_type: Annotated[Optional[StrictStr], Field(description="Filter by file_format_type")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -17615,7 +17290,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -17672,7 +17347,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param file_format_type: Filter by file_format_type
         :type file_format_type: str
         :param transcriptome_annotation: Filter by transcriptome_annotation
@@ -17698,7 +17373,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -17948,17 +17623,8 @@ class IgvfApi:
             _query_params.append(('assembly', assembly))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if file_format_type is not None:
             
@@ -18009,17 +17675,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -18448,7 +18105,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -18463,7 +18120,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -18511,7 +18168,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param taxa: Filter by taxa
         :type taxa: str
         :param publications: Filter by publications
@@ -18541,7 +18198,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -18682,7 +18339,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -18697,7 +18354,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -18745,7 +18402,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param taxa: Filter by taxa
         :type taxa: str
         :param publications: Filter by publications
@@ -18775,7 +18432,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -18916,7 +18573,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -18931,7 +18588,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -18979,7 +18636,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param taxa: Filter by taxa
         :type taxa: str
         :param publications: Filter by publications
@@ -19009,7 +18666,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -19235,17 +18892,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if taxa is not None:
             
@@ -19304,17 +18952,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -19452,7 +19091,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
@@ -19463,7 +19102,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -19518,7 +19157,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param documents: Filter by documents
         :type documents: List[str]
         :param accession: Filter by accession
@@ -19540,7 +19179,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -19698,7 +19337,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
@@ -19709,7 +19348,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -19764,7 +19403,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param documents: Filter by documents
         :type documents: List[str]
         :param accession: Filter by accession
@@ -19786,7 +19425,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -19944,7 +19583,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
@@ -19955,7 +19594,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -20010,7 +19649,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param documents: Filter by documents
         :type documents: List[str]
         :param accession: Filter by accession
@@ -20032,7 +19671,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -20272,17 +19911,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if documents is not None:
             
@@ -20325,17 +19955,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -20501,14 +20122,14 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         attachment: Annotated[Optional[Dict[str, Any]], Field(description="Filter by attachment")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         caption: Annotated[Optional[StrictStr], Field(description="Filter by caption")] = None,
@@ -20542,7 +20163,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param attachment: Filter by attachment
@@ -20556,7 +20177,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -20647,14 +20268,14 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         attachment: Annotated[Optional[Dict[str, Any]], Field(description="Filter by attachment")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         caption: Annotated[Optional[StrictStr], Field(description="Filter by caption")] = None,
@@ -20688,7 +20309,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param attachment: Filter by attachment
@@ -20702,7 +20323,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -20793,14 +20414,14 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         attachment: Annotated[Optional[Dict[str, Any]], Field(description="Filter by attachment")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         caption: Annotated[Optional[StrictStr], Field(description="Filter by caption")] = None,
@@ -20834,7 +20455,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param attachment: Filter by attachment
@@ -20848,7 +20469,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -20986,17 +20607,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if status is not None:
             
@@ -21023,17 +20635,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -21115,7 +20718,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
@@ -21132,7 +20735,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         lower_bound_age: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age")] = None,
@@ -21147,7 +20750,7 @@ class IgvfApi:
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -21238,7 +20841,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -21272,7 +20875,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -21302,7 +20905,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -21589,7 +21192,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
@@ -21606,7 +21209,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         lower_bound_age: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age")] = None,
@@ -21621,7 +21224,7 @@ class IgvfApi:
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -21712,7 +21315,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -21746,7 +21349,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -21776,7 +21379,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -22063,7 +21666,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
@@ -22080,7 +21683,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         lower_bound_age: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age")] = None,
@@ -22095,7 +21698,7 @@ class IgvfApi:
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -22186,7 +21789,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -22220,7 +21823,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -22250,7 +21853,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -22712,17 +22315,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publications is not None:
             
@@ -22789,17 +22383,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -22858,17 +22443,8 @@ class IgvfApi:
             _query_params.append(('dbxrefs', dbxrefs))
             
         if date_obtained is not None:
-            if isinstance(date_obtained, date):
-                _query_params.append(
-                    (
-                        'date_obtained',
-                        date_obtained.strftime(
-                            self.api_client.configuration.date_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('date_obtained', date_obtained))
+            
+            _query_params.append(('date_obtained', date_obtained))
             
         if sorted_from_detail is not None:
             
@@ -23178,13 +22754,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         certificate_identifier: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by certificate_identifier")] = None,
@@ -23225,7 +22801,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -23237,7 +22813,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -23348,13 +22924,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         certificate_identifier: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by certificate_identifier")] = None,
@@ -23395,7 +22971,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -23407,7 +22983,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -23518,13 +23094,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         certificate_identifier: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by certificate_identifier")] = None,
@@ -23565,7 +23141,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -23577,7 +23153,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -23744,17 +23320,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if status is not None:
             
@@ -23777,17 +23344,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -23903,7 +23461,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by name")] = None,
@@ -23953,7 +23511,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -24061,7 +23619,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by name")] = None,
@@ -24111,7 +23669,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -24219,7 +23777,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by name")] = None,
@@ -24269,7 +23827,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -24448,17 +24006,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -24556,7 +24105,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         reference_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by reference_files")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
@@ -24568,7 +24117,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -24626,7 +24175,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param reference_files: Filter by reference_files
         :type reference_files: List[str]
         :param documents: Filter by documents
@@ -24650,7 +24199,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -24818,7 +24367,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         reference_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by reference_files")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
@@ -24830,7 +24379,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -24888,7 +24437,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param reference_files: Filter by reference_files
         :type reference_files: List[str]
         :param documents: Filter by documents
@@ -24912,7 +24461,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -25080,7 +24629,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         reference_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by reference_files")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
@@ -25092,7 +24641,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -25150,7 +24699,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param reference_files: Filter by reference_files
         :type reference_files: List[str]
         :param documents: Filter by documents
@@ -25174,7 +24723,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -25429,17 +24978,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if reference_files is not None:
             
@@ -25486,17 +25026,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -25674,7 +25205,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -25687,7 +25218,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -25699,7 +25230,7 @@ class IgvfApi:
         external_image_url: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by external_image_url")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assay_term_id: Annotated[Optional[StrictStr], Field(description="Filter by assay_term.@id")] = None,
         assay_term_term_name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by assay_term.term_name")] = None,
@@ -25808,7 +25339,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -25834,7 +25365,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -25858,7 +25389,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param assay_term_id: Filter by assay_term.@id
@@ -26192,7 +25723,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -26205,7 +25736,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -26217,7 +25748,7 @@ class IgvfApi:
         external_image_url: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by external_image_url")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assay_term_id: Annotated[Optional[StrictStr], Field(description="Filter by assay_term.@id")] = None,
         assay_term_term_name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by assay_term.term_name")] = None,
@@ -26326,7 +25857,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -26352,7 +25883,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -26376,7 +25907,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param assay_term_id: Filter by assay_term.@id
@@ -26710,7 +26241,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -26723,7 +26254,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -26735,7 +26266,7 @@ class IgvfApi:
         external_image_url: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by external_image_url")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         assay_term_id: Annotated[Optional[StrictStr], Field(description="Filter by assay_term.@id")] = None,
         assay_term_term_name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by assay_term.term_name")] = None,
@@ -26844,7 +26375,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -26870,7 +26401,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -26894,7 +26425,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param assay_term_id: Filter by assay_term.@id
@@ -27447,17 +26978,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publications is not None:
             
@@ -27508,17 +27030,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -27565,17 +27078,8 @@ class IgvfApi:
             _query_params.append(('summary', summary))
             
         if submitted_files_timestamp is not None:
-            if isinstance(submitted_files_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'submitted_files_timestamp',
-                        submitted_files_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('submitted_files_timestamp', submitted_files_timestamp))
+            
+            _query_params.append(('submitted_files_timestamp', submitted_files_timestamp))
             
         if input_file_set_for is not None:
             
@@ -27959,7 +27463,7 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[StrictBool], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
@@ -27970,7 +27474,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -28029,7 +27533,7 @@ class IgvfApi:
         :param anvil_url: Filter by anvil_url
         :type anvil_url: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param documents: Filter by documents
         :type documents: List[str]
         :param accession: Filter by accession
@@ -28051,7 +27555,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -28213,7 +27717,7 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[StrictBool], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
@@ -28224,7 +27728,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -28283,7 +27787,7 @@ class IgvfApi:
         :param anvil_url: Filter by anvil_url
         :type anvil_url: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param documents: Filter by documents
         :type documents: List[str]
         :param accession: Filter by accession
@@ -28305,7 +27809,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -28467,7 +27971,7 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[StrictBool], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
@@ -28478,7 +27982,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -28537,7 +28041,7 @@ class IgvfApi:
         :param anvil_url: Filter by anvil_url
         :type anvil_url: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param documents: Filter by documents
         :type documents: List[str]
         :param accession: Filter by accession
@@ -28559,7 +28063,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -28811,17 +28315,8 @@ class IgvfApi:
             _query_params.append(('anvil_url', anvil_url))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if documents is not None:
             
@@ -28864,17 +28359,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -29040,7 +28526,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -29054,7 +28540,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -29067,7 +28553,7 @@ class IgvfApi:
         assessed_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by assessed_genes")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
@@ -29146,7 +28632,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -29174,7 +28660,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -29200,7 +28686,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param award_id: Filter by award.@id
@@ -29446,7 +28932,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -29460,7 +28946,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -29473,7 +28959,7 @@ class IgvfApi:
         assessed_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by assessed_genes")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
@@ -29552,7 +29038,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -29580,7 +29066,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -29606,7 +29092,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param award_id: Filter by award.@id
@@ -29852,7 +29338,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -29866,7 +29352,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -29879,7 +29365,7 @@ class IgvfApi:
         assessed_genes: Annotated[Optional[List[StrictStr]], Field(description="Filter by assessed_genes")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
@@ -29958,7 +29444,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -29986,7 +29472,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -30012,7 +29498,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param award_id: Filter by award.@id
@@ -30423,17 +29909,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publications is not None:
             
@@ -30488,17 +29965,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -30549,17 +30017,8 @@ class IgvfApi:
             _query_params.append(('summary', summary))
             
         if submitted_files_timestamp is not None:
-            if isinstance(submitted_files_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'submitted_files_timestamp',
-                        submitted_files_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('submitted_files_timestamp', submitted_files_timestamp))
+            
+            _query_params.append(('submitted_files_timestamp', submitted_files_timestamp))
             
         if input_file_set_for is not None:
             
@@ -30821,7 +30280,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         url: Annotated[Optional[StrictStr], Field(description="Filter by url")] = None,
@@ -30835,13 +30294,13 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         moi: Annotated[Optional[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by moi")] = None,
@@ -30926,7 +30385,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -30954,7 +30413,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -30966,7 +30425,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -31223,7 +30682,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         url: Annotated[Optional[StrictStr], Field(description="Filter by url")] = None,
@@ -31237,13 +30696,13 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         moi: Annotated[Optional[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by moi")] = None,
@@ -31328,7 +30787,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -31356,7 +30815,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -31368,7 +30827,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -31625,7 +31084,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         url: Annotated[Optional[StrictStr], Field(description="Filter by url")] = None,
@@ -31639,13 +31098,13 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         moi: Annotated[Optional[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]], Field(description="Filter by moi")] = None,
@@ -31730,7 +31189,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -31758,7 +31217,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -31770,7 +31229,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -32186,17 +31645,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publications is not None:
             
@@ -32251,17 +31701,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -32284,17 +31725,8 @@ class IgvfApi:
             _query_params.append(('dbxrefs', dbxrefs))
             
         if date_obtained is not None:
-            if isinstance(date_obtained, date):
-                _query_params.append(
-                    (
-                        'date_obtained',
-                        date_obtained.strftime(
-                            self.api_client.configuration.date_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('date_obtained', date_obtained))
+            
+            _query_params.append(('date_obtained', date_obtained))
             
         if sorted_from_detail is not None:
             
@@ -32580,13 +32012,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitted_by: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
@@ -32627,7 +32059,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -32639,7 +32071,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitted_by: Filter by submitted_by
         :type submitted_by: str
         :param submitter_comment: Filter by submitter_comment
@@ -32750,13 +32182,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitted_by: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
@@ -32797,7 +32229,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -32809,7 +32241,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitted_by: Filter by submitted_by
         :type submitted_by: str
         :param submitter_comment: Filter by submitter_comment
@@ -32920,13 +32352,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitted_by: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
@@ -32967,7 +32399,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -32979,7 +32411,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitted_by: Filter by submitted_by
         :type submitted_by: str
         :param submitter_comment: Filter by submitter_comment
@@ -33147,17 +32579,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if status is not None:
             
@@ -33180,17 +32603,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitted_by is not None:
             
@@ -33300,7 +32714,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         lab: Annotated[Optional[StrictStr], Field(description="Filter by lab")] = None,
         award: Annotated[Optional[StrictStr], Field(description="Filter by award")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -33308,7 +32722,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         parent: Annotated[Optional[StrictStr], Field(description="Filter by parent")] = None,
@@ -33344,7 +32758,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param lab: Filter by lab
         :type lab: str
         :param award: Filter by award
@@ -33360,7 +32774,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -33458,7 +32872,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         lab: Annotated[Optional[StrictStr], Field(description="Filter by lab")] = None,
         award: Annotated[Optional[StrictStr], Field(description="Filter by award")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -33466,7 +32880,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         parent: Annotated[Optional[StrictStr], Field(description="Filter by parent")] = None,
@@ -33502,7 +32916,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param lab: Filter by lab
         :type lab: str
         :param award: Filter by award
@@ -33518,7 +32932,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -33616,7 +33030,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         lab: Annotated[Optional[StrictStr], Field(description="Filter by lab")] = None,
         award: Annotated[Optional[StrictStr], Field(description="Filter by award")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -33624,7 +33038,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         parent: Annotated[Optional[StrictStr], Field(description="Filter by parent")] = None,
@@ -33660,7 +33074,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param lab: Filter by lab
         :type lab: str
         :param award: Filter by award
@@ -33676,7 +33090,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -33824,17 +33238,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if lab is not None:
             
@@ -33865,17 +33270,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -33965,13 +33361,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         term_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by term_id")] = None,
@@ -34010,7 +33406,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -34022,7 +33418,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -34127,13 +33523,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         term_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by term_id")] = None,
@@ -34172,7 +33568,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -34184,7 +33580,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -34289,13 +33685,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         term_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by term_id")] = None,
@@ -34334,7 +33730,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -34346,7 +33742,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -34506,17 +33902,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if status is not None:
             
@@ -34539,17 +33926,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -34651,18 +34029,18 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         quantity: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by quantity")] = None,
         quantity_units: Annotated[Optional[StrictStr], Field(description="Filter by quantity_units")] = None,
-        observation_date: Annotated[Optional[date], Field(description="Filter by observation_date")] = None,
+        observation_date: Annotated[Optional[StrictStr], Field(description="Filter by observation_date")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
@@ -34698,7 +34076,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -34710,7 +34088,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -34720,7 +34098,7 @@ class IgvfApi:
         :param quantity_units: Filter by quantity_units
         :type quantity_units: str
         :param observation_date: Filter by observation_date
-        :type observation_date: date
+        :type observation_date: str
         :param id: Filter by @id
         :type id: str
         :param summary: Filter by summary
@@ -34821,18 +34199,18 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         quantity: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by quantity")] = None,
         quantity_units: Annotated[Optional[StrictStr], Field(description="Filter by quantity_units")] = None,
-        observation_date: Annotated[Optional[date], Field(description="Filter by observation_date")] = None,
+        observation_date: Annotated[Optional[StrictStr], Field(description="Filter by observation_date")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
@@ -34868,7 +34246,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -34880,7 +34258,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -34890,7 +34268,7 @@ class IgvfApi:
         :param quantity_units: Filter by quantity_units
         :type quantity_units: str
         :param observation_date: Filter by observation_date
-        :type observation_date: date
+        :type observation_date: str
         :param id: Filter by @id
         :type id: str
         :param summary: Filter by summary
@@ -34991,18 +34369,18 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         quantity: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by quantity")] = None,
         quantity_units: Annotated[Optional[StrictStr], Field(description="Filter by quantity_units")] = None,
-        observation_date: Annotated[Optional[date], Field(description="Filter by observation_date")] = None,
+        observation_date: Annotated[Optional[StrictStr], Field(description="Filter by observation_date")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
@@ -35038,7 +34416,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -35050,7 +34428,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -35060,7 +34438,7 @@ class IgvfApi:
         :param quantity_units: Filter by quantity_units
         :type quantity_units: str
         :param observation_date: Filter by observation_date
-        :type observation_date: date
+        :type observation_date: str
         :param id: Filter by @id
         :type id: str
         :param summary: Filter by summary
@@ -35214,17 +34592,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if status is not None:
             
@@ -35247,17 +34616,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -35276,17 +34636,8 @@ class IgvfApi:
             _query_params.append(('quantity_units', quantity_units))
             
         if observation_date is not None:
-            if isinstance(observation_date, date):
-                _query_params.append(
-                    (
-                        'observation_date',
-                        observation_date.strftime(
-                            self.api_client.configuration.date_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('observation_date', observation_date))
+            
+            _query_params.append(('observation_date', observation_date))
             
         if id is not None:
             
@@ -35376,13 +34727,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         term_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by term_id")] = None,
@@ -35423,7 +34774,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -35435,7 +34786,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -35546,13 +34897,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         term_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by term_id")] = None,
@@ -35593,7 +34944,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -35605,7 +34956,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -35716,13 +35067,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         term_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by term_id")] = None,
@@ -35763,7 +35114,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -35775,7 +35126,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -35944,17 +35295,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if status is not None:
             
@@ -35977,17 +35319,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -36099,7 +35432,7 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         input_file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets")] = None,
         small_scale_loci_list: Annotated[Optional[List[Locus]], Field(description="Filter by small_scale_loci_list")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -36113,7 +35446,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -36121,7 +35454,7 @@ class IgvfApi:
         scope: Annotated[Optional[StrictStr], Field(description="Filter by scope")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
@@ -36214,7 +35547,7 @@ class IgvfApi:
         :param small_scale_loci_list: Filter by small_scale_loci_list
         :type small_scale_loci_list: List[Locus]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -36242,7 +35575,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -36258,7 +35591,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param award_id: Filter by award.@id
@@ -36533,7 +35866,7 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         input_file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets")] = None,
         small_scale_loci_list: Annotated[Optional[List[Locus]], Field(description="Filter by small_scale_loci_list")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -36547,7 +35880,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -36555,7 +35888,7 @@ class IgvfApi:
         scope: Annotated[Optional[StrictStr], Field(description="Filter by scope")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
@@ -36648,7 +35981,7 @@ class IgvfApi:
         :param small_scale_loci_list: Filter by small_scale_loci_list
         :type small_scale_loci_list: List[Locus]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -36676,7 +36009,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -36692,7 +36025,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param award_id: Filter by award.@id
@@ -36967,7 +36300,7 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         input_file_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets")] = None,
         small_scale_loci_list: Annotated[Optional[List[Locus]], Field(description="Filter by small_scale_loci_list")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -36981,7 +36314,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -36989,7 +36322,7 @@ class IgvfApi:
         scope: Annotated[Optional[StrictStr], Field(description="Filter by scope")] = None,
         id: Annotated[Optional[StrictStr], Field(description="Filter by @id")] = None,
         summary: Annotated[Optional[StrictStr], Field(description="Filter by summary")] = None,
-        submitted_files_timestamp: Annotated[Optional[datetime], Field(description="Filter by submitted_files_timestamp")] = None,
+        submitted_files_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by submitted_files_timestamp")] = None,
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
@@ -37082,7 +36415,7 @@ class IgvfApi:
         :param small_scale_loci_list: Filter by small_scale_loci_list
         :type small_scale_loci_list: List[Locus]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -37110,7 +36443,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -37126,7 +36459,7 @@ class IgvfApi:
         :param summary: Filter by summary
         :type summary: str
         :param submitted_files_timestamp: Filter by submitted_files_timestamp
-        :type submitted_files_timestamp: datetime
+        :type submitted_files_timestamp: str
         :param input_file_set_for: Filter by input_file_set_for
         :type input_file_set_for: List[str]
         :param award_id: Filter by award.@id
@@ -37585,17 +36918,8 @@ class IgvfApi:
             _query_params.append(('small_scale_loci_list', small_scale_loci_list))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publications is not None:
             
@@ -37650,17 +36974,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -37691,17 +37006,8 @@ class IgvfApi:
             _query_params.append(('summary', summary))
             
         if submitted_files_timestamp is not None:
-            if isinstance(submitted_files_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'submitted_files_timestamp',
-                        submitted_files_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('submitted_files_timestamp', submitted_files_timestamp))
+            
+            _query_params.append(('submitted_files_timestamp', submitted_files_timestamp))
             
         if input_file_set_for is not None:
             
@@ -38003,7 +37309,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
@@ -38020,7 +37326,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         lower_bound_age: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age")] = None,
@@ -38036,7 +37342,7 @@ class IgvfApi:
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -38113,7 +37419,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -38147,7 +37453,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -38179,7 +37485,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -38425,7 +37731,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
@@ -38442,7 +37748,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         lower_bound_age: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age")] = None,
@@ -38458,7 +37764,7 @@ class IgvfApi:
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -38535,7 +37841,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -38569,7 +37875,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -38601,7 +37907,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -38847,7 +38153,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
@@ -38864,7 +38170,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         lower_bound_age: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age")] = None,
@@ -38880,7 +38186,7 @@ class IgvfApi:
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -38957,7 +38263,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -38991,7 +38297,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -39023,7 +38329,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -39425,17 +38731,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publications is not None:
             
@@ -39502,17 +38799,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -39575,17 +38863,8 @@ class IgvfApi:
             _query_params.append(('dbxrefs', dbxrefs))
             
         if date_obtained is not None:
-            if isinstance(date_obtained, date):
-                _query_params.append(
-                    (
-                        'date_obtained',
-                        date_obtained.strftime(
-                            self.api_client.configuration.date_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('date_obtained', date_obtained))
+            
+            _query_params.append(('date_obtained', date_obtained))
             
         if sorted_from_detail is not None:
             
@@ -39839,7 +39118,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         attachment: Annotated[Optional[Dict[str, Any]], Field(description="Filter by attachment")] = None,
@@ -39847,14 +39126,14 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         title: Annotated[Optional[StrictStr], Field(description="Filter by title")] = None,
         abstract: Annotated[Optional[StrictStr], Field(description="Filter by abstract")] = None,
         authors: Annotated[Optional[StrictStr], Field(description="Filter by authors")] = None,
-        date_published: Annotated[Optional[date], Field(description="Filter by date_published")] = None,
-        date_revised: Annotated[Optional[date], Field(description="Filter by date_revised")] = None,
+        date_published: Annotated[Optional[StrictStr], Field(description="Filter by date_published")] = None,
+        date_revised: Annotated[Optional[StrictStr], Field(description="Filter by date_revised")] = None,
         issue: Annotated[Optional[StrictStr], Field(description="Filter by issue")] = None,
         page: Annotated[Optional[StrictStr], Field(description="Filter by page")] = None,
         volume: Annotated[Optional[StrictStr], Field(description="Filter by volume")] = None,
@@ -39899,7 +39178,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publication_identifiers: Filter by publication_identifiers
         :type publication_identifiers: List[str]
         :param status: Filter by status
@@ -39915,7 +39194,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -39927,9 +39206,9 @@ class IgvfApi:
         :param authors: Filter by authors
         :type authors: str
         :param date_published: Filter by date_published
-        :type date_published: date
+        :type date_published: str
         :param date_revised: Filter by date_revised
-        :type date_revised: date
+        :type date_revised: str
         :param issue: Filter by issue
         :type issue: str
         :param page: Filter by page
@@ -40061,7 +39340,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         attachment: Annotated[Optional[Dict[str, Any]], Field(description="Filter by attachment")] = None,
@@ -40069,14 +39348,14 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         title: Annotated[Optional[StrictStr], Field(description="Filter by title")] = None,
         abstract: Annotated[Optional[StrictStr], Field(description="Filter by abstract")] = None,
         authors: Annotated[Optional[StrictStr], Field(description="Filter by authors")] = None,
-        date_published: Annotated[Optional[date], Field(description="Filter by date_published")] = None,
-        date_revised: Annotated[Optional[date], Field(description="Filter by date_revised")] = None,
+        date_published: Annotated[Optional[StrictStr], Field(description="Filter by date_published")] = None,
+        date_revised: Annotated[Optional[StrictStr], Field(description="Filter by date_revised")] = None,
         issue: Annotated[Optional[StrictStr], Field(description="Filter by issue")] = None,
         page: Annotated[Optional[StrictStr], Field(description="Filter by page")] = None,
         volume: Annotated[Optional[StrictStr], Field(description="Filter by volume")] = None,
@@ -40121,7 +39400,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publication_identifiers: Filter by publication_identifiers
         :type publication_identifiers: List[str]
         :param status: Filter by status
@@ -40137,7 +39416,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -40149,9 +39428,9 @@ class IgvfApi:
         :param authors: Filter by authors
         :type authors: str
         :param date_published: Filter by date_published
-        :type date_published: date
+        :type date_published: str
         :param date_revised: Filter by date_revised
-        :type date_revised: date
+        :type date_revised: str
         :param issue: Filter by issue
         :type issue: str
         :param page: Filter by page
@@ -40283,7 +39562,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         attachment: Annotated[Optional[Dict[str, Any]], Field(description="Filter by attachment")] = None,
@@ -40291,14 +39570,14 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         title: Annotated[Optional[StrictStr], Field(description="Filter by title")] = None,
         abstract: Annotated[Optional[StrictStr], Field(description="Filter by abstract")] = None,
         authors: Annotated[Optional[StrictStr], Field(description="Filter by authors")] = None,
-        date_published: Annotated[Optional[date], Field(description="Filter by date_published")] = None,
-        date_revised: Annotated[Optional[date], Field(description="Filter by date_revised")] = None,
+        date_published: Annotated[Optional[StrictStr], Field(description="Filter by date_published")] = None,
+        date_revised: Annotated[Optional[StrictStr], Field(description="Filter by date_revised")] = None,
         issue: Annotated[Optional[StrictStr], Field(description="Filter by issue")] = None,
         page: Annotated[Optional[StrictStr], Field(description="Filter by page")] = None,
         volume: Annotated[Optional[StrictStr], Field(description="Filter by volume")] = None,
@@ -40343,7 +39622,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publication_identifiers: Filter by publication_identifiers
         :type publication_identifiers: List[str]
         :param status: Filter by status
@@ -40359,7 +39638,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -40371,9 +39650,9 @@ class IgvfApi:
         :param authors: Filter by authors
         :type authors: str
         :param date_published: Filter by date_published
-        :type date_published: date
+        :type date_published: str
         :param date_revised: Filter by date_revised
-        :type date_revised: date
+        :type date_revised: str
         :param issue: Filter by issue
         :type issue: str
         :param page: Filter by page
@@ -40579,17 +39858,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publication_identifiers is not None:
             
@@ -40620,17 +39890,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -40653,30 +39914,12 @@ class IgvfApi:
             _query_params.append(('authors', authors))
             
         if date_published is not None:
-            if isinstance(date_published, date):
-                _query_params.append(
-                    (
-                        'date_published',
-                        date_published.strftime(
-                            self.api_client.configuration.date_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('date_published', date_published))
+            
+            _query_params.append(('date_published', date_published))
             
         if date_revised is not None:
-            if isinstance(date_revised, date):
-                _query_params.append(
-                    (
-                        'date_revised',
-                        date_revised.strftime(
-                            self.api_client.configuration.date_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('date_revised', date_revised))
+            
+            _query_params.append(('date_revised', date_revised))
             
         if issue is not None:
             
@@ -40805,7 +40048,7 @@ class IgvfApi:
         controlled_access: Annotated[Optional[StrictBool], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         file_format_type: Annotated[Optional[StrictStr], Field(description="Filter by file_format_type")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -40818,7 +40061,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -40883,7 +40126,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param file_format_type: Filter by file_format_type
         :type file_format_type: str
         :param transcriptome_annotation: Filter by transcriptome_annotation
@@ -40909,7 +40152,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -41087,7 +40330,7 @@ class IgvfApi:
         controlled_access: Annotated[Optional[StrictBool], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         file_format_type: Annotated[Optional[StrictStr], Field(description="Filter by file_format_type")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -41100,7 +40343,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -41165,7 +40408,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param file_format_type: Filter by file_format_type
         :type file_format_type: str
         :param transcriptome_annotation: Filter by transcriptome_annotation
@@ -41191,7 +40434,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -41369,7 +40612,7 @@ class IgvfApi:
         controlled_access: Annotated[Optional[StrictBool], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         file_format_type: Annotated[Optional[StrictStr], Field(description="Filter by file_format_type")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -41382,7 +40625,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -41447,7 +40690,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param file_format_type: Filter by file_format_type
         :type file_format_type: str
         :param transcriptome_annotation: Filter by transcriptome_annotation
@@ -41473,7 +40716,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -41752,17 +40995,8 @@ class IgvfApi:
             _query_params.append(('assembly', assembly))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if file_format_type is not None:
             
@@ -41813,17 +41047,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -42345,7 +41570,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -42362,7 +41587,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -42412,7 +41637,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param taxa: Filter by taxa
         :type taxa: str
         :param publications: Filter by publications
@@ -42446,7 +41671,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -42595,7 +41820,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -42612,7 +41837,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -42662,7 +41887,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param taxa: Filter by taxa
         :type taxa: str
         :param publications: Filter by publications
@@ -42696,7 +41921,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -42845,7 +42070,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -42862,7 +42087,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
@@ -42912,7 +42137,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param taxa: Filter by taxa
         :type taxa: str
         :param publications: Filter by publications
@@ -42946,7 +42171,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -43181,17 +42406,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if taxa is not None:
             
@@ -43258,17 +42474,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -43414,13 +42621,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         term_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by term_id")] = None,
@@ -43464,7 +42671,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -43476,7 +42683,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -43596,13 +42803,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         term_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by term_id")] = None,
@@ -43646,7 +42853,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -43658,7 +42865,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -43778,13 +42985,13 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         term_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by term_id")] = None,
@@ -43828,7 +43035,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param schema_version: Filter by schema_version
@@ -43840,7 +43047,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -44025,17 +43232,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if status is not None:
             
@@ -44058,17 +43256,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -45046,7 +44235,7 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[StrictBool], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
@@ -45057,7 +44246,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -45128,7 +44317,7 @@ class IgvfApi:
         :param anvil_url: Filter by anvil_url
         :type anvil_url: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param documents: Filter by documents
         :type documents: List[str]
         :param accession: Filter by accession
@@ -45150,7 +44339,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -45348,7 +44537,7 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[StrictBool], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
@@ -45359,7 +44548,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -45430,7 +44619,7 @@ class IgvfApi:
         :param anvil_url: Filter by anvil_url
         :type anvil_url: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param documents: Filter by documents
         :type documents: List[str]
         :param accession: Filter by accession
@@ -45452,7 +44641,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -45650,7 +44839,7 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         controlled_access: Annotated[Optional[StrictBool], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
         alternate_accessions: Annotated[Optional[List[StrictStr]], Field(description="Filter by alternate_accessions")] = None,
@@ -45661,7 +44850,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -45732,7 +44921,7 @@ class IgvfApi:
         :param anvil_url: Filter by anvil_url
         :type anvil_url: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param documents: Filter by documents
         :type documents: List[str]
         :param accession: Filter by accession
@@ -45754,7 +44943,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -46055,17 +45244,8 @@ class IgvfApi:
             _query_params.append(('anvil_url', anvil_url))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if documents is not None:
             
@@ -46108,17 +45288,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -46334,7 +45505,7 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         reference_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by reference_files")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
@@ -46346,7 +45517,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -46410,7 +45581,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param reference_files: Filter by reference_files
         :type reference_files: List[str]
         :param documents: Filter by documents
@@ -46434,7 +45605,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -46612,7 +45783,7 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         reference_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by reference_files")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
@@ -46624,7 +45795,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -46688,7 +45859,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param reference_files: Filter by reference_files
         :type reference_files: List[str]
         :param documents: Filter by documents
@@ -46712,7 +45883,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -46890,7 +46061,7 @@ class IgvfApi:
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         reference_files: Annotated[Optional[List[StrictStr]], Field(description="Filter by reference_files")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
         accession: Annotated[Optional[StrictStr], Field(description="Filter by accession")] = None,
@@ -46902,7 +46073,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -46966,7 +46137,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param reference_files: Filter by reference_files
         :type reference_files: List[str]
         :param documents: Filter by documents
@@ -46990,7 +46161,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -47265,17 +46436,8 @@ class IgvfApi:
             _query_params.append(('assembly', assembly))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if reference_files is not None:
             
@@ -47322,17 +46484,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -47518,7 +46671,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -47526,7 +46679,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by name")] = None,
@@ -47566,7 +46719,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -47582,7 +46735,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -47692,7 +46845,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -47700,7 +46853,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by name")] = None,
@@ -47740,7 +46893,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -47756,7 +46909,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -47866,7 +47019,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -47874,7 +47027,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by name")] = None,
@@ -47914,7 +47067,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -47930,7 +47083,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -48098,17 +47251,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publications is not None:
             
@@ -48139,17 +47283,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -48255,7 +47390,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -48263,7 +47398,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by version")] = None,
@@ -48304,7 +47439,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -48320,7 +47455,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -48433,7 +47568,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -48441,7 +47576,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by version")] = None,
@@ -48482,7 +47617,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -48498,7 +47633,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -48611,7 +47746,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
@@ -48619,7 +47754,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by version")] = None,
@@ -48660,7 +47795,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -48676,7 +47811,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -48846,17 +47981,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publications is not None:
             
@@ -48887,17 +48013,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -49007,14 +48124,14 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         url: Annotated[Optional[StrictStr], Field(description="Filter by url")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by title")] = None,
@@ -49047,7 +48164,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param url: Filter by url
@@ -49061,7 +48178,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -49149,14 +48266,14 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         url: Annotated[Optional[StrictStr], Field(description="Filter by url")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by title")] = None,
@@ -49189,7 +48306,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param url: Filter by url
@@ -49203,7 +48320,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -49291,14 +48408,14 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         status: Annotated[Optional[StrictStr], Field(description="Filter by status")] = None,
         url: Annotated[Optional[StrictStr], Field(description="Filter by url")] = None,
         schema_version: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by schema_version")] = None,
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by title")] = None,
@@ -49331,7 +48448,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param status: Filter by status
         :type status: str
         :param url: Filter by url
@@ -49345,7 +48462,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -49479,17 +48596,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if status is not None:
             
@@ -49516,17 +48624,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -49607,7 +48706,7 @@ class IgvfApi:
         controlled_access: Annotated[Optional[StrictBool], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         file_format_type: Annotated[Optional[StrictStr], Field(description="Filter by file_format_type")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -49620,7 +48719,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -49681,7 +48780,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param file_format_type: Filter by file_format_type
         :type file_format_type: str
         :param transcriptome_annotation: Filter by transcriptome_annotation
@@ -49707,7 +48806,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -49873,7 +48972,7 @@ class IgvfApi:
         controlled_access: Annotated[Optional[StrictBool], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         file_format_type: Annotated[Optional[StrictStr], Field(description="Filter by file_format_type")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -49886,7 +48985,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -49947,7 +49046,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param file_format_type: Filter by file_format_type
         :type file_format_type: str
         :param transcriptome_annotation: Filter by transcriptome_annotation
@@ -49973,7 +49072,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -50139,7 +49238,7 @@ class IgvfApi:
         controlled_access: Annotated[Optional[StrictBool], Field(description="Filter by controlled_access")] = None,
         anvil_url: Annotated[Optional[StrictStr], Field(description="Filter by anvil_url")] = None,
         assembly: Annotated[Optional[StrictStr], Field(description="Filter by assembly")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         file_format_type: Annotated[Optional[StrictStr], Field(description="Filter by file_format_type")] = None,
         transcriptome_annotation: Annotated[Optional[StrictStr], Field(description="Filter by transcriptome_annotation")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -50152,7 +49251,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         analysis_step_version: Annotated[Optional[StrictStr], Field(description="Filter by analysis_step_version")] = None,
@@ -50213,7 +49312,7 @@ class IgvfApi:
         :param assembly: Filter by assembly
         :type assembly: str
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param file_format_type: Filter by file_format_type
         :type file_format_type: str
         :param transcriptome_annotation: Filter by transcriptome_annotation
@@ -50239,7 +49338,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -50501,17 +49600,8 @@ class IgvfApi:
             _query_params.append(('assembly', assembly))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if file_format_type is not None:
             
@@ -50562,17 +49652,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -50738,7 +49819,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         url: Annotated[Optional[StrictStr], Field(description="Filter by url")] = None,
@@ -50754,13 +49835,13 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -50821,7 +49902,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -50853,7 +49934,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -50865,7 +49946,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -51052,7 +50133,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         url: Annotated[Optional[StrictStr], Field(description="Filter by url")] = None,
@@ -51068,13 +50149,13 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -51135,7 +50216,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -51167,7 +50248,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -51179,7 +50260,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -51366,7 +50447,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         url: Annotated[Optional[StrictStr], Field(description="Filter by url")] = None,
@@ -51382,13 +50463,13 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -51449,7 +50530,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -51481,7 +50562,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -51493,7 +50574,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -51793,17 +50874,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publications is not None:
             
@@ -51866,17 +50938,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -51899,17 +50962,8 @@ class IgvfApi:
             _query_params.append(('dbxrefs', dbxrefs))
             
         if date_obtained is not None:
-            if isinstance(date_obtained, date):
-                _query_params.append(
-                    (
-                        'date_obtained',
-                        date_obtained.strftime(
-                            self.api_client.configuration.date_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('date_obtained', date_obtained))
+            
+            _query_params.append(('date_obtained', date_obtained))
             
         if sorted_from_detail is not None:
             
@@ -52099,7 +51153,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
@@ -52116,7 +51170,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         lower_bound_age: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age")] = None,
@@ -52132,7 +51186,7 @@ class IgvfApi:
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -52212,7 +51266,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -52246,7 +51300,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -52278,7 +51332,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -52533,7 +51587,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
@@ -52550,7 +51604,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         lower_bound_age: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age")] = None,
@@ -52566,7 +51620,7 @@ class IgvfApi:
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -52646,7 +51700,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -52680,7 +51734,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -52712,7 +51766,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -52967,7 +52021,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
@@ -52984,7 +52038,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         lower_bound_age: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age")] = None,
@@ -53000,7 +52054,7 @@ class IgvfApi:
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -53080,7 +52134,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -53114,7 +52168,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -53146,7 +52200,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -53560,17 +52614,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publications is not None:
             
@@ -53637,17 +52682,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -53710,17 +52746,8 @@ class IgvfApi:
             _query_params.append(('dbxrefs', dbxrefs))
             
         if date_obtained is not None:
-            if isinstance(date_obtained, date):
-                _query_params.append(
-                    (
-                        'date_obtained',
-                        date_obtained.strftime(
-                            self.api_client.configuration.date_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('date_obtained', date_obtained))
+            
+            _query_params.append(('date_obtained', date_obtained))
             
         if sorted_from_detail is not None:
             
@@ -53986,7 +53013,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         lot_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by lot_id")] = None,
         product_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by product_id")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -53995,7 +53022,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by amount")] = None,
@@ -54046,7 +53073,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param lot_id: Filter by lot_id
         :type lot_id: str
         :param product_id: Filter by product_id
@@ -54064,7 +53091,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -54208,7 +53235,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         lot_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by lot_id")] = None,
         product_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by product_id")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -54217,7 +53244,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by amount")] = None,
@@ -54268,7 +53295,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param lot_id: Filter by lot_id
         :type lot_id: str
         :param product_id: Filter by product_id
@@ -54286,7 +53313,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -54430,7 +53457,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         lot_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by lot_id")] = None,
         product_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by product_id")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -54439,7 +53466,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by amount")] = None,
@@ -54490,7 +53517,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param lot_id: Filter by lot_id
         :type lot_id: str
         :param product_id: Filter by product_id
@@ -54508,7 +53535,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -54721,17 +53748,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if lot_id is not None:
             
@@ -54766,17 +53784,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -54931,7 +53940,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         email: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by email")] = None,
@@ -54981,7 +53990,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -55093,7 +54102,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         email: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by email")] = None,
@@ -55143,7 +54152,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -55255,7 +54264,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         email: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by email")] = None,
@@ -55305,7 +54314,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -55486,17 +54495,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -55602,7 +54602,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -55619,7 +54619,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         lower_bound_age: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age")] = None,
@@ -55635,7 +54635,7 @@ class IgvfApi:
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -55711,7 +54711,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param taxa: Filter by taxa
         :type taxa: str
         :param publications: Filter by publications
@@ -55745,7 +54745,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -55777,7 +54777,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -56020,7 +55020,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -56037,7 +55037,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         lower_bound_age: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age")] = None,
@@ -56053,7 +55053,7 @@ class IgvfApi:
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -56129,7 +55129,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param taxa: Filter by taxa
         :type taxa: str
         :param publications: Filter by publications
@@ -56163,7 +55163,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -56195,7 +55195,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -56438,7 +55438,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         taxa: Annotated[Optional[StrictStr], Field(description="Filter by taxa")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
@@ -56455,7 +55455,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         lower_bound_age: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by lower_bound_age")] = None,
@@ -56471,7 +55471,7 @@ class IgvfApi:
         starting_amount: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filter by starting_amount")] = None,
         starting_amount_units: Annotated[Optional[StrictStr], Field(description="Filter by starting_amount_units")] = None,
         dbxrefs: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by dbxrefs")] = None,
-        date_obtained: Annotated[Optional[date], Field(description="Filter by date_obtained")] = None,
+        date_obtained: Annotated[Optional[StrictStr], Field(description="Filter by date_obtained")] = None,
         sorted_from_detail: Annotated[Optional[StrictStr], Field(description="Filter by sorted_from_detail")] = None,
         virtual: Annotated[Optional[StrictBool], Field(description="Filter by virtual")] = None,
         construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by construct_library_sets")] = None,
@@ -56547,7 +55547,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param taxa: Filter by taxa
         :type taxa: str
         :param publications: Filter by publications
@@ -56581,7 +55581,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -56613,7 +55613,7 @@ class IgvfApi:
         :param dbxrefs: Filter by dbxrefs
         :type dbxrefs: List[str]
         :param date_obtained: Filter by date_obtained
-        :type date_obtained: date
+        :type date_obtained: str
         :param sorted_from_detail: Filter by sorted_from_detail
         :type sorted_from_detail: str
         :param virtual: Filter by virtual
@@ -57011,17 +56011,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if taxa is not None:
             
@@ -57088,17 +56079,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             
@@ -57161,17 +56143,8 @@ class IgvfApi:
             _query_params.append(('dbxrefs', dbxrefs))
             
         if date_obtained is not None:
-            if isinstance(date_obtained, date):
-                _query_params.append(
-                    (
-                        'date_obtained',
-                        date_obtained.strftime(
-                            self.api_client.configuration.date_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('date_obtained', date_obtained))
+            
+            _query_params.append(('date_obtained', date_obtained))
             
         if sorted_from_detail is not None:
             
@@ -57421,7 +56394,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -57434,7 +56407,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by name")] = None,
@@ -57476,7 +56449,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -57502,7 +56475,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -57623,7 +56596,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -57636,7 +56609,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by name")] = None,
@@ -57678,7 +56651,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -57704,7 +56677,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -57825,7 +56798,7 @@ class IgvfApi:
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
-        release_timestamp: Annotated[Optional[datetime], Field(description="Filter by release_timestamp")] = None,
+        release_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by release_timestamp")] = None,
         publications: Annotated[Optional[List[StrictStr]], Field(description="Filter by publications")] = None,
         publication_identifiers: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by publication_identifiers")] = None,
         documents: Annotated[Optional[List[StrictStr]], Field(description="Filter by documents")] = None,
@@ -57838,7 +56811,7 @@ class IgvfApi:
         uuid: Annotated[Optional[StrictStr], Field(description="Filter by uuid")] = None,
         notes: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by notes")] = None,
         aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by aliases")] = None,
-        creation_timestamp: Annotated[Optional[datetime], Field(description="Filter by creation_timestamp")] = None,
+        creation_timestamp: Annotated[Optional[StrictStr], Field(description="Filter by creation_timestamp")] = None,
         submitter_comment: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by submitter_comment")] = None,
         description: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by description")] = None,
         name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by name")] = None,
@@ -57880,7 +56853,7 @@ class IgvfApi:
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.
         :type sort: List[str]
         :param release_timestamp: Filter by release_timestamp
-        :type release_timestamp: datetime
+        :type release_timestamp: str
         :param publications: Filter by publications
         :type publications: List[str]
         :param publication_identifiers: Filter by publication_identifiers
@@ -57906,7 +56879,7 @@ class IgvfApi:
         :param aliases: Filter by aliases
         :type aliases: List[str]
         :param creation_timestamp: Filter by creation_timestamp
-        :type creation_timestamp: datetime
+        :type creation_timestamp: str
         :param submitter_comment: Filter by submitter_comment
         :type submitter_comment: str
         :param description: Filter by description
@@ -58095,17 +57068,8 @@ class IgvfApi:
             _query_params.append(('sort', sort))
             
         if release_timestamp is not None:
-            if isinstance(release_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'release_timestamp',
-                        release_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('release_timestamp', release_timestamp))
+            
+            _query_params.append(('release_timestamp', release_timestamp))
             
         if publications is not None:
             
@@ -58156,17 +57120,8 @@ class IgvfApi:
             _query_params.append(('aliases', aliases))
             
         if creation_timestamp is not None:
-            if isinstance(creation_timestamp, datetime):
-                _query_params.append(
-                    (
-                        'creation_timestamp',
-                        creation_timestamp.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('creation_timestamp', creation_timestamp))
+            
+            _query_params.append(('creation_timestamp', creation_timestamp))
             
         if submitter_comment is not None:
             

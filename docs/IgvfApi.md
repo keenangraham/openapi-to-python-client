@@ -109,7 +109,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -225,7 +225,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
     transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
     assembly = 'assembly_example' # str | Filter by assembly (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     reference_files = ['reference_files_example'] # List[str] | Filter by reference_files (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
     accession = 'accession_example' # str | Filter by accession (optional)
@@ -237,7 +237,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
@@ -295,7 +295,7 @@ Name | Type | Description  | Notes
  **anvil_url** | **str**| Filter by anvil_url | [optional] 
  **transcriptome_annotation** | **str**| Filter by transcriptome_annotation | [optional] 
  **assembly** | **str**| Filter by assembly | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **reference_files** | [**List[str]**](List[str].md)| Filter by reference_files | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
  **accession** | **str**| Filter by accession | [optional] 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
@@ -407,7 +407,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -420,14 +420,14 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     file_set_type = 'file_set_type_example' # str | Filter by file_set_type (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    submitted_files_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by submitted_files_timestamp (optional)
+    submitted_files_timestamp = 'submitted_files_timestamp_example' # str | Filter by submitted_files_timestamp (optional)
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     assay_titles = ['assay_titles_example'] # List[str] | Filter by assay_titles (optional)
     award_id = 'award_id_example' # str | Filter by award.@id (optional)
@@ -504,7 +504,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
@@ -517,14 +517,14 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **file_set_type** | **str**| Filter by file_set_type | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **submitted_files_timestamp** | **datetime**| Filter by submitted_files_timestamp | [optional] 
+ **submitted_files_timestamp** | **str**| Filter by submitted_files_timestamp | [optional] 
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **assay_titles** | [**List[str]**](List[str].md)| Filter by assay_titles | [optional] 
  **award_id** | **str**| Filter by award.@id | [optional] 
@@ -647,13 +647,13 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     id = 'id_example' # str | Filter by @id (optional)
@@ -688,13 +688,13 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **id** | **str**| Filter by @id | [optional] 
@@ -775,13 +775,13 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     analysis_step_types = ['analysis_step_types_example'] # List[str] | Filter by analysis_step_types (optional)
@@ -822,13 +822,13 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **analysis_step_types** | [**List[str]**](List[str].md)| Filter by analysis_step_types | [optional] 
@@ -915,13 +915,13 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     term_id = 'term_id_example' # str | Filter by term_id (optional)
@@ -960,13 +960,13 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **term_id** | **str**| Filter by term_id | [optional] 
@@ -1051,7 +1051,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -1065,7 +1065,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
@@ -1073,7 +1073,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     library_construction_platform = 'library_construction_platform_example' # str | Filter by library_construction_platform (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    submitted_files_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by submitted_files_timestamp (optional)
+    submitted_files_timestamp = 'submitted_files_timestamp_example' # str | Filter by submitted_files_timestamp (optional)
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     award_id = 'award_id_example' # str | Filter by award.@id (optional)
     award_component = 'award_component_example' # str | Filter by award.component (optional)
@@ -1149,7 +1149,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
@@ -1163,7 +1163,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
@@ -1171,7 +1171,7 @@ Name | Type | Description  | Notes
  **library_construction_platform** | **str**| Filter by library_construction_platform | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **submitted_files_timestamp** | **datetime**| Filter by submitted_files_timestamp | [optional] 
+ **submitted_files_timestamp** | **str**| Filter by submitted_files_timestamp | [optional] 
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **award_id** | **str**| Filter by award.@id | [optional] 
  **award_component** | **str**| Filter by award.component | [optional] 
@@ -1299,13 +1299,13 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     title = 'title_example' # str | Filter by title (optional)
     name = 'name_example' # str | Filter by name (optional)
-    start_date = '2013-10-20' # date | Filter by start_date (optional)
-    end_date = '2013-10-20' # date | Filter by end_date (optional)
+    start_date = 'start_date_example' # str | Filter by start_date (optional)
+    end_date = 'end_date_example' # str | Filter by end_date (optional)
     pis = ['pis_example'] # List[str] | Filter by pis (optional)
     contact_pi = 'contact_pi_example' # str | Filter by contact_pi (optional)
     project = 'project_example' # str | Filter by project (optional)
@@ -1341,13 +1341,13 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **title** | **str**| Filter by title | [optional] 
  **name** | **str**| Filter by name | [optional] 
- **start_date** | **date**| Filter by start_date | [optional] 
- **end_date** | **date**| Filter by end_date | [optional] 
+ **start_date** | **str**| Filter by start_date | [optional] 
+ **end_date** | **str**| Filter by end_date | [optional] 
  **pis** | [**List[str]**](List[str].md)| Filter by pis | [optional] 
  **contact_pi** | **str**| Filter by contact_pi | [optional] 
  **project** | **str**| Filter by project | [optional] 
@@ -1508,13 +1508,13 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     name = 'name_example' # str | Filter by name (optional)
@@ -1553,13 +1553,13 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **name** | **str**| Filter by name | [optional] 
@@ -1644,7 +1644,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
     accession = 'accession_example' # str | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
@@ -1655,7 +1655,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
@@ -1707,7 +1707,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
  **accession** | **str**| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
@@ -1718,7 +1718,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
@@ -1818,7 +1818,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     small_scale_loci_list = [igvf_client.Locus()] # List[Locus] | Filter by small_scale_loci_list (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -1834,7 +1834,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     file_set_type = 'file_set_type_example' # str | Filter by file_set_type (optional)
@@ -1854,7 +1854,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     targeton = 'targeton_example' # str | Filter by targeton (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    submitted_files_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by submitted_files_timestamp (optional)
+    submitted_files_timestamp = 'submitted_files_timestamp_example' # str | Filter by submitted_files_timestamp (optional)
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     applied_to_samples_id = ['applied_to_samples_id_example'] # List[str] | Filter by applied_to_samples.@id (optional)
     applied_to_samples_accession = ['applied_to_samples_accession_example'] # List[str] | Filter by applied_to_samples.accession (optional)
@@ -1919,7 +1919,7 @@ Name | Type | Description  | Notes
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **small_scale_loci_list** | [**List[Locus]**](List[Locus].md)| Filter by small_scale_loci_list | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
@@ -1935,7 +1935,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **file_set_type** | **str**| Filter by file_set_type | [optional] 
@@ -1955,7 +1955,7 @@ Name | Type | Description  | Notes
  **targeton** | **str**| Filter by targeton | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **submitted_files_timestamp** | **datetime**| Filter by submitted_files_timestamp | [optional] 
+ **submitted_files_timestamp** | **str**| Filter by submitted_files_timestamp | [optional] 
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **applied_to_samples_id** | [**List[str]**](List[str].md)| Filter by applied_to_samples.@id | [optional] 
  **applied_to_samples_accession** | [**List[str]**](List[str].md)| Filter by applied_to_samples.accession | [optional] 
@@ -2065,7 +2065,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
     lot_id = 'lot_id_example' # str | Filter by lot_id (optional)
     product_id = 'product_id_example' # str | Filter by product_id (optional)
@@ -2075,7 +2075,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     activated = True # bool | Filter by activated (optional)
@@ -2115,7 +2115,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
  **lot_id** | **str**| Filter by lot_id | [optional] 
  **product_id** | **str**| Filter by product_id | [optional] 
@@ -2125,7 +2125,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **activated** | **bool**| Filter by activated | [optional] 
@@ -2211,7 +2211,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
@@ -2226,14 +2226,14 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
     file_set_type = 'file_set_type_example' # str | Filter by file_set_type (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    submitted_files_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by submitted_files_timestamp (optional)
+    submitted_files_timestamp = 'submitted_files_timestamp_example' # str | Filter by submitted_files_timestamp (optional)
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     assemblies = ['assemblies_example'] # List[str] | Filter by assemblies (optional)
     transcriptome_annotations = ['transcriptome_annotations_example'] # List[str] | Filter by transcriptome_annotations (optional)
@@ -2307,7 +2307,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **taxa** | **str**| Filter by taxa | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
@@ -2322,14 +2322,14 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
  **file_set_type** | **str**| Filter by file_set_type | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **submitted_files_timestamp** | **datetime**| Filter by submitted_files_timestamp | [optional] 
+ **submitted_files_timestamp** | **str**| Filter by submitted_files_timestamp | [optional] 
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **assemblies** | [**List[str]**](List[str].md)| Filter by assemblies | [optional] 
  **transcriptome_annotations** | [**List[str]**](List[str].md)| Filter by transcriptome_annotations | [optional] 
@@ -2449,7 +2449,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     sources = ['sources_example'] # List[str] | Filter by sources (optional)
     lot_id = 'lot_id_example' # str | Filter by lot_id (optional)
     product_id = 'product_id_example' # str | Filter by product_id (optional)
@@ -2459,7 +2459,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     activated = True # bool | Filter by activated (optional)
@@ -2497,7 +2497,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **sources** | [**List[str]**](List[str].md)| Filter by sources | [optional] 
  **lot_id** | **str**| Filter by lot_id | [optional] 
  **product_id** | **str**| Filter by product_id | [optional] 
@@ -2507,7 +2507,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **activated** | **bool**| Filter by activated | [optional] 
@@ -2591,14 +2591,14 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
     attachment = {'key': igvf_client.Attachment()} # Attachment | Filter by attachment (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     document_type = 'document_type_example' # str | Filter by document_type (optional)
@@ -2632,14 +2632,14 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **attachment** | [**Attachment**](Attachment.md)| Filter by attachment | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **document_type** | **str**| Filter by document_type | [optional] 
@@ -2800,7 +2800,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -2808,7 +2808,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     geneid = 'geneid_example' # str | Filter by geneid (optional)
@@ -2844,7 +2844,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **transcriptome_annotation** | **str**| Filter by transcriptome_annotation | [optional] 
  **taxa** | **str**| Filter by taxa | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -2852,7 +2852,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **geneid** | **str**| Filter by geneid | [optional] 
@@ -2935,7 +2935,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     assembly = 'assembly_example' # str | Filter by assembly (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     file_format_type = 'file_format_type_example' # str | Filter by file_format_type (optional)
     transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -2948,7 +2948,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
@@ -3000,7 +3000,7 @@ Name | Type | Description  | Notes
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **assembly** | **str**| Filter by assembly | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **file_format_type** | **str**| Filter by file_format_type | [optional] 
  **transcriptome_annotation** | **str**| Filter by transcriptome_annotation | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
@@ -3013,7 +3013,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
@@ -3190,7 +3190,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
@@ -3205,7 +3205,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
@@ -3249,7 +3249,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **taxa** | **str**| Filter by taxa | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
@@ -3264,7 +3264,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
@@ -3354,7 +3354,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
     accession = 'accession_example' # str | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
@@ -3365,7 +3365,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
@@ -3416,7 +3416,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
  **accession** | **str**| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
@@ -3427,7 +3427,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
@@ -3524,14 +3524,14 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
     attachment = {'key': igvf_client.Attachment1()} # Attachment1 | Filter by attachment (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     caption = 'caption_example' # str | Filter by caption (optional)
@@ -3561,14 +3561,14 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **attachment** | [**Attachment1**](Attachment1.md)| Filter by attachment | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **caption** | **str**| Filter by caption | [optional] 
@@ -3644,7 +3644,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
@@ -3661,7 +3661,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     lower_bound_age = 3.4 # float | Filter by lower_bound_age (optional)
@@ -3676,7 +3676,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     starting_amount = 3.4 # float | Filter by starting_amount (optional)
     starting_amount_units = 'starting_amount_units_example' # str | Filter by starting_amount_units (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    date_obtained = '2013-10-20' # date | Filter by date_obtained (optional)
+    date_obtained = 'date_obtained_example' # str | Filter by date_obtained (optional)
     sorted_from_detail = 'sorted_from_detail_example' # str | Filter by sorted_from_detail (optional)
     virtual = True # bool | Filter by virtual (optional)
     construct_library_sets = ['construct_library_sets_example'] # List[str] | Filter by construct_library_sets (optional)
@@ -3763,7 +3763,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **taxa** | **str**| Filter by taxa | [optional] 
@@ -3780,7 +3780,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **lower_bound_age** | **float**| Filter by lower_bound_age | [optional] 
@@ -3795,7 +3795,7 @@ Name | Type | Description  | Notes
  **starting_amount** | **float**| Filter by starting_amount | [optional] 
  **starting_amount_units** | **str**| Filter by starting_amount_units | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **date_obtained** | **date**| Filter by date_obtained | [optional] 
+ **date_obtained** | **str**| Filter by date_obtained | [optional] 
  **sorted_from_detail** | **str**| Filter by sorted_from_detail | [optional] 
  **virtual** | **bool**| Filter by virtual | [optional] 
  **construct_library_sets** | [**List[str]**](List[str].md)| Filter by construct_library_sets | [optional] 
@@ -3928,13 +3928,13 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     certificate_identifier = 'certificate_identifier_example' # str | Filter by certificate_identifier (optional)
@@ -3971,13 +3971,13 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **certificate_identifier** | **str**| Filter by certificate_identifier | [optional] 
@@ -4066,7 +4066,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     name = 'name_example' # str | Filter by name (optional)
@@ -4106,7 +4106,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **name** | **str**| Filter by name | [optional] 
@@ -4186,7 +4186,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     reference_files = ['reference_files_example'] # List[str] | Filter by reference_files (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
     accession = 'accession_example' # str | Filter by accession (optional)
@@ -4198,7 +4198,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
@@ -4252,7 +4252,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **reference_files** | [**List[str]**](List[str].md)| Filter by reference_files | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
  **accession** | **str**| Filter by accession | [optional] 
@@ -4264,7 +4264,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
@@ -4364,7 +4364,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -4377,7 +4377,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
@@ -4389,7 +4389,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     external_image_url = 'external_image_url_example' # str | Filter by external_image_url (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    submitted_files_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by submitted_files_timestamp (optional)
+    submitted_files_timestamp = 'submitted_files_timestamp_example' # str | Filter by submitted_files_timestamp (optional)
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     assay_term_id = 'assay_term_id_example' # str | Filter by assay_term.@id (optional)
     assay_term_term_name = 'assay_term_term_name_example' # str | Filter by assay_term.term_name (optional)
@@ -4494,7 +4494,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
@@ -4507,7 +4507,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
@@ -4519,7 +4519,7 @@ Name | Type | Description  | Notes
  **external_image_url** | **str**| Filter by external_image_url | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **submitted_files_timestamp** | **datetime**| Filter by submitted_files_timestamp | [optional] 
+ **submitted_files_timestamp** | **str**| Filter by submitted_files_timestamp | [optional] 
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **assay_term_id** | **str**| Filter by assay_term.@id | [optional] 
  **assay_term_term_name** | **str**| Filter by assay_term.term_name | [optional] 
@@ -4672,7 +4672,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     controlled_access = True # bool | Filter by controlled_access (optional)
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
     accession = 'accession_example' # str | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
@@ -4683,7 +4683,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
@@ -4736,7 +4736,7 @@ Name | Type | Description  | Notes
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **controlled_access** | **bool**| Filter by controlled_access | [optional] 
  **anvil_url** | **str**| Filter by anvil_url | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
  **accession** | **str**| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
@@ -4747,7 +4747,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
@@ -4844,7 +4844,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -4858,7 +4858,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
@@ -4871,7 +4871,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     assessed_genes = ['assessed_genes_example'] # List[str] | Filter by assessed_genes (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    submitted_files_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by submitted_files_timestamp (optional)
+    submitted_files_timestamp = 'submitted_files_timestamp_example' # str | Filter by submitted_files_timestamp (optional)
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     award_id = 'award_id_example' # str | Filter by award.@id (optional)
     award_component = 'award_component_example' # str | Filter by award.component (optional)
@@ -4946,7 +4946,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
@@ -4960,7 +4960,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
@@ -4973,7 +4973,7 @@ Name | Type | Description  | Notes
  **assessed_genes** | [**List[str]**](List[str].md)| Filter by assessed_genes | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **submitted_files_timestamp** | **datetime**| Filter by submitted_files_timestamp | [optional] 
+ **submitted_files_timestamp** | **str**| Filter by submitted_files_timestamp | [optional] 
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **award_id** | **str**| Filter by award.@id | [optional] 
  **award_component** | **str**| Filter by award.component | [optional] 
@@ -5094,7 +5094,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     url = 'url_example' # str | Filter by url (optional)
@@ -5108,13 +5108,13 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     starting_amount = 3.4 # float | Filter by starting_amount (optional)
     starting_amount_units = 'starting_amount_units_example' # str | Filter by starting_amount_units (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    date_obtained = '2013-10-20' # date | Filter by date_obtained (optional)
+    date_obtained = 'date_obtained_example' # str | Filter by date_obtained (optional)
     sorted_from_detail = 'sorted_from_detail_example' # str | Filter by sorted_from_detail (optional)
     virtual = True # bool | Filter by virtual (optional)
     moi = 3.4 # float | Filter by moi (optional)
@@ -5195,7 +5195,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **url** | **str**| Filter by url | [optional] 
@@ -5209,13 +5209,13 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **starting_amount** | **float**| Filter by starting_amount | [optional] 
  **starting_amount_units** | **str**| Filter by starting_amount_units | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **date_obtained** | **date**| Filter by date_obtained | [optional] 
+ **date_obtained** | **str**| Filter by date_obtained | [optional] 
  **sorted_from_detail** | **str**| Filter by sorted_from_detail | [optional] 
  **virtual** | **bool**| Filter by virtual | [optional] 
  **moi** | **float**| Filter by moi | [optional] 
@@ -5342,13 +5342,13 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
@@ -5385,13 +5385,13 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitted_by** | **str**| Filter by submitted_by | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
@@ -5474,7 +5474,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     lab = 'lab_example' # str | Filter by lab (optional)
     award = 'award_example' # str | Filter by award (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -5482,7 +5482,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     parent = 'parent_example' # str | Filter by parent (optional)
@@ -5514,7 +5514,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **lab** | **str**| Filter by lab | [optional] 
  **award** | **str**| Filter by award | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -5522,7 +5522,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **parent** | **str**| Filter by parent | [optional] 
@@ -5600,13 +5600,13 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     term_id = 'term_id_example' # str | Filter by term_id (optional)
@@ -5641,13 +5641,13 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **term_id** | **str**| Filter by term_id | [optional] 
@@ -5728,18 +5728,18 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     quantity = 3.4 # float | Filter by quantity (optional)
     quantity_units = 'quantity_units_example' # str | Filter by quantity_units (optional)
-    observation_date = '2013-10-20' # date | Filter by observation_date (optional)
+    observation_date = 'observation_date_example' # str | Filter by observation_date (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
     award_id = 'award_id_example' # str | Filter by award.@id (optional)
@@ -5771,18 +5771,18 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **quantity** | **float**| Filter by quantity | [optional] 
  **quantity_units** | **str**| Filter by quantity_units | [optional] 
- **observation_date** | **date**| Filter by observation_date | [optional] 
+ **observation_date** | **str**| Filter by observation_date | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
  **award_id** | **str**| Filter by award.@id | [optional] 
@@ -5860,13 +5860,13 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     term_id = 'term_id_example' # str | Filter by term_id (optional)
@@ -5903,13 +5903,13 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **term_id** | **str**| Filter by term_id | [optional] 
@@ -5995,7 +5995,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     input_file_sets = ['input_file_sets_example'] # List[str] | Filter by input_file_sets (optional)
     small_scale_loci_list = [igvf_client.Locus()] # List[Locus] | Filter by small_scale_loci_list (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -6009,7 +6009,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
@@ -6017,7 +6017,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     scope = 'scope_example' # str | Filter by scope (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
-    submitted_files_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by submitted_files_timestamp (optional)
+    submitted_files_timestamp = 'submitted_files_timestamp_example' # str | Filter by submitted_files_timestamp (optional)
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     award_id = 'award_id_example' # str | Filter by award.@id (optional)
     award_component = 'award_component_example' # str | Filter by award.component (optional)
@@ -6104,7 +6104,7 @@ Name | Type | Description  | Notes
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **input_file_sets** | [**List[str]**](List[str].md)| Filter by input_file_sets | [optional] 
  **small_scale_loci_list** | [**List[Locus]**](List[Locus].md)| Filter by small_scale_loci_list | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
@@ -6118,7 +6118,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
@@ -6126,7 +6126,7 @@ Name | Type | Description  | Notes
  **scope** | **str**| Filter by scope | [optional] 
  **id** | **str**| Filter by @id | [optional] 
  **summary** | **str**| Filter by summary | [optional] 
- **submitted_files_timestamp** | **datetime**| Filter by submitted_files_timestamp | [optional] 
+ **submitted_files_timestamp** | **str**| Filter by submitted_files_timestamp | [optional] 
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **award_id** | **str**| Filter by award.@id | [optional] 
  **award_component** | **str**| Filter by award.component | [optional] 
@@ -6257,7 +6257,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
@@ -6274,7 +6274,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     lower_bound_age = 3.4 # float | Filter by lower_bound_age (optional)
@@ -6290,7 +6290,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     starting_amount = 3.4 # float | Filter by starting_amount (optional)
     starting_amount_units = 'starting_amount_units_example' # str | Filter by starting_amount_units (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    date_obtained = '2013-10-20' # date | Filter by date_obtained (optional)
+    date_obtained = 'date_obtained_example' # str | Filter by date_obtained (optional)
     sorted_from_detail = 'sorted_from_detail_example' # str | Filter by sorted_from_detail (optional)
     virtual = True # bool | Filter by virtual (optional)
     construct_library_sets = ['construct_library_sets_example'] # List[str] | Filter by construct_library_sets (optional)
@@ -6363,7 +6363,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **taxa** | **str**| Filter by taxa | [optional] 
@@ -6380,7 +6380,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **lower_bound_age** | **float**| Filter by lower_bound_age | [optional] 
@@ -6396,7 +6396,7 @@ Name | Type | Description  | Notes
  **starting_amount** | **float**| Filter by starting_amount | [optional] 
  **starting_amount_units** | **str**| Filter by starting_amount_units | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **date_obtained** | **date**| Filter by date_obtained | [optional] 
+ **date_obtained** | **str**| Filter by date_obtained | [optional] 
  **sorted_from_detail** | **str**| Filter by sorted_from_detail | [optional] 
  **virtual** | **bool**| Filter by virtual | [optional] 
  **construct_library_sets** | [**List[str]**](List[str].md)| Filter by construct_library_sets | [optional] 
@@ -6515,7 +6515,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     status = 'status_example' # str | Filter by status (optional)
     attachment = {'key': igvf_client.Attachment()} # Attachment | Filter by attachment (optional)
@@ -6523,14 +6523,14 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     title = 'title_example' # str | Filter by title (optional)
     abstract = 'abstract_example' # str | Filter by abstract (optional)
     authors = 'authors_example' # str | Filter by authors (optional)
-    date_published = '2013-10-20' # date | Filter by date_published (optional)
-    date_revised = '2013-10-20' # date | Filter by date_revised (optional)
+    date_published = 'date_published_example' # str | Filter by date_published (optional)
+    date_revised = 'date_revised_example' # str | Filter by date_revised (optional)
     issue = 'issue_example' # str | Filter by issue (optional)
     page = 'page_example' # str | Filter by page (optional)
     volume = 'volume_example' # str | Filter by volume (optional)
@@ -6571,7 +6571,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **attachment** | [**Attachment**](Attachment.md)| Filter by attachment | [optional] 
@@ -6579,14 +6579,14 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **title** | **str**| Filter by title | [optional] 
  **abstract** | **str**| Filter by abstract | [optional] 
  **authors** | **str**| Filter by authors | [optional] 
- **date_published** | **date**| Filter by date_published | [optional] 
- **date_revised** | **date**| Filter by date_revised | [optional] 
+ **date_published** | **str**| Filter by date_published | [optional] 
+ **date_revised** | **str**| Filter by date_revised | [optional] 
  **issue** | **str**| Filter by issue | [optional] 
  **page** | **str**| Filter by page | [optional] 
  **volume** | **str**| Filter by volume | [optional] 
@@ -6676,7 +6676,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     controlled_access = True # bool | Filter by controlled_access (optional)
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
     assembly = 'assembly_example' # str | Filter by assembly (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     file_format_type = 'file_format_type_example' # str | Filter by file_format_type (optional)
     transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -6689,7 +6689,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
@@ -6747,7 +6747,7 @@ Name | Type | Description  | Notes
  **controlled_access** | **bool**| Filter by controlled_access | [optional] 
  **anvil_url** | **str**| Filter by anvil_url | [optional] 
  **assembly** | **str**| Filter by assembly | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **file_format_type** | **str**| Filter by file_format_type | [optional] 
  **transcriptome_annotation** | **str**| Filter by transcriptome_annotation | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
@@ -6760,7 +6760,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
@@ -6950,7 +6950,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
@@ -6967,7 +6967,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
@@ -7013,7 +7013,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **taxa** | **str**| Filter by taxa | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
@@ -7030,7 +7030,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
@@ -7122,13 +7122,13 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     term_id = 'term_id_example' # str | Filter by term_id (optional)
@@ -7168,13 +7168,13 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **term_id** | **str**| Filter by term_id | [optional] 
@@ -7505,7 +7505,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     controlled_access = True # bool | Filter by controlled_access (optional)
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
     accession = 'accession_example' # str | Filter by accession (optional)
     alternate_accessions = ['alternate_accessions_example'] # List[str] | Filter by alternate_accessions (optional)
@@ -7516,7 +7516,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
@@ -7581,7 +7581,7 @@ Name | Type | Description  | Notes
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **controlled_access** | **bool**| Filter by controlled_access | [optional] 
  **anvil_url** | **str**| Filter by anvil_url | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
  **accession** | **str**| Filter by accession | [optional] 
  **alternate_accessions** | [**List[str]**](List[str].md)| Filter by alternate_accessions | [optional] 
@@ -7592,7 +7592,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
@@ -7703,7 +7703,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
     transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
     assembly = 'assembly_example' # str | Filter by assembly (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     reference_files = ['reference_files_example'] # List[str] | Filter by reference_files (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
     accession = 'accession_example' # str | Filter by accession (optional)
@@ -7715,7 +7715,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
@@ -7773,7 +7773,7 @@ Name | Type | Description  | Notes
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **transcriptome_annotation** | **str**| Filter by transcriptome_annotation | [optional] 
  **assembly** | **str**| Filter by assembly | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **reference_files** | [**List[str]**](List[str].md)| Filter by reference_files | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
  **accession** | **str**| Filter by accession | [optional] 
@@ -7785,7 +7785,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
@@ -7887,7 +7887,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -7895,7 +7895,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     name = 'name_example' # str | Filter by name (optional)
@@ -7931,7 +7931,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -7939,7 +7939,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **name** | **str**| Filter by name | [optional] 
@@ -8021,7 +8021,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -8029,7 +8029,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     version = 'version_example' # str | Filter by version (optional)
@@ -8066,7 +8066,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **status** | **str**| Filter by status | [optional] 
@@ -8074,7 +8074,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **version** | **str**| Filter by version | [optional] 
@@ -8157,14 +8157,14 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     status = 'status_example' # str | Filter by status (optional)
     url = 'url_example' # str | Filter by url (optional)
     schema_version = 'schema_version_example' # str | Filter by schema_version (optional)
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     title = 'title_example' # str | Filter by title (optional)
@@ -8193,14 +8193,14 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **status** | **str**| Filter by status | [optional] 
  **url** | **str**| Filter by url | [optional] 
  **schema_version** | **str**| Filter by schema_version | [optional] 
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **title** | **str**| Filter by title | [optional] 
@@ -8278,7 +8278,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     controlled_access = True # bool | Filter by controlled_access (optional)
     anvil_url = 'anvil_url_example' # str | Filter by anvil_url (optional)
     assembly = 'assembly_example' # str | Filter by assembly (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     file_format_type = 'file_format_type_example' # str | Filter by file_format_type (optional)
     transcriptome_annotation = 'transcriptome_annotation_example' # str | Filter by transcriptome_annotation (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -8291,7 +8291,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     analysis_step_version = 'analysis_step_version_example' # str | Filter by analysis_step_version (optional)
@@ -8345,7 +8345,7 @@ Name | Type | Description  | Notes
  **controlled_access** | **bool**| Filter by controlled_access | [optional] 
  **anvil_url** | **str**| Filter by anvil_url | [optional] 
  **assembly** | **str**| Filter by assembly | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **file_format_type** | **str**| Filter by file_format_type | [optional] 
  **transcriptome_annotation** | **str**| Filter by transcriptome_annotation | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
@@ -8358,7 +8358,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **analysis_step_version** | **str**| Filter by analysis_step_version | [optional] 
@@ -8455,7 +8455,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     url = 'url_example' # str | Filter by url (optional)
@@ -8471,13 +8471,13 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     starting_amount = 3.4 # float | Filter by starting_amount (optional)
     starting_amount_units = 'starting_amount_units_example' # str | Filter by starting_amount_units (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    date_obtained = '2013-10-20' # date | Filter by date_obtained (optional)
+    date_obtained = 'date_obtained_example' # str | Filter by date_obtained (optional)
     sorted_from_detail = 'sorted_from_detail_example' # str | Filter by sorted_from_detail (optional)
     virtual = True # bool | Filter by virtual (optional)
     construct_library_sets = ['construct_library_sets_example'] # List[str] | Filter by construct_library_sets (optional)
@@ -8534,7 +8534,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **url** | **str**| Filter by url | [optional] 
@@ -8550,13 +8550,13 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **starting_amount** | **float**| Filter by starting_amount | [optional] 
  **starting_amount_units** | **str**| Filter by starting_amount_units | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **date_obtained** | **date**| Filter by date_obtained | [optional] 
+ **date_obtained** | **str**| Filter by date_obtained | [optional] 
  **sorted_from_detail** | **str**| Filter by sorted_from_detail | [optional] 
  **virtual** | **bool**| Filter by virtual | [optional] 
  **construct_library_sets** | [**List[str]**](List[str].md)| Filter by construct_library_sets | [optional] 
@@ -8659,7 +8659,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
@@ -8676,7 +8676,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     lower_bound_age = 3.4 # float | Filter by lower_bound_age (optional)
@@ -8692,7 +8692,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     starting_amount = 3.4 # float | Filter by starting_amount (optional)
     starting_amount_units = 'starting_amount_units_example' # str | Filter by starting_amount_units (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    date_obtained = '2013-10-20' # date | Filter by date_obtained (optional)
+    date_obtained = 'date_obtained_example' # str | Filter by date_obtained (optional)
     sorted_from_detail = 'sorted_from_detail_example' # str | Filter by sorted_from_detail (optional)
     virtual = True # bool | Filter by virtual (optional)
     construct_library_sets = ['construct_library_sets_example'] # List[str] | Filter by construct_library_sets (optional)
@@ -8768,7 +8768,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **taxa** | **str**| Filter by taxa | [optional] 
@@ -8785,7 +8785,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **lower_bound_age** | **float**| Filter by lower_bound_age | [optional] 
@@ -8801,7 +8801,7 @@ Name | Type | Description  | Notes
  **starting_amount** | **float**| Filter by starting_amount | [optional] 
  **starting_amount_units** | **str**| Filter by starting_amount_units | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **date_obtained** | **date**| Filter by date_obtained | [optional] 
+ **date_obtained** | **str**| Filter by date_obtained | [optional] 
  **sorted_from_detail** | **str**| Filter by sorted_from_detail | [optional] 
  **virtual** | **bool**| Filter by virtual | [optional] 
  **construct_library_sets** | [**List[str]**](List[str].md)| Filter by construct_library_sets | [optional] 
@@ -8923,7 +8923,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     lot_id = 'lot_id_example' # str | Filter by lot_id (optional)
     product_id = 'product_id_example' # str | Filter by product_id (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -8932,7 +8932,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     amount = 3.4 # float | Filter by amount (optional)
@@ -8979,7 +8979,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **lot_id** | **str**| Filter by lot_id | [optional] 
  **product_id** | **str**| Filter by product_id | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
@@ -8988,7 +8988,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **amount** | **float**| Filter by amount | [optional] 
@@ -9086,7 +9086,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     email = 'email_example' # str | Filter by email (optional)
@@ -9127,7 +9127,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **email** | **str**| Filter by email | [optional] 
@@ -9209,7 +9209,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     taxa = 'taxa_example' # str | Filter by taxa (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
@@ -9226,7 +9226,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     lower_bound_age = 3.4 # float | Filter by lower_bound_age (optional)
@@ -9242,7 +9242,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     starting_amount = 3.4 # float | Filter by starting_amount (optional)
     starting_amount_units = 'starting_amount_units_example' # str | Filter by starting_amount_units (optional)
     dbxrefs = ['dbxrefs_example'] # List[str] | Filter by dbxrefs (optional)
-    date_obtained = '2013-10-20' # date | Filter by date_obtained (optional)
+    date_obtained = 'date_obtained_example' # str | Filter by date_obtained (optional)
     sorted_from_detail = 'sorted_from_detail_example' # str | Filter by sorted_from_detail (optional)
     virtual = True # bool | Filter by virtual (optional)
     construct_library_sets = ['construct_library_sets_example'] # List[str] | Filter by construct_library_sets (optional)
@@ -9314,7 +9314,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **taxa** | **str**| Filter by taxa | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
@@ -9331,7 +9331,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **lower_bound_age** | **float**| Filter by lower_bound_age | [optional] 
@@ -9347,7 +9347,7 @@ Name | Type | Description  | Notes
  **starting_amount** | **float**| Filter by starting_amount | [optional] 
  **starting_amount_units** | **str**| Filter by starting_amount_units | [optional] 
  **dbxrefs** | [**List[str]**](List[str].md)| Filter by dbxrefs | [optional] 
- **date_obtained** | **date**| Filter by date_obtained | [optional] 
+ **date_obtained** | **str**| Filter by date_obtained | [optional] 
  **sorted_from_detail** | **str**| Filter by sorted_from_detail | [optional] 
  **virtual** | **bool**| Filter by virtual | [optional] 
  **construct_library_sets** | [**List[str]**](List[str].md)| Filter by construct_library_sets | [optional] 
@@ -9465,7 +9465,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     query = 'variant flowfish jurkat' # str | Query string for searching. (optional)
     limit = igvf_client.Limit() # Limit | Maximum number of results to return. Use 'all' for all results. (optional)
     sort = ['-file_size'] # List[str] | Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all. (optional)
-    release_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by release_timestamp (optional)
+    release_timestamp = 'release_timestamp_example' # str | Filter by release_timestamp (optional)
     publications = ['publications_example'] # List[str] | Filter by publications (optional)
     publication_identifiers = ['publication_identifiers_example'] # List[str] | Filter by publication_identifiers (optional)
     documents = ['documents_example'] # List[str] | Filter by documents (optional)
@@ -9478,7 +9478,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | Filter by uuid (optional)
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
-    creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
+    creation_timestamp = 'creation_timestamp_example' # str | Filter by creation_timestamp (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     name = 'name_example' # str | Filter by name (optional)
@@ -9516,7 +9516,7 @@ Name | Type | Description  | Notes
  **query** | **str**| Query string for searching. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
- **release_timestamp** | **datetime**| Filter by release_timestamp | [optional] 
+ **release_timestamp** | **str**| Filter by release_timestamp | [optional] 
  **publications** | [**List[str]**](List[str].md)| Filter by publications | [optional] 
  **publication_identifiers** | [**List[str]**](List[str].md)| Filter by publication_identifiers | [optional] 
  **documents** | [**List[str]**](List[str].md)| Filter by documents | [optional] 
@@ -9529,7 +9529,7 @@ Name | Type | Description  | Notes
  **uuid** | **str**| Filter by uuid | [optional] 
  **notes** | **str**| Filter by notes | [optional] 
  **aliases** | [**List[str]**](List[str].md)| Filter by aliases | [optional] 
- **creation_timestamp** | **datetime**| Filter by creation_timestamp | [optional] 
+ **creation_timestamp** | **str**| Filter by creation_timestamp | [optional] 
  **submitter_comment** | **str**| Filter by submitter_comment | [optional] 
  **description** | **str**| Filter by description | [optional] 
  **name** | **str**| Filter by name | [optional] 

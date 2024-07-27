@@ -6,7 +6,7 @@ A publication related to IGVF.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**release_timestamp** | **datetime** | The date the object was released. | [optional] 
+**release_timestamp** | **str** | The date the object was released. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
 **lab** | **str** | Lab associated with the submission. | [optional] 
@@ -16,15 +16,15 @@ Name | Type | Description | Notes
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
-**creation_timestamp** | **datetime** | The date the object was created. | [optional] 
+**creation_timestamp** | **str** | The date the object was created. | [optional] 
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
 **title** | **str** | Title of the publication or communication. | [optional] 
 **abstract** | **str** | Abstract of the publication or communication. | [optional] 
 **authors** | **str** | The authors of the publication. | [optional] 
-**date_published** | **date** | The date the publication or communication was published; must be in YYYY-MM-DD format. | [optional] 
-**date_revised** | **date** | The date the publication was revised. | [optional] 
+**date_published** | **str** | The date the publication or communication was published; must be in YYYY-MM-DD format. | [optional] 
+**date_revised** | **str** | The date the publication was revised. | [optional] 
 **issue** | **str** | The issue of the publication. | [optional] 
 **page** | **str** | Pagination of the reference | [optional] 
 **volume** | **str** | The volume of the publication. | [optional] 

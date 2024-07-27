@@ -6,7 +6,7 @@ A biosample that is directly harvested from a donor as cells, such as fibroblast
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**release_timestamp** | **datetime** | The date the object was released. | [optional] 
+**release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **taxa** | **str** | The species of the organism. | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
-**creation_timestamp** | **datetime** | The date the object was created. | [optional] 
+**creation_timestamp** | **str** | The date the object was created. | [optional] 
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
@@ -47,7 +47,7 @@ Name | Type | Description | Notes
 **starting_amount** | **float** | The initial quantity of samples obtained. | [optional] 
 **starting_amount_units** | **str** | The units used to quantify the amount of samples obtained. | [optional] 
 **dbxrefs** | **List[str]** | Biosample identifiers from external resources, such as Biosample database or Cellosaurus. | [optional] 
-**date_obtained** | **date** | The date the sample was harvested, dissected or created, depending on the type of the sample. | [optional] 
+**date_obtained** | **str** | The date the sample was harvested, dissected or created, depending on the type of the sample. | [optional] 
 **sorted_from** | **str** | Links to a larger sample from which this sample was obtained through sorting. | [optional] 
 **sorted_from_detail** | **str** | Detail for sample sorted into fractions capturing information about sorting. | [optional] 
 **virtual** | **bool** | Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for. | [optional] [default to False]

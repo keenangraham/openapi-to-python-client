@@ -891,8 +891,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -935,8 +934,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -1216,8 +1214,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -1260,8 +1257,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -1304,8 +1300,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -1736,8 +1731,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -1780,8 +1774,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -1824,8 +1817,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -2180,8 +2172,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -2206,8 +2197,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -2250,8 +2240,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -2315,8 +2304,7 @@
             "schema": {
               "title": "Start Date",
               "description": "The date when the award begins.",
-              "type": "string",
-              "format": "date"
+              "type": "string"
             },
             "description": "Filter by start_date",
             "style": "form",
@@ -2328,8 +2316,7 @@
             "schema": {
               "title": "End Date",
               "description": "The date when the award concludes.",
-              "type": "string",
-              "format": "date"
+              "type": "string"
             },
             "description": "Filter by end_date",
             "style": "form",
@@ -2615,8 +2602,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -2659,8 +2645,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -2703,8 +2688,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -3104,8 +3088,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -3165,8 +3148,7 @@
                 },
                 "md5sum": {
                   "title": "MD5sum",
-                  "type": "string",
-                  "format": "md5sum"
+                  "type": "string"
                 },
                 "size": {
                   "title": "File Size",
@@ -3208,8 +3190,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -3252,8 +3233,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -3343,8 +3323,7 @@
               "items": {
                 "title": "URL",
                 "description": "An external resource with additional information to the document.",
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               }
             },
             "description": "Filter by urls",
@@ -3602,8 +3581,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -3665,8 +3643,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -3695,8 +3672,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -3712,8 +3688,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -3799,8 +3774,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -3843,8 +3817,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -4370,8 +4343,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -4433,8 +4405,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -4489,8 +4460,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -4506,8 +4476,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -4593,8 +4562,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -4637,8 +4605,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -5226,8 +5193,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -5273,8 +5239,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -5290,8 +5255,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -5377,8 +5341,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -5421,8 +5384,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -5473,7 +5435,6 @@
               "title": "Content MD5sum",
               "description": "The MD5sum of the uncompressed file.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -5590,7 +5551,6 @@
               "title": "MD5sum",
               "description": "The md5sum of the file being transferred.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -6027,8 +5987,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -6057,8 +6016,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -6074,8 +6032,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -6161,8 +6118,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -6205,8 +6161,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -6257,7 +6212,6 @@
               "title": "Content MD5sum",
               "description": "The MD5sum of the uncompressed file.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -6374,7 +6328,6 @@
               "title": "MD5sum",
               "description": "The md5sum of the file being transferred.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -6807,8 +6760,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -6885,8 +6837,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -6902,8 +6853,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -6989,8 +6939,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -7033,8 +6982,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -7085,7 +7033,6 @@
               "title": "Content MD5sum",
               "description": "The MD5sum of the uncompressed file.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -7203,7 +7150,6 @@
               "title": "MD5sum",
               "description": "The md5sum of the file being transferred.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -7604,8 +7550,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -7634,8 +7579,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -7651,8 +7595,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -7738,8 +7681,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -7782,8 +7724,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -7834,7 +7775,6 @@
               "title": "Content MD5sum",
               "description": "The MD5sum of the uncompressed file.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -7952,7 +7892,6 @@
               "title": "MD5sum",
               "description": "The md5sum of the file being transferred.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -8353,8 +8292,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -8400,8 +8338,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -8417,8 +8354,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -8504,8 +8440,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -8548,8 +8483,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -8600,7 +8534,6 @@
               "title": "Content MD5sum",
               "description": "The MD5sum of the uncompressed file.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -8721,7 +8654,6 @@
               "title": "MD5sum",
               "description": "The md5sum of the file being transferred.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -9200,8 +9132,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -9230,8 +9161,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -9247,8 +9177,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -9334,8 +9263,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -9378,8 +9306,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -9430,7 +9357,6 @@
               "title": "Content MD5sum",
               "description": "The MD5sum of the uncompressed file.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -9550,7 +9476,6 @@
               "title": "MD5sum",
               "description": "The md5sum of the file being transferred.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -9993,8 +9918,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -10071,8 +9995,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -10088,8 +10011,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -10175,8 +10097,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -10219,8 +10140,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -10271,7 +10191,6 @@
               "title": "Content MD5sum",
               "description": "The MD5sum of the uncompressed file.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -10402,7 +10321,6 @@
               "title": "MD5sum",
               "description": "The md5sum of the file being transferred.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -10458,8 +10376,7 @@
             "schema": {
               "title": "Source Url",
               "description": "Link to external resource, such as NCBI or GENCODE, where the reference data was obtained.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by source_url",
             "style": "form",
@@ -10881,8 +10798,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -10911,8 +10827,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -10928,8 +10843,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -11015,8 +10929,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -11059,8 +10972,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -11111,7 +11023,6 @@
               "title": "Content MD5sum",
               "description": "The MD5sum of the uncompressed file.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -11230,7 +11141,6 @@
               "title": "MD5sum",
               "description": "The md5sum of the file being transferred.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -11872,8 +11782,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -11919,8 +11828,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -11936,8 +11844,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -12023,8 +11930,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -12067,8 +11973,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -12119,7 +12024,6 @@
               "title": "Content MD5sum",
               "description": "The MD5sum of the uncompressed file.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -12236,7 +12140,6 @@
               "title": "MD5sum",
               "description": "The md5sum of the file being transferred.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -12743,8 +12646,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -12821,8 +12723,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -12838,8 +12739,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -12925,8 +12825,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -12969,8 +12868,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -13021,7 +12919,6 @@
               "title": "Content MD5sum",
               "description": "The MD5sum of the uncompressed file.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -13143,7 +13040,6 @@
               "title": "MD5sum",
               "description": "The md5sum of the file being transferred.",
               "type": "string",
-              "format": "hex",
               "maxLength": 32,
               "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
             },
@@ -13544,8 +13440,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -13609,8 +13504,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -13626,8 +13520,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -13713,8 +13606,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -13757,8 +13649,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -13852,8 +13743,7 @@
             "schema": {
               "title": "Submitted Files Timestamp",
               "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by submitted_files_timestamp",
             "style": "form",
@@ -14963,8 +14853,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -15028,8 +14917,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -15045,8 +14933,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -15119,8 +15006,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -15145,8 +15031,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -15189,8 +15074,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -15301,8 +15185,7 @@
             "schema": {
               "title": "Submitted Files Timestamp",
               "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by submitted_files_timestamp",
             "style": "form",
@@ -16482,8 +16365,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -16590,8 +16472,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -16607,8 +16488,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -16694,8 +16574,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -16738,8 +16617,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -17052,8 +16930,7 @@
             "schema": {
               "title": "Submitted Files Timestamp",
               "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by submitted_files_timestamp",
             "style": "form",
@@ -17903,8 +17780,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -17984,8 +17860,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -18001,8 +17876,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -18075,8 +17949,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -18101,8 +17974,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -18145,8 +18017,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -18247,8 +18118,7 @@
             "schema": {
               "title": "Submitted Files Timestamp",
               "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by submitted_files_timestamp",
             "style": "form",
@@ -19298,8 +19168,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -19363,8 +19232,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -19380,8 +19248,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -19467,8 +19334,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -19511,8 +19377,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -19693,7 +19558,6 @@
               "title": "External Image URL",
               "description": "Links to the external site where images produced by this measurement are stored.",
               "type": "string",
-              "format": "uri",
               "pattern": "^https://cellpainting-gallery\\.s3\\.amazonaws\\.com(\\S+)$"
             },
             "description": "Filter by external_image_url",
@@ -19728,8 +19592,7 @@
             "schema": {
               "title": "Submitted Files Timestamp",
               "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by submitted_files_timestamp",
             "style": "form",
@@ -21279,8 +21142,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -21344,8 +21206,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -21361,8 +21222,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -21435,8 +21295,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -21461,8 +21320,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -21505,8 +21363,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -21694,8 +21551,7 @@
             "schema": {
               "title": "Submitted Files Timestamp",
               "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by submitted_files_timestamp",
             "style": "form",
@@ -22834,8 +22690,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -22899,8 +22754,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -22916,8 +22770,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -22990,8 +22843,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -23016,8 +22868,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -23060,8 +22911,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -23176,8 +23026,7 @@
             "schema": {
               "title": "Submitted Files Timestamp",
               "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by submitted_files_timestamp",
             "style": "form",
@@ -24394,8 +24243,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -24479,8 +24327,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -24523,8 +24370,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -24575,8 +24421,7 @@
             "schema": {
               "title": "Gene Symbol",
               "description": "Gene symbol approved by the official nomenclature.",
-              "type": "string",
-              "format": "gene_name"
+              "type": "string"
             },
             "description": "Filter by symbol",
             "style": "form",
@@ -24588,8 +24433,7 @@
             "schema": {
               "title": "Name",
               "description": "The full gene name preferably approved by the official nomenclature.",
-              "type": "string",
-              "format": "gene_name"
+              "type": "string"
             },
             "description": "Filter by name",
             "style": "form",
@@ -24605,8 +24449,7 @@
               "items": {
                 "title": "Synonym",
                 "description": "An alternative symbol/name referring to the gene.",
-                "type": "string",
-                "format": "gene_name"
+                "type": "string"
               }
             },
             "description": "Filter by synonyms",
@@ -24917,8 +24760,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -24970,8 +24812,7 @@
                 },
                 "md5sum": {
                   "title": "MD5sum",
-                  "type": "string",
-                  "format": "md5sum"
+                  "type": "string"
                 },
                 "size": {
                   "title": "File Size",
@@ -25013,8 +24854,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -25057,8 +24897,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -25323,8 +25162,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -25367,8 +25205,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -25411,8 +25248,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -25537,8 +25373,7 @@
               "items": {
                 "title": "URL",
                 "description": "An institutional certification form.",
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               }
             },
             "description": "Filter by urls",
@@ -25813,8 +25648,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -25839,8 +25673,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -25883,8 +25716,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -26217,8 +26049,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -26321,8 +26152,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -26365,8 +26195,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -26807,8 +26636,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -26911,8 +26739,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -26955,8 +26782,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -27339,8 +27165,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -27383,8 +27208,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -27427,8 +27251,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -27876,8 +27699,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -27920,8 +27742,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -27964,8 +27785,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -28308,8 +28128,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -28352,8 +28171,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -28396,8 +28214,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -28813,8 +28630,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -28857,8 +28673,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -28901,8 +28716,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -29323,8 +29137,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -29367,8 +29180,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -29411,8 +29223,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -29786,8 +29597,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -29854,8 +29664,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -29898,8 +29707,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -30222,8 +30030,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -30266,8 +30073,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -30310,8 +30116,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -30386,8 +30191,7 @@
             "schema": {
               "title": "Observation Date",
               "description": "The date the feature was observed or measured.",
-              "type": "string",
-              "format": "date"
+              "type": "string"
             },
             "description": "Filter by observation_date",
             "style": "form",
@@ -30683,8 +30487,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -30762,8 +30565,7 @@
                 },
                 "md5sum": {
                   "title": "MD5sum",
-                  "type": "string",
-                  "format": "md5sum"
+                  "type": "string"
                 },
                 "size": {
                   "title": "File Size",
@@ -30805,8 +30607,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -30849,8 +30650,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -30924,8 +30724,7 @@
             "schema": {
               "title": "Publication Date",
               "description": "The date the publication or communication was published; must be in YYYY-MM-DD format.",
-              "type": "string",
-              "format": "date"
+              "type": "string"
             },
             "description": "Filter by date_published",
             "style": "form",
@@ -30937,8 +30736,7 @@
             "schema": {
               "title": "Date Revised",
               "type": "string",
-              "description": "The date the publication was revised.",
-              "format": "date"
+              "description": "The date the publication was revised."
             },
             "description": "Filter by date_revised",
             "style": "form",
@@ -31372,8 +31170,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -31436,8 +31233,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -31492,8 +31288,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -31509,8 +31304,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -31596,8 +31390,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -31640,8 +31433,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -31862,8 +31654,7 @@
             "schema": {
               "title": "Date Collected",
               "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
-              "type": "string",
-              "format": "date"
+              "type": "string"
             },
             "description": "Filter by date_obtained",
             "style": "form",
@@ -33044,8 +32835,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -33092,8 +32882,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -33122,8 +32911,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -33139,8 +32927,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -33226,8 +33013,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -33270,8 +33056,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -33362,8 +33147,7 @@
             "schema": {
               "title": "Date Obtained",
               "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
-              "type": "string",
-              "format": "date"
+              "type": "string"
             },
             "description": "Filter by date_obtained",
             "style": "form",
@@ -34452,8 +34236,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -34516,8 +34299,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -34572,8 +34354,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -34589,8 +34370,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -34676,8 +34456,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -34720,8 +34499,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -34955,8 +34733,7 @@
             "schema": {
               "title": "Date Harvested",
               "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
-              "type": "string",
-              "format": "date"
+              "type": "string"
             },
             "description": "Filter by date_obtained",
             "style": "form",
@@ -35906,8 +35683,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -35954,8 +35730,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -36010,8 +35785,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -36027,8 +35801,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -36114,8 +35887,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -36158,8 +35930,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -36250,8 +36021,7 @@
             "schema": {
               "title": "Date Obtained",
               "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
-              "type": "string",
-              "format": "date"
+              "type": "string"
             },
             "description": "Filter by date_obtained",
             "style": "form",
@@ -36944,8 +36714,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -37008,8 +36777,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -37064,8 +36832,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -37081,8 +36848,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -37168,8 +36934,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -37212,8 +36977,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -37447,8 +37211,7 @@
             "schema": {
               "title": "Date Harvested",
               "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
-              "type": "string",
-              "format": "date"
+              "type": "string"
             },
             "description": "Filter by date_obtained",
             "style": "form",
@@ -37610,8 +37373,7 @@
             "schema": {
               "title": "Common Coordinate Framework Identifier",
               "description": "HubMap Common Coordinate Framework unique identifier corresponding to the organ, biological structure, and spatial location of the tissue specimen.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by ccf_id",
             "style": "form",
@@ -38446,8 +38208,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -38510,8 +38271,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -38566,8 +38326,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -38583,8 +38342,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -38670,8 +38428,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -38714,8 +38471,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -38950,8 +38706,7 @@
             "schema": {
               "title": "Date Obtained",
               "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
-              "type": "string",
-              "format": "date"
+              "type": "string"
             },
             "description": "Filter by date_obtained",
             "style": "form",
@@ -39888,8 +39643,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -39967,8 +39721,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -40011,8 +39764,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -40076,8 +39828,7 @@
             "schema": {
               "title": "Source URL",
               "description": "An external resource to the codebase.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by source_url",
             "style": "form",
@@ -40371,8 +40122,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -40450,8 +40200,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -40494,8 +40243,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -40546,8 +40294,7 @@
             "schema": {
               "title": "Download ID",
               "description": "The MD5 checksum, SHA-1 commit ID, image hash, or similar permanent identifier of the particular version of software used.",
-              "type": "string",
-              "format": "hex"
+              "type": "string"
             },
             "description": "Filter by download_id",
             "style": "form",
@@ -40559,8 +40306,7 @@
             "schema": {
               "title": "Download URL",
               "description": "An external resource to track the version of the software downloaded.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by downloaded_url",
             "style": "form",
@@ -40853,8 +40599,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -40884,8 +40629,7 @@
             "schema": {
               "title": "URL",
               "description": "An external resource with additional information.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             },
             "description": "Filter by url",
             "style": "form",
@@ -40910,8 +40654,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -40954,8 +40697,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -41210,8 +40952,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -41297,8 +41038,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -41341,8 +41081,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -41898,8 +41637,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -41942,8 +41680,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -41982,7 +41719,6 @@
               "title": "Email",
               "type": "string",
               "description": "The email associated with the user's account.",
-              "format": "email",
               "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
             },
             "description": "Filter by email",
@@ -42317,8 +42053,7 @@
             "schema": {
               "title": "Release Timestamp",
               "description": "The date the object was released.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by release_timestamp",
             "style": "form",
@@ -42382,8 +42117,7 @@
             "schema": {
               "title": "Accession",
               "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             },
             "description": "Filter by accession",
             "style": "form",
@@ -42399,8 +42133,7 @@
               "items": {
                 "title": "Alternate Accession",
                 "description": "An accession previously assigned to an object that has been merged with this object.",
-                "type": "string",
-                "format": "accession"
+                "type": "string"
               }
             },
             "description": "Filter by alternate_accessions",
@@ -42486,8 +42219,7 @@
             "schema": {
               "title": "UUID",
               "description": "The unique identifier associated with every object.",
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             },
             "description": "Filter by uuid",
             "style": "form",
@@ -42530,8 +42262,7 @@
             "schema": {
               "title": "Creation Timestamp",
               "description": "The date the object was created.",
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "description": "Filter by creation_timestamp",
             "style": "form",
@@ -42583,7 +42314,6 @@
               "title": "Source URL",
               "description": "An external resource to the code base of the workflow in github.",
               "type": "string",
-              "format": "uri",
               "pattern": "^https?://github\\.com/(\\S+)$"
             },
             "description": "Filter by source_url",
@@ -42600,8 +42330,7 @@
               "items": {
                 "title": "Workflow Repository",
                 "description": "Resource hosting the workflow.",
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               }
             },
             "description": "Filter by workflow_repositories",
@@ -43118,8 +42847,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -43142,8 +42870,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -43214,8 +42941,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "status": {
             "title": "Status",
@@ -43249,8 +42975,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -43273,8 +42998,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -43390,8 +43114,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "status": {
             "title": "Status",
@@ -43425,8 +43148,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -43449,8 +43171,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -43523,8 +43244,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "schema_version": {
             "title": "Schema Version",
@@ -43536,8 +43256,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -43560,8 +43279,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -43595,14 +43313,12 @@
           "start_date": {
             "title": "Start Date",
             "description": "The date when the award begins.",
-            "type": "string",
-            "format": "date"
+            "type": "string"
           },
           "end_date": {
             "title": "End Date",
             "description": "The date when the award concludes.",
-            "type": "string",
-            "format": "date"
+            "type": "string"
           },
           "pis": {
             "title": "Principal Investigators",
@@ -43680,8 +43396,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "status": {
             "title": "Status",
@@ -43715,8 +43430,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -43739,8 +43453,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -43842,8 +43555,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "status": {
             "title": "Status",
@@ -43900,8 +43612,7 @@
               },
               "md5sum": {
                 "title": "MD5sum",
-                "type": "string",
-                "format": "md5sum"
+                "type": "string"
               },
               "size": {
                 "title": "File Size",
@@ -43930,8 +43641,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -43954,8 +43664,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -44016,8 +43725,7 @@
             "items": {
               "title": "URL",
               "description": "An external resource with additional information to the document.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             }
           },
           "@id": {
@@ -44047,8 +43755,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "taxa": {
             "title": "Taxa",
@@ -44084,8 +43791,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "documents": {
             "title": "Documents",
@@ -44111,8 +43817,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -44122,8 +43827,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -44177,8 +43881,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -44201,8 +43904,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -44379,8 +44081,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "taxa": {
             "title": "Taxa",
@@ -44416,8 +44117,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "sources": {
             "title": "Sources",
@@ -44466,8 +44166,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -44477,8 +44176,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -44532,8 +44230,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -44556,8 +44253,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -44719,8 +44415,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "reference_files": {
             "title": "Reference Files",
@@ -44757,8 +44452,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -44768,8 +44462,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -44823,8 +44516,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -44847,8 +44539,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -44876,7 +44567,6 @@
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -44940,7 +44630,6 @@
             "title": "MD5sum",
             "description": "The md5sum of the file being transferred.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -45063,8 +44752,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "documents": {
             "title": "Documents",
@@ -45090,8 +44778,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -45101,8 +44788,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -45156,8 +44842,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -45180,8 +44865,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -45209,7 +44893,6 @@
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -45273,7 +44956,6 @@
             "title": "MD5sum",
             "description": "The md5sum of the file being transferred.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -45400,8 +45082,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "file_format_type": {
             "title": "File Format Type",
@@ -45461,8 +45142,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -45472,8 +45152,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -45527,8 +45206,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -45551,8 +45229,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -45580,7 +45257,6 @@
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -45645,7 +45321,6 @@
             "title": "MD5sum",
             "description": "The md5sum of the file being transferred.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -45753,8 +45428,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "documents": {
             "title": "Documents",
@@ -45780,8 +45454,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -45791,8 +45464,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -45846,8 +45518,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -45870,8 +45541,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -45899,7 +45569,6 @@
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -45964,7 +45633,6 @@
             "title": "MD5sum",
             "description": "The md5sum of the file being transferred.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -46072,8 +45740,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "reference_files": {
             "title": "Reference Files",
@@ -46110,8 +45777,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -46121,8 +45787,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -46176,8 +45841,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -46200,8 +45864,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -46229,7 +45892,6 @@
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -46297,7 +45959,6 @@
             "title": "MD5sum",
             "description": "The md5sum of the file being transferred.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -46448,8 +46109,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "documents": {
             "title": "Documents",
@@ -46475,8 +46135,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -46486,8 +46145,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -46541,8 +46199,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -46565,8 +46222,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -46594,7 +46250,6 @@
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -46661,7 +46316,6 @@
             "title": "MD5sum",
             "description": "The md5sum of the file being transferred.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -46790,8 +46444,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "file_format_type": {
             "title": "File Format Type",
@@ -46851,8 +46504,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -46862,8 +46514,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -46917,8 +46568,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -46941,8 +46591,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -46970,7 +46619,6 @@
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -47048,7 +46696,6 @@
             "title": "MD5sum",
             "description": "The md5sum of the file being transferred.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -47077,8 +46724,7 @@
           "source_url": {
             "title": "Source Url",
             "description": "Link to external resource, such as NCBI or GENCODE, where the reference data was obtained.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "sources": {
             "title": "Sources",
@@ -47194,8 +46840,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "documents": {
             "title": "Documents",
@@ -47221,8 +46866,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -47232,8 +46876,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -47287,8 +46930,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -47311,8 +46953,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -47340,7 +46981,6 @@
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -47406,7 +47046,6 @@
             "title": "MD5sum",
             "description": "The md5sum of the file being transferred.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -47658,8 +47297,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "reference_files": {
             "title": "Reference Files",
@@ -47696,8 +47334,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -47707,8 +47344,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -47762,8 +47398,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -47786,8 +47421,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -47815,7 +47449,6 @@
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -47879,7 +47512,6 @@
             "title": "MD5sum",
             "description": "The md5sum of the file being transferred.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -48037,8 +47669,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "file_format_type": {
             "title": "File Format Type",
@@ -48098,8 +47729,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -48109,8 +47739,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -48164,8 +47793,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -48188,8 +47816,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -48217,7 +47844,6 @@
             "title": "Content MD5sum",
             "description": "The MD5sum of the uncompressed file.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -48286,7 +47912,6 @@
             "title": "MD5sum",
             "description": "The md5sum of the file being transferred.",
             "type": "string",
-            "format": "hex",
             "maxLength": 32,
             "pattern": "[a-f\\d]{32}|[A-F\\d]{32}"
           },
@@ -48405,8 +48030,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publications": {
             "title": "Publications",
@@ -48455,8 +48079,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -48466,8 +48089,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -48521,8 +48143,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -48545,8 +48166,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -48646,8 +48266,7 @@
           "submitted_files_timestamp": {
             "title": "Submitted Files Timestamp",
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "input_file_set_for": {
             "title": "Input File Set For",
@@ -48681,8 +48300,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publications": {
             "title": "Publications",
@@ -48731,8 +48349,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -48742,8 +48359,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -48790,8 +48406,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "schema_version": {
             "title": "Schema Version",
@@ -48803,8 +48418,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -48827,8 +48441,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -48938,8 +48551,7 @@
           "submitted_files_timestamp": {
             "title": "Submitted Files Timestamp",
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "input_file_set_for": {
             "title": "Input File Set For",
@@ -49038,8 +48650,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publications": {
             "title": "Publications",
@@ -49111,8 +48722,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -49122,8 +48732,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -49177,8 +48786,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -49201,8 +48809,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -49430,8 +49037,7 @@
           "submitted_files_timestamp": {
             "title": "Submitted Files Timestamp",
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "input_file_set_for": {
             "title": "Input File Set For",
@@ -49464,8 +49070,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "taxa": {
             "title": "Taxa",
@@ -49523,8 +49128,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -49534,8 +49138,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -49582,8 +49185,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "schema_version": {
             "title": "Schema Version",
@@ -49595,8 +49197,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -49619,8 +49220,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -49727,8 +49327,7 @@
           "submitted_files_timestamp": {
             "title": "Submitted Files Timestamp",
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "input_file_set_for": {
             "title": "Input File Set For",
@@ -49771,8 +49370,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publications": {
             "title": "Publications",
@@ -49821,8 +49419,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -49832,8 +49429,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -49887,8 +49483,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -49911,8 +49506,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -50093,7 +49687,6 @@
             "title": "External Image URL",
             "description": "Links to the external site where images produced by this measurement are stored.",
             "type": "string",
-            "format": "uri",
             "pattern": "^https://cellpainting-gallery\\.s3\\.amazonaws\\.com(\\S+)$"
           },
           "targeted_genes": {
@@ -50144,8 +49737,7 @@
           "submitted_files_timestamp": {
             "title": "Submitted Files Timestamp",
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "input_file_set_for": {
             "title": "Input File Set For",
@@ -50204,8 +49796,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publications": {
             "title": "Publications",
@@ -50254,8 +49845,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -50265,8 +49855,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -50313,8 +49902,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "schema_version": {
             "title": "Schema Version",
@@ -50326,8 +49914,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -50350,8 +49937,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -50505,8 +50091,7 @@
           "submitted_files_timestamp": {
             "title": "Submitted Files Timestamp",
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "input_file_set_for": {
             "title": "Input File Set For",
@@ -50624,8 +50209,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publications": {
             "title": "Publications",
@@ -50674,8 +50258,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -50685,8 +50268,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -50733,8 +50315,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "schema_version": {
             "title": "Schema Version",
@@ -50746,8 +50327,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -50770,8 +50350,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -50885,8 +50464,7 @@
           "submitted_files_timestamp": {
             "title": "Submitted Files Timestamp",
             "description": "The timestamp the first file object in the file_set or associated auxiliary sets was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "input_file_set_for": {
             "title": "Input File Set For",
@@ -50909,8 +50487,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "transcriptome_annotation": {
             "title": "Transcriptome Annotation",
@@ -50961,8 +50538,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -50985,8 +50561,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -51014,14 +50589,12 @@
           "symbol": {
             "title": "Gene Symbol",
             "description": "Gene symbol approved by the official nomenclature.",
-            "type": "string",
-            "format": "gene_name"
+            "type": "string"
           },
           "name": {
             "title": "Name",
             "description": "The full gene name preferably approved by the official nomenclature.",
-            "type": "string",
-            "format": "gene_name"
+            "type": "string"
           },
           "synonyms": {
             "title": "Synonyms",
@@ -51031,8 +50604,7 @@
             "items": {
               "title": "Synonym",
               "description": "An alternative symbol/name referring to the gene.",
-              "type": "string",
-              "format": "gene_name"
+              "type": "string"
             }
           },
           "dbxrefs": {
@@ -51136,8 +50708,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "status": {
             "title": "Status",
@@ -51176,8 +50747,7 @@
               },
               "md5sum": {
                 "title": "MD5sum",
-                "type": "string",
-                "format": "md5sum"
+                "type": "string"
               },
               "size": {
                 "title": "File Size",
@@ -51206,8 +50776,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -51230,8 +50799,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -51292,8 +50860,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "status": {
             "title": "Status",
@@ -51327,8 +50894,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -51351,8 +50917,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -51429,8 +50994,7 @@
             "items": {
               "title": "URL",
               "description": "An institutional certification form.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             }
           },
           "@id": {
@@ -51471,8 +51035,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "schema_version": {
             "title": "Schema Version",
@@ -51484,8 +51047,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -51508,8 +51070,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -51588,8 +51149,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "sources": {
             "title": "Sources",
@@ -51657,8 +51217,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -51681,8 +51240,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -51824,8 +51382,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "sources": {
             "title": "Sources",
@@ -51893,8 +51450,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -51917,8 +51473,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -52018,8 +51573,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "status": {
             "title": "Status",
@@ -52043,8 +51597,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -52067,8 +51620,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -52257,8 +51809,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "status": {
             "title": "Status",
@@ -52282,8 +51833,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -52306,8 +51856,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -52415,8 +51964,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "status": {
             "title": "Status",
@@ -52440,8 +51988,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -52464,8 +52011,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -52633,8 +52179,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "status": {
             "title": "Status",
@@ -52658,8 +52203,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -52682,8 +52226,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -52839,8 +52382,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "status": {
             "title": "Status",
@@ -52864,8 +52406,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -52888,8 +52429,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -53001,8 +52541,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "lab": {
             "title": "Lab",
@@ -53036,8 +52575,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -53060,8 +52598,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -53167,8 +52704,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "status": {
             "title": "Status",
@@ -53202,8 +52738,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -53226,8 +52761,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -53277,8 +52811,7 @@
           "observation_date": {
             "title": "Observation Date",
             "description": "The date the feature was observed or measured.",
-            "type": "string",
-            "format": "date"
+            "type": "string"
           },
           "@id": {
             "title": "ID",
@@ -53307,8 +52840,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publication_identifiers": {
             "title": "Publication Identifiers",
@@ -53377,8 +52909,7 @@
               },
               "md5sum": {
                 "title": "MD5sum",
-                "type": "string",
-                "format": "md5sum"
+                "type": "string"
               },
               "size": {
                 "title": "File Size",
@@ -53407,8 +52938,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -53431,8 +52961,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -53469,14 +52998,12 @@
           "date_published": {
             "title": "Publication Date",
             "description": "The date the publication or communication was published; must be in YYYY-MM-DD format.",
-            "type": "string",
-            "format": "date"
+            "type": "string"
           },
           "date_revised": {
             "title": "Date Revised",
             "type": "string",
-            "description": "The date the publication was revised.",
-            "format": "date"
+            "description": "The date the publication was revised."
           },
           "issue": {
             "title": "Issue",
@@ -53608,8 +53135,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publications": {
             "title": "Publications",
@@ -53646,8 +53172,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "sources": {
             "title": "Sources",
@@ -53696,8 +53221,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -53707,8 +53231,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -53762,8 +53285,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -53786,8 +53308,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -53959,8 +53480,7 @@
           "date_obtained": {
             "title": "Date Collected",
             "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
-            "type": "string",
-            "format": "date"
+            "type": "string"
           },
           "sorted_from": {
             "title": "Sorted From",
@@ -54274,8 +53794,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publications": {
             "title": "Publications",
@@ -54303,8 +53822,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "documents": {
             "title": "Documents",
@@ -54330,8 +53848,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -54341,8 +53858,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -54396,8 +53912,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -54420,8 +53935,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -54476,8 +53990,7 @@
           "date_obtained": {
             "title": "Date Obtained",
             "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
-            "type": "string",
-            "format": "date"
+            "type": "string"
           },
           "sorted_from": {
             "title": "Sorted From",
@@ -54727,8 +54240,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publications": {
             "title": "Publications",
@@ -54765,8 +54277,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "sources": {
             "title": "Sources",
@@ -54815,8 +54326,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -54826,8 +54336,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -54881,8 +54390,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -54905,8 +54413,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -55079,8 +54586,7 @@
           "date_obtained": {
             "title": "Date Harvested",
             "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
-            "type": "string",
-            "format": "date"
+            "type": "string"
           },
           "sorted_from": {
             "title": "Sorted From",
@@ -55291,8 +54797,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publications": {
             "title": "Publications",
@@ -55320,8 +54825,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "sources": {
             "title": "Sources",
@@ -55370,8 +54874,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -55381,8 +54884,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -55436,8 +54938,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -55460,8 +54961,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -55516,8 +55016,7 @@
           "date_obtained": {
             "title": "Date Obtained",
             "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
-            "type": "string",
-            "format": "date"
+            "type": "string"
           },
           "sorted_from": {
             "title": "Sorted From",
@@ -55706,8 +55205,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publications": {
             "title": "Publications",
@@ -55744,8 +55242,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "sources": {
             "title": "Sources",
@@ -55794,8 +55291,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -55805,8 +55301,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -55860,8 +55355,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -55884,8 +55378,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -56058,8 +55551,7 @@
           "date_obtained": {
             "title": "Date Harvested",
             "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
-            "type": "string",
-            "format": "date"
+            "type": "string"
           },
           "sorted_from": {
             "title": "Sorted From",
@@ -56152,8 +55644,7 @@
           "ccf_id": {
             "title": "Common Coordinate Framework Identifier",
             "description": "HubMap Common Coordinate Framework unique identifier corresponding to the organ, biological structure, and spatial location of the tissue specimen.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "preservation_method": {
             "title": "Preservation Method",
@@ -56311,8 +55802,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "taxa": {
             "title": "Taxa",
@@ -56349,8 +55839,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "sources": {
             "title": "Sources",
@@ -56399,8 +55888,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -56410,8 +55898,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -56465,8 +55952,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -56489,8 +55975,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -56667,8 +56152,7 @@
           "date_obtained": {
             "title": "Date Obtained",
             "description": "The date the sample was harvested, dissected or created, depending on the type of the sample.",
-            "type": "string",
-            "format": "date"
+            "type": "string"
           },
           "sorted_from": {
             "title": "Sorted From",
@@ -56873,8 +56357,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publications": {
             "title": "Publications",
@@ -56931,8 +56414,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -56955,8 +56437,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -56990,8 +56471,7 @@
           "source_url": {
             "title": "Source URL",
             "description": "An external resource to the codebase.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "used_by": {
             "title": "Used by",
@@ -57065,8 +56545,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publications": {
             "title": "Publications",
@@ -57123,8 +56602,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -57147,8 +56625,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -57181,14 +56658,12 @@
           "download_id": {
             "title": "Download ID",
             "description": "The MD5 checksum, SHA-1 commit ID, image hash, or similar permanent identifier of the particular version of software used.",
-            "type": "string",
-            "format": "hex"
+            "type": "string"
           },
           "downloaded_url": {
             "title": "Download URL",
             "description": "An external resource to track the version of the software downloaded.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "@id": {
             "title": "ID",
@@ -57222,8 +56697,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "status": {
             "title": "Status",
@@ -57240,8 +56714,7 @@
           "url": {
             "title": "URL",
             "description": "An external resource with additional information.",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "schema_version": {
             "title": "Schema Version",
@@ -57253,8 +56726,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -57277,8 +56749,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -57336,8 +56807,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "lab": {
             "title": "Lab",
@@ -57405,8 +56875,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -57429,8 +56898,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -57619,8 +57087,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -57643,8 +57110,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -57667,7 +57133,6 @@
             "title": "Email",
             "type": "string",
             "description": "The email associated with the user's account.",
-            "format": "email",
             "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
           },
           "first_name": {
@@ -57775,8 +57240,7 @@
           "release_timestamp": {
             "title": "Release Timestamp",
             "description": "The date the object was released.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "publications": {
             "title": "Publications",
@@ -57825,8 +57289,7 @@
           "accession": {
             "title": "Accession",
             "description": "A unique identifier to be used to reference the object prefixed with IGVF.",
-            "type": "string",
-            "format": "accession"
+            "type": "string"
           },
           "alternate_accessions": {
             "title": "Alternate Accessions",
@@ -57836,8 +57299,7 @@
             "items": {
               "title": "Alternate Accession",
               "description": "An accession previously assigned to an object that has been merged with this object.",
-              "type": "string",
-              "format": "accession"
+              "type": "string"
             }
           },
           "collections": {
@@ -57891,8 +57353,7 @@
           "uuid": {
             "title": "UUID",
             "description": "The unique identifier associated with every object.",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "notes": {
             "title": "Notes",
@@ -57915,8 +57376,7 @@
           "creation_timestamp": {
             "title": "Creation Timestamp",
             "description": "The date the object was created.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "submitted_by": {
             "title": "Submitted By",
@@ -57945,7 +57405,6 @@
             "title": "Source URL",
             "description": "An external resource to the code base of the workflow in github.",
             "type": "string",
-            "format": "uri",
             "pattern": "^https?://github\\.com/(\\S+)$"
           },
           "workflow_repositories": {
@@ -57956,8 +57415,7 @@
             "items": {
               "title": "Workflow Repository",
               "description": "Resource hosting the workflow.",
-              "type": "string",
-              "format": "uri"
+              "type": "string"
             }
           },
           "standards_page": {

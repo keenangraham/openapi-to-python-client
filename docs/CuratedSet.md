@@ -6,7 +6,7 @@ A file set for reference files which are utilized in the analysis of IGVF experi
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**release_timestamp** | **datetime** | The date the object was released. | [optional] 
+**release_timestamp** | **str** | The date the object was released. | [optional] 
 **taxa** | **str** | The species of the organism. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
-**creation_timestamp** | **datetime** | The date the object was created. | [optional] 
+**creation_timestamp** | **str** | The date the object was created. | [optional] 
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 **summary** | **str** |  | [optional] 
 **files** | **List[str]** | The files associated with this file set. | [optional] 
 **control_for** | **List[str]** | The file sets for which this file set is a control. | [optional] 
-**submitted_files_timestamp** | **datetime** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
+**submitted_files_timestamp** | **str** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
 **input_file_set_for** | **List[str]** | The file sets that use this file set as an input. | [optional] 
 **assemblies** | **List[str]** | The genome assemblies to which the referencing files in the file set are utilizing (e.g., GRCh38). | [optional] 
 **transcriptome_annotations** | **List[str]** | The annotation versions of the reference resource. | [optional] 

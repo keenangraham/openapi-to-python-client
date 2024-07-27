@@ -7,7 +7,7 @@ A binary file containing genome annotations which are indexed and can be visuali
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assembly** | **str** | Genome assembly applicable for the annotation data. | [optional] 
-**release_timestamp** | **datetime** | The date the object was released. | [optional] 
+**release_timestamp** | **str** | The date the object was released. | [optional] 
 **file_format_type** | **str** | The subtype of bed files. | [optional] 
 **transcriptome_annotation** | **str** | The annotation and version of the reference resource. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
-**creation_timestamp** | **datetime** | The date the object was created. | [optional] 
+**creation_timestamp** | **str** | The date the object was created. | [optional] 
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 

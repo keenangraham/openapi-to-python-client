@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **large_scale_loci_list** | **str** | A large scale list (&gt;100) of specific chromosomal regions. | [optional] 
 **small_scale_gene_list** | **List[str]** | The specific, small scale list of (&lt;&#x3D;100) gene(s) this prediction set targets. | [optional] 
 **large_scale_gene_list** | **str** | The large scale list of (&gt;100 genes) this this prediction set targets. | [optional] 
-**release_timestamp** | **datetime** | The date the object was released. | [optional] 
+**release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
-**creation_timestamp** | **datetime** | The date the object was created. | [optional] 
+**creation_timestamp** | **str** | The date the object was created. | [optional] 
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 **summary** | **str** | A summary of the prediction set. | [optional] 
 **files** | **List[str]** | The files associated with this file set. | [optional] 
 **control_for** | **List[str]** | The file sets for which this file set is a control. | [optional] 
-**submitted_files_timestamp** | **datetime** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
+**submitted_files_timestamp** | **str** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
 **input_file_set_for** | **List[str]** | The file sets that use this file set as an input. | [optional] 
 
 ## Example
