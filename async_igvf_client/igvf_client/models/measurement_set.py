@@ -17,7 +17,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
@@ -28,7 +27,7 @@ class MeasurementSet(BaseModel):
     """
     Measurement set is a file set that hosts raw data files (e.g. FASTQs) resulting from sequencing of a library prepared from the nucleic acids of the sample that is the main target of the assay. For example sequencing of accessible regions in the genome, or sequencing of the transcriptome of the sample. The assay can either be bulk or single cell type. The sample specific raw sequencing results will be captured in the measurement sets. The files in the measurement sets are specific to the sample being investigated. See auxiliary sets for files that are not a direct result of sequencing the sample under investigation.
     """ # noqa: E501
-    release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
     publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
@@ -37,20 +36,20 @@ class MeasurementSet(BaseModel):
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[List[StrictStr]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[List[StrictStr]] = Field(default=None, description="Some samples are part of particular data collections.")
-    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
+    status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
     revoke_detail: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Explanation of why an object was transitioned to the revoked status.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='17', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
-    creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
+    creation_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was created.")
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     dbxrefs: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets.")
     samples: Optional[List[StrictStr]] = Field(default=None, description="The sample(s) associated with this file set.")
     donors: Optional[List[StrictStr]] = Field(default=None, description="The donors of the samples associated with this measurement set.")
-    file_set_type: Optional[StrictStr] = Field(default='experimental data', description="The category that best describes this measurement set.")
+    file_set_type: Optional[StrictStr] = Field(default=None, description="The category that best describes this measurement set.")
     assay_term: Optional[StrictStr] = Field(default=None, description="The assay used to produce data in this measurement set.")
     library_construction_platform: Optional[StrictStr] = Field(default=None, description="The platform used to construct the library sequenced in this measurement set.")
     protocols: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Links to the protocol(s) for conducting the assay on Protocols.io.")
@@ -66,7 +65,7 @@ class MeasurementSet(BaseModel):
     summary: Optional[StrictStr] = None
     files: Optional[List[StrictStr]] = Field(default=None, description="The files associated with this file set.")
     control_for: Optional[List[StrictStr]] = Field(default=None, description="The file sets for which this file set is a control.")
-    submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
+    submitted_files_timestamp: Optional[StrictStr] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
     input_file_set_for: Optional[List[StrictStr]] = Field(default=None, description="The file sets that use this file set as an input.")
     related_multiome_datasets: Optional[List[StrictStr]] = Field(default=None, description="Related datasets included in the multiome experiment this measurement set is a part of.")
     __properties: ClassVar[List[str]] = ["release_timestamp", "publications", "publication_identifiers", "documents", "lab", "award", "accession", "alternate_accessions", "collections", "status", "revoke_detail", "schema_version", "uuid", "notes", "aliases", "creation_timestamp", "submitted_by", "submitter_comment", "description", "dbxrefs", "samples", "donors", "file_set_type", "assay_term", "library_construction_platform", "protocols", "preferred_assay_title", "multiome_size", "control_file_sets", "sequencing_library_types", "auxiliary_sets", "external_image_url", "targeted_genes", "@id", "@type", "summary", "files", "control_for", "submitted_files_timestamp", "input_file_set_for", "related_multiome_datasets"]
@@ -243,9 +242,9 @@ class MeasurementSet(BaseModel):
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
-            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
+            "status": obj.get("status"),
             "revoke_detail": obj.get("revoke_detail"),
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '17',
+            "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
@@ -256,7 +255,7 @@ class MeasurementSet(BaseModel):
             "dbxrefs": obj.get("dbxrefs"),
             "samples": obj.get("samples"),
             "donors": obj.get("donors"),
-            "file_set_type": obj.get("file_set_type") if obj.get("file_set_type") is not None else 'experimental data',
+            "file_set_type": obj.get("file_set_type"),
             "assay_term": obj.get("assay_term"),
             "library_construction_platform": obj.get("library_construction_platform"),
             "protocols": obj.get("protocols"),

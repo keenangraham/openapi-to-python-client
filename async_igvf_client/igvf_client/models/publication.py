@@ -17,7 +17,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import date, datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
@@ -29,25 +28,25 @@ class Publication(BaseModel):
     """
     A publication related to IGVF.
     """ # noqa: E501
-    release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
-    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
+    status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     attachment: Optional[Attachment2] = None
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='6', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
-    creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
+    creation_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was created.")
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     title: Optional[StrictStr] = Field(default=None, description="Title of the publication or communication.")
     abstract: Optional[StrictStr] = Field(default=None, description="Abstract of the publication or communication.")
     authors: Optional[StrictStr] = Field(default=None, description="The authors of the publication.")
-    date_published: Optional[date] = Field(default=None, description="The date the publication or communication was published; must be in YYYY-MM-DD format.")
-    date_revised: Optional[date] = Field(default=None, description="The date the publication was revised.")
+    date_published: Optional[StrictStr] = Field(default=None, description="The date the publication or communication was published; must be in YYYY-MM-DD format.")
+    date_revised: Optional[StrictStr] = Field(default=None, description="The date the publication was revised.")
     issue: Optional[StrictStr] = Field(default=None, description="The issue of the publication.")
     page: Optional[StrictStr] = Field(default=None, description="Pagination of the reference")
     volume: Optional[StrictStr] = Field(default=None, description="The volume of the publication.")
@@ -190,11 +189,11 @@ class Publication(BaseModel):
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
             "publication_identifiers": obj.get("publication_identifiers"),
-            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
+            "status": obj.get("status"),
             "lab": obj.get("lab"),
             "award": obj.get("award"),
             "attachment": Attachment2.from_dict(obj["attachment"]) if obj.get("attachment") is not None else None,
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '6',
+            "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
