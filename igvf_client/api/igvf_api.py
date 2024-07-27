@@ -44092,7 +44092,7 @@ class IgvfApi:
         type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -44106,7 +44106,7 @@ class IgvfApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SearchResults:
-        """Search for items in the IGVF Project
+        """Search for items in the IGVF Project.
 
         Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
 
@@ -44118,7 +44118,7 @@ class IgvfApi:
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.
         :type sort: List[str]
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
+        :param field_filters: Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -44176,7 +44176,7 @@ class IgvfApi:
         type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -44190,7 +44190,7 @@ class IgvfApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SearchResults]:
-        """Search for items in the IGVF Project
+        """Search for items in the IGVF Project.
 
         Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
 
@@ -44202,7 +44202,7 @@ class IgvfApi:
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.
         :type sort: List[str]
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
+        :param field_filters: Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -44260,7 +44260,7 @@ class IgvfApi:
         type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -44274,7 +44274,7 @@ class IgvfApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search for items in the IGVF Project
+        """Search for items in the IGVF Project.
 
         Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
 
@@ -44286,7 +44286,7 @@ class IgvfApi:
         :type limit: Limit
         :param sort: Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all.
         :type sort: List[str]
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
+        :param field_filters: Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

@@ -88,7 +88,7 @@ Class | Method | HTTP request | Description
 *IgvfApi* | [**sample_terms**](docs/IgvfApi.md#sample_terms) | **GET** /sample-terms/@@listing | List items in the SampleTerm collection.
 *IgvfApi* | [**schema_for_item_type**](docs/IgvfApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schema for item type
 *IgvfApi* | [**schemas**](docs/IgvfApi.md#schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
-*IgvfApi* | [**search**](docs/IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project
+*IgvfApi* | [**search**](docs/IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project.
 *IgvfApi* | [**sequence_files**](docs/IgvfApi.md#sequence_files) | **GET** /sequence-files/@@listing | List items in the SequenceFile collection.
 *IgvfApi* | [**signal_files**](docs/IgvfApi.md#signal_files) | **GET** /signal-files/@@listing | List items in the SignalFile collection.
 *IgvfApi* | [**software**](docs/IgvfApi.md#software) | **GET** /software/@@listing | List items in the Software collection.

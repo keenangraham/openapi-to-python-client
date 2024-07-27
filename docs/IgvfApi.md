@@ -49,7 +49,7 @@ Method | HTTP request | Description
 [**sample_terms**](IgvfApi.md#sample_terms) | **GET** /sample-terms/@@listing | List items in the SampleTerm collection.
 [**schema_for_item_type**](IgvfApi.md#schema_for_item_type) | **GET** /profiles/{item_type} | Retrieve JSON schema for item type
 [**schemas**](IgvfApi.md#schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
-[**search**](IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project
+[**search**](IgvfApi.md#search) | **GET** /search | Search for items in the IGVF Project.
 [**sequence_files**](IgvfApi.md#sequence_files) | **GET** /sequence-files/@@listing | List items in the SequenceFile collection.
 [**signal_files**](IgvfApi.md#signal_files) | **GET** /signal-files/@@listing | List items in the SignalFile collection.
 [**software**](IgvfApi.md#software) | **GET** /software/@@listing | List items in the Software collection.
@@ -4077,7 +4077,7 @@ This endpoint does not need any parameter.
 # **search**
 > SearchResults search(query=query, type=type, limit=limit, sort=sort, field_filters=field_filters)
 
-Search for items in the IGVF Project
+Search for items in the IGVF Project.
 
 Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
 
@@ -4088,7 +4088,7 @@ from igvf_client import IgvfApi
 
 api = IgvfApi()
 
-api.search(**parameters) # Search for items in the IGVF Project 
+api.search(**parameters) # Search for items in the IGVF Project. 
 ```
 
 
@@ -4102,7 +4102,7 @@ Name | Type | Description  | Notes
  **type** | [**List[str]**](List[str].md)| Filter by item type. | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Does not work with limit&#x3D;all. | [optional] 
- **field_filters** | [**object**](object.md)| Any field from any object type can be used as a filter. Use &#39;!&#39; at end of field name for negation and &#39;lt:&#39;, &#39;lte:&#39;, &#39;gt:&#39;, &#39;gte:&#39; with value for range queries on numeric fields. Examples: {&#39;status!&#39;: &#39;in progress&#39;, &#39;file_size&#39;: &#39;gte:30000&#39;} | [optional] 
+ **field_filters** | [**object**](object.md)| Any field from any item type can be used as a filter. Use &#39;!&#39; at end of field name for negation and &#39;lt:&#39;, &#39;lte:&#39;, &#39;gt:&#39;, &#39;gte:&#39; with value for range queries on numeric fields. Examples: {&#39;status!&#39;: &#39;in progress&#39;, &#39;file_size&#39;: &#39;gte:30000&#39;} | [optional] 
 
 ### Return type
 

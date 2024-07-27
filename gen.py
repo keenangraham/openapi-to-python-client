@@ -84,7 +84,7 @@ def generate_openapi_spec(schemas):
             },
             "/search": {
                 "get": {
-                    "summary": "Search for items in the IGVF Project",
+                    "summary": "Search for items in the IGVF Project.",
                     "description": "Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.",
                     "operationId": "search",
                     "parameters": [
@@ -125,7 +125,7 @@ def generate_openapi_spec(schemas):
                             "schema": {
                                 "type": "object"
                             },
-                            "description": "Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}",
+                            "description": "Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}",
                             "style": "form",
                             "explode": True,
                         },
