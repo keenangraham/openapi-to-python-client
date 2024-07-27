@@ -1888,16 +1888,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -1909,21 +1909,21 @@ class IgvfApi:
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
         input_file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.@id")] = None,
         input_file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.accession")] = None,
-        input_file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by input_file_sets.aliases")] = None,
+        input_file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by input_file_sets.aliases")] = None,
         input_file_sets_file_set_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.file_set_type")] = None,
         lab_id: Annotated[Optional[StrictStr], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[StrictStr], Field(description="Filter by lab.title")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
-        samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.construct_library_sets")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
+        samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -1932,7 +1932,7 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -2019,13 +2019,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -2037,7 +2037,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -2061,7 +2061,7 @@ class IgvfApi:
         :param input_file_sets_accession: Filter by input_file_sets.accession
         :type input_file_sets_accession: List[str]
         :param input_file_sets_aliases: Filter by input_file_sets.aliases
-        :type input_file_sets_aliases: List[List[str]]
+        :type input_file_sets_aliases: List[str]
         :param input_file_sets_file_set_type: Filter by input_file_sets.file_set_type
         :type input_file_sets_file_set_type: List[str]
         :param lab_id: Filter by lab.@id
@@ -2073,23 +2073,23 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets: Filter by samples.construct_library_sets
-        :type samples_construct_library_sets: List[List[str]]
+        :type samples_construct_library_sets: List[str]
         :param samples_disease_terms_id: Filter by samples.disease_terms.@id
         :type samples_disease_terms_id: List[str]
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -2107,7 +2107,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -2274,16 +2274,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -2295,21 +2295,21 @@ class IgvfApi:
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
         input_file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.@id")] = None,
         input_file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.accession")] = None,
-        input_file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by input_file_sets.aliases")] = None,
+        input_file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by input_file_sets.aliases")] = None,
         input_file_sets_file_set_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.file_set_type")] = None,
         lab_id: Annotated[Optional[StrictStr], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[StrictStr], Field(description="Filter by lab.title")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
-        samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.construct_library_sets")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
+        samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -2318,7 +2318,7 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -2405,13 +2405,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -2423,7 +2423,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -2447,7 +2447,7 @@ class IgvfApi:
         :param input_file_sets_accession: Filter by input_file_sets.accession
         :type input_file_sets_accession: List[str]
         :param input_file_sets_aliases: Filter by input_file_sets.aliases
-        :type input_file_sets_aliases: List[List[str]]
+        :type input_file_sets_aliases: List[str]
         :param input_file_sets_file_set_type: Filter by input_file_sets.file_set_type
         :type input_file_sets_file_set_type: List[str]
         :param lab_id: Filter by lab.@id
@@ -2459,23 +2459,23 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets: Filter by samples.construct_library_sets
-        :type samples_construct_library_sets: List[List[str]]
+        :type samples_construct_library_sets: List[str]
         :param samples_disease_terms_id: Filter by samples.disease_terms.@id
         :type samples_disease_terms_id: List[str]
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -2493,7 +2493,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -2660,16 +2660,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -2681,21 +2681,21 @@ class IgvfApi:
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
         input_file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.@id")] = None,
         input_file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.accession")] = None,
-        input_file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by input_file_sets.aliases")] = None,
+        input_file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by input_file_sets.aliases")] = None,
         input_file_sets_file_set_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.file_set_type")] = None,
         lab_id: Annotated[Optional[StrictStr], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[StrictStr], Field(description="Filter by lab.title")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
-        samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.construct_library_sets")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
+        samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -2704,7 +2704,7 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -2791,13 +2791,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -2809,7 +2809,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -2833,7 +2833,7 @@ class IgvfApi:
         :param input_file_sets_accession: Filter by input_file_sets.accession
         :type input_file_sets_accession: List[str]
         :param input_file_sets_aliases: Filter by input_file_sets.aliases
-        :type input_file_sets_aliases: List[List[str]]
+        :type input_file_sets_aliases: List[str]
         :param input_file_sets_file_set_type: Filter by input_file_sets.file_set_type
         :type input_file_sets_file_set_type: List[str]
         :param lab_id: Filter by lab.@id
@@ -2845,23 +2845,23 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets: Filter by samples.construct_library_sets
-        :type samples_construct_library_sets: List[List[str]]
+        :type samples_construct_library_sets: List[str]
         :param samples_disease_terms_id: Filter by samples.disease_terms.@id
         :type samples_disease_terms_id: List[str]
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -2879,7 +2879,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -5816,16 +5816,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -5839,19 +5839,19 @@ class IgvfApi:
         lab_title: Annotated[Optional[StrictStr], Field(description="Filter by lab.title")] = None,
         measurement_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.@id")] = None,
         measurement_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.accession")] = None,
-        measurement_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by measurement_sets.aliases")] = None,
+        measurement_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by measurement_sets.aliases")] = None,
         measurement_sets_preferred_assay_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.preferred_assay_title")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
-        samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.construct_library_sets")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
+        samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -5860,7 +5860,7 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -5949,13 +5949,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -5967,7 +5967,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -5995,7 +5995,7 @@ class IgvfApi:
         :param measurement_sets_accession: Filter by measurement_sets.accession
         :type measurement_sets_accession: List[str]
         :param measurement_sets_aliases: Filter by measurement_sets.aliases
-        :type measurement_sets_aliases: List[List[str]]
+        :type measurement_sets_aliases: List[str]
         :param measurement_sets_preferred_assay_title: Filter by measurement_sets.preferred_assay_title
         :type measurement_sets_preferred_assay_title: List[str]
         :param samples_id: Filter by samples.@id
@@ -6003,23 +6003,23 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets: Filter by samples.construct_library_sets
-        :type samples_construct_library_sets: List[List[str]]
+        :type samples_construct_library_sets: List[str]
         :param samples_disease_terms_id: Filter by samples.disease_terms.@id
         :type samples_disease_terms_id: List[str]
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -6037,7 +6037,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -6206,16 +6206,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -6229,19 +6229,19 @@ class IgvfApi:
         lab_title: Annotated[Optional[StrictStr], Field(description="Filter by lab.title")] = None,
         measurement_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.@id")] = None,
         measurement_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.accession")] = None,
-        measurement_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by measurement_sets.aliases")] = None,
+        measurement_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by measurement_sets.aliases")] = None,
         measurement_sets_preferred_assay_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.preferred_assay_title")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
-        samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.construct_library_sets")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
+        samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -6250,7 +6250,7 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -6339,13 +6339,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -6357,7 +6357,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -6385,7 +6385,7 @@ class IgvfApi:
         :param measurement_sets_accession: Filter by measurement_sets.accession
         :type measurement_sets_accession: List[str]
         :param measurement_sets_aliases: Filter by measurement_sets.aliases
-        :type measurement_sets_aliases: List[List[str]]
+        :type measurement_sets_aliases: List[str]
         :param measurement_sets_preferred_assay_title: Filter by measurement_sets.preferred_assay_title
         :type measurement_sets_preferred_assay_title: List[str]
         :param samples_id: Filter by samples.@id
@@ -6393,23 +6393,23 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets: Filter by samples.construct_library_sets
-        :type samples_construct_library_sets: List[List[str]]
+        :type samples_construct_library_sets: List[str]
         :param samples_disease_terms_id: Filter by samples.disease_terms.@id
         :type samples_disease_terms_id: List[str]
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -6427,7 +6427,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -6596,16 +6596,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -6619,19 +6619,19 @@ class IgvfApi:
         lab_title: Annotated[Optional[StrictStr], Field(description="Filter by lab.title")] = None,
         measurement_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.@id")] = None,
         measurement_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.accession")] = None,
-        measurement_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by measurement_sets.aliases")] = None,
+        measurement_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by measurement_sets.aliases")] = None,
         measurement_sets_preferred_assay_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by measurement_sets.preferred_assay_title")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
-        samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.construct_library_sets")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
+        samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -6640,7 +6640,7 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -6729,13 +6729,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -6747,7 +6747,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -6775,7 +6775,7 @@ class IgvfApi:
         :param measurement_sets_accession: Filter by measurement_sets.accession
         :type measurement_sets_accession: List[str]
         :param measurement_sets_aliases: Filter by measurement_sets.aliases
-        :type measurement_sets_aliases: List[List[str]]
+        :type measurement_sets_aliases: List[str]
         :param measurement_sets_preferred_assay_title: Filter by measurement_sets.preferred_assay_title
         :type measurement_sets_preferred_assay_title: List[str]
         :param samples_id: Filter by samples.@id
@@ -6783,23 +6783,23 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets: Filter by samples.construct_library_sets
-        :type samples_construct_library_sets: List[List[str]]
+        :type samples_construct_library_sets: List[str]
         :param samples_disease_terms_id: Filter by samples.disease_terms.@id
         :type samples_disease_terms_id: List[str]
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -6817,7 +6817,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -10371,7 +10371,7 @@ class IgvfApi:
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         applied_to_samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.@id")] = None,
         applied_to_samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.accession")] = None,
-        applied_to_samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by applied_to_samples.aliases")] = None,
+        applied_to_samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by applied_to_samples.aliases")] = None,
         applied_to_samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.disease_terms.@id")] = None,
         applied_to_samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by applied_to_samples.disease_terms.term_name")] = None,
         applied_to_samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.sample_terms.@id")] = None,
@@ -10385,10 +10385,10 @@ class IgvfApi:
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
@@ -10401,14 +10401,14 @@ class IgvfApi:
         large_scale_loci_list_accession: Annotated[Optional[StrictStr], Field(description="Filter by large_scale_loci_list.accession")] = None,
         large_scale_loci_list_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by large_scale_loci_list.aliases")] = None,
         orf_list_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by orf_list.@id")] = None,
-        orf_list_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by orf_list.aliases")] = None,
-        orf_list_gene: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by orf_list.gene")] = None,
+        orf_list_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by orf_list.aliases")] = None,
+        orf_list_gene: Annotated[Optional[List[StrictStr]], Field(description="Filter by orf_list.gene")] = None,
         orf_list_orf_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by orf_list.orf_id")] = None,
         small_scale_gene_list_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.@id")] = None,
         small_scale_gene_list_geneid: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by small_scale_gene_list.geneid")] = None,
         small_scale_gene_list_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.name")] = None,
         small_scale_gene_list_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.symbol")] = None,
-        small_scale_gene_list_synonyms: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
+        small_scale_gene_list_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -10517,7 +10517,7 @@ class IgvfApi:
         :param applied_to_samples_accession: Filter by applied_to_samples.accession
         :type applied_to_samples_accession: List[str]
         :param applied_to_samples_aliases: Filter by applied_to_samples.aliases
-        :type applied_to_samples_aliases: List[List[str]]
+        :type applied_to_samples_aliases: List[str]
         :param applied_to_samples_disease_terms_id: Filter by applied_to_samples.disease_terms.@id
         :type applied_to_samples_disease_terms_id: List[str]
         :param applied_to_samples_disease_terms_term_name: Filter by applied_to_samples.disease_terms.term_name
@@ -10545,13 +10545,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param files_id: Filter by files.@id
         :type files_id: List[str]
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_file_format: Filter by files.file_format
@@ -10577,9 +10577,9 @@ class IgvfApi:
         :param orf_list_id: Filter by orf_list.@id
         :type orf_list_id: List[str]
         :param orf_list_aliases: Filter by orf_list.aliases
-        :type orf_list_aliases: List[List[str]]
+        :type orf_list_aliases: List[str]
         :param orf_list_gene: Filter by orf_list.gene
-        :type orf_list_gene: List[List[str]]
+        :type orf_list_gene: List[str]
         :param orf_list_orf_id: Filter by orf_list.orf_id
         :type orf_list_orf_id: List[str]
         :param small_scale_gene_list_id: Filter by small_scale_gene_list.@id
@@ -10591,7 +10591,7 @@ class IgvfApi:
         :param small_scale_gene_list_symbol: Filter by small_scale_gene_list.symbol
         :type small_scale_gene_list_symbol: List[str]
         :param small_scale_gene_list_synonyms: Filter by small_scale_gene_list.synonyms
-        :type small_scale_gene_list_synonyms: List[List[str]]
+        :type small_scale_gene_list_synonyms: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -10773,7 +10773,7 @@ class IgvfApi:
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         applied_to_samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.@id")] = None,
         applied_to_samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.accession")] = None,
-        applied_to_samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by applied_to_samples.aliases")] = None,
+        applied_to_samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by applied_to_samples.aliases")] = None,
         applied_to_samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.disease_terms.@id")] = None,
         applied_to_samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by applied_to_samples.disease_terms.term_name")] = None,
         applied_to_samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.sample_terms.@id")] = None,
@@ -10787,10 +10787,10 @@ class IgvfApi:
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
@@ -10803,14 +10803,14 @@ class IgvfApi:
         large_scale_loci_list_accession: Annotated[Optional[StrictStr], Field(description="Filter by large_scale_loci_list.accession")] = None,
         large_scale_loci_list_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by large_scale_loci_list.aliases")] = None,
         orf_list_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by orf_list.@id")] = None,
-        orf_list_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by orf_list.aliases")] = None,
-        orf_list_gene: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by orf_list.gene")] = None,
+        orf_list_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by orf_list.aliases")] = None,
+        orf_list_gene: Annotated[Optional[List[StrictStr]], Field(description="Filter by orf_list.gene")] = None,
         orf_list_orf_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by orf_list.orf_id")] = None,
         small_scale_gene_list_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.@id")] = None,
         small_scale_gene_list_geneid: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by small_scale_gene_list.geneid")] = None,
         small_scale_gene_list_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.name")] = None,
         small_scale_gene_list_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.symbol")] = None,
-        small_scale_gene_list_synonyms: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
+        small_scale_gene_list_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -10919,7 +10919,7 @@ class IgvfApi:
         :param applied_to_samples_accession: Filter by applied_to_samples.accession
         :type applied_to_samples_accession: List[str]
         :param applied_to_samples_aliases: Filter by applied_to_samples.aliases
-        :type applied_to_samples_aliases: List[List[str]]
+        :type applied_to_samples_aliases: List[str]
         :param applied_to_samples_disease_terms_id: Filter by applied_to_samples.disease_terms.@id
         :type applied_to_samples_disease_terms_id: List[str]
         :param applied_to_samples_disease_terms_term_name: Filter by applied_to_samples.disease_terms.term_name
@@ -10947,13 +10947,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param files_id: Filter by files.@id
         :type files_id: List[str]
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_file_format: Filter by files.file_format
@@ -10979,9 +10979,9 @@ class IgvfApi:
         :param orf_list_id: Filter by orf_list.@id
         :type orf_list_id: List[str]
         :param orf_list_aliases: Filter by orf_list.aliases
-        :type orf_list_aliases: List[List[str]]
+        :type orf_list_aliases: List[str]
         :param orf_list_gene: Filter by orf_list.gene
-        :type orf_list_gene: List[List[str]]
+        :type orf_list_gene: List[str]
         :param orf_list_orf_id: Filter by orf_list.orf_id
         :type orf_list_orf_id: List[str]
         :param small_scale_gene_list_id: Filter by small_scale_gene_list.@id
@@ -10993,7 +10993,7 @@ class IgvfApi:
         :param small_scale_gene_list_symbol: Filter by small_scale_gene_list.symbol
         :type small_scale_gene_list_symbol: List[str]
         :param small_scale_gene_list_synonyms: Filter by small_scale_gene_list.synonyms
-        :type small_scale_gene_list_synonyms: List[List[str]]
+        :type small_scale_gene_list_synonyms: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -11175,7 +11175,7 @@ class IgvfApi:
         input_file_set_for: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_set_for")] = None,
         applied_to_samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.@id")] = None,
         applied_to_samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.accession")] = None,
-        applied_to_samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by applied_to_samples.aliases")] = None,
+        applied_to_samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by applied_to_samples.aliases")] = None,
         applied_to_samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.disease_terms.@id")] = None,
         applied_to_samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by applied_to_samples.disease_terms.term_name")] = None,
         applied_to_samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by applied_to_samples.sample_terms.@id")] = None,
@@ -11189,10 +11189,10 @@ class IgvfApi:
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
@@ -11205,14 +11205,14 @@ class IgvfApi:
         large_scale_loci_list_accession: Annotated[Optional[StrictStr], Field(description="Filter by large_scale_loci_list.accession")] = None,
         large_scale_loci_list_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by large_scale_loci_list.aliases")] = None,
         orf_list_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by orf_list.@id")] = None,
-        orf_list_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by orf_list.aliases")] = None,
-        orf_list_gene: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by orf_list.gene")] = None,
+        orf_list_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by orf_list.aliases")] = None,
+        orf_list_gene: Annotated[Optional[List[StrictStr]], Field(description="Filter by orf_list.gene")] = None,
         orf_list_orf_id: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by orf_list.orf_id")] = None,
         small_scale_gene_list_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.@id")] = None,
         small_scale_gene_list_geneid: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by small_scale_gene_list.geneid")] = None,
         small_scale_gene_list_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.name")] = None,
         small_scale_gene_list_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.symbol")] = None,
-        small_scale_gene_list_synonyms: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
+        small_scale_gene_list_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -11321,7 +11321,7 @@ class IgvfApi:
         :param applied_to_samples_accession: Filter by applied_to_samples.accession
         :type applied_to_samples_accession: List[str]
         :param applied_to_samples_aliases: Filter by applied_to_samples.aliases
-        :type applied_to_samples_aliases: List[List[str]]
+        :type applied_to_samples_aliases: List[str]
         :param applied_to_samples_disease_terms_id: Filter by applied_to_samples.disease_terms.@id
         :type applied_to_samples_disease_terms_id: List[str]
         :param applied_to_samples_disease_terms_term_name: Filter by applied_to_samples.disease_terms.term_name
@@ -11349,13 +11349,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param files_id: Filter by files.@id
         :type files_id: List[str]
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_file_format: Filter by files.file_format
@@ -11381,9 +11381,9 @@ class IgvfApi:
         :param orf_list_id: Filter by orf_list.@id
         :type orf_list_id: List[str]
         :param orf_list_aliases: Filter by orf_list.aliases
-        :type orf_list_aliases: List[List[str]]
+        :type orf_list_aliases: List[str]
         :param orf_list_gene: Filter by orf_list.gene
-        :type orf_list_gene: List[List[str]]
+        :type orf_list_gene: List[str]
         :param orf_list_orf_id: Filter by orf_list.orf_id
         :type orf_list_orf_id: List[str]
         :param small_scale_gene_list_id: Filter by small_scale_gene_list.@id
@@ -11395,7 +11395,7 @@ class IgvfApi:
         :param small_scale_gene_list_symbol: Filter by small_scale_gene_list.symbol
         :type small_scale_gene_list_symbol: List[str]
         :param small_scale_gene_list_synonyms: Filter by small_scale_gene_list.synonyms
-        :type small_scale_gene_list_synonyms: List[List[str]]
+        :type small_scale_gene_list_synonyms: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -12954,16 +12954,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -12977,15 +12977,15 @@ class IgvfApi:
         lab_title: Annotated[Optional[StrictStr], Field(description="Filter by lab.title")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
-        samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.construct_library_sets")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
+        samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -12994,7 +12994,7 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -13087,13 +13087,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -13105,7 +13105,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -13133,23 +13133,23 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets: Filter by samples.construct_library_sets
-        :type samples_construct_library_sets: List[List[str]]
+        :type samples_construct_library_sets: List[str]
         :param samples_disease_terms_id: Filter by samples.disease_terms.@id
         :type samples_disease_terms_id: List[str]
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -13167,7 +13167,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -13336,16 +13336,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -13359,15 +13359,15 @@ class IgvfApi:
         lab_title: Annotated[Optional[StrictStr], Field(description="Filter by lab.title")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
-        samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.construct_library_sets")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
+        samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -13376,7 +13376,7 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -13469,13 +13469,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -13487,7 +13487,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -13515,23 +13515,23 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets: Filter by samples.construct_library_sets
-        :type samples_construct_library_sets: List[List[str]]
+        :type samples_construct_library_sets: List[str]
         :param samples_disease_terms_id: Filter by samples.disease_terms.@id
         :type samples_disease_terms_id: List[str]
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -13549,7 +13549,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -13718,16 +13718,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -13741,15 +13741,15 @@ class IgvfApi:
         lab_title: Annotated[Optional[StrictStr], Field(description="Filter by lab.title")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
-        samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.construct_library_sets")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
+        samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -13758,7 +13758,7 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -13851,13 +13851,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -13869,7 +13869,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -13897,23 +13897,23 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets: Filter by samples.construct_library_sets
-        :type samples_construct_library_sets: List[List[str]]
+        :type samples_construct_library_sets: List[str]
         :param samples_disease_terms_id: Filter by samples.disease_terms.@id
         :type samples_disease_terms_id: List[str]
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -13931,7 +13931,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -21186,7 +21186,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -21380,7 +21380,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -21660,7 +21660,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -21854,7 +21854,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -22134,7 +22134,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -22328,7 +22328,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -25705,7 +25705,7 @@ class IgvfApi:
         assay_term_term_name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by assay_term.term_name")] = None,
         auxiliary_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by auxiliary_sets.@id")] = None,
         auxiliary_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by auxiliary_sets.accession")] = None,
-        auxiliary_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by auxiliary_sets.aliases")] = None,
+        auxiliary_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by auxiliary_sets.aliases")] = None,
         auxiliary_sets_file_set_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by auxiliary_sets.file_set_type")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
@@ -25714,19 +25714,19 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_file_sets.@id")] = None,
         control_file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_file_sets.accession")] = None,
-        control_file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_file_sets.aliases")] = None,
+        control_file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_file_sets.aliases")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -25745,12 +25745,12 @@ class IgvfApi:
         related_multiome_datasets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_multiome_datasets.accession")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
         samples_cell_fate_change_treatments_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments.@id")] = None,
         samples_cell_fate_change_treatments_purpose: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments.purpose")] = None,
         samples_cell_fate_change_treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments.summary")] = None,
         samples_cell_fate_change_treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments.treatment_type")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
         samples_construct_library_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.@id")] = None,
         samples_construct_library_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.accession")] = None,
         samples_construct_library_sets_file_set_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.file_set_type")] = None,
@@ -25764,7 +25764,7 @@ class IgvfApi:
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
         samples_modifications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.modifications.@id")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -25783,7 +25783,7 @@ class IgvfApi:
         targeted_genes_geneid: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by targeted_genes.geneid")] = None,
         targeted_genes_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.name")] = None,
         targeted_genes_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.symbol")] = None,
-        targeted_genes_synonyms: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by targeted_genes.synonyms")] = None,
+        targeted_genes_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.synonyms")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -25870,7 +25870,7 @@ class IgvfApi:
         :param auxiliary_sets_accession: Filter by auxiliary_sets.accession
         :type auxiliary_sets_accession: List[str]
         :param auxiliary_sets_aliases: Filter by auxiliary_sets.aliases
-        :type auxiliary_sets_aliases: List[List[str]]
+        :type auxiliary_sets_aliases: List[str]
         :param auxiliary_sets_file_set_type: Filter by auxiliary_sets.file_set_type
         :type auxiliary_sets_file_set_type: List[str]
         :param award_id: Filter by award.@id
@@ -25888,19 +25888,19 @@ class IgvfApi:
         :param control_file_sets_accession: Filter by control_file_sets.accession
         :type control_file_sets_accession: List[str]
         :param control_file_sets_aliases: Filter by control_file_sets.aliases
-        :type control_file_sets_aliases: List[List[str]]
+        :type control_file_sets_aliases: List[str]
         :param control_for_id: Filter by control_for.@id
         :type control_for_id: List[str]
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -25912,7 +25912,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -25950,7 +25950,7 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments_id: Filter by samples.cell_fate_change_treatments.@id
         :type samples_cell_fate_change_treatments_id: List[str]
         :param samples_cell_fate_change_treatments_purpose: Filter by samples.cell_fate_change_treatments.purpose
@@ -25960,7 +25960,7 @@ class IgvfApi:
         :param samples_cell_fate_change_treatments_treatment_type: Filter by samples.cell_fate_change_treatments.treatment_type
         :type samples_cell_fate_change_treatments_treatment_type: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets_id: Filter by samples.construct_library_sets.@id
         :type samples_construct_library_sets_id: List[str]
         :param samples_construct_library_sets_accession: Filter by samples.construct_library_sets.accession
@@ -25988,7 +25988,7 @@ class IgvfApi:
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -26026,7 +26026,7 @@ class IgvfApi:
         :param targeted_genes_symbol: Filter by targeted_genes.symbol
         :type targeted_genes_symbol: List[str]
         :param targeted_genes_synonyms: Filter by targeted_genes.synonyms
-        :type targeted_genes_synonyms: List[List[str]]
+        :type targeted_genes_synonyms: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -26223,7 +26223,7 @@ class IgvfApi:
         assay_term_term_name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by assay_term.term_name")] = None,
         auxiliary_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by auxiliary_sets.@id")] = None,
         auxiliary_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by auxiliary_sets.accession")] = None,
-        auxiliary_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by auxiliary_sets.aliases")] = None,
+        auxiliary_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by auxiliary_sets.aliases")] = None,
         auxiliary_sets_file_set_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by auxiliary_sets.file_set_type")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
@@ -26232,19 +26232,19 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_file_sets.@id")] = None,
         control_file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_file_sets.accession")] = None,
-        control_file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_file_sets.aliases")] = None,
+        control_file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_file_sets.aliases")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -26263,12 +26263,12 @@ class IgvfApi:
         related_multiome_datasets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_multiome_datasets.accession")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
         samples_cell_fate_change_treatments_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments.@id")] = None,
         samples_cell_fate_change_treatments_purpose: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments.purpose")] = None,
         samples_cell_fate_change_treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments.summary")] = None,
         samples_cell_fate_change_treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments.treatment_type")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
         samples_construct_library_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.@id")] = None,
         samples_construct_library_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.accession")] = None,
         samples_construct_library_sets_file_set_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.file_set_type")] = None,
@@ -26282,7 +26282,7 @@ class IgvfApi:
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
         samples_modifications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.modifications.@id")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -26301,7 +26301,7 @@ class IgvfApi:
         targeted_genes_geneid: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by targeted_genes.geneid")] = None,
         targeted_genes_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.name")] = None,
         targeted_genes_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.symbol")] = None,
-        targeted_genes_synonyms: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by targeted_genes.synonyms")] = None,
+        targeted_genes_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.synonyms")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26388,7 +26388,7 @@ class IgvfApi:
         :param auxiliary_sets_accession: Filter by auxiliary_sets.accession
         :type auxiliary_sets_accession: List[str]
         :param auxiliary_sets_aliases: Filter by auxiliary_sets.aliases
-        :type auxiliary_sets_aliases: List[List[str]]
+        :type auxiliary_sets_aliases: List[str]
         :param auxiliary_sets_file_set_type: Filter by auxiliary_sets.file_set_type
         :type auxiliary_sets_file_set_type: List[str]
         :param award_id: Filter by award.@id
@@ -26406,19 +26406,19 @@ class IgvfApi:
         :param control_file_sets_accession: Filter by control_file_sets.accession
         :type control_file_sets_accession: List[str]
         :param control_file_sets_aliases: Filter by control_file_sets.aliases
-        :type control_file_sets_aliases: List[List[str]]
+        :type control_file_sets_aliases: List[str]
         :param control_for_id: Filter by control_for.@id
         :type control_for_id: List[str]
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -26430,7 +26430,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -26468,7 +26468,7 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments_id: Filter by samples.cell_fate_change_treatments.@id
         :type samples_cell_fate_change_treatments_id: List[str]
         :param samples_cell_fate_change_treatments_purpose: Filter by samples.cell_fate_change_treatments.purpose
@@ -26478,7 +26478,7 @@ class IgvfApi:
         :param samples_cell_fate_change_treatments_treatment_type: Filter by samples.cell_fate_change_treatments.treatment_type
         :type samples_cell_fate_change_treatments_treatment_type: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets_id: Filter by samples.construct_library_sets.@id
         :type samples_construct_library_sets_id: List[str]
         :param samples_construct_library_sets_accession: Filter by samples.construct_library_sets.accession
@@ -26506,7 +26506,7 @@ class IgvfApi:
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -26544,7 +26544,7 @@ class IgvfApi:
         :param targeted_genes_symbol: Filter by targeted_genes.symbol
         :type targeted_genes_symbol: List[str]
         :param targeted_genes_synonyms: Filter by targeted_genes.synonyms
-        :type targeted_genes_synonyms: List[List[str]]
+        :type targeted_genes_synonyms: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -26741,7 +26741,7 @@ class IgvfApi:
         assay_term_term_name: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by assay_term.term_name")] = None,
         auxiliary_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by auxiliary_sets.@id")] = None,
         auxiliary_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by auxiliary_sets.accession")] = None,
-        auxiliary_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by auxiliary_sets.aliases")] = None,
+        auxiliary_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by auxiliary_sets.aliases")] = None,
         auxiliary_sets_file_set_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by auxiliary_sets.file_set_type")] = None,
         award_id: Annotated[Optional[StrictStr], Field(description="Filter by award.@id")] = None,
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
@@ -26750,19 +26750,19 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_file_sets.@id")] = None,
         control_file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_file_sets.accession")] = None,
-        control_file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_file_sets.aliases")] = None,
+        control_file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_file_sets.aliases")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -26781,12 +26781,12 @@ class IgvfApi:
         related_multiome_datasets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by related_multiome_datasets.accession")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
         samples_cell_fate_change_treatments_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments.@id")] = None,
         samples_cell_fate_change_treatments_purpose: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments.purpose")] = None,
         samples_cell_fate_change_treatments_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments.summary")] = None,
         samples_cell_fate_change_treatments_treatment_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments.treatment_type")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
         samples_construct_library_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.@id")] = None,
         samples_construct_library_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.accession")] = None,
         samples_construct_library_sets_file_set_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.file_set_type")] = None,
@@ -26800,7 +26800,7 @@ class IgvfApi:
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
         samples_modifications_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.modifications.@id")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -26819,7 +26819,7 @@ class IgvfApi:
         targeted_genes_geneid: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by targeted_genes.geneid")] = None,
         targeted_genes_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.name")] = None,
         targeted_genes_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.symbol")] = None,
-        targeted_genes_synonyms: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by targeted_genes.synonyms")] = None,
+        targeted_genes_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by targeted_genes.synonyms")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26906,7 +26906,7 @@ class IgvfApi:
         :param auxiliary_sets_accession: Filter by auxiliary_sets.accession
         :type auxiliary_sets_accession: List[str]
         :param auxiliary_sets_aliases: Filter by auxiliary_sets.aliases
-        :type auxiliary_sets_aliases: List[List[str]]
+        :type auxiliary_sets_aliases: List[str]
         :param auxiliary_sets_file_set_type: Filter by auxiliary_sets.file_set_type
         :type auxiliary_sets_file_set_type: List[str]
         :param award_id: Filter by award.@id
@@ -26924,19 +26924,19 @@ class IgvfApi:
         :param control_file_sets_accession: Filter by control_file_sets.accession
         :type control_file_sets_accession: List[str]
         :param control_file_sets_aliases: Filter by control_file_sets.aliases
-        :type control_file_sets_aliases: List[List[str]]
+        :type control_file_sets_aliases: List[str]
         :param control_for_id: Filter by control_for.@id
         :type control_for_id: List[str]
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -26948,7 +26948,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -26986,7 +26986,7 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments_id: Filter by samples.cell_fate_change_treatments.@id
         :type samples_cell_fate_change_treatments_id: List[str]
         :param samples_cell_fate_change_treatments_purpose: Filter by samples.cell_fate_change_treatments.purpose
@@ -26996,7 +26996,7 @@ class IgvfApi:
         :param samples_cell_fate_change_treatments_treatment_type: Filter by samples.cell_fate_change_treatments.treatment_type
         :type samples_cell_fate_change_treatments_treatment_type: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets_id: Filter by samples.construct_library_sets.@id
         :type samples_construct_library_sets_id: List[str]
         :param samples_construct_library_sets_accession: Filter by samples.construct_library_sets.accession
@@ -27024,7 +27024,7 @@ class IgvfApi:
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -27062,7 +27062,7 @@ class IgvfApi:
         :param targeted_genes_symbol: Filter by targeted_genes.symbol
         :type targeted_genes_symbol: List[str]
         :param targeted_genes_synonyms: Filter by targeted_genes.synonyms
-        :type targeted_genes_synonyms: List[List[str]]
+        :type targeted_genes_synonyms: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -29076,16 +29076,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -29097,20 +29097,20 @@ class IgvfApi:
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
         input_file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.@id")] = None,
         input_file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.accession")] = None,
-        input_file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by input_file_sets.aliases")] = None,
+        input_file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by input_file_sets.aliases")] = None,
         lab_id: Annotated[Optional[StrictStr], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[StrictStr], Field(description="Filter by lab.title")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
-        samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.construct_library_sets")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
+        samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -29119,7 +29119,7 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -29218,13 +29218,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -29236,7 +29236,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -29260,7 +29260,7 @@ class IgvfApi:
         :param input_file_sets_accession: Filter by input_file_sets.accession
         :type input_file_sets_accession: List[str]
         :param input_file_sets_aliases: Filter by input_file_sets.aliases
-        :type input_file_sets_aliases: List[List[str]]
+        :type input_file_sets_aliases: List[str]
         :param lab_id: Filter by lab.@id
         :type lab_id: str
         :param lab_title: Filter by lab.title
@@ -29270,23 +29270,23 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets: Filter by samples.construct_library_sets
-        :type samples_construct_library_sets: List[List[str]]
+        :type samples_construct_library_sets: List[str]
         :param samples_disease_terms_id: Filter by samples.disease_terms.@id
         :type samples_disease_terms_id: List[str]
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -29304,7 +29304,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -29482,16 +29482,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -29503,20 +29503,20 @@ class IgvfApi:
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
         input_file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.@id")] = None,
         input_file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.accession")] = None,
-        input_file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by input_file_sets.aliases")] = None,
+        input_file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by input_file_sets.aliases")] = None,
         lab_id: Annotated[Optional[StrictStr], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[StrictStr], Field(description="Filter by lab.title")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
-        samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.construct_library_sets")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
+        samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -29525,7 +29525,7 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -29624,13 +29624,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -29642,7 +29642,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -29666,7 +29666,7 @@ class IgvfApi:
         :param input_file_sets_accession: Filter by input_file_sets.accession
         :type input_file_sets_accession: List[str]
         :param input_file_sets_aliases: Filter by input_file_sets.aliases
-        :type input_file_sets_aliases: List[List[str]]
+        :type input_file_sets_aliases: List[str]
         :param lab_id: Filter by lab.@id
         :type lab_id: str
         :param lab_title: Filter by lab.title
@@ -29676,23 +29676,23 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets: Filter by samples.construct_library_sets
-        :type samples_construct_library_sets: List[List[str]]
+        :type samples_construct_library_sets: List[str]
         :param samples_disease_terms_id: Filter by samples.disease_terms.@id
         :type samples_disease_terms_id: List[str]
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -29710,7 +29710,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -29888,16 +29888,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -29909,20 +29909,20 @@ class IgvfApi:
         files_upload_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.upload_status")] = None,
         input_file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.@id")] = None,
         input_file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by input_file_sets.accession")] = None,
-        input_file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by input_file_sets.aliases")] = None,
+        input_file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by input_file_sets.aliases")] = None,
         lab_id: Annotated[Optional[StrictStr], Field(description="Filter by lab.@id")] = None,
         lab_title: Annotated[Optional[StrictStr], Field(description="Filter by lab.title")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
-        samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.construct_library_sets")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
+        samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -29931,7 +29931,7 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -30030,13 +30030,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -30048,7 +30048,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -30072,7 +30072,7 @@ class IgvfApi:
         :param input_file_sets_accession: Filter by input_file_sets.accession
         :type input_file_sets_accession: List[str]
         :param input_file_sets_aliases: Filter by input_file_sets.aliases
-        :type input_file_sets_aliases: List[List[str]]
+        :type input_file_sets_aliases: List[str]
         :param lab_id: Filter by lab.@id
         :type lab_id: str
         :param lab_title: Filter by lab.title
@@ -30082,23 +30082,23 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets: Filter by samples.construct_library_sets
-        :type samples_construct_library_sets: List[List[str]]
+        :type samples_construct_library_sets: List[str]
         :param samples_disease_terms_id: Filter by samples.disease_terms.@id
         :type samples_disease_terms_id: List[str]
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -30116,7 +30116,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -30867,7 +30867,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -30881,7 +30881,7 @@ class IgvfApi:
         multiplexed_in_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in.accession")] = None,
         multiplexed_samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.@id")] = None,
         multiplexed_samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.accession")] = None,
-        multiplexed_samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by multiplexed_samples.construct_library_sets")] = None,
+        multiplexed_samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.construct_library_sets")] = None,
         multiplexed_samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.disease_terms.@id")] = None,
         multiplexed_samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by multiplexed_samples.disease_terms.term_name")] = None,
         multiplexed_samples_donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.donors.@id")] = None,
@@ -31018,7 +31018,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -31046,7 +31046,7 @@ class IgvfApi:
         :param multiplexed_samples_accession: Filter by multiplexed_samples.accession
         :type multiplexed_samples_accession: List[str]
         :param multiplexed_samples_construct_library_sets: Filter by multiplexed_samples.construct_library_sets
-        :type multiplexed_samples_construct_library_sets: List[List[str]]
+        :type multiplexed_samples_construct_library_sets: List[str]
         :param multiplexed_samples_disease_terms_id: Filter by multiplexed_samples.disease_terms.@id
         :type multiplexed_samples_disease_terms_id: List[str]
         :param multiplexed_samples_disease_terms_term_name: Filter by multiplexed_samples.disease_terms.term_name
@@ -31269,7 +31269,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -31283,7 +31283,7 @@ class IgvfApi:
         multiplexed_in_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in.accession")] = None,
         multiplexed_samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.@id")] = None,
         multiplexed_samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.accession")] = None,
-        multiplexed_samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by multiplexed_samples.construct_library_sets")] = None,
+        multiplexed_samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.construct_library_sets")] = None,
         multiplexed_samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.disease_terms.@id")] = None,
         multiplexed_samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by multiplexed_samples.disease_terms.term_name")] = None,
         multiplexed_samples_donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.donors.@id")] = None,
@@ -31420,7 +31420,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -31448,7 +31448,7 @@ class IgvfApi:
         :param multiplexed_samples_accession: Filter by multiplexed_samples.accession
         :type multiplexed_samples_accession: List[str]
         :param multiplexed_samples_construct_library_sets: Filter by multiplexed_samples.construct_library_sets
-        :type multiplexed_samples_construct_library_sets: List[List[str]]
+        :type multiplexed_samples_construct_library_sets: List[str]
         :param multiplexed_samples_disease_terms_id: Filter by multiplexed_samples.disease_terms.@id
         :type multiplexed_samples_disease_terms_id: List[str]
         :param multiplexed_samples_disease_terms_term_name: Filter by multiplexed_samples.disease_terms.term_name
@@ -31671,7 +31671,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -31685,7 +31685,7 @@ class IgvfApi:
         multiplexed_in_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_in.accession")] = None,
         multiplexed_samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.@id")] = None,
         multiplexed_samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.accession")] = None,
-        multiplexed_samples_construct_library_sets: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by multiplexed_samples.construct_library_sets")] = None,
+        multiplexed_samples_construct_library_sets: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.construct_library_sets")] = None,
         multiplexed_samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.disease_terms.@id")] = None,
         multiplexed_samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by multiplexed_samples.disease_terms.term_name")] = None,
         multiplexed_samples_donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by multiplexed_samples.donors.@id")] = None,
@@ -31822,7 +31822,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -31850,7 +31850,7 @@ class IgvfApi:
         :param multiplexed_samples_accession: Filter by multiplexed_samples.accession
         :type multiplexed_samples_accession: List[str]
         :param multiplexed_samples_construct_library_sets: Filter by multiplexed_samples.construct_library_sets
-        :type multiplexed_samples_construct_library_sets: List[List[str]]
+        :type multiplexed_samples_construct_library_sets: List[str]
         :param multiplexed_samples_disease_terms_id: Filter by multiplexed_samples.disease_terms.@id
         :type multiplexed_samples_disease_terms_id: List[str]
         :param multiplexed_samples_disease_terms_term_name: Filter by multiplexed_samples.disease_terms.term_name
@@ -36130,16 +36130,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -36159,17 +36159,17 @@ class IgvfApi:
         large_scale_loci_list_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by large_scale_loci_list.aliases")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
         samples_construct_library_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.@id")] = None,
         samples_construct_library_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.accession")] = None,
         samples_construct_library_sets_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.summary")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -36178,12 +36178,12 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         small_scale_gene_list_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.@id")] = None,
         small_scale_gene_list_geneid: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by small_scale_gene_list.geneid")] = None,
         small_scale_gene_list_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.name")] = None,
         small_scale_gene_list_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.symbol")] = None,
-        small_scale_gene_list_synonyms: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
+        small_scale_gene_list_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -36276,13 +36276,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -36294,7 +36294,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -36334,11 +36334,11 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets_id: Filter by samples.construct_library_sets.@id
         :type samples_construct_library_sets_id: List[str]
         :param samples_construct_library_sets_accession: Filter by samples.construct_library_sets.accession
@@ -36350,11 +36350,11 @@ class IgvfApi:
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -36372,7 +36372,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param small_scale_gene_list_id: Filter by small_scale_gene_list.@id
         :type small_scale_gene_list_id: List[str]
         :param small_scale_gene_list_geneid: Filter by small_scale_gene_list.geneid
@@ -36382,7 +36382,7 @@ class IgvfApi:
         :param small_scale_gene_list_symbol: Filter by small_scale_gene_list.symbol
         :type small_scale_gene_list_symbol: List[str]
         :param small_scale_gene_list_synonyms: Filter by small_scale_gene_list.synonyms
-        :type small_scale_gene_list_synonyms: List[List[str]]
+        :type small_scale_gene_list_synonyms: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -36564,16 +36564,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -36593,17 +36593,17 @@ class IgvfApi:
         large_scale_loci_list_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by large_scale_loci_list.aliases")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
         samples_construct_library_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.@id")] = None,
         samples_construct_library_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.accession")] = None,
         samples_construct_library_sets_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.summary")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -36612,12 +36612,12 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         small_scale_gene_list_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.@id")] = None,
         small_scale_gene_list_geneid: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by small_scale_gene_list.geneid")] = None,
         small_scale_gene_list_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.name")] = None,
         small_scale_gene_list_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.symbol")] = None,
-        small_scale_gene_list_synonyms: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
+        small_scale_gene_list_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -36710,13 +36710,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -36728,7 +36728,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -36768,11 +36768,11 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets_id: Filter by samples.construct_library_sets.@id
         :type samples_construct_library_sets_id: List[str]
         :param samples_construct_library_sets_accession: Filter by samples.construct_library_sets.accession
@@ -36784,11 +36784,11 @@ class IgvfApi:
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -36806,7 +36806,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param small_scale_gene_list_id: Filter by small_scale_gene_list.@id
         :type small_scale_gene_list_id: List[str]
         :param small_scale_gene_list_geneid: Filter by small_scale_gene_list.geneid
@@ -36816,7 +36816,7 @@ class IgvfApi:
         :param small_scale_gene_list_symbol: Filter by small_scale_gene_list.symbol
         :type small_scale_gene_list_symbol: List[str]
         :param small_scale_gene_list_synonyms: Filter by small_scale_gene_list.synonyms
-        :type small_scale_gene_list_synonyms: List[List[str]]
+        :type small_scale_gene_list_synonyms: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -36998,16 +36998,16 @@ class IgvfApi:
         award_title: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by award.title")] = None,
         control_for_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.@id")] = None,
         control_for_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by control_for.accession")] = None,
-        control_for_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by control_for.aliases")] = None,
+        control_for_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by control_for.aliases")] = None,
         donors_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.@id")] = None,
         donors_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.accession")] = None,
-        donors_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by donors.aliases")] = None,
+        donors_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by donors.aliases")] = None,
         donors_sex: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.sex")] = None,
         donors_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.status")] = None,
         donors_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by donors.taxa")] = None,
         files_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.@id")] = None,
         files_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.accession")] = None,
-        files_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by files.aliases")] = None,
+        files_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by files.aliases")] = None,
         files_content_type: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.content_type")] = None,
         files_creation_timestamp: Annotated[Optional[List[datetime]], Field(description="Filter by files.creation_timestamp")] = None,
         files_file_format: Annotated[Optional[List[StrictStr]], Field(description="Filter by files.file_format")] = None,
@@ -37027,17 +37027,17 @@ class IgvfApi:
         large_scale_loci_list_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by large_scale_loci_list.aliases")] = None,
         samples_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.@id")] = None,
         samples_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.accession")] = None,
-        samples_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.aliases")] = None,
-        samples_cell_fate_change_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
-        samples_classifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.classifications")] = None,
+        samples_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.aliases")] = None,
+        samples_cell_fate_change_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.cell_fate_change_treatments")] = None,
+        samples_classifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.classifications")] = None,
         samples_construct_library_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.@id")] = None,
         samples_construct_library_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.accession")] = None,
         samples_construct_library_sets_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.construct_library_sets.summary")] = None,
         samples_disease_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.disease_terms.@id")] = None,
         samples_disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.disease_terms.term_name")] = None,
-        samples_modifications: Annotated[Optional[List[Annotated[List[StrictStr], Field(max_length=2)]]], Field(description="Filter by samples.modifications")] = None,
+        samples_modifications: Annotated[Optional[Annotated[List[StrictStr], Field(max_length=2)]], Field(description="Filter by samples.modifications")] = None,
         samples_sample_terms_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.@id")] = None,
-        samples_sample_terms_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
+        samples_sample_terms_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.aliases")] = None,
         samples_sample_terms_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.status")] = None,
         samples_sample_terms_summary: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.sample_terms.summary")] = None,
         samples_sample_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.sample_terms.term_name")] = None,
@@ -37046,12 +37046,12 @@ class IgvfApi:
         samples_targeted_sample_term_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.targeted_sample_term.@id")] = None,
         samples_targeted_sample_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by samples.targeted_sample_term.term_name")] = None,
         samples_taxa: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.taxa")] = None,
-        samples_treatments: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by samples.treatments")] = None,
+        samples_treatments: Annotated[Optional[List[StrictStr]], Field(description="Filter by samples.treatments")] = None,
         small_scale_gene_list_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.@id")] = None,
         small_scale_gene_list_geneid: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by small_scale_gene_list.geneid")] = None,
         small_scale_gene_list_name: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.name")] = None,
         small_scale_gene_list_symbol: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.symbol")] = None,
-        small_scale_gene_list_synonyms: Annotated[Optional[List[List[StrictStr]]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
+        small_scale_gene_list_synonyms: Annotated[Optional[List[StrictStr]], Field(description="Filter by small_scale_gene_list.synonyms")] = None,
         submitted_by_id: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.@id")] = None,
         submitted_by_title: Annotated[Optional[StrictStr], Field(description="Filter by submitted_by.title")] = None,
         _request_timeout: Union[
@@ -37144,13 +37144,13 @@ class IgvfApi:
         :param control_for_accession: Filter by control_for.accession
         :type control_for_accession: List[str]
         :param control_for_aliases: Filter by control_for.aliases
-        :type control_for_aliases: List[List[str]]
+        :type control_for_aliases: List[str]
         :param donors_id: Filter by donors.@id
         :type donors_id: List[str]
         :param donors_accession: Filter by donors.accession
         :type donors_accession: List[str]
         :param donors_aliases: Filter by donors.aliases
-        :type donors_aliases: List[List[str]]
+        :type donors_aliases: List[str]
         :param donors_sex: Filter by donors.sex
         :type donors_sex: List[str]
         :param donors_status: Filter by donors.status
@@ -37162,7 +37162,7 @@ class IgvfApi:
         :param files_accession: Filter by files.accession
         :type files_accession: List[str]
         :param files_aliases: Filter by files.aliases
-        :type files_aliases: List[List[str]]
+        :type files_aliases: List[str]
         :param files_content_type: Filter by files.content_type
         :type files_content_type: List[str]
         :param files_creation_timestamp: Filter by files.creation_timestamp
@@ -37202,11 +37202,11 @@ class IgvfApi:
         :param samples_accession: Filter by samples.accession
         :type samples_accession: List[str]
         :param samples_aliases: Filter by samples.aliases
-        :type samples_aliases: List[List[str]]
+        :type samples_aliases: List[str]
         :param samples_cell_fate_change_treatments: Filter by samples.cell_fate_change_treatments
-        :type samples_cell_fate_change_treatments: List[List[str]]
+        :type samples_cell_fate_change_treatments: List[str]
         :param samples_classifications: Filter by samples.classifications
-        :type samples_classifications: List[List[str]]
+        :type samples_classifications: List[str]
         :param samples_construct_library_sets_id: Filter by samples.construct_library_sets.@id
         :type samples_construct_library_sets_id: List[str]
         :param samples_construct_library_sets_accession: Filter by samples.construct_library_sets.accession
@@ -37218,11 +37218,11 @@ class IgvfApi:
         :param samples_disease_terms_term_name: Filter by samples.disease_terms.term_name
         :type samples_disease_terms_term_name: List[str]
         :param samples_modifications: Filter by samples.modifications
-        :type samples_modifications: List[List[str]]
+        :type samples_modifications: List[str]
         :param samples_sample_terms_id: Filter by samples.sample_terms.@id
         :type samples_sample_terms_id: List[str]
         :param samples_sample_terms_aliases: Filter by samples.sample_terms.aliases
-        :type samples_sample_terms_aliases: List[List[str]]
+        :type samples_sample_terms_aliases: List[str]
         :param samples_sample_terms_status: Filter by samples.sample_terms.status
         :type samples_sample_terms_status: List[str]
         :param samples_sample_terms_summary: Filter by samples.sample_terms.summary
@@ -37240,7 +37240,7 @@ class IgvfApi:
         :param samples_taxa: Filter by samples.taxa
         :type samples_taxa: List[str]
         :param samples_treatments: Filter by samples.treatments
-        :type samples_treatments: List[List[str]]
+        :type samples_treatments: List[str]
         :param small_scale_gene_list_id: Filter by small_scale_gene_list.@id
         :type small_scale_gene_list_id: List[str]
         :param small_scale_gene_list_geneid: Filter by small_scale_gene_list.geneid
@@ -37250,7 +37250,7 @@ class IgvfApi:
         :param small_scale_gene_list_symbol: Filter by small_scale_gene_list.symbol
         :type small_scale_gene_list_symbol: List[str]
         :param small_scale_gene_list_synonyms: Filter by small_scale_gene_list.synonyms
-        :type small_scale_gene_list_synonyms: List[List[str]]
+        :type small_scale_gene_list_synonyms: List[str]
         :param submitted_by_id: Filter by submitted_by.@id
         :type submitted_by_id: str
         :param submitted_by_title: Filter by submitted_by.title
@@ -38063,7 +38063,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -38233,7 +38233,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -38485,7 +38485,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -38655,7 +38655,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -38907,7 +38907,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -39077,7 +39077,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -50781,7 +50781,7 @@ class IgvfApi:
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -50907,7 +50907,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -51095,7 +51095,7 @@ class IgvfApi:
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -51221,7 +51221,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -51409,7 +51409,7 @@ class IgvfApi:
         award_component: Annotated[Optional[StrictStr], Field(description="Filter by award.component")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -51535,7 +51535,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -52162,7 +52162,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -52338,7 +52338,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -52596,7 +52596,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -52772,7 +52772,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -53030,7 +53030,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -53206,7 +53206,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -55661,7 +55661,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -55829,7 +55829,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -56079,7 +56079,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -56247,7 +56247,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title
@@ -56497,7 +56497,7 @@ class IgvfApi:
         disease_terms_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by disease_terms.term_name")] = None,
         file_sets_id: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.@id")] = None,
         file_sets_accession: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.accession")] = None,
-        file_sets_aliases: Annotated[Optional[List[List[Annotated[str, Field(strict=True)]]]], Field(description="Filter by file_sets.aliases")] = None,
+        file_sets_aliases: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.aliases")] = None,
         file_sets_assay_term_term_name: Annotated[Optional[List[Annotated[str, Field(strict=True)]]], Field(description="Filter by file_sets.assay_term.term_name")] = None,
         file_sets_lab_title: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.lab.title")] = None,
         file_sets_status: Annotated[Optional[List[StrictStr]], Field(description="Filter by file_sets.status")] = None,
@@ -56665,7 +56665,7 @@ class IgvfApi:
         :param file_sets_accession: Filter by file_sets.accession
         :type file_sets_accession: List[str]
         :param file_sets_aliases: Filter by file_sets.aliases
-        :type file_sets_aliases: List[List[str]]
+        :type file_sets_aliases: List[str]
         :param file_sets_assay_term_term_name: Filter by file_sets.assay_term.term_name
         :type file_sets_assay_term_term_name: List[str]
         :param file_sets_lab_title: Filter by file_sets.lab.title

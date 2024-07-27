@@ -437,16 +437,16 @@ with igvf_client.ApiClient(configuration) as api_client:
     award_title = 'award_title_example' # str | Filter by award.title (optional)
     control_for_id = ['control_for_id_example'] # List[str] | Filter by control_for.@id (optional)
     control_for_accession = ['control_for_accession_example'] # List[str] | Filter by control_for.accession (optional)
-    control_for_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by control_for.aliases (optional)
+    control_for_aliases = ['control_for_aliases_example'] # List[str] | Filter by control_for.aliases (optional)
     donors_id = ['donors_id_example'] # List[str] | Filter by donors.@id (optional)
     donors_accession = ['donors_accession_example'] # List[str] | Filter by donors.accession (optional)
-    donors_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by donors.aliases (optional)
+    donors_aliases = ['donors_aliases_example'] # List[str] | Filter by donors.aliases (optional)
     donors_sex = ['donors_sex_example'] # List[str] | Filter by donors.sex (optional)
     donors_status = ['donors_status_example'] # List[str] | Filter by donors.status (optional)
     donors_taxa = ['donors_taxa_example'] # List[str] | Filter by donors.taxa (optional)
     files_id = ['files_id_example'] # List[str] | Filter by files.@id (optional)
     files_accession = ['files_accession_example'] # List[str] | Filter by files.accession (optional)
-    files_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by files.aliases (optional)
+    files_aliases = ['files_aliases_example'] # List[str] | Filter by files.aliases (optional)
     files_content_type = ['files_content_type_example'] # List[str] | Filter by files.content_type (optional)
     files_creation_timestamp = ['2013-10-20T19:20:30+01:00'] # List[datetime] | Filter by files.creation_timestamp (optional)
     files_file_format = ['files_file_format_example'] # List[str] | Filter by files.file_format (optional)
@@ -458,21 +458,21 @@ with igvf_client.ApiClient(configuration) as api_client:
     files_upload_status = ['files_upload_status_example'] # List[str] | Filter by files.upload_status (optional)
     input_file_sets_id = ['input_file_sets_id_example'] # List[str] | Filter by input_file_sets.@id (optional)
     input_file_sets_accession = ['input_file_sets_accession_example'] # List[str] | Filter by input_file_sets.accession (optional)
-    input_file_sets_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by input_file_sets.aliases (optional)
+    input_file_sets_aliases = ['input_file_sets_aliases_example'] # List[str] | Filter by input_file_sets.aliases (optional)
     input_file_sets_file_set_type = ['input_file_sets_file_set_type_example'] # List[str] | Filter by input_file_sets.file_set_type (optional)
     lab_id = 'lab_id_example' # str | Filter by lab.@id (optional)
     lab_title = 'lab_title_example' # str | Filter by lab.title (optional)
     samples_id = ['samples_id_example'] # List[str] | Filter by samples.@id (optional)
     samples_accession = ['samples_accession_example'] # List[str] | Filter by samples.accession (optional)
-    samples_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.aliases (optional)
-    samples_cell_fate_change_treatments = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.cell_fate_change_treatments (optional)
-    samples_classifications = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.classifications (optional)
-    samples_construct_library_sets = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.construct_library_sets (optional)
+    samples_aliases = ['samples_aliases_example'] # List[str] | Filter by samples.aliases (optional)
+    samples_cell_fate_change_treatments = ['samples_cell_fate_change_treatments_example'] # List[str] | Filter by samples.cell_fate_change_treatments (optional)
+    samples_classifications = ['samples_classifications_example'] # List[str] | Filter by samples.classifications (optional)
+    samples_construct_library_sets = ['samples_construct_library_sets_example'] # List[str] | Filter by samples.construct_library_sets (optional)
     samples_disease_terms_id = ['samples_disease_terms_id_example'] # List[str] | Filter by samples.disease_terms.@id (optional)
     samples_disease_terms_term_name = ['samples_disease_terms_term_name_example'] # List[str] | Filter by samples.disease_terms.term_name (optional)
-    samples_modifications = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.modifications (optional)
+    samples_modifications = ['samples_modifications_example'] # List[str] | Filter by samples.modifications (optional)
     samples_sample_terms_id = ['samples_sample_terms_id_example'] # List[str] | Filter by samples.sample_terms.@id (optional)
-    samples_sample_terms_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.sample_terms.aliases (optional)
+    samples_sample_terms_aliases = ['samples_sample_terms_aliases_example'] # List[str] | Filter by samples.sample_terms.aliases (optional)
     samples_sample_terms_status = ['samples_sample_terms_status_example'] # List[str] | Filter by samples.sample_terms.status (optional)
     samples_sample_terms_summary = ['samples_sample_terms_summary_example'] # List[str] | Filter by samples.sample_terms.summary (optional)
     samples_sample_terms_term_name = ['samples_sample_terms_term_name_example'] # List[str] | Filter by samples.sample_terms.term_name (optional)
@@ -481,7 +481,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     samples_targeted_sample_term_id = ['samples_targeted_sample_term_id_example'] # List[str] | Filter by samples.targeted_sample_term.@id (optional)
     samples_targeted_sample_term_term_name = ['samples_targeted_sample_term_term_name_example'] # List[str] | Filter by samples.targeted_sample_term.term_name (optional)
     samples_taxa = ['samples_taxa_example'] # List[str] | Filter by samples.taxa (optional)
-    samples_treatments = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.treatments (optional)
+    samples_treatments = ['samples_treatments_example'] # List[str] | Filter by samples.treatments (optional)
     submitted_by_id = 'submitted_by_id_example' # str | Filter by submitted_by.@id (optional)
     submitted_by_title = 'submitted_by_title_example' # str | Filter by submitted_by.title (optional)
 
@@ -534,16 +534,16 @@ Name | Type | Description  | Notes
  **award_title** | **str**| Filter by award.title | [optional] 
  **control_for_id** | [**List[str]**](List[str].md)| Filter by control_for.@id | [optional] 
  **control_for_accession** | [**List[str]**](List[str].md)| Filter by control_for.accession | [optional] 
- **control_for_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by control_for.aliases | [optional] 
+ **control_for_aliases** | [**List[str]**](List[str].md)| Filter by control_for.aliases | [optional] 
  **donors_id** | [**List[str]**](List[str].md)| Filter by donors.@id | [optional] 
  **donors_accession** | [**List[str]**](List[str].md)| Filter by donors.accession | [optional] 
- **donors_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by donors.aliases | [optional] 
+ **donors_aliases** | [**List[str]**](List[str].md)| Filter by donors.aliases | [optional] 
  **donors_sex** | [**List[str]**](List[str].md)| Filter by donors.sex | [optional] 
  **donors_status** | [**List[str]**](List[str].md)| Filter by donors.status | [optional] 
  **donors_taxa** | [**List[str]**](List[str].md)| Filter by donors.taxa | [optional] 
  **files_id** | [**List[str]**](List[str].md)| Filter by files.@id | [optional] 
  **files_accession** | [**List[str]**](List[str].md)| Filter by files.accession | [optional] 
- **files_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by files.aliases | [optional] 
+ **files_aliases** | [**List[str]**](List[str].md)| Filter by files.aliases | [optional] 
  **files_content_type** | [**List[str]**](List[str].md)| Filter by files.content_type | [optional] 
  **files_creation_timestamp** | [**List[datetime]**](List[datetime].md)| Filter by files.creation_timestamp | [optional] 
  **files_file_format** | [**List[str]**](List[str].md)| Filter by files.file_format | [optional] 
@@ -555,21 +555,21 @@ Name | Type | Description  | Notes
  **files_upload_status** | [**List[str]**](List[str].md)| Filter by files.upload_status | [optional] 
  **input_file_sets_id** | [**List[str]**](List[str].md)| Filter by input_file_sets.@id | [optional] 
  **input_file_sets_accession** | [**List[str]**](List[str].md)| Filter by input_file_sets.accession | [optional] 
- **input_file_sets_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by input_file_sets.aliases | [optional] 
+ **input_file_sets_aliases** | [**List[str]**](List[str].md)| Filter by input_file_sets.aliases | [optional] 
  **input_file_sets_file_set_type** | [**List[str]**](List[str].md)| Filter by input_file_sets.file_set_type | [optional] 
  **lab_id** | **str**| Filter by lab.@id | [optional] 
  **lab_title** | **str**| Filter by lab.title | [optional] 
  **samples_id** | [**List[str]**](List[str].md)| Filter by samples.@id | [optional] 
  **samples_accession** | [**List[str]**](List[str].md)| Filter by samples.accession | [optional] 
- **samples_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.aliases | [optional] 
- **samples_cell_fate_change_treatments** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.cell_fate_change_treatments | [optional] 
- **samples_classifications** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.classifications | [optional] 
- **samples_construct_library_sets** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.construct_library_sets | [optional] 
+ **samples_aliases** | [**List[str]**](List[str].md)| Filter by samples.aliases | [optional] 
+ **samples_cell_fate_change_treatments** | [**List[str]**](List[str].md)| Filter by samples.cell_fate_change_treatments | [optional] 
+ **samples_classifications** | [**List[str]**](List[str].md)| Filter by samples.classifications | [optional] 
+ **samples_construct_library_sets** | [**List[str]**](List[str].md)| Filter by samples.construct_library_sets | [optional] 
  **samples_disease_terms_id** | [**List[str]**](List[str].md)| Filter by samples.disease_terms.@id | [optional] 
  **samples_disease_terms_term_name** | [**List[str]**](List[str].md)| Filter by samples.disease_terms.term_name | [optional] 
- **samples_modifications** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.modifications | [optional] 
+ **samples_modifications** | [**List[str]**](List[str].md)| Filter by samples.modifications | [optional] 
  **samples_sample_terms_id** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.@id | [optional] 
- **samples_sample_terms_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.sample_terms.aliases | [optional] 
+ **samples_sample_terms_aliases** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.aliases | [optional] 
  **samples_sample_terms_status** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.status | [optional] 
  **samples_sample_terms_summary** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.summary | [optional] 
  **samples_sample_terms_term_name** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.term_name | [optional] 
@@ -578,7 +578,7 @@ Name | Type | Description  | Notes
  **samples_targeted_sample_term_id** | [**List[str]**](List[str].md)| Filter by samples.targeted_sample_term.@id | [optional] 
  **samples_targeted_sample_term_term_name** | [**List[str]**](List[str].md)| Filter by samples.targeted_sample_term.term_name | [optional] 
  **samples_taxa** | [**List[str]**](List[str].md)| Filter by samples.taxa | [optional] 
- **samples_treatments** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.treatments | [optional] 
+ **samples_treatments** | [**List[str]**](List[str].md)| Filter by samples.treatments | [optional] 
  **submitted_by_id** | **str**| Filter by submitted_by.@id | [optional] 
  **submitted_by_title** | **str**| Filter by submitted_by.title | [optional] 
 
@@ -1082,16 +1082,16 @@ with igvf_client.ApiClient(configuration) as api_client:
     award_title = 'award_title_example' # str | Filter by award.title (optional)
     control_for_id = ['control_for_id_example'] # List[str] | Filter by control_for.@id (optional)
     control_for_accession = ['control_for_accession_example'] # List[str] | Filter by control_for.accession (optional)
-    control_for_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by control_for.aliases (optional)
+    control_for_aliases = ['control_for_aliases_example'] # List[str] | Filter by control_for.aliases (optional)
     donors_id = ['donors_id_example'] # List[str] | Filter by donors.@id (optional)
     donors_accession = ['donors_accession_example'] # List[str] | Filter by donors.accession (optional)
-    donors_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by donors.aliases (optional)
+    donors_aliases = ['donors_aliases_example'] # List[str] | Filter by donors.aliases (optional)
     donors_sex = ['donors_sex_example'] # List[str] | Filter by donors.sex (optional)
     donors_status = ['donors_status_example'] # List[str] | Filter by donors.status (optional)
     donors_taxa = ['donors_taxa_example'] # List[str] | Filter by donors.taxa (optional)
     files_id = ['files_id_example'] # List[str] | Filter by files.@id (optional)
     files_accession = ['files_accession_example'] # List[str] | Filter by files.accession (optional)
-    files_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by files.aliases (optional)
+    files_aliases = ['files_aliases_example'] # List[str] | Filter by files.aliases (optional)
     files_content_type = ['files_content_type_example'] # List[str] | Filter by files.content_type (optional)
     files_creation_timestamp = ['2013-10-20T19:20:30+01:00'] # List[datetime] | Filter by files.creation_timestamp (optional)
     files_file_format = ['files_file_format_example'] # List[str] | Filter by files.file_format (optional)
@@ -1105,19 +1105,19 @@ with igvf_client.ApiClient(configuration) as api_client:
     lab_title = 'lab_title_example' # str | Filter by lab.title (optional)
     measurement_sets_id = ['measurement_sets_id_example'] # List[str] | Filter by measurement_sets.@id (optional)
     measurement_sets_accession = ['measurement_sets_accession_example'] # List[str] | Filter by measurement_sets.accession (optional)
-    measurement_sets_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by measurement_sets.aliases (optional)
+    measurement_sets_aliases = ['measurement_sets_aliases_example'] # List[str] | Filter by measurement_sets.aliases (optional)
     measurement_sets_preferred_assay_title = ['measurement_sets_preferred_assay_title_example'] # List[str] | Filter by measurement_sets.preferred_assay_title (optional)
     samples_id = ['samples_id_example'] # List[str] | Filter by samples.@id (optional)
     samples_accession = ['samples_accession_example'] # List[str] | Filter by samples.accession (optional)
-    samples_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.aliases (optional)
-    samples_cell_fate_change_treatments = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.cell_fate_change_treatments (optional)
-    samples_classifications = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.classifications (optional)
-    samples_construct_library_sets = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.construct_library_sets (optional)
+    samples_aliases = ['samples_aliases_example'] # List[str] | Filter by samples.aliases (optional)
+    samples_cell_fate_change_treatments = ['samples_cell_fate_change_treatments_example'] # List[str] | Filter by samples.cell_fate_change_treatments (optional)
+    samples_classifications = ['samples_classifications_example'] # List[str] | Filter by samples.classifications (optional)
+    samples_construct_library_sets = ['samples_construct_library_sets_example'] # List[str] | Filter by samples.construct_library_sets (optional)
     samples_disease_terms_id = ['samples_disease_terms_id_example'] # List[str] | Filter by samples.disease_terms.@id (optional)
     samples_disease_terms_term_name = ['samples_disease_terms_term_name_example'] # List[str] | Filter by samples.disease_terms.term_name (optional)
-    samples_modifications = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.modifications (optional)
+    samples_modifications = ['samples_modifications_example'] # List[str] | Filter by samples.modifications (optional)
     samples_sample_terms_id = ['samples_sample_terms_id_example'] # List[str] | Filter by samples.sample_terms.@id (optional)
-    samples_sample_terms_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.sample_terms.aliases (optional)
+    samples_sample_terms_aliases = ['samples_sample_terms_aliases_example'] # List[str] | Filter by samples.sample_terms.aliases (optional)
     samples_sample_terms_status = ['samples_sample_terms_status_example'] # List[str] | Filter by samples.sample_terms.status (optional)
     samples_sample_terms_summary = ['samples_sample_terms_summary_example'] # List[str] | Filter by samples.sample_terms.summary (optional)
     samples_sample_terms_term_name = ['samples_sample_terms_term_name_example'] # List[str] | Filter by samples.sample_terms.term_name (optional)
@@ -1126,7 +1126,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     samples_targeted_sample_term_id = ['samples_targeted_sample_term_id_example'] # List[str] | Filter by samples.targeted_sample_term.@id (optional)
     samples_targeted_sample_term_term_name = ['samples_targeted_sample_term_term_name_example'] # List[str] | Filter by samples.targeted_sample_term.term_name (optional)
     samples_taxa = ['samples_taxa_example'] # List[str] | Filter by samples.taxa (optional)
-    samples_treatments = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.treatments (optional)
+    samples_treatments = ['samples_treatments_example'] # List[str] | Filter by samples.treatments (optional)
     submitted_by_id = 'submitted_by_id_example' # str | Filter by submitted_by.@id (optional)
     submitted_by_title = 'submitted_by_title_example' # str | Filter by submitted_by.title (optional)
 
@@ -1180,16 +1180,16 @@ Name | Type | Description  | Notes
  **award_title** | **str**| Filter by award.title | [optional] 
  **control_for_id** | [**List[str]**](List[str].md)| Filter by control_for.@id | [optional] 
  **control_for_accession** | [**List[str]**](List[str].md)| Filter by control_for.accession | [optional] 
- **control_for_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by control_for.aliases | [optional] 
+ **control_for_aliases** | [**List[str]**](List[str].md)| Filter by control_for.aliases | [optional] 
  **donors_id** | [**List[str]**](List[str].md)| Filter by donors.@id | [optional] 
  **donors_accession** | [**List[str]**](List[str].md)| Filter by donors.accession | [optional] 
- **donors_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by donors.aliases | [optional] 
+ **donors_aliases** | [**List[str]**](List[str].md)| Filter by donors.aliases | [optional] 
  **donors_sex** | [**List[str]**](List[str].md)| Filter by donors.sex | [optional] 
  **donors_status** | [**List[str]**](List[str].md)| Filter by donors.status | [optional] 
  **donors_taxa** | [**List[str]**](List[str].md)| Filter by donors.taxa | [optional] 
  **files_id** | [**List[str]**](List[str].md)| Filter by files.@id | [optional] 
  **files_accession** | [**List[str]**](List[str].md)| Filter by files.accession | [optional] 
- **files_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by files.aliases | [optional] 
+ **files_aliases** | [**List[str]**](List[str].md)| Filter by files.aliases | [optional] 
  **files_content_type** | [**List[str]**](List[str].md)| Filter by files.content_type | [optional] 
  **files_creation_timestamp** | [**List[datetime]**](List[datetime].md)| Filter by files.creation_timestamp | [optional] 
  **files_file_format** | [**List[str]**](List[str].md)| Filter by files.file_format | [optional] 
@@ -1203,19 +1203,19 @@ Name | Type | Description  | Notes
  **lab_title** | **str**| Filter by lab.title | [optional] 
  **measurement_sets_id** | [**List[str]**](List[str].md)| Filter by measurement_sets.@id | [optional] 
  **measurement_sets_accession** | [**List[str]**](List[str].md)| Filter by measurement_sets.accession | [optional] 
- **measurement_sets_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by measurement_sets.aliases | [optional] 
+ **measurement_sets_aliases** | [**List[str]**](List[str].md)| Filter by measurement_sets.aliases | [optional] 
  **measurement_sets_preferred_assay_title** | [**List[str]**](List[str].md)| Filter by measurement_sets.preferred_assay_title | [optional] 
  **samples_id** | [**List[str]**](List[str].md)| Filter by samples.@id | [optional] 
  **samples_accession** | [**List[str]**](List[str].md)| Filter by samples.accession | [optional] 
- **samples_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.aliases | [optional] 
- **samples_cell_fate_change_treatments** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.cell_fate_change_treatments | [optional] 
- **samples_classifications** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.classifications | [optional] 
- **samples_construct_library_sets** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.construct_library_sets | [optional] 
+ **samples_aliases** | [**List[str]**](List[str].md)| Filter by samples.aliases | [optional] 
+ **samples_cell_fate_change_treatments** | [**List[str]**](List[str].md)| Filter by samples.cell_fate_change_treatments | [optional] 
+ **samples_classifications** | [**List[str]**](List[str].md)| Filter by samples.classifications | [optional] 
+ **samples_construct_library_sets** | [**List[str]**](List[str].md)| Filter by samples.construct_library_sets | [optional] 
  **samples_disease_terms_id** | [**List[str]**](List[str].md)| Filter by samples.disease_terms.@id | [optional] 
  **samples_disease_terms_term_name** | [**List[str]**](List[str].md)| Filter by samples.disease_terms.term_name | [optional] 
- **samples_modifications** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.modifications | [optional] 
+ **samples_modifications** | [**List[str]**](List[str].md)| Filter by samples.modifications | [optional] 
  **samples_sample_terms_id** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.@id | [optional] 
- **samples_sample_terms_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.sample_terms.aliases | [optional] 
+ **samples_sample_terms_aliases** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.aliases | [optional] 
  **samples_sample_terms_status** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.status | [optional] 
  **samples_sample_terms_summary** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.summary | [optional] 
  **samples_sample_terms_term_name** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.term_name | [optional] 
@@ -1224,7 +1224,7 @@ Name | Type | Description  | Notes
  **samples_targeted_sample_term_id** | [**List[str]**](List[str].md)| Filter by samples.targeted_sample_term.@id | [optional] 
  **samples_targeted_sample_term_term_name** | [**List[str]**](List[str].md)| Filter by samples.targeted_sample_term.term_name | [optional] 
  **samples_taxa** | [**List[str]**](List[str].md)| Filter by samples.taxa | [optional] 
- **samples_treatments** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.treatments | [optional] 
+ **samples_treatments** | [**List[str]**](List[str].md)| Filter by samples.treatments | [optional] 
  **submitted_by_id** | **str**| Filter by submitted_by.@id | [optional] 
  **submitted_by_title** | **str**| Filter by submitted_by.title | [optional] 
 
@@ -1858,7 +1858,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     input_file_set_for = ['input_file_set_for_example'] # List[str] | Filter by input_file_set_for (optional)
     applied_to_samples_id = ['applied_to_samples_id_example'] # List[str] | Filter by applied_to_samples.@id (optional)
     applied_to_samples_accession = ['applied_to_samples_accession_example'] # List[str] | Filter by applied_to_samples.accession (optional)
-    applied_to_samples_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by applied_to_samples.aliases (optional)
+    applied_to_samples_aliases = ['applied_to_samples_aliases_example'] # List[str] | Filter by applied_to_samples.aliases (optional)
     applied_to_samples_disease_terms_id = ['applied_to_samples_disease_terms_id_example'] # List[str] | Filter by applied_to_samples.disease_terms.@id (optional)
     applied_to_samples_disease_terms_term_name = ['applied_to_samples_disease_terms_term_name_example'] # List[str] | Filter by applied_to_samples.disease_terms.term_name (optional)
     applied_to_samples_sample_terms_id = ['applied_to_samples_sample_terms_id_example'] # List[str] | Filter by applied_to_samples.sample_terms.@id (optional)
@@ -1872,10 +1872,10 @@ with igvf_client.ApiClient(configuration) as api_client:
     award_component = 'award_component_example' # str | Filter by award.component (optional)
     control_for_id = ['control_for_id_example'] # List[str] | Filter by control_for.@id (optional)
     control_for_accession = ['control_for_accession_example'] # List[str] | Filter by control_for.accession (optional)
-    control_for_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by control_for.aliases (optional)
+    control_for_aliases = ['control_for_aliases_example'] # List[str] | Filter by control_for.aliases (optional)
     files_id = ['files_id_example'] # List[str] | Filter by files.@id (optional)
     files_accession = ['files_accession_example'] # List[str] | Filter by files.accession (optional)
-    files_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by files.aliases (optional)
+    files_aliases = ['files_aliases_example'] # List[str] | Filter by files.aliases (optional)
     files_content_type = ['files_content_type_example'] # List[str] | Filter by files.content_type (optional)
     files_file_format = ['files_file_format_example'] # List[str] | Filter by files.file_format (optional)
     files_upload_status = ['files_upload_status_example'] # List[str] | Filter by files.upload_status (optional)
@@ -1888,14 +1888,14 @@ with igvf_client.ApiClient(configuration) as api_client:
     large_scale_loci_list_accession = 'large_scale_loci_list_accession_example' # str | Filter by large_scale_loci_list.accession (optional)
     large_scale_loci_list_aliases = ['large_scale_loci_list_aliases_example'] # List[str] | Filter by large_scale_loci_list.aliases (optional)
     orf_list_id = ['orf_list_id_example'] # List[str] | Filter by orf_list.@id (optional)
-    orf_list_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by orf_list.aliases (optional)
-    orf_list_gene = [igvf_client.List[str]()] # List[List[str]] | Filter by orf_list.gene (optional)
+    orf_list_aliases = ['orf_list_aliases_example'] # List[str] | Filter by orf_list.aliases (optional)
+    orf_list_gene = ['orf_list_gene_example'] # List[str] | Filter by orf_list.gene (optional)
     orf_list_orf_id = ['orf_list_orf_id_example'] # List[str] | Filter by orf_list.orf_id (optional)
     small_scale_gene_list_id = ['small_scale_gene_list_id_example'] # List[str] | Filter by small_scale_gene_list.@id (optional)
     small_scale_gene_list_geneid = ['small_scale_gene_list_geneid_example'] # List[str] | Filter by small_scale_gene_list.geneid (optional)
     small_scale_gene_list_name = ['small_scale_gene_list_name_example'] # List[str] | Filter by small_scale_gene_list.name (optional)
     small_scale_gene_list_symbol = ['small_scale_gene_list_symbol_example'] # List[str] | Filter by small_scale_gene_list.symbol (optional)
-    small_scale_gene_list_synonyms = [igvf_client.List[str]()] # List[List[str]] | Filter by small_scale_gene_list.synonyms (optional)
+    small_scale_gene_list_synonyms = ['small_scale_gene_list_synonyms_example'] # List[str] | Filter by small_scale_gene_list.synonyms (optional)
     submitted_by_id = 'submitted_by_id_example' # str | Filter by submitted_by.@id (optional)
     submitted_by_title = 'submitted_by_title_example' # str | Filter by submitted_by.title (optional)
 
@@ -1959,7 +1959,7 @@ Name | Type | Description  | Notes
  **input_file_set_for** | [**List[str]**](List[str].md)| Filter by input_file_set_for | [optional] 
  **applied_to_samples_id** | [**List[str]**](List[str].md)| Filter by applied_to_samples.@id | [optional] 
  **applied_to_samples_accession** | [**List[str]**](List[str].md)| Filter by applied_to_samples.accession | [optional] 
- **applied_to_samples_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by applied_to_samples.aliases | [optional] 
+ **applied_to_samples_aliases** | [**List[str]**](List[str].md)| Filter by applied_to_samples.aliases | [optional] 
  **applied_to_samples_disease_terms_id** | [**List[str]**](List[str].md)| Filter by applied_to_samples.disease_terms.@id | [optional] 
  **applied_to_samples_disease_terms_term_name** | [**List[str]**](List[str].md)| Filter by applied_to_samples.disease_terms.term_name | [optional] 
  **applied_to_samples_sample_terms_id** | [**List[str]**](List[str].md)| Filter by applied_to_samples.sample_terms.@id | [optional] 
@@ -1973,10 +1973,10 @@ Name | Type | Description  | Notes
  **award_component** | **str**| Filter by award.component | [optional] 
  **control_for_id** | [**List[str]**](List[str].md)| Filter by control_for.@id | [optional] 
  **control_for_accession** | [**List[str]**](List[str].md)| Filter by control_for.accession | [optional] 
- **control_for_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by control_for.aliases | [optional] 
+ **control_for_aliases** | [**List[str]**](List[str].md)| Filter by control_for.aliases | [optional] 
  **files_id** | [**List[str]**](List[str].md)| Filter by files.@id | [optional] 
  **files_accession** | [**List[str]**](List[str].md)| Filter by files.accession | [optional] 
- **files_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by files.aliases | [optional] 
+ **files_aliases** | [**List[str]**](List[str].md)| Filter by files.aliases | [optional] 
  **files_content_type** | [**List[str]**](List[str].md)| Filter by files.content_type | [optional] 
  **files_file_format** | [**List[str]**](List[str].md)| Filter by files.file_format | [optional] 
  **files_upload_status** | [**List[str]**](List[str].md)| Filter by files.upload_status | [optional] 
@@ -1989,14 +1989,14 @@ Name | Type | Description  | Notes
  **large_scale_loci_list_accession** | **str**| Filter by large_scale_loci_list.accession | [optional] 
  **large_scale_loci_list_aliases** | [**List[str]**](List[str].md)| Filter by large_scale_loci_list.aliases | [optional] 
  **orf_list_id** | [**List[str]**](List[str].md)| Filter by orf_list.@id | [optional] 
- **orf_list_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by orf_list.aliases | [optional] 
- **orf_list_gene** | [**List[List[str]]**](List[List[str]].md)| Filter by orf_list.gene | [optional] 
+ **orf_list_aliases** | [**List[str]**](List[str].md)| Filter by orf_list.aliases | [optional] 
+ **orf_list_gene** | [**List[str]**](List[str].md)| Filter by orf_list.gene | [optional] 
  **orf_list_orf_id** | [**List[str]**](List[str].md)| Filter by orf_list.orf_id | [optional] 
  **small_scale_gene_list_id** | [**List[str]**](List[str].md)| Filter by small_scale_gene_list.@id | [optional] 
  **small_scale_gene_list_geneid** | [**List[str]**](List[str].md)| Filter by small_scale_gene_list.geneid | [optional] 
  **small_scale_gene_list_name** | [**List[str]**](List[str].md)| Filter by small_scale_gene_list.name | [optional] 
  **small_scale_gene_list_symbol** | [**List[str]**](List[str].md)| Filter by small_scale_gene_list.symbol | [optional] 
- **small_scale_gene_list_synonyms** | [**List[List[str]]**](List[List[str]].md)| Filter by small_scale_gene_list.synonyms | [optional] 
+ **small_scale_gene_list_synonyms** | [**List[str]**](List[str].md)| Filter by small_scale_gene_list.synonyms | [optional] 
  **submitted_by_id** | **str**| Filter by submitted_by.@id | [optional] 
  **submitted_by_title** | **str**| Filter by submitted_by.title | [optional] 
 
@@ -2244,16 +2244,16 @@ with igvf_client.ApiClient(configuration) as api_client:
     award_title = 'award_title_example' # str | Filter by award.title (optional)
     control_for_id = ['control_for_id_example'] # List[str] | Filter by control_for.@id (optional)
     control_for_accession = ['control_for_accession_example'] # List[str] | Filter by control_for.accession (optional)
-    control_for_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by control_for.aliases (optional)
+    control_for_aliases = ['control_for_aliases_example'] # List[str] | Filter by control_for.aliases (optional)
     donors_id = ['donors_id_example'] # List[str] | Filter by donors.@id (optional)
     donors_accession = ['donors_accession_example'] # List[str] | Filter by donors.accession (optional)
-    donors_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by donors.aliases (optional)
+    donors_aliases = ['donors_aliases_example'] # List[str] | Filter by donors.aliases (optional)
     donors_sex = ['donors_sex_example'] # List[str] | Filter by donors.sex (optional)
     donors_status = ['donors_status_example'] # List[str] | Filter by donors.status (optional)
     donors_taxa = ['donors_taxa_example'] # List[str] | Filter by donors.taxa (optional)
     files_id = ['files_id_example'] # List[str] | Filter by files.@id (optional)
     files_accession = ['files_accession_example'] # List[str] | Filter by files.accession (optional)
-    files_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by files.aliases (optional)
+    files_aliases = ['files_aliases_example'] # List[str] | Filter by files.aliases (optional)
     files_content_type = ['files_content_type_example'] # List[str] | Filter by files.content_type (optional)
     files_creation_timestamp = ['2013-10-20T19:20:30+01:00'] # List[datetime] | Filter by files.creation_timestamp (optional)
     files_file_format = ['files_file_format_example'] # List[str] | Filter by files.file_format (optional)
@@ -2267,15 +2267,15 @@ with igvf_client.ApiClient(configuration) as api_client:
     lab_title = 'lab_title_example' # str | Filter by lab.title (optional)
     samples_id = ['samples_id_example'] # List[str] | Filter by samples.@id (optional)
     samples_accession = ['samples_accession_example'] # List[str] | Filter by samples.accession (optional)
-    samples_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.aliases (optional)
-    samples_cell_fate_change_treatments = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.cell_fate_change_treatments (optional)
-    samples_classifications = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.classifications (optional)
-    samples_construct_library_sets = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.construct_library_sets (optional)
+    samples_aliases = ['samples_aliases_example'] # List[str] | Filter by samples.aliases (optional)
+    samples_cell_fate_change_treatments = ['samples_cell_fate_change_treatments_example'] # List[str] | Filter by samples.cell_fate_change_treatments (optional)
+    samples_classifications = ['samples_classifications_example'] # List[str] | Filter by samples.classifications (optional)
+    samples_construct_library_sets = ['samples_construct_library_sets_example'] # List[str] | Filter by samples.construct_library_sets (optional)
     samples_disease_terms_id = ['samples_disease_terms_id_example'] # List[str] | Filter by samples.disease_terms.@id (optional)
     samples_disease_terms_term_name = ['samples_disease_terms_term_name_example'] # List[str] | Filter by samples.disease_terms.term_name (optional)
-    samples_modifications = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.modifications (optional)
+    samples_modifications = ['samples_modifications_example'] # List[str] | Filter by samples.modifications (optional)
     samples_sample_terms_id = ['samples_sample_terms_id_example'] # List[str] | Filter by samples.sample_terms.@id (optional)
-    samples_sample_terms_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.sample_terms.aliases (optional)
+    samples_sample_terms_aliases = ['samples_sample_terms_aliases_example'] # List[str] | Filter by samples.sample_terms.aliases (optional)
     samples_sample_terms_status = ['samples_sample_terms_status_example'] # List[str] | Filter by samples.sample_terms.status (optional)
     samples_sample_terms_summary = ['samples_sample_terms_summary_example'] # List[str] | Filter by samples.sample_terms.summary (optional)
     samples_sample_terms_term_name = ['samples_sample_terms_term_name_example'] # List[str] | Filter by samples.sample_terms.term_name (optional)
@@ -2284,7 +2284,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     samples_targeted_sample_term_id = ['samples_targeted_sample_term_id_example'] # List[str] | Filter by samples.targeted_sample_term.@id (optional)
     samples_targeted_sample_term_term_name = ['samples_targeted_sample_term_term_name_example'] # List[str] | Filter by samples.targeted_sample_term.term_name (optional)
     samples_taxa = ['samples_taxa_example'] # List[str] | Filter by samples.taxa (optional)
-    samples_treatments = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.treatments (optional)
+    samples_treatments = ['samples_treatments_example'] # List[str] | Filter by samples.treatments (optional)
     submitted_by_id = 'submitted_by_id_example' # str | Filter by submitted_by.@id (optional)
     submitted_by_title = 'submitted_by_title_example' # str | Filter by submitted_by.title (optional)
 
@@ -2340,16 +2340,16 @@ Name | Type | Description  | Notes
  **award_title** | **str**| Filter by award.title | [optional] 
  **control_for_id** | [**List[str]**](List[str].md)| Filter by control_for.@id | [optional] 
  **control_for_accession** | [**List[str]**](List[str].md)| Filter by control_for.accession | [optional] 
- **control_for_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by control_for.aliases | [optional] 
+ **control_for_aliases** | [**List[str]**](List[str].md)| Filter by control_for.aliases | [optional] 
  **donors_id** | [**List[str]**](List[str].md)| Filter by donors.@id | [optional] 
  **donors_accession** | [**List[str]**](List[str].md)| Filter by donors.accession | [optional] 
- **donors_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by donors.aliases | [optional] 
+ **donors_aliases** | [**List[str]**](List[str].md)| Filter by donors.aliases | [optional] 
  **donors_sex** | [**List[str]**](List[str].md)| Filter by donors.sex | [optional] 
  **donors_status** | [**List[str]**](List[str].md)| Filter by donors.status | [optional] 
  **donors_taxa** | [**List[str]**](List[str].md)| Filter by donors.taxa | [optional] 
  **files_id** | [**List[str]**](List[str].md)| Filter by files.@id | [optional] 
  **files_accession** | [**List[str]**](List[str].md)| Filter by files.accession | [optional] 
- **files_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by files.aliases | [optional] 
+ **files_aliases** | [**List[str]**](List[str].md)| Filter by files.aliases | [optional] 
  **files_content_type** | [**List[str]**](List[str].md)| Filter by files.content_type | [optional] 
  **files_creation_timestamp** | [**List[datetime]**](List[datetime].md)| Filter by files.creation_timestamp | [optional] 
  **files_file_format** | [**List[str]**](List[str].md)| Filter by files.file_format | [optional] 
@@ -2363,15 +2363,15 @@ Name | Type | Description  | Notes
  **lab_title** | **str**| Filter by lab.title | [optional] 
  **samples_id** | [**List[str]**](List[str].md)| Filter by samples.@id | [optional] 
  **samples_accession** | [**List[str]**](List[str].md)| Filter by samples.accession | [optional] 
- **samples_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.aliases | [optional] 
- **samples_cell_fate_change_treatments** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.cell_fate_change_treatments | [optional] 
- **samples_classifications** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.classifications | [optional] 
- **samples_construct_library_sets** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.construct_library_sets | [optional] 
+ **samples_aliases** | [**List[str]**](List[str].md)| Filter by samples.aliases | [optional] 
+ **samples_cell_fate_change_treatments** | [**List[str]**](List[str].md)| Filter by samples.cell_fate_change_treatments | [optional] 
+ **samples_classifications** | [**List[str]**](List[str].md)| Filter by samples.classifications | [optional] 
+ **samples_construct_library_sets** | [**List[str]**](List[str].md)| Filter by samples.construct_library_sets | [optional] 
  **samples_disease_terms_id** | [**List[str]**](List[str].md)| Filter by samples.disease_terms.@id | [optional] 
  **samples_disease_terms_term_name** | [**List[str]**](List[str].md)| Filter by samples.disease_terms.term_name | [optional] 
- **samples_modifications** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.modifications | [optional] 
+ **samples_modifications** | [**List[str]**](List[str].md)| Filter by samples.modifications | [optional] 
  **samples_sample_terms_id** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.@id | [optional] 
- **samples_sample_terms_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.sample_terms.aliases | [optional] 
+ **samples_sample_terms_aliases** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.aliases | [optional] 
  **samples_sample_terms_status** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.status | [optional] 
  **samples_sample_terms_summary** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.summary | [optional] 
  **samples_sample_terms_term_name** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.term_name | [optional] 
@@ -2380,7 +2380,7 @@ Name | Type | Description  | Notes
  **samples_targeted_sample_term_id** | [**List[str]**](List[str].md)| Filter by samples.targeted_sample_term.@id | [optional] 
  **samples_targeted_sample_term_term_name** | [**List[str]**](List[str].md)| Filter by samples.targeted_sample_term.term_name | [optional] 
  **samples_taxa** | [**List[str]**](List[str].md)| Filter by samples.taxa | [optional] 
- **samples_treatments** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.treatments | [optional] 
+ **samples_treatments** | [**List[str]**](List[str].md)| Filter by samples.treatments | [optional] 
  **submitted_by_id** | **str**| Filter by submitted_by.@id | [optional] 
  **submitted_by_title** | **str**| Filter by submitted_by.title | [optional] 
 
@@ -3715,7 +3715,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     disease_terms_term_name = ['disease_terms_term_name_example'] # List[str] | Filter by disease_terms.term_name (optional)
     file_sets_id = ['file_sets_id_example'] # List[str] | Filter by file_sets.@id (optional)
     file_sets_accession = ['file_sets_accession_example'] # List[str] | Filter by file_sets.accession (optional)
-    file_sets_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by file_sets.aliases (optional)
+    file_sets_aliases = ['file_sets_aliases_example'] # List[str] | Filter by file_sets.aliases (optional)
     file_sets_assay_term_term_name = ['file_sets_assay_term_term_name_example'] # List[str] | Filter by file_sets.assay_term.term_name (optional)
     file_sets_lab_title = ['file_sets_lab_title_example'] # List[str] | Filter by file_sets.lab.title (optional)
     file_sets_status = ['file_sets_status_example'] # List[str] | Filter by file_sets.status (optional)
@@ -3834,7 +3834,7 @@ Name | Type | Description  | Notes
  **disease_terms_term_name** | [**List[str]**](List[str].md)| Filter by disease_terms.term_name | [optional] 
  **file_sets_id** | [**List[str]**](List[str].md)| Filter by file_sets.@id | [optional] 
  **file_sets_accession** | [**List[str]**](List[str].md)| Filter by file_sets.accession | [optional] 
- **file_sets_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by file_sets.aliases | [optional] 
+ **file_sets_aliases** | [**List[str]**](List[str].md)| Filter by file_sets.aliases | [optional] 
  **file_sets_assay_term_term_name** | [**List[str]**](List[str].md)| Filter by file_sets.assay_term.term_name | [optional] 
  **file_sets_lab_title** | [**List[str]**](List[str].md)| Filter by file_sets.lab.title | [optional] 
  **file_sets_status** | [**List[str]**](List[str].md)| Filter by file_sets.status | [optional] 
@@ -4395,7 +4395,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     assay_term_term_name = 'assay_term_term_name_example' # str | Filter by assay_term.term_name (optional)
     auxiliary_sets_id = ['auxiliary_sets_id_example'] # List[str] | Filter by auxiliary_sets.@id (optional)
     auxiliary_sets_accession = ['auxiliary_sets_accession_example'] # List[str] | Filter by auxiliary_sets.accession (optional)
-    auxiliary_sets_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by auxiliary_sets.aliases (optional)
+    auxiliary_sets_aliases = ['auxiliary_sets_aliases_example'] # List[str] | Filter by auxiliary_sets.aliases (optional)
     auxiliary_sets_file_set_type = ['auxiliary_sets_file_set_type_example'] # List[str] | Filter by auxiliary_sets.file_set_type (optional)
     award_id = 'award_id_example' # str | Filter by award.@id (optional)
     award_component = 'award_component_example' # str | Filter by award.component (optional)
@@ -4404,19 +4404,19 @@ with igvf_client.ApiClient(configuration) as api_client:
     award_title = 'award_title_example' # str | Filter by award.title (optional)
     control_file_sets_id = ['control_file_sets_id_example'] # List[str] | Filter by control_file_sets.@id (optional)
     control_file_sets_accession = ['control_file_sets_accession_example'] # List[str] | Filter by control_file_sets.accession (optional)
-    control_file_sets_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by control_file_sets.aliases (optional)
+    control_file_sets_aliases = ['control_file_sets_aliases_example'] # List[str] | Filter by control_file_sets.aliases (optional)
     control_for_id = ['control_for_id_example'] # List[str] | Filter by control_for.@id (optional)
     control_for_accession = ['control_for_accession_example'] # List[str] | Filter by control_for.accession (optional)
-    control_for_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by control_for.aliases (optional)
+    control_for_aliases = ['control_for_aliases_example'] # List[str] | Filter by control_for.aliases (optional)
     donors_id = ['donors_id_example'] # List[str] | Filter by donors.@id (optional)
     donors_accession = ['donors_accession_example'] # List[str] | Filter by donors.accession (optional)
-    donors_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by donors.aliases (optional)
+    donors_aliases = ['donors_aliases_example'] # List[str] | Filter by donors.aliases (optional)
     donors_sex = ['donors_sex_example'] # List[str] | Filter by donors.sex (optional)
     donors_status = ['donors_status_example'] # List[str] | Filter by donors.status (optional)
     donors_taxa = ['donors_taxa_example'] # List[str] | Filter by donors.taxa (optional)
     files_id = ['files_id_example'] # List[str] | Filter by files.@id (optional)
     files_accession = ['files_accession_example'] # List[str] | Filter by files.accession (optional)
-    files_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by files.aliases (optional)
+    files_aliases = ['files_aliases_example'] # List[str] | Filter by files.aliases (optional)
     files_content_type = ['files_content_type_example'] # List[str] | Filter by files.content_type (optional)
     files_creation_timestamp = ['2013-10-20T19:20:30+01:00'] # List[datetime] | Filter by files.creation_timestamp (optional)
     files_file_format = ['files_file_format_example'] # List[str] | Filter by files.file_format (optional)
@@ -4435,12 +4435,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     related_multiome_datasets_accession = ['related_multiome_datasets_accession_example'] # List[str] | Filter by related_multiome_datasets.accession (optional)
     samples_id = ['samples_id_example'] # List[str] | Filter by samples.@id (optional)
     samples_accession = ['samples_accession_example'] # List[str] | Filter by samples.accession (optional)
-    samples_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.aliases (optional)
+    samples_aliases = ['samples_aliases_example'] # List[str] | Filter by samples.aliases (optional)
     samples_cell_fate_change_treatments_id = ['samples_cell_fate_change_treatments_id_example'] # List[str] | Filter by samples.cell_fate_change_treatments.@id (optional)
     samples_cell_fate_change_treatments_purpose = ['samples_cell_fate_change_treatments_purpose_example'] # List[str] | Filter by samples.cell_fate_change_treatments.purpose (optional)
     samples_cell_fate_change_treatments_summary = ['samples_cell_fate_change_treatments_summary_example'] # List[str] | Filter by samples.cell_fate_change_treatments.summary (optional)
     samples_cell_fate_change_treatments_treatment_type = ['samples_cell_fate_change_treatments_treatment_type_example'] # List[str] | Filter by samples.cell_fate_change_treatments.treatment_type (optional)
-    samples_classifications = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.classifications (optional)
+    samples_classifications = ['samples_classifications_example'] # List[str] | Filter by samples.classifications (optional)
     samples_construct_library_sets_id = ['samples_construct_library_sets_id_example'] # List[str] | Filter by samples.construct_library_sets.@id (optional)
     samples_construct_library_sets_accession = ['samples_construct_library_sets_accession_example'] # List[str] | Filter by samples.construct_library_sets.accession (optional)
     samples_construct_library_sets_file_set_type = ['samples_construct_library_sets_file_set_type_example'] # List[str] | Filter by samples.construct_library_sets.file_set_type (optional)
@@ -4454,7 +4454,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     samples_disease_terms_term_name = ['samples_disease_terms_term_name_example'] # List[str] | Filter by samples.disease_terms.term_name (optional)
     samples_modifications_id = ['samples_modifications_id_example'] # List[str] | Filter by samples.modifications.@id (optional)
     samples_sample_terms_id = ['samples_sample_terms_id_example'] # List[str] | Filter by samples.sample_terms.@id (optional)
-    samples_sample_terms_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.sample_terms.aliases (optional)
+    samples_sample_terms_aliases = ['samples_sample_terms_aliases_example'] # List[str] | Filter by samples.sample_terms.aliases (optional)
     samples_sample_terms_status = ['samples_sample_terms_status_example'] # List[str] | Filter by samples.sample_terms.status (optional)
     samples_sample_terms_summary = ['samples_sample_terms_summary_example'] # List[str] | Filter by samples.sample_terms.summary (optional)
     samples_sample_terms_term_name = ['samples_sample_terms_term_name_example'] # List[str] | Filter by samples.sample_terms.term_name (optional)
@@ -4473,7 +4473,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     targeted_genes_geneid = ['targeted_genes_geneid_example'] # List[str] | Filter by targeted_genes.geneid (optional)
     targeted_genes_name = ['targeted_genes_name_example'] # List[str] | Filter by targeted_genes.name (optional)
     targeted_genes_symbol = ['targeted_genes_symbol_example'] # List[str] | Filter by targeted_genes.symbol (optional)
-    targeted_genes_synonyms = [igvf_client.List[str]()] # List[List[str]] | Filter by targeted_genes.synonyms (optional)
+    targeted_genes_synonyms = ['targeted_genes_synonyms_example'] # List[str] | Filter by targeted_genes.synonyms (optional)
 
     try:
         # List items in the MeasurementSet collection.
@@ -4525,7 +4525,7 @@ Name | Type | Description  | Notes
  **assay_term_term_name** | **str**| Filter by assay_term.term_name | [optional] 
  **auxiliary_sets_id** | [**List[str]**](List[str].md)| Filter by auxiliary_sets.@id | [optional] 
  **auxiliary_sets_accession** | [**List[str]**](List[str].md)| Filter by auxiliary_sets.accession | [optional] 
- **auxiliary_sets_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by auxiliary_sets.aliases | [optional] 
+ **auxiliary_sets_aliases** | [**List[str]**](List[str].md)| Filter by auxiliary_sets.aliases | [optional] 
  **auxiliary_sets_file_set_type** | [**List[str]**](List[str].md)| Filter by auxiliary_sets.file_set_type | [optional] 
  **award_id** | **str**| Filter by award.@id | [optional] 
  **award_component** | **str**| Filter by award.component | [optional] 
@@ -4534,19 +4534,19 @@ Name | Type | Description  | Notes
  **award_title** | **str**| Filter by award.title | [optional] 
  **control_file_sets_id** | [**List[str]**](List[str].md)| Filter by control_file_sets.@id | [optional] 
  **control_file_sets_accession** | [**List[str]**](List[str].md)| Filter by control_file_sets.accession | [optional] 
- **control_file_sets_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by control_file_sets.aliases | [optional] 
+ **control_file_sets_aliases** | [**List[str]**](List[str].md)| Filter by control_file_sets.aliases | [optional] 
  **control_for_id** | [**List[str]**](List[str].md)| Filter by control_for.@id | [optional] 
  **control_for_accession** | [**List[str]**](List[str].md)| Filter by control_for.accession | [optional] 
- **control_for_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by control_for.aliases | [optional] 
+ **control_for_aliases** | [**List[str]**](List[str].md)| Filter by control_for.aliases | [optional] 
  **donors_id** | [**List[str]**](List[str].md)| Filter by donors.@id | [optional] 
  **donors_accession** | [**List[str]**](List[str].md)| Filter by donors.accession | [optional] 
- **donors_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by donors.aliases | [optional] 
+ **donors_aliases** | [**List[str]**](List[str].md)| Filter by donors.aliases | [optional] 
  **donors_sex** | [**List[str]**](List[str].md)| Filter by donors.sex | [optional] 
  **donors_status** | [**List[str]**](List[str].md)| Filter by donors.status | [optional] 
  **donors_taxa** | [**List[str]**](List[str].md)| Filter by donors.taxa | [optional] 
  **files_id** | [**List[str]**](List[str].md)| Filter by files.@id | [optional] 
  **files_accession** | [**List[str]**](List[str].md)| Filter by files.accession | [optional] 
- **files_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by files.aliases | [optional] 
+ **files_aliases** | [**List[str]**](List[str].md)| Filter by files.aliases | [optional] 
  **files_content_type** | [**List[str]**](List[str].md)| Filter by files.content_type | [optional] 
  **files_creation_timestamp** | [**List[datetime]**](List[datetime].md)| Filter by files.creation_timestamp | [optional] 
  **files_file_format** | [**List[str]**](List[str].md)| Filter by files.file_format | [optional] 
@@ -4565,12 +4565,12 @@ Name | Type | Description  | Notes
  **related_multiome_datasets_accession** | [**List[str]**](List[str].md)| Filter by related_multiome_datasets.accession | [optional] 
  **samples_id** | [**List[str]**](List[str].md)| Filter by samples.@id | [optional] 
  **samples_accession** | [**List[str]**](List[str].md)| Filter by samples.accession | [optional] 
- **samples_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.aliases | [optional] 
+ **samples_aliases** | [**List[str]**](List[str].md)| Filter by samples.aliases | [optional] 
  **samples_cell_fate_change_treatments_id** | [**List[str]**](List[str].md)| Filter by samples.cell_fate_change_treatments.@id | [optional] 
  **samples_cell_fate_change_treatments_purpose** | [**List[str]**](List[str].md)| Filter by samples.cell_fate_change_treatments.purpose | [optional] 
  **samples_cell_fate_change_treatments_summary** | [**List[str]**](List[str].md)| Filter by samples.cell_fate_change_treatments.summary | [optional] 
  **samples_cell_fate_change_treatments_treatment_type** | [**List[str]**](List[str].md)| Filter by samples.cell_fate_change_treatments.treatment_type | [optional] 
- **samples_classifications** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.classifications | [optional] 
+ **samples_classifications** | [**List[str]**](List[str].md)| Filter by samples.classifications | [optional] 
  **samples_construct_library_sets_id** | [**List[str]**](List[str].md)| Filter by samples.construct_library_sets.@id | [optional] 
  **samples_construct_library_sets_accession** | [**List[str]**](List[str].md)| Filter by samples.construct_library_sets.accession | [optional] 
  **samples_construct_library_sets_file_set_type** | [**List[str]**](List[str].md)| Filter by samples.construct_library_sets.file_set_type | [optional] 
@@ -4584,7 +4584,7 @@ Name | Type | Description  | Notes
  **samples_disease_terms_term_name** | [**List[str]**](List[str].md)| Filter by samples.disease_terms.term_name | [optional] 
  **samples_modifications_id** | [**List[str]**](List[str].md)| Filter by samples.modifications.@id | [optional] 
  **samples_sample_terms_id** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.@id | [optional] 
- **samples_sample_terms_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.sample_terms.aliases | [optional] 
+ **samples_sample_terms_aliases** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.aliases | [optional] 
  **samples_sample_terms_status** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.status | [optional] 
  **samples_sample_terms_summary** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.summary | [optional] 
  **samples_sample_terms_term_name** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.term_name | [optional] 
@@ -4603,7 +4603,7 @@ Name | Type | Description  | Notes
  **targeted_genes_geneid** | [**List[str]**](List[str].md)| Filter by targeted_genes.geneid | [optional] 
  **targeted_genes_name** | [**List[str]**](List[str].md)| Filter by targeted_genes.name | [optional] 
  **targeted_genes_symbol** | [**List[str]**](List[str].md)| Filter by targeted_genes.symbol | [optional] 
- **targeted_genes_synonyms** | [**List[List[str]]**](List[List[str]].md)| Filter by targeted_genes.synonyms | [optional] 
+ **targeted_genes_synonyms** | [**List[str]**](List[str].md)| Filter by targeted_genes.synonyms | [optional] 
 
 ### Return type
 
@@ -4880,16 +4880,16 @@ with igvf_client.ApiClient(configuration) as api_client:
     award_title = 'award_title_example' # str | Filter by award.title (optional)
     control_for_id = ['control_for_id_example'] # List[str] | Filter by control_for.@id (optional)
     control_for_accession = ['control_for_accession_example'] # List[str] | Filter by control_for.accession (optional)
-    control_for_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by control_for.aliases (optional)
+    control_for_aliases = ['control_for_aliases_example'] # List[str] | Filter by control_for.aliases (optional)
     donors_id = ['donors_id_example'] # List[str] | Filter by donors.@id (optional)
     donors_accession = ['donors_accession_example'] # List[str] | Filter by donors.accession (optional)
-    donors_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by donors.aliases (optional)
+    donors_aliases = ['donors_aliases_example'] # List[str] | Filter by donors.aliases (optional)
     donors_sex = ['donors_sex_example'] # List[str] | Filter by donors.sex (optional)
     donors_status = ['donors_status_example'] # List[str] | Filter by donors.status (optional)
     donors_taxa = ['donors_taxa_example'] # List[str] | Filter by donors.taxa (optional)
     files_id = ['files_id_example'] # List[str] | Filter by files.@id (optional)
     files_accession = ['files_accession_example'] # List[str] | Filter by files.accession (optional)
-    files_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by files.aliases (optional)
+    files_aliases = ['files_aliases_example'] # List[str] | Filter by files.aliases (optional)
     files_content_type = ['files_content_type_example'] # List[str] | Filter by files.content_type (optional)
     files_creation_timestamp = ['2013-10-20T19:20:30+01:00'] # List[datetime] | Filter by files.creation_timestamp (optional)
     files_file_format = ['files_file_format_example'] # List[str] | Filter by files.file_format (optional)
@@ -4901,20 +4901,20 @@ with igvf_client.ApiClient(configuration) as api_client:
     files_upload_status = ['files_upload_status_example'] # List[str] | Filter by files.upload_status (optional)
     input_file_sets_id = ['input_file_sets_id_example'] # List[str] | Filter by input_file_sets.@id (optional)
     input_file_sets_accession = ['input_file_sets_accession_example'] # List[str] | Filter by input_file_sets.accession (optional)
-    input_file_sets_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by input_file_sets.aliases (optional)
+    input_file_sets_aliases = ['input_file_sets_aliases_example'] # List[str] | Filter by input_file_sets.aliases (optional)
     lab_id = 'lab_id_example' # str | Filter by lab.@id (optional)
     lab_title = 'lab_title_example' # str | Filter by lab.title (optional)
     samples_id = ['samples_id_example'] # List[str] | Filter by samples.@id (optional)
     samples_accession = ['samples_accession_example'] # List[str] | Filter by samples.accession (optional)
-    samples_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.aliases (optional)
-    samples_cell_fate_change_treatments = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.cell_fate_change_treatments (optional)
-    samples_classifications = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.classifications (optional)
-    samples_construct_library_sets = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.construct_library_sets (optional)
+    samples_aliases = ['samples_aliases_example'] # List[str] | Filter by samples.aliases (optional)
+    samples_cell_fate_change_treatments = ['samples_cell_fate_change_treatments_example'] # List[str] | Filter by samples.cell_fate_change_treatments (optional)
+    samples_classifications = ['samples_classifications_example'] # List[str] | Filter by samples.classifications (optional)
+    samples_construct_library_sets = ['samples_construct_library_sets_example'] # List[str] | Filter by samples.construct_library_sets (optional)
     samples_disease_terms_id = ['samples_disease_terms_id_example'] # List[str] | Filter by samples.disease_terms.@id (optional)
     samples_disease_terms_term_name = ['samples_disease_terms_term_name_example'] # List[str] | Filter by samples.disease_terms.term_name (optional)
-    samples_modifications = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.modifications (optional)
+    samples_modifications = ['samples_modifications_example'] # List[str] | Filter by samples.modifications (optional)
     samples_sample_terms_id = ['samples_sample_terms_id_example'] # List[str] | Filter by samples.sample_terms.@id (optional)
-    samples_sample_terms_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.sample_terms.aliases (optional)
+    samples_sample_terms_aliases = ['samples_sample_terms_aliases_example'] # List[str] | Filter by samples.sample_terms.aliases (optional)
     samples_sample_terms_status = ['samples_sample_terms_status_example'] # List[str] | Filter by samples.sample_terms.status (optional)
     samples_sample_terms_summary = ['samples_sample_terms_summary_example'] # List[str] | Filter by samples.sample_terms.summary (optional)
     samples_sample_terms_term_name = ['samples_sample_terms_term_name_example'] # List[str] | Filter by samples.sample_terms.term_name (optional)
@@ -4923,7 +4923,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     samples_targeted_sample_term_id = ['samples_targeted_sample_term_id_example'] # List[str] | Filter by samples.targeted_sample_term.@id (optional)
     samples_targeted_sample_term_term_name = ['samples_targeted_sample_term_term_name_example'] # List[str] | Filter by samples.targeted_sample_term.term_name (optional)
     samples_taxa = ['samples_taxa_example'] # List[str] | Filter by samples.taxa (optional)
-    samples_treatments = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.treatments (optional)
+    samples_treatments = ['samples_treatments_example'] # List[str] | Filter by samples.treatments (optional)
     submitted_by_id = 'submitted_by_id_example' # str | Filter by submitted_by.@id (optional)
     submitted_by_title = 'submitted_by_title_example' # str | Filter by submitted_by.title (optional)
 
@@ -4982,16 +4982,16 @@ Name | Type | Description  | Notes
  **award_title** | **str**| Filter by award.title | [optional] 
  **control_for_id** | [**List[str]**](List[str].md)| Filter by control_for.@id | [optional] 
  **control_for_accession** | [**List[str]**](List[str].md)| Filter by control_for.accession | [optional] 
- **control_for_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by control_for.aliases | [optional] 
+ **control_for_aliases** | [**List[str]**](List[str].md)| Filter by control_for.aliases | [optional] 
  **donors_id** | [**List[str]**](List[str].md)| Filter by donors.@id | [optional] 
  **donors_accession** | [**List[str]**](List[str].md)| Filter by donors.accession | [optional] 
- **donors_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by donors.aliases | [optional] 
+ **donors_aliases** | [**List[str]**](List[str].md)| Filter by donors.aliases | [optional] 
  **donors_sex** | [**List[str]**](List[str].md)| Filter by donors.sex | [optional] 
  **donors_status** | [**List[str]**](List[str].md)| Filter by donors.status | [optional] 
  **donors_taxa** | [**List[str]**](List[str].md)| Filter by donors.taxa | [optional] 
  **files_id** | [**List[str]**](List[str].md)| Filter by files.@id | [optional] 
  **files_accession** | [**List[str]**](List[str].md)| Filter by files.accession | [optional] 
- **files_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by files.aliases | [optional] 
+ **files_aliases** | [**List[str]**](List[str].md)| Filter by files.aliases | [optional] 
  **files_content_type** | [**List[str]**](List[str].md)| Filter by files.content_type | [optional] 
  **files_creation_timestamp** | [**List[datetime]**](List[datetime].md)| Filter by files.creation_timestamp | [optional] 
  **files_file_format** | [**List[str]**](List[str].md)| Filter by files.file_format | [optional] 
@@ -5003,20 +5003,20 @@ Name | Type | Description  | Notes
  **files_upload_status** | [**List[str]**](List[str].md)| Filter by files.upload_status | [optional] 
  **input_file_sets_id** | [**List[str]**](List[str].md)| Filter by input_file_sets.@id | [optional] 
  **input_file_sets_accession** | [**List[str]**](List[str].md)| Filter by input_file_sets.accession | [optional] 
- **input_file_sets_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by input_file_sets.aliases | [optional] 
+ **input_file_sets_aliases** | [**List[str]**](List[str].md)| Filter by input_file_sets.aliases | [optional] 
  **lab_id** | **str**| Filter by lab.@id | [optional] 
  **lab_title** | **str**| Filter by lab.title | [optional] 
  **samples_id** | [**List[str]**](List[str].md)| Filter by samples.@id | [optional] 
  **samples_accession** | [**List[str]**](List[str].md)| Filter by samples.accession | [optional] 
- **samples_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.aliases | [optional] 
- **samples_cell_fate_change_treatments** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.cell_fate_change_treatments | [optional] 
- **samples_classifications** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.classifications | [optional] 
- **samples_construct_library_sets** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.construct_library_sets | [optional] 
+ **samples_aliases** | [**List[str]**](List[str].md)| Filter by samples.aliases | [optional] 
+ **samples_cell_fate_change_treatments** | [**List[str]**](List[str].md)| Filter by samples.cell_fate_change_treatments | [optional] 
+ **samples_classifications** | [**List[str]**](List[str].md)| Filter by samples.classifications | [optional] 
+ **samples_construct_library_sets** | [**List[str]**](List[str].md)| Filter by samples.construct_library_sets | [optional] 
  **samples_disease_terms_id** | [**List[str]**](List[str].md)| Filter by samples.disease_terms.@id | [optional] 
  **samples_disease_terms_term_name** | [**List[str]**](List[str].md)| Filter by samples.disease_terms.term_name | [optional] 
- **samples_modifications** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.modifications | [optional] 
+ **samples_modifications** | [**List[str]**](List[str].md)| Filter by samples.modifications | [optional] 
  **samples_sample_terms_id** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.@id | [optional] 
- **samples_sample_terms_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.sample_terms.aliases | [optional] 
+ **samples_sample_terms_aliases** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.aliases | [optional] 
  **samples_sample_terms_status** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.status | [optional] 
  **samples_sample_terms_summary** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.summary | [optional] 
  **samples_sample_terms_term_name** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.term_name | [optional] 
@@ -5025,7 +5025,7 @@ Name | Type | Description  | Notes
  **samples_targeted_sample_term_id** | [**List[str]**](List[str].md)| Filter by samples.targeted_sample_term.@id | [optional] 
  **samples_targeted_sample_term_term_name** | [**List[str]**](List[str].md)| Filter by samples.targeted_sample_term.term_name | [optional] 
  **samples_taxa** | [**List[str]**](List[str].md)| Filter by samples.taxa | [optional] 
- **samples_treatments** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.treatments | [optional] 
+ **samples_treatments** | [**List[str]**](List[str].md)| Filter by samples.treatments | [optional] 
  **submitted_by_id** | **str**| Filter by submitted_by.@id | [optional] 
  **submitted_by_title** | **str**| Filter by submitted_by.title | [optional] 
 
@@ -5140,7 +5140,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     disease_terms_term_name = ['disease_terms_term_name_example'] # List[str] | Filter by disease_terms.term_name (optional)
     file_sets_id = ['file_sets_id_example'] # List[str] | Filter by file_sets.@id (optional)
     file_sets_accession = ['file_sets_accession_example'] # List[str] | Filter by file_sets.accession (optional)
-    file_sets_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by file_sets.aliases (optional)
+    file_sets_aliases = ['file_sets_aliases_example'] # List[str] | Filter by file_sets.aliases (optional)
     file_sets_assay_term_term_name = ['file_sets_assay_term_term_name_example'] # List[str] | Filter by file_sets.assay_term.term_name (optional)
     file_sets_lab_title = ['file_sets_lab_title_example'] # List[str] | Filter by file_sets.lab.title (optional)
     file_sets_status = ['file_sets_status_example'] # List[str] | Filter by file_sets.status (optional)
@@ -5154,7 +5154,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     multiplexed_in_accession = ['multiplexed_in_accession_example'] # List[str] | Filter by multiplexed_in.accession (optional)
     multiplexed_samples_id = ['multiplexed_samples_id_example'] # List[str] | Filter by multiplexed_samples.@id (optional)
     multiplexed_samples_accession = ['multiplexed_samples_accession_example'] # List[str] | Filter by multiplexed_samples.accession (optional)
-    multiplexed_samples_construct_library_sets = [igvf_client.List[str]()] # List[List[str]] | Filter by multiplexed_samples.construct_library_sets (optional)
+    multiplexed_samples_construct_library_sets = ['multiplexed_samples_construct_library_sets_example'] # List[str] | Filter by multiplexed_samples.construct_library_sets (optional)
     multiplexed_samples_disease_terms_id = ['multiplexed_samples_disease_terms_id_example'] # List[str] | Filter by multiplexed_samples.disease_terms.@id (optional)
     multiplexed_samples_disease_terms_term_name = ['multiplexed_samples_disease_terms_term_name_example'] # List[str] | Filter by multiplexed_samples.disease_terms.term_name (optional)
     multiplexed_samples_donors_id = ['multiplexed_samples_donors_id_example'] # List[str] | Filter by multiplexed_samples.donors.@id (optional)
@@ -5241,7 +5241,7 @@ Name | Type | Description  | Notes
  **disease_terms_term_name** | [**List[str]**](List[str].md)| Filter by disease_terms.term_name | [optional] 
  **file_sets_id** | [**List[str]**](List[str].md)| Filter by file_sets.@id | [optional] 
  **file_sets_accession** | [**List[str]**](List[str].md)| Filter by file_sets.accession | [optional] 
- **file_sets_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by file_sets.aliases | [optional] 
+ **file_sets_aliases** | [**List[str]**](List[str].md)| Filter by file_sets.aliases | [optional] 
  **file_sets_assay_term_term_name** | [**List[str]**](List[str].md)| Filter by file_sets.assay_term.term_name | [optional] 
  **file_sets_lab_title** | [**List[str]**](List[str].md)| Filter by file_sets.lab.title | [optional] 
  **file_sets_status** | [**List[str]**](List[str].md)| Filter by file_sets.status | [optional] 
@@ -5255,7 +5255,7 @@ Name | Type | Description  | Notes
  **multiplexed_in_accession** | [**List[str]**](List[str].md)| Filter by multiplexed_in.accession | [optional] 
  **multiplexed_samples_id** | [**List[str]**](List[str].md)| Filter by multiplexed_samples.@id | [optional] 
  **multiplexed_samples_accession** | [**List[str]**](List[str].md)| Filter by multiplexed_samples.accession | [optional] 
- **multiplexed_samples_construct_library_sets** | [**List[List[str]]**](List[List[str]].md)| Filter by multiplexed_samples.construct_library_sets | [optional] 
+ **multiplexed_samples_construct_library_sets** | [**List[str]**](List[str].md)| Filter by multiplexed_samples.construct_library_sets | [optional] 
  **multiplexed_samples_disease_terms_id** | [**List[str]**](List[str].md)| Filter by multiplexed_samples.disease_terms.@id | [optional] 
  **multiplexed_samples_disease_terms_term_name** | [**List[str]**](List[str].md)| Filter by multiplexed_samples.disease_terms.term_name | [optional] 
  **multiplexed_samples_donors_id** | [**List[str]**](List[str].md)| Filter by multiplexed_samples.donors.@id | [optional] 
@@ -6026,16 +6026,16 @@ with igvf_client.ApiClient(configuration) as api_client:
     award_title = 'award_title_example' # str | Filter by award.title (optional)
     control_for_id = ['control_for_id_example'] # List[str] | Filter by control_for.@id (optional)
     control_for_accession = ['control_for_accession_example'] # List[str] | Filter by control_for.accession (optional)
-    control_for_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by control_for.aliases (optional)
+    control_for_aliases = ['control_for_aliases_example'] # List[str] | Filter by control_for.aliases (optional)
     donors_id = ['donors_id_example'] # List[str] | Filter by donors.@id (optional)
     donors_accession = ['donors_accession_example'] # List[str] | Filter by donors.accession (optional)
-    donors_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by donors.aliases (optional)
+    donors_aliases = ['donors_aliases_example'] # List[str] | Filter by donors.aliases (optional)
     donors_sex = ['donors_sex_example'] # List[str] | Filter by donors.sex (optional)
     donors_status = ['donors_status_example'] # List[str] | Filter by donors.status (optional)
     donors_taxa = ['donors_taxa_example'] # List[str] | Filter by donors.taxa (optional)
     files_id = ['files_id_example'] # List[str] | Filter by files.@id (optional)
     files_accession = ['files_accession_example'] # List[str] | Filter by files.accession (optional)
-    files_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by files.aliases (optional)
+    files_aliases = ['files_aliases_example'] # List[str] | Filter by files.aliases (optional)
     files_content_type = ['files_content_type_example'] # List[str] | Filter by files.content_type (optional)
     files_creation_timestamp = ['2013-10-20T19:20:30+01:00'] # List[datetime] | Filter by files.creation_timestamp (optional)
     files_file_format = ['files_file_format_example'] # List[str] | Filter by files.file_format (optional)
@@ -6055,17 +6055,17 @@ with igvf_client.ApiClient(configuration) as api_client:
     large_scale_loci_list_aliases = ['large_scale_loci_list_aliases_example'] # List[str] | Filter by large_scale_loci_list.aliases (optional)
     samples_id = ['samples_id_example'] # List[str] | Filter by samples.@id (optional)
     samples_accession = ['samples_accession_example'] # List[str] | Filter by samples.accession (optional)
-    samples_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.aliases (optional)
-    samples_cell_fate_change_treatments = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.cell_fate_change_treatments (optional)
-    samples_classifications = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.classifications (optional)
+    samples_aliases = ['samples_aliases_example'] # List[str] | Filter by samples.aliases (optional)
+    samples_cell_fate_change_treatments = ['samples_cell_fate_change_treatments_example'] # List[str] | Filter by samples.cell_fate_change_treatments (optional)
+    samples_classifications = ['samples_classifications_example'] # List[str] | Filter by samples.classifications (optional)
     samples_construct_library_sets_id = ['samples_construct_library_sets_id_example'] # List[str] | Filter by samples.construct_library_sets.@id (optional)
     samples_construct_library_sets_accession = ['samples_construct_library_sets_accession_example'] # List[str] | Filter by samples.construct_library_sets.accession (optional)
     samples_construct_library_sets_summary = ['samples_construct_library_sets_summary_example'] # List[str] | Filter by samples.construct_library_sets.summary (optional)
     samples_disease_terms_id = ['samples_disease_terms_id_example'] # List[str] | Filter by samples.disease_terms.@id (optional)
     samples_disease_terms_term_name = ['samples_disease_terms_term_name_example'] # List[str] | Filter by samples.disease_terms.term_name (optional)
-    samples_modifications = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.modifications (optional)
+    samples_modifications = ['samples_modifications_example'] # List[str] | Filter by samples.modifications (optional)
     samples_sample_terms_id = ['samples_sample_terms_id_example'] # List[str] | Filter by samples.sample_terms.@id (optional)
-    samples_sample_terms_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.sample_terms.aliases (optional)
+    samples_sample_terms_aliases = ['samples_sample_terms_aliases_example'] # List[str] | Filter by samples.sample_terms.aliases (optional)
     samples_sample_terms_status = ['samples_sample_terms_status_example'] # List[str] | Filter by samples.sample_terms.status (optional)
     samples_sample_terms_summary = ['samples_sample_terms_summary_example'] # List[str] | Filter by samples.sample_terms.summary (optional)
     samples_sample_terms_term_name = ['samples_sample_terms_term_name_example'] # List[str] | Filter by samples.sample_terms.term_name (optional)
@@ -6074,12 +6074,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     samples_targeted_sample_term_id = ['samples_targeted_sample_term_id_example'] # List[str] | Filter by samples.targeted_sample_term.@id (optional)
     samples_targeted_sample_term_term_name = ['samples_targeted_sample_term_term_name_example'] # List[str] | Filter by samples.targeted_sample_term.term_name (optional)
     samples_taxa = ['samples_taxa_example'] # List[str] | Filter by samples.taxa (optional)
-    samples_treatments = [igvf_client.List[str]()] # List[List[str]] | Filter by samples.treatments (optional)
+    samples_treatments = ['samples_treatments_example'] # List[str] | Filter by samples.treatments (optional)
     small_scale_gene_list_id = ['small_scale_gene_list_id_example'] # List[str] | Filter by small_scale_gene_list.@id (optional)
     small_scale_gene_list_geneid = ['small_scale_gene_list_geneid_example'] # List[str] | Filter by small_scale_gene_list.geneid (optional)
     small_scale_gene_list_name = ['small_scale_gene_list_name_example'] # List[str] | Filter by small_scale_gene_list.name (optional)
     small_scale_gene_list_symbol = ['small_scale_gene_list_symbol_example'] # List[str] | Filter by small_scale_gene_list.symbol (optional)
-    small_scale_gene_list_synonyms = [igvf_client.List[str]()] # List[List[str]] | Filter by small_scale_gene_list.synonyms (optional)
+    small_scale_gene_list_synonyms = ['small_scale_gene_list_synonyms_example'] # List[str] | Filter by small_scale_gene_list.synonyms (optional)
     submitted_by_id = 'submitted_by_id_example' # str | Filter by submitted_by.@id (optional)
     submitted_by_title = 'submitted_by_title_example' # str | Filter by submitted_by.title (optional)
 
@@ -6135,16 +6135,16 @@ Name | Type | Description  | Notes
  **award_title** | **str**| Filter by award.title | [optional] 
  **control_for_id** | [**List[str]**](List[str].md)| Filter by control_for.@id | [optional] 
  **control_for_accession** | [**List[str]**](List[str].md)| Filter by control_for.accession | [optional] 
- **control_for_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by control_for.aliases | [optional] 
+ **control_for_aliases** | [**List[str]**](List[str].md)| Filter by control_for.aliases | [optional] 
  **donors_id** | [**List[str]**](List[str].md)| Filter by donors.@id | [optional] 
  **donors_accession** | [**List[str]**](List[str].md)| Filter by donors.accession | [optional] 
- **donors_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by donors.aliases | [optional] 
+ **donors_aliases** | [**List[str]**](List[str].md)| Filter by donors.aliases | [optional] 
  **donors_sex** | [**List[str]**](List[str].md)| Filter by donors.sex | [optional] 
  **donors_status** | [**List[str]**](List[str].md)| Filter by donors.status | [optional] 
  **donors_taxa** | [**List[str]**](List[str].md)| Filter by donors.taxa | [optional] 
  **files_id** | [**List[str]**](List[str].md)| Filter by files.@id | [optional] 
  **files_accession** | [**List[str]**](List[str].md)| Filter by files.accession | [optional] 
- **files_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by files.aliases | [optional] 
+ **files_aliases** | [**List[str]**](List[str].md)| Filter by files.aliases | [optional] 
  **files_content_type** | [**List[str]**](List[str].md)| Filter by files.content_type | [optional] 
  **files_creation_timestamp** | [**List[datetime]**](List[datetime].md)| Filter by files.creation_timestamp | [optional] 
  **files_file_format** | [**List[str]**](List[str].md)| Filter by files.file_format | [optional] 
@@ -6164,17 +6164,17 @@ Name | Type | Description  | Notes
  **large_scale_loci_list_aliases** | [**List[str]**](List[str].md)| Filter by large_scale_loci_list.aliases | [optional] 
  **samples_id** | [**List[str]**](List[str].md)| Filter by samples.@id | [optional] 
  **samples_accession** | [**List[str]**](List[str].md)| Filter by samples.accession | [optional] 
- **samples_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.aliases | [optional] 
- **samples_cell_fate_change_treatments** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.cell_fate_change_treatments | [optional] 
- **samples_classifications** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.classifications | [optional] 
+ **samples_aliases** | [**List[str]**](List[str].md)| Filter by samples.aliases | [optional] 
+ **samples_cell_fate_change_treatments** | [**List[str]**](List[str].md)| Filter by samples.cell_fate_change_treatments | [optional] 
+ **samples_classifications** | [**List[str]**](List[str].md)| Filter by samples.classifications | [optional] 
  **samples_construct_library_sets_id** | [**List[str]**](List[str].md)| Filter by samples.construct_library_sets.@id | [optional] 
  **samples_construct_library_sets_accession** | [**List[str]**](List[str].md)| Filter by samples.construct_library_sets.accession | [optional] 
  **samples_construct_library_sets_summary** | [**List[str]**](List[str].md)| Filter by samples.construct_library_sets.summary | [optional] 
  **samples_disease_terms_id** | [**List[str]**](List[str].md)| Filter by samples.disease_terms.@id | [optional] 
  **samples_disease_terms_term_name** | [**List[str]**](List[str].md)| Filter by samples.disease_terms.term_name | [optional] 
- **samples_modifications** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.modifications | [optional] 
+ **samples_modifications** | [**List[str]**](List[str].md)| Filter by samples.modifications | [optional] 
  **samples_sample_terms_id** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.@id | [optional] 
- **samples_sample_terms_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.sample_terms.aliases | [optional] 
+ **samples_sample_terms_aliases** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.aliases | [optional] 
  **samples_sample_terms_status** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.status | [optional] 
  **samples_sample_terms_summary** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.summary | [optional] 
  **samples_sample_terms_term_name** | [**List[str]**](List[str].md)| Filter by samples.sample_terms.term_name | [optional] 
@@ -6183,12 +6183,12 @@ Name | Type | Description  | Notes
  **samples_targeted_sample_term_id** | [**List[str]**](List[str].md)| Filter by samples.targeted_sample_term.@id | [optional] 
  **samples_targeted_sample_term_term_name** | [**List[str]**](List[str].md)| Filter by samples.targeted_sample_term.term_name | [optional] 
  **samples_taxa** | [**List[str]**](List[str].md)| Filter by samples.taxa | [optional] 
- **samples_treatments** | [**List[List[str]]**](List[List[str]].md)| Filter by samples.treatments | [optional] 
+ **samples_treatments** | [**List[str]**](List[str].md)| Filter by samples.treatments | [optional] 
  **small_scale_gene_list_id** | [**List[str]**](List[str].md)| Filter by small_scale_gene_list.@id | [optional] 
  **small_scale_gene_list_geneid** | [**List[str]**](List[str].md)| Filter by small_scale_gene_list.geneid | [optional] 
  **small_scale_gene_list_name** | [**List[str]**](List[str].md)| Filter by small_scale_gene_list.name | [optional] 
  **small_scale_gene_list_symbol** | [**List[str]**](List[str].md)| Filter by small_scale_gene_list.symbol | [optional] 
- **small_scale_gene_list_synonyms** | [**List[List[str]]**](List[List[str]].md)| Filter by small_scale_gene_list.synonyms | [optional] 
+ **small_scale_gene_list_synonyms** | [**List[str]**](List[str].md)| Filter by small_scale_gene_list.synonyms | [optional] 
  **submitted_by_id** | **str**| Filter by submitted_by.@id | [optional] 
  **submitted_by_title** | **str**| Filter by submitted_by.title | [optional] 
 
@@ -6317,7 +6317,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     disease_terms_term_name = ['disease_terms_term_name_example'] # List[str] | Filter by disease_terms.term_name (optional)
     file_sets_id = ['file_sets_id_example'] # List[str] | Filter by file_sets.@id (optional)
     file_sets_accession = ['file_sets_accession_example'] # List[str] | Filter by file_sets.accession (optional)
-    file_sets_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by file_sets.aliases (optional)
+    file_sets_aliases = ['file_sets_aliases_example'] # List[str] | Filter by file_sets.aliases (optional)
     file_sets_assay_term_term_name = ['file_sets_assay_term_term_name_example'] # List[str] | Filter by file_sets.assay_term.term_name (optional)
     file_sets_lab_title = ['file_sets_lab_title_example'] # List[str] | Filter by file_sets.lab.title (optional)
     file_sets_status = ['file_sets_status_example'] # List[str] | Filter by file_sets.status (optional)
@@ -6423,7 +6423,7 @@ Name | Type | Description  | Notes
  **disease_terms_term_name** | [**List[str]**](List[str].md)| Filter by disease_terms.term_name | [optional] 
  **file_sets_id** | [**List[str]**](List[str].md)| Filter by file_sets.@id | [optional] 
  **file_sets_accession** | [**List[str]**](List[str].md)| Filter by file_sets.accession | [optional] 
- **file_sets_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by file_sets.aliases | [optional] 
+ **file_sets_aliases** | [**List[str]**](List[str].md)| Filter by file_sets.aliases | [optional] 
  **file_sets_assay_term_term_name** | [**List[str]**](List[str].md)| Filter by file_sets.assay_term.term_name | [optional] 
  **file_sets_lab_title** | [**List[str]**](List[str].md)| Filter by file_sets.lab.title | [optional] 
  **file_sets_status** | [**List[str]**](List[str].md)| Filter by file_sets.status | [optional] 
@@ -8498,7 +8498,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     award_component = 'award_component_example' # str | Filter by award.component (optional)
     file_sets_id = ['file_sets_id_example'] # List[str] | Filter by file_sets.@id (optional)
     file_sets_accession = ['file_sets_accession_example'] # List[str] | Filter by file_sets.accession (optional)
-    file_sets_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by file_sets.aliases (optional)
+    file_sets_aliases = ['file_sets_aliases_example'] # List[str] | Filter by file_sets.aliases (optional)
     file_sets_assay_term_term_name = ['file_sets_assay_term_term_name_example'] # List[str] | Filter by file_sets.assay_term.term_name (optional)
     file_sets_lab_title = ['file_sets_lab_title_example'] # List[str] | Filter by file_sets.lab.title (optional)
     file_sets_status = ['file_sets_status_example'] # List[str] | Filter by file_sets.status (optional)
@@ -8577,7 +8577,7 @@ Name | Type | Description  | Notes
  **award_component** | **str**| Filter by award.component | [optional] 
  **file_sets_id** | [**List[str]**](List[str].md)| Filter by file_sets.@id | [optional] 
  **file_sets_accession** | [**List[str]**](List[str].md)| Filter by file_sets.accession | [optional] 
- **file_sets_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by file_sets.aliases | [optional] 
+ **file_sets_aliases** | [**List[str]**](List[str].md)| Filter by file_sets.aliases | [optional] 
  **file_sets_assay_term_term_name** | [**List[str]**](List[str].md)| Filter by file_sets.assay_term.term_name | [optional] 
  **file_sets_lab_title** | [**List[str]**](List[str].md)| Filter by file_sets.lab.title | [optional] 
  **file_sets_status** | [**List[str]**](List[str].md)| Filter by file_sets.status | [optional] 
@@ -8722,7 +8722,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     disease_terms_term_name = ['disease_terms_term_name_example'] # List[str] | Filter by disease_terms.term_name (optional)
     file_sets_id = ['file_sets_id_example'] # List[str] | Filter by file_sets.@id (optional)
     file_sets_accession = ['file_sets_accession_example'] # List[str] | Filter by file_sets.accession (optional)
-    file_sets_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by file_sets.aliases (optional)
+    file_sets_aliases = ['file_sets_aliases_example'] # List[str] | Filter by file_sets.aliases (optional)
     file_sets_assay_term_term_name = ['file_sets_assay_term_term_name_example'] # List[str] | Filter by file_sets.assay_term.term_name (optional)
     file_sets_lab_title = ['file_sets_lab_title_example'] # List[str] | Filter by file_sets.lab.title (optional)
     file_sets_status = ['file_sets_status_example'] # List[str] | Filter by file_sets.status (optional)
@@ -8831,7 +8831,7 @@ Name | Type | Description  | Notes
  **disease_terms_term_name** | [**List[str]**](List[str].md)| Filter by disease_terms.term_name | [optional] 
  **file_sets_id** | [**List[str]**](List[str].md)| Filter by file_sets.@id | [optional] 
  **file_sets_accession** | [**List[str]**](List[str].md)| Filter by file_sets.accession | [optional] 
- **file_sets_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by file_sets.aliases | [optional] 
+ **file_sets_aliases** | [**List[str]**](List[str].md)| Filter by file_sets.aliases | [optional] 
  **file_sets_assay_term_term_name** | [**List[str]**](List[str].md)| Filter by file_sets.assay_term.term_name | [optional] 
  **file_sets_lab_title** | [**List[str]**](List[str].md)| Filter by file_sets.lab.title | [optional] 
  **file_sets_status** | [**List[str]**](List[str].md)| Filter by file_sets.status | [optional] 
@@ -9268,7 +9268,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     disease_terms_term_name = ['disease_terms_term_name_example'] # List[str] | Filter by disease_terms.term_name (optional)
     file_sets_id = ['file_sets_id_example'] # List[str] | Filter by file_sets.@id (optional)
     file_sets_accession = ['file_sets_accession_example'] # List[str] | Filter by file_sets.accession (optional)
-    file_sets_aliases = [igvf_client.List[str]()] # List[List[str]] | Filter by file_sets.aliases (optional)
+    file_sets_aliases = ['file_sets_aliases_example'] # List[str] | Filter by file_sets.aliases (optional)
     file_sets_assay_term_term_name = ['file_sets_assay_term_term_name_example'] # List[str] | Filter by file_sets.assay_term.term_name (optional)
     file_sets_lab_title = ['file_sets_lab_title_example'] # List[str] | Filter by file_sets.lab.title (optional)
     file_sets_status = ['file_sets_status_example'] # List[str] | Filter by file_sets.status (optional)
@@ -9373,7 +9373,7 @@ Name | Type | Description  | Notes
  **disease_terms_term_name** | [**List[str]**](List[str].md)| Filter by disease_terms.term_name | [optional] 
  **file_sets_id** | [**List[str]**](List[str].md)| Filter by file_sets.@id | [optional] 
  **file_sets_accession** | [**List[str]**](List[str].md)| Filter by file_sets.accession | [optional] 
- **file_sets_aliases** | [**List[List[str]]**](List[List[str]].md)| Filter by file_sets.aliases | [optional] 
+ **file_sets_aliases** | [**List[str]**](List[str].md)| Filter by file_sets.aliases | [optional] 
  **file_sets_assay_term_term_name** | [**List[str]**](List[str].md)| Filter by file_sets.assay_term.term_name | [optional] 
  **file_sets_lab_title** | [**List[str]**](List[str].md)| Filter by file_sets.lab.title | [optional] 
  **file_sets_status** | [**List[str]**](List[str].md)| Filter by file_sets.status | [optional] 
