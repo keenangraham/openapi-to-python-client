@@ -1,5 +1,6 @@
 import json
 import requests
+from functools import reduce
 
 
 def generate_openapi_spec(schemas):
@@ -678,6 +679,159 @@ def generate_openapi_spec(schemas):
    
     return openapi_spec
 
+
+url = 'http://localhost:8000'
+
+
+schemas_cache = {}
+
+
+def get_properties_for_item_type(schemas, item_type):
+    if item_type not in schemas_cache:
+        if item_type not in schemas:
+            print(item_type, 'not in schemas, searching abstract')
+            schemas_cache[item_type] = requests.get(f'{url}/profiles/{item_type}').json()['properties']
+        else:
+            schemas_cache[item_type] = schemas[item_type]['properties']
+    return schemas_cache[item_type]
+
+
+def traverse(all_schemas, properties, path, include, exclude, isAnItem=False, processed=None):
+    if processed is None:
+        processed = []
+    isAnItem = isAnItem
+    fields = []
+    item_type = None
+    if isinstance(path, str):
+        path = path.split('.')
+    if not path:
+        return fields
+    name = path[0]
+    remaining = path[1:]
+    value = properties.get(name)
+    if value is None:
+        return fields
+    if 'items' in value:
+        isAnItem = True
+        value = value['items']
+    if 'linkTo' in value:
+        item_type = value['linkTo']
+    elif 'linkFrom' in value:
+        item_type = value['linkFrom'].split('.')[0]
+    if item_type is not None:
+        if isinstance(item_type, list):
+            print('reducing', item_type, 'in', processed, path)
+            value = reduce(
+                combine_schemas,
+                (
+                    get_properties_for_item_type(all_schemas, it)
+                    for it in item_type
+                )
+            )
+        else:
+            value = get_properties_for_item_type(all_schemas, item_type)
+    else:
+        if 'properties' in value:
+            value = value['properties']
+        else:
+            raise ValueError(f'item type is none and no properties {value} {name} {remaining} {path}')
+    if exclude:
+        raise ValueError('handle exclude!')
+    elif include:
+        for field in include:
+            if field in value:
+                fields.append(
+                    {
+                        'path': '.'.join([x for x in processed + [name] + [field]]),
+                        'schema': value[field]
+                    }
+                )
+    processed.append(name)
+    fields.extend(traverse(all_schemas, value, remaining, include, exclude, isAnItem, processed))
+    return fields
+
+
+# copied from snovault
+def ensurelist(value):
+    if isinstance(value, basestring):
+        return [value]
+    return value
+
+
+# copied from snovault
+def combine_schemas(a, b):
+    if a == b:
+        return a
+    if not a:
+        return b
+    if not b:
+        return a
+    combined = {}
+    for name in set(a.keys()).intersection(b.keys()):
+        if a[name] == b[name]:
+            combined[name] = a[name]
+        elif name == 'type':
+            combined[name] = sorted(set(ensurelist(a[name]) + ensurelist(b[name])))
+        elif name == 'properties':
+            combined[name] = {}
+            for k in set(a[name].keys()).intersection(b[name].keys()):
+                combined[name][k] = combine_schemas(a[name][k], b[name][k])
+            for k in set(a[name].keys()).difference(b[name].keys()):
+                combined[name][k] = a[name][k]
+            for k in set(b[name].keys()).difference(a[name].keys()):
+                combined[name][k] = b[name][k]
+        elif name == 'items':
+            combined[name] = combine_schemas(a[name], b[name])
+        elif name == 'columns':
+            combined[name] = {}
+            combined[name].update(a[name])
+            combined[name].update(b[name])
+        elif name == 'fuzzy_searchable_fields':
+            combined[name] = list(
+                sorted(
+                    set(a[name]).union(set(b[name]))
+                )
+            )
+    for name in set(a.keys()).difference(b.keys(), ['facets']):
+        combined[name] = a[name]
+    for name in set(b.keys()).difference(a.keys(), ['facets']):
+        combined[name] = b[name]
+    return combined
+
+
+def get_slim_embedded_fields():
+    final = {}
+    embedded_fields = requests.get(f'{url}/embedded-fields').json()
+    all_schemas = {k: v for k, v in requests.get(f'{url}/profiles').json().items() if '@' not in k and '_' not in k}
+    fields = []
+    for item_type in all_schemas.keys():
+        print('ITEM', item_type)
+        properties = all_schemas[item_type]['properties']
+        for embedded_field in embedded_fields[item_type]['embedded_with_frame']:
+            path = embedded_field['path']
+            print('working on path', path)
+            include = embedded_field['include']
+            exclude = embedded_field['exclude']
+            fields.extend(traverse(all_schemas, properties, path, include, exclude))
+        all_fields = set(f['path'] for f in fields)
+        to_remove_fields = []
+        for f in fields:
+            fname = f['path']
+            for afname in all_fields:
+                if afname.startswith(fname) and len(fname) != len(afname):
+                    print('removing -------->', fname, afname)
+                    to_remove_fields.append(fname)
+        fields = {
+            f['path']: f
+            for f in fields
+            if f['path'] not in to_remove_fields
+        }
+        fields = sorted(fields.values(), key=lambda x: x['path'])
+        final[item_type] = fields
+    return final
+
+slim_embedded_fields = get_slim_embedded_fields()
+
 res = requests.get('https://api.data.igvf.org/profiles').json()
 
 subtypes = res['_subtypes']
@@ -894,6 +1048,7 @@ for k in schemas.keys():
         schemas[k]['properties']['input_content_types']['items'].pop('anyOf', None)
     if 'output_content_types' in schemas[k]['properties']:
         schemas[k]['properties']['output_content_types']['items'].pop('anyOf', None)
+
 
 
 #print(json.dumps(schemas, indent=4))
