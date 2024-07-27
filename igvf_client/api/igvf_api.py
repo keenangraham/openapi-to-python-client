@@ -15792,7 +15792,7 @@ class IgvfApi:
     @validate_call
     def download(
         self,
-        file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`).")],
+        file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, e.g. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03).")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15810,7 +15810,7 @@ class IgvfApi:
 
         Returns underlying file associated with file metadata
 
-        :param file_id: The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`). (required)
+        :param file_id: The unique identifier for the file to download, e.g. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03). (required)
         :type file_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -15861,7 +15861,7 @@ class IgvfApi:
     @validate_call
     def download_with_http_info(
         self,
-        file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`).")],
+        file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, e.g. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03).")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15879,7 +15879,7 @@ class IgvfApi:
 
         Returns underlying file associated with file metadata
 
-        :param file_id: The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`). (required)
+        :param file_id: The unique identifier for the file to download, e.g. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03). (required)
         :type file_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -15930,7 +15930,7 @@ class IgvfApi:
     @validate_call
     def download_without_preload_content(
         self,
-        file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`).")],
+        file_id: Annotated[StrictStr, Field(description="The unique identifier for the file to download, e.g. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03).")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15948,7 +15948,7 @@ class IgvfApi:
 
         Returns underlying file associated with file metadata
 
-        :param file_id: The unique identifier for the file to download, i.e. @id (`/tabular-files/IGVFFI8092FZKL/`), accession (`IGVFFI8092FZKL`), or UUID (`fdbdc159-e5b9-40a8-b788-3f72c9886b03`). (required)
+        :param file_id: The unique identifier for the file to download, e.g. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03). (required)
         :type file_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
