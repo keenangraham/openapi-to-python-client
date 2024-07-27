@@ -344,7 +344,7 @@ class TestIgvfApi(unittest.TestCase):
     def test_search(self) -> None:
         """Test case for search
 
-        Search for items in the IGVF Project
+        Search for items in the IGVF Project.
         """
         pass
 
