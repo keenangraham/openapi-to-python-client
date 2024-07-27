@@ -1002,6 +1002,8 @@ def fill_in_collection_template(schema_name, schema):
         filtered_prop_schema = {k: v for k, v in prop_schema.items() if k not in exclude}
         if prop == '@type':
             continue
+        if prop == 'schema_version':
+            continue
         collection_template[f"/{collection_name}/@@listing"]["get"]["parameters"].append(
             {
                 "name": f"{prop}",
