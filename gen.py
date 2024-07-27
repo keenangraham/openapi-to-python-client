@@ -1018,7 +1018,7 @@ def fill_in_collection_template(schema_name, schema):
             add_as_item = False
         else:
             add_as_item = v['is_an_item']
-        exclude = ['default', 'uniqueItems', 'notSubmittable', 'readonly', 'permission', 'submissionExample', 'serverDefault', 'minItems']
+        exclude = ['default', 'uniqueItems', 'notSubmittable', 'readonly', 'permission', 'submissionExample', 'serverDefault', 'minItems', 'format']
         filtered_prop_schema = {k: v for k, v in prop_schema.items() if k not in exclude}
         if '@type' in prop:
             continue
@@ -1051,7 +1051,7 @@ def clean_schema(schema):
             "minimum", "exclusiveMinimum", "maxLength", "minLength",
             "pattern", "uniqueItems",
             "maxContains", "minContains", "maxProperties", "minProperties",
-            "format", "default", "title", "description", "linkTo",
+            "default", "title", "description", "linkTo",
         ]
         cleaned = {}
         for key, value in schema.items():

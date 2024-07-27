@@ -448,7 +448,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     files_accession = ['files_accession_example'] # List[str] | Filter by files.accession (optional)
     files_aliases = ['files_aliases_example'] # List[str] | Filter by files.aliases (optional)
     files_content_type = ['files_content_type_example'] # List[str] | Filter by files.content_type (optional)
-    files_creation_timestamp = ['2013-10-20T19:20:30+01:00'] # List[datetime] | Filter by files.creation_timestamp (optional)
+    files_creation_timestamp = ['files_creation_timestamp_example'] # List[str] | Filter by files.creation_timestamp (optional)
     files_file_format = ['files_file_format_example'] # List[str] | Filter by files.file_format (optional)
     files_file_size = [56] # List[int] | Filter by files.file_size (optional)
     files_href = ['files_href_example'] # List[str] | Filter by files.href (optional)
@@ -545,7 +545,7 @@ Name | Type | Description  | Notes
  **files_accession** | [**List[str]**](List[str].md)| Filter by files.accession | [optional] 
  **files_aliases** | [**List[str]**](List[str].md)| Filter by files.aliases | [optional] 
  **files_content_type** | [**List[str]**](List[str].md)| Filter by files.content_type | [optional] 
- **files_creation_timestamp** | [**List[datetime]**](List[datetime].md)| Filter by files.creation_timestamp | [optional] 
+ **files_creation_timestamp** | [**List[str]**](List[str].md)| Filter by files.creation_timestamp | [optional] 
  **files_file_format** | [**List[str]**](List[str].md)| Filter by files.file_format | [optional] 
  **files_file_size** | [**List[int]**](List[int].md)| Filter by files.file_size | [optional] 
  **files_href** | [**List[str]**](List[str].md)| Filter by files.href | [optional] 
@@ -1093,7 +1093,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     files_accession = ['files_accession_example'] # List[str] | Filter by files.accession (optional)
     files_aliases = ['files_aliases_example'] # List[str] | Filter by files.aliases (optional)
     files_content_type = ['files_content_type_example'] # List[str] | Filter by files.content_type (optional)
-    files_creation_timestamp = ['2013-10-20T19:20:30+01:00'] # List[datetime] | Filter by files.creation_timestamp (optional)
+    files_creation_timestamp = ['files_creation_timestamp_example'] # List[str] | Filter by files.creation_timestamp (optional)
     files_file_format = ['files_file_format_example'] # List[str] | Filter by files.file_format (optional)
     files_file_size = [56] # List[int] | Filter by files.file_size (optional)
     files_href = ['files_href_example'] # List[str] | Filter by files.href (optional)
@@ -1191,7 +1191,7 @@ Name | Type | Description  | Notes
  **files_accession** | [**List[str]**](List[str].md)| Filter by files.accession | [optional] 
  **files_aliases** | [**List[str]**](List[str].md)| Filter by files.aliases | [optional] 
  **files_content_type** | [**List[str]**](List[str].md)| Filter by files.content_type | [optional] 
- **files_creation_timestamp** | [**List[datetime]**](List[datetime].md)| Filter by files.creation_timestamp | [optional] 
+ **files_creation_timestamp** | [**List[str]**](List[str].md)| Filter by files.creation_timestamp | [optional] 
  **files_file_format** | [**List[str]**](List[str].md)| Filter by files.file_format | [optional] 
  **files_file_size** | [**List[int]**](List[int].md)| Filter by files.file_size | [optional] 
  **files_href** | [**List[str]**](List[str].md)| Filter by files.href | [optional] 
@@ -2255,7 +2255,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     files_accession = ['files_accession_example'] # List[str] | Filter by files.accession (optional)
     files_aliases = ['files_aliases_example'] # List[str] | Filter by files.aliases (optional)
     files_content_type = ['files_content_type_example'] # List[str] | Filter by files.content_type (optional)
-    files_creation_timestamp = ['2013-10-20T19:20:30+01:00'] # List[datetime] | Filter by files.creation_timestamp (optional)
+    files_creation_timestamp = ['files_creation_timestamp_example'] # List[str] | Filter by files.creation_timestamp (optional)
     files_file_format = ['files_file_format_example'] # List[str] | Filter by files.file_format (optional)
     files_file_size = [56] # List[int] | Filter by files.file_size (optional)
     files_href = ['files_href_example'] # List[str] | Filter by files.href (optional)
@@ -2351,7 +2351,7 @@ Name | Type | Description  | Notes
  **files_accession** | [**List[str]**](List[str].md)| Filter by files.accession | [optional] 
  **files_aliases** | [**List[str]**](List[str].md)| Filter by files.aliases | [optional] 
  **files_content_type** | [**List[str]**](List[str].md)| Filter by files.content_type | [optional] 
- **files_creation_timestamp** | [**List[datetime]**](List[datetime].md)| Filter by files.creation_timestamp | [optional] 
+ **files_creation_timestamp** | [**List[str]**](List[str].md)| Filter by files.creation_timestamp | [optional] 
  **files_file_format** | [**List[str]**](List[str].md)| Filter by files.file_format | [optional] 
  **files_file_size** | [**List[int]**](List[int].md)| Filter by files.file_size | [optional] 
  **files_href** | [**List[str]**](List[str].md)| Filter by files.href | [optional] 
@@ -3223,7 +3223,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     phenotypic_features_feature_id = ['phenotypic_features_feature_id_example'] # List[str] | Filter by phenotypic_features.feature.@id (optional)
     phenotypic_features_feature_term_id = ['phenotypic_features_feature_term_id_example'] # List[str] | Filter by phenotypic_features.feature.term_id (optional)
     phenotypic_features_feature_term_name = ['phenotypic_features_feature_term_name_example'] # List[str] | Filter by phenotypic_features.feature.term_name (optional)
-    phenotypic_features_observation_date = ['2013-10-20'] # List[date] | Filter by phenotypic_features.observation_date (optional)
+    phenotypic_features_observation_date = ['phenotypic_features_observation_date_example'] # List[str] | Filter by phenotypic_features.observation_date (optional)
     phenotypic_features_quantity_units = ['phenotypic_features_quantity_units_example'] # List[str] | Filter by phenotypic_features.quantity_units (optional)
     related_donors_donor_id = ['related_donors_donor_id_example'] # List[str] | Filter by related_donors.donor.@id (optional)
     related_donors_donor_accession = ['related_donors_donor_accession_example'] # List[str] | Filter by related_donors.donor.accession (optional)
@@ -3282,7 +3282,7 @@ Name | Type | Description  | Notes
  **phenotypic_features_feature_id** | [**List[str]**](List[str].md)| Filter by phenotypic_features.feature.@id | [optional] 
  **phenotypic_features_feature_term_id** | [**List[str]**](List[str].md)| Filter by phenotypic_features.feature.term_id | [optional] 
  **phenotypic_features_feature_term_name** | [**List[str]**](List[str].md)| Filter by phenotypic_features.feature.term_name | [optional] 
- **phenotypic_features_observation_date** | [**List[date]**](List[date].md)| Filter by phenotypic_features.observation_date | [optional] 
+ **phenotypic_features_observation_date** | [**List[str]**](List[str].md)| Filter by phenotypic_features.observation_date | [optional] 
  **phenotypic_features_quantity_units** | [**List[str]**](List[str].md)| Filter by phenotypic_features.quantity_units | [optional] 
  **related_donors_donor_id** | [**List[str]**](List[str].md)| Filter by related_donors.donor.@id | [optional] 
  **related_donors_donor_accession** | [**List[str]**](List[str].md)| Filter by related_donors.donor.accession | [optional] 
@@ -4418,7 +4418,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     files_accession = ['files_accession_example'] # List[str] | Filter by files.accession (optional)
     files_aliases = ['files_aliases_example'] # List[str] | Filter by files.aliases (optional)
     files_content_type = ['files_content_type_example'] # List[str] | Filter by files.content_type (optional)
-    files_creation_timestamp = ['2013-10-20T19:20:30+01:00'] # List[datetime] | Filter by files.creation_timestamp (optional)
+    files_creation_timestamp = ['files_creation_timestamp_example'] # List[str] | Filter by files.creation_timestamp (optional)
     files_file_format = ['files_file_format_example'] # List[str] | Filter by files.file_format (optional)
     files_file_size = [56] # List[int] | Filter by files.file_size (optional)
     files_href = ['files_href_example'] # List[str] | Filter by files.href (optional)
@@ -4548,7 +4548,7 @@ Name | Type | Description  | Notes
  **files_accession** | [**List[str]**](List[str].md)| Filter by files.accession | [optional] 
  **files_aliases** | [**List[str]**](List[str].md)| Filter by files.aliases | [optional] 
  **files_content_type** | [**List[str]**](List[str].md)| Filter by files.content_type | [optional] 
- **files_creation_timestamp** | [**List[datetime]**](List[datetime].md)| Filter by files.creation_timestamp | [optional] 
+ **files_creation_timestamp** | [**List[str]**](List[str].md)| Filter by files.creation_timestamp | [optional] 
  **files_file_format** | [**List[str]**](List[str].md)| Filter by files.file_format | [optional] 
  **files_file_size** | [**List[int]**](List[int].md)| Filter by files.file_size | [optional] 
  **files_href** | [**List[str]**](List[str].md)| Filter by files.href | [optional] 
@@ -4891,7 +4891,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     files_accession = ['files_accession_example'] # List[str] | Filter by files.accession (optional)
     files_aliases = ['files_aliases_example'] # List[str] | Filter by files.aliases (optional)
     files_content_type = ['files_content_type_example'] # List[str] | Filter by files.content_type (optional)
-    files_creation_timestamp = ['2013-10-20T19:20:30+01:00'] # List[datetime] | Filter by files.creation_timestamp (optional)
+    files_creation_timestamp = ['files_creation_timestamp_example'] # List[str] | Filter by files.creation_timestamp (optional)
     files_file_format = ['files_file_format_example'] # List[str] | Filter by files.file_format (optional)
     files_file_size = [56] # List[int] | Filter by files.file_size (optional)
     files_href = ['files_href_example'] # List[str] | Filter by files.href (optional)
@@ -4993,7 +4993,7 @@ Name | Type | Description  | Notes
  **files_accession** | [**List[str]**](List[str].md)| Filter by files.accession | [optional] 
  **files_aliases** | [**List[str]**](List[str].md)| Filter by files.aliases | [optional] 
  **files_content_type** | [**List[str]**](List[str].md)| Filter by files.content_type | [optional] 
- **files_creation_timestamp** | [**List[datetime]**](List[datetime].md)| Filter by files.creation_timestamp | [optional] 
+ **files_creation_timestamp** | [**List[str]**](List[str].md)| Filter by files.creation_timestamp | [optional] 
  **files_file_format** | [**List[str]**](List[str].md)| Filter by files.file_format | [optional] 
  **files_file_size** | [**List[int]**](List[int].md)| Filter by files.file_size | [optional] 
  **files_href** | [**List[str]**](List[str].md)| Filter by files.href | [optional] 
@@ -6037,7 +6037,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     files_accession = ['files_accession_example'] # List[str] | Filter by files.accession (optional)
     files_aliases = ['files_aliases_example'] # List[str] | Filter by files.aliases (optional)
     files_content_type = ['files_content_type_example'] # List[str] | Filter by files.content_type (optional)
-    files_creation_timestamp = ['2013-10-20T19:20:30+01:00'] # List[datetime] | Filter by files.creation_timestamp (optional)
+    files_creation_timestamp = ['files_creation_timestamp_example'] # List[str] | Filter by files.creation_timestamp (optional)
     files_file_format = ['files_file_format_example'] # List[str] | Filter by files.file_format (optional)
     files_file_size = [56] # List[int] | Filter by files.file_size (optional)
     files_href = ['files_href_example'] # List[str] | Filter by files.href (optional)
@@ -6146,7 +6146,7 @@ Name | Type | Description  | Notes
  **files_accession** | [**List[str]**](List[str].md)| Filter by files.accession | [optional] 
  **files_aliases** | [**List[str]**](List[str].md)| Filter by files.aliases | [optional] 
  **files_content_type** | [**List[str]**](List[str].md)| Filter by files.content_type | [optional] 
- **files_creation_timestamp** | [**List[datetime]**](List[datetime].md)| Filter by files.creation_timestamp | [optional] 
+ **files_creation_timestamp** | [**List[str]**](List[str].md)| Filter by files.creation_timestamp | [optional] 
  **files_file_format** | [**List[str]**](List[str].md)| Filter by files.file_format | [optional] 
  **files_file_size** | [**List[int]**](List[int].md)| Filter by files.file_size | [optional] 
  **files_href** | [**List[str]**](List[str].md)| Filter by files.href | [optional] 
@@ -6988,7 +6988,7 @@ with igvf_client.ApiClient(configuration) as api_client:
     phenotypic_features_feature_id = ['phenotypic_features_feature_id_example'] # List[str] | Filter by phenotypic_features.feature.@id (optional)
     phenotypic_features_feature_term_id = ['phenotypic_features_feature_term_id_example'] # List[str] | Filter by phenotypic_features.feature.term_id (optional)
     phenotypic_features_feature_term_name = ['phenotypic_features_feature_term_name_example'] # List[str] | Filter by phenotypic_features.feature.term_name (optional)
-    phenotypic_features_observation_date = ['2013-10-20'] # List[date] | Filter by phenotypic_features.observation_date (optional)
+    phenotypic_features_observation_date = ['phenotypic_features_observation_date_example'] # List[str] | Filter by phenotypic_features.observation_date (optional)
     phenotypic_features_quantity_units = ['phenotypic_features_quantity_units_example'] # List[str] | Filter by phenotypic_features.quantity_units (optional)
     sources_id = ['sources_id_example'] # List[str] | Filter by sources.@id (optional)
     submitted_by_id = 'submitted_by_id_example' # str | Filter by submitted_by.@id (optional)
@@ -7051,7 +7051,7 @@ Name | Type | Description  | Notes
  **phenotypic_features_feature_id** | [**List[str]**](List[str].md)| Filter by phenotypic_features.feature.@id | [optional] 
  **phenotypic_features_feature_term_id** | [**List[str]**](List[str].md)| Filter by phenotypic_features.feature.term_id | [optional] 
  **phenotypic_features_feature_term_name** | [**List[str]**](List[str].md)| Filter by phenotypic_features.feature.term_name | [optional] 
- **phenotypic_features_observation_date** | [**List[date]**](List[date].md)| Filter by phenotypic_features.observation_date | [optional] 
+ **phenotypic_features_observation_date** | [**List[str]**](List[str].md)| Filter by phenotypic_features.observation_date | [optional] 
  **phenotypic_features_quantity_units** | [**List[str]**](List[str].md)| Filter by phenotypic_features.quantity_units | [optional] 
  **sources_id** | [**List[str]**](List[str].md)| Filter by sources.@id | [optional] 
  **submitted_by_id** | **str**| Filter by submitted_by.@id | [optional] 
