@@ -1010,6 +1010,7 @@ def fill_in_collection_template(schema_name, schema):
     embedded_fields = slim_embedded_fields[schema_name]
     embedded_fields_keys = embedded_fields.keys()
 #    print(schema_name, embedded_fields_keys)
+    to_add = []
     for prop, prop_schema in schema["properties"].items():
         if property_is_slim_embedded(prop, embedded_fields_keys):
             continue
@@ -1023,7 +1024,7 @@ def fill_in_collection_template(schema_name, schema):
         if 'properties' in prop_schema:
             print('skipping', prop, 'as query param')
             continue
-        collection_template[f"/{collection_name}/@@listing"]["get"]["parameters"].append(
+        to_add.append(
             {
                 "name": f"{prop}",
                 "in": "query",
@@ -1046,7 +1047,7 @@ def fill_in_collection_template(schema_name, schema):
         if 'properties' in prop_schema:
             print('skipping', prop, 'as query param')
             continue
-        collection_template[f"/{collection_name}/@@listing"]["get"]["parameters"].append(
+        to_add.append(
             {
                 "name": f"{prop}",
                 "in": "query",
@@ -1056,6 +1057,8 @@ def fill_in_collection_template(schema_name, schema):
                 "explode": True,
             }
         )
+    for param in sorted(to_add, key=lambda x: x['name']):
+        collection_template[f"/{collection_name}/@@listing"]["get"]["parameters"].append(param)
     return collection_template
 
 
