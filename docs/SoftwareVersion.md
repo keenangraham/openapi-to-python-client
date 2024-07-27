@@ -6,17 +6,17 @@ A specific version of a software used for computational analysis. For example, B
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**release_timestamp** | **datetime** | The date the object was released. | [optional] 
+**release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **lab** | **str** | Lab associated with the submission. | [optional] 
 **award** | **str** | Grant associated with the submission. | [optional] 
-**status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
-**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '5']
+**status** | **str** | The status of the metadata object. | [optional] 
+**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] 
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
-**creation_timestamp** | **datetime** | The date the object was created. | [optional] 
+**creation_timestamp** | **str** | The date the object was created. | [optional] 
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 

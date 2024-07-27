@@ -17,7 +17,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
@@ -28,17 +27,17 @@ class SoftwareVersion(BaseModel):
     """
     A specific version of a software used for computational analysis. For example, Bowtie2 v2.3.0.
     """ # noqa: E501
-    release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
     publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
-    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='5', description="The version of the JSON schema that the server uses to validate the object.")
+    status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
-    creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
+    creation_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was created.")
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")

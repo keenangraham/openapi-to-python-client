@@ -17,7 +17,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
@@ -30,20 +29,20 @@ class SequenceFile(BaseModel):
     """ # noqa: E501
     controlled_access: Optional[StrictBool] = Field(default=None, description="Boolean value, indicating the file being controlled access, if true.")
     anvil_url: Optional[StrictStr] = Field(default=None, description="URL linking to the controlled access file that has been deposited at AnVIL workspace.")
-    release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[List[StrictStr]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[List[StrictStr]] = Field(default=None, description="Some samples are part of particular data collections.")
-    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
+    status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
     revoke_detail: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Explanation of why an object was transitioned to the revoked status.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='14', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
-    creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
+    creation_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was created.")
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
@@ -58,7 +57,7 @@ class SequenceFile(BaseModel):
     file_size: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="File size specified in bytes.")
     md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The md5sum of the file being transferred.")
     submitted_file_name: Optional[StrictStr] = Field(default=None, description="Original name of the file.")
-    upload_status: Optional[StrictStr] = Field(default='pending', description="The upload/validation status of the file.")
+    upload_status: Optional[StrictStr] = Field(default=None, description="The upload/validation status of the file.")
     validation_error_detail: Optional[StrictStr] = Field(default=None, description="Explanation of why the file failed the automated content checks.")
     flowcell_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The alphanumeric identifier for the flowcell of a sequencing machine.")
     lane: Optional[Annotated[int, Field(strict=True, ge=1)]] = Field(default=None, description="An integer identifying the lane of a sequencing machine.")
@@ -285,9 +284,9 @@ class SequenceFile(BaseModel):
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
-            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
+            "status": obj.get("status"),
             "revoke_detail": obj.get("revoke_detail"),
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '14',
+            "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
@@ -306,7 +305,7 @@ class SequenceFile(BaseModel):
             "file_size": obj.get("file_size"),
             "md5sum": obj.get("md5sum"),
             "submitted_file_name": obj.get("submitted_file_name"),
-            "upload_status": obj.get("upload_status") if obj.get("upload_status") is not None else 'pending',
+            "upload_status": obj.get("upload_status"),
             "validation_error_detail": obj.get("validation_error_detail"),
             "flowcell_id": obj.get("flowcell_id"),
             "lane": obj.get("lane"),

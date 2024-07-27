@@ -17,7 +17,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
@@ -34,7 +33,7 @@ class ConstructLibrarySet(BaseModel):
     large_scale_loci_list: Optional[StrictStr] = Field(default=None, description="A large scale list (>100) of specific chromosomal regions.")
     small_scale_gene_list: Optional[List[StrictStr]] = Field(default=None, description="The specific, small scale list of (<=100) gene(s) this construct library was designed to target. This property differs from targeted_genes in Measurement Set, which describes genes targeted for binding sites or used for sorting by expression.")
     large_scale_gene_list: Optional[StrictStr] = Field(default=None, description="The large scale list of (>100 genes) this construct library was designed to target.")
-    release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     publications: Optional[List[StrictStr]] = Field(default=None, description="The publications associated with this object.")
     publication_identifiers: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="The publication identifiers that provide more information about the object.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
@@ -46,13 +45,13 @@ class ConstructLibrarySet(BaseModel):
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[List[StrictStr]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[List[StrictStr]] = Field(default=None, description="Some samples are part of particular data collections.")
-    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
+    status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
     revoke_detail: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Explanation of why an object was transitioned to the revoked status.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='8', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
-    creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
+    creation_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was created.")
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
@@ -78,7 +77,7 @@ class ConstructLibrarySet(BaseModel):
     summary: Optional[StrictStr] = None
     files: Optional[List[StrictStr]] = Field(default=None, description="The files associated with this file set.")
     control_for: Optional[List[StrictStr]] = Field(default=None, description="The file sets for which this file set is a control.")
-    submitted_files_timestamp: Optional[datetime] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
+    submitted_files_timestamp: Optional[StrictStr] = Field(default=None, description="The timestamp the first file object in the file_set or associated auxiliary sets was created.")
     input_file_set_for: Optional[List[StrictStr]] = Field(default=None, description="The file sets that use this file set as an input.")
     applied_to_samples: Optional[List[StrictStr]] = Field(default=None, description="The samples that link to this construct library set.")
     additional_properties: Dict[str, Any] = {}
@@ -330,9 +329,9 @@ class ConstructLibrarySet(BaseModel):
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
-            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
+            "status": obj.get("status"),
             "revoke_detail": obj.get("revoke_detail"),
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '8',
+            "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),

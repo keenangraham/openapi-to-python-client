@@ -6,7 +6,7 @@ Auxiliary set is a file set that hosts raw data files (e.g. FASTQs) resulting fr
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**release_timestamp** | **datetime** | The date the object was released. | [optional] 
+**release_timestamp** | **str** | The date the object was released. | [optional] 
 **publications** | **List[str]** | The publications associated with this object. | [optional] 
 **publication_identifiers** | **List[str]** | The publication identifiers that provide more information about the object. | [optional] 
 **documents** | **List[str]** | Documents that provide additional information (not data file). | [optional] 
@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 **accession** | **str** | A unique identifier to be used to reference the object prefixed with IGVF. | [optional] 
 **alternate_accessions** | **List[str]** | Accessions previously assigned to objects that have been merged with this object. | [optional] 
 **collections** | **List[str]** | Some samples are part of particular data collections. | [optional] 
-**status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
+**status** | **str** | The status of the metadata object. | [optional] 
 **revoke_detail** | **str** | Explanation of why an object was transitioned to the revoked status. | [optional] 
 **url** | **str** | An external resource with additional information. | [optional] 
-**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '8']
+**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] 
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 
-**creation_timestamp** | **datetime** | The date the object was created. | [optional] 
+**creation_timestamp** | **str** | The date the object was created. | [optional] 
 **submitted_by** | **str** | The user who submitted the object. | [optional] 
 **submitter_comment** | **str** | Additional information specified by the submitter to be displayed as a comment on the portal. | [optional] 
 **description** | **str** | A plain text description of the object. | [optional] 
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 **summary** | **str** |  | [optional] 
 **files** | **List[str]** | The files associated with this file set. | [optional] 
 **control_for** | **List[str]** | The file sets for which this file set is a control. | [optional] 
-**submitted_files_timestamp** | **datetime** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
+**submitted_files_timestamp** | **str** | The timestamp the first file object in the file_set or associated auxiliary sets was created. | [optional] 
 **input_file_set_for** | **List[str]** | The file sets that use this file set as an input. | [optional] 
 **measurement_sets** | **List[str]** | The measurement sets that link to this auxiliary set. | [optional] 
 

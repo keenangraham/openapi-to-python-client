@@ -17,7 +17,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
@@ -28,19 +27,19 @@ class Treatment(BaseModel):
     """
     A protein or chemical treatment applied to samples such as lipopolysaccharide, interleukin-2, or leucine.
     """ # noqa: E501
-    release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
+    release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
     sources: Optional[List[StrictStr]] = Field(default=None, description="The originating lab(s) or vendor(s).")
     lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product identifier provided by the originating lab or vendor.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that describe the treatment protocol details.")
-    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='8', description="The version of the JSON schema that the server uses to validate the object.")
+    status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
-    creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
+    creation_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was created.")
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
@@ -262,8 +261,8 @@ class Treatment(BaseModel):
             "lot_id": obj.get("lot_id"),
             "product_id": obj.get("product_id"),
             "documents": obj.get("documents"),
-            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '8',
+            "status": obj.get("status"),
+            "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),

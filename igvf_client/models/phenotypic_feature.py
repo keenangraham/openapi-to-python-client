@@ -17,7 +17,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import date, datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
@@ -28,22 +27,22 @@ class PhenotypicFeature(BaseModel):
     """
     A phenotypic feature of a donor the sample is coming from. For example, the donor’s height measured at the time of sample collection.
     """ # noqa: E501
-    release_timestamp: Optional[datetime] = Field(default=None, description="The date the object was released.")
-    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
+    release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
+    status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='3', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
-    creation_timestamp: Optional[datetime] = Field(default=None, description="The date the object was created.")
+    creation_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was created.")
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     feature: Optional[StrictStr] = Field(default=None, description="The phenotypic feature observed for the donor.")
     quantity: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="A quantity associated with the phenotypic feature, if applicable.")
     quantity_units: Optional[StrictStr] = Field(default=None, description="The unit of measurement for a quantity associated with the phenotypic feature.")
-    observation_date: Optional[date] = Field(default=None, description="The date the feature was observed or measured.")
+    observation_date: Optional[StrictStr] = Field(default=None, description="The date the feature was observed or measured.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
     summary: Optional[StrictStr] = Field(default=None, description="A summary of the object.")
@@ -161,10 +160,10 @@ class PhenotypicFeature(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
-            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
+            "status": obj.get("status"),
             "lab": obj.get("lab"),
             "award": obj.get("award"),
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '3',
+            "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
