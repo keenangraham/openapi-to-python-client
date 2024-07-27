@@ -73,8 +73,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -141,8 +139,6 @@ List items in the AlignmentFile collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate AlignmentFile items. Supports filtering on fields within AlignmentFile items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -245,8 +241,6 @@ List items in the AnalysisSet collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate AnalysisSet items. Supports filtering on fields within AnalysisSet items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -377,8 +371,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -451,8 +443,6 @@ List items in the AnalysisStep collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate AnalysisStep items. Supports filtering on fields within AnalysisStep items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -533,8 +523,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -611,8 +599,6 @@ List items in the AuxiliarySet collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate AuxiliarySet items. Supports filtering on fields within AuxiliarySet items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -744,8 +730,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -820,8 +804,6 @@ Generates TSV of files contained in FileSets in search results.
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -873,8 +855,6 @@ List items in the Biomarker collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate Biomarker items. Supports filtering on fields within Biomarker items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -952,8 +932,6 @@ List items in the ConfigurationFile collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate ConfigurationFile items. Supports filtering on fields within ConfigurationFile items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -1049,8 +1027,6 @@ List items in the ConstructLibrarySet collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate ConstructLibrarySet items. Supports filtering on fields within ConstructLibrarySet items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -1184,8 +1160,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -1267,8 +1241,6 @@ List items in the CuratedSet collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate CuratedSet items. Supports filtering on fields within CuratedSet items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -1398,8 +1370,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -1480,8 +1450,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -1554,8 +1522,6 @@ Returns underlying file associated with file metadata
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -1604,8 +1570,6 @@ List items in the Gene collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate Gene items. Supports filtering on fields within Gene items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -1682,8 +1646,6 @@ List items in the GenomeBrowserAnnotationFile collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate GenomeBrowserAnnotationFile items. Supports filtering on fields within GenomeBrowserAnnotationFile items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -1782,8 +1744,6 @@ Retrieve detailed information about a specific item using its @id or uuid.
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -1831,8 +1791,6 @@ List items in the HumanDonor collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate HumanDonor items. Supports filtering on fields within HumanDonor items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -1924,8 +1882,6 @@ List items in the ImageFile collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate ImageFile items. Supports filtering on fields within ImageFile items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -2021,8 +1977,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -2090,8 +2044,6 @@ List items in the InVitroSystem collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate InVitroSystem items. Supports filtering on fields within InVitroSystem items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -2244,8 +2196,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -2321,8 +2271,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -2394,8 +2342,6 @@ List items in the MatrixFile collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate MatrixFile items. Supports filtering on fields within MatrixFile items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -2494,8 +2440,6 @@ List items in the MeasurementSet collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate MeasurementSet items. Supports filtering on fields within MeasurementSet items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -2659,8 +2603,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -2756,8 +2698,6 @@ List items in the ModelSet collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate ModelSet items. Supports filtering on fields within ModelSet items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -2893,8 +2833,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -3028,8 +2966,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -3105,8 +3041,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -3177,8 +3111,6 @@ List items in the PhenotypeTerm collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate PhenotypeTerm items. Supports filtering on fields within PhenotypeTerm items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -3252,8 +3184,6 @@ List items in the PhenotypicFeature collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate PhenotypicFeature items. Supports filtering on fields within PhenotypicFeature items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -3330,8 +3260,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -3406,8 +3334,6 @@ List items in the PredictionSet collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate PredictionSet items. Supports filtering on fields within PredictionSet items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -3550,8 +3476,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -3690,8 +3614,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -3778,8 +3700,6 @@ List items in the ReferenceFile collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate ReferenceFile items. Supports filtering on fields within ReferenceFile items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -3884,8 +3804,6 @@ Like /search endpoint but returns a TSV file instead of JSON. Must specify item 
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -3939,8 +3857,6 @@ List items in the RodentDonor collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate RodentDonor items. Supports filtering on fields within RodentDonor items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -4037,8 +3953,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -4117,8 +4031,6 @@ Returns JSON schemas of all the item types defined in IGVF
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -4166,8 +4078,6 @@ Returns JSON schemas of all the item types defined in IGVF
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -4211,8 +4121,6 @@ Search for items in the IGVF Project
 Search endpoint that accepts various query parameters to filter, sort, and paginate results. Supports complex filtering on types and fields within JSON objects.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -4266,8 +4174,6 @@ List items in the SequenceFile collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate SequenceFile items. Supports filtering on fields within SequenceFile items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -4377,8 +4283,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -4481,8 +4385,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -4558,8 +4460,6 @@ List items in the SoftwareVersion collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate SoftwareVersion items. Supports filtering on fields within SoftwareVersion items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -4638,8 +4538,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -4707,8 +4605,6 @@ List items in the TabularFile collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate TabularFile items. Supports filtering on fields within TabularFile items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -4808,8 +4704,6 @@ List items in the TechnicalSample collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate TechnicalSample items. Supports filtering on fields within TechnicalSample items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -4921,8 +4815,6 @@ List items in the Tissue collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate Tissue items. Supports filtering on fields within Tissue items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -5065,8 +4957,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -5155,8 +5045,6 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 
-* Basic Authentication (basicAuth):
-
 ```python
 from igvf_client import IgvfApi
 
@@ -5229,8 +5117,6 @@ List items in the WholeOrganism collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate WholeOrganism items. Supports filtering on fields within WholeOrganism items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
@@ -5368,8 +5254,6 @@ List items in the Workflow collection.
 Collection endpoint that accepts various query parameters to filter, sort, and paginate Workflow items. Supports filtering on fields within Workflow items.
 
 ### Example
-
-* Basic Authentication (basicAuth):
 
 ```python
 from igvf_client import IgvfApi
