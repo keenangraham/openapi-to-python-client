@@ -4100,7 +4100,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Query string for searching. | [optional] 
  **type** | [**List[str]**](List[str].md)| Filter by item type. | [optional] 
- **field_filters** | [**object**](object.md)| Any field from any object type can be used as a filter. Use &#39;!&#39; at end of field name for negation, &#39;*&#39; in value as a wildcard, and &#39;lt:&#39;, &#39;lte:&#39;, &#39;gt:&#39;, &#39;gte:&#39; with value for range queries on numeric fields. Examples: &#x60;{&#39;status!&#39;: &#39;in progress&#39;, &#39;summary&#39;: &#39;*&#39;, &#39;file_size&#39;: &#39;gte:30000&#39;}&#x60; | [optional] 
+ **field_filters** | [**object**](object.md)| Any field from any object type can be used as a filter. Use &#39;!&#39; at end of field name for negation and &#39;lt:&#39;, &#39;lte:&#39;, &#39;gt:&#39;, &#39;gte:&#39; with value for range queries on numeric fields. Examples: {&#39;status!&#39;: &#39;in progress&#39;, &#39;file_size&#39;: &#39;gte:30000&#39;} | [optional] 
  **limit** | [**Limit**](Limit.md)| Maximum number of results to return. Use &#39;all&#39; for all results. | [optional] 
  **sort** | [**List[str]**](List[str].md)| Fields to sort results by. Prefix with &#39;-&#39; for descending order. Can be repeated for multiple sort fields. Does not work with limit&#x3D;all. | [optional] 
  **include_fields** | [**List[str]**](List[str].md)| Fields to include in the response. Can be repeated for multiple fields. | [optional] 

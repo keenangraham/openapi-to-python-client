@@ -44090,7 +44090,7 @@ class IgvfApi:
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation, '*' in value as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: `{'status!': 'in progress', 'summary': '*', 'file_size': 'gte:30000'}`")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
@@ -44115,7 +44115,7 @@ class IgvfApi:
         :type query: str
         :param type: Filter by item type.
         :type type: List[str]
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation, '*' in value as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: `{'status!': 'in progress', 'summary': '*', 'file_size': 'gte:30000'}`
+        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: Limit
@@ -44178,7 +44178,7 @@ class IgvfApi:
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation, '*' in value as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: `{'status!': 'in progress', 'summary': '*', 'file_size': 'gte:30000'}`")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
@@ -44203,7 +44203,7 @@ class IgvfApi:
         :type query: str
         :param type: Filter by item type.
         :type type: List[str]
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation, '*' in value as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: `{'status!': 'in progress', 'summary': '*', 'file_size': 'gte:30000'}`
+        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: Limit
@@ -44266,7 +44266,7 @@ class IgvfApi:
         self,
         query: Annotated[Optional[StrictStr], Field(description="Query string for searching.")] = None,
         type: Annotated[Optional[List[StrictStr]], Field(description="Filter by item type.")] = None,
-        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation, '*' in value as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: `{'status!': 'in progress', 'summary': '*', 'file_size': 'gte:30000'}`")] = None,
+        field_filters: Annotated[Optional[Dict[str, Any]], Field(description="Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}")] = None,
         limit: Annotated[Optional[Any], Field(description="Maximum number of results to return. Use 'all' for all results.")] = None,
         sort: Annotated[Optional[List[StrictStr]], Field(description="Fields to sort results by. Prefix with '-' for descending order. Can be repeated for multiple sort fields. Does not work with limit=all.")] = None,
         include_fields: Annotated[Optional[List[StrictStr]], Field(description="Fields to include in the response. Can be repeated for multiple fields.")] = None,
@@ -44291,7 +44291,7 @@ class IgvfApi:
         :type query: str
         :param type: Filter by item type.
         :type type: List[str]
-        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation, '*' in value as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: `{'status!': 'in progress', 'summary': '*', 'file_size': 'gte:30000'}`
+        :param field_filters: Any field from any object type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'}
         :type field_filters: object
         :param limit: Maximum number of results to return. Use 'all' for all results.
         :type limit: Limit
