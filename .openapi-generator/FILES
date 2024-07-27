@@ -23,6 +23,7 @@ docs/Award.md
 docs/AwardResults.md
 docs/Biomarker.md
 docs/BiomarkerResults.md
+docs/CollectionsApi.md
 docs/ConfigurationFile.md
 docs/ConfigurationFileResults.md
 docs/ConstructLibrarySet.md
@@ -31,6 +32,7 @@ docs/CrisprModification.md
 docs/CrisprModificationResults.md
 docs/CuratedSet.md
 docs/CuratedSetResults.md
+docs/DefaultApi.md
 docs/DegronModification.md
 docs/DegronModificationResults.md
 docs/Document.md
@@ -43,7 +45,6 @@ docs/GenomeBrowserAnnotationFile.md
 docs/GenomeBrowserAnnotationFileResults.md
 docs/HumanDonor.md
 docs/HumanDonorResults.md
-docs/IgvfApi.md
 docs/Image.md
 docs/ImageFile.md
 docs/ImageFileResults.md
@@ -132,7 +133,8 @@ docs/WorkflowResults.md
 git_push.sh
 igvf_client/__init__.py
 igvf_client/api/__init__.py
-igvf_client/api/igvf_api.py
+igvf_client/api/collections_api.py
+igvf_client/api/default_api.py
 igvf_client/api_client.py
 igvf_client/api_response.py
 igvf_client/configuration.py
@@ -271,4 +273,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_collections_api.py
+test/test_default_api.py
 tox.ini

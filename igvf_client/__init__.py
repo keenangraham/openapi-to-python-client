@@ -17,7 +17,8 @@
 __version__ = "1.0.0"
 
 # import apis into sdk package
-from igvf_client.api.igvf_api import IgvfApi
+from igvf_client.api.collections_api import CollectionsApi
+from igvf_client.api.default_api import DefaultApi
 
 # import ApiClient
 from igvf_client.api_response import ApiResponse

@@ -885,6 +885,7 @@ def fill_in_collection_template(schema_name, schema):
     collection_template = {
         f"/{collection_name}/@@listing": {
             "get": {
+                "tags": ["Collections"],
                 "summary": f"List items in the {schema_name} collection.",
                 "description": f"Collection endpoint that accepts various query parameters to filter, sort, and paginate {schema_name} items. Supports filtering on fields within {schema_name} items.",
                 "operationId": f"{collection_name.replace('-', '_')}",

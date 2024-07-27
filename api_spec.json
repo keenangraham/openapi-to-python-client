@@ -818,6 +818,9 @@
     },
     "/access-keys/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the AccessKey collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate AccessKey items. Supports filtering on fields within AccessKey items.",
         "operationId": "access_keys",
@@ -1180,6 +1183,9 @@
     },
     "/analysis-steps/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the AnalysisStep collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate AnalysisStep items. Supports filtering on fields within AnalysisStep items.",
         "operationId": "analysis_steps",
@@ -1744,6 +1750,9 @@
     },
     "/analysis-step-versions/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the AnalysisStepVersion collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate AnalysisStepVersion items. Supports filtering on fields within AnalysisStepVersion items.",
         "operationId": "analysis_step_versions",
@@ -2206,6 +2215,9 @@
     },
     "/awards/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the Award collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate Award items. Supports filtering on fields within Award items.",
         "operationId": "awards",
@@ -2697,6 +2709,9 @@
     },
     "/biomarkers/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the Biomarker collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate Biomarker items. Supports filtering on fields within Biomarker items.",
         "operationId": "biomarkers",
@@ -3233,6 +3248,9 @@
     },
     "/documents/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the Document collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate Document items. Supports filtering on fields within Document items.",
         "operationId": "documents",
@@ -3705,6 +3723,9 @@
     },
     "/human-donors/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the HumanDonor collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate HumanDonor items. Supports filtering on fields within HumanDonor items.",
         "operationId": "human_donors",
@@ -4517,6 +4538,9 @@
     },
     "/rodent-donors/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the RodentDonor collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate RodentDonor items. Supports filtering on fields within RodentDonor items.",
         "operationId": "rodent_donors",
@@ -5373,6 +5397,9 @@
     },
     "/alignment-files/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the AlignmentFile collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate AlignmentFile items. Supports filtering on fields within AlignmentFile items.",
         "operationId": "alignment_files",
@@ -6330,6 +6357,9 @@
     },
     "/configuration-files/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the ConfigurationFile collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate ConfigurationFile items. Supports filtering on fields within ConfigurationFile items.",
         "operationId": "configuration_files",
@@ -7164,6 +7194,9 @@
     },
     "/genome-browser-annotation-files/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the GenomeBrowserAnnotationFile collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate GenomeBrowserAnnotationFile items. Supports filtering on fields within GenomeBrowserAnnotationFile items.",
         "operationId": "genome_browser_annotation_files",
@@ -8056,6 +8089,9 @@
     },
     "/image-files/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the ImageFile collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate ImageFile items. Supports filtering on fields within ImageFile items.",
         "operationId": "image_files",
@@ -8875,6 +8911,9 @@
     },
     "/matrix-files/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the MatrixFile collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate MatrixFile items. Supports filtering on fields within MatrixFile items.",
         "operationId": "matrix_files",
@@ -9777,6 +9816,9 @@
     },
     "/model-files/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the ModelFile collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate ModelFile items. Supports filtering on fields within ModelFile items.",
         "operationId": "model_files",
@@ -10628,6 +10670,9 @@
     },
     "/reference-files/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the ReferenceFile collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate ReferenceFile items. Supports filtering on fields within ReferenceFile items.",
         "operationId": "reference_files",
@@ -11627,6 +11672,9 @@
     },
     "/sequence-files/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the SequenceFile collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate SequenceFile items. Supports filtering on fields within SequenceFile items.",
         "operationId": "sequence_files",
@@ -12710,6 +12758,9 @@
     },
     "/signal-files/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the SignalFile collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate SignalFile items. Supports filtering on fields within SignalFile items.",
         "operationId": "signal_files",
@@ -13673,6 +13724,9 @@
     },
     "/tabular-files/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the TabularFile collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate TabularFile items. Supports filtering on fields within TabularFile items.",
         "operationId": "tabular_files",
@@ -14599,6 +14653,9 @@
     },
     "/analysis-sets/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the AnalysisSet collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate AnalysisSet items. Supports filtering on fields within AnalysisSet items.",
         "operationId": "analysis_sets",
@@ -16065,6 +16122,9 @@
     },
     "/auxiliary-sets/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the AuxiliarySet collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate AuxiliarySet items. Supports filtering on fields within AuxiliarySet items.",
         "operationId": "auxiliary_sets",
@@ -17584,6 +17644,9 @@
     },
     "/construct-library-sets/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the ConstructLibrarySet collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate ConstructLibrarySet items. Supports filtering on fields within ConstructLibrarySet items.",
         "operationId": "construct_library_sets",
@@ -19113,6 +19176,9 @@
     },
     "/curated-sets/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the CuratedSet collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate CuratedSet items. Supports filtering on fields within CuratedSet items.",
         "operationId": "curated_sets",
@@ -20560,6 +20626,9 @@
     },
     "/measurement-sets/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the MeasurementSet collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate MeasurementSet items. Supports filtering on fields within MeasurementSet items.",
         "operationId": "measurement_sets",
@@ -22608,6 +22677,9 @@
     },
     "/model-sets/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the ModelSet collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate ModelSet items. Supports filtering on fields within ModelSet items.",
         "operationId": "model_sets",
@@ -24155,6 +24227,9 @@
     },
     "/prediction-sets/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the PredictionSet collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate PredictionSet items. Supports filtering on fields within PredictionSet items.",
         "operationId": "prediction_sets",
@@ -25848,6 +25923,9 @@
     },
     "/genes/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the Gene collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate Gene items. Supports filtering on fields within Gene items.",
         "operationId": "genes",
@@ -26409,6 +26487,9 @@
     },
     "/images/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the Image collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate Image items. Supports filtering on fields within Image items.",
         "operationId": "images",
@@ -26789,6 +26870,9 @@
     },
     "/institutional-certificates/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the InstitutionalCertificate collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate InstitutionalCertificate items. Supports filtering on fields within InstitutionalCertificate items.",
         "operationId": "institutional_certificates",
@@ -27299,6 +27383,9 @@
     },
     "/labs/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the Lab collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate Lab items. Supports filtering on fields within Lab items.",
         "operationId": "labs",
@@ -27749,6 +27836,9 @@
     },
     "/crispr-modifications/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the CrisprModification collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate CrisprModification items. Supports filtering on fields within CrisprModification items.",
         "operationId": "crispr_modifications",
@@ -28398,6 +28488,9 @@
     },
     "/degron-modifications/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the DegronModification collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate DegronModification items. Supports filtering on fields within DegronModification items.",
         "operationId": "degron_modifications",
@@ -28980,6 +29073,9 @@
     },
     "/assay-terms/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the AssayTerm collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate AssayTerm items. Supports filtering on fields within AssayTerm items.",
         "operationId": "assay_terms",
@@ -29546,6 +29642,9 @@
     },
     "/phenotype-terms/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the PhenotypeTerm collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate PhenotypeTerm items. Supports filtering on fields within PhenotypeTerm items.",
         "operationId": "phenotype_terms",
@@ -30007,6 +30106,9 @@
     },
     "/platform-terms/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the PlatformTerm collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate PlatformTerm items. Supports filtering on fields within PlatformTerm items.",
         "operationId": "platform_terms",
@@ -30544,6 +30646,9 @@
     },
     "/sample-terms/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the SampleTerm collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate SampleTerm items. Supports filtering on fields within SampleTerm items.",
         "operationId": "sample_terms",
@@ -31083,6 +31188,9 @@
     },
     "/open-reading-frames/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the OpenReadingFrame collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate OpenReadingFrame items. Supports filtering on fields within OpenReadingFrame items.",
         "operationId": "open_reading_frames",
@@ -31581,6 +31689,9 @@
     },
     "/pages/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the Page collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate Page items. Supports filtering on fields within Page items.",
         "operationId": "pages",
@@ -32007,6 +32118,9 @@
     },
     "/phenotypic-features/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the PhenotypicFeature collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate PhenotypicFeature items. Supports filtering on fields within PhenotypicFeature items.",
         "operationId": "phenotypic_features",
@@ -32514,6 +32628,9 @@
     },
     "/publications/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the Publication collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate Publication items. Supports filtering on fields within Publication items.",
         "operationId": "publications",
@@ -33200,6 +33317,9 @@
     },
     "/in-vitro-systems/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the InVitroSystem collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate InVitroSystem items. Supports filtering on fields within InVitroSystem items.",
         "operationId": "in_vitro_systems",
@@ -35005,6 +35125,9 @@
     },
     "/multiplexed-samples/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the MultiplexedSample collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate MultiplexedSample items. Supports filtering on fields within MultiplexedSample items.",
         "operationId": "multiplexed_samples",
@@ -36486,6 +36609,9 @@
     },
     "/primary-cells/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the PrimaryCell collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate PrimaryCell items. Supports filtering on fields within PrimaryCell items.",
         "operationId": "primary_cells",
@@ -38052,6 +38178,9 @@
     },
     "/technical-samples/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the TechnicalSample collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate TechnicalSample items. Supports filtering on fields within TechnicalSample items.",
         "operationId": "technical_samples",
@@ -39169,6 +39298,9 @@
     },
     "/tissues/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the Tissue collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate Tissue items. Supports filtering on fields within Tissue items.",
         "operationId": "tissues",
@@ -40791,6 +40923,9 @@
     },
     "/whole-organisms/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the WholeOrganism collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate WholeOrganism items. Supports filtering on fields within WholeOrganism items.",
         "operationId": "whole_organisms",
@@ -42342,6 +42477,9 @@
     },
     "/software/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the Software collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate Software items. Supports filtering on fields within Software items.",
         "operationId": "software",
@@ -42862,6 +43000,9 @@
     },
     "/software-versions/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the SoftwareVersion collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate SoftwareVersion items. Supports filtering on fields within SoftwareVersion items.",
         "operationId": "software_versions",
@@ -43389,6 +43530,9 @@
     },
     "/sources/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the Source collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate Source items. Supports filtering on fields within Source items.",
         "operationId": "sources",
@@ -43771,6 +43915,9 @@
     },
     "/treatments/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the Treatment collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate Treatment items. Supports filtering on fields within Treatment items.",
         "operationId": "treatments",
@@ -44506,6 +44653,9 @@
     },
     "/users/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the User collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate User items. Supports filtering on fields within User items.",
         "operationId": "users",
@@ -44987,6 +45137,9 @@
     },
     "/workflows/@@listing": {
       "get": {
+        "tags": [
+          "Collections"
+        ],
         "summary": "List items in the Workflow collection.",
         "description": "Collection endpoint that accepts various query parameters to filter, sort, and paginate Workflow items. Supports filtering on fields within Workflow items.",
         "operationId": "workflows",
