@@ -1088,6 +1088,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -1652,6 +1662,16 @@
             "description": "Filter by workflow.accession",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -2112,6 +2132,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -2603,6 +2633,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -3141,6 +3181,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -3611,6 +3661,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -4423,6 +4483,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -5279,6 +5349,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -6238,6 +6318,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -7070,6 +7160,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -7964,6 +8064,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -8781,6 +8891,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -9685,6 +9805,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -10534,6 +10664,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -11533,6 +11673,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -12618,6 +12768,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -13581,6 +13741,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -14505,6 +14675,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -15971,6 +16151,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -17490,6 +17680,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -19021,6 +19221,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -20466,6 +20676,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -22516,6 +22736,16 @@
             "description": "Filter by targeted_genes.synonyms",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -24061,6 +24291,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -25756,6 +25996,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -26317,6 +26567,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -26695,6 +26955,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -27207,6 +27477,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -27655,6 +27935,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -28306,6 +28596,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -28888,6 +29188,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -29454,6 +29764,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -29913,6 +30233,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -30450,6 +30780,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -30991,6 +31331,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -31489,6 +31839,16 @@
             "description": "Filter by gene.symbol",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -31913,6 +32273,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -32420,6 +32790,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -33106,6 +33486,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -34913,6 +35303,16 @@
             "description": "Filter by treatments.treatment_type",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -36392,6 +36792,16 @@
               }
             },
             "description": "Filter by treatments.treatment_type",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -37960,6 +38370,16 @@
             "description": "Filter by treatments.treatment_type",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -39075,6 +39495,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -40699,6 +41129,16 @@
             "description": "Filter by treatments.treatment_type",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -42250,6 +42690,16 @@
             "description": "Filter by treatments.treatment_type",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -42768,6 +43218,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -43297,6 +43757,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -43677,6 +44147,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -44414,6 +44894,16 @@
             "description": "Filter by submitted_by.title",
             "style": "form",
             "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": true
           }
         ],
         "responses": {
@@ -44893,6 +45383,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }
@@ -45533,6 +46033,16 @@
               }
             },
             "description": "Filter by submitted_by.title",
+            "style": "form",
+            "explode": true
+          },
+          {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+              "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
             "style": "form",
             "explode": true
           }

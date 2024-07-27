@@ -1040,6 +1040,18 @@ def fill_in_collection_template(schema_name, schema):
                 "explode": True,
             }
         )
+    collection_template[f"/{collection_name}/@@listing"]["get"]["parameters"].append(
+        {
+            "name": "additional_field_filters",
+            "in": "query",
+            "schema": {
+                "type": "object"
+            },
+            "description": "Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields.",
+            "style": "form",
+            "explode": True,
+        }
+    )
     return collection_template
 
 
