@@ -85,7 +85,6 @@ with igvf_client.ApiClient(configuration) as api_client:
     notes = 'notes_example' # str | Filter by notes (optional)
     aliases = ['aliases_example'] # List[str] | Filter by aliases (optional)
     creation_timestamp = '2013-10-20T19:20:30+01:00' # datetime | Filter by creation_timestamp (optional)
-    submitted_by = 'submitted_by_example' # str | Filter by submitted_by (optional)
     submitter_comment = 'submitter_comment_example' # str | Filter by submitter_comment (optional)
     description = 'description_example' # str | Filter by description (optional)
     status = 'status_example' # str | Filter by status (optional)
@@ -94,10 +93,12 @@ with igvf_client.ApiClient(configuration) as api_client:
     secret_access_key_hash = 'secret_access_key_hash_example' # str | Filter by secret_access_key_hash (optional)
     id = 'id_example' # str | Filter by @id (optional)
     summary = 'summary_example' # str | Filter by summary (optional)
+    submitted_by_id = 'submitted_by_id_example' # str | Filter by submitted_by.@id (optional)
+    submitted_by_title = 'submitted_by_title_example' # str | Filter by submitted_by.title (optional)
 
     try:
         # List items in the AccessKey collection.
-        api_response = api_instance.access_keys(query=query, limit=limit, sort=sort, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitted_by=submitted_by, submitter_comment=submitter_comment, description=description, status=status, user=user, access_key_id=access_key_id, secret_access_key_hash=secret_access_key_hash, id=id, summary=summary)
+        api_response = api_instance.access_keys(query=query, limit=limit, sort=sort, schema_version=schema_version, uuid=uuid, notes=notes, aliases=aliases, creation_timestamp=creation_timestamp, submitter_comment=submitter_comment, description=description, status=status, user=user, access_key_id=access_key_id, secret_access_key_hash=secret_access_key_hash, id=id, summary=summary, submitted_by_id=submitted_by_id, submitted_by_title=submitted_by_title)
         print("The response of IgvfApi->access_keys:\n")
         pprint(api_response)
     except ApiException as e:
@@ -270,7 +271,6 @@ Class | Method | HTTP request | Description
  - [ReferenceFile](docs/ReferenceFile.md)
  - [ReferenceFileResults](docs/ReferenceFileResults.md)
  - [RelatedDonor](docs/RelatedDonor.md)
- - [RelatedDonor1](docs/RelatedDonor1.md)
  - [RodentDonor](docs/RodentDonor.md)
  - [RodentDonorResults](docs/RodentDonorResults.md)
  - [SampleTerm](docs/SampleTerm.md)

@@ -696,10 +696,10 @@ def get_properties_for_item_type(schemas, item_type):
     return schemas_cache[item_type]
 
 
-def traverse(all_schemas, properties, path, include, exclude, isAnItem=False, processed=None):
+def traverse(all_schemas, properties, path, include, exclude, is_an_item=False, processed=None):
     if processed is None:
         processed = []
-    isAnItem = isAnItem
+    is_an_item = is_an_item
     fields = []
     item_type = None
     if isinstance(path, str):
@@ -712,7 +712,7 @@ def traverse(all_schemas, properties, path, include, exclude, isAnItem=False, pr
     if value is None:
         return fields
     if 'items' in value:
-        isAnItem = True
+        is_an_item = True
         value = value['items']
     if 'linkTo' in value:
         item_type = value['linkTo']
@@ -743,11 +743,12 @@ def traverse(all_schemas, properties, path, include, exclude, isAnItem=False, pr
                 fields.append(
                     {
                         'path': '.'.join([x for x in processed + [name] + [field]]),
-                        'schema': value[field]
+                        'schema': value[field],
+                        'is_an_item': is_an_item,
                     }
                 )
     processed.append(name)
-    fields.extend(traverse(all_schemas, value, remaining, include, exclude, isAnItem, processed))
+    fields.extend(traverse(all_schemas, value, remaining, include, exclude, is_an_item, processed))
     return fields
 
 
@@ -803,8 +804,8 @@ def get_slim_embedded_fields():
     final = {}
     embedded_fields = requests.get(f'{url}/embedded-fields').json()
     all_schemas = {k: v for k, v in requests.get(f'{url}/profiles').json().items() if '@' not in k and '_' not in k}
-    fields = []
     for item_type in all_schemas.keys():
+        fields = []
         print('ITEM', item_type)
         properties = all_schemas[item_type]['properties']
         for embedded_field in embedded_fields[item_type]['embedded_with_frame']:
@@ -826,9 +827,10 @@ def get_slim_embedded_fields():
             for f in fields
             if f['path'] not in to_remove_fields
         }
-        fields = sorted(fields.values(), key=lambda x: x['path'])
+        fields = dict(sorted(fields.items(), key=lambda x: x[1]['path']))
         final[item_type] = fields
     return final
+
 
 slim_embedded_fields = get_slim_embedded_fields()
 
@@ -985,7 +987,12 @@ def fill_in_collection_template(schema_name, schema):
             }
         }
     }
+    embedded_fields = slim_embedded_fields[schema_name]
+    embedded_fields_keys = embedded_fields.keys()
+#    print(schema_name, embedded_fields_keys)
     for prop, prop_schema in schema["properties"].items():
+        if property_is_slim_embedded(prop, embedded_fields_keys):
+            continue
         exclude = ['default', 'uniqueItems']
         filtered_prop_schema = {k: v for k, v in prop_schema.items() if k not in exclude}
         if prop == '@type':
@@ -1000,7 +1007,33 @@ def fill_in_collection_template(schema_name, schema):
                 "explode": True,
             }
         )
+    for k, v in embedded_fields.items():
+        prop = v['path']
+        prop_schema = v['schema']
+        is_an_item = not 'items' in prop_schema and v['is_an_item']
+        exclude = ['default', 'uniqueItems', 'notSubmittable', 'readonly', 'permission', 'submissionExample', 'serverDefault', 'minItems']
+        filtered_prop_schema = {k: v for k, v in prop_schema.items() if k not in exclude}
+        if '@type' in prop:
+            continue
+        collection_template[f"/{collection_name}/@@listing"]["get"]["parameters"].append(
+            {
+                "name": f"{prop}",
+                "in": "query",
+                "schema": filtered_prop_schema if not is_an_item else {"type": "array", "items": filtered_prop_schema},
+                "description": f"Filter by {prop}",
+                "style": "form",
+                "explode": True,
+            }
+        )
     return collection_template
+
+
+def property_is_slim_embedded(prop, embedded_fields_keys):
+    for key in embedded_fields_keys:
+        if key.startswith(prop):
+            print('SKIPPING', prop, 'found', key)
+            return True
+    return False
 
 
 def clean_schema(schema):

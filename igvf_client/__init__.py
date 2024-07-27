@@ -128,7 +128,6 @@ from igvf_client.models.publication_results import PublicationResults
 from igvf_client.models.reference_file import ReferenceFile
 from igvf_client.models.reference_file_results import ReferenceFileResults
 from igvf_client.models.related_donor import RelatedDonor
-from igvf_client.models.related_donor1 import RelatedDonor1
 from igvf_client.models.rodent_donor import RodentDonor
 from igvf_client.models.rodent_donor_results import RodentDonorResults
 from igvf_client.models.sample_term import SampleTerm

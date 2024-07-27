@@ -101,7 +101,6 @@ docs/PublicationResults.md
 docs/ReferenceFile.md
 docs/ReferenceFileResults.md
 docs/RelatedDonor.md
-docs/RelatedDonor1.md
 docs/RodentDonor.md
 docs/RodentDonorResults.md
 docs/SampleTerm.md
@@ -241,7 +240,6 @@ igvf_client/models/publication_results.py
 igvf_client/models/reference_file.py
 igvf_client/models/reference_file_results.py
 igvf_client/models/related_donor.py
-igvf_client/models/related_donor1.py
 igvf_client/models/rodent_donor.py
 igvf_client/models/rodent_donor_results.py
 igvf_client/models/sample_term.py

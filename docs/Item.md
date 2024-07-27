@@ -63,7 +63,7 @@ Name | Type | Description | Notes
 **sex** | **str** |  | [optional] 
 **phenotypic_features** | **List[str]** | A list of associated phenotypic features of the donor. | [optional] 
 **virtual** | **bool** | Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for. | [optional] [default to False]
-**related_donors** | [**List[RelatedDonor1]**](RelatedDonor1.md) | Familial relations of this donor. | [optional] 
+**related_donors** | [**List[RelatedDonor]**](RelatedDonor.md) | Familial relations of this donor. | [optional] 
 **ethnicities** | **List[str]** | Ethnicity of the donor. | [optional] 
 **human_donor_identifiers** | **List[str]** | Identifiers of this human donor. | [optional] 
 **sources** | **List[str]** | The originating lab(s) or vendor(s). | [optional] 
