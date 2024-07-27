@@ -7,8 +7,8 @@ Protein-encoding open reading frames (ORF)
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release_timestamp** | **str** | The date the object was released. | [optional] 
-**status** | **str** | The status of the metadata object. | [optional] [default to 'in progress']
-**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '2']
+**status** | **str** | The status of the metadata object. | [optional] 
+**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] 
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 

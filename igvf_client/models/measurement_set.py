@@ -36,9 +36,9 @@ class MeasurementSet(BaseModel):
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[List[StrictStr]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[List[StrictStr]] = Field(default=None, description="Some samples are part of particular data collections.")
-    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
+    status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
     revoke_detail: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Explanation of why an object was transitioned to the revoked status.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='17', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -49,7 +49,7 @@ class MeasurementSet(BaseModel):
     dbxrefs: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF file sets.")
     samples: Optional[List[StrictStr]] = Field(default=None, description="The sample(s) associated with this file set.")
     donors: Optional[List[StrictStr]] = Field(default=None, description="The donors of the samples associated with this measurement set.")
-    file_set_type: Optional[StrictStr] = Field(default='experimental data', description="The category that best describes this measurement set.")
+    file_set_type: Optional[StrictStr] = Field(default=None, description="The category that best describes this measurement set.")
     assay_term: Optional[StrictStr] = Field(default=None, description="The assay used to produce data in this measurement set.")
     library_construction_platform: Optional[StrictStr] = Field(default=None, description="The platform used to construct the library sequenced in this measurement set.")
     protocols: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Links to the protocol(s) for conducting the assay on Protocols.io.")
@@ -242,9 +242,9 @@ class MeasurementSet(BaseModel):
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
-            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
+            "status": obj.get("status"),
             "revoke_detail": obj.get("revoke_detail"),
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '17',
+            "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
@@ -255,7 +255,7 @@ class MeasurementSet(BaseModel):
             "dbxrefs": obj.get("dbxrefs"),
             "samples": obj.get("samples"),
             "donors": obj.get("donors"),
-            "file_set_type": obj.get("file_set_type") if obj.get("file_set_type") is not None else 'experimental data',
+            "file_set_type": obj.get("file_set_type"),
             "assay_term": obj.get("assay_term"),
             "library_construction_platform": obj.get("library_construction_platform"),
             "protocols": obj.get("protocols"),

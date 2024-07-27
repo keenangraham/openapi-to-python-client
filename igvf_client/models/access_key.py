@@ -27,15 +27,15 @@ class AccessKey(BaseModel):
     """
     AccessKey
     """ # noqa: E501
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='2', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
     creation_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was created.")
     submitted_by: Optional[StrictStr] = Field(default=None, description="The user who submitted the object.")
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
-    description: Optional[Annotated[str, Field(strict=True)]] = Field(default='', description="Description of the access key.")
-    status: Optional[StrictStr] = 'current'
+    description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Description of the access key.")
+    status: Optional[StrictStr] = None
     user: Optional[StrictStr] = Field(default=None, description="The user that is assigned to this access key.")
     access_key_id: Optional[StrictStr] = Field(default=None, description="An access key.")
     secret_access_key_hash: Optional[StrictStr] = Field(default=None, description="A secret access key.")
@@ -145,15 +145,15 @@ class AccessKey(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '2',
+            "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
             "creation_timestamp": obj.get("creation_timestamp"),
             "submitted_by": obj.get("submitted_by"),
             "submitter_comment": obj.get("submitter_comment"),
-            "description": obj.get("description") if obj.get("description") is not None else '',
-            "status": obj.get("status") if obj.get("status") is not None else 'current',
+            "description": obj.get("description"),
+            "status": obj.get("status"),
             "user": obj.get("user"),
             "access_key_id": obj.get("access_key_id"),
             "secret_access_key_hash": obj.get("secret_access_key_hash"),

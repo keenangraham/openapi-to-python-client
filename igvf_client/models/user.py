@@ -27,8 +27,8 @@ class User(BaseModel):
     """
     A user of IGVF data portal who is a member or affiliate member of IGVF.
     """ # noqa: E501
-    status: Optional[StrictStr] = Field(default='current', description="The status of the metadata object.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='5', description="The version of the JSON schema that the server uses to validate the object.")
+    status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -193,8 +193,8 @@ class User(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "status": obj.get("status") if obj.get("status") is not None else 'current',
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '5',
+            "status": obj.get("status"),
+            "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),

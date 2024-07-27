@@ -29,9 +29,9 @@ class Image(BaseModel):
     An image to be displayed on an IGVF portal page. This is not a data object.
     """ # noqa: E501
     release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
-    status: Optional[StrictStr] = Field(default='released', description="The status of the metadata object.")
+    status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
     attachment: Optional[Attachment3] = None
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='4', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -160,9 +160,9 @@ class Image(BaseModel):
 
         _obj = cls.model_validate({
             "release_timestamp": obj.get("release_timestamp"),
-            "status": obj.get("status") if obj.get("status") is not None else 'released',
+            "status": obj.get("status"),
             "attachment": Attachment3.from_dict(obj["attachment"]) if obj.get("attachment") is not None else None,
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '4',
+            "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),

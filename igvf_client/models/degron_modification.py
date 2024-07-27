@@ -32,10 +32,10 @@ class DegronModification(BaseModel):
     lot_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The lot identifier provided by the originating lab or vendor.")
     product_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The product or catalog identifier provided following deposition to addgene.org.")
     documents: Optional[List[StrictStr]] = Field(default=None, description="Documents that provide additional information (not data file).")
-    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
+    status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
     lab: Optional[StrictStr] = Field(default=None, description="Lab associated with the submission.")
     award: Optional[StrictStr] = Field(default=None, description="Grant associated with the submission.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='1', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -46,7 +46,7 @@ class DegronModification(BaseModel):
     activated: Optional[StrictBool] = Field(default=None, description="A boolean indicating whether the modification has been activated by a chemical agent.")
     activating_agent_term_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The CHEBI identifier for the activating agent of the modification.")
     activating_agent_term_name: Optional[StrictStr] = Field(default=None, description="The CHEBI name for the activating agent of the modification.")
-    modality: Optional[StrictStr] = Field(default='degradation', description="The purpose or intended effect of a modification.")
+    modality: Optional[StrictStr] = Field(default=None, description="The purpose or intended effect of a modification.")
     degron_system: Optional[StrictStr] = Field(default=None, description="The type of degron system implemented.")
     tagged_proteins: Optional[List[StrictStr]] = Field(default=None, description="The tagged proteins which are targeted for degradation.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
@@ -211,10 +211,10 @@ class DegronModification(BaseModel):
             "lot_id": obj.get("lot_id"),
             "product_id": obj.get("product_id"),
             "documents": obj.get("documents"),
-            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
+            "status": obj.get("status"),
             "lab": obj.get("lab"),
             "award": obj.get("award"),
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '1',
+            "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
@@ -225,7 +225,7 @@ class DegronModification(BaseModel):
             "activated": obj.get("activated"),
             "activating_agent_term_id": obj.get("activating_agent_term_id"),
             "activating_agent_term_name": obj.get("activating_agent_term_name"),
-            "modality": obj.get("modality") if obj.get("modality") is not None else 'degradation',
+            "modality": obj.get("modality"),
             "degron_system": obj.get("degron_system"),
             "tagged_proteins": obj.get("tagged_proteins"),
             "@id": obj.get("@id"),

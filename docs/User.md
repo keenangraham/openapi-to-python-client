@@ -6,8 +6,8 @@ A user of IGVF data portal who is a member or affiliate member of IGVF.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **str** | The status of the metadata object. | [optional] [default to 'current']
-**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] [default to '5']
+**status** | **str** | The status of the metadata object. | [optional] 
+**schema_version** | **str** | The version of the JSON schema that the server uses to validate the object. | [optional] 
 **uuid** | **str** | The unique identifier associated with every object. | [optional] 
 **notes** | **str** | DACC internal notes. | [optional] 
 **aliases** | **List[str]** | Lab specific identifiers to reference an object. | [optional] 

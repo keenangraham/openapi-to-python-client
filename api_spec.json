@@ -42841,8 +42841,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "2"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -42887,13 +42886,11 @@
             "title": "Description",
             "description": "Description of the access key.",
             "type": "string",
-            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$|^$",
-            "default": ""
+            "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$|^$"
           },
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "current",
             "enum": [
               "current",
               "deleted"
@@ -42947,7 +42944,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -42969,8 +42965,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "5"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -43120,7 +43115,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -43142,8 +43136,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "1"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -43234,7 +43227,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "current",
             "enum": [
               "current",
               "deleted",
@@ -43250,8 +43242,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "5"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -43402,7 +43393,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -43424,8 +43414,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "4"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -43561,7 +43550,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -43635,8 +43623,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "4"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -43854,7 +43841,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -43875,8 +43861,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "13"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -43939,7 +43924,6 @@
             "title": "Sex",
             "description": "Sex of the donor.",
             "type": "string",
-            "default": "unspecified",
             "enum": [
               "male",
               "female",
@@ -43960,8 +43944,7 @@
           "virtual": {
             "title": "Virtual",
             "description": "Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for.",
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "related_donors": {
             "title": "Related Donors",
@@ -44203,7 +44186,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -44224,8 +44206,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "13"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -44288,7 +44269,6 @@
             "title": "Sex",
             "description": "Sex of the donor.",
             "type": "string",
-            "default": "unspecified",
             "enum": [
               "male",
               "female",
@@ -44309,8 +44289,7 @@
           "virtual": {
             "title": "Virtual",
             "description": "Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for.",
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "strain_background": {
             "title": "Strain Background",
@@ -44343,8 +44322,7 @@
           "individual_rodent": {
             "title": "Individual Rodent",
             "description": "This rodent donor represents an individual rodent.",
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "rodent_identifier": {
             "title": "Rodent Identifier",
@@ -44489,7 +44467,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -44510,8 +44487,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "10"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -44642,7 +44618,6 @@
             "title": "Upload Status",
             "description": "The upload/validation status of the file.",
             "type": "string",
-            "default": "pending",
             "enum": [
               "pending",
               "file not found",
@@ -44815,7 +44790,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -44836,8 +44810,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "7"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -44968,7 +44941,6 @@
             "title": "Upload Status",
             "description": "The upload/validation status of the file.",
             "type": "string",
-            "default": "pending",
             "enum": [
               "pending",
               "file not found",
@@ -45179,7 +45151,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -45200,8 +45171,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "8"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -45333,7 +45303,6 @@
             "title": "Upload Status",
             "description": "The upload/validation status of the file.",
             "type": "string",
-            "default": "pending",
             "enum": [
               "pending",
               "file not found",
@@ -45491,7 +45460,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -45512,8 +45480,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "4"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -45645,7 +45612,6 @@
             "title": "Upload Status",
             "description": "The upload/validation status of the file.",
             "type": "string",
-            "default": "pending",
             "enum": [
               "pending",
               "file not found",
@@ -45814,7 +45780,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -45835,8 +45800,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "6"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -45971,7 +45935,6 @@
             "title": "Upload Status",
             "description": "The upload/validation status of the file.",
             "type": "string",
-            "default": "pending",
             "enum": [
               "pending",
               "file not found",
@@ -46172,7 +46135,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -46193,8 +46155,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "1"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -46328,7 +46289,6 @@
             "title": "Upload Status",
             "description": "The upload/validation status of the file.",
             "type": "string",
-            "default": "pending",
             "enum": [
               "pending",
               "file not found",
@@ -46541,7 +46501,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -46562,8 +46521,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "14"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -46708,7 +46666,6 @@
             "title": "Upload Status",
             "description": "The upload/validation status of the file.",
             "type": "string",
-            "default": "pending",
             "enum": [
               "pending",
               "file not found",
@@ -46740,8 +46697,7 @@
           "external": {
             "title": "External",
             "description": "Indicates whether the file was obtained from an external, non-IGVF source.",
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "external_id": {
             "title": "External Identifier",
@@ -46903,7 +46859,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -46924,8 +46879,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "14"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -47058,7 +47012,6 @@
             "title": "Upload Status",
             "description": "The upload/validation status of the file.",
             "type": "string",
-            "default": "pending",
             "enum": [
               "pending",
               "file not found",
@@ -47371,7 +47324,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -47392,8 +47344,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "9"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -47524,7 +47475,6 @@
             "title": "Upload Status",
             "description": "The upload/validation status of the file.",
             "type": "string",
-            "default": "pending",
             "enum": [
               "pending",
               "file not found",
@@ -47766,7 +47716,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -47787,8 +47736,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "11"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -47924,7 +47872,6 @@
             "title": "Upload Status",
             "description": "The upload/validation status of the file.",
             "type": "string",
-            "default": "pending",
             "enum": [
               "pending",
               "file not found",
@@ -48116,7 +48063,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -48137,8 +48083,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "7"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -48386,7 +48331,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -48412,8 +48356,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "8"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -48759,7 +48702,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -48780,8 +48722,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "8"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -49165,7 +49106,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -49191,8 +49131,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "7"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -49456,7 +49395,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -49477,8 +49415,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "17"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -49565,8 +49502,7 @@
             "type": "string",
             "enum": [
               "experimental data"
-            ],
-            "default": "experimental data"
+            ]
           },
           "assay_term": {
             "title": "Assay Term",
@@ -49882,7 +49818,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -49908,8 +49843,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "3"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -50295,7 +50229,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -50321,8 +50254,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "7"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -50520,7 +50452,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -50532,8 +50463,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "9"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -50714,7 +50644,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "released",
             "enum": [
               "archived",
               "deleted",
@@ -50770,8 +50699,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "4"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -50866,7 +50794,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -50888,8 +50815,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "2"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -51025,7 +50951,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "current",
             "enum": [
               "current",
               "deleted",
@@ -51041,8 +50966,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "3"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -51115,7 +51039,6 @@
             "title": "Institute Label",
             "description": "An abbreviation for the institute the lab is associated with.",
             "type": "string",
-            "default": "",
             "pattern": "^(\\S+(\\s|\\S)*\\S+|\\S)$|^$"
           },
           "@id": {
@@ -51189,7 +51112,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -51211,8 +51133,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "3"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -51422,7 +51343,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -51444,8 +51364,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "1"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -51514,8 +51433,7 @@
             "type": "string",
             "enum": [
               "degradation"
-            ],
-            "default": "degradation"
+            ]
           },
           "degron_system": {
             "title": "Degron System",
@@ -51579,7 +51497,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -51591,8 +51508,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "6"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -51815,7 +51731,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -51827,8 +51742,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "4"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -51970,7 +51884,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -51982,8 +51895,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "4"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -52185,7 +52097,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -52197,8 +52108,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "5"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -52388,7 +52298,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -52400,8 +52309,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "2"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -52557,7 +52465,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -52569,8 +52476,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "4"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -52669,8 +52575,7 @@
                   }
                 }
               }
-            },
-            "default": {}
+            }
           },
           "@id": {
             "title": "ID",
@@ -52710,7 +52615,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -52732,8 +52636,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "3"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -52858,7 +52761,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -52932,8 +52834,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "6"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -53030,9 +52931,6 @@
             "type": "array",
             "description": "The affiliation of the lab with a larger organization, such as IGVF.",
             "uniqueItems": true,
-            "default": [
-              "IGVF"
-            ],
             "items": {
               "title": "Published By",
               "type": "string",
@@ -53258,7 +53156,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -53279,8 +53176,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "22"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -53495,8 +53391,7 @@
           "virtual": {
             "title": "Virtual",
             "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for.",
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "construct_library_sets": {
             "title": "Construct Library Sets",
@@ -53885,7 +53780,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -53906,8 +53800,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "7"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -54005,8 +53898,7 @@
           "virtual": {
             "title": "Virtual",
             "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for.",
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "construct_library_sets": {
             "title": "Construct Library Sets",
@@ -54363,7 +54255,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -54384,8 +54275,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "20"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -54601,8 +54491,7 @@
           "virtual": {
             "title": "Virtual",
             "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for.",
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "construct_library_sets": {
             "title": "Construct Library Sets",
@@ -54911,7 +54800,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -54932,8 +54820,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "13"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -55031,8 +54918,7 @@
           "virtual": {
             "title": "Virtual",
             "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for.",
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "construct_library_sets": {
             "title": "Construct Library Sets",
@@ -55091,7 +54977,6 @@
           "sample_material": {
             "title": "Sample Material",
             "type": "string",
-            "default": "undefined",
             "enum": [
               "undefined",
               "inorganic",
@@ -55328,7 +55213,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -55349,8 +55233,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "20"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -55566,8 +55449,7 @@
           "virtual": {
             "title": "Virtual",
             "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for.",
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "construct_library_sets": {
             "title": "Construct Library Sets",
@@ -55925,7 +55807,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -55946,8 +55827,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "23"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -56026,10 +55906,7 @@
               "title": "Sample Term",
               "description": "Ontology term identifying a biosample.",
               "type": "string"
-            },
-            "default": [
-              "25d5ad53-15fd-4a44-878a-ece2f7e86509"
-            ]
+            }
           },
           "disease_terms": {
             "title": "Disease Terms",
@@ -56167,8 +56044,7 @@
           "virtual": {
             "title": "Virtual",
             "description": "Virtual samples are not representing actual physical entities from experiments, but rather capturing metadata about hypothetical samples that the reported analysis results are relevant for.",
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "construct_library_sets": {
             "title": "Construct Library Sets",
@@ -56396,7 +56272,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -56408,8 +56283,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "5"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -56584,7 +56458,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -56596,8 +56469,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "5"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -56703,7 +56575,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -56720,8 +56591,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "4"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -56857,7 +56727,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "in progress",
             "enum": [
               "archived",
               "deleted",
@@ -56869,8 +56738,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "8"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -57070,7 +56938,6 @@
             "title": "Status",
             "type": "string",
             "description": "The status of the metadata object.",
-            "default": "current",
             "enum": [
               "current",
               "deleted",
@@ -57081,8 +56948,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "5"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",
@@ -57326,7 +57192,6 @@
           "status": {
             "title": "Status",
             "type": "string",
-            "default": "in progress",
             "description": "The status of the metadata object.",
             "enum": [
               "in progress",
@@ -57347,8 +57212,7 @@
             "title": "Schema Version",
             "description": "The version of the JSON schema that the server uses to validate the object.",
             "type": "string",
-            "pattern": "^\\d+(\\.\\d+)*$",
-            "default": "4"
+            "pattern": "^\\d+(\\.\\d+)*$"
           },
           "uuid": {
             "title": "UUID",

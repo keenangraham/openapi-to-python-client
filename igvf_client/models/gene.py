@@ -31,8 +31,8 @@ class Gene(BaseModel):
     release_timestamp: Optional[StrictStr] = Field(default=None, description="The date the object was released.")
     transcriptome_annotation: Optional[StrictStr] = Field(default=None, description="The annotation and version of the reference resource.")
     taxa: Optional[StrictStr] = Field(default=None, description="The species of the organism.")
-    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='9', description="The version of the JSON schema that the server uses to validate the object.")
+    status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -213,8 +213,8 @@ class Gene(BaseModel):
             "release_timestamp": obj.get("release_timestamp"),
             "transcriptome_annotation": obj.get("transcriptome_annotation"),
             "taxa": obj.get("taxa"),
-            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '9',
+            "status": obj.get("status"),
+            "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),

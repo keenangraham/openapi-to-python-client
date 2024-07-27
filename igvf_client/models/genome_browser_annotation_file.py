@@ -37,9 +37,9 @@ class GenomeBrowserAnnotationFile(BaseModel):
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[List[StrictStr]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[List[StrictStr]] = Field(default=None, description="Some samples are part of particular data collections.")
-    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
+    status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
     revoke_detail: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Explanation of why an object was transitioned to the revoked status.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='8', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -58,7 +58,7 @@ class GenomeBrowserAnnotationFile(BaseModel):
     file_size: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="File size specified in bytes.")
     md5sum: Optional[Annotated[str, Field(strict=True, max_length=32)]] = Field(default=None, description="The md5sum of the file being transferred.")
     submitted_file_name: Optional[StrictStr] = Field(default=None, description="Original name of the file.")
-    upload_status: Optional[StrictStr] = Field(default='pending', description="The upload/validation status of the file.")
+    upload_status: Optional[StrictStr] = Field(default=None, description="The upload/validation status of the file.")
     validation_error_detail: Optional[StrictStr] = Field(default=None, description="Explanation of why the file failed the automated content checks.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
@@ -274,9 +274,9 @@ class GenomeBrowserAnnotationFile(BaseModel):
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
-            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
+            "status": obj.get("status"),
             "revoke_detail": obj.get("revoke_detail"),
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '8',
+            "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
@@ -295,7 +295,7 @@ class GenomeBrowserAnnotationFile(BaseModel):
             "file_size": obj.get("file_size"),
             "md5sum": obj.get("md5sum"),
             "submitted_file_name": obj.get("submitted_file_name"),
-            "upload_status": obj.get("upload_status") if obj.get("upload_status") is not None else 'pending',
+            "upload_status": obj.get("upload_status"),
             "validation_error_detail": obj.get("validation_error_detail"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),

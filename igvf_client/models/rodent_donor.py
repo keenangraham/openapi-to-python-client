@@ -41,9 +41,9 @@ class RodentDonor(BaseModel):
     accession: Optional[StrictStr] = Field(default=None, description="A unique identifier to be used to reference the object prefixed with IGVF.")
     alternate_accessions: Optional[List[StrictStr]] = Field(default=None, description="Accessions previously assigned to objects that have been merged with this object.")
     collections: Optional[List[StrictStr]] = Field(default=None, description="Some samples are part of particular data collections.")
-    status: Optional[StrictStr] = Field(default='in progress', description="The status of the metadata object.")
+    status: Optional[StrictStr] = Field(default=None, description="The status of the metadata object.")
     revoke_detail: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Explanation of why an object was transitioned to the revoked status.")
-    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default='13', description="The version of the JSON schema that the server uses to validate the object.")
+    schema_version: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The version of the JSON schema that the server uses to validate the object.")
     uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier associated with every object.")
     notes: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="DACC internal notes.")
     aliases: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Lab specific identifiers to reference an object.")
@@ -52,13 +52,13 @@ class RodentDonor(BaseModel):
     submitter_comment: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="Additional information specified by the submitter to be displayed as a comment on the portal.")
     description: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="A plain text description of the object.")
     dbxrefs: Optional[List[Annotated[str, Field(strict=True)]]] = Field(default=None, description="Identifiers from external resources that may have 1-to-1 or 1-to-many relationships with IGVF donors.")
-    sex: Optional[StrictStr] = Field(default='unspecified', description="Sex of the donor.")
+    sex: Optional[StrictStr] = Field(default=None, description="Sex of the donor.")
     phenotypic_features: Optional[List[StrictStr]] = Field(default=None, description="A list of associated phenotypic features of the donor.")
-    virtual: Optional[StrictBool] = Field(default=False, description="Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for.")
+    virtual: Optional[StrictBool] = Field(default=None, description="Virtual donors are not representing actual human or model organism donors, samples coming from which were used in experiments, but rather capturing metadata about hypothetical donors that the reported analysis results are relevant for.")
     strain_background: Optional[StrictStr] = Field(default=None, description="The specific parent strain designation of a non-human donor.")
     strain: Optional[StrictStr] = Field(default=None, description="The specific strain designation of a non-human donor.")
     genotype: Optional[StrictStr] = Field(default=None, description="The genotype of the strain according to accepted nomenclature conventions.")
-    individual_rodent: Optional[StrictBool] = Field(default=False, description="This rodent donor represents an individual rodent.")
+    individual_rodent: Optional[StrictBool] = Field(default=None, description="This rodent donor represents an individual rodent.")
     rodent_identifier: Optional[StrictStr] = Field(default=None, description="The identifier for this individual rodent donor.")
     id: Optional[StrictStr] = Field(default=None, alias="@id")
     type: Optional[List[StrictStr]] = Field(default=None, alias="@type")
@@ -251,9 +251,9 @@ class RodentDonor(BaseModel):
             "accession": obj.get("accession"),
             "alternate_accessions": obj.get("alternate_accessions"),
             "collections": obj.get("collections"),
-            "status": obj.get("status") if obj.get("status") is not None else 'in progress',
+            "status": obj.get("status"),
             "revoke_detail": obj.get("revoke_detail"),
-            "schema_version": obj.get("schema_version") if obj.get("schema_version") is not None else '13',
+            "schema_version": obj.get("schema_version"),
             "uuid": obj.get("uuid"),
             "notes": obj.get("notes"),
             "aliases": obj.get("aliases"),
@@ -262,13 +262,13 @@ class RodentDonor(BaseModel):
             "submitter_comment": obj.get("submitter_comment"),
             "description": obj.get("description"),
             "dbxrefs": obj.get("dbxrefs"),
-            "sex": obj.get("sex") if obj.get("sex") is not None else 'unspecified',
+            "sex": obj.get("sex"),
             "phenotypic_features": obj.get("phenotypic_features"),
-            "virtual": obj.get("virtual") if obj.get("virtual") is not None else False,
+            "virtual": obj.get("virtual"),
             "strain_background": obj.get("strain_background"),
             "strain": obj.get("strain"),
             "genotype": obj.get("genotype"),
-            "individual_rodent": obj.get("individual_rodent") if obj.get("individual_rodent") is not None else False,
+            "individual_rodent": obj.get("individual_rodent"),
             "rodent_identifier": obj.get("rodent_identifier"),
             "@id": obj.get("@id"),
             "@type": obj.get("@type"),

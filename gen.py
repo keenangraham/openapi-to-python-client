@@ -1051,7 +1051,7 @@ def clean_schema(schema):
             "minimum", "exclusiveMinimum", "maxLength", "minLength",
             "pattern", "uniqueItems",
             "maxContains", "minContains", "maxProperties", "minProperties",
-            "default", "title", "description", "linkTo",
+            "title", "description", "linkTo",
         ]
         cleaned = {}
         for key, value in schema.items():
