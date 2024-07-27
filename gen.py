@@ -829,6 +829,10 @@ def get_slim_embedded_fields():
         }
         fields = dict(sorted(fields.items(), key=lambda x: x[1]['path']))
         final[item_type] = fields
+        for embedded_field in embedded_fields[item_type]['embedded']:
+            if 'Testing' in item_type:
+                continue
+            raise ValueError(f'Found full embedded field, handle it {item_type} {embedded_fields[item_type]}')
     return final
 
 
@@ -1010,7 +1014,10 @@ def fill_in_collection_template(schema_name, schema):
     for k, v in embedded_fields.items():
         prop = v['path']
         prop_schema = v['schema']
-        is_an_item = not 'items' in prop_schema and v['is_an_item']
+        if 'items' in prop_schema:
+            add_as_item = False
+        else:
+            add_as_item = v['is_an_item']
         exclude = ['default', 'uniqueItems', 'notSubmittable', 'readonly', 'permission', 'submissionExample', 'serverDefault', 'minItems']
         filtered_prop_schema = {k: v for k, v in prop_schema.items() if k not in exclude}
         if '@type' in prop:
@@ -1019,7 +1026,7 @@ def fill_in_collection_template(schema_name, schema):
             {
                 "name": f"{prop}",
                 "in": "query",
-                "schema": filtered_prop_schema if not is_an_item else {"type": "array", "items": filtered_prop_schema},
+                "schema": filtered_prop_schema if not add_as_item else {"type": "array", "items": filtered_prop_schema},
                 "description": f"Filter by {prop}",
                 "style": "form",
                 "explode": True,
