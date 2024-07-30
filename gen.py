@@ -739,6 +739,16 @@ def fill_in_collection_template(schema_name, schema):
                         "description": "Constant value. Do not set."
                     },
                     {
+                        "name": "searchframe",
+                        "in": "query",
+                        "required": True,
+                        "schema": {
+                            "type": "string",
+                            "enum": ["object"]
+                        },
+                        "description": "Constant value. Do not set."
+                    },
+                    {
                         "name": "limit",
                         "in": "query",
                         "schema": {

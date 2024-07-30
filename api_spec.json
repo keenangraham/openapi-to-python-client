@@ -836,6 +836,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -1173,6 +1185,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -1669,6 +1693,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -2041,6 +2077,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -2529,6 +2577,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -2998,6 +3058,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -3409,6 +3481,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -4101,6 +4185,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -4821,6 +4917,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -5739,6 +5847,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -6512,6 +6632,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -7365,6 +7497,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -8123,6 +8267,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -8986,6 +9142,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -9776,6 +9944,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -10725,6 +10905,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -11769,6 +11961,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -12682,6 +12886,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -13558,6 +13774,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -14194,6 +14422,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -14858,6 +15098,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -15863,6 +16115,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -16538,6 +16802,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -17389,6 +17665,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -18129,6 +18417,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -18907,6 +19207,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -19454,6 +19766,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -19809,6 +20133,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -20280,6 +20616,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -20667,6 +21015,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -21277,6 +21637,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -21798,6 +22170,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -22361,6 +22745,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -22797,6 +23193,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -23320,6 +23728,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -23856,6 +24276,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -24325,6 +24757,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -24726,6 +25170,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -25150,6 +25606,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -25786,6 +26254,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -27170,6 +27650,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -28134,6 +28626,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -29373,6 +29877,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -30282,6 +30798,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -31577,6 +32105,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -32790,6 +33330,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -33249,6 +33801,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -33722,6 +34286,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -34079,6 +34655,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {
@@ -34778,6 +35366,18 @@
             "description": "Constant value. Do not set."
           },
           {
+            "name": "searchframe",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
             "name": "limit",
             "in": "query",
             "schema": {
@@ -35234,6 +35834,18 @@
           },
           {
             "name": "frame",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "object"
+              ]
+            },
+            "description": "Constant value. Do not set."
+          },
+          {
+            "name": "searchframe",
             "in": "query",
             "required": true,
             "schema": {

@@ -603,6 +603,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -1737,6 +1739,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -2583,6 +2587,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -3159,6 +3165,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -3843,6 +3851,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -4563,6 +4573,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -5427,6 +5439,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -6093,6 +6107,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -7064,6 +7080,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -8072,6 +8090,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -9242,6 +9262,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -10016,6 +10038,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -10898,6 +10922,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -11636,6 +11662,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -12230,6 +12258,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -13196,6 +13226,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -14240,6 +14272,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -15331,6 +15365,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -16321,6 +16357,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -16879,6 +16917,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -18499,6 +18539,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -19147,6 +19189,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -19741,6 +19785,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -20803,6 +20849,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -21811,6 +21859,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -22837,6 +22887,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -23791,6 +23843,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -24997,6 +25051,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -25663,6 +25719,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -26275,6 +26333,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -26923,6 +26983,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -27535,6 +27597,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -28219,6 +28283,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -29155,6 +29221,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -30631,6 +30699,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -31495,6 +31565,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -32647,6 +32719,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -33905,6 +33979,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -34643,6 +34719,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -36739,6 +36817,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -37873,6 +37953,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -38539,6 +38621,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -39205,6 +39289,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -39763,6 +39849,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -40843,6 +40931,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -41977,6 +42067,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -43507,6 +43599,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -44389,6 +44483,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -45037,6 +45133,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -46495,6 +46593,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -47269,6 +47369,8 @@ class IgvfApi:
 
         # Set client side default value of Query Param "frame".
         _query_params.append(('frame', 'object'))
+        # Set client side default value of Query Param "searchframe".
+        _query_params.append(('searchframe', 'object'))
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
