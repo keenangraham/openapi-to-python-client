@@ -1,67 +1,67 @@
-# AsyncIgvfApi
+# IgvfApi
 
 All URIs are relative to *https://api.data.igvf.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AccessKeys**](AsyncIgvfApi.md#AccessKeys) | **GET** /access-keys/@@listing | List items in the AccessKey collection.
-[**AlignmentFiles**](AsyncIgvfApi.md#AlignmentFiles) | **GET** /alignment-files/@@listing | List items in the AlignmentFile collection.
-[**AnalysisSets**](AsyncIgvfApi.md#AnalysisSets) | **GET** /analysis-sets/@@listing | List items in the AnalysisSet collection.
-[**AnalysisStepVersions**](AsyncIgvfApi.md#AnalysisStepVersions) | **GET** /analysis-step-versions/@@listing | List items in the AnalysisStepVersion collection.
-[**AnalysisSteps**](AsyncIgvfApi.md#AnalysisSteps) | **GET** /analysis-steps/@@listing | List items in the AnalysisStep collection.
-[**AssayTerms**](AsyncIgvfApi.md#AssayTerms) | **GET** /assay-terms/@@listing | List items in the AssayTerm collection.
-[**AuxiliarySets**](AsyncIgvfApi.md#AuxiliarySets) | **GET** /auxiliary-sets/@@listing | List items in the AuxiliarySet collection.
-[**Awards**](AsyncIgvfApi.md#Awards) | **GET** /awards/@@listing | List items in the Award collection.
-[**BatchDownload**](AsyncIgvfApi.md#BatchDownload) | **GET** /batch-download | List files to download based on search query. All results are returned.
-[**Biomarkers**](AsyncIgvfApi.md#Biomarkers) | **GET** /biomarkers/@@listing | List items in the Biomarker collection.
-[**ConfigurationFiles**](AsyncIgvfApi.md#ConfigurationFiles) | **GET** /configuration-files/@@listing | List items in the ConfigurationFile collection.
-[**ConstructLibrarySets**](AsyncIgvfApi.md#ConstructLibrarySets) | **GET** /construct-library-sets/@@listing | List items in the ConstructLibrarySet collection.
-[**CrisprModifications**](AsyncIgvfApi.md#CrisprModifications) | **GET** /crispr-modifications/@@listing | List items in the CrisprModification collection.
-[**CuratedSets**](AsyncIgvfApi.md#CuratedSets) | **GET** /curated-sets/@@listing | List items in the CuratedSet collection.
-[**DegronModifications**](AsyncIgvfApi.md#DegronModifications) | **GET** /degron-modifications/@@listing | List items in the DegronModification collection.
-[**Documents**](AsyncIgvfApi.md#Documents) | **GET** /documents/@@listing | List items in the Document collection.
-[**Download**](AsyncIgvfApi.md#Download) | **GET** /{file_id}/@@download | Download file.
-[**Genes**](AsyncIgvfApi.md#Genes) | **GET** /genes/@@listing | List items in the Gene collection.
-[**GenomeBrowserAnnotationFiles**](AsyncIgvfApi.md#GenomeBrowserAnnotationFiles) | **GET** /genome-browser-annotation-files/@@listing | List items in the GenomeBrowserAnnotationFile collection.
-[**GetById**](AsyncIgvfApi.md#GetById) | **GET** /{resource_id} | Get item information
-[**HumanDonors**](AsyncIgvfApi.md#HumanDonors) | **GET** /human-donors/@@listing | List items in the HumanDonor collection.
-[**ImageFiles**](AsyncIgvfApi.md#ImageFiles) | **GET** /image-files/@@listing | List items in the ImageFile collection.
-[**Images**](AsyncIgvfApi.md#Images) | **GET** /images/@@listing | List items in the Image collection.
-[**InVitroSystems**](AsyncIgvfApi.md#InVitroSystems) | **GET** /in-vitro-systems/@@listing | List items in the InVitroSystem collection.
-[**InstitutionalCertificates**](AsyncIgvfApi.md#InstitutionalCertificates) | **GET** /institutional-certificates/@@listing | List items in the InstitutionalCertificate collection.
-[**Labs**](AsyncIgvfApi.md#Labs) | **GET** /labs/@@listing | List items in the Lab collection.
-[**MatrixFiles**](AsyncIgvfApi.md#MatrixFiles) | **GET** /matrix-files/@@listing | List items in the MatrixFile collection.
-[**MeasurementSets**](AsyncIgvfApi.md#MeasurementSets) | **GET** /measurement-sets/@@listing | List items in the MeasurementSet collection.
-[**ModelFiles**](AsyncIgvfApi.md#ModelFiles) | **GET** /model-files/@@listing | List items in the ModelFile collection.
-[**ModelSets**](AsyncIgvfApi.md#ModelSets) | **GET** /model-sets/@@listing | List items in the ModelSet collection.
-[**MultiplexedSamples**](AsyncIgvfApi.md#MultiplexedSamples) | **GET** /multiplexed-samples/@@listing | List items in the MultiplexedSample collection.
-[**OpenReadingFrames**](AsyncIgvfApi.md#OpenReadingFrames) | **GET** /open-reading-frames/@@listing | List items in the OpenReadingFrame collection.
-[**Pages**](AsyncIgvfApi.md#Pages) | **GET** /pages/@@listing | List items in the Page collection.
-[**PhenotypeTerms**](AsyncIgvfApi.md#PhenotypeTerms) | **GET** /phenotype-terms/@@listing | List items in the PhenotypeTerm collection.
-[**PhenotypicFeatures**](AsyncIgvfApi.md#PhenotypicFeatures) | **GET** /phenotypic-features/@@listing | List items in the PhenotypicFeature collection.
-[**PlatformTerms**](AsyncIgvfApi.md#PlatformTerms) | **GET** /platform-terms/@@listing | List items in the PlatformTerm collection.
-[**PredictionSets**](AsyncIgvfApi.md#PredictionSets) | **GET** /prediction-sets/@@listing | List items in the PredictionSet collection.
-[**PrimaryCells**](AsyncIgvfApi.md#PrimaryCells) | **GET** /primary-cells/@@listing | List items in the PrimaryCell collection.
-[**Publications**](AsyncIgvfApi.md#Publications) | **GET** /publications/@@listing | List items in the Publication collection.
-[**ReferenceFiles**](AsyncIgvfApi.md#ReferenceFiles) | **GET** /reference-files/@@listing | List items in the ReferenceFile collection.
-[**Report**](AsyncIgvfApi.md#Report) | **GET** /multireport.tsv | Generate a report based on search query. All results are returned.
-[**RodentDonors**](AsyncIgvfApi.md#RodentDonors) | **GET** /rodent-donors/@@listing | List items in the RodentDonor collection.
-[**SampleTerms**](AsyncIgvfApi.md#SampleTerms) | **GET** /sample-terms/@@listing | List items in the SampleTerm collection.
-[**SchemaForItemType**](AsyncIgvfApi.md#SchemaForItemType) | **GET** /profiles/{item_type} | Retrieve JSON schema for item type
-[**Schemas**](AsyncIgvfApi.md#Schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
-[**Search**](AsyncIgvfApi.md#Search) | **GET** /search | Search for items in the IGVF Project.
-[**SequenceFiles**](AsyncIgvfApi.md#SequenceFiles) | **GET** /sequence-files/@@listing | List items in the SequenceFile collection.
-[**SignalFiles**](AsyncIgvfApi.md#SignalFiles) | **GET** /signal-files/@@listing | List items in the SignalFile collection.
-[**Software**](AsyncIgvfApi.md#Software) | **GET** /software/@@listing | List items in the Software collection.
-[**SoftwareVersions**](AsyncIgvfApi.md#SoftwareVersions) | **GET** /software-versions/@@listing | List items in the SoftwareVersion collection.
-[**Sources**](AsyncIgvfApi.md#Sources) | **GET** /sources/@@listing | List items in the Source collection.
-[**TabularFiles**](AsyncIgvfApi.md#TabularFiles) | **GET** /tabular-files/@@listing | List items in the TabularFile collection.
-[**TechnicalSamples**](AsyncIgvfApi.md#TechnicalSamples) | **GET** /technical-samples/@@listing | List items in the TechnicalSample collection.
-[**Tissues**](AsyncIgvfApi.md#Tissues) | **GET** /tissues/@@listing | List items in the Tissue collection.
-[**Treatments**](AsyncIgvfApi.md#Treatments) | **GET** /treatments/@@listing | List items in the Treatment collection.
-[**Users**](AsyncIgvfApi.md#Users) | **GET** /users/@@listing | List items in the User collection.
-[**WholeOrganisms**](AsyncIgvfApi.md#WholeOrganisms) | **GET** /whole-organisms/@@listing | List items in the WholeOrganism collection.
-[**Workflows**](AsyncIgvfApi.md#Workflows) | **GET** /workflows/@@listing | List items in the Workflow collection.
+[**AccessKeys**](IgvfApi.md#AccessKeys) | **GET** /access-keys/@@listing | List items in the AccessKey collection.
+[**AlignmentFiles**](IgvfApi.md#AlignmentFiles) | **GET** /alignment-files/@@listing | List items in the AlignmentFile collection.
+[**AnalysisSets**](IgvfApi.md#AnalysisSets) | **GET** /analysis-sets/@@listing | List items in the AnalysisSet collection.
+[**AnalysisStepVersions**](IgvfApi.md#AnalysisStepVersions) | **GET** /analysis-step-versions/@@listing | List items in the AnalysisStepVersion collection.
+[**AnalysisSteps**](IgvfApi.md#AnalysisSteps) | **GET** /analysis-steps/@@listing | List items in the AnalysisStep collection.
+[**AssayTerms**](IgvfApi.md#AssayTerms) | **GET** /assay-terms/@@listing | List items in the AssayTerm collection.
+[**AuxiliarySets**](IgvfApi.md#AuxiliarySets) | **GET** /auxiliary-sets/@@listing | List items in the AuxiliarySet collection.
+[**Awards**](IgvfApi.md#Awards) | **GET** /awards/@@listing | List items in the Award collection.
+[**BatchDownload**](IgvfApi.md#BatchDownload) | **GET** /batch-download | List files to download based on search query. All results are returned.
+[**Biomarkers**](IgvfApi.md#Biomarkers) | **GET** /biomarkers/@@listing | List items in the Biomarker collection.
+[**ConfigurationFiles**](IgvfApi.md#ConfigurationFiles) | **GET** /configuration-files/@@listing | List items in the ConfigurationFile collection.
+[**ConstructLibrarySets**](IgvfApi.md#ConstructLibrarySets) | **GET** /construct-library-sets/@@listing | List items in the ConstructLibrarySet collection.
+[**CrisprModifications**](IgvfApi.md#CrisprModifications) | **GET** /crispr-modifications/@@listing | List items in the CrisprModification collection.
+[**CuratedSets**](IgvfApi.md#CuratedSets) | **GET** /curated-sets/@@listing | List items in the CuratedSet collection.
+[**DegronModifications**](IgvfApi.md#DegronModifications) | **GET** /degron-modifications/@@listing | List items in the DegronModification collection.
+[**Documents**](IgvfApi.md#Documents) | **GET** /documents/@@listing | List items in the Document collection.
+[**Download**](IgvfApi.md#Download) | **GET** /{file_id}/@@download | Download file.
+[**Genes**](IgvfApi.md#Genes) | **GET** /genes/@@listing | List items in the Gene collection.
+[**GenomeBrowserAnnotationFiles**](IgvfApi.md#GenomeBrowserAnnotationFiles) | **GET** /genome-browser-annotation-files/@@listing | List items in the GenomeBrowserAnnotationFile collection.
+[**GetById**](IgvfApi.md#GetById) | **GET** /{resource_id} | Get item information
+[**HumanDonors**](IgvfApi.md#HumanDonors) | **GET** /human-donors/@@listing | List items in the HumanDonor collection.
+[**ImageFiles**](IgvfApi.md#ImageFiles) | **GET** /image-files/@@listing | List items in the ImageFile collection.
+[**Images**](IgvfApi.md#Images) | **GET** /images/@@listing | List items in the Image collection.
+[**InVitroSystems**](IgvfApi.md#InVitroSystems) | **GET** /in-vitro-systems/@@listing | List items in the InVitroSystem collection.
+[**InstitutionalCertificates**](IgvfApi.md#InstitutionalCertificates) | **GET** /institutional-certificates/@@listing | List items in the InstitutionalCertificate collection.
+[**Labs**](IgvfApi.md#Labs) | **GET** /labs/@@listing | List items in the Lab collection.
+[**MatrixFiles**](IgvfApi.md#MatrixFiles) | **GET** /matrix-files/@@listing | List items in the MatrixFile collection.
+[**MeasurementSets**](IgvfApi.md#MeasurementSets) | **GET** /measurement-sets/@@listing | List items in the MeasurementSet collection.
+[**ModelFiles**](IgvfApi.md#ModelFiles) | **GET** /model-files/@@listing | List items in the ModelFile collection.
+[**ModelSets**](IgvfApi.md#ModelSets) | **GET** /model-sets/@@listing | List items in the ModelSet collection.
+[**MultiplexedSamples**](IgvfApi.md#MultiplexedSamples) | **GET** /multiplexed-samples/@@listing | List items in the MultiplexedSample collection.
+[**OpenReadingFrames**](IgvfApi.md#OpenReadingFrames) | **GET** /open-reading-frames/@@listing | List items in the OpenReadingFrame collection.
+[**Pages**](IgvfApi.md#Pages) | **GET** /pages/@@listing | List items in the Page collection.
+[**PhenotypeTerms**](IgvfApi.md#PhenotypeTerms) | **GET** /phenotype-terms/@@listing | List items in the PhenotypeTerm collection.
+[**PhenotypicFeatures**](IgvfApi.md#PhenotypicFeatures) | **GET** /phenotypic-features/@@listing | List items in the PhenotypicFeature collection.
+[**PlatformTerms**](IgvfApi.md#PlatformTerms) | **GET** /platform-terms/@@listing | List items in the PlatformTerm collection.
+[**PredictionSets**](IgvfApi.md#PredictionSets) | **GET** /prediction-sets/@@listing | List items in the PredictionSet collection.
+[**PrimaryCells**](IgvfApi.md#PrimaryCells) | **GET** /primary-cells/@@listing | List items in the PrimaryCell collection.
+[**Publications**](IgvfApi.md#Publications) | **GET** /publications/@@listing | List items in the Publication collection.
+[**ReferenceFiles**](IgvfApi.md#ReferenceFiles) | **GET** /reference-files/@@listing | List items in the ReferenceFile collection.
+[**Report**](IgvfApi.md#Report) | **GET** /multireport.tsv | Generate a report based on search query. All results are returned.
+[**RodentDonors**](IgvfApi.md#RodentDonors) | **GET** /rodent-donors/@@listing | List items in the RodentDonor collection.
+[**SampleTerms**](IgvfApi.md#SampleTerms) | **GET** /sample-terms/@@listing | List items in the SampleTerm collection.
+[**SchemaForItemType**](IgvfApi.md#SchemaForItemType) | **GET** /profiles/{item_type} | Retrieve JSON schema for item type
+[**Schemas**](IgvfApi.md#Schemas) | **GET** /profiles | Retrieve JSON schemas for all item types
+[**Search**](IgvfApi.md#Search) | **GET** /search | Search for items in the IGVF Project.
+[**SequenceFiles**](IgvfApi.md#SequenceFiles) | **GET** /sequence-files/@@listing | List items in the SequenceFile collection.
+[**SignalFiles**](IgvfApi.md#SignalFiles) | **GET** /signal-files/@@listing | List items in the SignalFile collection.
+[**Software**](IgvfApi.md#Software) | **GET** /software/@@listing | List items in the Software collection.
+[**SoftwareVersions**](IgvfApi.md#SoftwareVersions) | **GET** /software-versions/@@listing | List items in the SoftwareVersion collection.
+[**Sources**](IgvfApi.md#Sources) | **GET** /sources/@@listing | List items in the Source collection.
+[**TabularFiles**](IgvfApi.md#TabularFiles) | **GET** /tabular-files/@@listing | List items in the TabularFile collection.
+[**TechnicalSamples**](IgvfApi.md#TechnicalSamples) | **GET** /technical-samples/@@listing | List items in the TechnicalSample collection.
+[**Tissues**](IgvfApi.md#Tissues) | **GET** /tissues/@@listing | List items in the Tissue collection.
+[**Treatments**](IgvfApi.md#Treatments) | **GET** /treatments/@@listing | List items in the Treatment collection.
+[**Users**](IgvfApi.md#Users) | **GET** /users/@@listing | List items in the User collection.
+[**WholeOrganisms**](IgvfApi.md#WholeOrganisms) | **GET** /whole-organisms/@@listing | List items in the WholeOrganism collection.
+[**Workflows**](IgvfApi.md#Workflows) | **GET** /workflows/@@listing | List items in the Workflow collection.
 
 
 # **AccessKeys**
@@ -97,7 +97,7 @@ var_summary <- c("inner_example") # array[character] | Filter by summary (Option
 var_user <- c("inner_example") # array[character] | Filter by user (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -218,7 +218,7 @@ var_upload_status <- c("pending") # array[character] | Filter by upload_status (
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_validation_error_detail <- c("inner_example") # array[character] | Filter by validation_error_detail (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -401,7 +401,7 @@ var_submitter_comment <- c("inner_example") # array[character] | Filter by submi
 var_summary <- c("inner_example") # array[character] | Filter by summary (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -556,7 +556,7 @@ var_submitter_comment <- c("inner_example") # array[character] | Filter by submi
 var_summary <- c("inner_example") # array[character] | Filter by summary (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -661,7 +661,7 @@ var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_workflow_id <- c("inner_example") # array[character] | Filter by workflow.@id (Optional)
 var_workflow_accession <- c("inner_example") # array[character] | Filter by workflow.accession (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -770,7 +770,7 @@ var_term_id <- c("inner_example") # array[character] | Filter by term_id (Option
 var_term_name <- c("inner_example") # array[character] | Filter by term_name (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -930,7 +930,7 @@ var_summary <- c("inner_example") # array[character] | Filter by summary (Option
 var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -1087,7 +1087,7 @@ var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_viewing_group <- c("community") # array[character] | Filter by viewing_group (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -1166,7 +1166,7 @@ var_type <- c("inner_example") # array[character] | Type of objects to return. C
 var_query <- "query_example" # character | Query string for searching. (Optional)
 var_field_filters <- c(key = TODO) # object | Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -1248,7 +1248,7 @@ var_summary <- c("inner_example") # array[character] | Filter by summary (Option
 var_synonyms <- c("inner_example") # array[character] | Filter by synonyms (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -1372,7 +1372,7 @@ var_upload_status <- c("pending") # array[character] | Filter by upload_status (
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_validation_error_detail <- c("inner_example") # array[character] | Filter by validation_error_detail (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -1551,7 +1551,7 @@ var_upper_bound_guide_coverage <- c(123) # array[integer] | Filter by upper_boun
 var_upper_bound_insert_size <- c(123) # array[integer] | Filter by upper_bound_insert_size (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -1718,7 +1718,7 @@ var_summary <- c("inner_example") # array[character] | Filter by summary (Option
 var_tagged_protein <- c("inner_example") # array[character] | Filter by tagged_protein (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -1881,7 +1881,7 @@ var_transcriptome_annotations <- c("inner_example") # array[character] | Filter 
 var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -2042,7 +2042,7 @@ var_summary <- c("inner_example") # array[character] | Filter by summary (Option
 var_tagged_proteins <- c("inner_example") # array[character] | Filter by tagged_proteins (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -2147,7 +2147,7 @@ var_summary <- c("inner_example") # array[character] | Filter by summary (Option
 var_urls <- c("inner_example") # array[character] | Filter by urls (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -2222,7 +2222,7 @@ library(igvf_client)
 # prepare function argument(s)
 var_file_id <- "file_id_example" # character | The unique identifier for the file to download, e.g. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03).
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -2300,7 +2300,7 @@ var_transcriptome_annotation <- c("GENCODE 40") # array[character] | Filter by t
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_version_number <- c("inner_example") # array[character] | Filter by version_number (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -2425,7 +2425,7 @@ var_upload_status <- c("pending") # array[character] | Filter by upload_status (
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_validation_error_detail <- c("inner_example") # array[character] | Filter by validation_error_detail (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -2525,7 +2525,7 @@ library(igvf_client)
 var_resource_id <- "/sequence-files/IGVFFI1165AJSO/" # character | The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`) or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`).
 var_frame <- "frame_example" # character | Constant value. Do not set.
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -2618,7 +2618,7 @@ var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_virtual <- c("inner_example") # array[character] | Filter by virtual (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -2755,7 +2755,7 @@ var_upload_status <- c("pending") # array[character] | Filter by upload_status (
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_validation_error_detail <- c("inner_example") # array[character] | Filter by validation_error_detail (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -2869,7 +2869,7 @@ var_summary <- c("inner_example") # array[character] | Filter by summary (Option
 var_thumb_nail <- c("inner_example") # array[character] | Filter by thumb_nail (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -3041,7 +3041,7 @@ var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_virtual <- c("inner_example") # array[character] | Filter by virtual (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -3220,7 +3220,7 @@ var_summary <- c("inner_example") # array[character] | Filter by summary (Option
 var_urls <- c("inner_example") # array[character] | Filter by urls (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -3320,7 +3320,7 @@ var_title <- c("inner_example") # array[character] | Filter by title (Optional)
 var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -3442,7 +3442,7 @@ var_upload_status <- c("pending") # array[character] | Filter by upload_status (
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_validation_error_detail <- c("inner_example") # array[character] | Filter by validation_error_detail (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -3654,7 +3654,7 @@ var_targeted_genes_symbol <- c("inner_example") # array[character] | Filter by t
 var_targeted_genes_synonyms <- c("inner_example") # array[character] | Filter by targeted_genes.synonyms (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -3864,7 +3864,7 @@ var_upload_status <- c("pending") # array[character] | Filter by upload_status (
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_validation_error_detail <- c("inner_example") # array[character] | Filter by validation_error_detail (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -4046,7 +4046,7 @@ var_summary <- c("inner_example") # array[character] | Filter by summary (Option
 var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -4266,7 +4266,7 @@ var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_virtual <- c("inner_example") # array[character] | Filter by virtual (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -4427,7 +4427,7 @@ var_submitter_comment <- c("inner_example") # array[character] | Filter by submi
 var_summary <- c("inner_example") # array[character] | Filter by summary (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -4526,7 +4526,7 @@ var_summary <- c("inner_example") # array[character] | Filter by summary (Option
 var_title <- c("inner_example") # array[character] | Filter by title (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -4623,7 +4623,7 @@ var_term_id <- c("inner_example") # array[character] | Filter by term_id (Option
 var_term_name <- c("inner_example") # array[character] | Filter by term_name (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -4724,7 +4724,7 @@ var_submitter_comment <- c("inner_example") # array[character] | Filter by submi
 var_summary <- c("inner_example") # array[character] | Filter by summary (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -4827,7 +4827,7 @@ var_term_id <- c("inner_example") # array[character] | Filter by term_id (Option
 var_term_name <- c("inner_example") # array[character] | Filter by term_name (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -4996,7 +4996,7 @@ var_summary <- c("inner_example") # array[character] | Filter by summary (Option
 var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -5228,7 +5228,7 @@ var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_virtual <- c("inner_example") # array[character] | Filter by virtual (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -5406,7 +5406,7 @@ var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_volume <- c("inner_example") # array[character] | Filter by volume (Optional)
 var_workflows <- c("inner_example") # array[character] | Filter by workflows (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -5548,7 +5548,7 @@ var_upload_status <- c("pending") # array[character] | Filter by upload_status (
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_validation_error_detail <- c("inner_example") # array[character] | Filter by validation_error_detail (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -5659,7 +5659,7 @@ var_field_filters <- c(key = TODO) # object | Any field from any item type can b
 var_include_fields <- c("inner_example") # array[character] | Fields to include in the response. Can be repeated for multiple fields. (Optional)
 var_frame <- "frame_example" # character | Object with links, or object with some links embedded. (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -5763,7 +5763,7 @@ var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_virtual <- c("inner_example") # array[character] | Filter by virtual (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -5889,7 +5889,7 @@ var_term_id <- c("inner_example") # array[character] | Filter by term_id (Option
 var_term_name <- c("inner_example") # array[character] | Filter by term_name (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -5970,7 +5970,7 @@ library(igvf_client)
 # prepare function argument(s)
 var_item_type <- ItemType$new() # ItemType | The name of the item type
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -6018,7 +6018,7 @@ library(igvf_client)
 # Retrieve JSON schemas for all item types
 #
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -6070,7 +6070,7 @@ var_limit <- Limit$new() # Limit | Maximum number of results to return. Default 
 var_sort <- c("inner_example") # array[character] | Fields to sort results by. Prefix with '-' for descending order. Does not work with limit=all. (Optional)
 var_field_filters <- c(key = TODO) # object | Any field from any item type can be used as a filter. Use '!' at end of field name for negation and 'lt:', 'lte:', 'gt:', 'gte:' with value for range queries on numeric fields. Examples: {'status!': 'in progress', 'file_size': 'gte:30000'} (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -6183,7 +6183,7 @@ var_upload_status <- c("pending") # array[character] | Filter by upload_status (
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_validation_error_detail <- c("inner_example") # array[character] | Filter by validation_error_detail (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -6344,7 +6344,7 @@ var_upload_status <- c("pending") # array[character] | Filter by upload_status (
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_validation_error_detail <- c("inner_example") # array[character] | Filter by validation_error_detail (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -6474,7 +6474,7 @@ var_used_by <- c("consortium analysis") # array[character] | Filter by used_by (
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_versions <- c("inner_example") # array[character] | Filter by versions (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -6580,7 +6580,7 @@ var_summary <- c("inner_example") # array[character] | Filter by summary (Option
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_version <- c("inner_example") # array[character] | Filter by version (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -6678,7 +6678,7 @@ var_title <- c("inner_example") # array[character] | Filter by title (Optional)
 var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -6797,7 +6797,7 @@ var_upload_status <- c("pending") # array[character] | Filter by upload_status (
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_validation_error_detail <- c("inner_example") # array[character] | Filter by validation_error_detail (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -6959,7 +6959,7 @@ var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_virtual <- c("inner_example") # array[character] | Filter by virtual (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -7164,7 +7164,7 @@ var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_virtual <- c("inner_example") # array[character] | Filter by virtual (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -7346,7 +7346,7 @@ var_treatment_term_name <- c("inner_example") # array[character] | Filter by tre
 var_treatment_type <- c("chemical") # array[character] | Filter by treatment_type (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -7460,7 +7460,7 @@ var_title <- c("inner_example") # array[character] | Filter by title (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_viewing_groups <- c("community") # array[character] | Filter by viewing_groups (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -7623,7 +7623,7 @@ var_url <- c("inner_example") # array[character] | Filter by url (Optional)
 var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_virtual <- c("inner_example") # array[character] | Filter by virtual (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")
@@ -7796,7 +7796,7 @@ var_uuid <- c("inner_example") # array[character] | Filter by uuid (Optional)
 var_workflow_repositories <- c("inner_example") # array[character] | Filter by workflow_repositories (Optional)
 var_workflow_version <- c(123) # array[integer] | Filter by workflow_version (Optional)
 
-api_instance <- AsyncIgvfApi$new()
+api_instance <- IgvfApi$new()
 # Configure HTTP basic authorization: basicAuth
 api_instance$api_client$username <- Sys.getenv("USERNAME")
 api_instance$api_client$password <- Sys.getenv("PASSWORD")

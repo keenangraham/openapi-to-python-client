@@ -140,4 +140,4 @@ export(Workflow)
 export(WorkflowResults)
 
 # APIs
-export(AsyncIgvfApi)
+export(IgvfApi)

@@ -20,7 +20,6 @@ R/api_client.R
 R/api_response.R
 R/assay_term.R
 R/assay_term_results.R
-R/async_igvf_api.R
 R/attachment.R
 R/attachment1.R
 R/auxiliary_set.R
@@ -49,6 +48,7 @@ R/genome_browser_annotation_file.R
 R/genome_browser_annotation_file_results.R
 R/human_donor.R
 R/human_donor_results.R
+R/igvf_api.R
 R/image.R
 R/image_file.R
 R/image_file_results.R
@@ -147,7 +147,6 @@ docs/AnalysisStepVersion.md
 docs/AnalysisStepVersionResults.md
 docs/AssayTerm.md
 docs/AssayTermResults.md
-docs/AsyncIgvfApi.md
 docs/Attachment.md
 docs/Attachment1.md
 docs/AuxiliarySet.md
@@ -176,6 +175,7 @@ docs/GenomeBrowserAnnotationFile.md
 docs/GenomeBrowserAnnotationFileResults.md
 docs/HumanDonor.md
 docs/HumanDonorResults.md
+docs/IgvfApi.md
 docs/Image.md
 docs/ImageFile.md
 docs/ImageFileResults.md
@@ -275,7 +275,6 @@ tests/testthat/test_analysis_step_version.R
 tests/testthat/test_analysis_step_version_results.R
 tests/testthat/test_assay_term.R
 tests/testthat/test_assay_term_results.R
-tests/testthat/test_async_igvf_api.R
 tests/testthat/test_attachment.R
 tests/testthat/test_attachment1.R
 tests/testthat/test_auxiliary_set.R
@@ -304,6 +303,7 @@ tests/testthat/test_genome_browser_annotation_file.R
 tests/testthat/test_genome_browser_annotation_file_results.R
 tests/testthat/test_human_donor.R
 tests/testthat/test_human_donor_results.R
+tests/testthat/test_igvf_api.R
 tests/testthat/test_image.R
 tests/testthat/test_image_file.R
 tests/testthat/test_image_file_results.R
