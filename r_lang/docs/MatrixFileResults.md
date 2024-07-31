@@ -1,4 +1,4 @@
-# igvf_client::MatrixFileResults
+# igvfclient::MatrixFileResults
 
 
 ## Properties

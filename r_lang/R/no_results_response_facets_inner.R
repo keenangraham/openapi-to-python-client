@@ -140,7 +140,7 @@ NoResultsResponseFacetsInner <- R6::R6Class(
         self$`title` <- this_object$`title`
       }
       if (!is.null(this_object$`terms`)) {
-        self$`terms` <- ApiClient$new()$deserializeObj(this_object$`terms`, "array[NoResultsResponseFacetsInnerTermsInner]", loadNamespace("igvf_client"))
+        self$`terms` <- ApiClient$new()$deserializeObj(this_object$`terms`, "array[NoResultsResponseFacetsInnerTermsInner]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`total`)) {
         self$`total` <- this_object$`total`
@@ -237,7 +237,7 @@ NoResultsResponseFacetsInner <- R6::R6Class(
       this_object <- jsonlite::fromJSON(input_json)
       self$`field` <- this_object$`field`
       self$`title` <- this_object$`title`
-      self$`terms` <- ApiClient$new()$deserializeObj(this_object$`terms`, "array[NoResultsResponseFacetsInnerTermsInner]", loadNamespace("igvf_client"))
+      self$`terms` <- ApiClient$new()$deserializeObj(this_object$`terms`, "array[NoResultsResponseFacetsInnerTermsInner]", loadNamespace("igvfclient"))
       self$`total` <- this_object$`total`
       self$`type` <- this_object$`type`
       self$`appended` <- this_object$`appended`

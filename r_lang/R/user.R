@@ -345,7 +345,7 @@ User <- R6::R6Class(
         self$`notes` <- this_object$`notes`
       }
       if (!is.null(this_object$`aliases`)) {
-        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`aliases`, unique(self$`aliases`))) {
           stop("Error! Items in `aliases` are not unique.")
         }
@@ -375,19 +375,19 @@ User <- R6::R6Class(
         self$`lab` <- this_object$`lab`
       }
       if (!is.null(this_object$`submits_for`)) {
-        self$`submits_for` <- ApiClient$new()$deserializeObj(this_object$`submits_for`, "set[character]", loadNamespace("igvf_client"))
+        self$`submits_for` <- ApiClient$new()$deserializeObj(this_object$`submits_for`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`submits_for`, unique(self$`submits_for`))) {
           stop("Error! Items in `submits_for` are not unique.")
         }
       }
       if (!is.null(this_object$`groups`)) {
-        self$`groups` <- ApiClient$new()$deserializeObj(this_object$`groups`, "set[character]", loadNamespace("igvf_client"))
+        self$`groups` <- ApiClient$new()$deserializeObj(this_object$`groups`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`groups`, unique(self$`groups`))) {
           stop("Error! Items in `groups` are not unique.")
         }
       }
       if (!is.null(this_object$`viewing_groups`)) {
-        self$`viewing_groups` <- ApiClient$new()$deserializeObj(this_object$`viewing_groups`, "set[character]", loadNamespace("igvf_client"))
+        self$`viewing_groups` <- ApiClient$new()$deserializeObj(this_object$`viewing_groups`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`viewing_groups`, unique(self$`viewing_groups`))) {
           stop("Error! Items in `viewing_groups` are not unique.")
         }
@@ -402,7 +402,7 @@ User <- R6::R6Class(
         self$`@id` <- this_object$`@id`
       }
       if (!is.null(this_object$`@type`)) {
-        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`summary`)) {
         self$`summary` <- this_object$`summary`
@@ -610,7 +610,7 @@ User <- R6::R6Class(
       self$`schema_version` <- this_object$`schema_version`
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
-      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`aliases`, unique(self$`aliases`))) {
         stop("Error! Items in `aliases` are not unique.")
       }
@@ -622,15 +622,15 @@ User <- R6::R6Class(
       self$`first_name` <- this_object$`first_name`
       self$`last_name` <- this_object$`last_name`
       self$`lab` <- this_object$`lab`
-      self$`submits_for` <- ApiClient$new()$deserializeObj(this_object$`submits_for`, "set[character]", loadNamespace("igvf_client"))
+      self$`submits_for` <- ApiClient$new()$deserializeObj(this_object$`submits_for`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`submits_for`, unique(self$`submits_for`))) {
         stop("Error! Items in `submits_for` are not unique.")
       }
-      self$`groups` <- ApiClient$new()$deserializeObj(this_object$`groups`, "set[character]", loadNamespace("igvf_client"))
+      self$`groups` <- ApiClient$new()$deserializeObj(this_object$`groups`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`groups`, unique(self$`groups`))) {
         stop("Error! Items in `groups` are not unique.")
       }
-      self$`viewing_groups` <- ApiClient$new()$deserializeObj(this_object$`viewing_groups`, "set[character]", loadNamespace("igvf_client"))
+      self$`viewing_groups` <- ApiClient$new()$deserializeObj(this_object$`viewing_groups`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`viewing_groups`, unique(self$`viewing_groups`))) {
         stop("Error! Items in `viewing_groups` are not unique.")
       }
@@ -639,7 +639,7 @@ User <- R6::R6Class(
       }
       self$`job_title` <- this_object$`job_title`
       self$`@id` <- this_object$`@id`
-      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
       self$`title` <- this_object$`title`
       self

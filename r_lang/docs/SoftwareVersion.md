@@ -1,4 +1,4 @@
-# igvf_client::SoftwareVersion
+# igvfclient::SoftwareVersion
 
 A specific version of a software used for computational analysis. For example, Bowtie2 v2.3.0.
 

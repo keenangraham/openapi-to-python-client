@@ -88,7 +88,7 @@ SearchFacet <- R6::R6Class(
         self$`title` <- this_object$`title`
       }
       if (!is.null(this_object$`terms`)) {
-        self$`terms` <- ApiClient$new()$deserializeObj(this_object$`terms`, "array[object]", loadNamespace("igvf_client"))
+        self$`terms` <- ApiClient$new()$deserializeObj(this_object$`terms`, "array[object]", loadNamespace("igvfclient"))
       }
       self
     },
@@ -141,7 +141,7 @@ SearchFacet <- R6::R6Class(
       this_object <- jsonlite::fromJSON(input_json)
       self$`field` <- this_object$`field`
       self$`title` <- this_object$`title`
-      self$`terms` <- ApiClient$new()$deserializeObj(this_object$`terms`, "array[object]", loadNamespace("igvf_client"))
+      self$`terms` <- ApiClient$new()$deserializeObj(this_object$`terms`, "array[object]", loadNamespace("igvfclient"))
       self
     },
     #' Validate JSON input with respect to SearchFacet

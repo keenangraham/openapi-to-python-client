@@ -88,7 +88,7 @@ NoResultsResponseFacetGroupsInner <- R6::R6Class(
         self$`title` <- this_object$`title`
       }
       if (!is.null(this_object$`facet_fields`)) {
-        self$`facet_fields` <- ApiClient$new()$deserializeObj(this_object$`facet_fields`, "array[character]", loadNamespace("igvf_client"))
+        self$`facet_fields` <- ApiClient$new()$deserializeObj(this_object$`facet_fields`, "array[character]", loadNamespace("igvfclient"))
       }
       self
     },
@@ -141,7 +141,7 @@ NoResultsResponseFacetGroupsInner <- R6::R6Class(
       this_object <- jsonlite::fromJSON(input_json)
       self$`name` <- this_object$`name`
       self$`title` <- this_object$`title`
-      self$`facet_fields` <- ApiClient$new()$deserializeObj(this_object$`facet_fields`, "array[character]", loadNamespace("igvf_client"))
+      self$`facet_fields` <- ApiClient$new()$deserializeObj(this_object$`facet_fields`, "array[character]", loadNamespace("igvfclient"))
       self
     },
     #' Validate JSON input with respect to NoResultsResponseFacetGroupsInner

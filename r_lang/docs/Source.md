@@ -1,4 +1,4 @@
-# igvf_client::Source
+# igvfclient::Source
 
 A vendor or a lab that provides samples for study.
 

@@ -344,7 +344,7 @@ Page <- R6::R6Class(
         self$`notes` <- this_object$`notes`
       }
       if (!is.null(this_object$`aliases`)) {
-        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`aliases`, unique(self$`aliases`))) {
           stop("Error! Items in `aliases` are not unique.")
         }
@@ -379,7 +379,7 @@ Page <- R6::R6Class(
         self$`@id` <- this_object$`@id`
       }
       if (!is.null(this_object$`@type`)) {
-        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`summary`)) {
         self$`summary` <- this_object$`summary`
@@ -594,7 +594,7 @@ Page <- R6::R6Class(
       self$`schema_version` <- this_object$`schema_version`
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
-      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`aliases`, unique(self$`aliases`))) {
         stop("Error! Items in `aliases` are not unique.")
       }
@@ -607,7 +607,7 @@ Page <- R6::R6Class(
       self$`title` <- this_object$`title`
       self$`layout` <- PageLayout$new()$fromJSON(jsonlite::toJSON(this_object$`layout`, auto_unbox = TRUE, digits = NA))
       self$`@id` <- this_object$`@id`
-      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
       self$`canonical_uri` <- this_object$`canonical_uri`
       # process additional properties/fields in the payload

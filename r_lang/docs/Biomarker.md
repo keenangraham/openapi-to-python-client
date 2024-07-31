@@ -1,4 +1,4 @@
-# igvf_client::Biomarker
+# igvfclient::Biomarker
 
 A biomarker, such as a cell surface protein, that is measured, detected, or used for sample sorting based upon the biomarker's presence, absence, or quantification. For example, a CD19 positive biomarker that was detected in a sample.
 

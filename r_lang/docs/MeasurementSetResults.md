@@ -1,4 +1,4 @@
-# igvf_client::MeasurementSetResults
+# igvfclient::MeasurementSetResults
 
 
 ## Properties

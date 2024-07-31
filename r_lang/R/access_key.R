@@ -252,7 +252,7 @@ AccessKey <- R6::R6Class(
         self$`notes` <- this_object$`notes`
       }
       if (!is.null(this_object$`aliases`)) {
-        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`aliases`, unique(self$`aliases`))) {
           stop("Error! Items in `aliases` are not unique.")
         }
@@ -288,7 +288,7 @@ AccessKey <- R6::R6Class(
         self$`@id` <- this_object$`@id`
       }
       if (!is.null(this_object$`@type`)) {
-        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`summary`)) {
         self$`summary` <- this_object$`summary`
@@ -441,7 +441,7 @@ AccessKey <- R6::R6Class(
       self$`schema_version` <- this_object$`schema_version`
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
-      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`aliases`, unique(self$`aliases`))) {
         stop("Error! Items in `aliases` are not unique.")
       }
@@ -457,7 +457,7 @@ AccessKey <- R6::R6Class(
       self$`access_key_id` <- this_object$`access_key_id`
       self$`secret_access_key_hash` <- this_object$`secret_access_key_hash`
       self$`@id` <- this_object$`@id`
-      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
       self
     },

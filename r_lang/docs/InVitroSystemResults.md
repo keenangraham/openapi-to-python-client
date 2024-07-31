@@ -1,4 +1,4 @@
-# igvf_client::InVitroSystemResults
+# igvfclient::InVitroSystemResults
 
 
 ## Properties

@@ -1,4 +1,4 @@
-# igvf_client::HumanDonor
+# igvfclient::HumanDonor
 
 A human donor of any biosample, including cell lines. Submission of any sample originating from a human donor requires submission of information about the relevant donor. For example, submission of the donor of K562 is a prerequisite for submission of any K562 cell line samples.
 

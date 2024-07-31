@@ -1,4 +1,4 @@
-# igvf_client::Document
+# igvfclient::Document
 
 A document with additional information regarding another object submitted to the data portal. For example, a plasmid map document associated with a transduced cell line sample.
 

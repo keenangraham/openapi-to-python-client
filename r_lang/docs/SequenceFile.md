@@ -1,4 +1,4 @@
-# igvf_client::SequenceFile
+# igvfclient::SequenceFile
 
 A file containing sequencing results in bam, fastq, or pod5 formats.
 

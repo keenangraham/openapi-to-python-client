@@ -1,4 +1,4 @@
-# igvf_client::TissueResults
+# igvfclient::TissueResults
 
 
 ## Properties

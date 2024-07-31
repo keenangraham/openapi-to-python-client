@@ -1,4 +1,4 @@
-# igvf_client::InstitutionalCertificateResults
+# igvfclient::InstitutionalCertificateResults
 
 
 ## Properties

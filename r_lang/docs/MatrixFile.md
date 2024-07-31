@@ -1,4 +1,4 @@
-# igvf_client::MatrixFile
+# igvfclient::MatrixFile
 
 A file containing quantification data in a multi-dimension format.
 

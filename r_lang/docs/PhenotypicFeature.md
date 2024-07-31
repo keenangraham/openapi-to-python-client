@@ -1,4 +1,4 @@
-# igvf_client::PhenotypicFeature
+# igvfclient::PhenotypicFeature
 
 A phenotypic feature of a donor the sample is coming from. For example, the donor’s height measured at the time of sample collection.
 

@@ -1,4 +1,4 @@
-# igvf_client::ImageFile
+# igvfclient::ImageFile
 
 A file containing image data.
 

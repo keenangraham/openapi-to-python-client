@@ -1,4 +1,4 @@
-# igvf_client::ConstructLibrarySetResults
+# igvfclient::ConstructLibrarySetResults
 
 
 ## Properties

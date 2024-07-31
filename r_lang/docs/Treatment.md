@@ -1,4 +1,4 @@
-# igvf_client::Treatment
+# igvfclient::Treatment
 
 A protein or chemical treatment applied to samples such as lipopolysaccharide, interleukin-2, or leucine.
 

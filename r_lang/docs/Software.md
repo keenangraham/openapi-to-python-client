@@ -1,4 +1,4 @@
-# igvf_client::Software
+# igvfclient::Software
 
 A software used for computational  analysis. For example, Bowtie2 alignment software.
 

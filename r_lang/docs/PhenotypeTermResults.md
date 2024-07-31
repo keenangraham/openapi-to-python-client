@@ -1,4 +1,4 @@
-# igvf_client::PhenotypeTermResults
+# igvfclient::PhenotypeTermResults
 
 
 ## Properties

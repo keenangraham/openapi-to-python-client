@@ -1,4 +1,4 @@
-# igvf_client::ConfigurationFileResults
+# igvfclient::ConfigurationFileResults
 
 
 ## Properties

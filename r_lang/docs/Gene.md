@@ -1,4 +1,4 @@
-# igvf_client::Gene
+# igvfclient::Gene
 
 A gene in the human or mouse genomes. The genes objects in IGVF are imported from GENCODE.
 

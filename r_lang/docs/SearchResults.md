@@ -1,4 +1,4 @@
-# igvf_client::SearchResults
+# igvfclient::SearchResults
 
 
 ## Properties

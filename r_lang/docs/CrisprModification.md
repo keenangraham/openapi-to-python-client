@@ -1,4 +1,4 @@
-# igvf_client::CrisprModification
+# igvfclient::CrisprModification
 
 A CRISPR modification altering sample genomic material. For example, CRISPRi dCas9-KRAB modification.
 

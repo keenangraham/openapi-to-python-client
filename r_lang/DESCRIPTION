@@ -1,4 +1,4 @@
-Package: igvf_client
+Package: igvfclient
 Title: R Package Client for IGVF Project API
 Version: 1.0.0
 Author: person("OpenAPI Generator community", email = "team@openapitools.org", role = c("aut", "cre"))

@@ -1,4 +1,4 @@
-# igvf_client::ModelFile
+# igvfclient::ModelFile
 
 A file containing a trained model.
 

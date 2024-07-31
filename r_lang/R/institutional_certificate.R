@@ -354,7 +354,7 @@ InstitutionalCertificate <- R6::R6Class(
         self$`notes` <- this_object$`notes`
       }
       if (!is.null(this_object$`aliases`)) {
-        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`aliases`, unique(self$`aliases`))) {
           stop("Error! Items in `aliases` are not unique.")
         }
@@ -384,19 +384,19 @@ InstitutionalCertificate <- R6::R6Class(
         self$`data_use_limitation` <- this_object$`data_use_limitation`
       }
       if (!is.null(this_object$`data_use_limitation_modifiers`)) {
-        self$`data_use_limitation_modifiers` <- ApiClient$new()$deserializeObj(this_object$`data_use_limitation_modifiers`, "set[character]", loadNamespace("igvf_client"))
+        self$`data_use_limitation_modifiers` <- ApiClient$new()$deserializeObj(this_object$`data_use_limitation_modifiers`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`data_use_limitation_modifiers`, unique(self$`data_use_limitation_modifiers`))) {
           stop("Error! Items in `data_use_limitation_modifiers` are not unique.")
         }
       }
       if (!is.null(this_object$`samples`)) {
-        self$`samples` <- ApiClient$new()$deserializeObj(this_object$`samples`, "set[character]", loadNamespace("igvf_client"))
+        self$`samples` <- ApiClient$new()$deserializeObj(this_object$`samples`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`samples`, unique(self$`samples`))) {
           stop("Error! Items in `samples` are not unique.")
         }
       }
       if (!is.null(this_object$`urls`)) {
-        self$`urls` <- ApiClient$new()$deserializeObj(this_object$`urls`, "set[character]", loadNamespace("igvf_client"))
+        self$`urls` <- ApiClient$new()$deserializeObj(this_object$`urls`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`urls`, unique(self$`urls`))) {
           stop("Error! Items in `urls` are not unique.")
         }
@@ -405,7 +405,7 @@ InstitutionalCertificate <- R6::R6Class(
         self$`@id` <- this_object$`@id`
       }
       if (!is.null(this_object$`@type`)) {
-        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`summary`)) {
         self$`summary` <- this_object$`summary`
@@ -613,7 +613,7 @@ InstitutionalCertificate <- R6::R6Class(
       self$`schema_version` <- this_object$`schema_version`
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
-      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`aliases`, unique(self$`aliases`))) {
         stop("Error! Items in `aliases` are not unique.")
       }
@@ -627,20 +627,20 @@ InstitutionalCertificate <- R6::R6Class(
         stop(paste("Error! \"", this_object$`data_use_limitation`, "\" cannot be assigned to `data_use_limitation`. Must be \"DS\", \"GRU\", \"HMB\", \"other\".", sep = ""))
       }
       self$`data_use_limitation` <- this_object$`data_use_limitation`
-      self$`data_use_limitation_modifiers` <- ApiClient$new()$deserializeObj(this_object$`data_use_limitation_modifiers`, "set[character]", loadNamespace("igvf_client"))
+      self$`data_use_limitation_modifiers` <- ApiClient$new()$deserializeObj(this_object$`data_use_limitation_modifiers`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`data_use_limitation_modifiers`, unique(self$`data_use_limitation_modifiers`))) {
         stop("Error! Items in `data_use_limitation_modifiers` are not unique.")
       }
-      self$`samples` <- ApiClient$new()$deserializeObj(this_object$`samples`, "set[character]", loadNamespace("igvf_client"))
+      self$`samples` <- ApiClient$new()$deserializeObj(this_object$`samples`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`samples`, unique(self$`samples`))) {
         stop("Error! Items in `samples` are not unique.")
       }
-      self$`urls` <- ApiClient$new()$deserializeObj(this_object$`urls`, "set[character]", loadNamespace("igvf_client"))
+      self$`urls` <- ApiClient$new()$deserializeObj(this_object$`urls`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`urls`, unique(self$`urls`))) {
         stop("Error! Items in `urls` are not unique.")
       }
       self$`@id` <- this_object$`@id`
-      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
       self
     },

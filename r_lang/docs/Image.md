@@ -1,4 +1,4 @@
-# igvf_client::Image
+# igvfclient::Image
 
 An image to be displayed on an IGVF portal page. This is not a data object.
 

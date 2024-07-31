@@ -106,19 +106,19 @@ InVitroSystemResults <- R6::R6Class(
     fromJSON = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       if (!is.null(this_object$`@graph`)) {
-        self$`@graph` <- ApiClient$new()$deserializeObj(this_object$`@graph`, "array[InVitroSystem]", loadNamespace("igvf_client"))
+        self$`@graph` <- ApiClient$new()$deserializeObj(this_object$`@graph`, "array[InVitroSystem]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`@id`)) {
         self$`@id` <- this_object$`@id`
       }
       if (!is.null(this_object$`@type`)) {
-        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`total`)) {
         self$`total` <- this_object$`total`
       }
       if (!is.null(this_object$`facets`)) {
-        self$`facets` <- ApiClient$new()$deserializeObj(this_object$`facets`, "array[SearchFacet]", loadNamespace("igvf_client"))
+        self$`facets` <- ApiClient$new()$deserializeObj(this_object$`facets`, "array[SearchFacet]", loadNamespace("igvfclient"))
       }
       self
     },
@@ -185,11 +185,11 @@ InVitroSystemResults <- R6::R6Class(
     #' @export
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
-      self$`@graph` <- ApiClient$new()$deserializeObj(this_object$`@graph`, "array[InVitroSystem]", loadNamespace("igvf_client"))
+      self$`@graph` <- ApiClient$new()$deserializeObj(this_object$`@graph`, "array[InVitroSystem]", loadNamespace("igvfclient"))
       self$`@id` <- this_object$`@id`
-      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`total` <- this_object$`total`
-      self$`facets` <- ApiClient$new()$deserializeObj(this_object$`facets`, "array[SearchFacet]", loadNamespace("igvf_client"))
+      self$`facets` <- ApiClient$new()$deserializeObj(this_object$`facets`, "array[SearchFacet]", loadNamespace("igvfclient"))
       self
     },
     #' Validate JSON input with respect to InVitroSystemResults

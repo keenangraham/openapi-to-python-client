@@ -1,4 +1,4 @@
-# igvf_client::PageLayoutComponents
+# igvfclient::PageLayoutComponents
 
 
 ## Properties

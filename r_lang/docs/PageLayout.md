@@ -1,4 +1,4 @@
-# igvf_client::PageLayout
+# igvfclient::PageLayout
 
 Hierarchical description of the page layout.
 

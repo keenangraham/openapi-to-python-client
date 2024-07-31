@@ -1,4 +1,4 @@
-# igvf_client::Tile
+# igvfclient::Tile
 
 The coordinates and an identifier in plain text for the specific tile of a protein region cloned in an expression vector library. The associated gene for this protein must be listed in the small_scale_gene_list or large_scale_gene_list property.
 

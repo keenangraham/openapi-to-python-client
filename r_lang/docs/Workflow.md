@@ -1,4 +1,4 @@
-# igvf_client::Workflow
+# igvfclient::Workflow
 
 A workflow for computational analysis of genomic data. A workflow is made up of analysis steps.
 

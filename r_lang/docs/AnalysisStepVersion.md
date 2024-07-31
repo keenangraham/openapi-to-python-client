@@ -1,4 +1,4 @@
-# igvf_client::AnalysisStepVersion
+# igvfclient::AnalysisStepVersion
 
 A step version in a computational analysis workflow.
 

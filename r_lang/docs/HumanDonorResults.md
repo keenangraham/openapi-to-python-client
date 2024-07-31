@@ -1,4 +1,4 @@
-# igvf_client::HumanDonorResults
+# igvfclient::HumanDonorResults
 
 
 ## Properties

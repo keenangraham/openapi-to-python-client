@@ -1,4 +1,4 @@
-# igvf_client::AnalysisSet
+# igvfclient::AnalysisSet
 
 A file set for analyses. Analysis sets represent the results of a computational analysis of raw genomic data or other analyses.
 

@@ -1,4 +1,4 @@
-# igvf_client::DegronModificationResults
+# igvfclient::DegronModificationResults
 
 
 ## Properties

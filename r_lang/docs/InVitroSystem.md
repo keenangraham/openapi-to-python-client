@@ -1,4 +1,4 @@
-# igvf_client::InVitroSystem
+# igvfclient::InVitroSystem
 
 A biosample that is cultured, such as immortalized cell lines, organoids, or samples that have been differentiated or reprogrammed.
 

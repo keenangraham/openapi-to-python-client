@@ -1,4 +1,4 @@
-# igvf_client::PredictionSet
+# igvfclient::PredictionSet
 
 A file set of computational predictions. Prediction sets contain results of analyses to predict functions or traits of genomic features.
 

@@ -1,4 +1,4 @@
-# igvf_client::NoResultsResponseSortValue
+# igvfclient::NoResultsResponseSortValue
 
 
 ## Properties

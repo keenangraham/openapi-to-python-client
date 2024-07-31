@@ -1,4 +1,4 @@
-# igvf_client::DocumentResults
+# igvfclient::DocumentResults
 
 
 ## Properties

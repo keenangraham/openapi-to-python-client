@@ -1,4 +1,4 @@
-# igvf_client::PrimaryCell
+# igvfclient::PrimaryCell
 
 A biosample that is directly harvested from a donor as cells, such as fibroblasts or immune cells.
 

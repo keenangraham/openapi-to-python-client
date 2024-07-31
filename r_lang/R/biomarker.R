@@ -368,7 +368,7 @@ Biomarker <- R6::R6Class(
         self$`notes` <- this_object$`notes`
       }
       if (!is.null(this_object$`aliases`)) {
-        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`aliases`, unique(self$`aliases`))) {
           stop("Error! Items in `aliases` are not unique.")
         }
@@ -401,7 +401,7 @@ Biomarker <- R6::R6Class(
         self$`quantification` <- this_object$`quantification`
       }
       if (!is.null(this_object$`synonyms`)) {
-        self$`synonyms` <- ApiClient$new()$deserializeObj(this_object$`synonyms`, "set[character]", loadNamespace("igvf_client"))
+        self$`synonyms` <- ApiClient$new()$deserializeObj(this_object$`synonyms`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`synonyms`, unique(self$`synonyms`))) {
           stop("Error! Items in `synonyms` are not unique.")
         }
@@ -413,7 +413,7 @@ Biomarker <- R6::R6Class(
         self$`@id` <- this_object$`@id`
       }
       if (!is.null(this_object$`@type`)) {
-        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`summary`)) {
         self$`summary` <- this_object$`summary`
@@ -422,7 +422,7 @@ Biomarker <- R6::R6Class(
         self$`name_quantification` <- this_object$`name_quantification`
       }
       if (!is.null(this_object$`biomarker_for`)) {
-        self$`biomarker_for` <- ApiClient$new()$deserializeObj(this_object$`biomarker_for`, "set[character]", loadNamespace("igvf_client"))
+        self$`biomarker_for` <- ApiClient$new()$deserializeObj(this_object$`biomarker_for`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`biomarker_for`, unique(self$`biomarker_for`))) {
           stop("Error! Items in `biomarker_for` are not unique.")
         }
@@ -638,7 +638,7 @@ Biomarker <- R6::R6Class(
       self$`schema_version` <- this_object$`schema_version`
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
-      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`aliases`, unique(self$`aliases`))) {
         stop("Error! Items in `aliases` are not unique.")
       }
@@ -655,16 +655,16 @@ Biomarker <- R6::R6Class(
         stop(paste("Error! \"", this_object$`quantification`, "\" cannot be assigned to `quantification`. Must be \"negative\", \"positive\", \"low\", \"intermediate\", \"high\".", sep = ""))
       }
       self$`quantification` <- this_object$`quantification`
-      self$`synonyms` <- ApiClient$new()$deserializeObj(this_object$`synonyms`, "set[character]", loadNamespace("igvf_client"))
+      self$`synonyms` <- ApiClient$new()$deserializeObj(this_object$`synonyms`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`synonyms`, unique(self$`synonyms`))) {
         stop("Error! Items in `synonyms` are not unique.")
       }
       self$`gene` <- this_object$`gene`
       self$`@id` <- this_object$`@id`
-      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
       self$`name_quantification` <- this_object$`name_quantification`
-      self$`biomarker_for` <- ApiClient$new()$deserializeObj(this_object$`biomarker_for`, "set[character]", loadNamespace("igvf_client"))
+      self$`biomarker_for` <- ApiClient$new()$deserializeObj(this_object$`biomarker_for`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`biomarker_for`, unique(self$`biomarker_for`))) {
         stop("Error! Items in `biomarker_for` are not unique.")
       }

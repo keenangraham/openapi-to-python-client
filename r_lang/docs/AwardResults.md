@@ -1,4 +1,4 @@
-# igvf_client::AwardResults
+# igvfclient::AwardResults
 
 
 ## Properties

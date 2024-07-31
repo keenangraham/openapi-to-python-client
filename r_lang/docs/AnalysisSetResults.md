@@ -1,4 +1,4 @@
-# igvf_client::AnalysisSetResults
+# igvfclient::AnalysisSetResults
 
 
 ## Properties

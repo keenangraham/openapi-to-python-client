@@ -1,4 +1,4 @@
-# igvf_client::NoResultsResponseColumnsValue
+# igvfclient::NoResultsResponseColumnsValue
 
 
 ## Properties

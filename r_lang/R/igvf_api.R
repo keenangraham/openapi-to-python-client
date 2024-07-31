@@ -4513,7 +4513,7 @@
 #' \dontrun{
 #' ####################  AccessKeys  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -4548,7 +4548,7 @@
 #'
 #' ####################  AlignmentFiles  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -4617,7 +4617,7 @@
 #'
 #' ####################  AnalysisSets  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -4714,7 +4714,7 @@
 #'
 #' ####################  AnalysisStepVersions  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -4755,7 +4755,7 @@
 #'
 #' ####################  AnalysisSteps  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -4802,7 +4802,7 @@
 #'
 #' ####################  AssayTerms  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -4847,7 +4847,7 @@
 #'
 #' ####################  AuxiliarySets  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -4945,7 +4945,7 @@
 #'
 #' ####################  Awards  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -4987,7 +4987,7 @@
 #'
 #' ####################  BatchDownload  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_type <- c("inner_example") # array[character] | Type of objects to return. Can be repeated for multiple types.
 #' var_query <- "query_example" # character | Query string for searching. (Optional)
 #' var_field_filters <- c(key = TODO) # object | Any field from any object type can be used as a filter. Use '!' for negation, '*' as a wildcard, and 'lt:', 'lte:', 'gt:', 'gte:' for range queries on numeric fields. (Optional)
@@ -5007,7 +5007,7 @@
 #'
 #' ####################  Biomarkers  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5052,7 +5052,7 @@
 #'
 #' ####################  ConfigurationFiles  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5114,7 +5114,7 @@
 #'
 #' ####################  ConstructLibrarySets  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5214,7 +5214,7 @@
 #'
 #' ####################  CrisprModifications  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5264,7 +5264,7 @@
 #'
 #' ####################  CuratedSets  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5360,7 +5360,7 @@
 #'
 #' ####################  DegronModifications  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5408,7 +5408,7 @@
 #'
 #' ####################  Documents  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5448,7 +5448,7 @@
 #'
 #' ####################  Download  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_file_id <- "file_id_example" # character | The unique identifier for the file to download, e.g. @id (/tabular-files/IGVFFI8092FZKL/), accession (IGVFFI8092FZKL), or UUID (fdbdc159-e5b9-40a8-b788-3f72c9886b03).
 #'
 #' #Download file.
@@ -5466,7 +5466,7 @@
 #'
 #' ####################  Genes  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5510,7 +5510,7 @@
 #'
 #' ####################  GenomeBrowserAnnotationFiles  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5574,7 +5574,7 @@
 #'
 #' ####################  GetById  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_resource_id <- "/sequence-files/IGVFFI1165AJSO/" # character | The unique identifier for the resource i.e. @id (`/sequence-files/IGVFFI1165AJSO/`), accession (`IGVFFI1165AJSO`) or UUID (`fffcd64e-af02-4675-8953-7352459ee06a`).
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #'
@@ -5593,7 +5593,7 @@
 #'
 #' ####################  HumanDonors  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5652,7 +5652,7 @@
 #'
 #' ####################  ImageFiles  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5713,7 +5713,7 @@
 #'
 #' ####################  Images  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5749,7 +5749,7 @@
 #'
 #' ####################  InVitroSystems  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5868,7 +5868,7 @@
 #'
 #' ####################  InstitutionalCertificates  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5911,7 +5911,7 @@
 #'
 #' ####################  Labs  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -5951,7 +5951,7 @@
 #'
 #' ####################  MatrixFiles  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6016,7 +6016,7 @@
 #'
 #' ####################  MeasurementSets  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6146,7 +6146,7 @@
 #'
 #' ####################  ModelFiles  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6209,7 +6209,7 @@
 #'
 #' ####################  ModelSets  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6311,7 +6311,7 @@
 #'
 #' ####################  MultiplexedSamples  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6412,7 +6412,7 @@
 #'
 #' ####################  OpenReadingFrames  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6455,7 +6455,7 @@
 #'
 #' ####################  Pages  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6494,7 +6494,7 @@
 #'
 #' ####################  PhenotypeTerms  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6535,7 +6535,7 @@
 #'
 #' ####################  PhenotypicFeatures  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6578,7 +6578,7 @@
 #'
 #' ####################  PlatformTerms  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6621,7 +6621,7 @@
 #'
 #' ####################  PredictionSets  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6730,7 +6730,7 @@
 #'
 #' ####################  PrimaryCells  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6836,7 +6836,7 @@
 #'
 #' ####################  Publications  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6891,7 +6891,7 @@
 #'
 #' ####################  ReferenceFiles  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6961,7 +6961,7 @@
 #'
 #' ####################  Report  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_query <- "query_example" # character | Query string for searching. (Optional)
 #' var_type <- c("inner_example") # array[character] | Filter by item type. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -6985,7 +6985,7 @@
 #'
 #' ####################  RodentDonors  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -7048,7 +7048,7 @@
 #'
 #' ####################  SampleTerms  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -7094,7 +7094,7 @@
 #'
 #' ####################  SchemaForItemType  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_item_type <- ItemType$new() # ItemType | The name of the item type
 #'
 #' #Retrieve JSON schema for item type
@@ -7112,7 +7112,7 @@
 #'
 #' ####################  Schemas  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #'
 #' #Retrieve JSON schemas for all item types
 #' api_instance <- IgvfApi$new()
@@ -7129,7 +7129,7 @@
 #'
 #' ####################  Search  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "query_example" # character | Query string for searching. (Optional)
 #' var_type <- c("inner_example") # array[character] | Filter by item type. (Optional)
@@ -7152,7 +7152,7 @@
 #'
 #' ####################  SequenceFiles  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -7227,7 +7227,7 @@
 #'
 #' ####################  SignalFiles  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -7296,7 +7296,7 @@
 #'
 #' ####################  Software  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -7340,7 +7340,7 @@
 #'
 #' ####################  SoftwareVersions  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -7385,7 +7385,7 @@
 #'
 #' ####################  Sources  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -7421,7 +7421,7 @@
 #'
 #' ####################  TabularFiles  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -7487,7 +7487,7 @@
 #'
 #' ####################  TechnicalSamples  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -7566,7 +7566,7 @@
 #'
 #' ####################  Tissues  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -7675,7 +7675,7 @@
 #'
 #' ####################  Treatments  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -7731,7 +7731,7 @@
 #'
 #' ####################  Users  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -7772,7 +7772,7 @@
 #'
 #' ####################  WholeOrganisms  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -7877,7 +7877,7 @@
 #'
 #' ####################  Workflows  ####################
 #'
-#' library(igvf_client)
+#' library(igvfclient)
 #' var_frame <- "frame_example" # character | Constant value. Do not set.
 #' var_query <- "variant flowfish jurkat" # character | Query string for searching. (Optional)
 #' var_limit <- Limit$new() # Limit | Maximum number of results to return. Default is 25. Use 'all' for all results. (Optional)
@@ -8166,7 +8166,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "AccessKeyResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "AccessKeyResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -8698,7 +8698,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "AlignmentFileResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "AlignmentFileResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -9480,7 +9480,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "AnalysisSetResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "AnalysisSetResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -9768,7 +9768,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "AnalysisStepVersionResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "AnalysisStepVersionResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -10108,7 +10108,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "AnalysisStepResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "AnalysisStepResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -10428,7 +10428,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "AssayTermResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "AssayTermResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -11218,7 +11218,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "AuxiliarySetResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "AuxiliarySetResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -11522,7 +11522,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "AwardResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "AwardResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -11634,7 +11634,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "character", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "character", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -11962,7 +11962,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "BiomarkerResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "BiomarkerResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -12430,7 +12430,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "ConfigurationFileResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "ConfigurationFileResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -13222,7 +13222,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "ConstructLibrarySetResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "ConstructLibrarySetResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -13598,7 +13598,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "CrisprModificationResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "CrisprModificationResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -14372,7 +14372,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "CuratedSetResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "CuratedSetResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -14724,7 +14724,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "DegronModificationResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "DegronModificationResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -15012,7 +15012,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "DocumentResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "DocumentResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -15113,7 +15113,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "data.frame", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "data.frame", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -15429,7 +15429,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "GeneResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "GeneResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -15925,7 +15925,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "GenomeBrowserAnnotationFileResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "GenomeBrowserAnnotationFileResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -16038,7 +16038,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "Item", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "Item", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -16490,7 +16490,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "HumanDonorResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "HumanDonorResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -16950,7 +16950,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "ImageFileResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "ImageFileResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -17194,7 +17194,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "ImageResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "ImageResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -18178,7 +18178,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "InVitroSystemResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "InVitroSystemResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -18490,7 +18490,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "InstitutionalCertificateResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "InstitutionalCertificateResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -18770,7 +18770,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "LabResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "LabResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -19270,7 +19270,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "MatrixFileResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "MatrixFileResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -20341,7 +20341,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "MeasurementSetResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "MeasurementSetResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -20817,7 +20817,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "ModelFileResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "ModelFileResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -21639,7 +21639,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "ModelSetResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "ModelSetResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -22447,7 +22447,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "MultiplexedSampleResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "MultiplexedSampleResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -22747,7 +22747,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "OpenReadingFrameResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "OpenReadingFrameResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -23015,7 +23015,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "PageResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "PageResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -23299,7 +23299,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "PhenotypeTermResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "PhenotypeTermResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -23607,7 +23607,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "PhenotypicFeatureResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "PhenotypicFeatureResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -23915,7 +23915,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "PlatformTermResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "PlatformTermResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -24793,7 +24793,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "PredictionSetResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "PredictionSetResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -25649,7 +25649,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "PrimaryCellResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "PrimaryCellResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -26053,7 +26053,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "PublicationResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "PublicationResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -26597,7 +26597,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "ReferenceFileResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "ReferenceFileResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -26734,7 +26734,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "character", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "character", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -27218,7 +27218,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "RodentDonorResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "RodentDonorResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -27542,7 +27542,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "SampleTermResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "SampleTermResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -27643,7 +27643,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "object", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "object", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -27733,7 +27733,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "object", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "object", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -27866,7 +27866,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "SearchResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "SearchResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -28446,7 +28446,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "SequenceFileResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "SequenceFileResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -28982,7 +28982,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "SignalFileResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "SignalFileResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -29298,7 +29298,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "SoftwareResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "SoftwareResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -29618,7 +29618,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "SoftwareVersionResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "SoftwareVersionResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -29862,7 +29862,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "SourceResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "SourceResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -30374,7 +30374,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "TabularFileResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "TabularFileResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -30994,7 +30994,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "TechnicalSampleResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "TechnicalSampleResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -31882,7 +31882,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "TissueResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "TissueResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -32314,7 +32314,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "TreatmentResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "TreatmentResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -32610,7 +32610,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "UserResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "UserResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -33458,7 +33458,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "WholeOrganismResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "WholeOrganismResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -33830,7 +33830,7 @@ IgvfApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$deserialize(local_var_resp$response_as_text(), "WorkflowResults", loadNamespace("igvf_client")),
+          self$api_client$deserialize(local_var_resp$response_as_text(), "WorkflowResults", loadNamespace("igvfclient")),
           error = function(e) {
             stop("Failed to deserialize response")
           }

@@ -344,7 +344,7 @@ Document <- R6::R6Class(
         self$`notes` <- this_object$`notes`
       }
       if (!is.null(this_object$`aliases`)) {
-        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`aliases`, unique(self$`aliases`))) {
           stop("Error! Items in `aliases` are not unique.")
         }
@@ -374,7 +374,7 @@ Document <- R6::R6Class(
         self$`characterization_method` <- this_object$`characterization_method`
       }
       if (!is.null(this_object$`urls`)) {
-        self$`urls` <- ApiClient$new()$deserializeObj(this_object$`urls`, "set[character]", loadNamespace("igvf_client"))
+        self$`urls` <- ApiClient$new()$deserializeObj(this_object$`urls`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`urls`, unique(self$`urls`))) {
           stop("Error! Items in `urls` are not unique.")
         }
@@ -383,7 +383,7 @@ Document <- R6::R6Class(
         self$`@id` <- this_object$`@id`
       }
       if (!is.null(this_object$`@type`)) {
-        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`summary`)) {
         self$`summary` <- this_object$`summary`
@@ -588,7 +588,7 @@ Document <- R6::R6Class(
       self$`schema_version` <- this_object$`schema_version`
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
-      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`aliases`, unique(self$`aliases`))) {
         stop("Error! Items in `aliases` are not unique.")
       }
@@ -604,12 +604,12 @@ Document <- R6::R6Class(
         stop(paste("Error! \"", this_object$`characterization_method`, "\" cannot be assigned to `characterization_method`. Must be \"FACS\", \"immunoblot\", \"immunofluorescence\", \"immunoprecipitation\", \"mass spectrometry\", \"PCR\", \"restriction digest\", \"RT-qPCR\", \"sequencing\".", sep = ""))
       }
       self$`characterization_method` <- this_object$`characterization_method`
-      self$`urls` <- ApiClient$new()$deserializeObj(this_object$`urls`, "set[character]", loadNamespace("igvf_client"))
+      self$`urls` <- ApiClient$new()$deserializeObj(this_object$`urls`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`urls`, unique(self$`urls`))) {
         stop("Error! Items in `urls` are not unique.")
       }
       self$`@id` <- this_object$`@id`
-      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
       # process additional properties/fields in the payload
       for (key in names(this_object)) {

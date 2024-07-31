@@ -1,4 +1,4 @@
-# igvf_client::AlignmentFileResults
+# igvfclient::AlignmentFileResults
 
 
 ## Properties

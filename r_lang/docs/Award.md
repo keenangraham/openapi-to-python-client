@@ -1,4 +1,4 @@
-# igvf_client::Award
+# igvfclient::Award
 
 A grant providing financial support for a scientific project. For example, HG012076 supporting \"Single-cell Mapping Center for Human Regulatory Elements and Gene Activity.\"
 

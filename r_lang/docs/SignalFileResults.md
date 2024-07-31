@@ -1,4 +1,4 @@
-# igvf_client::SignalFileResults
+# igvfclient::SignalFileResults
 
 
 ## Properties

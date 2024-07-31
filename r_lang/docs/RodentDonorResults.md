@@ -1,4 +1,4 @@
-# igvf_client::RodentDonorResults
+# igvfclient::RodentDonorResults
 
 
 ## Properties

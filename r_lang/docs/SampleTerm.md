@@ -1,4 +1,4 @@
-# igvf_client::SampleTerm
+# igvfclient::SampleTerm
 
 An ontology term from Cell Ontology (CL), Cell Line Ontology (CLO), Experimental Factor Ontology (EFO), or Uber-anatomy ontology (UBERON) for biological or technical samples.
 

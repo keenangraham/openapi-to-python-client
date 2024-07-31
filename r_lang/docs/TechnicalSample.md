@@ -1,4 +1,4 @@
-# igvf_client::TechnicalSample
+# igvfclient::TechnicalSample
 
 A sample that is used as a medium to perform biological measurement without the intent to characterize the technical sample itself. For example, the solution in which RNA oligos binding experiments are performed.
 

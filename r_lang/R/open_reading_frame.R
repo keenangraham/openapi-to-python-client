@@ -347,7 +347,7 @@ OpenReadingFrame <- R6::R6Class(
         self$`notes` <- this_object$`notes`
       }
       if (!is.null(this_object$`aliases`)) {
-        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`aliases`, unique(self$`aliases`))) {
           stop("Error! Items in `aliases` are not unique.")
         }
@@ -374,7 +374,7 @@ OpenReadingFrame <- R6::R6Class(
         self$`orf_id` <- this_object$`orf_id`
       }
       if (!is.null(this_object$`gene`)) {
-        self$`gene` <- ApiClient$new()$deserializeObj(this_object$`gene`, "set[character]", loadNamespace("igvf_client"))
+        self$`gene` <- ApiClient$new()$deserializeObj(this_object$`gene`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`gene`, unique(self$`gene`))) {
           stop("Error! Items in `gene` are not unique.")
         }
@@ -383,7 +383,7 @@ OpenReadingFrame <- R6::R6Class(
         self$`protein_id` <- this_object$`protein_id`
       }
       if (!is.null(this_object$`dbxrefs`)) {
-        self$`dbxrefs` <- ApiClient$new()$deserializeObj(this_object$`dbxrefs`, "set[character]", loadNamespace("igvf_client"))
+        self$`dbxrefs` <- ApiClient$new()$deserializeObj(this_object$`dbxrefs`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`dbxrefs`, unique(self$`dbxrefs`))) {
           stop("Error! Items in `dbxrefs` are not unique.")
         }
@@ -401,7 +401,7 @@ OpenReadingFrame <- R6::R6Class(
         self$`@id` <- this_object$`@id`
       }
       if (!is.null(this_object$`@type`)) {
-        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`summary`)) {
         self$`summary` <- this_object$`summary`
@@ -615,7 +615,7 @@ OpenReadingFrame <- R6::R6Class(
       self$`schema_version` <- this_object$`schema_version`
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
-      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`aliases`, unique(self$`aliases`))) {
         stop("Error! Items in `aliases` are not unique.")
       }
@@ -626,12 +626,12 @@ OpenReadingFrame <- R6::R6Class(
       self$`lab` <- this_object$`lab`
       self$`award` <- this_object$`award`
       self$`orf_id` <- this_object$`orf_id`
-      self$`gene` <- ApiClient$new()$deserializeObj(this_object$`gene`, "set[character]", loadNamespace("igvf_client"))
+      self$`gene` <- ApiClient$new()$deserializeObj(this_object$`gene`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`gene`, unique(self$`gene`))) {
         stop("Error! Items in `gene` are not unique.")
       }
       self$`protein_id` <- this_object$`protein_id`
-      self$`dbxrefs` <- ApiClient$new()$deserializeObj(this_object$`dbxrefs`, "set[character]", loadNamespace("igvf_client"))
+      self$`dbxrefs` <- ApiClient$new()$deserializeObj(this_object$`dbxrefs`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`dbxrefs`, unique(self$`dbxrefs`))) {
         stop("Error! Items in `dbxrefs` are not unique.")
       }
@@ -639,7 +639,7 @@ OpenReadingFrame <- R6::R6Class(
       self$`pct_coverage_protein` <- this_object$`pct_coverage_protein`
       self$`pct_coverage_orf` <- this_object$`pct_coverage_orf`
       self$`@id` <- this_object$`@id`
-      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
       self
     },

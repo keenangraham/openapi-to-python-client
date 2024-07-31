@@ -1,4 +1,4 @@
-# igvf_client::SampleTermResults
+# igvfclient::SampleTermResults
 
 
 ## Properties

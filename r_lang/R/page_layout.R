@@ -56,7 +56,7 @@ PageLayout <- R6::R6Class(
     fromJSON = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       if (!is.null(this_object$`blocks`)) {
-        self$`blocks` <- ApiClient$new()$deserializeObj(this_object$`blocks`, "array[PageLayoutComponents]", loadNamespace("igvf_client"))
+        self$`blocks` <- ApiClient$new()$deserializeObj(this_object$`blocks`, "array[PageLayoutComponents]", loadNamespace("igvfclient"))
       }
       self
     },
@@ -91,7 +91,7 @@ PageLayout <- R6::R6Class(
     #' @export
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
-      self$`blocks` <- ApiClient$new()$deserializeObj(this_object$`blocks`, "array[PageLayoutComponents]", loadNamespace("igvf_client"))
+      self$`blocks` <- ApiClient$new()$deserializeObj(this_object$`blocks`, "array[PageLayoutComponents]", loadNamespace("igvfclient"))
       self
     },
     #' Validate JSON input with respect to PageLayout

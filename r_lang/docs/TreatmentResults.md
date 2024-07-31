@@ -1,4 +1,4 @@
-# igvf_client::TreatmentResults
+# igvfclient::TreatmentResults
 
 
 ## Properties

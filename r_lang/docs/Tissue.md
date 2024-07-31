@@ -1,4 +1,4 @@
-# igvf_client::Tissue
+# igvfclient::Tissue
 
 A biosample that is directly harvested from a donor, typically a dissection from an organ.
 

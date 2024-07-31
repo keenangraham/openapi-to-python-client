@@ -1,4 +1,4 @@
-# igvf_client::TabularFile
+# igvfclient::TabularFile
 
 A file containing textual data with a tabular structure.
 

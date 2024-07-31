@@ -1,4 +1,4 @@
-# igvf_client::User
+# igvfclient::User
 
 A user of IGVF data portal who is a member or affiliate member of IGVF.
 

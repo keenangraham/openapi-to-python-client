@@ -1,4 +1,4 @@
-# igvf_client::GeneResults
+# igvfclient::GeneResults
 
 
 ## Properties

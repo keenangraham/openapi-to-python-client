@@ -1,4 +1,4 @@
-# igvf_client::DegronModification
+# igvfclient::DegronModification
 
 A degron modification that can induce degradation of a protein.
 

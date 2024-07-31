@@ -1,4 +1,4 @@
-# igvf_client::Item
+# igvfclient::Item
 
 
 ## Properties

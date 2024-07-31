@@ -1,4 +1,4 @@
-# igvf_client::Locus1
+# igvfclient::Locus1
 
 
 ## Properties

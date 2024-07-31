@@ -1,4 +1,4 @@
-# igvf_client::TabularFileResults
+# igvfclient::TabularFileResults
 
 
 ## Properties

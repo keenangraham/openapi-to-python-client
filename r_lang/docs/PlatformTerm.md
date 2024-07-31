@@ -1,4 +1,4 @@
-# igvf_client::PlatformTerm
+# igvfclient::PlatformTerm
 
 An ontology term from Experimental Factor Ontology (EFO) for platforms and instruments used in assays.
 

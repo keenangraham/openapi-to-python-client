@@ -1,4 +1,4 @@
-# igvf_client::LabResults
+# igvfclient::LabResults
 
 
 ## Properties

@@ -1,4 +1,4 @@
-# igvf_client::ReferenceFile
+# igvfclient::ReferenceFile
 
 A file containing diverse reference related information.
 

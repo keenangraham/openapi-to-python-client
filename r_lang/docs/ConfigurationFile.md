@@ -1,4 +1,4 @@
-# igvf_client::ConfigurationFile
+# igvfclient::ConfigurationFile
 
 A file containing configuration settings or information defining the structure of other data files' content.
 

@@ -1,4 +1,4 @@
-# igvf_client::CuratedSet
+# igvfclient::CuratedSet
 
 A file set for reference files which are utilized in the analysis of IGVF experiments. For example, genomic references from GENCODE.
 

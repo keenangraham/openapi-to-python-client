@@ -1,4 +1,4 @@
-# igvf_client::SearchResultItem
+# igvfclient::SearchResultItem
 
 
 ## Properties

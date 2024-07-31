@@ -1,4 +1,4 @@
-# igvf_client::CrisprModificationResults
+# igvfclient::CrisprModificationResults
 
 
 ## Properties

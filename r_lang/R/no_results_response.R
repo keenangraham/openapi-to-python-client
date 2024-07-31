@@ -205,13 +205,13 @@ NoResultsResponse <- R6::R6Class(
         self$`@context` <- this_object$`@context`
       }
       if (!is.null(this_object$`@graph`)) {
-        self$`@graph` <- ApiClient$new()$deserializeObj(this_object$`@graph`, "array[AnyType]", loadNamespace("igvf_client"))
+        self$`@graph` <- ApiClient$new()$deserializeObj(this_object$`@graph`, "array[AnyType]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`@id`)) {
         self$`@id` <- this_object$`@id`
       }
       if (!is.null(this_object$`@type`)) {
-        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`clear_filters`)) {
         self$`clear_filters` <- this_object$`clear_filters`
@@ -220,13 +220,13 @@ NoResultsResponse <- R6::R6Class(
         self$`columns` <- this_object$`columns`
       }
       if (!is.null(this_object$`facet_groups`)) {
-        self$`facet_groups` <- ApiClient$new()$deserializeObj(this_object$`facet_groups`, "array[NoResultsResponseFacetGroupsInner]", loadNamespace("igvf_client"))
+        self$`facet_groups` <- ApiClient$new()$deserializeObj(this_object$`facet_groups`, "array[NoResultsResponseFacetGroupsInner]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`facets`)) {
-        self$`facets` <- ApiClient$new()$deserializeObj(this_object$`facets`, "array[NoResultsResponseFacetsInner]", loadNamespace("igvf_client"))
+        self$`facets` <- ApiClient$new()$deserializeObj(this_object$`facets`, "array[NoResultsResponseFacetsInner]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`filters`)) {
-        self$`filters` <- ApiClient$new()$deserializeObj(this_object$`filters`, "array[NoResultsResponseFiltersInner]", loadNamespace("igvf_client"))
+        self$`filters` <- ApiClient$new()$deserializeObj(this_object$`filters`, "array[NoResultsResponseFiltersInner]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`notification`)) {
         self$`notification` <- this_object$`notification`
@@ -370,14 +370,14 @@ NoResultsResponse <- R6::R6Class(
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       self$`@context` <- this_object$`@context`
-      self$`@graph` <- ApiClient$new()$deserializeObj(this_object$`@graph`, "array[AnyType]", loadNamespace("igvf_client"))
+      self$`@graph` <- ApiClient$new()$deserializeObj(this_object$`@graph`, "array[AnyType]", loadNamespace("igvfclient"))
       self$`@id` <- this_object$`@id`
-      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`clear_filters` <- this_object$`clear_filters`
       self$`columns` <- this_object$`columns`
-      self$`facet_groups` <- ApiClient$new()$deserializeObj(this_object$`facet_groups`, "array[NoResultsResponseFacetGroupsInner]", loadNamespace("igvf_client"))
-      self$`facets` <- ApiClient$new()$deserializeObj(this_object$`facets`, "array[NoResultsResponseFacetsInner]", loadNamespace("igvf_client"))
-      self$`filters` <- ApiClient$new()$deserializeObj(this_object$`filters`, "array[NoResultsResponseFiltersInner]", loadNamespace("igvf_client"))
+      self$`facet_groups` <- ApiClient$new()$deserializeObj(this_object$`facet_groups`, "array[NoResultsResponseFacetGroupsInner]", loadNamespace("igvfclient"))
+      self$`facets` <- ApiClient$new()$deserializeObj(this_object$`facets`, "array[NoResultsResponseFacetsInner]", loadNamespace("igvfclient"))
+      self$`filters` <- ApiClient$new()$deserializeObj(this_object$`filters`, "array[NoResultsResponseFiltersInner]", loadNamespace("igvfclient"))
       self$`notification` <- this_object$`notification`
       self$`sort` <- this_object$`sort`
       self$`title` <- this_object$`title`

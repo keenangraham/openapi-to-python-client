@@ -1,4 +1,4 @@
-# igvf_client::InstitutionalCertificate
+# igvfclient::InstitutionalCertificate
 
 An institutional certificate defining the data sharing limitations for data authorized for submission to the IGVF portal.
 

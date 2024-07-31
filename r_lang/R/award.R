@@ -363,7 +363,7 @@ Award <- R6::R6Class(
         self$`notes` <- this_object$`notes`
       }
       if (!is.null(this_object$`aliases`)) {
-        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`aliases`, unique(self$`aliases`))) {
           stop("Error! Items in `aliases` are not unique.")
         }
@@ -393,7 +393,7 @@ Award <- R6::R6Class(
         self$`end_date` <- this_object$`end_date`
       }
       if (!is.null(this_object$`pis`)) {
-        self$`pis` <- ApiClient$new()$deserializeObj(this_object$`pis`, "set[character]", loadNamespace("igvf_client"))
+        self$`pis` <- ApiClient$new()$deserializeObj(this_object$`pis`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`pis`, unique(self$`pis`))) {
           stop("Error! Items in `pis` are not unique.")
         }
@@ -423,7 +423,7 @@ Award <- R6::R6Class(
         self$`@id` <- this_object$`@id`
       }
       if (!is.null(this_object$`@type`)) {
-        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`summary`)) {
         self$`summary` <- this_object$`summary`
@@ -637,7 +637,7 @@ Award <- R6::R6Class(
       self$`schema_version` <- this_object$`schema_version`
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
-      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`aliases`, unique(self$`aliases`))) {
         stop("Error! Items in `aliases` are not unique.")
       }
@@ -649,7 +649,7 @@ Award <- R6::R6Class(
       self$`name` <- this_object$`name`
       self$`start_date` <- this_object$`start_date`
       self$`end_date` <- this_object$`end_date`
-      self$`pis` <- ApiClient$new()$deserializeObj(this_object$`pis`, "set[character]", loadNamespace("igvf_client"))
+      self$`pis` <- ApiClient$new()$deserializeObj(this_object$`pis`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`pis`, unique(self$`pis`))) {
         stop("Error! Items in `pis` are not unique.")
       }
@@ -667,7 +667,7 @@ Award <- R6::R6Class(
       }
       self$`component` <- this_object$`component`
       self$`@id` <- this_object$`@id`
-      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
       self
     },

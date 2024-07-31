@@ -1,4 +1,4 @@
-# igvf_client::ImageResults
+# igvfclient::ImageResults
 
 
 ## Properties

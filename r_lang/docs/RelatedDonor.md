@@ -1,4 +1,4 @@
-# igvf_client::RelatedDonor
+# igvfclient::RelatedDonor
 
 Familial relation of this donor.
 

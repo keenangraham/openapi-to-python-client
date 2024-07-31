@@ -1,4 +1,4 @@
-# igvf_client::PredictionSetResults
+# igvfclient::PredictionSetResults
 
 
 ## Properties

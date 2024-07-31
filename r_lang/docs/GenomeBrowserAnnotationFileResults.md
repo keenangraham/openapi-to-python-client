@@ -1,4 +1,4 @@
-# igvf_client::GenomeBrowserAnnotationFileResults
+# igvfclient::GenomeBrowserAnnotationFileResults
 
 
 ## Properties

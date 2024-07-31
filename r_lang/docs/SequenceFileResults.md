@@ -1,4 +1,4 @@
-# igvf_client::SequenceFileResults
+# igvfclient::SequenceFileResults
 
 
 ## Properties

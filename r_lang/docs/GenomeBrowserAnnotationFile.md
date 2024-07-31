@@ -1,4 +1,4 @@
-# igvf_client::GenomeBrowserAnnotationFile
+# igvfclient::GenomeBrowserAnnotationFile
 
 A binary file containing genome annotations which are indexed and can be visualized on a genome browser.
 

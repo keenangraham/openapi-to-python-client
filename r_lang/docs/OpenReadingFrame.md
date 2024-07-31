@@ -1,4 +1,4 @@
-# igvf_client::OpenReadingFrame
+# igvfclient::OpenReadingFrame
 
 Protein-encoding open reading frames (ORF)
 

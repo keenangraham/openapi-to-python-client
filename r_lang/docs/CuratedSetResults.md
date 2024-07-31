@@ -1,4 +1,4 @@
-# igvf_client::CuratedSetResults
+# igvfclient::CuratedSetResults
 
 
 ## Properties

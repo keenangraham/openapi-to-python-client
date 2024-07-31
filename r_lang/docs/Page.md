@@ -1,4 +1,4 @@
-# igvf_client::Page
+# igvfclient::Page
 
 A page on the IGVF portal.
 

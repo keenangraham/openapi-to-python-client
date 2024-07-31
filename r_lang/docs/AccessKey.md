@@ -1,4 +1,4 @@
-# igvf_client::AccessKey
+# igvfclient::AccessKey
 
 
 ## Properties

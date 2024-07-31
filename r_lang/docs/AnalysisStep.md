@@ -1,4 +1,4 @@
-# igvf_client::AnalysisStep
+# igvfclient::AnalysisStep
 
 A step in a computational analysis workflow. For example, a sequence alignment step that represents the phase of the computational analysis in which sequenced reads are being aligned to the reference genome.
 

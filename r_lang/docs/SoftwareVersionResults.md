@@ -1,4 +1,4 @@
-# igvf_client::SoftwareVersionResults
+# igvfclient::SoftwareVersionResults
 
 
 ## Properties

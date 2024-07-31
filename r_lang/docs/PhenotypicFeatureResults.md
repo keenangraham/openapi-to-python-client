@@ -1,4 +1,4 @@
-# igvf_client::PhenotypicFeatureResults
+# igvfclient::PhenotypicFeatureResults
 
 
 ## Properties

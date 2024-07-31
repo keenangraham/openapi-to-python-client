@@ -1,4 +1,4 @@
-# igvf_client::RodentDonor
+# igvfclient::RodentDonor
 
 A rodent donor of a biosample. Submission of any sample originating from a rodent donor requires submission of information about the relevant donor. The rodent donor can be a generic representative of an inbred strain, or a unique, individual mouse. For example, submission of a B6 mouse donor is a prerequisite for submission of any B6 mouse samples.
 

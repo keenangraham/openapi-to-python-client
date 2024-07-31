@@ -1,4 +1,4 @@
-# igvf_client::NoResultsResponseFacetsInner
+# igvfclient::NoResultsResponseFacetsInner
 
 
 ## Properties

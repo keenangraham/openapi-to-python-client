@@ -403,7 +403,7 @@ DegronModification <- R6::R6Class(
         self$`release_timestamp` <- this_object$`release_timestamp`
       }
       if (!is.null(this_object$`sources`)) {
-        self$`sources` <- ApiClient$new()$deserializeObj(this_object$`sources`, "set[character]", loadNamespace("igvf_client"))
+        self$`sources` <- ApiClient$new()$deserializeObj(this_object$`sources`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`sources`, unique(self$`sources`))) {
           stop("Error! Items in `sources` are not unique.")
         }
@@ -415,7 +415,7 @@ DegronModification <- R6::R6Class(
         self$`product_id` <- this_object$`product_id`
       }
       if (!is.null(this_object$`documents`)) {
-        self$`documents` <- ApiClient$new()$deserializeObj(this_object$`documents`, "set[character]", loadNamespace("igvf_client"))
+        self$`documents` <- ApiClient$new()$deserializeObj(this_object$`documents`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`documents`, unique(self$`documents`))) {
           stop("Error! Items in `documents` are not unique.")
         }
@@ -442,7 +442,7 @@ DegronModification <- R6::R6Class(
         self$`notes` <- this_object$`notes`
       }
       if (!is.null(this_object$`aliases`)) {
-        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`aliases`, unique(self$`aliases`))) {
           stop("Error! Items in `aliases` are not unique.")
         }
@@ -481,7 +481,7 @@ DegronModification <- R6::R6Class(
         self$`degron_system` <- this_object$`degron_system`
       }
       if (!is.null(this_object$`tagged_proteins`)) {
-        self$`tagged_proteins` <- ApiClient$new()$deserializeObj(this_object$`tagged_proteins`, "set[character]", loadNamespace("igvf_client"))
+        self$`tagged_proteins` <- ApiClient$new()$deserializeObj(this_object$`tagged_proteins`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`tagged_proteins`, unique(self$`tagged_proteins`))) {
           stop("Error! Items in `tagged_proteins` are not unique.")
         }
@@ -490,13 +490,13 @@ DegronModification <- R6::R6Class(
         self$`@id` <- this_object$`@id`
       }
       if (!is.null(this_object$`@type`)) {
-        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`summary`)) {
         self$`summary` <- this_object$`summary`
       }
       if (!is.null(this_object$`biosamples_modified`)) {
-        self$`biosamples_modified` <- ApiClient$new()$deserializeObj(this_object$`biosamples_modified`, "set[character]", loadNamespace("igvf_client"))
+        self$`biosamples_modified` <- ApiClient$new()$deserializeObj(this_object$`biosamples_modified`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`biosamples_modified`, unique(self$`biosamples_modified`))) {
           stop("Error! Items in `biosamples_modified` are not unique.")
         }
@@ -735,13 +735,13 @@ DegronModification <- R6::R6Class(
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       self$`release_timestamp` <- this_object$`release_timestamp`
-      self$`sources` <- ApiClient$new()$deserializeObj(this_object$`sources`, "set[character]", loadNamespace("igvf_client"))
+      self$`sources` <- ApiClient$new()$deserializeObj(this_object$`sources`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`sources`, unique(self$`sources`))) {
         stop("Error! Items in `sources` are not unique.")
       }
       self$`lot_id` <- this_object$`lot_id`
       self$`product_id` <- this_object$`product_id`
-      self$`documents` <- ApiClient$new()$deserializeObj(this_object$`documents`, "set[character]", loadNamespace("igvf_client"))
+      self$`documents` <- ApiClient$new()$deserializeObj(this_object$`documents`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`documents`, unique(self$`documents`))) {
         stop("Error! Items in `documents` are not unique.")
       }
@@ -754,7 +754,7 @@ DegronModification <- R6::R6Class(
       self$`schema_version` <- this_object$`schema_version`
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
-      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`aliases`, unique(self$`aliases`))) {
         stop("Error! Items in `aliases` are not unique.")
       }
@@ -773,14 +773,14 @@ DegronModification <- R6::R6Class(
         stop(paste("Error! \"", this_object$`degron_system`, "\" cannot be assigned to `degron_system`. Must be \"AID\", \"AlissAid\", \"ssAID\".", sep = ""))
       }
       self$`degron_system` <- this_object$`degron_system`
-      self$`tagged_proteins` <- ApiClient$new()$deserializeObj(this_object$`tagged_proteins`, "set[character]", loadNamespace("igvf_client"))
+      self$`tagged_proteins` <- ApiClient$new()$deserializeObj(this_object$`tagged_proteins`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`tagged_proteins`, unique(self$`tagged_proteins`))) {
         stop("Error! Items in `tagged_proteins` are not unique.")
       }
       self$`@id` <- this_object$`@id`
-      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
-      self$`biosamples_modified` <- ApiClient$new()$deserializeObj(this_object$`biosamples_modified`, "set[character]", loadNamespace("igvf_client"))
+      self$`biosamples_modified` <- ApiClient$new()$deserializeObj(this_object$`biosamples_modified`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`biosamples_modified`, unique(self$`biosamples_modified`))) {
         stop("Error! Items in `biosamples_modified` are not unique.")
       }

@@ -1,4 +1,4 @@
-# igvf_client::GeneLocation
+# igvfclient::GeneLocation
 
 Gene location specified using 1-based, closed coordinates for a specific version of the reference genome assembly.
 

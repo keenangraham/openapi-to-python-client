@@ -1,4 +1,4 @@
-# igvf_client::PrimaryCellResults
+# igvfclient::PrimaryCellResults
 
 
 ## Properties

@@ -1,4 +1,4 @@
-# igvf_client::PhenotypeTerm
+# igvfclient::PhenotypeTerm
 
 An ontology term from Experimental Factor Ontology (EFO), Human Disease Ontology (DOID), Human Phenotype Ontology (HP), Mondo Disease Ontology (MONDO), National Cancer Institute Thesaurus (NCIT), or Ontology of Biological Attributes (OBA) for phenotypes, diseases, and traits.
 

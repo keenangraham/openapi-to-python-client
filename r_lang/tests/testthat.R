@@ -1,4 +1,4 @@
 library(testthat)
-library(igvf_client)
+library(igvfclient)
 
-test_check("igvf_client")
+test_check("igvfclient")

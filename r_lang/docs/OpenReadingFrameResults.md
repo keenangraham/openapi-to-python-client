@@ -1,4 +1,4 @@
-# igvf_client::OpenReadingFrameResults
+# igvfclient::OpenReadingFrameResults
 
 
 ## Properties

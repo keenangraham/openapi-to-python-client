@@ -1,4 +1,4 @@
-# igvf_client::Publication
+# igvfclient::Publication
 
 A publication related to IGVF.
 

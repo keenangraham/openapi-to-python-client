@@ -1,4 +1,4 @@
-# igvf_client::Lab
+# igvfclient::Lab
 
 A lab that is part of or affiliated with the IGVF consortium.
 

@@ -1,4 +1,4 @@
-# igvf_client::SignalFile
+# igvfclient::SignalFile
 
 A file containing analyzed sequencing data in signal form using a bigwig format.
 

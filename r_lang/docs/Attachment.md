@@ -1,4 +1,4 @@
-# igvf_client::Attachment
+# igvfclient::Attachment
 
 The attached content.
 

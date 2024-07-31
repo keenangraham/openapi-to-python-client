@@ -692,7 +692,7 @@ TabularFile <- R6::R6Class(
         self$`transcriptome_annotation` <- this_object$`transcriptome_annotation`
       }
       if (!is.null(this_object$`documents`)) {
-        self$`documents` <- ApiClient$new()$deserializeObj(this_object$`documents`, "set[character]", loadNamespace("igvf_client"))
+        self$`documents` <- ApiClient$new()$deserializeObj(this_object$`documents`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`documents`, unique(self$`documents`))) {
           stop("Error! Items in `documents` are not unique.")
         }
@@ -707,13 +707,13 @@ TabularFile <- R6::R6Class(
         self$`accession` <- this_object$`accession`
       }
       if (!is.null(this_object$`alternate_accessions`)) {
-        self$`alternate_accessions` <- ApiClient$new()$deserializeObj(this_object$`alternate_accessions`, "set[character]", loadNamespace("igvf_client"))
+        self$`alternate_accessions` <- ApiClient$new()$deserializeObj(this_object$`alternate_accessions`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`alternate_accessions`, unique(self$`alternate_accessions`))) {
           stop("Error! Items in `alternate_accessions` are not unique.")
         }
       }
       if (!is.null(this_object$`collections`)) {
-        self$`collections` <- ApiClient$new()$deserializeObj(this_object$`collections`, "set[character]", loadNamespace("igvf_client"))
+        self$`collections` <- ApiClient$new()$deserializeObj(this_object$`collections`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`collections`, unique(self$`collections`))) {
           stop("Error! Items in `collections` are not unique.")
         }
@@ -737,7 +737,7 @@ TabularFile <- R6::R6Class(
         self$`notes` <- this_object$`notes`
       }
       if (!is.null(this_object$`aliases`)) {
-        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+        self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`aliases`, unique(self$`aliases`))) {
           stop("Error! Items in `aliases` are not unique.")
         }
@@ -764,13 +764,13 @@ TabularFile <- R6::R6Class(
         self$`content_type` <- this_object$`content_type`
       }
       if (!is.null(this_object$`dbxrefs`)) {
-        self$`dbxrefs` <- ApiClient$new()$deserializeObj(this_object$`dbxrefs`, "set[character]", loadNamespace("igvf_client"))
+        self$`dbxrefs` <- ApiClient$new()$deserializeObj(this_object$`dbxrefs`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`dbxrefs`, unique(self$`dbxrefs`))) {
           stop("Error! Items in `dbxrefs` are not unique.")
         }
       }
       if (!is.null(this_object$`derived_from`)) {
-        self$`derived_from` <- ApiClient$new()$deserializeObj(this_object$`derived_from`, "set[character]", loadNamespace("igvf_client"))
+        self$`derived_from` <- ApiClient$new()$deserializeObj(this_object$`derived_from`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`derived_from`, unique(self$`derived_from`))) {
           stop("Error! Items in `derived_from` are not unique.")
         }
@@ -782,7 +782,7 @@ TabularFile <- R6::R6Class(
         self$`file_format` <- this_object$`file_format`
       }
       if (!is.null(this_object$`file_format_specifications`)) {
-        self$`file_format_specifications` <- ApiClient$new()$deserializeObj(this_object$`file_format_specifications`, "set[character]", loadNamespace("igvf_client"))
+        self$`file_format_specifications` <- ApiClient$new()$deserializeObj(this_object$`file_format_specifications`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`file_format_specifications`, unique(self$`file_format_specifications`))) {
           stop("Error! Items in `file_format_specifications` are not unique.")
         }
@@ -812,31 +812,31 @@ TabularFile <- R6::R6Class(
         self$`@id` <- this_object$`@id`
       }
       if (!is.null(this_object$`@type`)) {
-        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+        self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       }
       if (!is.null(this_object$`summary`)) {
         self$`summary` <- this_object$`summary`
       }
       if (!is.null(this_object$`integrated_in`)) {
-        self$`integrated_in` <- ApiClient$new()$deserializeObj(this_object$`integrated_in`, "set[character]", loadNamespace("igvf_client"))
+        self$`integrated_in` <- ApiClient$new()$deserializeObj(this_object$`integrated_in`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`integrated_in`, unique(self$`integrated_in`))) {
           stop("Error! Items in `integrated_in` are not unique.")
         }
       }
       if (!is.null(this_object$`input_file_for`)) {
-        self$`input_file_for` <- ApiClient$new()$deserializeObj(this_object$`input_file_for`, "set[character]", loadNamespace("igvf_client"))
+        self$`input_file_for` <- ApiClient$new()$deserializeObj(this_object$`input_file_for`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`input_file_for`, unique(self$`input_file_for`))) {
           stop("Error! Items in `input_file_for` are not unique.")
         }
       }
       if (!is.null(this_object$`gene_list_for`)) {
-        self$`gene_list_for` <- ApiClient$new()$deserializeObj(this_object$`gene_list_for`, "set[character]", loadNamespace("igvf_client"))
+        self$`gene_list_for` <- ApiClient$new()$deserializeObj(this_object$`gene_list_for`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`gene_list_for`, unique(self$`gene_list_for`))) {
           stop("Error! Items in `gene_list_for` are not unique.")
         }
       }
       if (!is.null(this_object$`loci_list_for`)) {
-        self$`loci_list_for` <- ApiClient$new()$deserializeObj(this_object$`loci_list_for`, "set[character]", loadNamespace("igvf_client"))
+        self$`loci_list_for` <- ApiClient$new()$deserializeObj(this_object$`loci_list_for`, "set[character]", loadNamespace("igvfclient"))
         if (!identical(self$`loci_list_for`, unique(self$`loci_list_for`))) {
           stop("Error! Items in `loci_list_for` are not unique.")
         }
@@ -1250,18 +1250,18 @@ TabularFile <- R6::R6Class(
         stop(paste("Error! \"", this_object$`transcriptome_annotation`, "\" cannot be assigned to `transcriptome_annotation`. Must be \"GENCODE 40\", \"GENCODE 41\", \"GENCODE 42\", \"GENCODE 43\", \"GENCODE 44\", \"GENCODE 45\", \"GENCODE M30\", \"GENCODE M31\", \"GENCODE M32\", \"GENCODE M33\", \"GENCODE M34\".", sep = ""))
       }
       self$`transcriptome_annotation` <- this_object$`transcriptome_annotation`
-      self$`documents` <- ApiClient$new()$deserializeObj(this_object$`documents`, "set[character]", loadNamespace("igvf_client"))
+      self$`documents` <- ApiClient$new()$deserializeObj(this_object$`documents`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`documents`, unique(self$`documents`))) {
         stop("Error! Items in `documents` are not unique.")
       }
       self$`lab` <- this_object$`lab`
       self$`award` <- this_object$`award`
       self$`accession` <- this_object$`accession`
-      self$`alternate_accessions` <- ApiClient$new()$deserializeObj(this_object$`alternate_accessions`, "set[character]", loadNamespace("igvf_client"))
+      self$`alternate_accessions` <- ApiClient$new()$deserializeObj(this_object$`alternate_accessions`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`alternate_accessions`, unique(self$`alternate_accessions`))) {
         stop("Error! Items in `alternate_accessions` are not unique.")
       }
-      self$`collections` <- ApiClient$new()$deserializeObj(this_object$`collections`, "set[character]", loadNamespace("igvf_client"))
+      self$`collections` <- ApiClient$new()$deserializeObj(this_object$`collections`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`collections`, unique(self$`collections`))) {
         stop("Error! Items in `collections` are not unique.")
       }
@@ -1273,7 +1273,7 @@ TabularFile <- R6::R6Class(
       self$`schema_version` <- this_object$`schema_version`
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
-      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvf_client"))
+      self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`aliases`, unique(self$`aliases`))) {
         stop("Error! Items in `aliases` are not unique.")
       }
@@ -1284,11 +1284,11 @@ TabularFile <- R6::R6Class(
       self$`analysis_step_version` <- this_object$`analysis_step_version`
       self$`content_md5sum` <- this_object$`content_md5sum`
       self$`content_type` <- this_object$`content_type`
-      self$`dbxrefs` <- ApiClient$new()$deserializeObj(this_object$`dbxrefs`, "set[character]", loadNamespace("igvf_client"))
+      self$`dbxrefs` <- ApiClient$new()$deserializeObj(this_object$`dbxrefs`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`dbxrefs`, unique(self$`dbxrefs`))) {
         stop("Error! Items in `dbxrefs` are not unique.")
       }
-      self$`derived_from` <- ApiClient$new()$deserializeObj(this_object$`derived_from`, "set[character]", loadNamespace("igvf_client"))
+      self$`derived_from` <- ApiClient$new()$deserializeObj(this_object$`derived_from`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`derived_from`, unique(self$`derived_from`))) {
         stop("Error! Items in `derived_from` are not unique.")
       }
@@ -1296,7 +1296,7 @@ TabularFile <- R6::R6Class(
         stop(paste("Error! \"", this_object$`file_format`, "\" cannot be assigned to `file_format`. Must be \"bed\", \"csv\", \"gtf\", \"tsv\", \"txt\", \"vcf\".", sep = ""))
       }
       self$`file_format` <- this_object$`file_format`
-      self$`file_format_specifications` <- ApiClient$new()$deserializeObj(this_object$`file_format_specifications`, "set[character]", loadNamespace("igvf_client"))
+      self$`file_format_specifications` <- ApiClient$new()$deserializeObj(this_object$`file_format_specifications`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`file_format_specifications`, unique(self$`file_format_specifications`))) {
         stop("Error! Items in `file_format_specifications` are not unique.")
       }
@@ -1310,21 +1310,21 @@ TabularFile <- R6::R6Class(
       self$`upload_status` <- this_object$`upload_status`
       self$`validation_error_detail` <- this_object$`validation_error_detail`
       self$`@id` <- this_object$`@id`
-      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvf_client"))
+      self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
-      self$`integrated_in` <- ApiClient$new()$deserializeObj(this_object$`integrated_in`, "set[character]", loadNamespace("igvf_client"))
+      self$`integrated_in` <- ApiClient$new()$deserializeObj(this_object$`integrated_in`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`integrated_in`, unique(self$`integrated_in`))) {
         stop("Error! Items in `integrated_in` are not unique.")
       }
-      self$`input_file_for` <- ApiClient$new()$deserializeObj(this_object$`input_file_for`, "set[character]", loadNamespace("igvf_client"))
+      self$`input_file_for` <- ApiClient$new()$deserializeObj(this_object$`input_file_for`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`input_file_for`, unique(self$`input_file_for`))) {
         stop("Error! Items in `input_file_for` are not unique.")
       }
-      self$`gene_list_for` <- ApiClient$new()$deserializeObj(this_object$`gene_list_for`, "set[character]", loadNamespace("igvf_client"))
+      self$`gene_list_for` <- ApiClient$new()$deserializeObj(this_object$`gene_list_for`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`gene_list_for`, unique(self$`gene_list_for`))) {
         stop("Error! Items in `gene_list_for` are not unique.")
       }
-      self$`loci_list_for` <- ApiClient$new()$deserializeObj(this_object$`loci_list_for`, "set[character]", loadNamespace("igvf_client"))
+      self$`loci_list_for` <- ApiClient$new()$deserializeObj(this_object$`loci_list_for`, "set[character]", loadNamespace("igvfclient"))
       if (!identical(self$`loci_list_for`, unique(self$`loci_list_for`))) {
         stop("Error! Items in `loci_list_for` are not unique.")
       }

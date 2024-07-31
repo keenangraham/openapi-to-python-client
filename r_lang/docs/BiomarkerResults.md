@@ -1,4 +1,4 @@
-# igvf_client::BiomarkerResults
+# igvfclient::BiomarkerResults
 
 
 ## Properties

@@ -1,4 +1,4 @@
-# igvf_client::AlignmentFile
+# igvfclient::AlignmentFile
 
 A file containing alignment data in bam format.
 

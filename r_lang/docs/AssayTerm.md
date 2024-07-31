@@ -1,4 +1,4 @@
-# igvf_client::AssayTerm
+# igvfclient::AssayTerm
 
 An ontology term from Ontology of Biomedical Investigations (OBI) for assays.
 

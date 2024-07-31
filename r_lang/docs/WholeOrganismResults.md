@@ -1,4 +1,4 @@
-# igvf_client::WholeOrganismResults
+# igvfclient::WholeOrganismResults
 
 
 ## Properties

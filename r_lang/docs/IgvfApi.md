@@ -73,7 +73,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the AccessKey collection.
 #
@@ -160,7 +160,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the AlignmentFile collection.
 #
@@ -315,7 +315,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the AnalysisSet collection.
 #
@@ -526,7 +526,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the AnalysisStepVersion collection.
 #
@@ -625,7 +625,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the AnalysisStep collection.
 #
@@ -736,7 +736,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the AssayTerm collection.
 #
@@ -843,7 +843,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the AuxiliarySet collection.
 #
@@ -1056,7 +1056,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the Award collection.
 #
@@ -1157,7 +1157,7 @@ Generates TSV of files contained in FileSets in search results.
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List files to download based on search query. All results are returned.
 #
@@ -1214,7 +1214,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the Biomarker collection.
 #
@@ -1321,7 +1321,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the ConfigurationFile collection.
 #
@@ -1462,7 +1462,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the ConstructLibrarySet collection.
 #
@@ -1679,7 +1679,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the CrisprModification collection.
 #
@@ -1796,7 +1796,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the CuratedSet collection.
 #
@@ -2005,7 +2005,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the DegronModification collection.
 #
@@ -2118,7 +2118,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the Document collection.
 #
@@ -2215,7 +2215,7 @@ Returns underlying file associated with file metadata
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # Download file.
 #
@@ -2267,7 +2267,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the Gene collection.
 #
@@ -2372,7 +2372,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the GenomeBrowserAnnotationFile collection.
 #
@@ -2517,7 +2517,7 @@ Retrieve detailed information about a specific item using its @id or uuid.
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # Get item information
 #
@@ -2570,7 +2570,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the HumanDonor collection.
 #
@@ -2705,7 +2705,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the ImageFile collection.
 #
@@ -2844,7 +2844,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the Image collection.
 #
@@ -2933,7 +2933,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the InVitroSystem collection.
 #
@@ -3188,7 +3188,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the InstitutionalCertificate collection.
 #
@@ -3291,7 +3291,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the Lab collection.
 #
@@ -3388,7 +3388,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the MatrixFile collection.
 #
@@ -3535,7 +3535,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the MeasurementSet collection.
 #
@@ -3812,7 +3812,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the ModelFile collection.
 #
@@ -3955,7 +3955,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the ModelSet collection.
 #
@@ -4176,7 +4176,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the MultiplexedSample collection.
 #
@@ -4395,7 +4395,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the OpenReadingFrame collection.
 #
@@ -4498,7 +4498,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the Page collection.
 #
@@ -4593,7 +4593,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the PhenotypeTerm collection.
 #
@@ -4692,7 +4692,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the PhenotypicFeature collection.
 #
@@ -4795,7 +4795,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the PlatformTerm collection.
 #
@@ -4898,7 +4898,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the PredictionSet collection.
 #
@@ -5133,7 +5133,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the PrimaryCell collection.
 #
@@ -5362,7 +5362,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the Publication collection.
 #
@@ -5489,7 +5489,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the ReferenceFile collection.
 #
@@ -5646,7 +5646,7 @@ Like /search endpoint but returns a TSV file instead of JSON. Must specify item 
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # Generate a report based on search query. All results are returned.
 #
@@ -5711,7 +5711,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the RodentDonor collection.
 #
@@ -5854,7 +5854,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the SampleTerm collection.
 #
@@ -5963,7 +5963,7 @@ Returns JSON schemas of all the item types defined in IGVF
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # Retrieve JSON schema for item type
 #
@@ -6013,7 +6013,7 @@ Returns JSON schemas of all the item types defined in IGVF
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # Retrieve JSON schemas for all item types
 #
@@ -6058,7 +6058,7 @@ Search endpoint that accepts various query parameters to filter, sort, and pagin
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # Search for items in the IGVF Project.
 #
@@ -6119,7 +6119,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the SequenceFile collection.
 #
@@ -6286,7 +6286,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the SignalFile collection.
 #
@@ -6441,7 +6441,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the Software collection.
 #
@@ -6546,7 +6546,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the SoftwareVersion collection.
 #
@@ -6653,7 +6653,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the Source collection.
 #
@@ -6742,7 +6742,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the TabularFile collection.
 #
@@ -6891,7 +6891,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the TechnicalSample collection.
 #
@@ -7066,7 +7066,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the Tissue collection.
 #
@@ -7301,7 +7301,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the Treatment collection.
 #
@@ -7430,7 +7430,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the User collection.
 #
@@ -7529,7 +7529,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the WholeOrganism collection.
 #
@@ -7756,7 +7756,7 @@ Collection endpoint that accepts various query parameters to filter, sort, and p
 
 ### Example
 ```R
-library(igvf_client)
+library(igvfclient)
 
 # List items in the Workflow collection.
 #
