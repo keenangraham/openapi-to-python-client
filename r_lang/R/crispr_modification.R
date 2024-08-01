@@ -114,9 +114,6 @@ CrisprModification <- R6::R6Class(
       if (!is.null(`sources`)) {
         stopifnot(is.vector(`sources`), length(`sources`) != 0)
         sapply(`sources`, function(x) stopifnot(is.character(x)))
-        if (!identical(`sources`, unique(`sources`))) {
-          stop("Error! Items in `sources` are not unique.")
-        }
         self$`sources` <- `sources`
       }
       if (!is.null(`lot_id`)) {
@@ -134,9 +131,6 @@ CrisprModification <- R6::R6Class(
       if (!is.null(`documents`)) {
         stopifnot(is.vector(`documents`), length(`documents`) != 0)
         sapply(`documents`, function(x) stopifnot(is.character(x)))
-        if (!identical(`documents`, unique(`documents`))) {
-          stop("Error! Items in `documents` are not unique.")
-        }
         self$`documents` <- `documents`
       }
       if (!is.null(`status`)) {
@@ -181,9 +175,6 @@ CrisprModification <- R6::R6Class(
       if (!is.null(`aliases`)) {
         stopifnot(is.vector(`aliases`), length(`aliases`) != 0)
         sapply(`aliases`, function(x) stopifnot(is.character(x)))
-        if (!identical(`aliases`, unique(`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
         self$`aliases` <- `aliases`
       }
       if (!is.null(`creation_timestamp`)) {
@@ -290,9 +281,6 @@ CrisprModification <- R6::R6Class(
       if (!is.null(`biosamples_modified`)) {
         stopifnot(is.vector(`biosamples_modified`), length(`biosamples_modified`) != 0)
         sapply(`biosamples_modified`, function(x) stopifnot(is.character(x)))
-        if (!identical(`biosamples_modified`, unique(`biosamples_modified`))) {
-          stop("Error! Items in `biosamples_modified` are not unique.")
-        }
         self$`biosamples_modified` <- `biosamples_modified`
       }
     },
@@ -434,9 +422,6 @@ CrisprModification <- R6::R6Class(
       }
       if (!is.null(this_object$`sources`)) {
         self$`sources` <- ApiClient$new()$deserializeObj(this_object$`sources`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`sources`, unique(self$`sources`))) {
-          stop("Error! Items in `sources` are not unique.")
-        }
       }
       if (!is.null(this_object$`lot_id`)) {
         self$`lot_id` <- this_object$`lot_id`
@@ -446,9 +431,6 @@ CrisprModification <- R6::R6Class(
       }
       if (!is.null(this_object$`documents`)) {
         self$`documents` <- ApiClient$new()$deserializeObj(this_object$`documents`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`documents`, unique(self$`documents`))) {
-          stop("Error! Items in `documents` are not unique.")
-        }
       }
       if (!is.null(this_object$`status`)) {
         if (!is.null(this_object$`status`) && !(this_object$`status` %in% c("archived", "deleted", "in progress", "released"))) {
@@ -473,9 +455,6 @@ CrisprModification <- R6::R6Class(
       }
       if (!is.null(this_object$`aliases`)) {
         self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`aliases`, unique(self$`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
       }
       if (!is.null(this_object$`creation_timestamp`)) {
         self$`creation_timestamp` <- this_object$`creation_timestamp`
@@ -536,9 +515,6 @@ CrisprModification <- R6::R6Class(
       }
       if (!is.null(this_object$`biosamples_modified`)) {
         self$`biosamples_modified` <- ApiClient$new()$deserializeObj(this_object$`biosamples_modified`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`biosamples_modified`, unique(self$`biosamples_modified`))) {
-          stop("Error! Items in `biosamples_modified` are not unique.")
-        }
       }
       self
     },
@@ -791,15 +767,9 @@ CrisprModification <- R6::R6Class(
       this_object <- jsonlite::fromJSON(input_json)
       self$`release_timestamp` <- this_object$`release_timestamp`
       self$`sources` <- ApiClient$new()$deserializeObj(this_object$`sources`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`sources`, unique(self$`sources`))) {
-        stop("Error! Items in `sources` are not unique.")
-      }
       self$`lot_id` <- this_object$`lot_id`
       self$`product_id` <- this_object$`product_id`
       self$`documents` <- ApiClient$new()$deserializeObj(this_object$`documents`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`documents`, unique(self$`documents`))) {
-        stop("Error! Items in `documents` are not unique.")
-      }
       if (!is.null(this_object$`status`) && !(this_object$`status` %in% c("archived", "deleted", "in progress", "released"))) {
         stop(paste("Error! \"", this_object$`status`, "\" cannot be assigned to `status`. Must be \"archived\", \"deleted\", \"in progress\", \"released\".", sep = ""))
       }
@@ -810,9 +780,6 @@ CrisprModification <- R6::R6Class(
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
       self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`aliases`, unique(self$`aliases`))) {
-        stop("Error! Items in `aliases` are not unique.")
-      }
       self$`creation_timestamp` <- this_object$`creation_timestamp`
       self$`submitted_by` <- this_object$`submitted_by`
       self$`submitter_comment` <- this_object$`submitter_comment`
@@ -841,9 +808,6 @@ CrisprModification <- R6::R6Class(
       self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
       self$`biosamples_modified` <- ApiClient$new()$deserializeObj(this_object$`biosamples_modified`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`biosamples_modified`, unique(self$`biosamples_modified`))) {
-        stop("Error! Items in `biosamples_modified` are not unique.")
-      }
       self
     },
     #' Validate JSON input with respect to CrisprModification

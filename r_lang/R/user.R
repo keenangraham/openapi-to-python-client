@@ -114,9 +114,6 @@ User <- R6::R6Class(
       if (!is.null(`aliases`)) {
         stopifnot(is.vector(`aliases`), length(`aliases`) != 0)
         sapply(`aliases`, function(x) stopifnot(is.character(x)))
-        if (!identical(`aliases`, unique(`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
         self$`aliases` <- `aliases`
       }
       if (!is.null(`creation_timestamp`)) {
@@ -170,25 +167,16 @@ User <- R6::R6Class(
       if (!is.null(`submits_for`)) {
         stopifnot(is.vector(`submits_for`), length(`submits_for`) != 0)
         sapply(`submits_for`, function(x) stopifnot(is.character(x)))
-        if (!identical(`submits_for`, unique(`submits_for`))) {
-          stop("Error! Items in `submits_for` are not unique.")
-        }
         self$`submits_for` <- `submits_for`
       }
       if (!is.null(`groups`)) {
         stopifnot(is.vector(`groups`), length(`groups`) != 0)
         sapply(`groups`, function(x) stopifnot(is.character(x)))
-        if (!identical(`groups`, unique(`groups`))) {
-          stop("Error! Items in `groups` are not unique.")
-        }
         self$`groups` <- `groups`
       }
       if (!is.null(`viewing_groups`)) {
         stopifnot(is.vector(`viewing_groups`), length(`viewing_groups`) != 0)
         sapply(`viewing_groups`, function(x) stopifnot(is.character(x)))
-        if (!identical(`viewing_groups`, unique(`viewing_groups`))) {
-          stop("Error! Items in `viewing_groups` are not unique.")
-        }
         self$`viewing_groups` <- `viewing_groups`
       }
       if (!is.null(`job_title`)) {
@@ -346,9 +334,6 @@ User <- R6::R6Class(
       }
       if (!is.null(this_object$`aliases`)) {
         self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`aliases`, unique(self$`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
       }
       if (!is.null(this_object$`creation_timestamp`)) {
         self$`creation_timestamp` <- this_object$`creation_timestamp`
@@ -376,21 +361,12 @@ User <- R6::R6Class(
       }
       if (!is.null(this_object$`submits_for`)) {
         self$`submits_for` <- ApiClient$new()$deserializeObj(this_object$`submits_for`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`submits_for`, unique(self$`submits_for`))) {
-          stop("Error! Items in `submits_for` are not unique.")
-        }
       }
       if (!is.null(this_object$`groups`)) {
         self$`groups` <- ApiClient$new()$deserializeObj(this_object$`groups`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`groups`, unique(self$`groups`))) {
-          stop("Error! Items in `groups` are not unique.")
-        }
       }
       if (!is.null(this_object$`viewing_groups`)) {
         self$`viewing_groups` <- ApiClient$new()$deserializeObj(this_object$`viewing_groups`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`viewing_groups`, unique(self$`viewing_groups`))) {
-          stop("Error! Items in `viewing_groups` are not unique.")
-        }
       }
       if (!is.null(this_object$`job_title`)) {
         if (!is.null(this_object$`job_title`) && !(this_object$`job_title` %in% c("Principal Investigator", "Co-Investigator", "Project Manager", "Submitter", "Post Doc", "Data Wrangler", "Scientist", "Computational Scientist", "Software Developer", "NHGRI staff member", "Other"))) {
@@ -611,9 +587,6 @@ User <- R6::R6Class(
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
       self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`aliases`, unique(self$`aliases`))) {
-        stop("Error! Items in `aliases` are not unique.")
-      }
       self$`creation_timestamp` <- this_object$`creation_timestamp`
       self$`submitted_by` <- this_object$`submitted_by`
       self$`submitter_comment` <- this_object$`submitter_comment`
@@ -623,17 +596,8 @@ User <- R6::R6Class(
       self$`last_name` <- this_object$`last_name`
       self$`lab` <- this_object$`lab`
       self$`submits_for` <- ApiClient$new()$deserializeObj(this_object$`submits_for`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`submits_for`, unique(self$`submits_for`))) {
-        stop("Error! Items in `submits_for` are not unique.")
-      }
       self$`groups` <- ApiClient$new()$deserializeObj(this_object$`groups`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`groups`, unique(self$`groups`))) {
-        stop("Error! Items in `groups` are not unique.")
-      }
       self$`viewing_groups` <- ApiClient$new()$deserializeObj(this_object$`viewing_groups`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`viewing_groups`, unique(self$`viewing_groups`))) {
-        stop("Error! Items in `viewing_groups` are not unique.")
-      }
       if (!is.null(this_object$`job_title`) && !(this_object$`job_title` %in% c("Principal Investigator", "Co-Investigator", "Project Manager", "Submitter", "Post Doc", "Data Wrangler", "Scientist", "Computational Scientist", "Software Developer", "NHGRI staff member", "Other"))) {
         stop(paste("Error! \"", this_object$`job_title`, "\" cannot be assigned to `job_title`. Must be \"Principal Investigator\", \"Co-Investigator\", \"Project Manager\", \"Submitter\", \"Post Doc\", \"Data Wrangler\", \"Scientist\", \"Computational Scientist\", \"Software Developer\", \"NHGRI staff member\", \"Other\".", sep = ""))
       }

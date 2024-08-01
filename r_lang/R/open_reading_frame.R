@@ -123,9 +123,6 @@ OpenReadingFrame <- R6::R6Class(
       if (!is.null(`aliases`)) {
         stopifnot(is.vector(`aliases`), length(`aliases`) != 0)
         sapply(`aliases`, function(x) stopifnot(is.character(x)))
-        if (!identical(`aliases`, unique(`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
         self$`aliases` <- `aliases`
       }
       if (!is.null(`creation_timestamp`)) {
@@ -173,9 +170,6 @@ OpenReadingFrame <- R6::R6Class(
       if (!is.null(`gene`)) {
         stopifnot(is.vector(`gene`), length(`gene`) != 0)
         sapply(`gene`, function(x) stopifnot(is.character(x)))
-        if (!identical(`gene`, unique(`gene`))) {
-          stop("Error! Items in `gene` are not unique.")
-        }
         self$`gene` <- `gene`
       }
       if (!is.null(`protein_id`)) {
@@ -187,9 +181,6 @@ OpenReadingFrame <- R6::R6Class(
       if (!is.null(`dbxrefs`)) {
         stopifnot(is.vector(`dbxrefs`), length(`dbxrefs`) != 0)
         sapply(`dbxrefs`, function(x) stopifnot(is.character(x)))
-        if (!identical(`dbxrefs`, unique(`dbxrefs`))) {
-          stop("Error! Items in `dbxrefs` are not unique.")
-        }
         self$`dbxrefs` <- `dbxrefs`
       }
       if (!is.null(`pct_identical_protein`)) {
@@ -348,9 +339,6 @@ OpenReadingFrame <- R6::R6Class(
       }
       if (!is.null(this_object$`aliases`)) {
         self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`aliases`, unique(self$`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
       }
       if (!is.null(this_object$`creation_timestamp`)) {
         self$`creation_timestamp` <- this_object$`creation_timestamp`
@@ -375,18 +363,12 @@ OpenReadingFrame <- R6::R6Class(
       }
       if (!is.null(this_object$`gene`)) {
         self$`gene` <- ApiClient$new()$deserializeObj(this_object$`gene`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`gene`, unique(self$`gene`))) {
-          stop("Error! Items in `gene` are not unique.")
-        }
       }
       if (!is.null(this_object$`protein_id`)) {
         self$`protein_id` <- this_object$`protein_id`
       }
       if (!is.null(this_object$`dbxrefs`)) {
         self$`dbxrefs` <- ApiClient$new()$deserializeObj(this_object$`dbxrefs`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`dbxrefs`, unique(self$`dbxrefs`))) {
-          stop("Error! Items in `dbxrefs` are not unique.")
-        }
       }
       if (!is.null(this_object$`pct_identical_protein`)) {
         self$`pct_identical_protein` <- this_object$`pct_identical_protein`
@@ -616,9 +598,6 @@ OpenReadingFrame <- R6::R6Class(
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
       self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`aliases`, unique(self$`aliases`))) {
-        stop("Error! Items in `aliases` are not unique.")
-      }
       self$`creation_timestamp` <- this_object$`creation_timestamp`
       self$`submitted_by` <- this_object$`submitted_by`
       self$`submitter_comment` <- this_object$`submitter_comment`
@@ -627,14 +606,8 @@ OpenReadingFrame <- R6::R6Class(
       self$`award` <- this_object$`award`
       self$`orf_id` <- this_object$`orf_id`
       self$`gene` <- ApiClient$new()$deserializeObj(this_object$`gene`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`gene`, unique(self$`gene`))) {
-        stop("Error! Items in `gene` are not unique.")
-      }
       self$`protein_id` <- this_object$`protein_id`
       self$`dbxrefs` <- ApiClient$new()$deserializeObj(this_object$`dbxrefs`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`dbxrefs`, unique(self$`dbxrefs`))) {
-        stop("Error! Items in `dbxrefs` are not unique.")
-      }
       self$`pct_identical_protein` <- this_object$`pct_identical_protein`
       self$`pct_coverage_protein` <- this_object$`pct_coverage_protein`
       self$`pct_coverage_orf` <- this_object$`pct_coverage_orf`

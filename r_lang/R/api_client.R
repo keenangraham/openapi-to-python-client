@@ -314,16 +314,16 @@ ApiClient <- R6::R6Class(
         })
         names(return_obj) <- names(obj)
       } else if (startsWith(return_type, "array[")) {
-        # To handle the "array" type
+        # To handle the "array" typej
         inner_return_type <- regmatches(return_type,
                                         regexec(pattern = "array\\[(.*)\\]", return_type))[[1]][2]
         if (c(inner_return_type) %in% primitive_types) {
-          return_obj <- vector("list", length = length(obj))
-          if (length(obj) > 0) {
-            for (row in 1:length(obj)) {
-              return_obj[[row]] <- self$deserializeObj(obj[row], inner_return_type, pkg_env)
-            }
-          }
+          print("PRIMIATIVE")
+          print(return_type)
+          print(obj)
+	  print("TYPE OF:")
+          print(typeof(obj))
+          return_obj <- obj
         } else {
           if (!is.null(nrow(obj))) {
             return_obj <- vector("list", length = nrow(obj))
@@ -340,12 +340,11 @@ ApiClient <- R6::R6Class(
         inner_return_type <- regmatches(return_type,
                                         regexec(pattern = "set\\[(.*)\\]", return_type))[[1]][2]
         if (c(inner_return_type) %in% primitive_types) {
-          return_obj <- vector("list", length = length(obj))
-          if (length(obj) > 0) {
-            for (row in 1:length(obj)) {
-              return_obj[[row]] <- self$deserializeObj(obj[row], inner_return_type, pkg_env)
-            }
-          }
+          print("PRIMIATIVE")
+          print(return_type)
+          print(obj)
+          print(typeof(obj))
+          return_obj <- obj
         } else {
           if (!is.null(nrow(obj))) {
             return_obj <- vector("list", length = nrow(obj))

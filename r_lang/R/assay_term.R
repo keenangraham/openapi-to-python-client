@@ -132,9 +132,6 @@ AssayTerm <- R6::R6Class(
       if (!is.null(`aliases`)) {
         stopifnot(is.vector(`aliases`), length(`aliases`) != 0)
         sapply(`aliases`, function(x) stopifnot(is.character(x)))
-        if (!identical(`aliases`, unique(`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
         self$`aliases` <- `aliases`
       }
       if (!is.null(`creation_timestamp`)) {
@@ -176,25 +173,16 @@ AssayTerm <- R6::R6Class(
       if (!is.null(`deprecated_ntr_terms`)) {
         stopifnot(is.vector(`deprecated_ntr_terms`), length(`deprecated_ntr_terms`) != 0)
         sapply(`deprecated_ntr_terms`, function(x) stopifnot(is.character(x)))
-        if (!identical(`deprecated_ntr_terms`, unique(`deprecated_ntr_terms`))) {
-          stop("Error! Items in `deprecated_ntr_terms` are not unique.")
-        }
         self$`deprecated_ntr_terms` <- `deprecated_ntr_terms`
       }
       if (!is.null(`is_a`)) {
         stopifnot(is.vector(`is_a`), length(`is_a`) != 0)
         sapply(`is_a`, function(x) stopifnot(is.character(x)))
-        if (!identical(`is_a`, unique(`is_a`))) {
-          stop("Error! Items in `is_a` are not unique.")
-        }
         self$`is_a` <- `is_a`
       }
       if (!is.null(`preferred_assay_titles`)) {
         stopifnot(is.vector(`preferred_assay_titles`), length(`preferred_assay_titles`) != 0)
         sapply(`preferred_assay_titles`, function(x) stopifnot(is.character(x)))
-        if (!identical(`preferred_assay_titles`, unique(`preferred_assay_titles`))) {
-          stop("Error! Items in `preferred_assay_titles` are not unique.")
-        }
         self$`preferred_assay_titles` <- `preferred_assay_titles`
       }
       if (!is.null(`@id`)) {
@@ -223,17 +211,11 @@ AssayTerm <- R6::R6Class(
       if (!is.null(`synonyms`)) {
         stopifnot(is.vector(`synonyms`), length(`synonyms`) != 0)
         sapply(`synonyms`, function(x) stopifnot(is.character(x)))
-        if (!identical(`synonyms`, unique(`synonyms`))) {
-          stop("Error! Items in `synonyms` are not unique.")
-        }
         self$`synonyms` <- `synonyms`
       }
       if (!is.null(`ancestors`)) {
         stopifnot(is.vector(`ancestors`), length(`ancestors`) != 0)
         sapply(`ancestors`, function(x) stopifnot(is.character(x)))
-        if (!identical(`ancestors`, unique(`ancestors`))) {
-          stop("Error! Items in `ancestors` are not unique.")
-        }
         self$`ancestors` <- `ancestors`
       }
       if (!is.null(`ontology`)) {
@@ -245,25 +227,16 @@ AssayTerm <- R6::R6Class(
       if (!is.null(`assay_slims`)) {
         stopifnot(is.vector(`assay_slims`), length(`assay_slims`) != 0)
         sapply(`assay_slims`, function(x) stopifnot(is.character(x)))
-        if (!identical(`assay_slims`, unique(`assay_slims`))) {
-          stop("Error! Items in `assay_slims` are not unique.")
-        }
         self$`assay_slims` <- `assay_slims`
       }
       if (!is.null(`category_slims`)) {
         stopifnot(is.vector(`category_slims`), length(`category_slims`) != 0)
         sapply(`category_slims`, function(x) stopifnot(is.character(x)))
-        if (!identical(`category_slims`, unique(`category_slims`))) {
-          stop("Error! Items in `category_slims` are not unique.")
-        }
         self$`category_slims` <- `category_slims`
       }
       if (!is.null(`objective_slims`)) {
         stopifnot(is.vector(`objective_slims`), length(`objective_slims`) != 0)
         sapply(`objective_slims`, function(x) stopifnot(is.character(x)))
-        if (!identical(`objective_slims`, unique(`objective_slims`))) {
-          stop("Error! Items in `objective_slims` are not unique.")
-        }
         self$`objective_slims` <- `objective_slims`
       }
     },
@@ -408,9 +381,6 @@ AssayTerm <- R6::R6Class(
       }
       if (!is.null(this_object$`aliases`)) {
         self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`aliases`, unique(self$`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
       }
       if (!is.null(this_object$`creation_timestamp`)) {
         self$`creation_timestamp` <- this_object$`creation_timestamp`
@@ -432,21 +402,12 @@ AssayTerm <- R6::R6Class(
       }
       if (!is.null(this_object$`deprecated_ntr_terms`)) {
         self$`deprecated_ntr_terms` <- ApiClient$new()$deserializeObj(this_object$`deprecated_ntr_terms`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`deprecated_ntr_terms`, unique(self$`deprecated_ntr_terms`))) {
-          stop("Error! Items in `deprecated_ntr_terms` are not unique.")
-        }
       }
       if (!is.null(this_object$`is_a`)) {
         self$`is_a` <- ApiClient$new()$deserializeObj(this_object$`is_a`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`is_a`, unique(self$`is_a`))) {
-          stop("Error! Items in `is_a` are not unique.")
-        }
       }
       if (!is.null(this_object$`preferred_assay_titles`)) {
         self$`preferred_assay_titles` <- ApiClient$new()$deserializeObj(this_object$`preferred_assay_titles`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`preferred_assay_titles`, unique(self$`preferred_assay_titles`))) {
-          stop("Error! Items in `preferred_assay_titles` are not unique.")
-        }
       }
       if (!is.null(this_object$`@id`)) {
         self$`@id` <- this_object$`@id`
@@ -462,36 +423,21 @@ AssayTerm <- R6::R6Class(
       }
       if (!is.null(this_object$`synonyms`)) {
         self$`synonyms` <- ApiClient$new()$deserializeObj(this_object$`synonyms`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`synonyms`, unique(self$`synonyms`))) {
-          stop("Error! Items in `synonyms` are not unique.")
-        }
       }
       if (!is.null(this_object$`ancestors`)) {
         self$`ancestors` <- ApiClient$new()$deserializeObj(this_object$`ancestors`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`ancestors`, unique(self$`ancestors`))) {
-          stop("Error! Items in `ancestors` are not unique.")
-        }
       }
       if (!is.null(this_object$`ontology`)) {
         self$`ontology` <- this_object$`ontology`
       }
       if (!is.null(this_object$`assay_slims`)) {
         self$`assay_slims` <- ApiClient$new()$deserializeObj(this_object$`assay_slims`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`assay_slims`, unique(self$`assay_slims`))) {
-          stop("Error! Items in `assay_slims` are not unique.")
-        }
       }
       if (!is.null(this_object$`category_slims`)) {
         self$`category_slims` <- ApiClient$new()$deserializeObj(this_object$`category_slims`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`category_slims`, unique(self$`category_slims`))) {
-          stop("Error! Items in `category_slims` are not unique.")
-        }
       }
       if (!is.null(this_object$`objective_slims`)) {
         self$`objective_slims` <- ApiClient$new()$deserializeObj(this_object$`objective_slims`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`objective_slims`, unique(self$`objective_slims`))) {
-          stop("Error! Items in `objective_slims` are not unique.")
-        }
       }
       self
     },
@@ -727,9 +673,6 @@ AssayTerm <- R6::R6Class(
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
       self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`aliases`, unique(self$`aliases`))) {
-        stop("Error! Items in `aliases` are not unique.")
-      }
       self$`creation_timestamp` <- this_object$`creation_timestamp`
       self$`submitted_by` <- this_object$`submitted_by`
       self$`submitter_comment` <- this_object$`submitter_comment`
@@ -737,42 +680,18 @@ AssayTerm <- R6::R6Class(
       self$`term_id` <- this_object$`term_id`
       self$`term_name` <- this_object$`term_name`
       self$`deprecated_ntr_terms` <- ApiClient$new()$deserializeObj(this_object$`deprecated_ntr_terms`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`deprecated_ntr_terms`, unique(self$`deprecated_ntr_terms`))) {
-        stop("Error! Items in `deprecated_ntr_terms` are not unique.")
-      }
       self$`is_a` <- ApiClient$new()$deserializeObj(this_object$`is_a`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`is_a`, unique(self$`is_a`))) {
-        stop("Error! Items in `is_a` are not unique.")
-      }
       self$`preferred_assay_titles` <- ApiClient$new()$deserializeObj(this_object$`preferred_assay_titles`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`preferred_assay_titles`, unique(self$`preferred_assay_titles`))) {
-        stop("Error! Items in `preferred_assay_titles` are not unique.")
-      }
       self$`@id` <- this_object$`@id`
       self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
       self$`name` <- this_object$`name`
       self$`synonyms` <- ApiClient$new()$deserializeObj(this_object$`synonyms`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`synonyms`, unique(self$`synonyms`))) {
-        stop("Error! Items in `synonyms` are not unique.")
-      }
       self$`ancestors` <- ApiClient$new()$deserializeObj(this_object$`ancestors`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`ancestors`, unique(self$`ancestors`))) {
-        stop("Error! Items in `ancestors` are not unique.")
-      }
       self$`ontology` <- this_object$`ontology`
       self$`assay_slims` <- ApiClient$new()$deserializeObj(this_object$`assay_slims`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`assay_slims`, unique(self$`assay_slims`))) {
-        stop("Error! Items in `assay_slims` are not unique.")
-      }
       self$`category_slims` <- ApiClient$new()$deserializeObj(this_object$`category_slims`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`category_slims`, unique(self$`category_slims`))) {
-        stop("Error! Items in `category_slims` are not unique.")
-      }
       self$`objective_slims` <- ApiClient$new()$deserializeObj(this_object$`objective_slims`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`objective_slims`, unique(self$`objective_slims`))) {
-        stop("Error! Items in `objective_slims` are not unique.")
-      }
       self
     },
     #' Validate JSON input with respect to AssayTerm

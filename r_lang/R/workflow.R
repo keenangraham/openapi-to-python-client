@@ -114,25 +114,16 @@ Workflow <- R6::R6Class(
       if (!is.null(`publications`)) {
         stopifnot(is.vector(`publications`), length(`publications`) != 0)
         sapply(`publications`, function(x) stopifnot(is.character(x)))
-        if (!identical(`publications`, unique(`publications`))) {
-          stop("Error! Items in `publications` are not unique.")
-        }
         self$`publications` <- `publications`
       }
       if (!is.null(`publication_identifiers`)) {
         stopifnot(is.vector(`publication_identifiers`), length(`publication_identifiers`) != 0)
         sapply(`publication_identifiers`, function(x) stopifnot(is.character(x)))
-        if (!identical(`publication_identifiers`, unique(`publication_identifiers`))) {
-          stop("Error! Items in `publication_identifiers` are not unique.")
-        }
         self$`publication_identifiers` <- `publication_identifiers`
       }
       if (!is.null(`documents`)) {
         stopifnot(is.vector(`documents`), length(`documents`) != 0)
         sapply(`documents`, function(x) stopifnot(is.character(x)))
-        if (!identical(`documents`, unique(`documents`))) {
-          stop("Error! Items in `documents` are not unique.")
-        }
         self$`documents` <- `documents`
       }
       if (!is.null(`lab`)) {
@@ -156,17 +147,11 @@ Workflow <- R6::R6Class(
       if (!is.null(`alternate_accessions`)) {
         stopifnot(is.vector(`alternate_accessions`), length(`alternate_accessions`) != 0)
         sapply(`alternate_accessions`, function(x) stopifnot(is.character(x)))
-        if (!identical(`alternate_accessions`, unique(`alternate_accessions`))) {
-          stop("Error! Items in `alternate_accessions` are not unique.")
-        }
         self$`alternate_accessions` <- `alternate_accessions`
       }
       if (!is.null(`collections`)) {
         stopifnot(is.vector(`collections`), length(`collections`) != 0)
         sapply(`collections`, function(x) stopifnot(is.character(x)))
-        if (!identical(`collections`, unique(`collections`))) {
-          stop("Error! Items in `collections` are not unique.")
-        }
         self$`collections` <- `collections`
       }
       if (!is.null(`status`)) {
@@ -205,9 +190,6 @@ Workflow <- R6::R6Class(
       if (!is.null(`aliases`)) {
         stopifnot(is.vector(`aliases`), length(`aliases`) != 0)
         sapply(`aliases`, function(x) stopifnot(is.character(x)))
-        if (!identical(`aliases`, unique(`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
         self$`aliases` <- `aliases`
       }
       if (!is.null(`creation_timestamp`)) {
@@ -249,9 +231,6 @@ Workflow <- R6::R6Class(
       if (!is.null(`workflow_repositories`)) {
         stopifnot(is.vector(`workflow_repositories`), length(`workflow_repositories`) != 0)
         sapply(`workflow_repositories`, function(x) stopifnot(is.character(x)))
-        if (!identical(`workflow_repositories`, unique(`workflow_repositories`))) {
-          stop("Error! Items in `workflow_repositories` are not unique.")
-        }
         self$`workflow_repositories` <- `workflow_repositories`
       }
       if (!is.null(`standards_page`)) {
@@ -286,9 +265,6 @@ Workflow <- R6::R6Class(
       if (!is.null(`analysis_steps`)) {
         stopifnot(is.vector(`analysis_steps`), length(`analysis_steps`) != 0)
         sapply(`analysis_steps`, function(x) stopifnot(is.character(x)))
-        if (!identical(`analysis_steps`, unique(`analysis_steps`))) {
-          stop("Error! Items in `analysis_steps` are not unique.")
-        }
         self$`analysis_steps` <- `analysis_steps`
       }
     },
@@ -430,21 +406,12 @@ Workflow <- R6::R6Class(
       }
       if (!is.null(this_object$`publications`)) {
         self$`publications` <- ApiClient$new()$deserializeObj(this_object$`publications`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`publications`, unique(self$`publications`))) {
-          stop("Error! Items in `publications` are not unique.")
-        }
       }
       if (!is.null(this_object$`publication_identifiers`)) {
         self$`publication_identifiers` <- ApiClient$new()$deserializeObj(this_object$`publication_identifiers`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`publication_identifiers`, unique(self$`publication_identifiers`))) {
-          stop("Error! Items in `publication_identifiers` are not unique.")
-        }
       }
       if (!is.null(this_object$`documents`)) {
         self$`documents` <- ApiClient$new()$deserializeObj(this_object$`documents`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`documents`, unique(self$`documents`))) {
-          stop("Error! Items in `documents` are not unique.")
-        }
       }
       if (!is.null(this_object$`lab`)) {
         self$`lab` <- this_object$`lab`
@@ -457,15 +424,9 @@ Workflow <- R6::R6Class(
       }
       if (!is.null(this_object$`alternate_accessions`)) {
         self$`alternate_accessions` <- ApiClient$new()$deserializeObj(this_object$`alternate_accessions`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`alternate_accessions`, unique(self$`alternate_accessions`))) {
-          stop("Error! Items in `alternate_accessions` are not unique.")
-        }
       }
       if (!is.null(this_object$`collections`)) {
         self$`collections` <- ApiClient$new()$deserializeObj(this_object$`collections`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`collections`, unique(self$`collections`))) {
-          stop("Error! Items in `collections` are not unique.")
-        }
       }
       if (!is.null(this_object$`status`)) {
         if (!is.null(this_object$`status`) && !(this_object$`status` %in% c("in progress", "released", "deleted", "replaced", "revoked", "archived"))) {
@@ -487,9 +448,6 @@ Workflow <- R6::R6Class(
       }
       if (!is.null(this_object$`aliases`)) {
         self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`aliases`, unique(self$`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
       }
       if (!is.null(this_object$`creation_timestamp`)) {
         self$`creation_timestamp` <- this_object$`creation_timestamp`
@@ -511,9 +469,6 @@ Workflow <- R6::R6Class(
       }
       if (!is.null(this_object$`workflow_repositories`)) {
         self$`workflow_repositories` <- ApiClient$new()$deserializeObj(this_object$`workflow_repositories`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`workflow_repositories`, unique(self$`workflow_repositories`))) {
-          stop("Error! Items in `workflow_repositories` are not unique.")
-        }
       }
       if (!is.null(this_object$`standards_page`)) {
         self$`standards_page` <- this_object$`standards_page`
@@ -532,9 +487,6 @@ Workflow <- R6::R6Class(
       }
       if (!is.null(this_object$`analysis_steps`)) {
         self$`analysis_steps` <- ApiClient$new()$deserializeObj(this_object$`analysis_steps`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`analysis_steps`, unique(self$`analysis_steps`))) {
-          stop("Error! Items in `analysis_steps` are not unique.")
-        }
       }
       self
     },
@@ -787,28 +739,13 @@ Workflow <- R6::R6Class(
       this_object <- jsonlite::fromJSON(input_json)
       self$`release_timestamp` <- this_object$`release_timestamp`
       self$`publications` <- ApiClient$new()$deserializeObj(this_object$`publications`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`publications`, unique(self$`publications`))) {
-        stop("Error! Items in `publications` are not unique.")
-      }
       self$`publication_identifiers` <- ApiClient$new()$deserializeObj(this_object$`publication_identifiers`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`publication_identifiers`, unique(self$`publication_identifiers`))) {
-        stop("Error! Items in `publication_identifiers` are not unique.")
-      }
       self$`documents` <- ApiClient$new()$deserializeObj(this_object$`documents`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`documents`, unique(self$`documents`))) {
-        stop("Error! Items in `documents` are not unique.")
-      }
       self$`lab` <- this_object$`lab`
       self$`award` <- this_object$`award`
       self$`accession` <- this_object$`accession`
       self$`alternate_accessions` <- ApiClient$new()$deserializeObj(this_object$`alternate_accessions`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`alternate_accessions`, unique(self$`alternate_accessions`))) {
-        stop("Error! Items in `alternate_accessions` are not unique.")
-      }
       self$`collections` <- ApiClient$new()$deserializeObj(this_object$`collections`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`collections`, unique(self$`collections`))) {
-        stop("Error! Items in `collections` are not unique.")
-      }
       if (!is.null(this_object$`status`) && !(this_object$`status` %in% c("in progress", "released", "deleted", "replaced", "revoked", "archived"))) {
         stop(paste("Error! \"", this_object$`status`, "\" cannot be assigned to `status`. Must be \"in progress\", \"released\", \"deleted\", \"replaced\", \"revoked\", \"archived\".", sep = ""))
       }
@@ -818,9 +755,6 @@ Workflow <- R6::R6Class(
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
       self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`aliases`, unique(self$`aliases`))) {
-        stop("Error! Items in `aliases` are not unique.")
-      }
       self$`creation_timestamp` <- this_object$`creation_timestamp`
       self$`submitted_by` <- this_object$`submitted_by`
       self$`submitter_comment` <- this_object$`submitter_comment`
@@ -828,18 +762,12 @@ Workflow <- R6::R6Class(
       self$`name` <- this_object$`name`
       self$`source_url` <- this_object$`source_url`
       self$`workflow_repositories` <- ApiClient$new()$deserializeObj(this_object$`workflow_repositories`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`workflow_repositories`, unique(self$`workflow_repositories`))) {
-        stop("Error! Items in `workflow_repositories` are not unique.")
-      }
       self$`standards_page` <- this_object$`standards_page`
       self$`workflow_version` <- this_object$`workflow_version`
       self$`@id` <- this_object$`@id`
       self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
       self$`analysis_steps` <- ApiClient$new()$deserializeObj(this_object$`analysis_steps`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`analysis_steps`, unique(self$`analysis_steps`))) {
-        stop("Error! Items in `analysis_steps` are not unique.")
-      }
       self
     },
     #' Validate JSON input with respect to Workflow

@@ -120,9 +120,6 @@ AnalysisStepVersion <- R6::R6Class(
       if (!is.null(`aliases`)) {
         stopifnot(is.vector(`aliases`), length(`aliases`) != 0)
         sapply(`aliases`, function(x) stopifnot(is.character(x)))
-        if (!identical(`aliases`, unique(`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
         self$`aliases` <- `aliases`
       }
       if (!is.null(`creation_timestamp`)) {
@@ -158,9 +155,6 @@ AnalysisStepVersion <- R6::R6Class(
       if (!is.null(`software_versions`)) {
         stopifnot(is.vector(`software_versions`), length(`software_versions`) != 0)
         sapply(`software_versions`, function(x) stopifnot(is.character(x)))
-        if (!identical(`software_versions`, unique(`software_versions`))) {
-          stop("Error! Items in `software_versions` are not unique.")
-        }
         self$`software_versions` <- `software_versions`
       }
       if (!is.null(`@id`)) {
@@ -296,9 +290,6 @@ AnalysisStepVersion <- R6::R6Class(
       }
       if (!is.null(this_object$`aliases`)) {
         self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`aliases`, unique(self$`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
       }
       if (!is.null(this_object$`creation_timestamp`)) {
         self$`creation_timestamp` <- this_object$`creation_timestamp`
@@ -317,9 +308,6 @@ AnalysisStepVersion <- R6::R6Class(
       }
       if (!is.null(this_object$`software_versions`)) {
         self$`software_versions` <- ApiClient$new()$deserializeObj(this_object$`software_versions`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`software_versions`, unique(self$`software_versions`))) {
-          stop("Error! Items in `software_versions` are not unique.")
-        }
       }
       if (!is.null(this_object$`@id`)) {
         self$`@id` <- this_object$`@id`
@@ -502,18 +490,12 @@ AnalysisStepVersion <- R6::R6Class(
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
       self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`aliases`, unique(self$`aliases`))) {
-        stop("Error! Items in `aliases` are not unique.")
-      }
       self$`creation_timestamp` <- this_object$`creation_timestamp`
       self$`submitted_by` <- this_object$`submitted_by`
       self$`submitter_comment` <- this_object$`submitter_comment`
       self$`description` <- this_object$`description`
       self$`analysis_step` <- this_object$`analysis_step`
       self$`software_versions` <- ApiClient$new()$deserializeObj(this_object$`software_versions`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`software_versions`, unique(self$`software_versions`))) {
-        stop("Error! Items in `software_versions` are not unique.")
-      }
       self$`@id` <- this_object$`@id`
       self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`

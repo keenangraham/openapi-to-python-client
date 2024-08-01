@@ -138,9 +138,6 @@ AnalysisStep <- R6::R6Class(
       if (!is.null(`aliases`)) {
         stopifnot(is.vector(`aliases`), length(`aliases`) != 0)
         sapply(`aliases`, function(x) stopifnot(is.character(x)))
-        if (!identical(`aliases`, unique(`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
         self$`aliases` <- `aliases`
       }
       if (!is.null(`creation_timestamp`)) {
@@ -170,9 +167,6 @@ AnalysisStep <- R6::R6Class(
       if (!is.null(`analysis_step_types`)) {
         stopifnot(is.vector(`analysis_step_types`), length(`analysis_step_types`) != 0)
         sapply(`analysis_step_types`, function(x) stopifnot(is.character(x)))
-        if (!identical(`analysis_step_types`, unique(`analysis_step_types`))) {
-          stop("Error! Items in `analysis_step_types` are not unique.")
-        }
         self$`analysis_step_types` <- `analysis_step_types`
       }
       if (!is.null(`step_label`)) {
@@ -196,25 +190,16 @@ AnalysisStep <- R6::R6Class(
       if (!is.null(`parents`)) {
         stopifnot(is.vector(`parents`), length(`parents`) != 0)
         sapply(`parents`, function(x) stopifnot(is.character(x)))
-        if (!identical(`parents`, unique(`parents`))) {
-          stop("Error! Items in `parents` are not unique.")
-        }
         self$`parents` <- `parents`
       }
       if (!is.null(`input_content_types`)) {
         stopifnot(is.vector(`input_content_types`), length(`input_content_types`) != 0)
         sapply(`input_content_types`, function(x) stopifnot(is.character(x)))
-        if (!identical(`input_content_types`, unique(`input_content_types`))) {
-          stop("Error! Items in `input_content_types` are not unique.")
-        }
         self$`input_content_types` <- `input_content_types`
       }
       if (!is.null(`output_content_types`)) {
         stopifnot(is.vector(`output_content_types`), length(`output_content_types`) != 0)
         sapply(`output_content_types`, function(x) stopifnot(is.character(x)))
-        if (!identical(`output_content_types`, unique(`output_content_types`))) {
-          stop("Error! Items in `output_content_types` are not unique.")
-        }
         self$`output_content_types` <- `output_content_types`
       }
       if (!is.null(`@id`)) {
@@ -380,9 +365,6 @@ AnalysisStep <- R6::R6Class(
       }
       if (!is.null(this_object$`aliases`)) {
         self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`aliases`, unique(self$`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
       }
       if (!is.null(this_object$`creation_timestamp`)) {
         self$`creation_timestamp` <- this_object$`creation_timestamp`
@@ -398,9 +380,6 @@ AnalysisStep <- R6::R6Class(
       }
       if (!is.null(this_object$`analysis_step_types`)) {
         self$`analysis_step_types` <- ApiClient$new()$deserializeObj(this_object$`analysis_step_types`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`analysis_step_types`, unique(self$`analysis_step_types`))) {
-          stop("Error! Items in `analysis_step_types` are not unique.")
-        }
       }
       if (!is.null(this_object$`step_label`)) {
         self$`step_label` <- this_object$`step_label`
@@ -413,21 +392,12 @@ AnalysisStep <- R6::R6Class(
       }
       if (!is.null(this_object$`parents`)) {
         self$`parents` <- ApiClient$new()$deserializeObj(this_object$`parents`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`parents`, unique(self$`parents`))) {
-          stop("Error! Items in `parents` are not unique.")
-        }
       }
       if (!is.null(this_object$`input_content_types`)) {
         self$`input_content_types` <- ApiClient$new()$deserializeObj(this_object$`input_content_types`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`input_content_types`, unique(self$`input_content_types`))) {
-          stop("Error! Items in `input_content_types` are not unique.")
-        }
       }
       if (!is.null(this_object$`output_content_types`)) {
         self$`output_content_types` <- ApiClient$new()$deserializeObj(this_object$`output_content_types`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`output_content_types`, unique(self$`output_content_types`))) {
-          stop("Error! Items in `output_content_types` are not unique.")
-        }
       }
       if (!is.null(this_object$`@id`)) {
         self$`@id` <- this_object$`@id`
@@ -661,32 +631,17 @@ AnalysisStep <- R6::R6Class(
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
       self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`aliases`, unique(self$`aliases`))) {
-        stop("Error! Items in `aliases` are not unique.")
-      }
       self$`creation_timestamp` <- this_object$`creation_timestamp`
       self$`submitted_by` <- this_object$`submitted_by`
       self$`submitter_comment` <- this_object$`submitter_comment`
       self$`description` <- this_object$`description`
       self$`analysis_step_types` <- ApiClient$new()$deserializeObj(this_object$`analysis_step_types`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`analysis_step_types`, unique(self$`analysis_step_types`))) {
-        stop("Error! Items in `analysis_step_types` are not unique.")
-      }
       self$`step_label` <- this_object$`step_label`
       self$`title` <- this_object$`title`
       self$`workflow` <- this_object$`workflow`
       self$`parents` <- ApiClient$new()$deserializeObj(this_object$`parents`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`parents`, unique(self$`parents`))) {
-        stop("Error! Items in `parents` are not unique.")
-      }
       self$`input_content_types` <- ApiClient$new()$deserializeObj(this_object$`input_content_types`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`input_content_types`, unique(self$`input_content_types`))) {
-        stop("Error! Items in `input_content_types` are not unique.")
-      }
       self$`output_content_types` <- ApiClient$new()$deserializeObj(this_object$`output_content_types`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`output_content_types`, unique(self$`output_content_types`))) {
-        stop("Error! Items in `output_content_types` are not unique.")
-      }
       self$`@id` <- this_object$`@id`
       self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`

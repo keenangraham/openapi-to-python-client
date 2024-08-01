@@ -152,9 +152,6 @@ Gene <- R6::R6Class(
       if (!is.null(`aliases`)) {
         stopifnot(is.vector(`aliases`), length(`aliases`) != 0)
         sapply(`aliases`, function(x) stopifnot(is.character(x)))
-        if (!identical(`aliases`, unique(`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
         self$`aliases` <- `aliases`
       }
       if (!is.null(`creation_timestamp`)) {
@@ -202,25 +199,16 @@ Gene <- R6::R6Class(
       if (!is.null(`synonyms`)) {
         stopifnot(is.vector(`synonyms`), length(`synonyms`) != 0)
         sapply(`synonyms`, function(x) stopifnot(is.character(x)))
-        if (!identical(`synonyms`, unique(`synonyms`))) {
-          stop("Error! Items in `synonyms` are not unique.")
-        }
         self$`synonyms` <- `synonyms`
       }
       if (!is.null(`dbxrefs`)) {
         stopifnot(is.vector(`dbxrefs`), length(`dbxrefs`) != 0)
         sapply(`dbxrefs`, function(x) stopifnot(is.character(x)))
-        if (!identical(`dbxrefs`, unique(`dbxrefs`))) {
-          stop("Error! Items in `dbxrefs` are not unique.")
-        }
         self$`dbxrefs` <- `dbxrefs`
       }
       if (!is.null(`locations`)) {
         stopifnot(is.vector(`locations`), length(`locations`) != 0)
         sapply(`locations`, function(x) stopifnot(R6::is.R6(x)))
-        if (!identical(`locations`, unique(`locations`))) {
-          stop("Error! Items in `locations` are not unique.")
-        }
         self$`locations` <- `locations`
       }
       if (!is.null(`version_number`)) {
@@ -417,9 +405,6 @@ Gene <- R6::R6Class(
       }
       if (!is.null(this_object$`aliases`)) {
         self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`aliases`, unique(self$`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
       }
       if (!is.null(this_object$`creation_timestamp`)) {
         self$`creation_timestamp` <- this_object$`creation_timestamp`
@@ -444,21 +429,12 @@ Gene <- R6::R6Class(
       }
       if (!is.null(this_object$`synonyms`)) {
         self$`synonyms` <- ApiClient$new()$deserializeObj(this_object$`synonyms`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`synonyms`, unique(self$`synonyms`))) {
-          stop("Error! Items in `synonyms` are not unique.")
-        }
       }
       if (!is.null(this_object$`dbxrefs`)) {
         self$`dbxrefs` <- ApiClient$new()$deserializeObj(this_object$`dbxrefs`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`dbxrefs`, unique(self$`dbxrefs`))) {
-          stop("Error! Items in `dbxrefs` are not unique.")
-        }
       }
       if (!is.null(this_object$`locations`)) {
         self$`locations` <- ApiClient$new()$deserializeObj(this_object$`locations`, "set[GeneLocation1]", loadNamespace("igvfclient"))
-        if (!identical(self$`locations`, unique(self$`locations`))) {
-          stop("Error! Items in `locations` are not unique.")
-        }
       }
       if (!is.null(this_object$`version_number`)) {
         self$`version_number` <- this_object$`version_number`
@@ -724,9 +700,6 @@ Gene <- R6::R6Class(
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
       self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`aliases`, unique(self$`aliases`))) {
-        stop("Error! Items in `aliases` are not unique.")
-      }
       self$`creation_timestamp` <- this_object$`creation_timestamp`
       self$`submitted_by` <- this_object$`submitted_by`
       self$`submitter_comment` <- this_object$`submitter_comment`
@@ -735,17 +708,8 @@ Gene <- R6::R6Class(
       self$`symbol` <- this_object$`symbol`
       self$`name` <- this_object$`name`
       self$`synonyms` <- ApiClient$new()$deserializeObj(this_object$`synonyms`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`synonyms`, unique(self$`synonyms`))) {
-        stop("Error! Items in `synonyms` are not unique.")
-      }
       self$`dbxrefs` <- ApiClient$new()$deserializeObj(this_object$`dbxrefs`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`dbxrefs`, unique(self$`dbxrefs`))) {
-        stop("Error! Items in `dbxrefs` are not unique.")
-      }
       self$`locations` <- ApiClient$new()$deserializeObj(this_object$`locations`, "set[GeneLocation1]", loadNamespace("igvfclient"))
-      if (!identical(self$`locations`, unique(self$`locations`))) {
-        stop("Error! Items in `locations` are not unique.")
-      }
       self$`version_number` <- this_object$`version_number`
       self$`@id` <- this_object$`@id`
       self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))

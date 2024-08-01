@@ -126,9 +126,6 @@ PlatformTerm <- R6::R6Class(
       if (!is.null(`aliases`)) {
         stopifnot(is.vector(`aliases`), length(`aliases`) != 0)
         sapply(`aliases`, function(x) stopifnot(is.character(x)))
-        if (!identical(`aliases`, unique(`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
         self$`aliases` <- `aliases`
       }
       if (!is.null(`creation_timestamp`)) {
@@ -170,17 +167,11 @@ PlatformTerm <- R6::R6Class(
       if (!is.null(`deprecated_ntr_terms`)) {
         stopifnot(is.vector(`deprecated_ntr_terms`), length(`deprecated_ntr_terms`) != 0)
         sapply(`deprecated_ntr_terms`, function(x) stopifnot(is.character(x)))
-        if (!identical(`deprecated_ntr_terms`, unique(`deprecated_ntr_terms`))) {
-          stop("Error! Items in `deprecated_ntr_terms` are not unique.")
-        }
         self$`deprecated_ntr_terms` <- `deprecated_ntr_terms`
       }
       if (!is.null(`is_a`)) {
         stopifnot(is.vector(`is_a`), length(`is_a`) != 0)
         sapply(`is_a`, function(x) stopifnot(is.character(x)))
-        if (!identical(`is_a`, unique(`is_a`))) {
-          stop("Error! Items in `is_a` are not unique.")
-        }
         self$`is_a` <- `is_a`
       }
       if (!is.null(`company`)) {
@@ -195,9 +186,6 @@ PlatformTerm <- R6::R6Class(
       if (!is.null(`sequencing_kits`)) {
         stopifnot(is.vector(`sequencing_kits`), length(`sequencing_kits`) != 0)
         sapply(`sequencing_kits`, function(x) stopifnot(is.character(x)))
-        if (!identical(`sequencing_kits`, unique(`sequencing_kits`))) {
-          stop("Error! Items in `sequencing_kits` are not unique.")
-        }
         self$`sequencing_kits` <- `sequencing_kits`
       }
       if (!is.null(`@id`)) {
@@ -226,17 +214,11 @@ PlatformTerm <- R6::R6Class(
       if (!is.null(`synonyms`)) {
         stopifnot(is.vector(`synonyms`), length(`synonyms`) != 0)
         sapply(`synonyms`, function(x) stopifnot(is.character(x)))
-        if (!identical(`synonyms`, unique(`synonyms`))) {
-          stop("Error! Items in `synonyms` are not unique.")
-        }
         self$`synonyms` <- `synonyms`
       }
       if (!is.null(`ancestors`)) {
         stopifnot(is.vector(`ancestors`), length(`ancestors`) != 0)
         sapply(`ancestors`, function(x) stopifnot(is.character(x)))
-        if (!identical(`ancestors`, unique(`ancestors`))) {
-          stop("Error! Items in `ancestors` are not unique.")
-        }
         self$`ancestors` <- `ancestors`
       }
       if (!is.null(`ontology`)) {
@@ -379,9 +361,6 @@ PlatformTerm <- R6::R6Class(
       }
       if (!is.null(this_object$`aliases`)) {
         self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`aliases`, unique(self$`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
       }
       if (!is.null(this_object$`creation_timestamp`)) {
         self$`creation_timestamp` <- this_object$`creation_timestamp`
@@ -403,15 +382,9 @@ PlatformTerm <- R6::R6Class(
       }
       if (!is.null(this_object$`deprecated_ntr_terms`)) {
         self$`deprecated_ntr_terms` <- ApiClient$new()$deserializeObj(this_object$`deprecated_ntr_terms`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`deprecated_ntr_terms`, unique(self$`deprecated_ntr_terms`))) {
-          stop("Error! Items in `deprecated_ntr_terms` are not unique.")
-        }
       }
       if (!is.null(this_object$`is_a`)) {
         self$`is_a` <- ApiClient$new()$deserializeObj(this_object$`is_a`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`is_a`, unique(self$`is_a`))) {
-          stop("Error! Items in `is_a` are not unique.")
-        }
       }
       if (!is.null(this_object$`company`)) {
         if (!is.null(this_object$`company`) && !(this_object$`company` %in% c("10X Genomics", "Illumina", "Life Technologies", "Oxford Nanopore Technologies", "Pacific Biosciences", "Parse Biosciences", "Roche"))) {
@@ -421,9 +394,6 @@ PlatformTerm <- R6::R6Class(
       }
       if (!is.null(this_object$`sequencing_kits`)) {
         self$`sequencing_kits` <- ApiClient$new()$deserializeObj(this_object$`sequencing_kits`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`sequencing_kits`, unique(self$`sequencing_kits`))) {
-          stop("Error! Items in `sequencing_kits` are not unique.")
-        }
       }
       if (!is.null(this_object$`@id`)) {
         self$`@id` <- this_object$`@id`
@@ -439,15 +409,9 @@ PlatformTerm <- R6::R6Class(
       }
       if (!is.null(this_object$`synonyms`)) {
         self$`synonyms` <- ApiClient$new()$deserializeObj(this_object$`synonyms`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`synonyms`, unique(self$`synonyms`))) {
-          stop("Error! Items in `synonyms` are not unique.")
-        }
       }
       if (!is.null(this_object$`ancestors`)) {
         self$`ancestors` <- ApiClient$new()$deserializeObj(this_object$`ancestors`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`ancestors`, unique(self$`ancestors`))) {
-          stop("Error! Items in `ancestors` are not unique.")
-        }
       }
       if (!is.null(this_object$`ontology`)) {
         self$`ontology` <- this_object$`ontology`
@@ -670,9 +634,6 @@ PlatformTerm <- R6::R6Class(
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
       self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`aliases`, unique(self$`aliases`))) {
-        stop("Error! Items in `aliases` are not unique.")
-      }
       self$`creation_timestamp` <- this_object$`creation_timestamp`
       self$`submitted_by` <- this_object$`submitted_by`
       self$`submitter_comment` <- this_object$`submitter_comment`
@@ -680,33 +641,18 @@ PlatformTerm <- R6::R6Class(
       self$`term_id` <- this_object$`term_id`
       self$`term_name` <- this_object$`term_name`
       self$`deprecated_ntr_terms` <- ApiClient$new()$deserializeObj(this_object$`deprecated_ntr_terms`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`deprecated_ntr_terms`, unique(self$`deprecated_ntr_terms`))) {
-        stop("Error! Items in `deprecated_ntr_terms` are not unique.")
-      }
       self$`is_a` <- ApiClient$new()$deserializeObj(this_object$`is_a`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`is_a`, unique(self$`is_a`))) {
-        stop("Error! Items in `is_a` are not unique.")
-      }
       if (!is.null(this_object$`company`) && !(this_object$`company` %in% c("10X Genomics", "Illumina", "Life Technologies", "Oxford Nanopore Technologies", "Pacific Biosciences", "Parse Biosciences", "Roche"))) {
         stop(paste("Error! \"", this_object$`company`, "\" cannot be assigned to `company`. Must be \"10X Genomics\", \"Illumina\", \"Life Technologies\", \"Oxford Nanopore Technologies\", \"Pacific Biosciences\", \"Parse Biosciences\", \"Roche\".", sep = ""))
       }
       self$`company` <- this_object$`company`
       self$`sequencing_kits` <- ApiClient$new()$deserializeObj(this_object$`sequencing_kits`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`sequencing_kits`, unique(self$`sequencing_kits`))) {
-        stop("Error! Items in `sequencing_kits` are not unique.")
-      }
       self$`@id` <- this_object$`@id`
       self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
       self$`name` <- this_object$`name`
       self$`synonyms` <- ApiClient$new()$deserializeObj(this_object$`synonyms`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`synonyms`, unique(self$`synonyms`))) {
-        stop("Error! Items in `synonyms` are not unique.")
-      }
       self$`ancestors` <- ApiClient$new()$deserializeObj(this_object$`ancestors`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`ancestors`, unique(self$`ancestors`))) {
-        stop("Error! Items in `ancestors` are not unique.")
-      }
       self$`ontology` <- this_object$`ontology`
       self
     },

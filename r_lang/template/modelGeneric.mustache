@@ -113,11 +113,6 @@
         stopifnot(is.vector(`{{name}}`), length(`{{name}}`) != 0)
         sapply(`{{name}}`, function(x) stopifnot({{#isPrimitiveType}}is.character(x){{/isPrimitiveType}}{{^isPrimitiveType}}R6::is.R6(x){{/isPrimitiveType}}))
         {{#isArray}}
-        {{#uniqueItems}}
-        if (!identical(`{{name}}`, unique(`{{name}}`))) {
-          stop("Error! Items in `{{name}}` are not unique.")
-        }
-        {{/uniqueItems}}
         {{/isArray}}
         {{/isContainer}}
         self$`{{name}}` <- `{{name}}`
@@ -185,11 +180,6 @@
         stopifnot(is.vector(`{{name}}`), length(`{{name}}`) != 0)
         sapply(`{{name}}`, function(x) stopifnot({{#isPrimitiveType}}is.character(x){{/isPrimitiveType}}{{^isPrimitiveType}}R6::is.R6(x){{/isPrimitiveType}}))
         {{#isArray}}
-        {{#uniqueItems}}
-        if (!identical(`{{name}}`, unique(`{{name}}`))) {
-          stop("Error! Items in `{{name}}` are not unique.")
-        }
-        {{/uniqueItems}}
         {{/isArray}}
         {{/isContainer}}
         self$`{{name}}` <- `{{name}}`
@@ -266,11 +256,6 @@
         {{#isContainer}}
         self$`{{name}}` <- ApiClient$new()$deserializeObj(this_object$`{{baseName}}`, "{{dataType}}", loadNamespace("{{packageName}}"))
         {{#isArray}}
-        {{#uniqueItems}}
-        if (!identical(self$`{{name}}`, unique(self$`{{name}}`))) {
-          stop("Error! Items in `{{name}}` are not unique.")
-        }
-        {{/uniqueItems}}
         {{/isArray}}
         {{/isContainer}}
         {{^isContainer}}
@@ -398,11 +383,6 @@
       {{#isContainer}}
       self$`{{name}}` <- ApiClient$new()$deserializeObj(this_object$`{{name}}`, "{{dataType}}", loadNamespace("{{packageName}}"))
       {{#isArray}}
-      {{#uniqueItems}}
-      if (!identical(self$`{{name}}`, unique(self$`{{name}}`))) {
-        stop("Error! Items in `{{name}}` are not unique.")
-      }
-      {{/uniqueItems}}
       {{/isArray}}
       {{/isContainer}}
       {{^isContainer}}
@@ -502,11 +482,6 @@
         {{#isContainer}}
         stopifnot(is.vector(input_json$`{{name}}`), length(input_json$`{{name}}`) != 0)
         {{#isArray}}
-        {{#uniqueItems}}
-        if (!identical(input_json$`{{name}}`, unique(input_json$`{{name}}`))) {
-          stop("Error! Items in `{{name}}` are not unique.")
-        }
-        {{/uniqueItems}}
         {{/isArray}}
         tmp <- sapply(input_json$`{{name}}`, function(x) stopifnot({{#isPrimitiveType}}is.character(x){{/isPrimitiveType}}{{^isPrimitiveType}}R6::is.R6(x){{/isPrimitiveType}}))
         {{/isContainer}}

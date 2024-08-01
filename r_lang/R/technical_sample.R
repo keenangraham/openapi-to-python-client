@@ -174,17 +174,11 @@ TechnicalSample <- R6::R6Class(
       if (!is.null(`publications`)) {
         stopifnot(is.vector(`publications`), length(`publications`) != 0)
         sapply(`publications`, function(x) stopifnot(is.character(x)))
-        if (!identical(`publications`, unique(`publications`))) {
-          stop("Error! Items in `publications` are not unique.")
-        }
         self$`publications` <- `publications`
       }
       if (!is.null(`publication_identifiers`)) {
         stopifnot(is.vector(`publication_identifiers`), length(`publication_identifiers`) != 0)
         sapply(`publication_identifiers`, function(x) stopifnot(is.character(x)))
-        if (!identical(`publication_identifiers`, unique(`publication_identifiers`))) {
-          stop("Error! Items in `publication_identifiers` are not unique.")
-        }
         self$`publication_identifiers` <- `publication_identifiers`
       }
       if (!is.null(`url`)) {
@@ -196,9 +190,6 @@ TechnicalSample <- R6::R6Class(
       if (!is.null(`sources`)) {
         stopifnot(is.vector(`sources`), length(`sources`) != 0)
         sapply(`sources`, function(x) stopifnot(is.character(x)))
-        if (!identical(`sources`, unique(`sources`))) {
-          stop("Error! Items in `sources` are not unique.")
-        }
         self$`sources` <- `sources`
       }
       if (!is.null(`lot_id`)) {
@@ -216,9 +207,6 @@ TechnicalSample <- R6::R6Class(
       if (!is.null(`documents`)) {
         stopifnot(is.vector(`documents`), length(`documents`) != 0)
         sapply(`documents`, function(x) stopifnot(is.character(x)))
-        if (!identical(`documents`, unique(`documents`))) {
-          stop("Error! Items in `documents` are not unique.")
-        }
         self$`documents` <- `documents`
       }
       if (!is.null(`lab`)) {
@@ -242,17 +230,11 @@ TechnicalSample <- R6::R6Class(
       if (!is.null(`alternate_accessions`)) {
         stopifnot(is.vector(`alternate_accessions`), length(`alternate_accessions`) != 0)
         sapply(`alternate_accessions`, function(x) stopifnot(is.character(x)))
-        if (!identical(`alternate_accessions`, unique(`alternate_accessions`))) {
-          stop("Error! Items in `alternate_accessions` are not unique.")
-        }
         self$`alternate_accessions` <- `alternate_accessions`
       }
       if (!is.null(`collections`)) {
         stopifnot(is.vector(`collections`), length(`collections`) != 0)
         sapply(`collections`, function(x) stopifnot(is.character(x)))
-        if (!identical(`collections`, unique(`collections`))) {
-          stop("Error! Items in `collections` are not unique.")
-        }
         self$`collections` <- `collections`
       }
       if (!is.null(`status`)) {
@@ -291,9 +273,6 @@ TechnicalSample <- R6::R6Class(
       if (!is.null(`aliases`)) {
         stopifnot(is.vector(`aliases`), length(`aliases`) != 0)
         sapply(`aliases`, function(x) stopifnot(is.character(x)))
-        if (!identical(`aliases`, unique(`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
         self$`aliases` <- `aliases`
       }
       if (!is.null(`creation_timestamp`)) {
@@ -335,9 +314,6 @@ TechnicalSample <- R6::R6Class(
       if (!is.null(`dbxrefs`)) {
         stopifnot(is.vector(`dbxrefs`), length(`dbxrefs`) != 0)
         sapply(`dbxrefs`, function(x) stopifnot(is.character(x)))
-        if (!identical(`dbxrefs`, unique(`dbxrefs`))) {
-          stop("Error! Items in `dbxrefs` are not unique.")
-        }
         self$`dbxrefs` <- `dbxrefs`
       }
       if (!is.null(`date_obtained`)) {
@@ -367,9 +343,6 @@ TechnicalSample <- R6::R6Class(
       if (!is.null(`construct_library_sets`)) {
         stopifnot(is.vector(`construct_library_sets`), length(`construct_library_sets`) != 0)
         sapply(`construct_library_sets`, function(x) stopifnot(is.character(x)))
-        if (!identical(`construct_library_sets`, unique(`construct_library_sets`))) {
-          stop("Error! Items in `construct_library_sets` are not unique.")
-        }
         self$`construct_library_sets` <- `construct_library_sets`
       }
       if (!is.null(`moi`)) {
@@ -399,9 +372,6 @@ TechnicalSample <- R6::R6Class(
       if (!is.null(`protocols`)) {
         stopifnot(is.vector(`protocols`), length(`protocols`) != 0)
         sapply(`protocols`, function(x) stopifnot(is.character(x)))
-        if (!identical(`protocols`, unique(`protocols`))) {
-          stop("Error! Items in `protocols` are not unique.")
-        }
         self$`protocols` <- `protocols`
       }
       if (!is.null(`sample_material`)) {
@@ -425,9 +395,6 @@ TechnicalSample <- R6::R6Class(
       if (!is.null(`sample_terms`)) {
         stopifnot(is.vector(`sample_terms`), length(`sample_terms`) != 0)
         sapply(`sample_terms`, function(x) stopifnot(is.character(x)))
-        if (!identical(`sample_terms`, unique(`sample_terms`))) {
-          stop("Error! Items in `sample_terms` are not unique.")
-        }
         self$`sample_terms` <- `sample_terms`
       }
       if (!is.null(`@id`)) {
@@ -450,49 +417,31 @@ TechnicalSample <- R6::R6Class(
       if (!is.null(`file_sets`)) {
         stopifnot(is.vector(`file_sets`), length(`file_sets`) != 0)
         sapply(`file_sets`, function(x) stopifnot(is.character(x)))
-        if (!identical(`file_sets`, unique(`file_sets`))) {
-          stop("Error! Items in `file_sets` are not unique.")
-        }
         self$`file_sets` <- `file_sets`
       }
       if (!is.null(`multiplexed_in`)) {
         stopifnot(is.vector(`multiplexed_in`), length(`multiplexed_in`) != 0)
         sapply(`multiplexed_in`, function(x) stopifnot(is.character(x)))
-        if (!identical(`multiplexed_in`, unique(`multiplexed_in`))) {
-          stop("Error! Items in `multiplexed_in` are not unique.")
-        }
         self$`multiplexed_in` <- `multiplexed_in`
       }
       if (!is.null(`sorted_fractions`)) {
         stopifnot(is.vector(`sorted_fractions`), length(`sorted_fractions`) != 0)
         sapply(`sorted_fractions`, function(x) stopifnot(is.character(x)))
-        if (!identical(`sorted_fractions`, unique(`sorted_fractions`))) {
-          stop("Error! Items in `sorted_fractions` are not unique.")
-        }
         self$`sorted_fractions` <- `sorted_fractions`
       }
       if (!is.null(`origin_of`)) {
         stopifnot(is.vector(`origin_of`), length(`origin_of`) != 0)
         sapply(`origin_of`, function(x) stopifnot(is.character(x)))
-        if (!identical(`origin_of`, unique(`origin_of`))) {
-          stop("Error! Items in `origin_of` are not unique.")
-        }
         self$`origin_of` <- `origin_of`
       }
       if (!is.null(`institutional_certificates`)) {
         stopifnot(is.vector(`institutional_certificates`), length(`institutional_certificates`) != 0)
         sapply(`institutional_certificates`, function(x) stopifnot(is.character(x)))
-        if (!identical(`institutional_certificates`, unique(`institutional_certificates`))) {
-          stop("Error! Items in `institutional_certificates` are not unique.")
-        }
         self$`institutional_certificates` <- `institutional_certificates`
       }
       if (!is.null(`classifications`)) {
         stopifnot(is.vector(`classifications`), length(`classifications`) != 0)
         sapply(`classifications`, function(x) stopifnot(is.character(x)))
-        if (!identical(`classifications`, unique(`classifications`))) {
-          stop("Error! Items in `classifications` are not unique.")
-        }
         self$`classifications` <- `classifications`
       }
     },
@@ -714,24 +663,15 @@ TechnicalSample <- R6::R6Class(
       }
       if (!is.null(this_object$`publications`)) {
         self$`publications` <- ApiClient$new()$deserializeObj(this_object$`publications`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`publications`, unique(self$`publications`))) {
-          stop("Error! Items in `publications` are not unique.")
-        }
       }
       if (!is.null(this_object$`publication_identifiers`)) {
         self$`publication_identifiers` <- ApiClient$new()$deserializeObj(this_object$`publication_identifiers`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`publication_identifiers`, unique(self$`publication_identifiers`))) {
-          stop("Error! Items in `publication_identifiers` are not unique.")
-        }
       }
       if (!is.null(this_object$`url`)) {
         self$`url` <- this_object$`url`
       }
       if (!is.null(this_object$`sources`)) {
         self$`sources` <- ApiClient$new()$deserializeObj(this_object$`sources`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`sources`, unique(self$`sources`))) {
-          stop("Error! Items in `sources` are not unique.")
-        }
       }
       if (!is.null(this_object$`lot_id`)) {
         self$`lot_id` <- this_object$`lot_id`
@@ -741,9 +681,6 @@ TechnicalSample <- R6::R6Class(
       }
       if (!is.null(this_object$`documents`)) {
         self$`documents` <- ApiClient$new()$deserializeObj(this_object$`documents`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`documents`, unique(self$`documents`))) {
-          stop("Error! Items in `documents` are not unique.")
-        }
       }
       if (!is.null(this_object$`lab`)) {
         self$`lab` <- this_object$`lab`
@@ -756,15 +693,9 @@ TechnicalSample <- R6::R6Class(
       }
       if (!is.null(this_object$`alternate_accessions`)) {
         self$`alternate_accessions` <- ApiClient$new()$deserializeObj(this_object$`alternate_accessions`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`alternate_accessions`, unique(self$`alternate_accessions`))) {
-          stop("Error! Items in `alternate_accessions` are not unique.")
-        }
       }
       if (!is.null(this_object$`collections`)) {
         self$`collections` <- ApiClient$new()$deserializeObj(this_object$`collections`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`collections`, unique(self$`collections`))) {
-          stop("Error! Items in `collections` are not unique.")
-        }
       }
       if (!is.null(this_object$`status`)) {
         if (!is.null(this_object$`status`) && !(this_object$`status` %in% c("in progress", "released", "deleted", "replaced", "revoked", "archived"))) {
@@ -786,9 +717,6 @@ TechnicalSample <- R6::R6Class(
       }
       if (!is.null(this_object$`aliases`)) {
         self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`aliases`, unique(self$`aliases`))) {
-          stop("Error! Items in `aliases` are not unique.")
-        }
       }
       if (!is.null(this_object$`creation_timestamp`)) {
         self$`creation_timestamp` <- this_object$`creation_timestamp`
@@ -813,9 +741,6 @@ TechnicalSample <- R6::R6Class(
       }
       if (!is.null(this_object$`dbxrefs`)) {
         self$`dbxrefs` <- ApiClient$new()$deserializeObj(this_object$`dbxrefs`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`dbxrefs`, unique(self$`dbxrefs`))) {
-          stop("Error! Items in `dbxrefs` are not unique.")
-        }
       }
       if (!is.null(this_object$`date_obtained`)) {
         self$`date_obtained` <- this_object$`date_obtained`
@@ -831,9 +756,6 @@ TechnicalSample <- R6::R6Class(
       }
       if (!is.null(this_object$`construct_library_sets`)) {
         self$`construct_library_sets` <- ApiClient$new()$deserializeObj(this_object$`construct_library_sets`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`construct_library_sets`, unique(self$`construct_library_sets`))) {
-          stop("Error! Items in `construct_library_sets` are not unique.")
-        }
       }
       if (!is.null(this_object$`moi`)) {
         self$`moi` <- this_object$`moi`
@@ -855,9 +777,6 @@ TechnicalSample <- R6::R6Class(
       }
       if (!is.null(this_object$`protocols`)) {
         self$`protocols` <- ApiClient$new()$deserializeObj(this_object$`protocols`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`protocols`, unique(self$`protocols`))) {
-          stop("Error! Items in `protocols` are not unique.")
-        }
       }
       if (!is.null(this_object$`sample_material`)) {
         if (!is.null(this_object$`sample_material`) && !(this_object$`sample_material` %in% c("undefined", "inorganic", "synthetic", "organic"))) {
@@ -873,9 +792,6 @@ TechnicalSample <- R6::R6Class(
       }
       if (!is.null(this_object$`sample_terms`)) {
         self$`sample_terms` <- ApiClient$new()$deserializeObj(this_object$`sample_terms`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`sample_terms`, unique(self$`sample_terms`))) {
-          stop("Error! Items in `sample_terms` are not unique.")
-        }
       }
       if (!is.null(this_object$`@id`)) {
         self$`@id` <- this_object$`@id`
@@ -888,39 +804,21 @@ TechnicalSample <- R6::R6Class(
       }
       if (!is.null(this_object$`file_sets`)) {
         self$`file_sets` <- ApiClient$new()$deserializeObj(this_object$`file_sets`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`file_sets`, unique(self$`file_sets`))) {
-          stop("Error! Items in `file_sets` are not unique.")
-        }
       }
       if (!is.null(this_object$`multiplexed_in`)) {
         self$`multiplexed_in` <- ApiClient$new()$deserializeObj(this_object$`multiplexed_in`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`multiplexed_in`, unique(self$`multiplexed_in`))) {
-          stop("Error! Items in `multiplexed_in` are not unique.")
-        }
       }
       if (!is.null(this_object$`sorted_fractions`)) {
         self$`sorted_fractions` <- ApiClient$new()$deserializeObj(this_object$`sorted_fractions`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`sorted_fractions`, unique(self$`sorted_fractions`))) {
-          stop("Error! Items in `sorted_fractions` are not unique.")
-        }
       }
       if (!is.null(this_object$`origin_of`)) {
         self$`origin_of` <- ApiClient$new()$deserializeObj(this_object$`origin_of`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`origin_of`, unique(self$`origin_of`))) {
-          stop("Error! Items in `origin_of` are not unique.")
-        }
       }
       if (!is.null(this_object$`institutional_certificates`)) {
         self$`institutional_certificates` <- ApiClient$new()$deserializeObj(this_object$`institutional_certificates`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`institutional_certificates`, unique(self$`institutional_certificates`))) {
-          stop("Error! Items in `institutional_certificates` are not unique.")
-        }
       }
       if (!is.null(this_object$`classifications`)) {
         self$`classifications` <- ApiClient$new()$deserializeObj(this_object$`classifications`, "set[character]", loadNamespace("igvfclient"))
-        if (!identical(self$`classifications`, unique(self$`classifications`))) {
-          stop("Error! Items in `classifications` are not unique.")
-        }
       }
       self
     },
@@ -1333,35 +1231,17 @@ TechnicalSample <- R6::R6Class(
       this_object <- jsonlite::fromJSON(input_json)
       self$`release_timestamp` <- this_object$`release_timestamp`
       self$`publications` <- ApiClient$new()$deserializeObj(this_object$`publications`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`publications`, unique(self$`publications`))) {
-        stop("Error! Items in `publications` are not unique.")
-      }
       self$`publication_identifiers` <- ApiClient$new()$deserializeObj(this_object$`publication_identifiers`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`publication_identifiers`, unique(self$`publication_identifiers`))) {
-        stop("Error! Items in `publication_identifiers` are not unique.")
-      }
       self$`url` <- this_object$`url`
       self$`sources` <- ApiClient$new()$deserializeObj(this_object$`sources`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`sources`, unique(self$`sources`))) {
-        stop("Error! Items in `sources` are not unique.")
-      }
       self$`lot_id` <- this_object$`lot_id`
       self$`product_id` <- this_object$`product_id`
       self$`documents` <- ApiClient$new()$deserializeObj(this_object$`documents`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`documents`, unique(self$`documents`))) {
-        stop("Error! Items in `documents` are not unique.")
-      }
       self$`lab` <- this_object$`lab`
       self$`award` <- this_object$`award`
       self$`accession` <- this_object$`accession`
       self$`alternate_accessions` <- ApiClient$new()$deserializeObj(this_object$`alternate_accessions`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`alternate_accessions`, unique(self$`alternate_accessions`))) {
-        stop("Error! Items in `alternate_accessions` are not unique.")
-      }
       self$`collections` <- ApiClient$new()$deserializeObj(this_object$`collections`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`collections`, unique(self$`collections`))) {
-        stop("Error! Items in `collections` are not unique.")
-      }
       if (!is.null(this_object$`status`) && !(this_object$`status` %in% c("in progress", "released", "deleted", "replaced", "revoked", "archived"))) {
         stop(paste("Error! \"", this_object$`status`, "\" cannot be assigned to `status`. Must be \"in progress\", \"released\", \"deleted\", \"replaced\", \"revoked\", \"archived\".", sep = ""))
       }
@@ -1371,9 +1251,6 @@ TechnicalSample <- R6::R6Class(
       self$`uuid` <- this_object$`uuid`
       self$`notes` <- this_object$`notes`
       self$`aliases` <- ApiClient$new()$deserializeObj(this_object$`aliases`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`aliases`, unique(self$`aliases`))) {
-        stop("Error! Items in `aliases` are not unique.")
-      }
       self$`creation_timestamp` <- this_object$`creation_timestamp`
       self$`submitted_by` <- this_object$`submitted_by`
       self$`submitter_comment` <- this_object$`submitter_comment`
@@ -1384,17 +1261,11 @@ TechnicalSample <- R6::R6Class(
       }
       self$`starting_amount_units` <- this_object$`starting_amount_units`
       self$`dbxrefs` <- ApiClient$new()$deserializeObj(this_object$`dbxrefs`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`dbxrefs`, unique(self$`dbxrefs`))) {
-        stop("Error! Items in `dbxrefs` are not unique.")
-      }
       self$`date_obtained` <- this_object$`date_obtained`
       self$`sorted_from` <- this_object$`sorted_from`
       self$`sorted_from_detail` <- this_object$`sorted_from_detail`
       self$`virtual` <- this_object$`virtual`
       self$`construct_library_sets` <- ApiClient$new()$deserializeObj(this_object$`construct_library_sets`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`construct_library_sets`, unique(self$`construct_library_sets`))) {
-        stop("Error! Items in `construct_library_sets` are not unique.")
-      }
       self$`moi` <- this_object$`moi`
       if (!is.null(this_object$`nucleic_acid_delivery`) && !(this_object$`nucleic_acid_delivery` %in% c("transfection", "adenoviral transduction", "lentiviral transduction"))) {
         stop(paste("Error! \"", this_object$`nucleic_acid_delivery`, "\" cannot be assigned to `nucleic_acid_delivery`. Must be \"transfection\", \"adenoviral transduction\", \"lentiviral transduction\".", sep = ""))
@@ -1406,9 +1277,6 @@ TechnicalSample <- R6::R6Class(
       }
       self$`time_post_library_delivery_units` <- this_object$`time_post_library_delivery_units`
       self$`protocols` <- ApiClient$new()$deserializeObj(this_object$`protocols`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`protocols`, unique(self$`protocols`))) {
-        stop("Error! Items in `protocols` are not unique.")
-      }
       if (!is.null(this_object$`sample_material`) && !(this_object$`sample_material` %in% c("undefined", "inorganic", "synthetic", "organic"))) {
         stop(paste("Error! \"", this_object$`sample_material`, "\" cannot be assigned to `sample_material`. Must be \"undefined\", \"inorganic\", \"synthetic\", \"organic\".", sep = ""))
       }
@@ -1418,36 +1286,15 @@ TechnicalSample <- R6::R6Class(
       }
       self$`taxa` <- this_object$`taxa`
       self$`sample_terms` <- ApiClient$new()$deserializeObj(this_object$`sample_terms`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`sample_terms`, unique(self$`sample_terms`))) {
-        stop("Error! Items in `sample_terms` are not unique.")
-      }
       self$`@id` <- this_object$`@id`
       self$`@type` <- ApiClient$new()$deserializeObj(this_object$`@type`, "array[character]", loadNamespace("igvfclient"))
       self$`summary` <- this_object$`summary`
       self$`file_sets` <- ApiClient$new()$deserializeObj(this_object$`file_sets`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`file_sets`, unique(self$`file_sets`))) {
-        stop("Error! Items in `file_sets` are not unique.")
-      }
       self$`multiplexed_in` <- ApiClient$new()$deserializeObj(this_object$`multiplexed_in`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`multiplexed_in`, unique(self$`multiplexed_in`))) {
-        stop("Error! Items in `multiplexed_in` are not unique.")
-      }
       self$`sorted_fractions` <- ApiClient$new()$deserializeObj(this_object$`sorted_fractions`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`sorted_fractions`, unique(self$`sorted_fractions`))) {
-        stop("Error! Items in `sorted_fractions` are not unique.")
-      }
       self$`origin_of` <- ApiClient$new()$deserializeObj(this_object$`origin_of`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`origin_of`, unique(self$`origin_of`))) {
-        stop("Error! Items in `origin_of` are not unique.")
-      }
       self$`institutional_certificates` <- ApiClient$new()$deserializeObj(this_object$`institutional_certificates`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`institutional_certificates`, unique(self$`institutional_certificates`))) {
-        stop("Error! Items in `institutional_certificates` are not unique.")
-      }
       self$`classifications` <- ApiClient$new()$deserializeObj(this_object$`classifications`, "set[character]", loadNamespace("igvfclient"))
-      if (!identical(self$`classifications`, unique(self$`classifications`))) {
-        stop("Error! Items in `classifications` are not unique.")
-      }
       self
     },
     #' Validate JSON input with respect to TechnicalSample
