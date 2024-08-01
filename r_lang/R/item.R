@@ -211,9 +211,19 @@ Item <- R6::R6Class(
       error_messages <- list()
       instance <- NULL
 
+      print("AT START OF DISCRIMINATOR LOOKUP")
+      print((jsonlite::fromJSON(input, simplifyVector = FALSE))[[1]]$`@type`[[1]])
+      pkg_env <- loadNamespace("igvfclient")
       oneof_lookup_result <- tryCatch({
-          discriminatorValue <- (jsonlite::fromJSON(input, simplifyVector = FALSE))$`@type`
+          print("Parsing")
+          parsedJson <- jsonlite::fromJSON(input, simplifyVector = FALSE)
+          print(parsedJson)
+          print("loading")
+          discriminatorValue <- parsedJson[[1]]$`@type`[[1]]
+          print("discriminator value is type:")
+          print(discriminatorValue)
           if (is.null(discriminatorValue)) { # throw error if it's null
+            print("OH NO NULL STOPPING!")
             stop("Error! The value of the discriminator property `@type`, which should be the class type, is null")
           }
           switch(discriminatorValue,
@@ -576,7 +586,9 @@ Item <- R6::R6Class(
           })},
           error = function(err) err
       )
+      print("FELL THROUGH DISCR LOOKUP WIHTOUT RETURNING")
       if (!is.null(oneof_lookup_result["error"])) {
+        print(error_messages)
         error_messages <- append(error_messages, sprintf("Failed to lookup discriminator value for Item. Error message: %s. JSON input: %s", oneof_lookup_result["message"], input))
       }
 
@@ -1351,7 +1363,7 @@ Item <- R6::R6Class(
         self$actual_type <- instance_type
       } else if (matched > 1) {
         # more than 1 match
-        stop(paste("Multiple matches found when deserializing the input into Item with oneOf schemas AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, DegronModification, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Matched schemas: ",
+        stop(paste(error_messages, collapse = " >> "), paste("Multiple matches found when deserializing the input into Item with oneOf schemas AccessKey, AlignmentFile, AnalysisSet, AnalysisStep, AnalysisStepVersion, AssayTerm, AuxiliarySet, Award, Biomarker, ConfigurationFile, ConstructLibrarySet, CrisprModification, CuratedSet, DegronModification, Document, Gene, GenomeBrowserAnnotationFile, HumanDonor, Image, ImageFile, InVitroSystem, InstitutionalCertificate, Lab, MatrixFile, MeasurementSet, ModelFile, ModelSet, MultiplexedSample, OpenReadingFrame, Page, PhenotypeTerm, PhenotypicFeature, PlatformTerm, PredictionSet, PrimaryCell, Publication, ReferenceFile, RodentDonor, SampleTerm, SequenceFile, SignalFile, Software, SoftwareVersion, Source, TabularFile, TechnicalSample, Tissue, Treatment, User, WholeOrganism, Workflow. Matched schemas: ",
                    paste(matched_schemas, collapse = ", ")))
       } else {
         # no match

@@ -97,7 +97,7 @@ PredictionSet <- R6::R6Class(
         self$actual_type <- instance_type
       } else if (matched > 1) {
         # more than 1 match
-        stop(paste("Multiple matches found when deserializing the input into PredictionSet with oneOf schemas AnyType. Matched schemas: ",
+        stop(paste(error_messages, collapse = " >> "), paste("Multiple matches found when deserializing the input into PredictionSet with oneOf schemas AnyType. Matched schemas: ",
                    paste(matched_schemas, collapse = ", ")))
       } else {
         # no match

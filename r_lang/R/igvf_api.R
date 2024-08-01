@@ -8165,9 +8165,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "AccessKeyResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "AccessKeyResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -8697,9 +8699,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "AlignmentFileResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "AlignmentFileResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -9479,9 +9483,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "AnalysisSetResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "AnalysisSetResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -9767,9 +9773,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "AnalysisStepVersionResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "AnalysisStepVersionResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -10107,9 +10115,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "AnalysisStepResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "AnalysisStepResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -10427,9 +10437,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "AssayTermResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "AssayTermResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -11217,9 +11229,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "AuxiliarySetResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "AuxiliarySetResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -11521,9 +11535,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "AwardResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "AwardResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -11633,9 +11649,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "character"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "character", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -11961,9 +11979,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "BiomarkerResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "BiomarkerResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -12429,9 +12449,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "ConfigurationFileResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "ConfigurationFileResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -13221,9 +13243,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "ConstructLibrarySetResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "ConstructLibrarySetResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -13597,9 +13621,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "CrisprModificationResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "CrisprModificationResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -14371,9 +14397,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "CuratedSetResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "CuratedSetResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -14723,9 +14751,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "DegronModificationResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "DegronModificationResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -15011,9 +15041,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "DocumentResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "DocumentResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -15112,9 +15144,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "data.frame"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "data.frame", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -15428,9 +15462,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "GeneResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "GeneResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -15924,9 +15960,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "GenomeBrowserAnnotationFileResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "GenomeBrowserAnnotationFileResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -16037,9 +16075,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "Item"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "Item", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -16489,9 +16529,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "HumanDonorResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "HumanDonorResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -16949,9 +16991,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "ImageFileResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "ImageFileResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -17193,9 +17237,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "ImageResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "ImageResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -18177,9 +18223,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "InVitroSystemResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "InVitroSystemResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -18489,9 +18537,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "InstitutionalCertificateResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "InstitutionalCertificateResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -18769,9 +18819,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "LabResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "LabResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -19269,9 +19321,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "MatrixFileResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "MatrixFileResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -20340,9 +20394,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "MeasurementSetResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "MeasurementSetResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -20816,9 +20872,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "ModelFileResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "ModelFileResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -21638,9 +21696,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "ModelSetResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "ModelSetResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -22446,9 +22506,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "MultiplexedSampleResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "MultiplexedSampleResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -22746,9 +22808,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "OpenReadingFrameResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "OpenReadingFrameResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -23014,9 +23078,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "PageResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "PageResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -23298,9 +23364,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "PhenotypeTermResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "PhenotypeTermResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -23606,9 +23674,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "PhenotypicFeatureResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "PhenotypicFeatureResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -23914,9 +23984,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "PlatformTermResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "PlatformTermResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -24792,9 +24864,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "PredictionSetResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "PredictionSetResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -25648,9 +25722,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "PrimaryCellResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "PrimaryCellResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -26052,9 +26128,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "PublicationResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "PublicationResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -26596,9 +26674,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "ReferenceFileResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "ReferenceFileResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -26733,9 +26813,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "character"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "character", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -27217,9 +27299,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "RodentDonorResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "RodentDonorResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -27541,9 +27625,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "SampleTermResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "SampleTermResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -27642,9 +27728,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "object"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "object", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -27732,9 +27820,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "object"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "object", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -27865,9 +27955,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "SearchResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "SearchResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -28445,9 +28537,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "SequenceFileResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "SequenceFileResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -28981,9 +29075,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "SignalFileResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "SignalFileResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -29297,9 +29393,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "SoftwareResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "SoftwareResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -29617,9 +29715,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "SoftwareVersionResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "SoftwareVersionResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -29861,9 +29961,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "SourceResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "SourceResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -30373,9 +30475,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "TabularFileResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "TabularFileResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -30993,9 +31097,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "TechnicalSampleResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "TechnicalSampleResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -31881,9 +31987,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "TissueResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "TissueResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -32313,9 +32421,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "TreatmentResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "TreatmentResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -32609,9 +32719,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "UserResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "UserResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -33457,9 +33569,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "WholeOrganismResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "WholeOrganismResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
@@ -33829,9 +33943,11 @@ IgvfApi <- R6::R6Class(
           write(local_var_resp$response, data_file)
         }
 
+        print(c("Trying to deserialize resp obj!", "WorkflowResults"))
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "WorkflowResults", loadNamespace("igvfclient")),
           error = function(e) {
+            stop(e)
             stop("Failed to deserialize response")
           }
         )
