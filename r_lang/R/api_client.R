@@ -318,11 +318,6 @@ ApiClient <- R6::R6Class(
         inner_return_type <- regmatches(return_type,
                                         regexec(pattern = "array\\[(.*)\\]", return_type))[[1]][2]
         if (c(inner_return_type) %in% primitive_types) {
-          print("PRIMIATIVE")
-          print(return_type)
-          print(obj)
-	  print("TYPE OF:")
-          print(typeof(obj))
           return_obj <- obj
         } else {
           if (!is.null(nrow(obj))) {
@@ -340,10 +335,6 @@ ApiClient <- R6::R6Class(
         inner_return_type <- regmatches(return_type,
                                         regexec(pattern = "set\\[(.*)\\]", return_type))[[1]][2]
         if (c(inner_return_type) %in% primitive_types) {
-          print("PRIMIATIVE")
-          print(return_type)
-          print(obj)
-          print(typeof(obj))
           return_obj <- obj
         } else {
           if (!is.null(nrow(obj))) {
