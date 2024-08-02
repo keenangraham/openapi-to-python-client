@@ -211,19 +211,11 @@ SearchResultItem <- R6::R6Class(
       error_messages <- list()
       instance <- NULL
 
-      print("AT START OF DISCRIMINATOR LOOKUP")
-      print((jsonlite::fromJSON(input, simplifyVector = FALSE))[[1]]$`@type`[[1]])
       pkg_env <- loadNamespace("igvfclient")
       oneof_lookup_result <- tryCatch({
-          print("Parsing")
           parsedJson <- jsonlite::fromJSON(input, simplifyVector = FALSE)
-          print(parsedJson)
-          print("loading")
           discriminatorValue <- parsedJson[[1]]$`@type`[[1]]
-          print("discriminator value is type:")
-          print(discriminatorValue)
           if (is.null(discriminatorValue)) { # throw error if it's null
-            print("OH NO NULL STOPPING!")
             stop("Error! The value of the discriminator property `@type`, which should be the class type, is null")
           }
           switch(discriminatorValue,
@@ -586,9 +578,7 @@ SearchResultItem <- R6::R6Class(
           })},
           error = function(err) err
       )
-      print("FELL THROUGH DISCR LOOKUP WIHTOUT RETURNING")
       if (!is.null(oneof_lookup_result["error"])) {
-        print(error_messages)
         error_messages <- append(error_messages, sprintf("Failed to lookup discriminator value for SearchResultItem. Error message: %s. JSON input: %s", oneof_lookup_result["message"], input))
       }
 
