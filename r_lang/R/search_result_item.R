@@ -214,7 +214,11 @@ SearchResultItem <- R6::R6Class(
       pkg_env <- loadNamespace("igvfclient")
       oneof_lookup_result <- tryCatch({
           parsedJson <- jsonlite::fromJSON(input, simplifyVector = FALSE)
-          discriminatorValue <- parsedJson[[1]]$`@type`[[1]]
+          discriminatorValue <- parsedJson$`@type`[[1]]
+	  if (is.null(discriminatorValue)) {
+              discriminatorValue <- parsedJson[[1]]$`@type`[[1]]
+	  }
+          print(discriminatorValue)
           if (is.null(discriminatorValue)) { # throw error if it's null
             stop("Error! The value of the discriminator property `@type`, which should be the class type, is null")
           }
