@@ -356,7 +356,7 @@ Image <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          self$`release_timestamp`
+          gsub('\\"', '\\\\"', self$`release_timestamp`)
           )
         },
         if (!is.null(self$`status`)) {
@@ -364,7 +364,7 @@ Image <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`attachment`)) {
@@ -380,7 +380,7 @@ Image <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -388,7 +388,7 @@ Image <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -396,7 +396,7 @@ Image <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -412,7 +412,7 @@ Image <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -420,7 +420,7 @@ Image <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -428,7 +428,7 @@ Image <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -436,7 +436,7 @@ Image <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`caption`)) {
@@ -444,7 +444,7 @@ Image <- R6::R6Class(
           '"caption":
             "%s"
                     ',
-          self$`caption`
+          gsub('\\"', '\\\\"', self$`caption`)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -452,7 +452,7 @@ Image <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -468,7 +468,7 @@ Image <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         },
         if (!is.null(self$`thumb_nail`)) {
@@ -476,7 +476,7 @@ Image <- R6::R6Class(
           '"thumb_nail":
             "%s"
                     ',
-          self$`thumb_nail`
+          gsub('\\"', '\\\\"', self$`thumb_nail`)
           )
         },
         if (!is.null(self$`download_url`)) {
@@ -484,7 +484,7 @@ Image <- R6::R6Class(
           '"download_url":
             "%s"
                     ',
-          self$`download_url`
+          gsub('\\"', '\\\\"', self$`download_url`)
           )
         }
       )

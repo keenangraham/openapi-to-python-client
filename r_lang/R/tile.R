@@ -107,7 +107,7 @@ Tile <- R6::R6Class(
           '"tile_id":
             "%s"
                     ',
-          self$`tile_id`
+          gsub('\\"', '\\\\"', self$`tile_id`)
           )
         },
         if (!is.null(self$`tile_start`)) {

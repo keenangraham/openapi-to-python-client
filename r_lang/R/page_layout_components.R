@@ -123,7 +123,7 @@ PageLayoutComponents <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -131,7 +131,7 @@ PageLayoutComponents <- R6::R6Class(
           '"@type":
             "%s"
                     ',
-          self$`@type`
+          gsub('\\"', '\\\\"', self$`@type`)
           )
         },
         if (!is.null(self$`body`)) {
@@ -139,7 +139,7 @@ PageLayoutComponents <- R6::R6Class(
           '"body":
             "%s"
                     ',
-          self$`body`
+          gsub('\\"', '\\\\"', self$`body`)
           )
         },
         if (!is.null(self$`direction`)) {
@@ -147,7 +147,7 @@ PageLayoutComponents <- R6::R6Class(
           '"direction":
             "%s"
                     ',
-          self$`direction`
+          gsub('\\"', '\\\\"', self$`direction`)
           )
         }
       )

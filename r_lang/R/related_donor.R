@@ -97,7 +97,7 @@ RelatedDonor <- R6::R6Class(
           '"donor":
             "%s"
                     ',
-          self$`donor`
+          gsub('\\"', '\\\\"', self$`donor`)
           )
         },
         if (!is.null(self$`relationship_type`)) {
@@ -105,7 +105,7 @@ RelatedDonor <- R6::R6Class(
           '"relationship_type":
             "%s"
                     ',
-          self$`relationship_type`
+          gsub('\\"', '\\\\"', self$`relationship_type`)
           )
         }
       )

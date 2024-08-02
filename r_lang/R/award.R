@@ -432,7 +432,7 @@ Award <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`url`)) {
@@ -440,7 +440,7 @@ Award <- R6::R6Class(
           '"url":
             "%s"
                     ',
-          self$`url`
+          gsub('\\"', '\\\\"', self$`url`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -448,7 +448,7 @@ Award <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -456,7 +456,7 @@ Award <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -464,7 +464,7 @@ Award <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -480,7 +480,7 @@ Award <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -488,7 +488,7 @@ Award <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -496,7 +496,7 @@ Award <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -504,7 +504,7 @@ Award <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`title`)) {
@@ -512,7 +512,7 @@ Award <- R6::R6Class(
           '"title":
             "%s"
                     ',
-          self$`title`
+          gsub('\\"', '\\\\"', self$`title`)
           )
         },
         if (!is.null(self$`name`)) {
@@ -520,7 +520,7 @@ Award <- R6::R6Class(
           '"name":
             "%s"
                     ',
-          self$`name`
+          gsub('\\"', '\\\\"', self$`name`)
           )
         },
         if (!is.null(self$`start_date`)) {
@@ -528,7 +528,7 @@ Award <- R6::R6Class(
           '"start_date":
             "%s"
                     ',
-          self$`start_date`
+          gsub('\\"', '\\\\"', self$`start_date`)
           )
         },
         if (!is.null(self$`end_date`)) {
@@ -536,7 +536,7 @@ Award <- R6::R6Class(
           '"end_date":
             "%s"
                     ',
-          self$`end_date`
+          gsub('\\"', '\\\\"', self$`end_date`)
           )
         },
         if (!is.null(self$`pis`)) {
@@ -552,7 +552,7 @@ Award <- R6::R6Class(
           '"contact_pi":
             "%s"
                     ',
-          self$`contact_pi`
+          gsub('\\"', '\\\\"', self$`contact_pi`)
           )
         },
         if (!is.null(self$`project`)) {
@@ -560,7 +560,7 @@ Award <- R6::R6Class(
           '"project":
             "%s"
                     ',
-          self$`project`
+          gsub('\\"', '\\\\"', self$`project`)
           )
         },
         if (!is.null(self$`viewing_group`)) {
@@ -568,7 +568,7 @@ Award <- R6::R6Class(
           '"viewing_group":
             "%s"
                     ',
-          self$`viewing_group`
+          gsub('\\"', '\\\\"', self$`viewing_group`)
           )
         },
         if (!is.null(self$`component`)) {
@@ -576,7 +576,7 @@ Award <- R6::R6Class(
           '"component":
             "%s"
                     ',
-          self$`component`
+          gsub('\\"', '\\\\"', self$`component`)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -584,7 +584,7 @@ Award <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -600,7 +600,7 @@ Award <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         }
       )

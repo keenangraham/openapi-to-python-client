@@ -348,7 +348,7 @@
           {{/isContainer}}
           {{^isContainer}}
           {{#isPrimitiveType}}
-          {{#isBoolean}}tolower({{/isBoolean}}self$`{{name}}`{{#isBoolean}}){{/isBoolean}}
+          {{#isNumeric}}self$`{{name}}`{{/isNumeric}}{{^isNumeric}}{{#isBoolean}}tolower({{/isBoolean}}gsub('\\"', '\\\\"', self$`{{name}}`){{#isBoolean}}){{/isBoolean}}{{/isNumeric}}
           {{/isPrimitiveType}}
           {{^isPrimitiveType}}
           jsonlite::toJSON(self$`{{name}}`$toJSON(), auto_unbox = TRUE, digits = NA)

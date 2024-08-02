@@ -350,7 +350,7 @@ Lab <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`url`)) {
@@ -358,7 +358,7 @@ Lab <- R6::R6Class(
           '"url":
             "%s"
                     ',
-          self$`url`
+          gsub('\\"', '\\\\"', self$`url`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -366,7 +366,7 @@ Lab <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -374,7 +374,7 @@ Lab <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -382,7 +382,7 @@ Lab <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -398,7 +398,7 @@ Lab <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -406,7 +406,7 @@ Lab <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -414,7 +414,7 @@ Lab <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -422,7 +422,7 @@ Lab <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`name`)) {
@@ -430,7 +430,7 @@ Lab <- R6::R6Class(
           '"name":
             "%s"
                     ',
-          self$`name`
+          gsub('\\"', '\\\\"', self$`name`)
           )
         },
         if (!is.null(self$`pi`)) {
@@ -438,7 +438,7 @@ Lab <- R6::R6Class(
           '"pi":
             "%s"
                     ',
-          self$`pi`
+          gsub('\\"', '\\\\"', self$`pi`)
           )
         },
         if (!is.null(self$`awards`)) {
@@ -454,7 +454,7 @@ Lab <- R6::R6Class(
           '"institute_label":
             "%s"
                     ',
-          self$`institute_label`
+          gsub('\\"', '\\\\"', self$`institute_label`)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -462,7 +462,7 @@ Lab <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -478,7 +478,7 @@ Lab <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         },
         if (!is.null(self$`title`)) {
@@ -486,7 +486,7 @@ Lab <- R6::R6Class(
           '"title":
             "%s"
                     ',
-          self$`title`
+          gsub('\\"', '\\\\"', self$`title`)
           )
         }
       )

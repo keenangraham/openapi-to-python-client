@@ -75,7 +75,7 @@ NoResultsResponseColumnsValue <- R6::R6Class(
           '"title":
             "%s"
                     ',
-          self$`title`
+          gsub('\\"', '\\\\"', self$`title`)
           )
         }
       )

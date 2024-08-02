@@ -504,7 +504,7 @@ Workflow <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          self$`release_timestamp`
+          gsub('\\"', '\\\\"', self$`release_timestamp`)
           )
         },
         if (!is.null(self$`publications`)) {
@@ -536,7 +536,7 @@ Workflow <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          self$`lab`
+          gsub('\\"', '\\\\"', self$`lab`)
           )
         },
         if (!is.null(self$`award`)) {
@@ -544,7 +544,7 @@ Workflow <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          self$`award`
+          gsub('\\"', '\\\\"', self$`award`)
           )
         },
         if (!is.null(self$`accession`)) {
@@ -552,7 +552,7 @@ Workflow <- R6::R6Class(
           '"accession":
             "%s"
                     ',
-          self$`accession`
+          gsub('\\"', '\\\\"', self$`accession`)
           )
         },
         if (!is.null(self$`alternate_accessions`)) {
@@ -576,7 +576,7 @@ Workflow <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`revoke_detail`)) {
@@ -584,7 +584,7 @@ Workflow <- R6::R6Class(
           '"revoke_detail":
             "%s"
                     ',
-          self$`revoke_detail`
+          gsub('\\"', '\\\\"', self$`revoke_detail`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -592,7 +592,7 @@ Workflow <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -600,7 +600,7 @@ Workflow <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -608,7 +608,7 @@ Workflow <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -624,7 +624,7 @@ Workflow <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -632,7 +632,7 @@ Workflow <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -640,7 +640,7 @@ Workflow <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -648,7 +648,7 @@ Workflow <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`name`)) {
@@ -656,7 +656,7 @@ Workflow <- R6::R6Class(
           '"name":
             "%s"
                     ',
-          self$`name`
+          gsub('\\"', '\\\\"', self$`name`)
           )
         },
         if (!is.null(self$`source_url`)) {
@@ -664,7 +664,7 @@ Workflow <- R6::R6Class(
           '"source_url":
             "%s"
                     ',
-          self$`source_url`
+          gsub('\\"', '\\\\"', self$`source_url`)
           )
         },
         if (!is.null(self$`workflow_repositories`)) {
@@ -680,7 +680,7 @@ Workflow <- R6::R6Class(
           '"standards_page":
             "%s"
                     ',
-          self$`standards_page`
+          gsub('\\"', '\\\\"', self$`standards_page`)
           )
         },
         if (!is.null(self$`workflow_version`)) {
@@ -696,7 +696,7 @@ Workflow <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -712,7 +712,7 @@ Workflow <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         },
         if (!is.null(self$`analysis_steps`)) {

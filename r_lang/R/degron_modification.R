@@ -487,7 +487,7 @@ DegronModification <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          self$`release_timestamp`
+          gsub('\\"', '\\\\"', self$`release_timestamp`)
           )
         },
         if (!is.null(self$`sources`)) {
@@ -503,7 +503,7 @@ DegronModification <- R6::R6Class(
           '"lot_id":
             "%s"
                     ',
-          self$`lot_id`
+          gsub('\\"', '\\\\"', self$`lot_id`)
           )
         },
         if (!is.null(self$`product_id`)) {
@@ -511,7 +511,7 @@ DegronModification <- R6::R6Class(
           '"product_id":
             "%s"
                     ',
-          self$`product_id`
+          gsub('\\"', '\\\\"', self$`product_id`)
           )
         },
         if (!is.null(self$`documents`)) {
@@ -527,7 +527,7 @@ DegronModification <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -535,7 +535,7 @@ DegronModification <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          self$`lab`
+          gsub('\\"', '\\\\"', self$`lab`)
           )
         },
         if (!is.null(self$`award`)) {
@@ -543,7 +543,7 @@ DegronModification <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          self$`award`
+          gsub('\\"', '\\\\"', self$`award`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -551,7 +551,7 @@ DegronModification <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -559,7 +559,7 @@ DegronModification <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -567,7 +567,7 @@ DegronModification <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -583,7 +583,7 @@ DegronModification <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -591,7 +591,7 @@ DegronModification <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -599,7 +599,7 @@ DegronModification <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -607,7 +607,7 @@ DegronModification <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`activated`)) {
@@ -615,7 +615,7 @@ DegronModification <- R6::R6Class(
           '"activated":
             %s
                     ',
-          tolower(self$`activated`)
+          tolower(gsub('\\"', '\\\\"', self$`activated`))
           )
         },
         if (!is.null(self$`activating_agent_term_id`)) {
@@ -623,7 +623,7 @@ DegronModification <- R6::R6Class(
           '"activating_agent_term_id":
             "%s"
                     ',
-          self$`activating_agent_term_id`
+          gsub('\\"', '\\\\"', self$`activating_agent_term_id`)
           )
         },
         if (!is.null(self$`activating_agent_term_name`)) {
@@ -631,7 +631,7 @@ DegronModification <- R6::R6Class(
           '"activating_agent_term_name":
             "%s"
                     ',
-          self$`activating_agent_term_name`
+          gsub('\\"', '\\\\"', self$`activating_agent_term_name`)
           )
         },
         if (!is.null(self$`modality`)) {
@@ -639,7 +639,7 @@ DegronModification <- R6::R6Class(
           '"modality":
             "%s"
                     ',
-          self$`modality`
+          gsub('\\"', '\\\\"', self$`modality`)
           )
         },
         if (!is.null(self$`degron_system`)) {
@@ -647,7 +647,7 @@ DegronModification <- R6::R6Class(
           '"degron_system":
             "%s"
                     ',
-          self$`degron_system`
+          gsub('\\"', '\\\\"', self$`degron_system`)
           )
         },
         if (!is.null(self$`tagged_proteins`)) {
@@ -663,7 +663,7 @@ DegronModification <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -679,7 +679,7 @@ DegronModification <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         },
         if (!is.null(self$`biosamples_modified`)) {

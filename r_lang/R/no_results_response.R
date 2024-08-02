@@ -256,7 +256,7 @@ NoResultsResponse <- R6::R6Class(
           '"@context":
             "%s"
                     ',
-          self$`@context`
+          gsub('\\"', '\\\\"', self$`@context`)
           )
         },
         if (!is.null(self$`@graph`)) {
@@ -272,7 +272,7 @@ NoResultsResponse <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -288,7 +288,7 @@ NoResultsResponse <- R6::R6Class(
           '"clear_filters":
             "%s"
                     ',
-          self$`clear_filters`
+          gsub('\\"', '\\\\"', self$`clear_filters`)
           )
         },
         if (!is.null(self$`columns`)) {
@@ -296,7 +296,7 @@ NoResultsResponse <- R6::R6Class(
           '"columns":
             "%s"
                     ',
-          self$`columns`
+          gsub('\\"', '\\\\"', self$`columns`)
           )
         },
         if (!is.null(self$`facet_groups`)) {
@@ -328,7 +328,7 @@ NoResultsResponse <- R6::R6Class(
           '"notification":
             "%s"
                     ',
-          self$`notification`
+          gsub('\\"', '\\\\"', self$`notification`)
           )
         },
         if (!is.null(self$`sort`)) {
@@ -336,7 +336,7 @@ NoResultsResponse <- R6::R6Class(
           '"sort":
             "%s"
                     ',
-          self$`sort`
+          gsub('\\"', '\\\\"', self$`sort`)
           )
         },
         if (!is.null(self$`title`)) {
@@ -344,7 +344,7 @@ NoResultsResponse <- R6::R6Class(
           '"title":
             "%s"
                     ',
-          self$`title`
+          gsub('\\"', '\\\\"', self$`title`)
           )
         },
         if (!is.null(self$`total`)) {

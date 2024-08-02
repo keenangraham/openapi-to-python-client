@@ -427,7 +427,7 @@ AnalysisStep <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          self$`release_timestamp`
+          gsub('\\"', '\\\\"', self$`release_timestamp`)
           )
         },
         if (!is.null(self$`status`)) {
@@ -435,7 +435,7 @@ AnalysisStep <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -443,7 +443,7 @@ AnalysisStep <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          self$`lab`
+          gsub('\\"', '\\\\"', self$`lab`)
           )
         },
         if (!is.null(self$`award`)) {
@@ -451,7 +451,7 @@ AnalysisStep <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          self$`award`
+          gsub('\\"', '\\\\"', self$`award`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -459,7 +459,7 @@ AnalysisStep <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -467,7 +467,7 @@ AnalysisStep <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -475,7 +475,7 @@ AnalysisStep <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -491,7 +491,7 @@ AnalysisStep <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -499,7 +499,7 @@ AnalysisStep <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -507,7 +507,7 @@ AnalysisStep <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -515,7 +515,7 @@ AnalysisStep <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`analysis_step_types`)) {
@@ -531,7 +531,7 @@ AnalysisStep <- R6::R6Class(
           '"step_label":
             "%s"
                     ',
-          self$`step_label`
+          gsub('\\"', '\\\\"', self$`step_label`)
           )
         },
         if (!is.null(self$`title`)) {
@@ -539,7 +539,7 @@ AnalysisStep <- R6::R6Class(
           '"title":
             "%s"
                     ',
-          self$`title`
+          gsub('\\"', '\\\\"', self$`title`)
           )
         },
         if (!is.null(self$`workflow`)) {
@@ -547,7 +547,7 @@ AnalysisStep <- R6::R6Class(
           '"workflow":
             "%s"
                     ',
-          self$`workflow`
+          gsub('\\"', '\\\\"', self$`workflow`)
           )
         },
         if (!is.null(self$`parents`)) {
@@ -579,7 +579,7 @@ AnalysisStep <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -595,7 +595,7 @@ AnalysisStep <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         },
         if (!is.null(self$`name`)) {
@@ -603,7 +603,7 @@ AnalysisStep <- R6::R6Class(
           '"name":
             "%s"
                     ',
-          self$`name`
+          gsub('\\"', '\\\\"', self$`name`)
           )
         }
       )

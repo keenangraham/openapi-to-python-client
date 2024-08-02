@@ -1261,7 +1261,7 @@ InVitroSystem <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          self$`release_timestamp`
+          gsub('\\"', '\\\\"', self$`release_timestamp`)
           )
         },
         if (!is.null(self$`publications`)) {
@@ -1285,7 +1285,7 @@ InVitroSystem <- R6::R6Class(
           '"taxa":
             "%s"
                     ',
-          self$`taxa`
+          gsub('\\"', '\\\\"', self$`taxa`)
           )
         },
         if (!is.null(self$`url`)) {
@@ -1293,7 +1293,7 @@ InVitroSystem <- R6::R6Class(
           '"url":
             "%s"
                     ',
-          self$`url`
+          gsub('\\"', '\\\\"', self$`url`)
           )
         },
         if (!is.null(self$`sources`)) {
@@ -1309,7 +1309,7 @@ InVitroSystem <- R6::R6Class(
           '"lot_id":
             "%s"
                     ',
-          self$`lot_id`
+          gsub('\\"', '\\\\"', self$`lot_id`)
           )
         },
         if (!is.null(self$`product_id`)) {
@@ -1317,7 +1317,7 @@ InVitroSystem <- R6::R6Class(
           '"product_id":
             "%s"
                     ',
-          self$`product_id`
+          gsub('\\"', '\\\\"', self$`product_id`)
           )
         },
         if (!is.null(self$`documents`)) {
@@ -1333,7 +1333,7 @@ InVitroSystem <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          self$`lab`
+          gsub('\\"', '\\\\"', self$`lab`)
           )
         },
         if (!is.null(self$`award`)) {
@@ -1341,7 +1341,7 @@ InVitroSystem <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          self$`award`
+          gsub('\\"', '\\\\"', self$`award`)
           )
         },
         if (!is.null(self$`accession`)) {
@@ -1349,7 +1349,7 @@ InVitroSystem <- R6::R6Class(
           '"accession":
             "%s"
                     ',
-          self$`accession`
+          gsub('\\"', '\\\\"', self$`accession`)
           )
         },
         if (!is.null(self$`alternate_accessions`)) {
@@ -1373,7 +1373,7 @@ InVitroSystem <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`revoke_detail`)) {
@@ -1381,7 +1381,7 @@ InVitroSystem <- R6::R6Class(
           '"revoke_detail":
             "%s"
                     ',
-          self$`revoke_detail`
+          gsub('\\"', '\\\\"', self$`revoke_detail`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -1389,7 +1389,7 @@ InVitroSystem <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -1397,7 +1397,7 @@ InVitroSystem <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -1405,7 +1405,7 @@ InVitroSystem <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -1421,7 +1421,7 @@ InVitroSystem <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -1429,7 +1429,7 @@ InVitroSystem <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -1437,7 +1437,7 @@ InVitroSystem <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -1445,7 +1445,7 @@ InVitroSystem <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`lower_bound_age`)) {
@@ -1469,7 +1469,7 @@ InVitroSystem <- R6::R6Class(
           '"age_units":
             "%s"
                     ',
-          self$`age_units`
+          gsub('\\"', '\\\\"', self$`age_units`)
           )
         },
         if (!is.null(self$`sample_terms`)) {
@@ -1501,7 +1501,7 @@ InVitroSystem <- R6::R6Class(
           '"part_of":
             "%s"
                     ',
-          self$`part_of`
+          gsub('\\"', '\\\\"', self$`part_of`)
           )
         },
         if (!is.null(self$`originated_from`)) {
@@ -1509,7 +1509,7 @@ InVitroSystem <- R6::R6Class(
           '"originated_from":
             "%s"
                     ',
-          self$`originated_from`
+          gsub('\\"', '\\\\"', self$`originated_from`)
           )
         },
         if (!is.null(self$`treatments`)) {
@@ -1541,7 +1541,7 @@ InVitroSystem <- R6::R6Class(
           '"embryonic":
             %s
                     ',
-          tolower(self$`embryonic`)
+          tolower(gsub('\\"', '\\\\"', self$`embryonic`))
           )
         },
         if (!is.null(self$`modifications`)) {
@@ -1557,7 +1557,7 @@ InVitroSystem <- R6::R6Class(
           '"cellular_sub_pool":
             "%s"
                     ',
-          self$`cellular_sub_pool`
+          gsub('\\"', '\\\\"', self$`cellular_sub_pool`)
           )
         },
         if (!is.null(self$`starting_amount`)) {
@@ -1573,7 +1573,7 @@ InVitroSystem <- R6::R6Class(
           '"starting_amount_units":
             "%s"
                     ',
-          self$`starting_amount_units`
+          gsub('\\"', '\\\\"', self$`starting_amount_units`)
           )
         },
         if (!is.null(self$`dbxrefs`)) {
@@ -1589,7 +1589,7 @@ InVitroSystem <- R6::R6Class(
           '"date_obtained":
             "%s"
                     ',
-          self$`date_obtained`
+          gsub('\\"', '\\\\"', self$`date_obtained`)
           )
         },
         if (!is.null(self$`sorted_from`)) {
@@ -1597,7 +1597,7 @@ InVitroSystem <- R6::R6Class(
           '"sorted_from":
             "%s"
                     ',
-          self$`sorted_from`
+          gsub('\\"', '\\\\"', self$`sorted_from`)
           )
         },
         if (!is.null(self$`sorted_from_detail`)) {
@@ -1605,7 +1605,7 @@ InVitroSystem <- R6::R6Class(
           '"sorted_from_detail":
             "%s"
                     ',
-          self$`sorted_from_detail`
+          gsub('\\"', '\\\\"', self$`sorted_from_detail`)
           )
         },
         if (!is.null(self$`virtual`)) {
@@ -1613,7 +1613,7 @@ InVitroSystem <- R6::R6Class(
           '"virtual":
             %s
                     ',
-          tolower(self$`virtual`)
+          tolower(gsub('\\"', '\\\\"', self$`virtual`))
           )
         },
         if (!is.null(self$`construct_library_sets`)) {
@@ -1637,7 +1637,7 @@ InVitroSystem <- R6::R6Class(
           '"nucleic_acid_delivery":
             "%s"
                     ',
-          self$`nucleic_acid_delivery`
+          gsub('\\"', '\\\\"', self$`nucleic_acid_delivery`)
           )
         },
         if (!is.null(self$`time_post_library_delivery`)) {
@@ -1653,7 +1653,7 @@ InVitroSystem <- R6::R6Class(
           '"time_post_library_delivery_units":
             "%s"
                     ',
-          self$`time_post_library_delivery_units`
+          gsub('\\"', '\\\\"', self$`time_post_library_delivery_units`)
           )
         },
         if (!is.null(self$`protocols`)) {
@@ -1685,7 +1685,7 @@ InVitroSystem <- R6::R6Class(
           '"time_post_change_units":
             "%s"
                     ',
-          self$`time_post_change_units`
+          gsub('\\"', '\\\\"', self$`time_post_change_units`)
           )
         },
         if (!is.null(self$`cell_fate_change_treatments`)) {
@@ -1701,7 +1701,7 @@ InVitroSystem <- R6::R6Class(
           '"cell_fate_change_protocol":
             "%s"
                     ',
-          self$`cell_fate_change_protocol`
+          gsub('\\"', '\\\\"', self$`cell_fate_change_protocol`)
           )
         },
         if (!is.null(self$`demultiplexed_from`)) {
@@ -1709,7 +1709,7 @@ InVitroSystem <- R6::R6Class(
           '"demultiplexed_from":
             "%s"
                     ',
-          self$`demultiplexed_from`
+          gsub('\\"', '\\\\"', self$`demultiplexed_from`)
           )
         },
         if (!is.null(self$`passage_number`)) {
@@ -1725,7 +1725,7 @@ InVitroSystem <- R6::R6Class(
           '"targeted_sample_term":
             "%s"
                     ',
-          self$`targeted_sample_term`
+          gsub('\\"', '\\\\"', self$`targeted_sample_term`)
           )
         },
         if (!is.null(self$`growth_medium`)) {
@@ -1733,7 +1733,7 @@ InVitroSystem <- R6::R6Class(
           '"growth_medium":
             "%s"
                     ',
-          self$`growth_medium`
+          gsub('\\"', '\\\\"', self$`growth_medium`)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -1741,7 +1741,7 @@ InVitroSystem <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -1757,7 +1757,7 @@ InVitroSystem <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         },
         if (!is.null(self$`file_sets`)) {
@@ -1805,7 +1805,7 @@ InVitroSystem <- R6::R6Class(
           '"sex":
             "%s"
                     ',
-          self$`sex`
+          gsub('\\"', '\\\\"', self$`sex`)
           )
         },
         if (!is.null(self$`age`)) {
@@ -1813,7 +1813,7 @@ InVitroSystem <- R6::R6Class(
           '"age":
             "%s"
                     ',
-          self$`age`
+          gsub('\\"', '\\\\"', self$`age`)
           )
         },
         if (!is.null(self$`upper_bound_age_in_hours`)) {

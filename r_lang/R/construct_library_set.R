@@ -910,7 +910,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"large_scale_loci_list":
             "%s"
                     ',
-          self$`large_scale_loci_list`
+          gsub('\\"', '\\\\"', self$`large_scale_loci_list`)
           )
         },
         if (!is.null(self$`small_scale_gene_list`)) {
@@ -926,7 +926,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"large_scale_gene_list":
             "%s"
                     ',
-          self$`large_scale_gene_list`
+          gsub('\\"', '\\\\"', self$`large_scale_gene_list`)
           )
         },
         if (!is.null(self$`release_timestamp`)) {
@@ -934,7 +934,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          self$`release_timestamp`
+          gsub('\\"', '\\\\"', self$`release_timestamp`)
           )
         },
         if (!is.null(self$`publications`)) {
@@ -974,7 +974,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"lot_id":
             "%s"
                     ',
-          self$`lot_id`
+          gsub('\\"', '\\\\"', self$`lot_id`)
           )
         },
         if (!is.null(self$`product_id`)) {
@@ -982,7 +982,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"product_id":
             "%s"
                     ',
-          self$`product_id`
+          gsub('\\"', '\\\\"', self$`product_id`)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -990,7 +990,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          self$`lab`
+          gsub('\\"', '\\\\"', self$`lab`)
           )
         },
         if (!is.null(self$`award`)) {
@@ -998,7 +998,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          self$`award`
+          gsub('\\"', '\\\\"', self$`award`)
           )
         },
         if (!is.null(self$`accession`)) {
@@ -1006,7 +1006,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"accession":
             "%s"
                     ',
-          self$`accession`
+          gsub('\\"', '\\\\"', self$`accession`)
           )
         },
         if (!is.null(self$`alternate_accessions`)) {
@@ -1030,7 +1030,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`revoke_detail`)) {
@@ -1038,7 +1038,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"revoke_detail":
             "%s"
                     ',
-          self$`revoke_detail`
+          gsub('\\"', '\\\\"', self$`revoke_detail`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -1046,7 +1046,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -1054,7 +1054,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -1062,7 +1062,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -1078,7 +1078,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -1086,7 +1086,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -1094,7 +1094,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -1102,7 +1102,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`file_set_type`)) {
@@ -1110,7 +1110,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"file_set_type":
             "%s"
                     ',
-          self$`file_set_type`
+          gsub('\\"', '\\\\"', self$`file_set_type`)
           )
         },
         if (!is.null(self$`scope`)) {
@@ -1118,7 +1118,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"scope":
             "%s"
                     ',
-          self$`scope`
+          gsub('\\"', '\\\\"', self$`scope`)
           )
         },
         if (!is.null(self$`selection_criteria`)) {
@@ -1158,7 +1158,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"exon":
             "%s"
                     ',
-          self$`exon`
+          gsub('\\"', '\\\\"', self$`exon`)
           )
         },
         if (!is.null(self$`tile`)) {
@@ -1174,7 +1174,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"guide_type":
             "%s"
                     ',
-          self$`guide_type`
+          gsub('\\"', '\\\\"', self$`guide_type`)
           )
         },
         if (!is.null(self$`tiling_modality`)) {
@@ -1182,7 +1182,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"tiling_modality":
             "%s"
                     ',
-          self$`tiling_modality`
+          gsub('\\"', '\\\\"', self$`tiling_modality`)
           )
         },
         if (!is.null(self$`average_guide_coverage`)) {
@@ -1238,7 +1238,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"targeton":
             "%s"
                     ',
-          self$`targeton`
+          gsub('\\"', '\\\\"', self$`targeton`)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -1246,7 +1246,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -1262,7 +1262,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         },
         if (!is.null(self$`files`)) {
@@ -1286,7 +1286,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"submitted_files_timestamp":
             "%s"
                     ',
-          self$`submitted_files_timestamp`
+          gsub('\\"', '\\\\"', self$`submitted_files_timestamp`)
           )
         },
         if (!is.null(self$`input_file_set_for`)) {

@@ -702,7 +702,7 @@ ImageFile <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          self$`release_timestamp`
+          gsub('\\"', '\\\\"', self$`release_timestamp`)
           )
         },
         if (!is.null(self$`documents`)) {
@@ -718,7 +718,7 @@ ImageFile <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          self$`lab`
+          gsub('\\"', '\\\\"', self$`lab`)
           )
         },
         if (!is.null(self$`award`)) {
@@ -726,7 +726,7 @@ ImageFile <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          self$`award`
+          gsub('\\"', '\\\\"', self$`award`)
           )
         },
         if (!is.null(self$`accession`)) {
@@ -734,7 +734,7 @@ ImageFile <- R6::R6Class(
           '"accession":
             "%s"
                     ',
-          self$`accession`
+          gsub('\\"', '\\\\"', self$`accession`)
           )
         },
         if (!is.null(self$`alternate_accessions`)) {
@@ -758,7 +758,7 @@ ImageFile <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`revoke_detail`)) {
@@ -766,7 +766,7 @@ ImageFile <- R6::R6Class(
           '"revoke_detail":
             "%s"
                     ',
-          self$`revoke_detail`
+          gsub('\\"', '\\\\"', self$`revoke_detail`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -774,7 +774,7 @@ ImageFile <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -782,7 +782,7 @@ ImageFile <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -790,7 +790,7 @@ ImageFile <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -806,7 +806,7 @@ ImageFile <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -814,7 +814,7 @@ ImageFile <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -822,7 +822,7 @@ ImageFile <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -830,7 +830,7 @@ ImageFile <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`analysis_step_version`)) {
@@ -838,7 +838,7 @@ ImageFile <- R6::R6Class(
           '"analysis_step_version":
             "%s"
                     ',
-          self$`analysis_step_version`
+          gsub('\\"', '\\\\"', self$`analysis_step_version`)
           )
         },
         if (!is.null(self$`content_md5sum`)) {
@@ -846,7 +846,7 @@ ImageFile <- R6::R6Class(
           '"content_md5sum":
             "%s"
                     ',
-          self$`content_md5sum`
+          gsub('\\"', '\\\\"', self$`content_md5sum`)
           )
         },
         if (!is.null(self$`content_type`)) {
@@ -854,7 +854,7 @@ ImageFile <- R6::R6Class(
           '"content_type":
             "%s"
                     ',
-          self$`content_type`
+          gsub('\\"', '\\\\"', self$`content_type`)
           )
         },
         if (!is.null(self$`dbxrefs`)) {
@@ -878,7 +878,7 @@ ImageFile <- R6::R6Class(
           '"file_format":
             "%s"
                     ',
-          self$`file_format`
+          gsub('\\"', '\\\\"', self$`file_format`)
           )
         },
         if (!is.null(self$`file_format_specifications`)) {
@@ -894,7 +894,7 @@ ImageFile <- R6::R6Class(
           '"file_set":
             "%s"
                     ',
-          self$`file_set`
+          gsub('\\"', '\\\\"', self$`file_set`)
           )
         },
         if (!is.null(self$`file_size`)) {
@@ -910,7 +910,7 @@ ImageFile <- R6::R6Class(
           '"md5sum":
             "%s"
                     ',
-          self$`md5sum`
+          gsub('\\"', '\\\\"', self$`md5sum`)
           )
         },
         if (!is.null(self$`submitted_file_name`)) {
@@ -918,7 +918,7 @@ ImageFile <- R6::R6Class(
           '"submitted_file_name":
             "%s"
                     ',
-          self$`submitted_file_name`
+          gsub('\\"', '\\\\"', self$`submitted_file_name`)
           )
         },
         if (!is.null(self$`upload_status`)) {
@@ -926,7 +926,7 @@ ImageFile <- R6::R6Class(
           '"upload_status":
             "%s"
                     ',
-          self$`upload_status`
+          gsub('\\"', '\\\\"', self$`upload_status`)
           )
         },
         if (!is.null(self$`validation_error_detail`)) {
@@ -934,7 +934,7 @@ ImageFile <- R6::R6Class(
           '"validation_error_detail":
             "%s"
                     ',
-          self$`validation_error_detail`
+          gsub('\\"', '\\\\"', self$`validation_error_detail`)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -942,7 +942,7 @@ ImageFile <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -958,7 +958,7 @@ ImageFile <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         },
         if (!is.null(self$`integrated_in`)) {
@@ -998,7 +998,7 @@ ImageFile <- R6::R6Class(
           '"href":
             "%s"
                     ',
-          self$`href`
+          gsub('\\"', '\\\\"', self$`href`)
           )
         },
         if (!is.null(self$`s3_uri`)) {
@@ -1006,7 +1006,7 @@ ImageFile <- R6::R6Class(
           '"s3_uri":
             "%s"
                     ',
-          self$`s3_uri`
+          gsub('\\"', '\\\\"', self$`s3_uri`)
           )
         },
         if (!is.null(self$`upload_credentials`)) {
@@ -1014,7 +1014,7 @@ ImageFile <- R6::R6Class(
           '"upload_credentials":
             "%s"
                     ',
-          self$`upload_credentials`
+          gsub('\\"', '\\\\"', self$`upload_credentials`)
           )
         }
       )

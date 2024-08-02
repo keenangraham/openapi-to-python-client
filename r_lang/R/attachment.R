@@ -177,7 +177,7 @@ Attachment <- R6::R6Class(
           '"download":
             "%s"
                     ',
-          self$`download`
+          gsub('\\"', '\\\\"', self$`download`)
           )
         },
         if (!is.null(self$`href`)) {
@@ -185,7 +185,7 @@ Attachment <- R6::R6Class(
           '"href":
             "%s"
                     ',
-          self$`href`
+          gsub('\\"', '\\\\"', self$`href`)
           )
         },
         if (!is.null(self$`type`)) {
@@ -193,7 +193,7 @@ Attachment <- R6::R6Class(
           '"type":
             "%s"
                     ',
-          self$`type`
+          gsub('\\"', '\\\\"', self$`type`)
           )
         },
         if (!is.null(self$`md5sum`)) {
@@ -201,7 +201,7 @@ Attachment <- R6::R6Class(
           '"md5sum":
             "%s"
                     ',
-          self$`md5sum`
+          gsub('\\"', '\\\\"', self$`md5sum`)
           )
         },
         if (!is.null(self$`size`)) {

@@ -91,7 +91,7 @@ NoResultsResponseSortValue <- R6::R6Class(
           '"order":
             "%s"
                     ',
-          self$`order`
+          gsub('\\"', '\\\\"', self$`order`)
           )
         },
         if (!is.null(self$`unmapped_type`)) {
@@ -99,7 +99,7 @@ NoResultsResponseSortValue <- R6::R6Class(
           '"unmapped_type":
             "%s"
                     ',
-          self$`unmapped_type`
+          gsub('\\"', '\\\\"', self$`unmapped_type`)
           )
         }
       )

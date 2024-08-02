@@ -370,7 +370,7 @@ PhenotypicFeature <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          self$`release_timestamp`
+          gsub('\\"', '\\\\"', self$`release_timestamp`)
           )
         },
         if (!is.null(self$`status`)) {
@@ -378,7 +378,7 @@ PhenotypicFeature <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -386,7 +386,7 @@ PhenotypicFeature <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          self$`lab`
+          gsub('\\"', '\\\\"', self$`lab`)
           )
         },
         if (!is.null(self$`award`)) {
@@ -394,7 +394,7 @@ PhenotypicFeature <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          self$`award`
+          gsub('\\"', '\\\\"', self$`award`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -402,7 +402,7 @@ PhenotypicFeature <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -410,7 +410,7 @@ PhenotypicFeature <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -418,7 +418,7 @@ PhenotypicFeature <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -434,7 +434,7 @@ PhenotypicFeature <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -442,7 +442,7 @@ PhenotypicFeature <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -450,7 +450,7 @@ PhenotypicFeature <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -458,7 +458,7 @@ PhenotypicFeature <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`feature`)) {
@@ -466,7 +466,7 @@ PhenotypicFeature <- R6::R6Class(
           '"feature":
             "%s"
                     ',
-          self$`feature`
+          gsub('\\"', '\\\\"', self$`feature`)
           )
         },
         if (!is.null(self$`quantity`)) {
@@ -482,7 +482,7 @@ PhenotypicFeature <- R6::R6Class(
           '"quantity_units":
             "%s"
                     ',
-          self$`quantity_units`
+          gsub('\\"', '\\\\"', self$`quantity_units`)
           )
         },
         if (!is.null(self$`observation_date`)) {
@@ -490,7 +490,7 @@ PhenotypicFeature <- R6::R6Class(
           '"observation_date":
             "%s"
                     ',
-          self$`observation_date`
+          gsub('\\"', '\\\\"', self$`observation_date`)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -498,7 +498,7 @@ PhenotypicFeature <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -514,7 +514,7 @@ PhenotypicFeature <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         }
       )

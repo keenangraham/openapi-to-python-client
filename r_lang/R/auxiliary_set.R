@@ -585,7 +585,7 @@ AuxiliarySet <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          self$`release_timestamp`
+          gsub('\\"', '\\\\"', self$`release_timestamp`)
           )
         },
         if (!is.null(self$`publications`)) {
@@ -617,7 +617,7 @@ AuxiliarySet <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          self$`lab`
+          gsub('\\"', '\\\\"', self$`lab`)
           )
         },
         if (!is.null(self$`award`)) {
@@ -625,7 +625,7 @@ AuxiliarySet <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          self$`award`
+          gsub('\\"', '\\\\"', self$`award`)
           )
         },
         if (!is.null(self$`accession`)) {
@@ -633,7 +633,7 @@ AuxiliarySet <- R6::R6Class(
           '"accession":
             "%s"
                     ',
-          self$`accession`
+          gsub('\\"', '\\\\"', self$`accession`)
           )
         },
         if (!is.null(self$`alternate_accessions`)) {
@@ -657,7 +657,7 @@ AuxiliarySet <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`revoke_detail`)) {
@@ -665,7 +665,7 @@ AuxiliarySet <- R6::R6Class(
           '"revoke_detail":
             "%s"
                     ',
-          self$`revoke_detail`
+          gsub('\\"', '\\\\"', self$`revoke_detail`)
           )
         },
         if (!is.null(self$`url`)) {
@@ -673,7 +673,7 @@ AuxiliarySet <- R6::R6Class(
           '"url":
             "%s"
                     ',
-          self$`url`
+          gsub('\\"', '\\\\"', self$`url`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -681,7 +681,7 @@ AuxiliarySet <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -689,7 +689,7 @@ AuxiliarySet <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -697,7 +697,7 @@ AuxiliarySet <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -713,7 +713,7 @@ AuxiliarySet <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -721,7 +721,7 @@ AuxiliarySet <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -729,7 +729,7 @@ AuxiliarySet <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -737,7 +737,7 @@ AuxiliarySet <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`dbxrefs`)) {
@@ -769,7 +769,7 @@ AuxiliarySet <- R6::R6Class(
           '"file_set_type":
             "%s"
                     ',
-          self$`file_set_type`
+          gsub('\\"', '\\\\"', self$`file_set_type`)
           )
         },
         if (!is.null(self$`library_construction_platform`)) {
@@ -777,7 +777,7 @@ AuxiliarySet <- R6::R6Class(
           '"library_construction_platform":
             "%s"
                     ',
-          self$`library_construction_platform`
+          gsub('\\"', '\\\\"', self$`library_construction_platform`)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -785,7 +785,7 @@ AuxiliarySet <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -801,7 +801,7 @@ AuxiliarySet <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         },
         if (!is.null(self$`files`)) {
@@ -825,7 +825,7 @@ AuxiliarySet <- R6::R6Class(
           '"submitted_files_timestamp":
             "%s"
                     ',
-          self$`submitted_files_timestamp`
+          gsub('\\"', '\\\\"', self$`submitted_files_timestamp`)
           )
         },
         if (!is.null(self$`input_file_set_for`)) {

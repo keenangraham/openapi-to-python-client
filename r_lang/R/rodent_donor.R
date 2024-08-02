@@ -649,7 +649,7 @@ RodentDonor <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          self$`release_timestamp`
+          gsub('\\"', '\\\\"', self$`release_timestamp`)
           )
         },
         if (!is.null(self$`taxa`)) {
@@ -657,7 +657,7 @@ RodentDonor <- R6::R6Class(
           '"taxa":
             "%s"
                     ',
-          self$`taxa`
+          gsub('\\"', '\\\\"', self$`taxa`)
           )
         },
         if (!is.null(self$`publications`)) {
@@ -681,7 +681,7 @@ RodentDonor <- R6::R6Class(
           '"url":
             "%s"
                     ',
-          self$`url`
+          gsub('\\"', '\\\\"', self$`url`)
           )
         },
         if (!is.null(self$`sources`)) {
@@ -697,7 +697,7 @@ RodentDonor <- R6::R6Class(
           '"lot_id":
             "%s"
                     ',
-          self$`lot_id`
+          gsub('\\"', '\\\\"', self$`lot_id`)
           )
         },
         if (!is.null(self$`product_id`)) {
@@ -705,7 +705,7 @@ RodentDonor <- R6::R6Class(
           '"product_id":
             "%s"
                     ',
-          self$`product_id`
+          gsub('\\"', '\\\\"', self$`product_id`)
           )
         },
         if (!is.null(self$`documents`)) {
@@ -721,7 +721,7 @@ RodentDonor <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          self$`lab`
+          gsub('\\"', '\\\\"', self$`lab`)
           )
         },
         if (!is.null(self$`award`)) {
@@ -729,7 +729,7 @@ RodentDonor <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          self$`award`
+          gsub('\\"', '\\\\"', self$`award`)
           )
         },
         if (!is.null(self$`accession`)) {
@@ -737,7 +737,7 @@ RodentDonor <- R6::R6Class(
           '"accession":
             "%s"
                     ',
-          self$`accession`
+          gsub('\\"', '\\\\"', self$`accession`)
           )
         },
         if (!is.null(self$`alternate_accessions`)) {
@@ -761,7 +761,7 @@ RodentDonor <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`revoke_detail`)) {
@@ -769,7 +769,7 @@ RodentDonor <- R6::R6Class(
           '"revoke_detail":
             "%s"
                     ',
-          self$`revoke_detail`
+          gsub('\\"', '\\\\"', self$`revoke_detail`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -777,7 +777,7 @@ RodentDonor <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -785,7 +785,7 @@ RodentDonor <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -793,7 +793,7 @@ RodentDonor <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -809,7 +809,7 @@ RodentDonor <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -817,7 +817,7 @@ RodentDonor <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -825,7 +825,7 @@ RodentDonor <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -833,7 +833,7 @@ RodentDonor <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`dbxrefs`)) {
@@ -849,7 +849,7 @@ RodentDonor <- R6::R6Class(
           '"sex":
             "%s"
                     ',
-          self$`sex`
+          gsub('\\"', '\\\\"', self$`sex`)
           )
         },
         if (!is.null(self$`phenotypic_features`)) {
@@ -865,7 +865,7 @@ RodentDonor <- R6::R6Class(
           '"virtual":
             %s
                     ',
-          tolower(self$`virtual`)
+          tolower(gsub('\\"', '\\\\"', self$`virtual`))
           )
         },
         if (!is.null(self$`strain_background`)) {
@@ -873,7 +873,7 @@ RodentDonor <- R6::R6Class(
           '"strain_background":
             "%s"
                     ',
-          self$`strain_background`
+          gsub('\\"', '\\\\"', self$`strain_background`)
           )
         },
         if (!is.null(self$`strain`)) {
@@ -881,7 +881,7 @@ RodentDonor <- R6::R6Class(
           '"strain":
             "%s"
                     ',
-          self$`strain`
+          gsub('\\"', '\\\\"', self$`strain`)
           )
         },
         if (!is.null(self$`genotype`)) {
@@ -889,7 +889,7 @@ RodentDonor <- R6::R6Class(
           '"genotype":
             "%s"
                     ',
-          self$`genotype`
+          gsub('\\"', '\\\\"', self$`genotype`)
           )
         },
         if (!is.null(self$`individual_rodent`)) {
@@ -897,7 +897,7 @@ RodentDonor <- R6::R6Class(
           '"individual_rodent":
             %s
                     ',
-          tolower(self$`individual_rodent`)
+          tolower(gsub('\\"', '\\\\"', self$`individual_rodent`))
           )
         },
         if (!is.null(self$`rodent_identifier`)) {
@@ -905,7 +905,7 @@ RodentDonor <- R6::R6Class(
           '"rodent_identifier":
             "%s"
                     ',
-          self$`rodent_identifier`
+          gsub('\\"', '\\\\"', self$`rodent_identifier`)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -913,7 +913,7 @@ RodentDonor <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -929,7 +929,7 @@ RodentDonor <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         }
       )

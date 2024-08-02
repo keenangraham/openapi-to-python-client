@@ -532,7 +532,7 @@ CrisprModification <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          self$`release_timestamp`
+          gsub('\\"', '\\\\"', self$`release_timestamp`)
           )
         },
         if (!is.null(self$`sources`)) {
@@ -548,7 +548,7 @@ CrisprModification <- R6::R6Class(
           '"lot_id":
             "%s"
                     ',
-          self$`lot_id`
+          gsub('\\"', '\\\\"', self$`lot_id`)
           )
         },
         if (!is.null(self$`product_id`)) {
@@ -556,7 +556,7 @@ CrisprModification <- R6::R6Class(
           '"product_id":
             "%s"
                     ',
-          self$`product_id`
+          gsub('\\"', '\\\\"', self$`product_id`)
           )
         },
         if (!is.null(self$`documents`)) {
@@ -572,7 +572,7 @@ CrisprModification <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -580,7 +580,7 @@ CrisprModification <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          self$`lab`
+          gsub('\\"', '\\\\"', self$`lab`)
           )
         },
         if (!is.null(self$`award`)) {
@@ -588,7 +588,7 @@ CrisprModification <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          self$`award`
+          gsub('\\"', '\\\\"', self$`award`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -596,7 +596,7 @@ CrisprModification <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -604,7 +604,7 @@ CrisprModification <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -612,7 +612,7 @@ CrisprModification <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -628,7 +628,7 @@ CrisprModification <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -636,7 +636,7 @@ CrisprModification <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -644,7 +644,7 @@ CrisprModification <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -652,7 +652,7 @@ CrisprModification <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`activated`)) {
@@ -660,7 +660,7 @@ CrisprModification <- R6::R6Class(
           '"activated":
             %s
                     ',
-          tolower(self$`activated`)
+          tolower(gsub('\\"', '\\\\"', self$`activated`))
           )
         },
         if (!is.null(self$`activating_agent_term_id`)) {
@@ -668,7 +668,7 @@ CrisprModification <- R6::R6Class(
           '"activating_agent_term_id":
             "%s"
                     ',
-          self$`activating_agent_term_id`
+          gsub('\\"', '\\\\"', self$`activating_agent_term_id`)
           )
         },
         if (!is.null(self$`activating_agent_term_name`)) {
@@ -676,7 +676,7 @@ CrisprModification <- R6::R6Class(
           '"activating_agent_term_name":
             "%s"
                     ',
-          self$`activating_agent_term_name`
+          gsub('\\"', '\\\\"', self$`activating_agent_term_name`)
           )
         },
         if (!is.null(self$`modality`)) {
@@ -684,7 +684,7 @@ CrisprModification <- R6::R6Class(
           '"modality":
             "%s"
                     ',
-          self$`modality`
+          gsub('\\"', '\\\\"', self$`modality`)
           )
         },
         if (!is.null(self$`cas`)) {
@@ -692,7 +692,7 @@ CrisprModification <- R6::R6Class(
           '"cas":
             "%s"
                     ',
-          self$`cas`
+          gsub('\\"', '\\\\"', self$`cas`)
           )
         },
         if (!is.null(self$`fused_domain`)) {
@@ -700,7 +700,7 @@ CrisprModification <- R6::R6Class(
           '"fused_domain":
             "%s"
                     ',
-          self$`fused_domain`
+          gsub('\\"', '\\\\"', self$`fused_domain`)
           )
         },
         if (!is.null(self$`tagged_protein`)) {
@@ -708,7 +708,7 @@ CrisprModification <- R6::R6Class(
           '"tagged_protein":
             "%s"
                     ',
-          self$`tagged_protein`
+          gsub('\\"', '\\\\"', self$`tagged_protein`)
           )
         },
         if (!is.null(self$`cas_species`)) {
@@ -716,7 +716,7 @@ CrisprModification <- R6::R6Class(
           '"cas_species":
             "%s"
                     ',
-          self$`cas_species`
+          gsub('\\"', '\\\\"', self$`cas_species`)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -724,7 +724,7 @@ CrisprModification <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -740,7 +740,7 @@ CrisprModification <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         },
         if (!is.null(self$`biosamples_modified`)) {

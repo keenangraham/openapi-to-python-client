@@ -106,7 +106,7 @@ NoResultsResponseFacetGroupsInner <- R6::R6Class(
           '"name":
             "%s"
                     ',
-          self$`name`
+          gsub('\\"', '\\\\"', self$`name`)
           )
         },
         if (!is.null(self$`title`)) {
@@ -114,7 +114,7 @@ NoResultsResponseFacetGroupsInner <- R6::R6Class(
           '"title":
             "%s"
                     ',
-          self$`title`
+          gsub('\\"', '\\\\"', self$`title`)
           )
         },
         if (!is.null(self$`facet_fields`)) {

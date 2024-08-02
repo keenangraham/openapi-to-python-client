@@ -395,7 +395,7 @@ PhenotypeTerm <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          self$`release_timestamp`
+          gsub('\\"', '\\\\"', self$`release_timestamp`)
           )
         },
         if (!is.null(self$`status`)) {
@@ -403,7 +403,7 @@ PhenotypeTerm <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -411,7 +411,7 @@ PhenotypeTerm <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -419,7 +419,7 @@ PhenotypeTerm <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -427,7 +427,7 @@ PhenotypeTerm <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -443,7 +443,7 @@ PhenotypeTerm <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -451,7 +451,7 @@ PhenotypeTerm <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -459,7 +459,7 @@ PhenotypeTerm <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -467,7 +467,7 @@ PhenotypeTerm <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`term_id`)) {
@@ -475,7 +475,7 @@ PhenotypeTerm <- R6::R6Class(
           '"term_id":
             "%s"
                     ',
-          self$`term_id`
+          gsub('\\"', '\\\\"', self$`term_id`)
           )
         },
         if (!is.null(self$`term_name`)) {
@@ -483,7 +483,7 @@ PhenotypeTerm <- R6::R6Class(
           '"term_name":
             "%s"
                     ',
-          self$`term_name`
+          gsub('\\"', '\\\\"', self$`term_name`)
           )
         },
         if (!is.null(self$`deprecated_ntr_terms`)) {
@@ -507,7 +507,7 @@ PhenotypeTerm <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -523,7 +523,7 @@ PhenotypeTerm <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         },
         if (!is.null(self$`name`)) {
@@ -531,7 +531,7 @@ PhenotypeTerm <- R6::R6Class(
           '"name":
             "%s"
                     ',
-          self$`name`
+          gsub('\\"', '\\\\"', self$`name`)
           )
         },
         if (!is.null(self$`synonyms`)) {
@@ -555,7 +555,7 @@ PhenotypeTerm <- R6::R6Class(
           '"ontology":
             "%s"
                     ',
-          self$`ontology`
+          gsub('\\"', '\\\\"', self$`ontology`)
           )
         }
       )

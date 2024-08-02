@@ -129,7 +129,7 @@ Locus1 <- R6::R6Class(
           '"assembly":
             "%s"
                     ',
-          self$`assembly`
+          gsub('\\"', '\\\\"', self$`assembly`)
           )
         },
         if (!is.null(self$`chromosome`)) {
@@ -137,7 +137,7 @@ Locus1 <- R6::R6Class(
           '"chromosome":
             "%s"
                     ',
-          self$`chromosome`
+          gsub('\\"', '\\\\"', self$`chromosome`)
           )
         },
         if (!is.null(self$`start`)) {

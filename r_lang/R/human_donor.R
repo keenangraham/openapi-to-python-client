@@ -582,7 +582,7 @@ HumanDonor <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          self$`release_timestamp`
+          gsub('\\"', '\\\\"', self$`release_timestamp`)
           )
         },
         if (!is.null(self$`taxa`)) {
@@ -590,7 +590,7 @@ HumanDonor <- R6::R6Class(
           '"taxa":
             "%s"
                     ',
-          self$`taxa`
+          gsub('\\"', '\\\\"', self$`taxa`)
           )
         },
         if (!is.null(self$`publications`)) {
@@ -614,7 +614,7 @@ HumanDonor <- R6::R6Class(
           '"url":
             "%s"
                     ',
-          self$`url`
+          gsub('\\"', '\\\\"', self$`url`)
           )
         },
         if (!is.null(self$`documents`)) {
@@ -630,7 +630,7 @@ HumanDonor <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          self$`lab`
+          gsub('\\"', '\\\\"', self$`lab`)
           )
         },
         if (!is.null(self$`award`)) {
@@ -638,7 +638,7 @@ HumanDonor <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          self$`award`
+          gsub('\\"', '\\\\"', self$`award`)
           )
         },
         if (!is.null(self$`accession`)) {
@@ -646,7 +646,7 @@ HumanDonor <- R6::R6Class(
           '"accession":
             "%s"
                     ',
-          self$`accession`
+          gsub('\\"', '\\\\"', self$`accession`)
           )
         },
         if (!is.null(self$`alternate_accessions`)) {
@@ -670,7 +670,7 @@ HumanDonor <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`revoke_detail`)) {
@@ -678,7 +678,7 @@ HumanDonor <- R6::R6Class(
           '"revoke_detail":
             "%s"
                     ',
-          self$`revoke_detail`
+          gsub('\\"', '\\\\"', self$`revoke_detail`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -686,7 +686,7 @@ HumanDonor <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -694,7 +694,7 @@ HumanDonor <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -702,7 +702,7 @@ HumanDonor <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -718,7 +718,7 @@ HumanDonor <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -726,7 +726,7 @@ HumanDonor <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -734,7 +734,7 @@ HumanDonor <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -742,7 +742,7 @@ HumanDonor <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`dbxrefs`)) {
@@ -758,7 +758,7 @@ HumanDonor <- R6::R6Class(
           '"sex":
             "%s"
                     ',
-          self$`sex`
+          gsub('\\"', '\\\\"', self$`sex`)
           )
         },
         if (!is.null(self$`phenotypic_features`)) {
@@ -774,7 +774,7 @@ HumanDonor <- R6::R6Class(
           '"virtual":
             %s
                     ',
-          tolower(self$`virtual`)
+          tolower(gsub('\\"', '\\\\"', self$`virtual`))
           )
         },
         if (!is.null(self$`related_donors`)) {
@@ -806,7 +806,7 @@ HumanDonor <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -822,7 +822,7 @@ HumanDonor <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         }
       )

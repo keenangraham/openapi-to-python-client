@@ -91,7 +91,7 @@ NoResultsResponseFacetsInnerTermsInner <- R6::R6Class(
           '"key":
             "%s"
                     ',
-          self$`key`
+          gsub('\\"', '\\\\"', self$`key`)
           )
         },
         if (!is.null(self$`doc_count`)) {

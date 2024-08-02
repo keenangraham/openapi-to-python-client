@@ -107,7 +107,7 @@ NoResultsResponseFiltersInner <- R6::R6Class(
           '"field":
             "%s"
                     ',
-          self$`field`
+          gsub('\\"', '\\\\"', self$`field`)
           )
         },
         if (!is.null(self$`term`)) {
@@ -115,7 +115,7 @@ NoResultsResponseFiltersInner <- R6::R6Class(
           '"term":
             "%s"
                     ',
-          self$`term`
+          gsub('\\"', '\\\\"', self$`term`)
           )
         },
         if (!is.null(self$`remove`)) {
@@ -123,7 +123,7 @@ NoResultsResponseFiltersInner <- R6::R6Class(
           '"remove":
             "%s"
                     ',
-          self$`remove`
+          gsub('\\"', '\\\\"', self$`remove`)
           )
         }
       )

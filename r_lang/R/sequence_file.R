@@ -934,7 +934,7 @@ SequenceFile <- R6::R6Class(
           '"controlled_access":
             %s
                     ',
-          tolower(self$`controlled_access`)
+          tolower(gsub('\\"', '\\\\"', self$`controlled_access`))
           )
         },
         if (!is.null(self$`anvil_url`)) {
@@ -942,7 +942,7 @@ SequenceFile <- R6::R6Class(
           '"anvil_url":
             "%s"
                     ',
-          self$`anvil_url`
+          gsub('\\"', '\\\\"', self$`anvil_url`)
           )
         },
         if (!is.null(self$`release_timestamp`)) {
@@ -950,7 +950,7 @@ SequenceFile <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          self$`release_timestamp`
+          gsub('\\"', '\\\\"', self$`release_timestamp`)
           )
         },
         if (!is.null(self$`documents`)) {
@@ -966,7 +966,7 @@ SequenceFile <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          self$`lab`
+          gsub('\\"', '\\\\"', self$`lab`)
           )
         },
         if (!is.null(self$`award`)) {
@@ -974,7 +974,7 @@ SequenceFile <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          self$`award`
+          gsub('\\"', '\\\\"', self$`award`)
           )
         },
         if (!is.null(self$`accession`)) {
@@ -982,7 +982,7 @@ SequenceFile <- R6::R6Class(
           '"accession":
             "%s"
                     ',
-          self$`accession`
+          gsub('\\"', '\\\\"', self$`accession`)
           )
         },
         if (!is.null(self$`alternate_accessions`)) {
@@ -1006,7 +1006,7 @@ SequenceFile <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          self$`status`
+          gsub('\\"', '\\\\"', self$`status`)
           )
         },
         if (!is.null(self$`revoke_detail`)) {
@@ -1014,7 +1014,7 @@ SequenceFile <- R6::R6Class(
           '"revoke_detail":
             "%s"
                     ',
-          self$`revoke_detail`
+          gsub('\\"', '\\\\"', self$`revoke_detail`)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -1022,7 +1022,7 @@ SequenceFile <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          self$`schema_version`
+          gsub('\\"', '\\\\"', self$`schema_version`)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -1030,7 +1030,7 @@ SequenceFile <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          self$`uuid`
+          gsub('\\"', '\\\\"', self$`uuid`)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -1038,7 +1038,7 @@ SequenceFile <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          self$`notes`
+          gsub('\\"', '\\\\"', self$`notes`)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -1054,7 +1054,7 @@ SequenceFile <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          self$`creation_timestamp`
+          gsub('\\"', '\\\\"', self$`creation_timestamp`)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -1062,7 +1062,7 @@ SequenceFile <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          self$`submitted_by`
+          gsub('\\"', '\\\\"', self$`submitted_by`)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -1070,7 +1070,7 @@ SequenceFile <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          self$`submitter_comment`
+          gsub('\\"', '\\\\"', self$`submitter_comment`)
           )
         },
         if (!is.null(self$`description`)) {
@@ -1078,7 +1078,7 @@ SequenceFile <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          self$`description`
+          gsub('\\"', '\\\\"', self$`description`)
           )
         },
         if (!is.null(self$`analysis_step_version`)) {
@@ -1086,7 +1086,7 @@ SequenceFile <- R6::R6Class(
           '"analysis_step_version":
             "%s"
                     ',
-          self$`analysis_step_version`
+          gsub('\\"', '\\\\"', self$`analysis_step_version`)
           )
         },
         if (!is.null(self$`content_md5sum`)) {
@@ -1094,7 +1094,7 @@ SequenceFile <- R6::R6Class(
           '"content_md5sum":
             "%s"
                     ',
-          self$`content_md5sum`
+          gsub('\\"', '\\\\"', self$`content_md5sum`)
           )
         },
         if (!is.null(self$`content_type`)) {
@@ -1102,7 +1102,7 @@ SequenceFile <- R6::R6Class(
           '"content_type":
             "%s"
                     ',
-          self$`content_type`
+          gsub('\\"', '\\\\"', self$`content_type`)
           )
         },
         if (!is.null(self$`dbxrefs`)) {
@@ -1126,7 +1126,7 @@ SequenceFile <- R6::R6Class(
           '"file_format":
             "%s"
                     ',
-          self$`file_format`
+          gsub('\\"', '\\\\"', self$`file_format`)
           )
         },
         if (!is.null(self$`file_format_specifications`)) {
@@ -1142,7 +1142,7 @@ SequenceFile <- R6::R6Class(
           '"file_set":
             "%s"
                     ',
-          self$`file_set`
+          gsub('\\"', '\\\\"', self$`file_set`)
           )
         },
         if (!is.null(self$`file_size`)) {
@@ -1158,7 +1158,7 @@ SequenceFile <- R6::R6Class(
           '"md5sum":
             "%s"
                     ',
-          self$`md5sum`
+          gsub('\\"', '\\\\"', self$`md5sum`)
           )
         },
         if (!is.null(self$`submitted_file_name`)) {
@@ -1166,7 +1166,7 @@ SequenceFile <- R6::R6Class(
           '"submitted_file_name":
             "%s"
                     ',
-          self$`submitted_file_name`
+          gsub('\\"', '\\\\"', self$`submitted_file_name`)
           )
         },
         if (!is.null(self$`upload_status`)) {
@@ -1174,7 +1174,7 @@ SequenceFile <- R6::R6Class(
           '"upload_status":
             "%s"
                     ',
-          self$`upload_status`
+          gsub('\\"', '\\\\"', self$`upload_status`)
           )
         },
         if (!is.null(self$`validation_error_detail`)) {
@@ -1182,7 +1182,7 @@ SequenceFile <- R6::R6Class(
           '"validation_error_detail":
             "%s"
                     ',
-          self$`validation_error_detail`
+          gsub('\\"', '\\\\"', self$`validation_error_detail`)
           )
         },
         if (!is.null(self$`flowcell_id`)) {
@@ -1190,7 +1190,7 @@ SequenceFile <- R6::R6Class(
           '"flowcell_id":
             "%s"
                     ',
-          self$`flowcell_id`
+          gsub('\\"', '\\\\"', self$`flowcell_id`)
           )
         },
         if (!is.null(self$`lane`)) {
@@ -1238,7 +1238,7 @@ SequenceFile <- R6::R6Class(
           '"sequencing_platform":
             "%s"
                     ',
-          self$`sequencing_platform`
+          gsub('\\"', '\\\\"', self$`sequencing_platform`)
           )
         },
         if (!is.null(self$`sequencing_kit`)) {
@@ -1246,7 +1246,7 @@ SequenceFile <- R6::R6Class(
           '"sequencing_kit":
             "%s"
                     ',
-          self$`sequencing_kit`
+          gsub('\\"', '\\\\"', self$`sequencing_kit`)
           )
         },
         if (!is.null(self$`sequencing_run`)) {
@@ -1262,7 +1262,7 @@ SequenceFile <- R6::R6Class(
           '"illumina_read_type":
             "%s"
                     ',
-          self$`illumina_read_type`
+          gsub('\\"', '\\\\"', self$`illumina_read_type`)
           )
         },
         if (!is.null(self$`index`)) {
@@ -1270,7 +1270,7 @@ SequenceFile <- R6::R6Class(
           '"index":
             "%s"
                     ',
-          self$`index`
+          gsub('\\"', '\\\\"', self$`index`)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -1278,7 +1278,7 @@ SequenceFile <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          self$`@id`
+          gsub('\\"', '\\\\"', self$`@id`)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -1294,7 +1294,7 @@ SequenceFile <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          self$`summary`
+          gsub('\\"', '\\\\"', self$`summary`)
           )
         },
         if (!is.null(self$`integrated_in`)) {
@@ -1334,7 +1334,7 @@ SequenceFile <- R6::R6Class(
           '"href":
             "%s"
                     ',
-          self$`href`
+          gsub('\\"', '\\\\"', self$`href`)
           )
         },
         if (!is.null(self$`s3_uri`)) {
@@ -1342,7 +1342,7 @@ SequenceFile <- R6::R6Class(
           '"s3_uri":
             "%s"
                     ',
-          self$`s3_uri`
+          gsub('\\"', '\\\\"', self$`s3_uri`)
           )
         },
         if (!is.null(self$`upload_credentials`)) {
@@ -1350,7 +1350,7 @@ SequenceFile <- R6::R6Class(
           '"upload_credentials":
             "%s"
                     ',
-          self$`upload_credentials`
+          gsub('\\"', '\\\\"', self$`upload_credentials`)
           )
         },
         if (!is.null(self$`seqspecs`)) {
