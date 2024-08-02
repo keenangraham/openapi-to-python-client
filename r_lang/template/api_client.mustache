@@ -158,6 +158,21 @@ ApiClient <- R6::R6Class(
         self$max_retry_attempts <- max_retry_attempts
       }
     },
+    FlattenQueryParams = function(z) {
+        print('flattening query params')
+        print(z)
+        results <- list()
+        results_names <- list()
+        for (i in 1:length(z)) {
+            for (value in z[[i]]) {
+                results <- append(results, value)
+               results_names <- append(results_names, names(z)[[i]])
+            }
+        }
+        names(results) <- results_names
+        print(results)
+        results
+    },
     #' Prepare to make an API call with the retry logic.
     #'
     #' @description
@@ -179,6 +194,7 @@ ApiClient <- R6::R6Class(
     CallApi = function(url, method, query_params, header_params, form_params,
                        file_params, accepts, content_types,
                        body, stream_callback = NULL, ...) {
+      query_params <- self$FlattenQueryParams(query_params)
 
       resp <- self$Execute(url, method, query_params, header_params,
                            form_params, file_params,
@@ -282,6 +298,9 @@ ApiClient <- R6::R6Class(
         }
       } else { # no streaming
         if (method == "GET") {
+          print(url)
+          print(query_params)
+          print(str(query_params))
           httr_response <- httr::GET(url, query = query_params, headers, http_timeout,
                     httr::user_agent(self$`user_agent`), ...)
         } else if (method == "POST") {
