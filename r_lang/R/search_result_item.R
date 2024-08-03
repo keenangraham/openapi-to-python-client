@@ -218,7 +218,6 @@ SearchResultItem <- R6::R6Class(
           if (is.null(discriminatorValue)) {
              discriminatorValue <- parsedJson[[1]]$`@type`[[1]]
           }
-          print(discriminatorValue)
           if (is.null(discriminatorValue)) { # throw error if it's null
             stop("Error! The value of the discriminator property `@type`, which should be the class type, is null")
           }

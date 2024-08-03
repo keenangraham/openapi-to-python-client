@@ -125,8 +125,6 @@ ApiClient <- R6::R6Class(
       }
     },
     FlattenQueryParams = function(z) {
-        print('flattening query params')
-        print(z)
         results <- list()
         results_names <- list()
         for (i in seq_along(z)) {
@@ -136,7 +134,6 @@ ApiClient <- R6::R6Class(
             }
         }
         names(results) <- results_names
-        print(results)
         results
     },
     #' Prepare to make an API call with the retry logic.
@@ -256,9 +253,6 @@ ApiClient <- R6::R6Class(
         }
       } else { # no streaming
         if (method == "GET") {
-          print(url)
-          print(query_params)
-          print(str(query_params))
           httr_response <- httr::GET(url, query = query_params, headers, http_timeout,
                     httr::user_agent(self$`user_agent`), ...)
         } else if (method == "POST") {

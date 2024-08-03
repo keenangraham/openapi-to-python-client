@@ -626,7 +626,7 @@
       }
 
       {{/vendorExtensions.x-streaming}}
-      if (local_var_resp$status_code >= 200 && local_var_resp$status_code <= 299) {
+      if ((local_var_resp$status_code >= 200 && local_var_resp$status_code <= 299) || local_var_resp$status_code == 404) {
         {{#returnType}}
         {{#isPrimitiveType}}
         local_var_content <- local_var_resp$response
@@ -648,18 +648,16 @@
         deserialized_resp_obj <- tryCatch(
           self$api_client$deserialize(local_var_resp$response_as_text(), "{{returnType}}", loadNamespace("{{packageName}}")),
           error = function(e) {
-            stop(e)
-            {{#useDefaultExceptionHandling}}
-            stop("Failed to deserialize response")
-            {{/useDefaultExceptionHandling}}
-            {{#useRlangExceptionHandling}}
-            rlang::abort(message = "Failed to deserialize response",
-                         .subclass = "ApiException",
-                         ApiException = ApiException$new(http_response = local_var_resp))
-            {{/useRlangExceptionHandling}}
+            print("Error deserializing, returning raw")
+            print(e)
+	    return(NULL)
           }
         )
-        local_var_resp$content <- deserialized_resp_obj
+        if (is.null(deserialized_resp_obj)) {
+            local_var_resp$content <- local_var_resp$content
+        } else {
+            local_var_resp$content <- deserialized_resp_obj
+        }
         {{/isPrimitiveType}}
         {{/returnType}}
         {{^returnType}}
