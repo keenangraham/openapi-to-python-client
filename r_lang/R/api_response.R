@@ -60,6 +60,9 @@ ApiResponse <- R6::R6Class(
         self$response <- charToRaw(jsonlite::toJSON("NULL"))
       }
       text_response <- iconv(readBin(self$response, character()), from = from_encoding, to = to_encoding)
+      if (is.na(text_response)) {
+        stop("No text found")
+      }
       return(text_response)
     }
   )
