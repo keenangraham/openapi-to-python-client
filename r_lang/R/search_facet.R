@@ -106,7 +106,7 @@ SearchFacet <- R6::R6Class(
           '"field":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`field`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`field`, perl=TRUE)
           )
         },
         if (!is.null(self$`title`)) {
@@ -114,7 +114,7 @@ SearchFacet <- R6::R6Class(
           '"title":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`title`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`title`, perl=TRUE)
           )
         },
         if (!is.null(self$`terms`)) {

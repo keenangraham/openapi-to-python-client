@@ -107,13 +107,13 @@ Tile <- R6::R6Class(
           '"tile_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`tile_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`tile_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`tile_start`)) {
           sprintf(
           '"tile_start":
-            %d
+            %f
                     ',
           self$`tile_start`
           )
@@ -121,7 +121,7 @@ Tile <- R6::R6Class(
         if (!is.null(self$`tile_end`)) {
           sprintf(
           '"tile_end":
-            %d
+            %f
                     ',
           self$`tile_end`
           )

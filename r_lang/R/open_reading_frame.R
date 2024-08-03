@@ -404,7 +404,7 @@ OpenReadingFrame <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`release_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`release_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`status`)) {
@@ -412,7 +412,7 @@ OpenReadingFrame <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -420,7 +420,7 @@ OpenReadingFrame <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -428,7 +428,7 @@ OpenReadingFrame <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -436,7 +436,7 @@ OpenReadingFrame <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -452,7 +452,7 @@ OpenReadingFrame <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -460,7 +460,7 @@ OpenReadingFrame <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -468,7 +468,7 @@ OpenReadingFrame <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -476,7 +476,7 @@ OpenReadingFrame <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -484,7 +484,7 @@ OpenReadingFrame <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lab`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lab`, perl=TRUE)
           )
         },
         if (!is.null(self$`award`)) {
@@ -492,7 +492,7 @@ OpenReadingFrame <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`award`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`award`, perl=TRUE)
           )
         },
         if (!is.null(self$`orf_id`)) {
@@ -500,7 +500,7 @@ OpenReadingFrame <- R6::R6Class(
           '"orf_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`orf_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`orf_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`gene`)) {
@@ -516,7 +516,7 @@ OpenReadingFrame <- R6::R6Class(
           '"protein_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`protein_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`protein_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`dbxrefs`)) {
@@ -530,7 +530,7 @@ OpenReadingFrame <- R6::R6Class(
         if (!is.null(self$`pct_identical_protein`)) {
           sprintf(
           '"pct_identical_protein":
-            %d
+            %f
                     ',
           self$`pct_identical_protein`
           )
@@ -538,7 +538,7 @@ OpenReadingFrame <- R6::R6Class(
         if (!is.null(self$`pct_coverage_protein`)) {
           sprintf(
           '"pct_coverage_protein":
-            %d
+            %f
                     ',
           self$`pct_coverage_protein`
           )
@@ -546,7 +546,7 @@ OpenReadingFrame <- R6::R6Class(
         if (!is.null(self$`pct_coverage_orf`)) {
           sprintf(
           '"pct_coverage_orf":
-            %d
+            %f
                     ',
           self$`pct_coverage_orf`
           )
@@ -556,7 +556,7 @@ OpenReadingFrame <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -572,7 +572,7 @@ OpenReadingFrame <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         }
       )

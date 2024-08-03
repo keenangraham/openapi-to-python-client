@@ -170,7 +170,7 @@ NoResultsResponseFacetsInner <- R6::R6Class(
           '"field":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`field`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`field`, perl=TRUE)
           )
         },
         if (!is.null(self$`title`)) {
@@ -178,7 +178,7 @@ NoResultsResponseFacetsInner <- R6::R6Class(
           '"title":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`title`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`title`, perl=TRUE)
           )
         },
         if (!is.null(self$`terms`)) {
@@ -192,7 +192,7 @@ NoResultsResponseFacetsInner <- R6::R6Class(
         if (!is.null(self$`total`)) {
           sprintf(
           '"total":
-            %d
+            %f
                     ',
           self$`total`
           )
@@ -202,7 +202,7 @@ NoResultsResponseFacetsInner <- R6::R6Class(
           '"type":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`type`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`type`, perl=TRUE)
           )
         },
         if (!is.null(self$`appended`)) {
@@ -210,7 +210,7 @@ NoResultsResponseFacetsInner <- R6::R6Class(
           '"appended":
             %s
                     ',
-          tolower(gsub('\\"', '\\\\"', self$`appended`))
+          tolower(gsub('(?<!\\\\)\\"', '\\\\"', self$`appended`, perl=TRUE))
           )
         },
         if (!is.null(self$`open_on_load`)) {
@@ -218,7 +218,7 @@ NoResultsResponseFacetsInner <- R6::R6Class(
           '"open_on_load":
             %s
                     ',
-          tolower(gsub('\\"', '\\\\"', self$`open_on_load`))
+          tolower(gsub('(?<!\\\\)\\"', '\\\\"', self$`open_on_load`, perl=TRUE))
           )
         }
       )

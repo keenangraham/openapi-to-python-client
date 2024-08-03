@@ -177,7 +177,7 @@ Attachment1 <- R6::R6Class(
           '"download":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`download`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`download`, perl=TRUE)
           )
         },
         if (!is.null(self$`href`)) {
@@ -185,7 +185,7 @@ Attachment1 <- R6::R6Class(
           '"href":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`href`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`href`, perl=TRUE)
           )
         },
         if (!is.null(self$`type`)) {
@@ -193,7 +193,7 @@ Attachment1 <- R6::R6Class(
           '"type":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`type`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`type`, perl=TRUE)
           )
         },
         if (!is.null(self$`md5sum`)) {
@@ -201,13 +201,13 @@ Attachment1 <- R6::R6Class(
           '"md5sum":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`md5sum`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`md5sum`, perl=TRUE)
           )
         },
         if (!is.null(self$`size`)) {
           sprintf(
           '"size":
-            %d
+            %f
                     ',
           self$`size`
           )
@@ -215,7 +215,7 @@ Attachment1 <- R6::R6Class(
         if (!is.null(self$`width`)) {
           sprintf(
           '"width":
-            %d
+            %f
                     ',
           self$`width`
           )
@@ -223,7 +223,7 @@ Attachment1 <- R6::R6Class(
         if (!is.null(self$`height`)) {
           sprintf(
           '"height":
-            %d
+            %f
                     ',
           self$`height`
           )

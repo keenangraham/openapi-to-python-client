@@ -625,7 +625,7 @@ Treatment <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`release_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`release_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -633,7 +633,7 @@ Treatment <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lab`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lab`, perl=TRUE)
           )
         },
         if (!is.null(self$`award`)) {
@@ -641,7 +641,7 @@ Treatment <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`award`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`award`, perl=TRUE)
           )
         },
         if (!is.null(self$`sources`)) {
@@ -657,7 +657,7 @@ Treatment <- R6::R6Class(
           '"lot_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lot_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lot_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`product_id`)) {
@@ -665,7 +665,7 @@ Treatment <- R6::R6Class(
           '"product_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`product_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`product_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`documents`)) {
@@ -681,7 +681,7 @@ Treatment <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -689,7 +689,7 @@ Treatment <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -697,7 +697,7 @@ Treatment <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -705,7 +705,7 @@ Treatment <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -721,7 +721,7 @@ Treatment <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -729,7 +729,7 @@ Treatment <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -737,7 +737,7 @@ Treatment <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -745,13 +745,13 @@ Treatment <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`amount`)) {
           sprintf(
           '"amount":
-            %d
+            %f
                     ',
           self$`amount`
           )
@@ -761,13 +761,13 @@ Treatment <- R6::R6Class(
           '"amount_units":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`amount_units`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`amount_units`, perl=TRUE)
           )
         },
         if (!is.null(self$`duration`)) {
           sprintf(
           '"duration":
-            %d
+            %f
                     ',
           self$`duration`
           )
@@ -777,13 +777,13 @@ Treatment <- R6::R6Class(
           '"duration_units":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`duration_units`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`duration_units`, perl=TRUE)
           )
         },
         if (!is.null(self$`pH`)) {
           sprintf(
           '"pH":
-            %d
+            %f
                     ',
           self$`pH`
           )
@@ -793,13 +793,13 @@ Treatment <- R6::R6Class(
           '"purpose":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`purpose`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`purpose`, perl=TRUE)
           )
         },
         if (!is.null(self$`post_treatment_time`)) {
           sprintf(
           '"post_treatment_time":
-            %d
+            %f
                     ',
           self$`post_treatment_time`
           )
@@ -809,13 +809,13 @@ Treatment <- R6::R6Class(
           '"post_treatment_time_units":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`post_treatment_time_units`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`post_treatment_time_units`, perl=TRUE)
           )
         },
         if (!is.null(self$`temperature`)) {
           sprintf(
           '"temperature":
-            %d
+            %f
                     ',
           self$`temperature`
           )
@@ -825,7 +825,7 @@ Treatment <- R6::R6Class(
           '"temperature_units":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`temperature_units`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`temperature_units`, perl=TRUE)
           )
         },
         if (!is.null(self$`treatment_type`)) {
@@ -833,7 +833,7 @@ Treatment <- R6::R6Class(
           '"treatment_type":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`treatment_type`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`treatment_type`, perl=TRUE)
           )
         },
         if (!is.null(self$`treatment_term_id`)) {
@@ -841,7 +841,7 @@ Treatment <- R6::R6Class(
           '"treatment_term_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`treatment_term_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`treatment_term_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`treatment_term_name`)) {
@@ -849,7 +849,7 @@ Treatment <- R6::R6Class(
           '"treatment_term_name":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`treatment_term_name`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`treatment_term_name`, perl=TRUE)
           )
         },
         if (!is.null(self$`depletion`)) {
@@ -857,7 +857,7 @@ Treatment <- R6::R6Class(
           '"depletion":
             %s
                     ',
-          tolower(gsub('\\"', '\\\\"', self$`depletion`))
+          tolower(gsub('(?<!\\\\)\\"', '\\\\"', self$`depletion`, perl=TRUE))
           )
         },
         if (!is.null(self$`@id`)) {
@@ -865,7 +865,7 @@ Treatment <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -881,7 +881,7 @@ Treatment <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         },
         if (!is.null(self$`biosamples_treated`)) {

@@ -487,7 +487,7 @@ DegronModification <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`release_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`release_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`sources`)) {
@@ -503,7 +503,7 @@ DegronModification <- R6::R6Class(
           '"lot_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lot_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lot_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`product_id`)) {
@@ -511,7 +511,7 @@ DegronModification <- R6::R6Class(
           '"product_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`product_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`product_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`documents`)) {
@@ -527,7 +527,7 @@ DegronModification <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -535,7 +535,7 @@ DegronModification <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lab`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lab`, perl=TRUE)
           )
         },
         if (!is.null(self$`award`)) {
@@ -543,7 +543,7 @@ DegronModification <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`award`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`award`, perl=TRUE)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -551,7 +551,7 @@ DegronModification <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -559,7 +559,7 @@ DegronModification <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -567,7 +567,7 @@ DegronModification <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -583,7 +583,7 @@ DegronModification <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -591,7 +591,7 @@ DegronModification <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -599,7 +599,7 @@ DegronModification <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -607,7 +607,7 @@ DegronModification <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`activated`)) {
@@ -615,7 +615,7 @@ DegronModification <- R6::R6Class(
           '"activated":
             %s
                     ',
-          tolower(gsub('\\"', '\\\\"', self$`activated`))
+          tolower(gsub('(?<!\\\\)\\"', '\\\\"', self$`activated`, perl=TRUE))
           )
         },
         if (!is.null(self$`activating_agent_term_id`)) {
@@ -623,7 +623,7 @@ DegronModification <- R6::R6Class(
           '"activating_agent_term_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`activating_agent_term_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`activating_agent_term_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`activating_agent_term_name`)) {
@@ -631,7 +631,7 @@ DegronModification <- R6::R6Class(
           '"activating_agent_term_name":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`activating_agent_term_name`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`activating_agent_term_name`, perl=TRUE)
           )
         },
         if (!is.null(self$`modality`)) {
@@ -639,7 +639,7 @@ DegronModification <- R6::R6Class(
           '"modality":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`modality`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`modality`, perl=TRUE)
           )
         },
         if (!is.null(self$`degron_system`)) {
@@ -647,7 +647,7 @@ DegronModification <- R6::R6Class(
           '"degron_system":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`degron_system`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`degron_system`, perl=TRUE)
           )
         },
         if (!is.null(self$`tagged_proteins`)) {
@@ -663,7 +663,7 @@ DegronModification <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -679,7 +679,7 @@ DegronModification <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         },
         if (!is.null(self$`biosamples_modified`)) {

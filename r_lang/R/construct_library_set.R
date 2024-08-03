@@ -910,7 +910,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"large_scale_loci_list":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`large_scale_loci_list`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`large_scale_loci_list`, perl=TRUE)
           )
         },
         if (!is.null(self$`small_scale_gene_list`)) {
@@ -926,7 +926,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"large_scale_gene_list":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`large_scale_gene_list`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`large_scale_gene_list`, perl=TRUE)
           )
         },
         if (!is.null(self$`release_timestamp`)) {
@@ -934,7 +934,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`release_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`release_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`publications`)) {
@@ -974,7 +974,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"lot_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lot_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lot_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`product_id`)) {
@@ -982,7 +982,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"product_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`product_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`product_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -990,7 +990,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lab`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lab`, perl=TRUE)
           )
         },
         if (!is.null(self$`award`)) {
@@ -998,7 +998,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`award`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`award`, perl=TRUE)
           )
         },
         if (!is.null(self$`accession`)) {
@@ -1006,7 +1006,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"accession":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`accession`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`accession`, perl=TRUE)
           )
         },
         if (!is.null(self$`alternate_accessions`)) {
@@ -1030,7 +1030,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`revoke_detail`)) {
@@ -1038,7 +1038,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"revoke_detail":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`revoke_detail`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`revoke_detail`, perl=TRUE)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -1046,7 +1046,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -1054,7 +1054,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -1062,7 +1062,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -1078,7 +1078,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -1086,7 +1086,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -1094,7 +1094,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -1102,7 +1102,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`file_set_type`)) {
@@ -1110,7 +1110,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"file_set_type":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`file_set_type`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`file_set_type`, perl=TRUE)
           )
         },
         if (!is.null(self$`scope`)) {
@@ -1118,7 +1118,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"scope":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`scope`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`scope`, perl=TRUE)
           )
         },
         if (!is.null(self$`selection_criteria`)) {
@@ -1158,7 +1158,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"exon":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`exon`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`exon`, perl=TRUE)
           )
         },
         if (!is.null(self$`tile`)) {
@@ -1174,7 +1174,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"guide_type":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`guide_type`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`guide_type`, perl=TRUE)
           )
         },
         if (!is.null(self$`tiling_modality`)) {
@@ -1182,13 +1182,13 @@ ConstructLibrarySet <- R6::R6Class(
           '"tiling_modality":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`tiling_modality`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`tiling_modality`, perl=TRUE)
           )
         },
         if (!is.null(self$`average_guide_coverage`)) {
           sprintf(
           '"average_guide_coverage":
-            %d
+            %f
                     ',
           self$`average_guide_coverage`
           )
@@ -1196,7 +1196,7 @@ ConstructLibrarySet <- R6::R6Class(
         if (!is.null(self$`lower_bound_guide_coverage`)) {
           sprintf(
           '"lower_bound_guide_coverage":
-            %d
+            %f
                     ',
           self$`lower_bound_guide_coverage`
           )
@@ -1204,7 +1204,7 @@ ConstructLibrarySet <- R6::R6Class(
         if (!is.null(self$`upper_bound_guide_coverage`)) {
           sprintf(
           '"upper_bound_guide_coverage":
-            %d
+            %f
                     ',
           self$`upper_bound_guide_coverage`
           )
@@ -1212,7 +1212,7 @@ ConstructLibrarySet <- R6::R6Class(
         if (!is.null(self$`average_insert_size`)) {
           sprintf(
           '"average_insert_size":
-            %d
+            %f
                     ',
           self$`average_insert_size`
           )
@@ -1220,7 +1220,7 @@ ConstructLibrarySet <- R6::R6Class(
         if (!is.null(self$`lower_bound_insert_size`)) {
           sprintf(
           '"lower_bound_insert_size":
-            %d
+            %f
                     ',
           self$`lower_bound_insert_size`
           )
@@ -1228,7 +1228,7 @@ ConstructLibrarySet <- R6::R6Class(
         if (!is.null(self$`upper_bound_insert_size`)) {
           sprintf(
           '"upper_bound_insert_size":
-            %d
+            %f
                     ',
           self$`upper_bound_insert_size`
           )
@@ -1238,7 +1238,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"targeton":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`targeton`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`targeton`, perl=TRUE)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -1246,7 +1246,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -1262,7 +1262,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         },
         if (!is.null(self$`files`)) {
@@ -1286,7 +1286,7 @@ ConstructLibrarySet <- R6::R6Class(
           '"submitted_files_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_files_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_files_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`input_file_set_for`)) {

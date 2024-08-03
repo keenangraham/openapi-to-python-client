@@ -129,7 +129,7 @@ GeneLocation1 <- R6::R6Class(
           '"assembly":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`assembly`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`assembly`, perl=TRUE)
           )
         },
         if (!is.null(self$`chromosome`)) {
@@ -137,13 +137,13 @@ GeneLocation1 <- R6::R6Class(
           '"chromosome":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`chromosome`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`chromosome`, perl=TRUE)
           )
         },
         if (!is.null(self$`start`)) {
           sprintf(
           '"start":
-            %d
+            %f
                     ',
           self$`start`
           )
@@ -151,7 +151,7 @@ GeneLocation1 <- R6::R6Class(
         if (!is.null(self$`end`)) {
           sprintf(
           '"end":
-            %d
+            %f
                     ',
           self$`end`
           )

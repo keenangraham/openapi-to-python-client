@@ -620,7 +620,7 @@ Publication <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`release_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`release_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`publication_identifiers`)) {
@@ -636,7 +636,7 @@ Publication <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -644,7 +644,7 @@ Publication <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lab`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lab`, perl=TRUE)
           )
         },
         if (!is.null(self$`award`)) {
@@ -652,7 +652,7 @@ Publication <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`award`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`award`, perl=TRUE)
           )
         },
         if (!is.null(self$`attachment`)) {
@@ -668,7 +668,7 @@ Publication <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -676,7 +676,7 @@ Publication <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -684,7 +684,7 @@ Publication <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -700,7 +700,7 @@ Publication <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -708,7 +708,7 @@ Publication <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -716,7 +716,7 @@ Publication <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -724,7 +724,7 @@ Publication <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`title`)) {
@@ -732,7 +732,7 @@ Publication <- R6::R6Class(
           '"title":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`title`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`title`, perl=TRUE)
           )
         },
         if (!is.null(self$`abstract`)) {
@@ -740,7 +740,7 @@ Publication <- R6::R6Class(
           '"abstract":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`abstract`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`abstract`, perl=TRUE)
           )
         },
         if (!is.null(self$`authors`)) {
@@ -748,7 +748,7 @@ Publication <- R6::R6Class(
           '"authors":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`authors`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`authors`, perl=TRUE)
           )
         },
         if (!is.null(self$`date_published`)) {
@@ -756,7 +756,7 @@ Publication <- R6::R6Class(
           '"date_published":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`date_published`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`date_published`, perl=TRUE)
           )
         },
         if (!is.null(self$`date_revised`)) {
@@ -764,7 +764,7 @@ Publication <- R6::R6Class(
           '"date_revised":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`date_revised`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`date_revised`, perl=TRUE)
           )
         },
         if (!is.null(self$`issue`)) {
@@ -772,7 +772,7 @@ Publication <- R6::R6Class(
           '"issue":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`issue`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`issue`, perl=TRUE)
           )
         },
         if (!is.null(self$`page`)) {
@@ -780,7 +780,7 @@ Publication <- R6::R6Class(
           '"page":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`page`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`page`, perl=TRUE)
           )
         },
         if (!is.null(self$`volume`)) {
@@ -788,7 +788,7 @@ Publication <- R6::R6Class(
           '"volume":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`volume`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`volume`, perl=TRUE)
           )
         },
         if (!is.null(self$`journal`)) {
@@ -796,7 +796,7 @@ Publication <- R6::R6Class(
           '"journal":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`journal`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`journal`, perl=TRUE)
           )
         },
         if (!is.null(self$`published_by`)) {
@@ -812,7 +812,7 @@ Publication <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -828,13 +828,13 @@ Publication <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         },
         if (!is.null(self$`publication_year`)) {
           sprintf(
           '"publication_year":
-            %d
+            %f
                     ',
           self$`publication_year`
           )

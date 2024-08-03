@@ -404,7 +404,7 @@ Page <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`release_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`release_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -412,7 +412,7 @@ Page <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lab`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lab`, perl=TRUE)
           )
         },
         if (!is.null(self$`award`)) {
@@ -420,7 +420,7 @@ Page <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`award`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`award`, perl=TRUE)
           )
         },
         if (!is.null(self$`status`)) {
@@ -428,7 +428,7 @@ Page <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -436,7 +436,7 @@ Page <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -444,7 +444,7 @@ Page <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -452,7 +452,7 @@ Page <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -468,7 +468,7 @@ Page <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -476,7 +476,7 @@ Page <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -484,7 +484,7 @@ Page <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -492,7 +492,7 @@ Page <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`parent`)) {
@@ -500,7 +500,7 @@ Page <- R6::R6Class(
           '"parent":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`parent`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`parent`, perl=TRUE)
           )
         },
         if (!is.null(self$`name`)) {
@@ -508,7 +508,7 @@ Page <- R6::R6Class(
           '"name":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`name`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`name`, perl=TRUE)
           )
         },
         if (!is.null(self$`title`)) {
@@ -516,7 +516,7 @@ Page <- R6::R6Class(
           '"title":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`title`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`title`, perl=TRUE)
           )
         },
         if (!is.null(self$`layout`)) {
@@ -532,7 +532,7 @@ Page <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -548,7 +548,7 @@ Page <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         },
         if (!is.null(self$`canonical_uri`)) {
@@ -556,7 +556,7 @@ Page <- R6::R6Class(
           '"canonical_uri":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`canonical_uri`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`canonical_uri`, perl=TRUE)
           )
         }
       )

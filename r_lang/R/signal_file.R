@@ -847,7 +847,7 @@ SignalFile <- R6::R6Class(
           '"transcriptome_annotation":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`transcriptome_annotation`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`transcriptome_annotation`, perl=TRUE)
           )
         },
         if (!is.null(self$`assembly`)) {
@@ -855,7 +855,7 @@ SignalFile <- R6::R6Class(
           '"assembly":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`assembly`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`assembly`, perl=TRUE)
           )
         },
         if (!is.null(self$`release_timestamp`)) {
@@ -863,7 +863,7 @@ SignalFile <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`release_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`release_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`reference_files`)) {
@@ -887,7 +887,7 @@ SignalFile <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lab`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lab`, perl=TRUE)
           )
         },
         if (!is.null(self$`award`)) {
@@ -895,7 +895,7 @@ SignalFile <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`award`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`award`, perl=TRUE)
           )
         },
         if (!is.null(self$`accession`)) {
@@ -903,7 +903,7 @@ SignalFile <- R6::R6Class(
           '"accession":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`accession`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`accession`, perl=TRUE)
           )
         },
         if (!is.null(self$`alternate_accessions`)) {
@@ -927,7 +927,7 @@ SignalFile <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`revoke_detail`)) {
@@ -935,7 +935,7 @@ SignalFile <- R6::R6Class(
           '"revoke_detail":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`revoke_detail`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`revoke_detail`, perl=TRUE)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -943,7 +943,7 @@ SignalFile <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -951,7 +951,7 @@ SignalFile <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -959,7 +959,7 @@ SignalFile <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -975,7 +975,7 @@ SignalFile <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -983,7 +983,7 @@ SignalFile <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -991,7 +991,7 @@ SignalFile <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -999,7 +999,7 @@ SignalFile <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`analysis_step_version`)) {
@@ -1007,7 +1007,7 @@ SignalFile <- R6::R6Class(
           '"analysis_step_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`analysis_step_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`analysis_step_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`content_md5sum`)) {
@@ -1015,7 +1015,7 @@ SignalFile <- R6::R6Class(
           '"content_md5sum":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`content_md5sum`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`content_md5sum`, perl=TRUE)
           )
         },
         if (!is.null(self$`content_type`)) {
@@ -1023,7 +1023,7 @@ SignalFile <- R6::R6Class(
           '"content_type":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`content_type`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`content_type`, perl=TRUE)
           )
         },
         if (!is.null(self$`dbxrefs`)) {
@@ -1047,7 +1047,7 @@ SignalFile <- R6::R6Class(
           '"file_format":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`file_format`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`file_format`, perl=TRUE)
           )
         },
         if (!is.null(self$`file_format_specifications`)) {
@@ -1063,13 +1063,13 @@ SignalFile <- R6::R6Class(
           '"file_set":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`file_set`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`file_set`, perl=TRUE)
           )
         },
         if (!is.null(self$`file_size`)) {
           sprintf(
           '"file_size":
-            %d
+            %f
                     ',
           self$`file_size`
           )
@@ -1079,7 +1079,7 @@ SignalFile <- R6::R6Class(
           '"md5sum":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`md5sum`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`md5sum`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_file_name`)) {
@@ -1087,7 +1087,7 @@ SignalFile <- R6::R6Class(
           '"submitted_file_name":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_file_name`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_file_name`, perl=TRUE)
           )
         },
         if (!is.null(self$`upload_status`)) {
@@ -1095,7 +1095,7 @@ SignalFile <- R6::R6Class(
           '"upload_status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`upload_status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`upload_status`, perl=TRUE)
           )
         },
         if (!is.null(self$`validation_error_detail`)) {
@@ -1103,7 +1103,7 @@ SignalFile <- R6::R6Class(
           '"validation_error_detail":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`validation_error_detail`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`validation_error_detail`, perl=TRUE)
           )
         },
         if (!is.null(self$`strand_specificity`)) {
@@ -1111,7 +1111,7 @@ SignalFile <- R6::R6Class(
           '"strand_specificity":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`strand_specificity`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`strand_specificity`, perl=TRUE)
           )
         },
         if (!is.null(self$`filtered`)) {
@@ -1119,7 +1119,7 @@ SignalFile <- R6::R6Class(
           '"filtered":
             %s
                     ',
-          tolower(gsub('\\"', '\\\\"', self$`filtered`))
+          tolower(gsub('(?<!\\\\)\\"', '\\\\"', self$`filtered`, perl=TRUE))
           )
         },
         if (!is.null(self$`normalized`)) {
@@ -1127,7 +1127,7 @@ SignalFile <- R6::R6Class(
           '"normalized":
             %s
                     ',
-          tolower(gsub('\\"', '\\\\"', self$`normalized`))
+          tolower(gsub('(?<!\\\\)\\"', '\\\\"', self$`normalized`, perl=TRUE))
           )
         },
         if (!is.null(self$`start_view_position`)) {
@@ -1135,7 +1135,7 @@ SignalFile <- R6::R6Class(
           '"start_view_position":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`start_view_position`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`start_view_position`, perl=TRUE)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -1143,7 +1143,7 @@ SignalFile <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -1159,7 +1159,7 @@ SignalFile <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         },
         if (!is.null(self$`integrated_in`)) {
@@ -1199,7 +1199,7 @@ SignalFile <- R6::R6Class(
           '"href":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`href`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`href`, perl=TRUE)
           )
         },
         if (!is.null(self$`s3_uri`)) {
@@ -1207,7 +1207,7 @@ SignalFile <- R6::R6Class(
           '"s3_uri":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`s3_uri`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`s3_uri`, perl=TRUE)
           )
         },
         if (!is.null(self$`upload_credentials`)) {
@@ -1215,7 +1215,7 @@ SignalFile <- R6::R6Class(
           '"upload_credentials":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`upload_credentials`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`upload_credentials`, perl=TRUE)
           )
         },
         if (!is.null(self$`content_summary`)) {
@@ -1223,7 +1223,7 @@ SignalFile <- R6::R6Class(
           '"content_summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`content_summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`content_summary`, perl=TRUE)
           )
         }
       )

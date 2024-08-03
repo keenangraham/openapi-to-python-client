@@ -477,7 +477,7 @@ Gene <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`release_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`release_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`transcriptome_annotation`)) {
@@ -485,7 +485,7 @@ Gene <- R6::R6Class(
           '"transcriptome_annotation":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`transcriptome_annotation`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`transcriptome_annotation`, perl=TRUE)
           )
         },
         if (!is.null(self$`taxa`)) {
@@ -493,7 +493,7 @@ Gene <- R6::R6Class(
           '"taxa":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`taxa`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`taxa`, perl=TRUE)
           )
         },
         if (!is.null(self$`status`)) {
@@ -501,7 +501,7 @@ Gene <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -509,7 +509,7 @@ Gene <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -517,7 +517,7 @@ Gene <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -525,7 +525,7 @@ Gene <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -541,7 +541,7 @@ Gene <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -549,7 +549,7 @@ Gene <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -557,7 +557,7 @@ Gene <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -565,7 +565,7 @@ Gene <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`geneid`)) {
@@ -573,7 +573,7 @@ Gene <- R6::R6Class(
           '"geneid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`geneid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`geneid`, perl=TRUE)
           )
         },
         if (!is.null(self$`symbol`)) {
@@ -581,7 +581,7 @@ Gene <- R6::R6Class(
           '"symbol":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`symbol`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`symbol`, perl=TRUE)
           )
         },
         if (!is.null(self$`name`)) {
@@ -589,7 +589,7 @@ Gene <- R6::R6Class(
           '"name":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`name`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`name`, perl=TRUE)
           )
         },
         if (!is.null(self$`synonyms`)) {
@@ -621,7 +621,7 @@ Gene <- R6::R6Class(
           '"version_number":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`version_number`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`version_number`, perl=TRUE)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -629,7 +629,7 @@ Gene <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -645,7 +645,7 @@ Gene <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         },
         if (!is.null(self$`title`)) {
@@ -653,7 +653,7 @@ Gene <- R6::R6Class(
           '"title":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`title`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`title`, perl=TRUE)
           )
         },
         if (!is.null(self$`geneid_with_version`)) {
@@ -661,7 +661,7 @@ Gene <- R6::R6Class(
           '"geneid_with_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`geneid_with_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`geneid_with_version`, perl=TRUE)
           )
         }
       )

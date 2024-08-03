@@ -413,7 +413,7 @@ SoftwareVersion <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`release_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`release_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`publications`)) {
@@ -437,7 +437,7 @@ SoftwareVersion <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lab`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lab`, perl=TRUE)
           )
         },
         if (!is.null(self$`award`)) {
@@ -445,7 +445,7 @@ SoftwareVersion <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`award`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`award`, perl=TRUE)
           )
         },
         if (!is.null(self$`status`)) {
@@ -453,7 +453,7 @@ SoftwareVersion <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -461,7 +461,7 @@ SoftwareVersion <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -469,7 +469,7 @@ SoftwareVersion <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -477,7 +477,7 @@ SoftwareVersion <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -493,7 +493,7 @@ SoftwareVersion <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -501,7 +501,7 @@ SoftwareVersion <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -509,7 +509,7 @@ SoftwareVersion <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -517,7 +517,7 @@ SoftwareVersion <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`software`)) {
@@ -525,7 +525,7 @@ SoftwareVersion <- R6::R6Class(
           '"software":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`software`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`software`, perl=TRUE)
           )
         },
         if (!is.null(self$`version`)) {
@@ -533,7 +533,7 @@ SoftwareVersion <- R6::R6Class(
           '"version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`version`, perl=TRUE)
           )
         },
         if (!is.null(self$`download_id`)) {
@@ -541,7 +541,7 @@ SoftwareVersion <- R6::R6Class(
           '"download_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`download_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`download_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`downloaded_url`)) {
@@ -549,7 +549,7 @@ SoftwareVersion <- R6::R6Class(
           '"downloaded_url":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`downloaded_url`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`downloaded_url`, perl=TRUE)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -557,7 +557,7 @@ SoftwareVersion <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -573,7 +573,7 @@ SoftwareVersion <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         },
         if (!is.null(self$`name`)) {
@@ -581,7 +581,7 @@ SoftwareVersion <- R6::R6Class(
           '"name":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`name`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`name`, perl=TRUE)
           )
         }
       )

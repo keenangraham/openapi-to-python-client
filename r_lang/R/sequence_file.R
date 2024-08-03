@@ -934,7 +934,7 @@ SequenceFile <- R6::R6Class(
           '"controlled_access":
             %s
                     ',
-          tolower(gsub('\\"', '\\\\"', self$`controlled_access`))
+          tolower(gsub('(?<!\\\\)\\"', '\\\\"', self$`controlled_access`, perl=TRUE))
           )
         },
         if (!is.null(self$`anvil_url`)) {
@@ -942,7 +942,7 @@ SequenceFile <- R6::R6Class(
           '"anvil_url":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`anvil_url`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`anvil_url`, perl=TRUE)
           )
         },
         if (!is.null(self$`release_timestamp`)) {
@@ -950,7 +950,7 @@ SequenceFile <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`release_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`release_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`documents`)) {
@@ -966,7 +966,7 @@ SequenceFile <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lab`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lab`, perl=TRUE)
           )
         },
         if (!is.null(self$`award`)) {
@@ -974,7 +974,7 @@ SequenceFile <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`award`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`award`, perl=TRUE)
           )
         },
         if (!is.null(self$`accession`)) {
@@ -982,7 +982,7 @@ SequenceFile <- R6::R6Class(
           '"accession":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`accession`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`accession`, perl=TRUE)
           )
         },
         if (!is.null(self$`alternate_accessions`)) {
@@ -1006,7 +1006,7 @@ SequenceFile <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`revoke_detail`)) {
@@ -1014,7 +1014,7 @@ SequenceFile <- R6::R6Class(
           '"revoke_detail":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`revoke_detail`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`revoke_detail`, perl=TRUE)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -1022,7 +1022,7 @@ SequenceFile <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -1030,7 +1030,7 @@ SequenceFile <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -1038,7 +1038,7 @@ SequenceFile <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -1054,7 +1054,7 @@ SequenceFile <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -1062,7 +1062,7 @@ SequenceFile <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -1070,7 +1070,7 @@ SequenceFile <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -1078,7 +1078,7 @@ SequenceFile <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`analysis_step_version`)) {
@@ -1086,7 +1086,7 @@ SequenceFile <- R6::R6Class(
           '"analysis_step_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`analysis_step_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`analysis_step_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`content_md5sum`)) {
@@ -1094,7 +1094,7 @@ SequenceFile <- R6::R6Class(
           '"content_md5sum":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`content_md5sum`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`content_md5sum`, perl=TRUE)
           )
         },
         if (!is.null(self$`content_type`)) {
@@ -1102,7 +1102,7 @@ SequenceFile <- R6::R6Class(
           '"content_type":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`content_type`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`content_type`, perl=TRUE)
           )
         },
         if (!is.null(self$`dbxrefs`)) {
@@ -1126,7 +1126,7 @@ SequenceFile <- R6::R6Class(
           '"file_format":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`file_format`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`file_format`, perl=TRUE)
           )
         },
         if (!is.null(self$`file_format_specifications`)) {
@@ -1142,13 +1142,13 @@ SequenceFile <- R6::R6Class(
           '"file_set":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`file_set`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`file_set`, perl=TRUE)
           )
         },
         if (!is.null(self$`file_size`)) {
           sprintf(
           '"file_size":
-            %d
+            %f
                     ',
           self$`file_size`
           )
@@ -1158,7 +1158,7 @@ SequenceFile <- R6::R6Class(
           '"md5sum":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`md5sum`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`md5sum`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_file_name`)) {
@@ -1166,7 +1166,7 @@ SequenceFile <- R6::R6Class(
           '"submitted_file_name":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_file_name`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_file_name`, perl=TRUE)
           )
         },
         if (!is.null(self$`upload_status`)) {
@@ -1174,7 +1174,7 @@ SequenceFile <- R6::R6Class(
           '"upload_status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`upload_status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`upload_status`, perl=TRUE)
           )
         },
         if (!is.null(self$`validation_error_detail`)) {
@@ -1182,7 +1182,7 @@ SequenceFile <- R6::R6Class(
           '"validation_error_detail":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`validation_error_detail`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`validation_error_detail`, perl=TRUE)
           )
         },
         if (!is.null(self$`flowcell_id`)) {
@@ -1190,13 +1190,13 @@ SequenceFile <- R6::R6Class(
           '"flowcell_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`flowcell_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`flowcell_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`lane`)) {
           sprintf(
           '"lane":
-            %d
+            %f
                     ',
           self$`lane`
           )
@@ -1204,7 +1204,7 @@ SequenceFile <- R6::R6Class(
         if (!is.null(self$`read_count`)) {
           sprintf(
           '"read_count":
-            %d
+            %f
                     ',
           self$`read_count`
           )
@@ -1212,7 +1212,7 @@ SequenceFile <- R6::R6Class(
         if (!is.null(self$`minimum_read_length`)) {
           sprintf(
           '"minimum_read_length":
-            %d
+            %f
                     ',
           self$`minimum_read_length`
           )
@@ -1220,7 +1220,7 @@ SequenceFile <- R6::R6Class(
         if (!is.null(self$`maximum_read_length`)) {
           sprintf(
           '"maximum_read_length":
-            %d
+            %f
                     ',
           self$`maximum_read_length`
           )
@@ -1228,7 +1228,7 @@ SequenceFile <- R6::R6Class(
         if (!is.null(self$`mean_read_length`)) {
           sprintf(
           '"mean_read_length":
-            %d
+            %f
                     ',
           self$`mean_read_length`
           )
@@ -1238,7 +1238,7 @@ SequenceFile <- R6::R6Class(
           '"sequencing_platform":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`sequencing_platform`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`sequencing_platform`, perl=TRUE)
           )
         },
         if (!is.null(self$`sequencing_kit`)) {
@@ -1246,13 +1246,13 @@ SequenceFile <- R6::R6Class(
           '"sequencing_kit":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`sequencing_kit`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`sequencing_kit`, perl=TRUE)
           )
         },
         if (!is.null(self$`sequencing_run`)) {
           sprintf(
           '"sequencing_run":
-            %d
+            %f
                     ',
           self$`sequencing_run`
           )
@@ -1262,7 +1262,7 @@ SequenceFile <- R6::R6Class(
           '"illumina_read_type":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`illumina_read_type`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`illumina_read_type`, perl=TRUE)
           )
         },
         if (!is.null(self$`index`)) {
@@ -1270,7 +1270,7 @@ SequenceFile <- R6::R6Class(
           '"index":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`index`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`index`, perl=TRUE)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -1278,7 +1278,7 @@ SequenceFile <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -1294,7 +1294,7 @@ SequenceFile <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         },
         if (!is.null(self$`integrated_in`)) {
@@ -1334,7 +1334,7 @@ SequenceFile <- R6::R6Class(
           '"href":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`href`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`href`, perl=TRUE)
           )
         },
         if (!is.null(self$`s3_uri`)) {
@@ -1342,7 +1342,7 @@ SequenceFile <- R6::R6Class(
           '"s3_uri":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`s3_uri`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`s3_uri`, perl=TRUE)
           )
         },
         if (!is.null(self$`upload_credentials`)) {
@@ -1350,7 +1350,7 @@ SequenceFile <- R6::R6Class(
           '"upload_credentials":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`upload_credentials`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`upload_credentials`, perl=TRUE)
           )
         },
         if (!is.null(self$`seqspecs`)) {

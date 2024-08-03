@@ -370,7 +370,7 @@ PhenotypicFeature <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`release_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`release_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`status`)) {
@@ -378,7 +378,7 @@ PhenotypicFeature <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -386,7 +386,7 @@ PhenotypicFeature <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lab`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lab`, perl=TRUE)
           )
         },
         if (!is.null(self$`award`)) {
@@ -394,7 +394,7 @@ PhenotypicFeature <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`award`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`award`, perl=TRUE)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -402,7 +402,7 @@ PhenotypicFeature <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -410,7 +410,7 @@ PhenotypicFeature <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -418,7 +418,7 @@ PhenotypicFeature <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -434,7 +434,7 @@ PhenotypicFeature <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -442,7 +442,7 @@ PhenotypicFeature <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -450,7 +450,7 @@ PhenotypicFeature <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -458,7 +458,7 @@ PhenotypicFeature <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`feature`)) {
@@ -466,13 +466,13 @@ PhenotypicFeature <- R6::R6Class(
           '"feature":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`feature`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`feature`, perl=TRUE)
           )
         },
         if (!is.null(self$`quantity`)) {
           sprintf(
           '"quantity":
-            %d
+            %f
                     ',
           self$`quantity`
           )
@@ -482,7 +482,7 @@ PhenotypicFeature <- R6::R6Class(
           '"quantity_units":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`quantity_units`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`quantity_units`, perl=TRUE)
           )
         },
         if (!is.null(self$`observation_date`)) {
@@ -490,7 +490,7 @@ PhenotypicFeature <- R6::R6Class(
           '"observation_date":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`observation_date`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`observation_date`, perl=TRUE)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -498,7 +498,7 @@ PhenotypicFeature <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -514,7 +514,7 @@ PhenotypicFeature <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         }
       )

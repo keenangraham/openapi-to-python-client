@@ -144,7 +144,7 @@ SearchResults <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -158,7 +158,7 @@ SearchResults <- R6::R6Class(
         if (!is.null(self$`total`)) {
           sprintf(
           '"total":
-            %d
+            %f
                     ',
           self$`total`
           )

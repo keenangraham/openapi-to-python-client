@@ -256,7 +256,7 @@ NoResultsResponse <- R6::R6Class(
           '"@context":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@context`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@context`, perl=TRUE)
           )
         },
         if (!is.null(self$`@graph`)) {
@@ -272,7 +272,7 @@ NoResultsResponse <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -288,7 +288,7 @@ NoResultsResponse <- R6::R6Class(
           '"clear_filters":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`clear_filters`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`clear_filters`, perl=TRUE)
           )
         },
         if (!is.null(self$`columns`)) {
@@ -296,7 +296,7 @@ NoResultsResponse <- R6::R6Class(
           '"columns":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`columns`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`columns`, perl=TRUE)
           )
         },
         if (!is.null(self$`facet_groups`)) {
@@ -328,7 +328,7 @@ NoResultsResponse <- R6::R6Class(
           '"notification":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notification`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notification`, perl=TRUE)
           )
         },
         if (!is.null(self$`sort`)) {
@@ -336,7 +336,7 @@ NoResultsResponse <- R6::R6Class(
           '"sort":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`sort`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`sort`, perl=TRUE)
           )
         },
         if (!is.null(self$`title`)) {
@@ -344,13 +344,13 @@ NoResultsResponse <- R6::R6Class(
           '"title":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`title`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`title`, perl=TRUE)
           )
         },
         if (!is.null(self$`total`)) {
           sprintf(
           '"total":
-            %d
+            %f
                     ',
           self$`total`
           )

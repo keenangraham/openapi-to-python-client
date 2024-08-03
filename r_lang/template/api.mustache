@@ -649,13 +649,10 @@
           self$api_client$deserialize(local_var_resp$response_as_text(), "{{returnType}}", loadNamespace("{{packageName}}")),
           error = function(e) {
             print("Error deserializing, returning raw")
-            print(e)
-	    return(NULL)
+	    return(local_var_resp$response)
           }
         )
-        if (is.null(deserialized_resp_obj)) {
-            local_var_resp$content <- local_var_resp$content
-        } else {
+        if (!is.null(deserialized_resp_obj)) {
             local_var_resp$content <- deserialized_resp_obj
         }
         {{/isPrimitiveType}}

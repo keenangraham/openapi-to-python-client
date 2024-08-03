@@ -425,7 +425,7 @@ Biomarker <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`release_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`release_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`status`)) {
@@ -433,7 +433,7 @@ Biomarker <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -441,7 +441,7 @@ Biomarker <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lab`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lab`, perl=TRUE)
           )
         },
         if (!is.null(self$`award`)) {
@@ -449,7 +449,7 @@ Biomarker <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`award`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`award`, perl=TRUE)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -457,7 +457,7 @@ Biomarker <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -465,7 +465,7 @@ Biomarker <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -473,7 +473,7 @@ Biomarker <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -489,7 +489,7 @@ Biomarker <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -497,7 +497,7 @@ Biomarker <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -505,7 +505,7 @@ Biomarker <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -513,7 +513,7 @@ Biomarker <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`name`)) {
@@ -521,7 +521,7 @@ Biomarker <- R6::R6Class(
           '"name":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`name`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`name`, perl=TRUE)
           )
         },
         if (!is.null(self$`classification`)) {
@@ -529,7 +529,7 @@ Biomarker <- R6::R6Class(
           '"classification":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`classification`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`classification`, perl=TRUE)
           )
         },
         if (!is.null(self$`quantification`)) {
@@ -537,7 +537,7 @@ Biomarker <- R6::R6Class(
           '"quantification":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`quantification`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`quantification`, perl=TRUE)
           )
         },
         if (!is.null(self$`synonyms`)) {
@@ -553,7 +553,7 @@ Biomarker <- R6::R6Class(
           '"gene":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`gene`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`gene`, perl=TRUE)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -561,7 +561,7 @@ Biomarker <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -577,7 +577,7 @@ Biomarker <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         },
         if (!is.null(self$`name_quantification`)) {
@@ -585,7 +585,7 @@ Biomarker <- R6::R6Class(
           '"name_quantification":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`name_quantification`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`name_quantification`, perl=TRUE)
           )
         },
         if (!is.null(self$`biomarker_for`)) {

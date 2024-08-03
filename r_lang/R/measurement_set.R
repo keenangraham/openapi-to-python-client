@@ -714,7 +714,7 @@ MeasurementSet <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`release_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`release_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`publications`)) {
@@ -746,7 +746,7 @@ MeasurementSet <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lab`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lab`, perl=TRUE)
           )
         },
         if (!is.null(self$`award`)) {
@@ -754,7 +754,7 @@ MeasurementSet <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`award`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`award`, perl=TRUE)
           )
         },
         if (!is.null(self$`accession`)) {
@@ -762,7 +762,7 @@ MeasurementSet <- R6::R6Class(
           '"accession":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`accession`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`accession`, perl=TRUE)
           )
         },
         if (!is.null(self$`alternate_accessions`)) {
@@ -786,7 +786,7 @@ MeasurementSet <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`revoke_detail`)) {
@@ -794,7 +794,7 @@ MeasurementSet <- R6::R6Class(
           '"revoke_detail":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`revoke_detail`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`revoke_detail`, perl=TRUE)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -802,7 +802,7 @@ MeasurementSet <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -810,7 +810,7 @@ MeasurementSet <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -818,7 +818,7 @@ MeasurementSet <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -834,7 +834,7 @@ MeasurementSet <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -842,7 +842,7 @@ MeasurementSet <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -850,7 +850,7 @@ MeasurementSet <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -858,7 +858,7 @@ MeasurementSet <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`dbxrefs`)) {
@@ -890,7 +890,7 @@ MeasurementSet <- R6::R6Class(
           '"file_set_type":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`file_set_type`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`file_set_type`, perl=TRUE)
           )
         },
         if (!is.null(self$`assay_term`)) {
@@ -898,7 +898,7 @@ MeasurementSet <- R6::R6Class(
           '"assay_term":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`assay_term`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`assay_term`, perl=TRUE)
           )
         },
         if (!is.null(self$`library_construction_platform`)) {
@@ -906,7 +906,7 @@ MeasurementSet <- R6::R6Class(
           '"library_construction_platform":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`library_construction_platform`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`library_construction_platform`, perl=TRUE)
           )
         },
         if (!is.null(self$`protocols`)) {
@@ -922,13 +922,13 @@ MeasurementSet <- R6::R6Class(
           '"preferred_assay_title":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`preferred_assay_title`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`preferred_assay_title`, perl=TRUE)
           )
         },
         if (!is.null(self$`multiome_size`)) {
           sprintf(
           '"multiome_size":
-            %d
+            %f
                     ',
           self$`multiome_size`
           )
@@ -962,7 +962,7 @@ MeasurementSet <- R6::R6Class(
           '"external_image_url":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`external_image_url`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`external_image_url`, perl=TRUE)
           )
         },
         if (!is.null(self$`targeted_genes`)) {
@@ -978,7 +978,7 @@ MeasurementSet <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -994,7 +994,7 @@ MeasurementSet <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         },
         if (!is.null(self$`files`)) {
@@ -1018,7 +1018,7 @@ MeasurementSet <- R6::R6Class(
           '"submitted_files_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_files_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_files_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`input_file_set_for`)) {

@@ -107,7 +107,7 @@ NoResultsResponseFiltersInner <- R6::R6Class(
           '"field":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`field`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`field`, perl=TRUE)
           )
         },
         if (!is.null(self$`term`)) {
@@ -115,7 +115,7 @@ NoResultsResponseFiltersInner <- R6::R6Class(
           '"term":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`term`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`term`, perl=TRUE)
           )
         },
         if (!is.null(self$`remove`)) {
@@ -123,7 +123,7 @@ NoResultsResponseFiltersInner <- R6::R6Class(
           '"remove":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`remove`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`remove`, perl=TRUE)
           )
         }
       )

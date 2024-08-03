@@ -402,7 +402,7 @@ User <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -410,7 +410,7 @@ User <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -418,7 +418,7 @@ User <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -426,7 +426,7 @@ User <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -442,7 +442,7 @@ User <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -450,7 +450,7 @@ User <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -458,7 +458,7 @@ User <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -466,7 +466,7 @@ User <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`email`)) {
@@ -474,7 +474,7 @@ User <- R6::R6Class(
           '"email":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`email`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`email`, perl=TRUE)
           )
         },
         if (!is.null(self$`first_name`)) {
@@ -482,7 +482,7 @@ User <- R6::R6Class(
           '"first_name":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`first_name`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`first_name`, perl=TRUE)
           )
         },
         if (!is.null(self$`last_name`)) {
@@ -490,7 +490,7 @@ User <- R6::R6Class(
           '"last_name":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`last_name`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`last_name`, perl=TRUE)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -498,7 +498,7 @@ User <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lab`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lab`, perl=TRUE)
           )
         },
         if (!is.null(self$`submits_for`)) {
@@ -530,7 +530,7 @@ User <- R6::R6Class(
           '"job_title":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`job_title`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`job_title`, perl=TRUE)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -538,7 +538,7 @@ User <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -554,7 +554,7 @@ User <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         },
         if (!is.null(self$`title`)) {
@@ -562,7 +562,7 @@ User <- R6::R6Class(
           '"title":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`title`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`title`, perl=TRUE)
           )
         }
       )

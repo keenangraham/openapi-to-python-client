@@ -532,7 +532,7 @@ CrisprModification <- R6::R6Class(
           '"release_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`release_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`release_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`sources`)) {
@@ -548,7 +548,7 @@ CrisprModification <- R6::R6Class(
           '"lot_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lot_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lot_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`product_id`)) {
@@ -556,7 +556,7 @@ CrisprModification <- R6::R6Class(
           '"product_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`product_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`product_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`documents`)) {
@@ -572,7 +572,7 @@ CrisprModification <- R6::R6Class(
           '"status":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`status`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`status`, perl=TRUE)
           )
         },
         if (!is.null(self$`lab`)) {
@@ -580,7 +580,7 @@ CrisprModification <- R6::R6Class(
           '"lab":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`lab`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`lab`, perl=TRUE)
           )
         },
         if (!is.null(self$`award`)) {
@@ -588,7 +588,7 @@ CrisprModification <- R6::R6Class(
           '"award":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`award`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`award`, perl=TRUE)
           )
         },
         if (!is.null(self$`schema_version`)) {
@@ -596,7 +596,7 @@ CrisprModification <- R6::R6Class(
           '"schema_version":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`schema_version`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`schema_version`, perl=TRUE)
           )
         },
         if (!is.null(self$`uuid`)) {
@@ -604,7 +604,7 @@ CrisprModification <- R6::R6Class(
           '"uuid":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`uuid`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`uuid`, perl=TRUE)
           )
         },
         if (!is.null(self$`notes`)) {
@@ -612,7 +612,7 @@ CrisprModification <- R6::R6Class(
           '"notes":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`notes`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`notes`, perl=TRUE)
           )
         },
         if (!is.null(self$`aliases`)) {
@@ -628,7 +628,7 @@ CrisprModification <- R6::R6Class(
           '"creation_timestamp":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`creation_timestamp`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`creation_timestamp`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitted_by`)) {
@@ -636,7 +636,7 @@ CrisprModification <- R6::R6Class(
           '"submitted_by":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitted_by`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitted_by`, perl=TRUE)
           )
         },
         if (!is.null(self$`submitter_comment`)) {
@@ -644,7 +644,7 @@ CrisprModification <- R6::R6Class(
           '"submitter_comment":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`submitter_comment`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`submitter_comment`, perl=TRUE)
           )
         },
         if (!is.null(self$`description`)) {
@@ -652,7 +652,7 @@ CrisprModification <- R6::R6Class(
           '"description":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`description`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`description`, perl=TRUE)
           )
         },
         if (!is.null(self$`activated`)) {
@@ -660,7 +660,7 @@ CrisprModification <- R6::R6Class(
           '"activated":
             %s
                     ',
-          tolower(gsub('\\"', '\\\\"', self$`activated`))
+          tolower(gsub('(?<!\\\\)\\"', '\\\\"', self$`activated`, perl=TRUE))
           )
         },
         if (!is.null(self$`activating_agent_term_id`)) {
@@ -668,7 +668,7 @@ CrisprModification <- R6::R6Class(
           '"activating_agent_term_id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`activating_agent_term_id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`activating_agent_term_id`, perl=TRUE)
           )
         },
         if (!is.null(self$`activating_agent_term_name`)) {
@@ -676,7 +676,7 @@ CrisprModification <- R6::R6Class(
           '"activating_agent_term_name":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`activating_agent_term_name`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`activating_agent_term_name`, perl=TRUE)
           )
         },
         if (!is.null(self$`modality`)) {
@@ -684,7 +684,7 @@ CrisprModification <- R6::R6Class(
           '"modality":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`modality`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`modality`, perl=TRUE)
           )
         },
         if (!is.null(self$`cas`)) {
@@ -692,7 +692,7 @@ CrisprModification <- R6::R6Class(
           '"cas":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`cas`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`cas`, perl=TRUE)
           )
         },
         if (!is.null(self$`fused_domain`)) {
@@ -700,7 +700,7 @@ CrisprModification <- R6::R6Class(
           '"fused_domain":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`fused_domain`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`fused_domain`, perl=TRUE)
           )
         },
         if (!is.null(self$`tagged_protein`)) {
@@ -708,7 +708,7 @@ CrisprModification <- R6::R6Class(
           '"tagged_protein":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`tagged_protein`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`tagged_protein`, perl=TRUE)
           )
         },
         if (!is.null(self$`cas_species`)) {
@@ -716,7 +716,7 @@ CrisprModification <- R6::R6Class(
           '"cas_species":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`cas_species`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`cas_species`, perl=TRUE)
           )
         },
         if (!is.null(self$`@id`)) {
@@ -724,7 +724,7 @@ CrisprModification <- R6::R6Class(
           '"@id":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`@id`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`@id`, perl=TRUE)
           )
         },
         if (!is.null(self$`@type`)) {
@@ -740,7 +740,7 @@ CrisprModification <- R6::R6Class(
           '"summary":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`summary`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`summary`, perl=TRUE)
           )
         },
         if (!is.null(self$`biosamples_modified`)) {

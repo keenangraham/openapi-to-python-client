@@ -91,13 +91,13 @@ NoResultsResponseFacetsInnerTermsInner <- R6::R6Class(
           '"key":
             "%s"
                     ',
-          gsub('\\"', '\\\\"', self$`key`)
+          gsub('(?<!\\\\)\\"', '\\\\"', self$`key`, perl=TRUE)
           )
         },
         if (!is.null(self$`doc_count`)) {
           sprintf(
           '"doc_count":
-            %d
+            %f
                     ',
           self$`doc_count`
           )
