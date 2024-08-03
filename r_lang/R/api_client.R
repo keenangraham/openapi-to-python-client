@@ -127,9 +127,9 @@ ApiClient <- R6::R6Class(
     FlattenQueryParams = function(z) {
         print('flattening query params')
         print(z)
-        results <- list() 
+        results <- list()
         results_names <- list()
-        for (i in 1:length(z)) {
+        for (i in seq_along(z)) {
             for (value in z[[i]]) {
                 results <- append(results, value)
                results_names <- append(results_names, names(z)[[i]])

@@ -11608,7 +11608,11 @@ IgvfApi <- R6::R6Class(
 
       query_params[["query"]] <- `query`
 
-      query_params[["field_filters"]] <- `field_filters`
+      for (i in seq_along(`field_filters`)) {
+          k <- names(`field_filters`)[[i]]
+          v <- `field_filters`[[i]]
+          query_params[[k]] <- v
+      }
 
       local_var_url_path <- "/batch-download"
       # HTTP basic auth
@@ -26730,7 +26734,11 @@ IgvfApi <- R6::R6Class(
         query_params[["sort"]] <- c(query_params[["sort"]], list(`sort` = query_item))
       }
 
-      query_params[["field_filters"]] <- `field_filters`
+      for (i in seq_along(`field_filters`)) {
+          k <- names(`field_filters`)[[i]]
+          v <- `field_filters`[[i]]
+          query_params[[k]] <- v
+      }
 
       # explore
       for (query_item in `include_fields`) {
@@ -27872,7 +27880,11 @@ IgvfApi <- R6::R6Class(
         query_params[["sort"]] <- c(query_params[["sort"]], list(`sort` = query_item))
       }
 
-      query_params[["field_filters"]] <- `field_filters`
+      for (i in seq_along(`field_filters`)) {
+          k <- names(`field_filters`)[[i]]
+          v <- `field_filters`[[i]]
+          query_params[[k]] <- v
+      }
 
       if (!(`frame` %in% c("object"))) {
         stop("Invalid value for frame when calling IgvfApi$Search. Must be [object].")

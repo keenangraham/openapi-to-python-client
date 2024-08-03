@@ -501,7 +501,16 @@
         {{/useRlangExceptionHandling}}
       }
       {{/isEnum}}
+      {{#isFreeFormObject}}
+      for (i in seq_along(`{{paramName}}`)) {
+          k <- names(`{{paramName}}`)[[i]]
+          v <- `{{paramName}}`[[i]]
+          query_params[[k]] <- v
+      }
+      {{/isFreeFormObject}}
+      {{^isFreeFormObject}}
       query_params[["{{baseName}}"]] <- `{{paramName}}`
+      {{/isFreeFormObject}}
       {{/isArray}}
 
       {{/queryParams}}
